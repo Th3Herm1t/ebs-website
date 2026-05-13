@@ -1,26 +1,221 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-mulish);
+  --font-heading: var(--font-mulish);
+
+  /* Penn brand colors */
+  --color-penn-green: #2eca7f;
+  --color-penn-green-light: rgba(46, 202, 127, 0.2);
+  --color-penn-navy: #1a2d62;
+  --color-penn-body: #888888;
+  --color-penn-border: #ededed;
+  --color-penn-bg-light: #f8f9fa;
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #2eca7f;
+  --primary-foreground: #ffffff;
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: #1a2d62;
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: #888888;
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: #1a2d62;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #ededed;
+  --input: #ededed;
+  --ring: #2eca7f;
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-penn-body;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+  }
+  html {
+    @apply font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-penn-navy font-normal tracking-[0px] m-0;
+    font-family: var(--font-mulish);
+  }
+  a {
+    @apply no-underline transition-all duration-200;
+    font-family: var(--font-mulish);
+  }
+  ul, li {
+    @apply m-0 p-0 list-none;
+  }
+  p {
+    @apply mb-0;
+  }
+  u {
+    text-decoration-color: #2eca7f;
+  }
+  ::selection {
+    background: #1a2d62;
+    color: #fff;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Penn section padding */
+.section-padding {
+  padding: 80px 0;
+}
+
+/* Penn section title */
+.section-title {
+  margin-bottom: 60px;
+  position: relative;
+}
+.section-title h2 {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0;
+  line-height: 1px;
+  margin: 0 0 10px 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #2eca7f;
+}
+.section-title h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: #2eca7f;
+  margin: 4px 10px;
+}
+.section-title p {
+  width: 60%;
+  margin: 0;
+  font-size: 42px;
+  font-weight: 800;
+  text-transform: capitalize;
+  line-height: 46px;
+  color: #1a2d62;
+}
+.section-title p span {
+  color: #2eca7f;
+}
+@media only screen and (max-width: 480px) {
+  .section-title p { width: 100%; }
+}
+
+/* Penn CTA button animation */
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 18px 22px;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: rgba(46,202,127,0.2);
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
+}
+.cta span {
+  position: relative;
+  font-size: 15px;
+  color: #1a2d62;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #111;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+.cta:hover::before {
+  width: 100%;
+  background: #2eca7f;
+}
+.cta:hover span { color: #fff; }
+.cta:hover svg {
+  transform: translateX(0);
+  stroke: #fff;
 }
