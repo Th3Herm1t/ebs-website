@@ -15,8 +15,7 @@ export default function CoursesPage() {
           { label: "Course" }
         ]} 
       />
-      
-      <CoursesSection showButton={false} />
+      <CoursesSection />
       
       <Footer />
     </>
