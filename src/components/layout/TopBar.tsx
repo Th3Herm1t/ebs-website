@@ -1,6 +1,8 @@
 "use client";
 
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -44,33 +46,45 @@ const socials = [
 
 export default function TopBar() {
   return (
-    <div className="bg-penn-green py-2.5 max-sm:hidden">
-      <div className="max-w-[1200px] mx-auto px-4 flex flex-wrap items-center justify-between">
-        {/* Contact Info */}
-        <div className="flex items-center gap-8">
-          <div className="flex items-center gap-3">
-            <Phone className="w-5 h-5 text-white" />
-            <span className="text-white text-[15px] font-medium">+88 457 845 695</span>
+    <div className="bg-[#fbfbfb] py-3 max-sm:hidden border-b border-gray-100">
+      <div className="max-w-[1140px] mx-auto px-4 flex flex-wrap items-center justify-between">
+        {/* Left: Contact Info (Adapted from Optima right box) */}
+        <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2">
+            <MapPin className="w-[14px] h-[14px] text-[#42474c]" />
+            <span className="text-[#42474c] text-[13px] font-medium opacity-80">Lac 3, Tunis</span>
           </div>
-          <div className="flex items-center gap-3 max-md:hidden">
-            <Mail className="w-5 h-5 text-white" />
-            <span className="text-white text-[15px] font-medium">example@yourmail.com</span>
+          <div className="flex items-center gap-2">
+            <Mail className="w-[14px] h-[14px] text-[#42474c]" />
+            <span className="text-[#42474c] text-[13px] font-medium opacity-80">contact@ebs.tn</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Phone className="w-[14px] h-[14px] text-[#42474c]" />
+            <span className="text-[#42474c] text-[13px] font-medium opacity-80">+216 29 58 28 35 / +216 71 18 26 25</span>
           </div>
         </div>
 
-        {/* Social */}
-        <ul className="flex items-center gap-1.5">
-          {socials.map(({ icon: Icon, hoverBg }, i) => (
-            <li key={i}>
-              <a
-                href="#"
-                className={`bg-white w-[35px] h-[35px] flex items-center justify-center rounded-full text-[#232434] transition-all duration-300 ${hoverBg} hover:text-white`}
-              >
-                <Icon className="w-4 h-4" />
-              </a>
-            </li>
-          ))}
-        </ul>
+        {/* Right: Social Media (Shadcn) */}
+        <div className="flex items-center gap-4">
+          <span className="text-[#42474c] text-[13px] font-medium opacity-80">Follow Us:</span>
+          <ul className="flex items-center gap-1">
+            {socials.map(({ icon: Icon, hoverBg }, i) => (
+              <li key={i}>
+                <a
+                  href="#"
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "w-8 h-8 rounded-full text-[#42474c] transition-colors duration-300",
+                    hoverBg,
+                    "hover:text-white"
+                  )}
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

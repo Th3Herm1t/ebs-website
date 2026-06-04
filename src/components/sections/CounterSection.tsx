@@ -2,16 +2,16 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef, useState, useEffect } from "react";
-import { Smile, FileText, Headphones, User } from "lucide-react";
+import { Award, GraduationCap, Globe, TrendingUp } from "lucide-react";
 
 const counters = [
-  { icon: Smile, end: 8232, label: "Enrolled Students", color: "#4154f1" },
-  { icon: FileText, end: 521, label: "Academic Programs", color: "#ee6c20" },
-  { icon: Headphones, end: 163, label: "Winning Award", color: "#15be56" },
-  { icon: User, end: 93, label: "Certified Students", color: "#bb0852" },
+  { icon: Award, end: 150, suffix: "+", label: "Certifications gratuites incluses", color: "#4154f1" },
+  { icon: GraduationCap, end: 7, suffix: "", label: "Programmes Licences & Masters", color: "#ee6c20" },
+  { icon: Globe, end: 10, suffix: "+", label: "Partenaires universitaires internationaux", color: "#15be56" },
+  { icon: TrendingUp, end: 93, suffix: "%", label: "Taux de réussite", color: "#bb0852" },
 ];
 
-function AnimatedCounter({ end, isInView }: { end: number; isInView: boolean }) {
+function AnimatedCounter({ end, suffix, isInView }: { end: number; suffix: string; isInView: boolean }) {
   const [count, setCount] = useState(0);
   useEffect(() => {
     if (!isInView) return;
@@ -25,7 +25,7 @@ function AnimatedCounter({ end, isInView }: { end: number; isInView: boolean }) 
     }, 16);
     return () => clearInterval(timer);
   }, [isInView, end]);
-  return <span className="text-[36px] block text-penn-navy font-bold">{count}</span>;
+  return <span className="text-[36px] block text-penn-navy font-bold">{count}{suffix}</span>;
 }
 
 export default function CounterSection() {
@@ -34,23 +34,25 @@ export default function CounterSection() {
 
   return (
     <section className="section-padding" ref={ref}>
-      <div className="max-w-[1140px] mx-auto px-4">
+      <div className="max-w-[1400px] mx-auto px-5 lg:px-12">
         <div className="section-title">
-          <h2>Some Fun Fact</h2>
-          <p>Our Great <span><u>Achievement</u></span></p>
+          <h2 className="text-[#2a9d8f]">EBS EN CHIFFRES</h2>
+          <p className="text-[#232434]">Les Chiffres Clés <span className="text-[#f4a261]"><u>de l'EBS</u></span></p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {counters.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="p-[25px] bg-white text-center rounded-[6px] shadow-[0px_0_30px_rgba(1,41,112,0.08)] border border-penn-border transition-all duration-300 hover:border-t-2 hover:border-t-penn-green"
+              className="p-[25px] bg-white rounded-[6px] shadow-[0_0_30px_rgba(1,41,112,0.08)] border border-[#eee] transition-all duration-300 hover:border-t-2 hover:border-t-penn-green flex items-center justify-start gap-5"
             >
-              <item.icon className="mx-auto mb-[20px]" style={{ color: item.color, width: 40, height: 40 }} />
-              <AnimatedCounter end={item.end} isInView={isInView} />
-              <p className="text-penn-body mt-2">{item.label}</p>
+              <item.icon className="flex-shrink-0" style={{ color: item.color, width: 45, height: 45 }} strokeWidth={1.5} />
+              <div className="flex flex-col text-left">
+                <AnimatedCounter end={item.end} suffix={item.suffix} isInView={isInView} />
+                <p className="text-[#888888] text-[13px] mt-0">{item.label}</p>
+              </div>
             </motion.div>
           ))}
         </div>

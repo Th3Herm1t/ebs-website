@@ -5,20 +5,22 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
 const logos = [
-  { file: "arforghe.png", name: "Arforghe" },
-  { file: "asteelflash.png", name: "AsteelFlash" },
-  { file: "atb.png", name: "ATB" },
-  { file: "audita.png", name: "Audita" },
-  { file: "cayon.png", name: "Cayon" },
-  { file: "medianet.png", name: "Medianet" },
-  { file: "satem.png", name: "Satem" },
-  { file: "smartfuture.png", name: "Smart Future" },
-  { file: "soprahr.png", name: "Sopra HR" },
-  { file: "unifactor.png", name: "Unifactor" },
-  { file: "yperyon.png", name: "Yperyon" },
+  { file: "eklore.png", name: "Eklore" },
+  { file: "epitech.png", name: "Epitech" },
+  { file: "epsi.png", name: "EPSI" },
+  { file: "excelia.png", name: "Excelia" },
+  { file: "figs (2).png", name: "FIGS" },
+  { file: "gutech.png", name: "GUtech" },
+  { file: "idrac.png", name: "IDRAC" },
+  { file: "ifag.png", name: "IFAG" },
+  { file: "igefi.png", name: "IGEFI" },
+  { file: "psb.png", name: "PSB" },
+  { file: "redsup.png", name: "Redsup" },
+  { file: "supdecom.png", name: "Sup de Com" },
+  { file: "uqat.png", name: "UQAT" },
 ];
 
-export default function PartnerLogos() {
+export default function AcademicPartners() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -31,7 +33,7 @@ export default function PartnerLogos() {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-penn-navy font-bold text-xl mb-10">
-            Nos Partenaires Économiques
+            Nos Partenaires Académiques Internationaux
           </h3>
           <div className="overflow-hidden whitespace-nowrap w-full relative">
             <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-white to-transparent z-10" />
@@ -39,7 +41,7 @@ export default function PartnerLogos() {
 
             <motion.div
               animate={{ x: ["0%", "-50%"] }}
-              transition={{ ease: "linear", duration: 25, repeat: Infinity }}
+              transition={{ ease: "linear", duration: 30, repeat: Infinity }}
               className="inline-flex items-center gap-16"
             >
               {[...logos, ...logos].map((logo, i) => (
@@ -49,7 +51,7 @@ export default function PartnerLogos() {
                   className="inline-block opacity-50 hover:opacity-100 transition-opacity duration-300 flex-shrink-0"
                 >
                   <Image
-                    src={`/images/partenaires/${logo.file}`}
+                    src={`/images/partenaires-academiques/${logo.file}`}
                     alt={logo.name}
                     width={140}
                     height={70}
