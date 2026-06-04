@@ -21,8 +21,7 @@ export default function TeamDetailsPage() {
       <SingleTeamSection />
       
       <CounterSection />
-      
-      <CoursesSection limit={6} showButton={true} />
+      <CoursesSection />
       
       <Footer />
     </>
