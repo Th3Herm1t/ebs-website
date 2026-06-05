@@ -7,7 +7,6 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import SectionHeading from "@/components/ui/SectionHeading";
