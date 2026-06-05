@@ -32,6 +32,24 @@ export default function CareerSection() {
     <section style={{ backgroundColor: "#f7f7f7", padding: "80px 0" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 30px" }}>
 
+        <ScrollReveal
+          initialY={18}
+          duration={0.55}
+        >
+          <p
+            style={{
+              fontSize: "11px",
+              fontWeight: 600,
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              color: "#999999",
+              margin: "0 0 14px",
+            }}
+          >
+            {t('tag')}
+          </p>
+        </ScrollReveal>
+
         {/* ── Top row: left heading / right description ── */}
         <div
           style={{
@@ -48,18 +66,7 @@ export default function CareerSection() {
             duration={0.55}
             className="flex-[0_0_calc(40%-20px)] min-w-[260px]"
           >
-            <p
-              style={{
-                fontSize: "11px",
-                fontWeight: 600,
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                color: "#999999",
-                margin: "0 0 14px",
-              }}
-            >
-              {t('tag')}
-            </p>
+
             <h2
               style={{
                 fontSize: "36px",
