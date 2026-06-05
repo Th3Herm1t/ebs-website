@@ -64,7 +64,13 @@ export default function InfoSliderSection() {
               <CarouselItem key={slide.id} className="pl-4">
                 <div className="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16">
                   {/* Left: Image */}
-                  <div className="w-full lg:w-1/2 flex">
+                  <motion.div 
+                    initial={{ opacity: 0, x: -60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    className="w-full lg:w-1/2 flex"
+                  >
                     <div className="relative w-full rounded shadow-[0_20px_60px_rgba(0,0,0,0.15)] min-h-[300px] lg:min-h-[400px] h-full">
                       <Image
                         src={slide.image}
@@ -73,32 +79,50 @@ export default function InfoSliderSection() {
                         className="object-cover rounded"
                       />
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Right: Text Content */}
                   <div className="w-full lg:w-1/2 flex flex-col items-start justify-center pt-6 lg:pt-0">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-penn-green/10 text-penn-green font-bold text-[12px] uppercase tracking-wider mb-5 lg:mb-6">
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: false }}
+                      transition={{ duration: 0.5, ease: "backOut", delay: 0.2 }}
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-penn-green/10 text-penn-green font-bold text-[12px] uppercase tracking-wider mb-5 lg:mb-6"
+                    >
                       <Sparkles className="w-4 h-4" />
                       {slide.subtitle.replace('★ ', '')}
-                    </div>
+                    </motion.div>
                     
-                    <h2 className="text-penn-navy text-[28px] md:text-[32px] lg:text-[36px] font-extrabold leading-[1.15] mb-5 lg:mb-6 tracking-tight">
-                      {slide.title}
-                    </h2>
-                    
-                    <div className="w-[80px] h-[3px] bg-gradient-to-r from-penn-green to-transparent mb-6 lg:mb-8"></div>
-                    
-                    <p className="text-penn-body text-[15px] lg:text-[16px] leading-[1.8] mb-8 lg:mb-10">
-                      {slide.text}
-                    </p>
-                    
-                    <a
-                      href={slide.link}
-                      className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-penn-green text-white font-bold text-[14px] uppercase tracking-wider transition-all duration-300 hover:bg-penn-navy hover:shadow-lg hover:-translate-y-1 rounded-sm"
+                    <motion.div
+                      initial={{ opacity: 0, x: 60 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+                      className="flex flex-col items-start"
                     >
-                      En savoir plus
-                      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </a>
+                      <h2 className="text-penn-navy text-[28px] md:text-[32px] lg:text-[36px] font-extrabold leading-[1.15] mb-5 lg:mb-6 tracking-tight">
+                        {slide.title}
+                      </h2>
+                      
+                      <div className="w-[80px] h-[3px] bg-gradient-to-r from-penn-green to-transparent mb-6 lg:mb-8"></div>
+                      
+                      <p className="text-penn-body text-[15px] lg:text-[16px] leading-[1.8] mb-8 lg:mb-10">
+                        {slide.text}
+                      </p>
+                      
+                      <motion.a
+                        href={slide.link}
+                        initial={{ opacity: 0, scale: 0.6 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.5, ease: "backOut", delay: 0.6 }}
+                        className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-penn-green text-white font-bold text-[14px] uppercase tracking-wider transition-colors duration-300 hover:bg-penn-navy hover:shadow-lg rounded-sm"
+                      >
+                        En savoir plus
+                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </motion.a>
+                    </motion.div>
                   </div>
                 </div>
               </CarouselItem>
