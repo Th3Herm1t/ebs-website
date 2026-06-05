@@ -25,6 +25,7 @@ export default function TestimonialsSection() {
               <>{t('subtitle')} <span className="text-penn-green underline decoration-penn-green">{t('subtitleHighlight')}</span></>
             }
             className="!mb-0"
+            subtitleClassName="!w-full"
           />
           <div className="flex gap-2 mt-8 max-md:hidden">
             <button className="w-10 h-10 rounded-full border border-penn-border flex items-center justify-center text-penn-navy hover:bg-penn-green hover:text-white hover:border-penn-green transition-all">

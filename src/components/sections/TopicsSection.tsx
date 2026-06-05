@@ -21,7 +21,7 @@ export default function TopicsSection() {
         <SectionHeading 
           title={t('title')}
           subtitle={
-            <><span className="text-penn-green underline decoration-penn-green">{t('subtitleHighlight')}</span> {t('subtitle')}</>
+            <>{t('subtitle')} <span className="text-penn-green underline decoration-penn-green">{t('subtitleHighlight')}</span></>
           }
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
