@@ -152,7 +152,7 @@
       "licences": [
         {
           "cat": "Management",
-          "title": "Licence Nationale en Sciences de Gestion - Option Marketing",
+          "title": "Licence Nationale en Sciences de Gestion - Option Management",
           "detail1": "6 Semestres - Présentiel",
           "detail2": "IA Intégrée - 35 Certifications"
         },
@@ -175,13 +175,13 @@
           "detail2": "IA Intégrée - 35 Certifications"
         },
         {
-          "cat": "Informatique",
+          "cat": "IA",
           "title": "Licence Nationale en Génie Logiciel - Option IA",
           "detail1": "6 Semestres - Présentiel",
           "detail2": "75 Certifications Disponibles"
         },
         {
-          "cat": "Informatique",
+          "cat": "Cybersécurité",
           "title": "Licence Nationale en Génie Logiciel - Option Cybersécurité",
           "detail1": "6 Semestres - Présentiel",
           "detail2": "52 Certifications Disponibles"
@@ -189,19 +189,19 @@
       ],
       "masters": [
         {
-          "cat": "Finance Avancée",
+          "cat": "Finance",
           "title": "Master en Ingénierie Financière",
           "detail1": "4 Semestres - Présentiel",
           "detail2": "IA Intégrée - 15 Certifications"
         },
         {
-          "cat": "Marketing 5.0",
+          "cat": "Marketing",
           "title": "Master en CRM - Marketing & Transformation Digitale",
           "detail1": "4 Semestres - Présentiel",
           "detail2": "IA Intégrée - 49 Certifications"
         },
         {
-          "cat": "Project Management",
+          "cat": "Management",
           "title": "Master en Management des Projets Innovants & Startups",
           "detail1": "4 Semestres - Présentiel",
           "detail2": "IA Intégrée - 22 Certifications"

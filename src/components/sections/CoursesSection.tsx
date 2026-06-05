@@ -7,6 +7,18 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant1 from "./HeroBackgroundVariant1";
 
 function ProgramGrid({ title, subtitle, programs }: { title: string, subtitle: string, programs: any[] }) {
+  const getCatColor = (cat: string) => {
+    switch (cat.toLowerCase()) {
+      case 'management': return 'bg-[#3b82f6]';
+      case 'marketing': return 'bg-[#ec4899]';
+      case 'finance': return 'bg-[#14b8a6]';
+      case 'informatique': return 'bg-[#f43f5e]';
+      case 'ia': return 'bg-[#a855f7]';
+      case 'cybersécurité': return 'bg-[#eab308]';
+      default: return 'bg-[#f4a261]';
+    }
+  };
+
   return (
     <div className="mb-24 last:mb-0 relative z-10">
       <SectionHeading 
@@ -35,7 +47,7 @@ function ProgramGrid({ title, subtitle, programs }: { title: string, subtitle: s
             {/* Content */}
             <div className="p-[25px] flex flex-col flex-grow">
               <div className="mb-4">
-                <Link href="/programmes" className="bg-[#f4a261] text-white text-[13px] font-semibold py-[5px] px-[14px] rounded inline-block hover:bg-opacity-80 transition-colors duration-300">
+                <Link href="/programmes" className={`${getCatColor(course.cat)} text-white text-[13px] font-semibold py-[5px] px-[14px] rounded inline-block hover:bg-opacity-80 transition-colors duration-300`}>
                   {course.cat}
                 </Link>
               </div>
