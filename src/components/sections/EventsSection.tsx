@@ -10,52 +10,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
 
-const imageEvents = [
-  {
-    title: "Master Marketing Digital et Data Analytics : Webinaire",
-    link: "https://ebs.tn/blog/master-marketing-digital-et-data-analytics-de-lebs/",
-    img: "https://ebs.tn/wp-content/uploads/2024/02/Master-Marketing-Digital-et-Data-Analytics-d_ESPIMA.webp",
-    day: "19",
-    month: "FÉV",
-    time: "10:00 - 12:00",
-    location: "Campus EBS"
-  },
-  {
-    title: "Métiers d'Avenir dans le Digital Marketing : Conférence",
-    link: "https://ebs.tn/blog/metiers-davenir-dans-le-digital-marketing-levolution-dynamique-du-paysage-professionnel/",
-    img: "https://ebs.tn/wp-content/uploads/2024/01/Metiers-d_Avenir-dans-le-Digital-Marketing.webp",
-    day: "26",
-    month: "JAN",
-    time: "14:00 - 16:30",
-    location: "Amphithéâtre"
-  }
-];
-
-const listEvents = [
-  {
-    title: "CV Renforcé par des Certifications : Workshop",
-    link: "https://ebs.tn/blog/cv-renforce-par-des-certifications-la-cle-de-la-reussite-pour-les-jeunes-diplomes/",
-    img: "https://ebs.tn/wp-content/uploads/2024/02/CV-Renforce-par-des-Certifications.webp",
-    day: "01",
-    month: "FÉV",
-    time: "09:00 - 12:00",
-    location: "Campus EBS"
-  },
-  {
-    title: "L'Enseignement Supérieur : Les Universités Privées",
-    link: "https://ebs.tn/blog/universites-privees-en-tunisie/",
-    img: "https://ebs.tn/wp-content/uploads/2024/02/Photo-principale-Enseignement-Superieur-dans-les-Universites-Privees-en-Tunisie_1.webp",
-    day: "29",
-    month: "FÉV",
-    time: "10:00 - 12:00",
-    location: "En Ligne"
-  }
-];
-
 export default function EventsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const t = useTranslations('HomePage.events');
+  
+  const imageEvents = t.raw('listImage') as any[];
+  const listEvents = t.raw('listText') as any[];
 
   return (
     <section className="relative overflow-hidden section-padding" ref={ref}>
@@ -93,7 +54,7 @@ export default function EventsSection() {
                     <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{event.time}</span>
                     <span className="flex items-center gap-1"><LayoutGrid className="w-3.5 h-3.5" /><strong>{event.location}</strong></span>
                   </div>
-                  <p className="mt-2.5 text-penn-body text-sm line-clamp-2">Rejoignez-nous pour cet événement exceptionnel de l'Espima Business School et découvrez de nouvelles opportunités.</p>
+                  <p className="mt-2.5 text-penn-body text-sm line-clamp-2">{event.desc}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -124,7 +85,7 @@ export default function EventsSection() {
                       <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{event.time}</span>
                       <span className="flex items-center gap-1"><LayoutGrid className="w-3.5 h-3.5" /><strong>{event.location}</strong></span>
                     </div>
-                    <p className="mt-2.5 text-penn-body text-sm line-clamp-2">Ne manquez pas cet événement organisé par EBS. Inscrivez-vous dès maintenant.</p>
+                    <p className="mt-2.5 text-penn-body text-sm line-clamp-2">{event.desc}</p>
                   </CardContent>
                 </Card>
               </motion.div>

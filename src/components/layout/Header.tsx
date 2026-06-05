@@ -81,19 +81,23 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-penn-border">
+        <div className="lg:hidden bg-white border-t border-penn-border shadow-lg absolute w-full left-0">
           <ul className="max-w-[1400px] w-full mx-auto px-6 lg:px-12 py-4">
             {navItems.map((item) => (
-              <li key={item.key} className="border-b border-penn-border last:border-0">
+              <li key={item.key} className="border-b border-gray-100">
                 <Link
                   href={item.href}
-                  className="text-penn-navy font-medium py-2.5 block"
+                  className="text-penn-navy font-medium py-3 block"
                   onClick={() => setMobileOpen(false)}
                 >
                   {tNav(item.key as any)}
                 </Link>
               </li>
             ))}
+            <li className="pt-4 flex items-center justify-between">
+              <span className="text-penn-navy font-medium text-sm">Changer de langue</span>
+              <LanguageSwitcher />
+            </li>
           </ul>
         </div>
       )}

@@ -8,34 +8,11 @@ import { useTranslations } from 'next-intl';
 import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
 
-const testimonials = [
-  { 
-    img: "/images/all-img/t1-stock.jpg", 
-    name: "Yassine B.", 
-    role: "Étudiant en Master Finance", 
-    bgClass: "bg-[#e1f7e8]",
-    text: "Grâce à l'EBS, j'ai décroché mon premier emploi avant même la fin de mon Master."
-  },
-  { 
-    img: "/images/all-img/t2-stock.jpg", 
-    name: "Sarah M.", 
-    role: "Étudiante en Marketing", 
-    bgClass: "bg-[#f7e8d8]",
-    text: "Une expérience inoubliable avec des professeurs passionnés et un accompagnement très personnalisé."
-  },
-  { 
-    img: "/images/all-img/t3-stock.jpg", 
-    name: "Ahmed T.", 
-    role: "Alumni EBS", 
-    bgClass: "bg-[#e8e8e8]",
-    text: "Le partenariat avec l'UQAT m'a ouvert les portes d'une belle carrière à l'international."
-  },
-];
-
 export default function TestimonialsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const t = useTranslations('HomePage.testimonials');
+  const testimonials = t.raw('list') as any[];
 
   return (
     <section className="relative overflow-hidden section-padding" ref={ref}>
@@ -60,7 +37,7 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
-          {testimonials.map((t, i) => (
+          {testimonials.map((testimonial, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
@@ -76,22 +53,22 @@ export default function TestimonialsSection() {
                   ))}
                 </div>
                 <p className="text-penn-body leading-[26px] italic">
-                  "{t.text}"
+                  "{testimonial.text}"
                 </p>
               </div>
 
               {/* Author */}
-              <div className={`flex items-center gap-4 p-[20px] ${t.bgClass} rounded-b-[10px]`}>
+              <div className={`flex items-center gap-4 p-[20px] ${testimonial.bgClass} rounded-b-[10px]`}>
                 <Image
-                  src={t.img}
-                  alt={t.name}
+                  src={testimonial.img}
+                  alt={testimonial.name}
                   width={60}
                   height={60}
                   className="rounded-full w-[60px] h-[60px] object-cover"
                 />
                 <div>
-                  <h4 className="text-penn-navy font-extrabold text-[17px]">{t.name}</h4>
-                  <small className="text-penn-body">{t.role}</small>
+                  <h4 className="text-penn-navy font-extrabold text-[17px]">{testimonial.name}</h4>
+                  <small className="text-penn-body">{testimonial.role}</small>
                 </div>
               </div>
             </motion.div>

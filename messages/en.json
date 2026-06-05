@@ -33,8 +33,8 @@
         "Cybersécurité": "Cybersecurity"
       },
       "stats": {
-        "active": "Active students",
-        "online": "Online Courses"
+        "active": "Students",
+        "online": "Partners"
       }
     },
     "toppromo": {
@@ -214,24 +214,122 @@
     "newsletter": {
       "title": "Subscribe to our Newsletter",
       "subtitle": "Receive our latest offers and news",
-      "desc": "By subscribing to this list, you will receive our latest offers and news",
+"desc": "By subscribing to this list, you will receive our latest offers and news",
       "placeholder": "Enter your email address",
       "btn": "Subscribe"
     },
     "events": {
-      "title": "Upcoming Events",
-      "subtitle": "Join With Us",
-      "subtitleHighlight": "Our Events"
+      "title": "EBS EVENTS",
+      "subtitle": "News and",
+      "subtitleHighlight": "EBS Events",
+      "listImage": [
+        {
+          "title": "Digital Marketing and Data Analytics Master : Webinar",
+          "link": "https://ebs.tn/blog/master-marketing-digital-et-data-analytics-de-lebs/",
+          "img": "https://ebs.tn/wp-content/uploads/2024/02/Master-Marketing-Digital-et-Data-Analytics-d_ESPIMA.webp",
+          "day": "19",
+          "month": "FEB",
+          "time": "10:00 - 12:00",
+          "location": "EBS Campus",
+          "desc": "Join us for this exceptional Espima Business School event and discover new opportunities."
+        },
+        {
+          "title": "Future Careers in Digital Marketing : Conference",
+          "link": "https://ebs.tn/blog/metiers-davenir-dans-le-digital-marketing-levolution-dynamique-du-paysage-professionnel/",
+          "img": "https://ebs.tn/wp-content/uploads/2024/01/Metiers-d_Avenir-dans-le-Digital-Marketing.webp",
+          "day": "26",
+          "month": "JAN",
+          "time": "14:00 - 16:30",
+          "location": "Auditorium",
+          "desc": "Join us for this exceptional Espima Business School event and discover new opportunities."
+        }
+      ],
+      "listText": [
+        {
+          "title": "CV Strengthened by Certifications : Workshop",
+          "link": "https://ebs.tn/blog/cv-renforce-par-des-certifications-la-cle-de-la-reussite-pour-les-jeunes-diplomes/",
+          "img": "https://ebs.tn/wp-content/uploads/2024/02/CV-Renforce-par-des-Certifications.webp",
+          "day": "01",
+          "month": "FEB",
+          "time": "09:00 - 12:00",
+          "location": "EBS Campus",
+          "desc": "Do not miss this event organized by EBS. Register now."
+        },
+        {
+          "title": "Higher Education : Private Universities",
+          "link": "https://ebs.tn/blog/universites-privees-en-tunisie/",
+          "img": "https://ebs.tn/wp-content/uploads/2024/02/Photo-principale-Enseignement-Superieur-dans-les-Universites-Privees-en-Tunisie_1.webp",
+          "day": "29",
+          "month": "FEB",
+          "time": "10:00 - 12:00",
+          "location": "Online",
+          "desc": "Do not miss this event organized by EBS. Register now."
+        }
+      ]
     },
     "testimonials": {
-      "title": "Testimonial",
-      "subtitle": "What Says",
-      "subtitleHighlight": "Our Students"
+      "title": "TESTIMONIAL",
+      "subtitle": "What our",
+      "subtitleHighlight": "students say",
+      "list": [
+        {
+          "img": "/images/all-img/t1-stock.jpg",
+          "name": "Yassine B.",
+          "role": "Master in Finance Student",
+          "bgClass": "bg-[#e1f7e8]",
+          "text": "Thanks to EBS, I landed my first job even before finishing my Master's degree."
+        },
+        {
+          "img": "/images/all-img/t2-stock.jpg",
+          "name": "Sarah M.",
+          "role": "Marketing Student",
+          "bgClass": "bg-[#f7e8d8]",
+          "text": "An unforgettable experience with passionate professors and highly personalized support."
+        },
+        {
+          "img": "/images/all-img/t3-stock.jpg",
+          "name": "Ahmed T.",
+          "role": "EBS Alumni",
+          "bgClass": "bg-[#e8e8e8]",
+          "text": "The partnership with UQAT opened the doors to a beautiful international career."
+        }
+      ]
     },
     "articles": {
-      "title": "News",
-      "subtitle": "Our Latest",
-      "subtitleHighlight": "Blogs"
+      "title": "ARTICLES",
+      "subtitle": "Our latest",
+      "subtitleHighlight": "blogs",
+      "readMore": "READ MORE",
+      "listText": [
+        {
+          "title": "Pursuing Higher Education in Quebec : The Advantages of the EBS-UQAT Partnership",
+          "link": "https://ebs.tn/blog/poursuivre-les-etudes-superieures-au-quebec-canada-les-avantages-du-partenariat-entre-ebs-tunisie-et-uqat-canada/",
+          "date": "April 1, 2024",
+          "category": "Partnership"
+        },
+        {
+          "title": "Master in Financial Engineering at EBS : A Path of Excellence",
+          "link": "https://ebs.tn/blog/les-etudes-superieures-en-finance-en-tunisie-master-en-ingenierie-financiere-a-ebs-un-parcours-dexcellence/",
+          "date": "April 1, 2024",
+          "category": "Education"
+        }
+      ],
+      "listImage": [
+        {
+          "title": "Three Exceptional Masters in Partnership with ADP and ASTEELFLASH : Your Career within Reach!",
+          "link": "https://ebs.tn/blog/espima-business-school-propose-pour-ses-etudiants-trois-masters-exceptionnels-en-partenariat-avec-adp-et-asteelflash-votre-carriere-a-portee-de-main/",
+          "img": "https://ebs.tn/wp-content/uploads/2024/03/PHOTO-COUV-TROIS-MASTERS-AVEC-ADP-ET-ASTEELFLASH-min.webp",
+          "date": "March 25, 2024",
+          "category": "Career"
+        },
+        {
+          "title": "Higher Education in Private Universities in Tunisia",
+          "link": "https://ebs.tn/blog/universites-privees-en-tunisie/",
+          "img": "https://ebs.tn/wp-content/uploads/2024/02/Photo-principale-Enseignement-Superieur-dans-les-Universites-Privees-en-Tunisie_1.webp",
+          "date": "February 29, 2024",
+          "category": "News"
+        }
+      ]
     },
     "footer": {
       "desc": "ESPIMA Business School is a private university of computing and management in Tunisia founded in 2013 approved by the Ministry of Higher Education and Scientific Research.",
