@@ -55,7 +55,7 @@ export default function TopBar() {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2">
             <MapPin className="w-[14px] h-[14px] text-[#42474c]" />
-            <span className="text-[#42474c] text-[13px] font-medium opacity-80">Lac 3, Tunis</span>
+            <span className="text-[#42474c] text-[13px] font-medium opacity-80">Immeuble EBS, 10 rue Socrate - Z.I Kheireddine - Les Berges du Lac III</span>
           </div>
           <div className="flex items-center gap-2">
             <Mail className="w-[14px] h-[14px] text-[#42474c]" />
@@ -63,7 +63,7 @@ export default function TopBar() {
           </div>
           <div className="flex items-center gap-2">
             <Phone className="w-[14px] h-[14px] text-[#42474c]" />
-            <span className="text-[#42474c] text-[13px] font-medium opacity-80">+216 29 58 28 35 / +216 71 18 26 25</span>
+            <span className="text-[#42474c] text-[13px] font-medium opacity-80">+216 71 18 26 25</span>
           </div>
         </div>
 

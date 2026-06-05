@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function HeroSection() {
   const t = useTranslations('HomePage.hero');
@@ -83,6 +84,12 @@ export default function HeroSection() {
                       duration: 40,
                       loop: true,
                     }}
+                    plugins={[
+                      Autoplay({
+                        delay: 3000,
+                        stopOnInteraction: false,
+                      }),
+                    ]}
                     className="w-full relative z-20"
                   >
                     <CarouselContent className="-ml-4">
@@ -132,29 +139,6 @@ export default function HeroSection() {
                 priority
               />
 
-              {/* Floating card — 1500+ Active student (bottom-left of image) */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 1 }}
-                className="absolute top-[60%] lg:top-[50%] -left-[10px] lg:-left-[30px] bg-white w-[160px] lg:w-[200px] p-3 lg:p-5 rounded-[20px] lg:rounded-[30px] shadow-[0px_0_30px_rgba(1,41,112,0.15)] z-20"
-              >
-                <Image src="/images/icon/user2.svg" alt="" width={40} height={40} className="float-left mr-2.5 w-[30px] h-[30px] lg:w-[40px] lg:h-[40px]" />
-                <h2 className="text-penn-navy font-extrabold overflow-hidden text-[18px] lg:text-[24px]">1500+</h2>
-                <span className="text-[12px] lg:text-[14px] text-penn-body font-medium">{t('stats.active')}</span>
-              </motion.div>
-
-              {/* Floating card — 50+ Partners (top-right) */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                className="absolute top-[5%] lg:top-[10%] -right-[10px] lg:-right-[20px] bg-white w-[160px] lg:w-[200px] p-3 lg:p-5 rounded-[20px] lg:rounded-[30px] shadow-[0px_0_30px_rgba(1,41,112,0.15)] z-20"
-              >
-                <Image src="/images/icon/file2.svg" alt="" width={40} height={40} className="float-left mr-2.5 w-[30px] h-[30px] lg:w-[40px] lg:h-[40px]" />
-                <h2 className="text-penn-navy font-extrabold overflow-hidden text-[18px] lg:text-[24px]">50+</h2>
-                <span className="text-[12px] lg:text-[14px] text-penn-body font-medium">{t('stats.online')}</span>
-              </motion.div>
             </motion.div>
           </div>
         </div>

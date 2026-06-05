@@ -8,17 +8,17 @@ const contactInfo = [
   {
     icon: Map,
     title: "Our Location",
-    lines: ["3481 Melrose Place, Beverly Hills", "CA 90210"],
+    lines: ["Immeuble EBS, 10 rue Socrate", "Z.I Kheireddine - Les Berges du Lac III"],
   },
   {
     icon: Smartphone,
     title: "Telephone",
-    lines: ["(+1) 517 397 7100", "(+1) 411 315 8138"],
+    lines: ["+216 29 58 28 35", "+216 71 18 26 25"],
   },
   {
     icon: Mail,
     title: "Send email",
-    lines: ["Info@example.com", "admin@example.com"],
+    lines: ["contact@ebs.tn"],
   },
 ];
 

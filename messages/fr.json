@@ -9,7 +9,8 @@
         "blog": "Blog",
         "contact": "Contact"
       },
-      "postuler": "Postuler"
+      "postuler": "Postuler",
+      "call": "Appeler"
     },
     "topbar": {
       "follow": "Suivez-nous:"
@@ -349,7 +350,7 @@
       },
       "contact": {
         "title": "Pour toute information Contactez-nous",
-        "address": "10 Rue Socrate Z.I Kheireddine Le Kram (2015) Tunis - Tunisie",
+        "address": "Immeuble EBS, 10 rue Socrate - Z.I Kheireddine - Les Berges du Lac III",
         "hours": "Horaires d'ouverture"
       }
     },

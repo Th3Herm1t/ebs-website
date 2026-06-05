@@ -17,11 +17,13 @@ export default function LanguageSwitcher() {
   return (
     <button 
       onClick={toggleLocale}
-      className="flex items-center gap-1.5 text-[#232434] font-bold text-[14px] hover:text-[#2a9d8f] transition-colors uppercase"
+      className="fixed bottom-6 right-6 z-[9999] flex items-center justify-center text-white font-extrabold text-[12px] bg-[#2a9d8f] hover:bg-[#232434] transition-all duration-300 uppercase w-14 h-14 rounded-full shadow-[0_4px_20px_rgba(42,157,143,0.3)] hover:shadow-[0_4px_20px_rgba(35,36,52,0.4)] hover:scale-110 active:scale-95 border border-white/20"
       title={locale === 'fr' ? "Switch to English" : "Passer en Français"}
     >
-      <Globe className="w-4 h-4 mb-[1px]" />
-      {locale === 'fr' ? 'EN' : 'FR'}
+      <div className="flex flex-col items-center justify-center leading-none gap-0.5">
+        <Globe className="w-4 h-4 animate-pulse" />
+        <span>{locale === 'fr' ? 'EN' : 'FR'}</span>
+      </div>
     </button>
   );
 }

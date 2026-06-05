@@ -1,10 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Heart, ShoppingCart, Menu, X, ChevronDown } from "lucide-react";
-import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+
 import { useTranslations } from 'next-intl';
 
 const navItems = [
@@ -29,13 +28,13 @@ export default function Header() {
       <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-12 flex items-center justify-between h-[90px]">
         {/* Logo */}
         <div className="flex-shrink-0 flex items-center h-full py-3">
-          <Link href="/" className="site-logo h-full flex items-center">
-            <Image
-              src="/images/all-img/square.png"
+          <Link href="/" className="shrink-0 flex items-center">
+            <img
+              src="/images/all-img/teal-horizontal.svg"
               alt="EBS"
-              width={65}
-              height={65}
-              className="object-contain max-h-[65px] w-auto"
+              width={210}
+              height={61}
+              className="object-contain h-[45px] lg:h-[55px] w-auto"
             />
           </Link>
         </div>
@@ -58,12 +57,16 @@ export default function Header() {
 
         {/* Right side */}
         <div className="flex items-center justify-end shrink-0">
-          {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-6">
-            <LanguageSwitcher />
+            <a 
+              href="tel:+21629582835" 
+              className="text-[#2a9d8f] hover:text-[#2a9d8f]/80 transition-colors font-bold text-[16px] xl:text-[18px] whitespace-nowrap"
+            >
+              <span className="font-light mr-1.5">{t('call')}</span> +216 29 58 28 35
+            </a>
             <Link
               href="/postuler"
-              className="text-[#42474c] border border-gray-200 py-2.5 px-7 font-bold rounded-full text-[14px] inline-flex items-center justify-center transition-all hover:text-white hover:border-[#2a9d8f] hover:bg-[#2a9d8f] whitespace-nowrap"
+              className="bg-[#2a9d8f] text-white border border-[#2a9d8f] py-2.5 px-10 font-bold rounded-full text-[14px] inline-flex items-center justify-center transition-all hover:bg-white hover:text-[#2a9d8f] hover:border-[#2a9d8f] whitespace-nowrap min-w-[160px]"
             >
               {t('postuler')}
             </Link>
@@ -94,10 +97,7 @@ export default function Header() {
                 </Link>
               </li>
             ))}
-            <li className="pt-4 flex items-center justify-between">
-              <span className="text-penn-navy font-medium text-sm">Changer de langue</span>
-              <LanguageSwitcher />
-            </li>
+
           </ul>
         </div>
       )}

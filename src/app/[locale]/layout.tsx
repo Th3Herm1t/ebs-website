@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import "../globals.css";
 
 const mulish = Mulish({
@@ -92,6 +93,7 @@ export default async function RootLayout({
       <body className="min-h-full flex flex-col font-[family-name:var(--font-mulish)]">
         <NextIntlClientProvider messages={messages}>
           {children}
+          <LanguageSwitcher />
         </NextIntlClientProvider>
       </body>
     </html>
