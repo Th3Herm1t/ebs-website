@@ -3,6 +3,7 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useTranslations } from 'next-intl';
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -45,9 +46,11 @@ const socials = [
 ];
 
 export default function TopBar() {
+  const t = useTranslations('HomePage.topbar');
+
   return (
-    <div className="bg-[#fbfbfb] py-3 max-sm:hidden border-b border-gray-100">
-      <div className="max-w-[1140px] mx-auto px-4 flex flex-wrap items-center justify-between">
+    <div className="bg-[#fbfbfb] py-1 max-sm:hidden border-b border-gray-100">
+      <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-12 flex flex-wrap items-center justify-between">
         {/* Left: Contact Info (Adapted from Optima right box) */}
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2">
@@ -66,7 +69,7 @@ export default function TopBar() {
 
         {/* Right: Social Media (Shadcn) */}
         <div className="flex items-center gap-4">
-          <span className="text-[#42474c] text-[13px] font-medium opacity-80">Follow Us:</span>
+          <span className="text-[#42474c] text-[13px] font-medium opacity-80">{t('follow')}</span>
           <ul className="flex items-center gap-1">
             {socials.map(({ icon: Icon, hoverBg }, i) => (
               <li key={i}>

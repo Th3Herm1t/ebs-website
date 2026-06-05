@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import { Sparkles, ArrowRight } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -11,50 +12,40 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
-
-const slides = [
-  {
-    id: 1,
-    image: "/images/all-img/about1.png",
-    subtitle: "★ NOUVEAU",
-    title: (
-      <>
-        L'<strong>IA</strong> comme <strong>compétence obligatoire</strong> dans tous nos parcours
-      </>
-    ),
-    text: "Pour la rentrée 2025/2026, l'intelligence artificielle sera intégrée comme compétence essentielle dans l’ensemble de nos parcours, indépendamment de la spécialité choisie. Les étudiants développent une compréhension des outils, des usages et des enjeux de l’IA afin d’en faire un levier d’analyse, d’innovation et de performance. Cette approche permet de préparer des diplômés capables d’évoluer dans un environnement où l’intelligence artificielle transforme progressivement les métiers et les organisations.",
-    link: "#"
-  },
-  {
-    id: 2,
-    image: "/images/all-img/about2.png",
-    subtitle: "★ EXCLUSIF",
-    title: (
-      <>
-        Intégration de <strong>+150 Certifications Internationales</strong> dans nos différents parcours
-      </>
-    ),
-    text: "EBS intègre plus de 150 certifications internationales reconnues dans ses différents programmes de formation afin de renforcer les compétences académiques par des validations professionnelles concrètes. Ces certifications couvrent des domaines variés tels que le management, la finance, le marketing, l’intelligence artificielle, la gestion de projets, la cybersécurité et les technologies numériques. Cette approche permet aux étudiants d’enrichir leur profil, de valoriser leurs acquis et de se préparer aux standards et exigences du marché international.",
-    link: "#"
-  },
-  {
-    id: 3,
-    image: "/images/all-img/about4.png",
-    subtitle: "★ ACTUALITÉ",
-    title: (
-      <>
-        Inscriptions 2025-2026 ouvertes — <strong>Réductions Early Bird</strong> jusqu'au 30 Juin
-      </>
-    ),
-    text: "Les candidatures pour l’année universitaire 2025-2026 sont désormais ouvertes pour l’ensemble de nos licences, masters et formations spécialisées. Profitez de nos réductions Early Bird, allant jusqu’à -25% sur vos frais de scolarité, en finalisant votre inscription avant le 30 juin, et préparez dès aujourd’hui votre parcours académique dans un environnement tourné vers l’innovation, les technologies et les compétences de demain. Nos équipes pédagogiques et administratives sont à votre disposition pour vous accompagner dans le choix de la formation la plus adaptée à votre projet académique et professionnel.",
-    link: "#"
-  }
-];
+import { useTranslations } from 'next-intl';
 
 export default function InfoSliderSection() {
   const plugin = useRef(
     Autoplay({ delay: 6000, stopOnInteraction: true })
   );
+  const t = useTranslations('HomePage.infoslider');
+
+  const slides = [
+    {
+      id: 1,
+      image: "/images/all-img/about1-stock.jpg",
+      subtitle: t('s1.badge'),
+      title: t('s1.title'),
+      text: t('s1.desc'),
+      link: "#"
+    },
+    {
+      id: 2,
+      image: "/images/all-img/about2-stock.jpg",
+      subtitle: t('s2.badge'),
+      title: t('s2.title'),
+      text: t('s2.desc'),
+      link: "#"
+    },
+    {
+      id: 3,
+      image: "/images/all-img/about4-stock.png",
+      subtitle: t('s3.badge'),
+      title: t('s3.title'),
+      text: t('s3.desc'),
+      link: "#"
+    }
+  ];
 
   return (
     <section className="py-16 lg:py-[100px] bg-white overflow-hidden">
@@ -64,6 +55,7 @@ export default function InfoSliderSection() {
           opts={{
             loop: true,
             align: "start",
+            duration: 40,
           }}
           className="w-full"
         >
@@ -85,24 +77,27 @@ export default function InfoSliderSection() {
 
                   {/* Right: Text Content */}
                   <div className="w-full lg:w-[45%] flex flex-col items-start pt-6 lg:pt-0 pr-0 lg:pr-16 xl:pr-20">
-                    <span className="text-[#888888] font-bold text-[12px] uppercase tracking-[0.15em] mb-3 lg:mb-4">
-                      {slide.subtitle}
-                    </span>
-                    <h2 className="text-[#232434] text-[26px] md:text-[32px] lg:text-[40px] font-light leading-[1.2] mb-5 lg:mb-6">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-penn-green/10 text-penn-green font-bold text-[12px] uppercase tracking-wider mb-5 lg:mb-6">
+                      <Sparkles className="w-4 h-4" />
+                      {slide.subtitle.replace('★ ', '')}
+                    </div>
+                    
+                    <h2 className="text-penn-navy text-[28px] md:text-[36px] lg:text-[44px] font-extrabold leading-[1.15] mb-5 lg:mb-6 tracking-tight">
                       {slide.title}
                     </h2>
                     
-                    {/* The small horizontal separator from the mockup */}
-                    <div className="w-[60px] h-[2px] bg-gray-200 mb-8"></div>
+                    <div className="w-[80px] h-[3px] bg-gradient-to-r from-penn-green to-transparent mb-6 lg:mb-8"></div>
                     
-                    <p className="text-[#888888] text-[14px] lg:text-[15px] leading-[1.7] lg:leading-[1.8] mb-8 lg:mb-10 opacity-90">
+                    <p className="text-penn-body text-[15px] lg:text-[16px] leading-[1.8] mb-8 lg:mb-10">
                       {slide.text}
                     </p>
+                    
                     <a
                       href={slide.link}
-                      className="inline-block px-7 py-3.5 lg:px-9 lg:py-4 bg-[#2a9d8f] text-white font-bold text-[13px] uppercase tracking-wider transition-all duration-300 hover:bg-[#232434] shadow-md rounded-sm"
+                      className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-penn-green text-white font-bold text-[14px] uppercase tracking-wider transition-all duration-300 hover:bg-penn-navy hover:shadow-lg hover:-translate-y-1 rounded-sm"
                     >
                       En savoir plus
+                      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </a>
                   </div>
                 </div>
@@ -112,8 +107,8 @@ export default function InfoSliderSection() {
           
           {/* Navigation Controls */}
           <div className="hidden lg:block">
-            <CarouselPrevious className="-left-4 xl:-left-8 border-gray-300 text-gray-500 hover:text-[#2a9d8f] hover:border-[#2a9d8f] w-12 h-12 bg-white" />
-            <CarouselNext className="-right-4 xl:-right-8 border-gray-300 text-gray-500 hover:text-[#2a9d8f] hover:border-[#2a9d8f] w-12 h-12 bg-white" />
+            <CarouselPrevious className="-left-12 w-12 h-12 border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" />
+            <CarouselNext className="-right-12 w-12 h-12 border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" />
           </div>
         </Carousel>
       </div>

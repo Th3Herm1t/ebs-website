@@ -1,25 +1,15 @@
-"use client";
-
 import Image from "next/image";
-import { motion, useInView } from "motion/react";
-import { useRef } from "react";
 import { Check } from "lucide-react";
-
-const checkpoints = [
-  "Double diplôme avec nos partenaires internationaux",
-  "Passerelle vers la France, le Canada & l'Italie",
-  "Accompagnement dossier immigration & visa",
-];
+import { useTranslations } from 'next-intl';
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function CoursePromoSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslations('HomePage.coursepromo');
 
   return (
     <section 
       className="section-padding bg-cover bg-center bg-no-repeat" 
       style={{ backgroundImage: "url('/images/banner/section-bg-2.png')" }}
-      ref={ref}
     >
       <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 xl:px-24">
         
@@ -27,39 +17,39 @@ export default function CoursePromoSection() {
         <div className="flex flex-wrap items-center mb-16">
           {/* Text content — col-lg-6 */}
           <div className="w-full lg:w-6/12 lg:pr-8">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8 }}
-            >
-              <h4 className="text-penn-green font-bold text-lg mb-2.5">EBS INTERNATIONAL</h4>
-              <h2 className="text-[44px] leading-[56px] max-md:text-[32px] max-md:leading-[42px] text-penn-navy font-bold mb-[25px]">
-                Le Parcours International
-                <br />
-                Votre Passerelle vers un Avenir <br />
-                Académique Sans Frontières
+            <ScrollReveal initialX={-40} duration={0.8}>
+              {/* Premium Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-penn-green/10 text-penn-green font-bold text-[13px] tracking-widest uppercase mb-6 border border-penn-green/20 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-penn-green animate-pulse"></span>
+                {t('title')}
+              </div>
+
+              {/* Dynamic Headline */}
+              <h2 className="text-[48px] md:text-[60px] font-extrabold text-penn-navy leading-[1.1] mb-8 tracking-tight">
+                {t('subtitle')} <br /> 
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f4a261] to-[#e9c46a]">
+                  {t('subtitleHighlight')}
+                </span>
               </h2>
-              <p className="text-penn-body mb-0">
-                Forte d'un réseau solide de partenaires académiques internationaux, EBS offre à ses étudiants la possibilité d'entamer leurs études en Tunisie et les terminer au sein d'un établissement international partenaire.
+
+              {/* Stylized Paragraph */}
+              <p className="text-lg md:text-[20px] text-penn-body/80 leading-[1.8] pl-6 border-l-4 border-[#f4a261] italic font-medium">
+                {t('desc')}
               </p>
-            </motion.div>
+            </ScrollReveal>
           </div>
 
           {/* Image — col-lg-6 */}
           <div className="w-full lg:w-6/12 max-md:mt-10">
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8 }}
-            >
+            <ScrollReveal initialX={40} duration={0.8}>
               <Image
-                src="/images/all-img/promo.png"
-                alt="Parcours International EBS"
-                width={570}
-                height={500}
-                className="w-full h-auto rounded-xl shadow-sm"
+                src="/images/all-img/promo-stock.png"
+                alt="EBS Students"
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover"
               />
-            </motion.div>
+            </ScrollReveal>
           </div>
         </div>
 
@@ -67,20 +57,9 @@ export default function CoursePromoSection() {
         <div className="flex flex-wrap">
           {/* Pathway 1 */}
           <div className="w-full lg:w-6/12 lg:pr-8 max-md:mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
+            <ScrollReveal initialY={30} duration={0.8} delay={0.2}>
               <ul className="mb-[30px]">
-                {[
-                  "Deux ans de Licence à EBS",
-                  "Validation des acquis",
-                  "Certification de langue",
-                  "Préparation de dossier d'immigration",
-                  "Bachelor Grande École en France",
-                  "Bachelor Link University en Italie",
-                ].map((item, i) => (
+                {t.raw('path1').map((item: string, i: number) => (
                   <li key={i} className="flex items-center gap-4 mb-3 text-penn-navy font-semibold text-[17px]">
                     <span className="flex items-center justify-center w-[25px] h-[25px] bg-penn-green text-white rounded-[2px] flex-shrink-0">
                       <Check className="w-4 h-4" strokeWidth={3} />
@@ -91,32 +70,21 @@ export default function CoursePromoSection() {
               </ul>
               <div className="mt-4">
                 <a href="/programmes" className="cta">
-                  <span>En savoir plus</span>
+                  <span>{t('btn')}</span>
                   <svg width="13px" height="10px" viewBox="0 0 13 10">
                     <path d="M1,5 L11,5" />
                     <polyline points="8 1 12 5 8 9" />
                   </svg>
                 </a>
               </div>
-            </motion.div>
+            </ScrollReveal>
           </div>
 
           {/* Pathway 2 */}
           <div className="w-full lg:w-6/12 lg:pl-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
+            <ScrollReveal initialY={30} duration={0.8} delay={0.4}>
               <ul className="mb-[30px]">
-                {[
-                  "Trois ans de Licence à EBS",
-                  "Validation des acquis",
-                  "Certification de langue",
-                  "Préparation de dossier d'immigration",
-                  "Maitrise en Management au Canada",
-                  "Master Grande École en France",
-                ].map((item, i) => (
+                {t.raw('path2').map((item: string, i: number) => (
                   <li key={i} className="flex items-center gap-4 mb-3 text-penn-navy font-semibold text-[17px]">
                     <span className="flex items-center justify-center w-[25px] h-[25px] bg-penn-green text-white rounded-[2px] flex-shrink-0">
                       <Check className="w-4 h-4" strokeWidth={3} />
@@ -127,14 +95,14 @@ export default function CoursePromoSection() {
               </ul>
               <div className="mt-4">
                 <a href="/programmes" className="cta">
-                  <span>En savoir plus</span>
+                  <span>{t('btn')}</span>
                   <svg width="13px" height="10px" viewBox="0 0 13 10">
                     <path d="M1,5 L11,5" />
                     <polyline points="8 1 12 5 8 9" />
                   </svg>
                 </a>
               </div>
-            </motion.div>
+            </ScrollReveal>
           </div>
         </div>
 

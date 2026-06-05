@@ -5,6 +5,10 @@ import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Clock, LayoutGrid } from "lucide-react";
+import { useTranslations } from 'next-intl';
+import { Card, CardContent } from "@/components/ui/card";
+import SectionHeading from "@/components/ui/SectionHeading";
+import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
 
 const imageEvents = [
   { img: "/images/banner/slide1.jpg", day: "20", month: "Oct", title: "Electrical Engineering of Batparder new event" },
@@ -19,14 +23,16 @@ const listEvents = [
 export default function EventsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslations('HomePage.events');
 
   return (
-    <section className="section-padding" ref={ref}>
-      <div className="max-w-[1140px] mx-auto px-4">
-        <div className="section-title">
-          <h2>Upcoming Events</h2>
-          <p>Join With Us <span><u>Our Events</u></span></p>
-        </div>
+    <section className="relative overflow-hidden section-padding" ref={ref}>
+      <HeroBackgroundVariant2 />
+      <div className="relative z-10 max-w-[1140px] mx-auto px-4">
+        <SectionHeading 
+          title={t('title')} 
+          subtitle={<>{t('subtitle')} <span className="text-penn-green underline decoration-penn-green">{t('subtitleHighlight')}</span></>} 
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-[30px]">
           {/* Two image event cards */}
@@ -36,27 +42,28 @@ export default function EventsSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="bg-white border border-penn-border rounded-[6px] overflow-hidden"
             >
-              <div className="relative">
-                <Image src={event.img} alt={event.title} width={370} height={270} className="w-full h-[270px] object-cover" />
-                <div className="absolute top-[15px] left-[15px] flex">
-                  <span className="bg-penn-navy text-white text-lg font-bold px-3 py-1 rounded-l">{event.day}</span>
-                  <span className="bg-penn-green text-white text-lg font-bold px-3 py-1 rounded-r">{event.month}</span>
+              <Card className="border-penn-border rounded-[6px] overflow-hidden h-full">
+                <div className="relative">
+                  <Image src={event.img} alt={event.title} width={370} height={270} className="w-full h-[270px] object-cover" />
+                  <div className="absolute top-[15px] left-[15px] flex">
+                    <span className="bg-penn-navy text-white text-lg font-bold px-3 py-1 rounded-l">{event.day}</span>
+                    <span className="bg-penn-green text-white text-lg font-bold px-3 py-1 rounded-r">{event.month}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="p-[25px]">
-                <h3>
-                  <Link href="/event" className="text-penn-navy font-extrabold text-lg leading-[28px] transition-colors hover:text-penn-green">
-                    {event.title}
-                  </Link>
-                </h3>
-                <div className="flex gap-4 mt-2.5 text-penn-green text-sm">
-                  <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />10.00AM - 12.00PM</span>
-                  <span className="flex items-center gap-1"><LayoutGrid className="w-3.5 h-3.5" /><strong>At Penn School</strong></span>
-                </div>
-                <p className="mt-2.5 text-penn-body text-sm">Lorem ipsum dolor sit amet magna consectetur adipisicing elit.</p>
-              </div>
+                <CardContent className="p-[25px]">
+                  <h3>
+                    <Link href="/event" className="text-penn-navy font-extrabold text-lg leading-[28px] transition-colors hover:text-penn-green">
+                      {event.title}
+                    </Link>
+                  </h3>
+                  <div className="flex gap-4 mt-2.5 text-penn-green text-sm">
+                    <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />10.00AM - 12.00PM</span>
+                    <span className="flex items-center gap-1"><LayoutGrid className="w-3.5 h-3.5" /><strong>At Penn School</strong></span>
+                  </div>
+                  <p className="mt-2.5 text-penn-body text-sm">Lorem ipsum dolor sit amet magna consectetur adipisicing elit.</p>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
 
@@ -68,22 +75,25 @@ export default function EventsSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 + i * 0.15 }}
-                className="bg-white border border-penn-border rounded-[6px] p-[25px]"
               >
-                <div className="flex mb-3">
-                  <span className="bg-penn-navy text-white text-lg font-bold px-3 py-1 rounded-l">{event.day}</span>
-                  <span className="bg-penn-green text-white text-lg font-bold px-3 py-1 rounded-r">{event.month}</span>
-                </div>
-                <h3>
-                  <Link href="/event" className="text-penn-navy font-extrabold text-lg transition-colors hover:text-penn-green">
-                    {event.title}
-                  </Link>
-                </h3>
-                <div className="flex gap-4 mt-2.5 text-penn-green text-sm">
-                  <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />10.00AM - 12.00PM</span>
-                  <span className="flex items-center gap-1"><LayoutGrid className="w-3.5 h-3.5" /><strong>At Penn School</strong></span>
-                </div>
-                <p className="mt-2.5 text-penn-body text-sm">Lorem ipsum dolor sit amet magna consectetur adipisicing elit.</p>
+                <Card className="border-penn-border rounded-[6px]">
+                  <CardContent className="p-[25px]">
+                    <div className="flex mb-3">
+                      <span className="bg-penn-navy text-white text-lg font-bold px-3 py-1 rounded-l">{event.day}</span>
+                      <span className="bg-penn-green text-white text-lg font-bold px-3 py-1 rounded-r">{event.month}</span>
+                    </div>
+                    <h3>
+                      <Link href="/event" className="text-penn-navy font-extrabold text-lg transition-colors hover:text-penn-green">
+                        {event.title}
+                      </Link>
+                    </h3>
+                    <div className="flex gap-4 mt-2.5 text-penn-green text-sm">
+                      <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />10.00AM - 12.00PM</span>
+                      <span className="flex items-center gap-1"><LayoutGrid className="w-3.5 h-3.5" /><strong>At Penn School</strong></span>
+                    </div>
+                    <p className="mt-2.5 text-penn-body text-sm">Lorem ipsum dolor sit amet magna consectetur adipisicing elit.</p>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>

@@ -1,0 +1,303 @@
+{
+  "HomePage": {
+    "header": {
+      "nav": {
+        "universite": "L'université",
+        "licences": "Licences",
+        "masters": "Masters",
+        "international": "International",
+        "blog": "Blog",
+        "contact": "Contact"
+      },
+      "postuler": "Postuler"
+    },
+    "topbar": {
+      "follow": "Suivez-nous:"
+    },
+    "hero": {
+      "title1": "La",
+      "titleHighlight": "Business School",
+      "title2": "Tournée vers Le Futur",
+      "desc1": "Formez-vous pour le monde de demain",
+      "desc2": "Business · Finance · Technologie · Intelligence Artificielle · Cybersécurité · Licences et Masters reconnus avec +150 certifications internationales gratuites disponibles",
+      "sliderTitle": "Trouver le parcours qui vous convient",
+      "categories": {
+        "Licence": "Licence",
+        "Master": "Master",
+        "Parcours International": "Parcours International",
+        "Management": "Management",
+        "Marketing": "Marketing",
+        "Finance": "Finance",
+        "Informatique": "Informatique",
+        "Intelligence Artificielle": "Intelligence Artificielle",
+        "Cybersécurité": "Cybersécurité"
+      },
+      "stats": {
+        "active": "Active student",
+        "online": "Online Course"
+      }
+    },
+    "toppromo": {
+      "p1": {
+        "title": "Besoin de plus d'informations ?",
+        "desc": "Vous pouvez parcourir et télécharger les brochures des parcours qui suscitent votre intérêt, vous y trouverez les informations dont vous avez besoin.",
+        "btn": "PARCOURIR LES BROCHURES"
+      },
+      "p2": {
+        "title": "Discuter avec nos conseillers ?",
+        "desc": "Nos conseillers pédagogiques qualifiés, toujours à l'écoute de vos demandes et prêts à répondre à vos questions.",
+        "btn": "PARLER A UN CONSEILLER"
+      },
+      "p3": {
+        "title": "Prêt à entamer votre parcours ?",
+        "desc": "Vous avez pris connaissance des programmes offerts par EBS et sélectionné le cursus qui convient à votre projet d'études ?",
+        "btn": "COMMENCER MA CANDIDATURE"
+      }
+    },
+    "pillars": {
+      "p1": {
+        "title": "Mobilité Internationale",
+        "desc1": "La mobilité internationale offre aux étudiants l'opportunité d'élargir leurs horizons académiques et culturels à travers des expériences d'études ou de collaboration à l'étranger.",
+        "desc2": "Forte d'un réseau solide de partenaires académiques internationaux, les étudiants d'EBS ont la possibilité d'entamer leurs études en Tunisie et les terminer au sein d'un établissement international partenaire.",
+        "btn": "EN SAVOIR PLUS"
+      },
+      "p2": {
+        "title": "Technologies & Certifications",
+        "desc1": "L'intégration des technologies émergentes constitue un élément central de nos programmes de formation. L'IA est à présent une compétence transversale dans tous nos cursus.",
+        "desc2": "Les parcours académiques sont enrichis par des certifications reconnues, permettant de valider des compétences pratiques dans des domaines à forte valeur ajoutée et de renforcer l'employabilité et la capacité d'adaptation des diplômés.",
+        "btn": "EXPLORER LES CERTIFICATIONS"
+      },
+      "p3": {
+        "title": "Partenaires Économiques",
+        "desc1": "Nos partenariats avec les acteurs économiques renforcent le lien entre formation académique et réalités du monde professionnel. Ces collaborations favorisent les stages, les projets appliqués, les interventions d'experts et les opportunités d'insertion.",
+        "desc2": "En travaillant aux côtés d'entreprises et d'organisations de référence, EBS développe des formations en phase avec les compétences et les enjeux du marché.",
+        "btn": "DÉCOUVRIR NOS PARTENAIRES"
+      }
+    },
+    "infoslider": {
+      "s1": {
+        "badge": "★ NOUVEAU",
+        "title": "L'IA comme compétence obligatoire dans tous nos parcours",
+        "desc": "Pour la rentrée 2025/2026, l'intelligence artificielle sera intégrée comme compétence essentielle dans l’ensemble de nos parcours, indépendamment de la spécialité choisie. Les étudiants développent une compréhension des outils, des usages et des enjeux de l’IA afin d’en faire un levier d’analyse, d’innovation et de performance. Cette approche permet de préparer des diplômés capables d’évoluer dans un environnement où l’intelligence artificielle transforme progressivement les métiers et les organisations.",
+        "btn": "En savoir plus"
+      },
+      "s2": {
+        "badge": "★ EXCLUSIF",
+        "title": "Intégration de +150 Certifications Internationales dans nos différents parcours",
+        "desc": "EBS intègre plus de 150 certifications internationales reconnues dans ses différents programmes de formation afin de renforcer les compétences académiques par des validations professionnelles concrètes. Ces certifications couvrent des domaines variés tels que le management, la finance, le marketing, l’intelligence artificielle, la gestion de projets, la cybersécurité et les technologies numériques. Cette approche permet aux étudiants d’enrichir leur profil, de valoriser leurs acquis et de se préparer aux standards et exigences du marché international.",
+        "btn": "En savoir plus"
+      },
+      "s3": {
+        "badge": "★ ACTUALITÉ",
+        "title": "Inscriptions 2025-2026 ouvertes — Réductions Early Bird jusqu'au 30 Juin",
+        "desc": "Les candidatures pour l’année universitaire 2025-2026 sont désormais ouvertes pour l’ensemble de nos licences, masters et formations spécialisées. Profitez de nos réductions Early Bird, allant jusqu’à -25% sur vos frais de scolarité, en finalisant votre inscription avant le 30 juin, et préparez dès aujourd’hui votre parcours académique dans un environnement tourné vers l’innovation, les technologies et les compétences de demain. Nos équipes pédagogiques et administratives sont à votre disposition pour vous accompagner dans le choix de la formation la plus adaptée à votre projet académique et professionnel.",
+        "btn": "En savoir plus"
+      }
+    },
+    "about": {
+      "title": "Rejoignez la Business School",
+      "titleHighlight": "tournée vers le futur",
+      "desc": "Espima Business School évolue et fait évoluer ses programmes avec un objectif ultime : permettre à chaque étudiant de construire un profil plus compétitif, plus polyvalent et mieux préparé aux exigences du marché de l'emploi.",
+      "f1Title": "L'IA comme outil différenciateur",
+      "f1Desc": "Chez EBS, chaque étudiant - quelle que soit sa filière - maîtrise les outils d'IA les plus demandés par les recruteurs. Des licences de management aux masters d'ingénierie financière. Ce n'est pas une option : c'est notre engagement pour votre employabilité.",
+      "f2Title": "Des compétences certifiées",
+      "f2Desc": "En plus de votre diplôme reconnu par l'État tunisien, vous repartez avec des certifications délivrées par les organisations les plus reconnues au monde. Gratuites. Incluses dans votre formation. Valorisables partout dans le monde.",
+      "btn": "Parcourir les programmes"
+    },
+    "counters": {
+      "c1": "Certifications gratuites incluses",
+      "c2": "Programmes Licences & Masters",
+      "c3": "Partenaires universitaires",
+      "c4": "Taux de réussite",
+      "title": "EBS EN CHIFFRES",
+      "subtitle": "Les Chiffres Clés",
+      "subtitleHighlight": "de l'EBS"
+    },
+    "partners": {
+      "eco": "Nos Partenaires Économiques",
+      "acad": "Nos Partenaires Académiques Internationaux"
+    },
+    "coursepromo": {
+      "title": "EBS INTERNATIONAL",
+      "subtitle": "Le Parcours",
+      "subtitleHighlight": "International",
+      "desc": "Forte d'un réseau solide de partenaires académiques internationaux, EBS offre à ses étudiants la possibilité d'entamer leurs études en Tunisie et les terminer au sein d'un établissement international partenaire.",
+      "path1": [
+        "Deux ans de Licence à EBS",
+        "Validation des acquis",
+        "Certification de langue",
+        "Préparation de dossier d'immigration",
+        "Bachelor Grande École en France",
+        "Bachelor Link University en Italie"
+      ],
+      "path2": [
+        "Trois ans de Licence à EBS",
+        "Validation des acquis",
+        "Certification de langue",
+        "Préparation de dossier d'immigration",
+        "Maitrise en Management au Canada",
+        "Master Grande École en France"
+      ],
+      "btn": "En savoir plus"
+    },
+    "programs": {
+      "title": "EBS PROGRAMS",
+      "licencesSubtitle": "Parcourir nos Licences",
+      "mastersSubtitle": "Parcourir nos Masters",
+      "detail1": "6 Semestres - Présentiel",
+      "detail2": "4 Semestres - Présentiel",
+      "licences": [
+        {
+          "cat": "Management",
+          "title": "Licence Nationale en Sciences de Gestion - Option Marketing",
+          "detail1": "6 Semestres - Présentiel",
+          "detail2": "IA Intégrée - 35 Certifications"
+        },
+        {
+          "cat": "Marketing",
+          "title": "Licence Nationale en Sciences de Gestion - Option Marketing",
+          "detail1": "6 Semestres - Présentiel",
+          "detail2": "IA Intégrée - 57 Certifications"
+        },
+        {
+          "cat": "Finance",
+          "title": "Licence Nationale en Sciences de Gestion - Option Finance",
+          "detail1": "6 Semestres - Présentiel",
+          "detail2": "IA Intégrée - 19 Certifications"
+        },
+        {
+          "cat": "Informatique",
+          "title": "Licence Nationale en Génie Logiciel - Parcours Standard",
+          "detail1": "6 Semestres - Présentiel",
+          "detail2": "IA Intégrée - 35 Certifications"
+        },
+        {
+          "cat": "Informatique",
+          "title": "Licence Nationale en Génie Logiciel - Option IA",
+          "detail1": "6 Semestres - Présentiel",
+          "detail2": "75 Certifications Disponibles"
+        },
+        {
+          "cat": "Informatique",
+          "title": "Licence Nationale en Génie Logiciel - Option Cybersécurité",
+          "detail1": "6 Semestres - Présentiel",
+          "detail2": "52 Certifications Disponibles"
+        }
+      ],
+      "masters": [
+        {
+          "cat": "Finance Avancée",
+          "title": "Master en Ingénierie Financière",
+          "detail1": "4 Semestres - Présentiel",
+          "detail2": "IA Intégrée - 15 Certifications"
+        },
+        {
+          "cat": "Marketing 5.0",
+          "title": "Master en CRM - Marketing & Transformation Digitale",
+          "detail1": "4 Semestres - Présentiel",
+          "detail2": "IA Intégrée - 49 Certifications"
+        },
+        {
+          "cat": "Project Management",
+          "title": "Master en Management des Projets Innovants & Startups",
+          "detail1": "4 Semestres - Présentiel",
+          "detail2": "IA Intégrée - 22 Certifications"
+        }
+      ]
+    },
+    "topics": {
+      "title": "EBS CERTIFICATIONS",
+      "subtitle": "Principales Certifications Disponibles",
+      "subtitleHighlight": "pour nos Étudiants",
+      "count": "71 Certifications"
+    },
+    "newsletter": {
+      "title": "Abonnez-vous à notre liste Emailing",
+      "subtitle": "Recevez nos dernières offres et actualités",
+      "desc": "En vous inscrivant dans cette liste, vous recevrez nos dernières offres et actualités",
+      "placeholder": "Entrez votre adresse email",
+      "btn": "S'abonner"
+    },
+    "events": {
+      "title": "EBS EVENTS",
+      "subtitle": "Actualités et",
+      "subtitleHighlight": "Évènements EBS"
+    },
+    "testimonials": {
+      "title": "TESTIMONIAL",
+      "subtitle": "Ce que nos",
+      "subtitleHighlight": "étudiants disent"
+    },
+    "articles": {
+      "title": "ARTICLES",
+      "subtitle": "Nos derniers",
+      "subtitleHighlight": "blogs"
+    },
+    "footer": {
+      "desc": "ESPIMA Business School est une université privée d’informatique et de management en Tunisie fondée en 2013 agréée par le ministère de l’Enseignement Supérieur et de Recherche Scientifique-Agrément N°2013/02.",
+      "links": {
+        "explorer": "Explorer",
+        "international": "ÉTUDIANTS INTERNATIONAUX",
+        "entreprises": "Entreprises Partenaires",
+        "stages": "STAGES EN ENTREPRISES",
+        "blog": "Blog",
+        "contact": "Contactez-nous",
+        "campus": "Campus",
+        "evenements": "évènements",
+        "formations": "Formations",
+        "licences": "Licences",
+        "masters": "Masters",
+        "parcours": "PARCOURS INTERNATIONAL"
+      },
+      "contact": {
+        "title": "Pour toute information Contactez-nous",
+        "address": "10 Rue Socrate Z.I Kheireddine Le Kram (2015) Tunis - Tunisie",
+        "hours": "Horaires d'ouverture"
+      }
+    },
+    "career": {
+      "tag": "EBS CAREER",
+      "title1": "Des opportunités de carrière",
+      "title2": "Avec nos partenaires entreprises",
+      "desc1": "Grâce à son réseau de partenaires entreprises, EBS facilite l'accès de ses étudiants à des stages, des projets en entreprise et des opportunités de pré-embauche dans différents secteurs d'activité.",
+      "desc2": "Dans de nombreux cas, les étudiants ayant effectué leur stage au sein d'une entreprise partenaire bénéficient d'un avantage significatif lors des recrutements, l'entreprise ayant déjà pu évaluer leurs compétences, leur potentiel et leur capacité d'intégration.",
+      "steps": [
+        "Sélection des meilleures offres de stages",
+        "Placement au sein d'une entreprise partenaire",
+        "Déroulement du stage et évaluation des compétences",
+        "Priorité de recrutement pour les étudiants sélectionnés"
+      ]
+    },
+    "features": {
+      "title": "EBS UNIVERSE",
+      "subtitle": "Pourquoi choisir",
+      "subtitleHighlight": "notre Université",
+      "list": [
+        {
+          "title": "Certifications Internationales Intégrées",
+          "desc": "Obtenez des certifications reconnues par des leaders mondiaux tels que Google, Microsoft, IBM, Cisco et Harvard tout au long de votre parcours académique."
+        },
+        {
+          "title": "L'IA comme compétence transversale dans tous les Parcours",
+          "desc": "Développez des compétences en intelligence artificielle applicables à votre domaine, qu'il s'agisse du management, du marketing, de la finance ou de l'informatique."
+        },
+        {
+          "title": "Approche Basée sur les Compétences",
+          "desc": "Nos programmes sont conçus pour développer des compétences concrètes, directement alignées avec les attentes du marché du travail."
+        },
+        {
+          "title": "Opportunités de Carrière auprès de Partenaires Entreprises",
+          "desc": "Bénéficiez d'un accès privilégié aux stages, aux projets en entreprise et aux opportunités de recrutement grâce à notre réseau étendu de partenaires économiques."
+        },
+        {
+          "title": "Parcours International avec Tarifs Préférentiels pour nos Étudiants",
+          "desc": "Poursuivez vos études au sein d'établissements partenaires en France et à l'international à travers des parcours académiques structurés."
+        },
+        {
+          "title": "Formation Connectée aux Besoins du Marché",
+          "desc": "Des programmes régulièrement mis à jour pour intégrer les nouvelles technologies, les nouveaux métiers et les compétences les plus recherchées."
+        }
+      ]
+    }
+  }
+}

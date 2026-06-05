@@ -1,53 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
-
-const footerLinks = {
-  courses: [
-    "Creative Writing",
-    "Digital Marketing",
-    "SEO Business",
-    "Social Marketing",
-    "Graphic Design",
-    "Website Development",
-  ],
-  company: [
-    "About us",
-    "Knowledge Base",
-    "Affiliate Program",
-    "Community",
-    "Market API",
-    "Support team",
-  ],
-};
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+  const t = useTranslations('HomePage.footer');
+
   return (
     <footer className="section-padding bg-penn-navy">
-      <div className="max-w-[1200px] mx-auto px-4">
+      <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo + Description */}
-          <div>
+          <div className="lg:col-span-2">
             <Link href="/">
               <Image
-                src="/images/all-img/logo2.png"
-                alt="Penn"
+                src="/images/all-img/horizontal.png"
+                alt="EBS"
                 width={150}
                 height={45}
                 className="mb-5"
               />
             </Link>
-            <p className="text-white/60 mb-6 text-[15px] leading-7">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              vitae risus nec dui venenatis dignissim.
+            <p className="text-white/60 mb-6 text-[15px] leading-7 max-w-[500px]">
+              {t('desc')}
             </p>
-            <ul className="flex gap-2">
-              {["TW", "FB", "INS", "YT"].map((label) => (
+            <ul className="flex gap-4">
+              {["FB", "TW", "IG", "IN", "YT"].map((label) => (
                 <li key={label}>
-                  <a
-                    href="#"
-                    className="text-white/80 hover:text-penn-green transition-colors font-bold text-sm"
-                  >
+                  <a href="#" className="text-white/80 hover:text-penn-green transition-colors font-bold text-sm">
                     {label}
                   </a>
                 </li>
@@ -55,94 +35,65 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Courses */}
+          {/* Explorer Column */}
           <div>
-            <h4 className="text-white font-extrabold text-lg mb-6">Courses</h4>
+            <h4 className="text-white font-bold text-[20px] mb-5">{t('links.explorer')}</h4>
             <ul className="space-y-3">
-              {footerLinks.courses.map((link) => (
-                <li key={link}>
-                  <Link
-                    href="#"
-                    className="text-white/60 text-[15px] transition-colors hover:text-penn-green"
-                  >
-                    {link}
-                  </Link>
-                </li>
-              ))}
+              <li><Link href="/international" className="text-white/80 text-[14px] hover:text-[#2a9d8f] uppercase font-bold">{t('links.international')}</Link></li>
+              <li><Link href="/entreprises" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.entreprises')}</Link></li>
+              <li><Link href="/stages" className="text-white/80 text-[14px] hover:text-[#2a9d8f] uppercase font-bold">{t('links.stages')}</Link></li>
+              <li><Link href="/blog" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.blog')}</Link></li>
+              <li><Link href="/contact" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.contact')}</Link></li>
+              <li><Link href="/campus" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.campus')}</Link></li>
+              <li><Link href="/evenements" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.evenements')}</Link></li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Formations Column */}
           <div>
-            <h4 className="text-white font-extrabold text-lg mb-6">Company</h4>
+            <h4 className="text-white font-bold text-[20px] mb-5">{t('links.formations')}</h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link}>
-                  <Link
-                    href="#"
-                    className="text-white/60 text-[15px] transition-colors hover:text-penn-green"
-                  >
-                    {link}
-                  </Link>
-                </li>
-              ))}
+              <li><Link href="/licences" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.licences')}</Link></li>
+              <li><Link href="/masters" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.masters')}</Link></li>
+              <li><Link href="/international" className="text-white/80 text-[14px] hover:text-[#2a9d8f] uppercase font-bold">{t('links.parcours')}</Link></li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact Column */}
           <div>
-            <h4 className="text-white font-extrabold text-lg mb-6">
-              Contact Info
-            </h4>
-            <div className="space-y-5">
-              {[
-                {
-                  icon: Phone,
-                  title: "Phone number",
-                  value: "+88 457 845 695",
-                },
-                {
-                  icon: Mail,
-                  title: "Email Address",
-                  value: "example@yourmail.com",
-                },
-                {
-                  icon: MapPin,
-                  title: "Office Address",
-                  value: "California, USA",
-                },
-              ].map(({ icon: Icon, title, value }) => (
-                <div key={title} className="flex gap-3">
-                  <Icon className="w-5 h-5 text-penn-green flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-white font-bold text-sm">{title}</h3>
-                    <p className="text-white/60 text-sm">{value}</p>
-                  </div>
+            <h4 className="text-white font-bold text-[20px] mb-5">{t('contact.title')}</h4>
+            <ul className="space-y-4">
+              <li className="flex gap-4">
+                <MapPin className="w-5 h-5 text-[#2a9d8f] shrink-0 mt-1" />
+                <span className="text-white/80 text-[14px] leading-relaxed">
+                  {t('contact.address')}
+                </span>
+              </li>
+              <li className="flex gap-4">
+                <Mail className="w-5 h-5 text-[#2a9d8f] shrink-0" />
+                <a href="mailto:contact@ebs.tn" className="text-white/80 text-[14px] hover:text-[#2a9d8f]">
+                  contact@ebs.tn
+                </a>
+              </li>
+              <li className="flex gap-4 items-center">
+                <Phone className="w-5 h-5 text-[#2a9d8f] shrink-0" />
+                <div className="flex flex-col text-white/80 text-[14px]">
+                  <span>+216 29 58 28 35</span>
+                  <span>+216 71 18 26 25</span>
                 </div>
-              ))}
-            </div>
+              </li>
+              <li className="text-white/80 text-[14px] pt-2">
+                <strong>{t('contact.hours')}</strong>
+              </li>
+            </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 mt-12 pt-6 flex flex-wrap justify-between items-center">
-          <p className="text-white/50 text-sm">
-            &copy; 2023. All Rights Reserved.
+        <div className="border-t border-white/10 mt-12 pt-6 flex flex-wrap justify-center items-center">
+          <p className="text-white/50 text-sm text-center">
+            &copy; {new Date().getFullYear()} ESPIMA Business School. Tous droits réservés.
           </p>
-          <ul className="flex gap-6">
-            {["Terms of use", "Privacy Policy", "Cookie Policy"].map(
-              (link) => (
-                <li key={link}>
-                  <Link
-                    href="#"
-                    className="text-white/50 text-sm hover:text-penn-green transition-colors"
-                  >
-                    {link}
-                  </Link>
-                </li>
-              )
-            )}
-          </ul>
         </div>
       </div>
     </footer>

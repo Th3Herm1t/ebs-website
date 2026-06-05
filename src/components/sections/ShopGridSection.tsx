@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Search, ShoppingBag, ShoppingCart, Star } from "lucide-react";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 const products = [
   { id: 1, img1: "/images/shop/1.jpg", img2: "/images/shop/2.jpg", title: "Product Title", price: 16.00, oldPrice: 20.00, label: "Sale", categories: ["sale"], rating: 5 },
@@ -36,10 +37,12 @@ export default function ShopGridSection() {
       <div className="container mx-auto px-4">
         
         {/* Title */}
-        <div className="section-title text-center mb-[50px]">
-          <h2>Our Products</h2>
-          <p>Check Our <span><u>All Products</u></span></p>
-        </div>
+        <SectionHeading 
+          title="Our Products" 
+          subtitle={<>Check Our <span className="text-penn-green underline decoration-penn-green">All Products</span></>} 
+          align="center"
+          className="mb-[50px]"
+        />
 
         {/* Filters */}
         <div className="text-center mb-[40px]">

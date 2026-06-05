@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { FileText, Users } from "lucide-react";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -45,10 +46,10 @@ export default function TeamSection() {
   return (
     <section className="section-padding" ref={ref}>
       <div className="max-w-[1200px] mx-auto px-4">
-        <div className="section-title">
-          <h2>Team Member</h2>
-          <p>Our Expert <span><u>Instructors</u></span></p>
-        </div>
+        <SectionHeading 
+          title="Team Member" 
+          subtitle={<>Our Expert <span className="text-penn-green underline decoration-penn-green">Instructors</span></>} 
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px]">
           {team.map((member, i) => (

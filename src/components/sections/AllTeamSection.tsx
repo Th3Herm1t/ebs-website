@@ -5,6 +5,7 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { FileText, Users } from "lucide-react";
 import { Facebook, Twitter, Linkedin, Instagram } from "@/components/ui/social-icons";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 const allTeam = [
   { img: "/images/all-img/team5.png", name: "Stephen Cronin", role: "Designer", courses: 5, students: 12 },
@@ -23,10 +24,11 @@ export default function AllTeamSection() {
   return (
     <section className="section-padding" ref={ref}>
       <div className="container mx-auto px-4">
-        <div className="section-title text-center mb-[60px]">
-          <h2>Our Instructor</h2>
-          <p>Our Expert <span><u>Instructors</u></span></p>
-        </div>
+        <SectionHeading 
+          title="Our Instructor" 
+          subtitle={<>Our Expert <span className="text-penn-green underline decoration-penn-green">Instructors</span></>} 
+          align="center"
+        />
 
         <div className="flex flex-wrap -mx-4 justify-center">
           {allTeam.map((member, i) => {

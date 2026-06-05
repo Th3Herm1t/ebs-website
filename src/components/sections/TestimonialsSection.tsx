@@ -4,25 +4,33 @@ import Image from "next/image";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslations } from 'next-intl';
+import SectionHeading from "@/components/ui/SectionHeading";
+import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
 
 const testimonials = [
-  { img: "/images/all-img/t1.png", name: "James Clayton", role: "- Design Expert", bgClass: "bg-[#e1f7e8]" },
-  { img: "/images/all-img/t2.png", name: "James Simmons", role: "- Marketing Expert", bgClass: "bg-[#f7e8d8]" },
-  { img: "/images/all-img/t3.png", name: "Alex feroundo", role: "- Founder", bgClass: "bg-[#e8e8e8]" },
+  { img: "/images/all-img/t1-stock.jpg", name: "James Clayton", role: "- Design Expert", bgClass: "bg-[#e1f7e8]" },
+  { img: "/images/all-img/t2-stock.jpg", name: "James Simmons", role: "- Marketing Expert", bgClass: "bg-[#f7e8d8]" },
+  { img: "/images/all-img/t3-stock.jpg", name: "Alex feroundo", role: "- Founder", bgClass: "bg-[#e8e8e8]" },
 ];
 
 export default function TestimonialsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslations('HomePage.testimonials');
 
   return (
-    <section className="section-padding" ref={ref}>
-      <div className="max-w-[1140px] mx-auto px-4">
+    <section className="relative overflow-hidden section-padding" ref={ref}>
+      <HeroBackgroundVariant2 />
+      <div className="relative z-10 max-w-[1140px] mx-auto px-4">
         <div className="flex items-start justify-between mb-[50px]">
-          <div className="section-title text-left !mb-0">
-            <h2>Testimonial</h2>
-            <p>What Says <span><u>Our Students</u></span></p>
-          </div>
+          <SectionHeading 
+            title={t('title')} 
+            subtitle={
+              <>{t('subtitle')} <span className="text-penn-green underline decoration-penn-green">{t('subtitleHighlight')}</span></>
+            }
+            className="!mb-0"
+          />
           <div className="flex gap-2 mt-8 max-md:hidden">
             <button className="w-10 h-10 rounded-full border border-penn-border flex items-center justify-center text-penn-navy hover:bg-penn-green hover:text-white hover:border-penn-green transition-all">
               <ChevronLeft className="w-5 h-5" />

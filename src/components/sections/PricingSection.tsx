@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
+import SectionHeading from "@/components/ui/SectionHeading";
+import HeroBackgroundVariant3 from "./HeroBackgroundVariant3";
 
 const plans = [
   {
@@ -64,12 +66,15 @@ export default function PricingSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="pricing" className="price_area section-padding py-[100px] bg-[#f9f9f9]" ref={ref}>
-      <div className="container mx-auto px-4">													
-        <div className="section-title text-center mb-[60px]">
-          <h2 className="text-[36px] font-bold text-penn-navy mb-[15px]">Pricing Plan</h2>
-          <p className="text-[16px] text-penn-body">Take A Look At The <span className="text-penn-green"><u className="decoration-2 underline-offset-8">pricing plan</u></span></p>
-        </div>		
+    <section id="pricing" className="relative overflow-hidden price_area section-padding py-[100px] bg-[#f9f9f9]" ref={ref}>
+      <HeroBackgroundVariant3 />
+      <div className="relative z-10 container mx-auto px-4">													
+        <SectionHeading 
+          title="Pricing Plan" 
+          subtitle={<>Take A Look At The <span className="text-penn-green underline decoration-penn-green">pricing plan</span></>} 
+          align="center"
+          className="mb-[60px]"
+        />
         <div className="flex flex-wrap -mx-[15px] justify-center">									
           {plans.map((plan) => (
             <div key={plan.id} className="w-full sm:w-1/2 lg:w-1/3 px-[15px] mb-[30px] lg:mb-0">

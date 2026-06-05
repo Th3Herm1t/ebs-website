@@ -1,0 +1,303 @@
+{
+  "HomePage": {
+    "header": {
+      "nav": {
+        "universite": "The University",
+        "licences": "Bachelor's",
+        "masters": "Master's",
+        "international": "International",
+        "blog": "Blog",
+        "contact": "Contact"
+      },
+      "postuler": "Apply"
+    },
+    "topbar": {
+      "follow": "Follow Us:"
+    },
+    "hero": {
+      "title1": "The",
+      "titleHighlight": "Business School",
+      "title2": "Focused on The Future",
+      "desc1": "Train for the world of tomorrow",
+      "desc2": "Business · Finance · Technology · Artificial Intelligence · Cybersecurity · Recognized Bachelor's and Master's degrees with 150+ free international certifications available",
+      "sliderTitle": "Find the path that suits you",
+      "categories": {
+        "Licence": "Bachelor's",
+        "Master": "Master's",
+        "Parcours International": "International Pathway",
+        "Management": "Management",
+        "Marketing": "Marketing",
+        "Finance": "Finance",
+        "Informatique": "Computer Science",
+        "Intelligence Artificielle": "Artificial Intelligence",
+        "Cybersécurité": "Cybersecurity"
+      },
+      "stats": {
+        "active": "Active students",
+        "online": "Online Courses"
+      }
+    },
+    "toppromo": {
+      "p1": {
+        "title": "Need more information?",
+        "desc": "You can browse and download brochures for the programs that interest you, where you'll find the information you need.",
+        "btn": "BROWSE BROCHURES"
+      },
+      "p2": {
+        "title": "Chat with our advisors?",
+        "desc": "Our qualified academic advisors are always available to listen to your requests and ready to answer your questions.",
+        "btn": "SPEAK TO AN ADVISOR"
+      },
+      "p3": {
+        "title": "Ready to start your journey?",
+        "desc": "Have you reviewed the programs offered by EBS and selected the course that suits your study project?",
+        "btn": "START MY APPLICATION"
+      }
+    },
+    "pillars": {
+      "p1": {
+        "title": "International Mobility",
+        "desc1": "International mobility offers students the opportunity to broaden their academic and cultural horizons through study or collaboration experiences abroad.",
+        "desc2": "With a strong network of international academic partners, EBS students have the opportunity to begin their studies in Tunisia and complete them at a partner international institution.",
+        "btn": "LEARN MORE"
+      },
+      "p2": {
+        "title": "Technologies & Certifications",
+        "desc1": "The integration of emerging technologies is a central element of our training programs. AI is now a cross-cutting skill in all our courses.",
+        "desc2": "Academic pathways are enriched by recognized certifications, allowing students to validate practical skills in high value-added fields and strengthen the employability and adaptability of graduates.",
+        "btn": "EXPLORE CERTIFICATIONS"
+      },
+      "p3": {
+        "title": "Economic Partners",
+        "desc1": "Our partnerships with economic players strengthen the link between academic training and the realities of the professional world. These collaborations promote internships, applied projects, expert interventions, and employment opportunities.",
+        "desc2": "By working alongside leading companies and organizations, EBS develops training programs in line with market skills and challenges.",
+        "btn": "DISCOVER OUR PARTNERS"
+      }
+    },
+    "infoslider": {
+      "s1": {
+        "badge": "★ NEW",
+        "title": "AI as a mandatory skill in all our programs",
+        "desc": "For the 2025/2026 academic year, artificial intelligence will be integrated as an essential skill in all our programs, regardless of the chosen specialty. Students develop an understanding of AI tools, uses, and challenges to make it a lever for analysis, innovation, and performance. This approach prepares graduates capable of evolving in an environment where artificial intelligence is progressively transforming professions and organizations.",
+        "btn": "Learn more"
+      },
+      "s2": {
+        "badge": "★ EXCLUSIVE",
+        "title": "Integration of 150+ International Certifications in our various programs",
+        "desc": "EBS integrates over 150 recognized international certifications into its various training programs to strengthen academic skills through concrete professional validations. These certifications cover various fields such as management, finance, marketing, artificial intelligence, project management, cybersecurity, and digital technologies. This approach allows students to enrich their profiles, highlight their achievements, and prepare for international market standards and requirements.",
+        "btn": "Learn more"
+      },
+      "s3": {
+        "badge": "★ NEWS",
+        "title": "2025-2026 Registrations Open — Early Bird Discounts until June 30",
+        "desc": "Applications for the 2025-2026 academic year are now open for all our bachelor's, master's, and specialized training programs. Take advantage of our Early Bird discounts, up to 25% off your tuition fees, by finalizing your registration before June 30, and prepare your academic journey today in an environment focused on innovation, technologies, and tomorrow's skills. Our teaching and administrative teams are at your disposal to support you in choosing the training best suited to your academic and professional project.",
+        "btn": "Learn more"
+      }
+    },
+    "about": {
+      "title": "Join the Business School",
+      "titleHighlight": "focused on the future",
+      "desc": "Espima Business School evolves its programs with one ultimate goal: to allow each student to build a more competitive profile, better prepared for the demands of the job market.",
+      "f1Title": "AI as a differentiator",
+      "f1Desc": "At EBS, every student - regardless of their field - masters the AI tools most demanded by recruiters. From management bachelor's to financial engineering master's. It's not an option: it's our commitment to your employability.",
+      "f2Title": "Certified skills",
+      "f2Desc": "In addition to your degree recognized by the Tunisian state, you leave with certifications issued by the most recognized organizations in the world. Free. Included in your training. Valued anywhere in the world.",
+      "btn": "Browse programs"
+    },
+    "counters": {
+      "c1": "Free certifications included",
+      "c2": "Bachelor & Master Programs",
+      "c3": "International university partners",
+      "c4": "Success rate",
+      "title": "EBS IN NUMBERS",
+      "subtitle": "Key Figures",
+      "subtitleHighlight": "of EBS"
+    },
+    "partners": {
+      "eco": "Our Economic Partners",
+      "acad": "Our International Academic Partners"
+    },
+    "coursepromo": {
+      "title": "EBS INTERNATIONAL",
+      "subtitle": "The Pathway",
+      "subtitleHighlight": "International",
+      "desc": "With a solid network of international academic partners, EBS offers its students the opportunity to start their studies in Tunisia and finish them in an international partner institution.",
+      "path1": [
+        "Two years of Bachelor at EBS",
+        "Validation of acquired skills",
+        "Language certification",
+        "Immigration file preparation",
+        "Grande École Bachelor in France",
+        "Link University Bachelor in Italy"
+      ],
+      "path2": [
+        "Three years of Bachelor at EBS",
+        "Validation of acquired skills",
+        "Language certification",
+        "Immigration file preparation",
+        "Master in Management in Canada",
+        "Grande École Master in France"
+      ],
+      "btn": "Learn more"
+    },
+    "programs": {
+      "title": "EBS PROGRAMS",
+      "licencesSubtitle": "Browse our Bachelor's",
+      "mastersSubtitle": "Browse our Master's",
+      "detail1": "6 Semesters - On Campus",
+      "detail2": "4 Semesters - On Campus",
+      "licences": [
+        {
+          "cat": "Management",
+          "title": "National Bachelor in Management Sciences - Marketing Option",
+          "detail1": "6 Semesters - On Campus",
+          "detail2": "Integrated AI - 35 Certifications"
+        },
+        {
+          "cat": "Marketing",
+          "title": "National Bachelor in Management Sciences - Marketing Option",
+          "detail1": "6 Semesters - On Campus",
+          "detail2": "Integrated AI - 57 Certifications"
+        },
+        {
+          "cat": "Finance",
+          "title": "National Bachelor in Management Sciences - Finance Option",
+          "detail1": "6 Semesters - On Campus",
+          "detail2": "Integrated AI - 19 Certifications"
+        },
+        {
+          "cat": "Computer Science",
+          "title": "National Bachelor in Software Engineering - Standard Pathway",
+          "detail1": "6 Semesters - On Campus",
+          "detail2": "Integrated AI - 35 Certifications"
+        },
+        {
+          "cat": "Computer Science",
+          "title": "National Bachelor in Software Engineering - AI Option",
+          "detail1": "6 Semesters - On Campus",
+          "detail2": "75 Certifications Available"
+        },
+        {
+          "cat": "Computer Science",
+          "title": "National Bachelor in Software Engineering - Cybersecurity Option",
+          "detail1": "6 Semesters - On Campus",
+          "detail2": "52 Certifications Available"
+        }
+      ],
+      "masters": [
+        {
+          "cat": "Advanced Finance",
+          "title": "Master in Financial Engineering",
+          "detail1": "4 Semesters - On Campus",
+          "detail2": "Integrated AI - 15 Certifications"
+        },
+        {
+          "cat": "Marketing 5.0",
+          "title": "Master in CRM - Marketing & Digital Transformation",
+          "detail1": "4 Semesters - On Campus",
+          "detail2": "Integrated AI - 49 Certifications"
+        },
+        {
+          "cat": "Project Management",
+          "title": "Master in Innovative Projects & Startups Management",
+          "detail1": "4 Semesters - On Campus",
+          "detail2": "Integrated AI - 22 Certifications"
+        }
+      ]
+    },
+    "topics": {
+      "title": "EBS CERTIFICATIONS",
+      "subtitle": "Main Certifications Available",
+      "subtitleHighlight": "for our Students",
+      "count": "71 Certifications"
+    },
+    "newsletter": {
+      "title": "Subscribe to our Newsletter",
+      "subtitle": "Receive our latest offers and news",
+      "desc": "By subscribing to this list, you will receive our latest offers and news",
+      "placeholder": "Enter your email address",
+      "btn": "Subscribe"
+    },
+    "events": {
+      "title": "Upcoming Events",
+      "subtitle": "Join With Us",
+      "subtitleHighlight": "Our Events"
+    },
+    "testimonials": {
+      "title": "Testimonial",
+      "subtitle": "What Says",
+      "subtitleHighlight": "Our Students"
+    },
+    "articles": {
+      "title": "News",
+      "subtitle": "Our Latest",
+      "subtitleHighlight": "Blogs"
+    },
+    "footer": {
+      "desc": "ESPIMA Business School is a private university of computing and management in Tunisia founded in 2013 approved by the Ministry of Higher Education and Scientific Research.",
+      "links": {
+        "explorer": "Explore",
+        "international": "INTERNATIONAL STUDENTS",
+        "entreprises": "Partner Companies",
+        "stages": "INTERNSHIPS",
+        "blog": "Blog",
+        "contact": "Contact Us",
+        "campus": "Campus",
+        "evenements": "Events",
+        "formations": "Programs",
+        "licences": "Bachelor's",
+        "masters": "Master's",
+        "parcours": "INTERNATIONAL PATHWAY"
+      },
+      "contact": {
+        "title": "For any information Contact us",
+        "address": "10 Rue Socrate Z.I Kheireddine Le Kram (2015) Tunis - Tunisia",
+        "hours": "Opening hours"
+      }
+    },
+    "career": {
+      "tag": "EBS CAREER",
+      "title1": "Career opportunities",
+      "title2": "With our corporate partners",
+      "desc1": "Thanks to its network of corporate partners, EBS facilitates its students' access to internships, corporate projects, and pre-employment opportunities in various business sectors.",
+      "desc2": "In many cases, students who have completed their internship within a partner company enjoy a significant advantage during recruitment, as the company has already been able to evaluate their skills, potential, and integration capacity.",
+      "steps": [
+        "Selection of the best internship offers",
+        "Placement within a partner company",
+        "Internship progression and skills evaluation",
+        "Recruitment priority for selected students"
+      ]
+    },
+    "features": {
+      "title": "EBS UNIVERSE",
+      "subtitle": "Why choose",
+      "subtitleHighlight": "our University",
+      "list": [
+        {
+          "title": "Integrated International Certifications",
+          "desc": "Obtain certifications recognized by world leaders such as Google, Microsoft, IBM, Cisco, and Harvard throughout your academic journey."
+        },
+        {
+          "title": "AI as a cross-cutting skill in all Pathways",
+          "desc": "Develop artificial intelligence skills applicable to your field, whether it be management, marketing, finance, or computer science."
+        },
+        {
+          "title": "Competency-Based Approach",
+          "desc": "Our programs are designed to develop concrete skills directly aligned with labor market expectations."
+        },
+        {
+          "title": "Career Opportunities with Corporate Partners",
+          "desc": "Enjoy privileged access to internships, corporate projects, and recruitment opportunities thanks to our extensive network of economic partners."
+        },
+        {
+          "title": "International Pathway with Preferential Rates for our Students",
+          "desc": "Pursue your studies in partner institutions in France and internationally through structured academic pathways."
+        },
+        {
+          "title": "Training Connected to Market Needs",
+          "desc": "Programs regularly updated to integrate new technologies, new professions, and the most sought-after skills."
+        }
+      ]
+    }
+  }
+}

@@ -1,46 +1,30 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useInView } from "motion/react";
-import { useRef } from "react";
 import { Calendar, Award } from "lucide-react";
-
-const licences = [
-  { img: "/images/all-img/c1.png", cat: "Management", title: "Licence Nationale en Sciences de Gestion - Option Marketing", detail1: "6 Semestres - Présentiel", detail2: "IA Intégrée - 35 Certifications" },
-  { img: "/images/all-img/c2.png", cat: "Marketing", title: "Licence Nationale en Sciences de Gestion - Option Marketing", detail1: "6 Semestres - Présentiel", detail2: "IA Intégrée - 57 Certifications" },
-  { img: "/images/all-img/c3.png", cat: "Finance", title: "Licence Nationale en Sciences de Gestion - Option Finance", detail1: "6 Semestres - Présentiel", detail2: "IA Intégrée - 19 Certifications" },
-  { img: "/images/all-img/c4.png", cat: "Informatique", title: "Licence Nationale en Génie Logiciel - Parcours Standard", detail1: "6 Semestres - Présentiel", detail2: "IA Intégrée - 35 Certifications" },
-  { img: "/images/all-img/c5.png", cat: "Informatique", title: "Licence Nationale en Génie Logiciel - Option IA", detail1: "6 Semestres - Présentiel", detail2: "75 Certifications Disponibles" },
-  { img: "/images/all-img/c6.png", cat: "Informatique", title: "Licence Nationale en Génie Logiciel - Option Cybersécurité", detail1: "6 Semestres - Présentiel", detail2: "52 Certifications Disponibles" },
-];
-
-const masters = [
-  { img: "/images/all-img/c1.png", cat: "Finance Avancée", title: "Master en Ingénierie Financière", detail1: "4 Semestres - Présentiel", detail2: "IA Intégrée - 15 Certifications" },
-  { img: "/images/all-img/c2.png", cat: "Marketing 5.0", title: "Master en CRM - Marketing & Transformation Digitale", detail1: "4 Semestres - Présentiel", detail2: "IA Intégrée - 49 Certifications" },
-  { img: "/images/all-img/c3.png", cat: "Project Management", title: "Master en Management des Projets Innovants & Startups", detail1: "4 Semestres - Présentiel", detail2: "IA Intégrée - 22 Certifications" },
-];
+import { useTranslations } from 'next-intl';
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import SectionHeading from "@/components/ui/SectionHeading";
+import HeroBackgroundVariant1 from "./HeroBackgroundVariant1";
 
 function ProgramGrid({ title, subtitle, programs }: { title: string, subtitle: string, programs: any[] }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
   return (
-    <div className="mb-24 last:mb-0" ref={ref}>
-      <div className="section-title">
-        <h2 className="uppercase text-penn-green text-[14px] tracking-[2px] font-bold mb-2">{title}</h2>
-        <p className="text-[36px] font-extrabold text-penn-navy">
-          <span><u className="text-penn-green">{subtitle.split(' ')[0]}</u></span> {subtitle.split(' ').slice(1).join(' ')}
-        </p>
-      </div>
+    <div className="mb-24 last:mb-0 relative z-10">
+      <SectionHeading 
+        title={title} 
+        subtitle={
+          <>
+            <span className="text-penn-green underline decoration-penn-green">{subtitle.split(' ')[0]}</span> {subtitle.split(' ').slice(1).join(' ')}
+          </>
+        } 
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
         {programs.map((course, i) => (
-          <motion.div
+          <ScrollReveal
             key={i}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
+            initialY={30}
+            duration={0.6}
+            delay={i * 0.1}
             className="bg-white rounded-[6px] border border-penn-border overflow-hidden transition-all duration-300 hover:shadow-[0px_0_30px_rgba(1,41,112,0.08)] flex flex-col h-full"
           >
             {/* Image */}
@@ -74,7 +58,7 @@ function ProgramGrid({ title, subtitle, programs }: { title: string, subtitle: s
                 </div>
               </div>
             </div>
-          </motion.div>
+          </ScrollReveal>
         ))}
       </div>
     </div>
@@ -82,11 +66,29 @@ function ProgramGrid({ title, subtitle, programs }: { title: string, subtitle: s
 }
 
 export default function CoursesSection() {
+  const t = useTranslations('HomePage.programs');
+
+  const licences = [
+    { img: "/images/all-img/c1-stock.jpg", cat: t('licences.0.cat'), title: t('licences.0.title'), detail1: t('licences.0.detail1'), detail2: t('licences.0.detail2') },
+    { img: "/images/all-img/c2-stock.jpg", cat: t('licences.1.cat'), title: t('licences.1.title'), detail1: t('licences.1.detail1'), detail2: t('licences.1.detail2') },
+    { img: "/images/all-img/c3-stock.jpg", cat: t('licences.2.cat'), title: t('licences.2.title'), detail1: t('licences.2.detail1'), detail2: t('licences.2.detail2') },
+    { img: "/images/all-img/c4-stock.jpg", cat: t('licences.3.cat'), title: t('licences.3.title'), detail1: t('licences.3.detail1'), detail2: t('licences.3.detail2') },
+    { img: "/images/all-img/c5-stock.jpg", cat: t('licences.4.cat'), title: t('licences.4.title'), detail1: t('licences.4.detail1'), detail2: t('licences.4.detail2') },
+    { img: "/images/all-img/c6-stock.jpg", cat: t('licences.5.cat'), title: t('licences.5.title'), detail1: t('licences.5.detail1'), detail2: t('licences.5.detail2') },
+  ];
+
+  const masters = [
+    { img: "/images/all-img/c1-stock.jpg", cat: t('masters.0.cat'), title: t('masters.0.title'), detail1: t('masters.0.detail1'), detail2: t('masters.0.detail2') },
+    { img: "/images/all-img/c2-stock.jpg", cat: t('masters.1.cat'), title: t('masters.1.title'), detail1: t('masters.1.detail1'), detail2: t('masters.1.detail2') },
+    { img: "/images/all-img/c3-stock.jpg", cat: t('masters.2.cat'), title: t('masters.2.title'), detail1: t('masters.2.detail1'), detail2: t('masters.2.detail2') },
+  ];
+
   return (
-    <section className="section-padding bg-[#fdfdfd]">
-      <div className="max-w-[1200px] mx-auto px-4">
-        <ProgramGrid title="EBS PROGRAMS" subtitle="Parcourir nos Licences" programs={licences} />
-        <ProgramGrid title="EBS PROGRAMS" subtitle="Parcourir nos Masters" programs={masters} />
+    <section className="relative overflow-hidden section-padding bg-[#fdfdfd]">
+      <HeroBackgroundVariant1 />
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4">
+        <ProgramGrid title={t('title')} subtitle={t('licencesSubtitle')} programs={licences} />
+        <ProgramGrid title={t('title')} subtitle={t('mastersSubtitle')} programs={masters} />
       </div>
     </section>
   );

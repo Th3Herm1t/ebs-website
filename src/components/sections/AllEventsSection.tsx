@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Clock, LayoutGrid } from "lucide-react";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 const allEventsData = [
   // Row 1
@@ -35,10 +36,10 @@ export default function AllEventsSection() {
   return (
     <section className="section-padding" ref={ref}>
       <div className="max-w-[1140px] mx-auto px-4">
-        <div className="section-title">
-          <h2>Upcoming Events</h2>
-          <p>Join With Us <span><u>Our Events</u></span></p>
-        </div>
+        <SectionHeading 
+          title="Upcoming Events" 
+          subtitle={<>Join With Us <span className="text-penn-green underline decoration-penn-green">Our Events</span></>} 
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
           {allEventsData.map((item, i) => (

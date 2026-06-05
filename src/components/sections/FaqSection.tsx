@@ -7,8 +7,11 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
+  AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import SectionHeading from "@/components/ui/SectionHeading";
+import HeroBackgroundVariant3 from "./HeroBackgroundVariant3";
 
 const faqs = [
   {
@@ -38,17 +41,19 @@ export default function FaqSection({ showImage = true }: { showImage?: boolean }
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="pb-10 section-padding" ref={ref}>
-      <div className="max-w-[1140px] mx-auto px-4">
+    <section className="relative overflow-hidden pb-10 section-padding" ref={ref}>
+      <HeroBackgroundVariant3 />
+      <div className="relative z-10 max-w-[1140px] mx-auto px-4">
         {showImage ? (
-          <div className="section-title">
-            <h2>Frequently Asked Question</h2>
-            <p>General <span><u>Questions</u></span></p>
-          </div>
+          <SectionHeading 
+            title="Frequently Asked Question" 
+            subtitle={<>General <span className="text-penn-green underline decoration-penn-green">Questions</span></>} 
+          />
         ) : (
-          <div className="section-title-two">
-            <h2>Frequently Asked Questions</h2>
-          </div>
+          <SectionHeading 
+            title="Frequently Asked Questions" 
+            subtitle="" 
+          />
         )}
         
         <div className="flex flex-wrap items-center justify-center -mx-4">

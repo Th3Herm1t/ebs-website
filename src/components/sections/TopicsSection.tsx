@@ -1,50 +1,52 @@
-"use client";
-
 import Image from "next/image";
-import { motion, useInView } from "motion/react";
-import { useRef } from "react";
-
-const topics = [
-  { icon: "/images/icon/ct1.svg", title: "UI/UX Design", count: "71 Courses" },
-  { icon: "/images/icon/ct2.svg", title: "Digital Program", count: "59 Courses" },
-  { icon: "/images/icon/ct3.svg", title: "Finance", count: "68 Courses" },
-  { icon: "/images/icon/ct4.svg", title: "Modern Physics", count: "83 Courses" },
-  { icon: "/images/icon/ct5.svg", title: "Music Production", count: "37 Courses" },
-  { icon: "/images/icon/ct6.svg", title: "Data Science", count: "51 Courses" },
-];
+import { useTranslations } from 'next-intl';
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function TopicsSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslations('HomePage.topics');
+
+  const certifications = [
+    { icon: "/images/icon/google.svg", title: "Google" },
+    { icon: "/images/icon/microsoft.svg", title: "Microsoft" },
+    { icon: "/images/icon/ibm.svg", title: "IBM" },
+    { icon: "/images/icon/cisco-2.svg", title: "Cisco" },
+    { icon: "/images/icon/aws-2.svg", title: "AWS" },
+    { icon: "/images/icon/hubspot.svg", title: "Hubspot" },
+  ];
 
   return (
-    <section className="section-padding" ref={ref}>
+    <section className="section-padding">
       <div className="max-w-[1140px] mx-auto px-4">
-        <div className="section-title">
-          <h2>Start Learning </h2>
-          <p>Popular <span><u>Topics To Learn</u></span> From Today.</p>
-        </div>
-
+        <SectionHeading 
+          title={t('title')}
+          subtitle={
+            <><span className="text-penn-green underline decoration-penn-green">{t('subtitleHighlight')}</span> {t('subtitle')}</>
+          }
+        />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
-          {topics.map((topic, i) => (
-            <motion.div
+          {certifications.map((cert, i) => (
+            <ScrollReveal
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="flex items-center gap-[20px] p-[25px] bg-white border border-penn-border rounded-[8px] transition-all duration-300 hover:shadow-[0px_0_30px_rgba(1,41,112,0.08)] hover:border-t-2 hover:border-t-penn-green"
+              initialY={30}
+              duration={0.6}
+              delay={i * 0.1}
             >
-              <Image src={topic.icon} alt={topic.title} width={60} height={60} className="flex-shrink-0" />
-              <div>
-                <h2 className="text-penn-navy font-extrabold text-lg mb-1">
-                  <a href="#" className="transition-colors hover:text-penn-green">{topic.title}</a>
-                </h2>
-                <span className="text-penn-green font-medium text-sm">{topic.count}</span>
+              <div className="flex items-center gap-[20px] p-[25px] bg-white border border-penn-border rounded-[8px] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(1,41,112,0.1)] hover:border-t-2 hover:border-t-penn-green h-full">
+                <Image src={cert.icon} alt={cert.title} width={60} height={60} className="flex-shrink-0" />
+                <div className="flex flex-col justify-center">
+                  <h2 className="text-penn-navy font-extrabold text-lg">
+                    <span className="transition-colors hover:text-penn-green cursor-pointer">{cert.title}</span>
+                  </h2>
+                </div>
               </div>
-            </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
     </section>
   );
 }
+
+
+

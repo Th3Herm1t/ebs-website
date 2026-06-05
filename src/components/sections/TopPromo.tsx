@@ -4,36 +4,38 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
 import { Download, ArrowRight, FileText } from "lucide-react";
-
-const promos = [
-  { 
-    id: "brochure",
-    title: "Besoin de plus d'informations ?", 
-    desc: "Vous pouvez parcourir et télécharger les brochures des parcours qui suscitent votre intérêt, vous y trouverez les informations dont vous avez besoin.",
-    ctaText: "PARCOURIR LES BROCHURES",
-    icon: Download,
-    link: "#"
-  },
-  { 
-    id: "whatsapp",
-    title: "Discuter avec nos conseillers ?", 
-    desc: "Nos conseillers pédagogiques qualifiés, toujours à l'écoute de vos demandes et prêts à répondre à vos questions.",
-    ctaText: "PARLER A UN CONSEILLER",
-    link: "#"
-  },
-  { 
-    id: "apply",
-    title: "Prêt à entamer votre parcours ?", 
-    desc: "Vous avez pris connaissance des programmes offerts par EBS et sélectionné le cursus qui convient à votre projet d'études ?",
-    ctaText: "COMMENCER MA CANDIDATURE",
-    icon: ArrowRight,
-    link: "#"
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export default function TopPromo() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const t = useTranslations('HomePage.toppromo');
+
+  const promos = [
+    { 
+      id: "brochure",
+      title: t('p1.title'), 
+      desc: t('p1.desc'),
+      ctaText: t('p1.btn'),
+      icon: Download,
+      link: "#"
+    },
+    { 
+      id: "whatsapp",
+      title: t('p2.title'), 
+      desc: t('p2.desc'),
+      ctaText: t('p2.btn'),
+      link: "#"
+    },
+    { 
+      id: "apply",
+      title: t('p3.title'), 
+      desc: t('p3.desc'),
+      ctaText: t('p3.btn'),
+      icon: ArrowRight,
+      link: "#"
+    },
+  ];
 
   return (
     <section className="pb-[50px]" ref={ref}>

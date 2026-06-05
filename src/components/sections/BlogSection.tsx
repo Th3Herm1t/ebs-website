@@ -4,18 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
+import { useTranslations } from 'next-intl';
+import { Card, CardContent } from "@/components/ui/card";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function BlogSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslations('HomePage.articles');
 
   return (
     <section className="section-padding" ref={ref}>
       <div className="max-w-[1140px] mx-auto px-4">
-        <div className="section-title">
-          <h2>News</h2>
-          <p>Our Latest <span><u>Blogs</u></span></p>
-        </div>
+        <SectionHeading 
+          title={t('title')} 
+          subtitle={<>{t('subtitle')} <span className="text-penn-green underline decoration-penn-green">{t('subtitleHighlight')}</span></>} 
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
           {/* Column 1: Two stacked text-only blog cards */}
@@ -26,25 +30,27 @@ export default function BlogSection() {
             className="flex flex-col gap-[30px]"
           >
             {[1, 2].map((_, i) => (
-              <div key={i} className="bg-white border border-penn-border rounded-[6px] p-[25px]">
-                <span className="text-penn-body text-sm mb-2 block">
-                  August 25, 2023 | <Link href="/blog-single" className="text-penn-green font-medium">Design</Link>
-                </span>
-                <h2>
-                  <Link href="/blog-single" className="text-penn-navy font-extrabold text-lg leading-[28px] transition-colors hover:text-penn-green">
-                    Professional Mobile Painting and Sculpting
-                  </Link>
-                </h2>
-                <div className="mt-4">
-                  <a href="#" className="cta">
-                    <span>READ MORE</span>
-                    <svg width="13px" height="10px" viewBox="0 0 13 10">
-                      <path d="M1,5 L11,5" />
-                      <polyline points="8 1 12 5 8 9" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
+              <Card key={i} className="border-penn-border rounded-[6px]">
+                <CardContent className="p-[25px]">
+                  <span className="text-penn-body text-sm mb-2 block">
+                    August 25, 2023 | <Link href="/blog-single" className="text-penn-green font-medium">Design</Link>
+                  </span>
+                  <h2>
+                    <Link href="/blog-single" className="text-penn-navy font-extrabold text-lg leading-[28px] transition-colors hover:text-penn-green">
+                      Professional Mobile Painting and Sculpting
+                    </Link>
+                  </h2>
+                  <div className="mt-4">
+                    <a href="#" className="cta">
+                      <span>READ MORE</span>
+                      <svg width="13px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5" />
+                        <polyline points="8 1 12 5 8 9" />
+                      </svg>
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </motion.div>
 
@@ -54,7 +60,7 @@ export default function BlogSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-white border border-penn-border rounded-[6px] overflow-hidden">
+            <Card className="border-penn-border rounded-[6px] overflow-hidden h-full flex flex-col">
               <Image
                 src="/images/banner/slide2.jpg"
                 alt="Blog"
@@ -62,7 +68,7 @@ export default function BlogSection() {
                 height={250}
                 className="w-full h-[250px] object-cover"
               />
-              <div className="p-[25px]">
+              <CardContent className="p-[25px] flex-1">
                 <span className="text-penn-body text-sm mb-2 block">
                   August 26, 2023 | <Link href="/blog-single" className="text-penn-green font-medium">Education</Link>
                 </span>
@@ -80,8 +86,8 @@ export default function BlogSection() {
                     </svg>
                   </a>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </motion.div>
 
           {/* Column 3: Image blog card */}
@@ -90,7 +96,7 @@ export default function BlogSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="bg-white border border-penn-border rounded-[6px] overflow-hidden">
+            <Card className="border-penn-border rounded-[6px] overflow-hidden h-full flex flex-col">
               <Image
                 src="/images/banner/slide3.jpg"
                 alt="Blog"
@@ -98,7 +104,7 @@ export default function BlogSection() {
                 height={250}
                 className="w-full h-[250px] object-cover"
               />
-              <div className="p-[25px]">
+              <CardContent className="p-[25px] flex-1">
                 <span className="text-penn-body text-sm mb-2 block">
                   August 28, 2023 | <Link href="/blog-single" className="text-penn-green font-medium">Programing</Link>
                 </span>
@@ -116,8 +122,8 @@ export default function BlogSection() {
                     </svg>
                   </a>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </div>
