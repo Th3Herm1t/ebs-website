@@ -11,8 +11,8 @@
   --font-heading: var(--font-mulish);
 
   /* Penn brand colors */
-  --color-penn-green: #2a9d8f;
-  --color-penn-green-light: rgba(42, 157, 143, 0.2);
+  --color-penn-green: #2B8FAB;
+  --color-penn-green-light: rgba(43, 143, 171, 0.2);
   --color-penn-navy: #232434;
   --color-penn-body: #42474c;
   --color-penn-border: #ededed;
@@ -63,7 +63,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #2a9d8f;
+  --primary: #2B8FAB;
   --primary-foreground: #ffffff;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: #232434;
@@ -74,7 +74,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: #ededed;
   --input: #ededed;
-  --ring: #2a9d8f;
+  --ring: #2B8FAB;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);

@@ -19,7 +19,7 @@ export default function HeroBackgroundVariant1() {
           }}
           transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -bottom-[20%] -left-[10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] mix-blend-multiply pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(42,157,143,0.8) 0%, rgba(42,157,143,0) 65%)" }}
+          style={{ background: "radial-gradient(circle, rgba(43,143,171,0.8) 0%, rgba(43,143,171,0) 65%)" }}
         />
 
         {/* Top Right Orange Orb */}
@@ -48,7 +48,7 @@ export default function HeroBackgroundVariant1() {
         <m.div
           animate={{ y: [0, 20, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute top-[15%] left-[45%] w-[20px] h-[20px] rounded-full border-[2px] border-[#2a9d8f]/40 pointer-events-none"
+          className="absolute top-[15%] left-[45%] w-[20px] h-[20px] rounded-full border-[2px] border-[#2B8FAB]/40 pointer-events-none"
         />
       </div>
     </LazyMotion>

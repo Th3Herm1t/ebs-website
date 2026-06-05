@@ -17,7 +17,7 @@ export default function PillarsSection() {
     },
     {
       id: "tech",
-      bgColor: "bg-[#2a9d8f]",
+      bgColor: "bg-[#2B8FAB]",
       textColor: "text-white",
       title: t('p2.title'),
       p1: t('p2.desc1'),
@@ -27,7 +27,7 @@ export default function PillarsSection() {
     },
     {
       id: "partners",
-      bgColor: "bg-[#e9c46a]",
+      bgColor: "bg-[#f4a261]",
       textColor: "text-white",
       title: t('p3.title'),
       p1: t('p3.desc1'),

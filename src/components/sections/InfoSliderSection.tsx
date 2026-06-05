@@ -49,7 +49,7 @@ export default function InfoSliderSection() {
 
   return (
     <section className="py-16 lg:py-[100px] bg-white overflow-hidden">
-      <div className="w-full max-w-[1400px] mx-auto px-5 lg:px-12 relative">
+      <div className="w-full max-w-[1400px] mx-auto px-5 lg:px-24 xl:px-32 relative">
         <Carousel
           plugins={[plugin.current]}
           opts={{
@@ -59,13 +59,13 @@ export default function InfoSliderSection() {
           }}
           className="w-full"
         >
-          <CarouselContent className="-ml-[100px]">
+          <CarouselContent className="-ml-4">
             {slides.map((slide) => (
-              <CarouselItem key={slide.id} className="pl-[100px]">
-                <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-[80px]">
+              <CarouselItem key={slide.id} className="pl-4">
+                <div className="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16">
                   {/* Left: Image */}
-                  <div className="w-full lg:w-[55%]">
-                    <div className="relative w-full rounded shadow-[0_20px_60px_rgba(0,0,0,0.15)] aspect-[1.4/1]">
+                  <div className="w-full lg:w-1/2 flex">
+                    <div className="relative w-full rounded shadow-[0_20px_60px_rgba(0,0,0,0.15)] min-h-[300px] lg:min-h-[400px] h-full">
                       <Image
                         src={slide.image}
                         alt="EBS Info"
@@ -76,13 +76,13 @@ export default function InfoSliderSection() {
                   </div>
 
                   {/* Right: Text Content */}
-                  <div className="w-full lg:w-[45%] flex flex-col items-start pt-6 lg:pt-0 pr-0 lg:pr-16 xl:pr-20">
+                  <div className="w-full lg:w-1/2 flex flex-col items-start justify-center pt-6 lg:pt-0">
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-penn-green/10 text-penn-green font-bold text-[12px] uppercase tracking-wider mb-5 lg:mb-6">
                       <Sparkles className="w-4 h-4" />
                       {slide.subtitle.replace('★ ', '')}
                     </div>
                     
-                    <h2 className="text-penn-navy text-[28px] md:text-[36px] lg:text-[44px] font-extrabold leading-[1.15] mb-5 lg:mb-6 tracking-tight">
+                    <h2 className="text-penn-navy text-[28px] md:text-[32px] lg:text-[36px] font-extrabold leading-[1.15] mb-5 lg:mb-6 tracking-tight">
                       {slide.title}
                     </h2>
                     
@@ -107,8 +107,8 @@ export default function InfoSliderSection() {
           
           {/* Navigation Controls */}
           <div className="hidden lg:block">
-            <CarouselPrevious className="-left-12 w-12 h-12 border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" />
-            <CarouselNext className="-right-12 w-12 h-12 border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" />
+            <CarouselPrevious className="-left-16 lg:-left-20 xl:-left-24 w-12 h-12 border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" />
+            <CarouselNext className="-right-16 lg:-right-20 xl:-right-24 w-12 h-12 border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" />
           </div>
         </Carousel>
       </div>

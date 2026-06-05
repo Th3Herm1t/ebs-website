@@ -46,7 +46,7 @@ export default function Header() {
               <li key={item.key} className="relative group">
                 <Link
                   href={item.href}
-                  className="text-[#232434] font-semibold text-[15px] capitalize py-2 block transition-colors hover:text-[#2a9d8f] relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#2a9d8f] after:transition-all after:duration-300 hover:after:w-full"
+                  className="text-[#232434] font-semibold text-[15px] capitalize py-2 block transition-colors hover:text-[#2B8FAB] relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#2B8FAB] after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {tNav(item.key as any)}
                 </Link>
@@ -60,13 +60,13 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-6">
             <a 
               href="tel:+21629582835" 
-              className="text-[#2a9d8f] hover:text-[#2a9d8f]/80 transition-colors font-bold text-[16px] xl:text-[18px] whitespace-nowrap"
+              className="text-[#2B8FAB] hover:text-[#2B8FAB]/80 transition-colors font-bold text-[16px] xl:text-[18px] whitespace-nowrap"
             >
               <span className="font-light mr-1.5">{t('call')}</span> +216 29 58 28 35
             </a>
             <Link
               href="/postuler"
-              className="bg-[#2a9d8f] text-white border border-[#2a9d8f] py-2.5 px-10 font-bold rounded-full text-[14px] inline-flex items-center justify-center transition-all hover:bg-white hover:text-[#2a9d8f] hover:border-[#2a9d8f] whitespace-nowrap min-w-[160px]"
+              className="bg-[#2B8FAB] text-white border border-[#2B8FAB] py-2.5 px-10 font-bold rounded-full text-[14px] inline-flex items-center justify-center transition-all hover:bg-white hover:text-[#2B8FAB] hover:border-[#2B8FAB] whitespace-nowrap min-w-[160px]"
             >
               {t('postuler')}
             </Link>
@@ -74,7 +74,7 @@ export default function Header() {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden bg-[#2a9d8f] text-white p-2 rounded ml-4"
+            className="lg:hidden bg-[#2B8FAB] text-white p-2 rounded ml-4"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

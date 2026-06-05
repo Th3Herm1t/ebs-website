@@ -39,13 +39,13 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-[20px] mb-5">{t('links.explorer')}</h4>
             <ul className="space-y-3">
-              <li><Link href="/international" className="text-white/80 text-[14px] hover:text-[#2a9d8f] uppercase font-bold">{t('links.international')}</Link></li>
-              <li><Link href="/entreprises" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.entreprises')}</Link></li>
-              <li><Link href="/stages" className="text-white/80 text-[14px] hover:text-[#2a9d8f] uppercase font-bold">{t('links.stages')}</Link></li>
-              <li><Link href="/blog" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.blog')}</Link></li>
-              <li><Link href="/contact" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.contact')}</Link></li>
-              <li><Link href="/campus" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.campus')}</Link></li>
-              <li><Link href="/evenements" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.evenements')}</Link></li>
+              <li><Link href="/international" className="text-white/80 text-[14px] hover:text-[#2B8FAB] uppercase font-bold">{t('links.international')}</Link></li>
+              <li><Link href="/entreprises" className="text-white/80 text-[14px] hover:text-[#2B8FAB] capitalize">{t('links.entreprises')}</Link></li>
+              <li><Link href="/stages" className="text-white/80 text-[14px] hover:text-[#2B8FAB] uppercase font-bold">{t('links.stages')}</Link></li>
+              <li><Link href="/blog" className="text-white/80 text-[14px] hover:text-[#2B8FAB] capitalize">{t('links.blog')}</Link></li>
+              <li><Link href="/contact" className="text-white/80 text-[14px] hover:text-[#2B8FAB] capitalize">{t('links.contact')}</Link></li>
+              <li><Link href="/campus" className="text-white/80 text-[14px] hover:text-[#2B8FAB] capitalize">{t('links.campus')}</Link></li>
+              <li><Link href="/evenements" className="text-white/80 text-[14px] hover:text-[#2B8FAB] capitalize">{t('links.evenements')}</Link></li>
             </ul>
           </div>
 
@@ -53,9 +53,9 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-[20px] mb-5">{t('links.formations')}</h4>
             <ul className="space-y-3">
-              <li><Link href="/licences" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.licences')}</Link></li>
-              <li><Link href="/masters" className="text-white/80 text-[14px] hover:text-[#2a9d8f] capitalize">{t('links.masters')}</Link></li>
-              <li><Link href="/international" className="text-white/80 text-[14px] hover:text-[#2a9d8f] uppercase font-bold">{t('links.parcours')}</Link></li>
+              <li><Link href="/licences" className="text-white/80 text-[14px] hover:text-[#2B8FAB] capitalize">{t('links.licences')}</Link></li>
+              <li><Link href="/masters" className="text-white/80 text-[14px] hover:text-[#2B8FAB] capitalize">{t('links.masters')}</Link></li>
+              <li><Link href="/international" className="text-white/80 text-[14px] hover:text-[#2B8FAB] uppercase font-bold">{t('links.parcours')}</Link></li>
             </ul>
           </div>
 
@@ -64,19 +64,19 @@ export default function Footer() {
             <h4 className="text-white font-bold text-[20px] mb-5">{t('contact.title')}</h4>
             <ul className="space-y-4">
               <li className="flex gap-4">
-                <MapPin className="w-5 h-5 text-[#2a9d8f] shrink-0 mt-1" />
+                <MapPin className="w-5 h-5 text-[#2B8FAB] shrink-0 mt-1" />
                 <span className="text-white/80 text-[14px] leading-relaxed">
                   {t('contact.address')}
                 </span>
               </li>
               <li className="flex gap-4">
-                <Mail className="w-5 h-5 text-[#2a9d8f] shrink-0" />
-                <a href="mailto:contact@ebs.tn" className="text-white/80 text-[14px] hover:text-[#2a9d8f]">
+                <Mail className="w-5 h-5 text-[#2B8FAB] shrink-0" />
+                <a href="mailto:contact@ebs.tn" className="text-white/80 text-[14px] hover:text-[#2B8FAB]">
                   contact@ebs.tn
                 </a>
               </li>
               <li className="flex gap-4 items-center">
-                <Phone className="w-5 h-5 text-[#2a9d8f] shrink-0" />
+                <Phone className="w-5 h-5 text-[#2B8FAB] shrink-0" />
                 <div className="flex flex-col text-white/80 text-[14px]">
                   <span>+216 29 58 28 35</span>
                   <span>+216 71 18 26 25</span>

@@ -46,7 +46,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.8 }}
                 className="text-[38px] md:text-[50px] xl:text-[60px] font-extrabold leading-[1.15] tracking-tight mb-6 md:mb-8 text-[#232434]"
               >
-                {t('title1')} <span className="text-[#2a9d8f]">{t('titleHighlight')}</span> {t('title2')}
+                {t('title1')} <span className="text-[#2B8FAB]">{t('titleHighlight')}</span> {t('title2')}
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
@@ -66,10 +66,10 @@ export default function HeroSection() {
                 className="relative mt-4 w-full max-w-[550px]"
               >
                 <div className="flex flex-col items-end mb-2 relative z-20 pr-4 md:pr-8">
-                  <span className="text-[16px] md:text-[18px] text-[#2a9d8f] font-semibold italic text-right leading-tight w-[200px]">
+                  <span className="text-[16px] md:text-[18px] text-[#2B8FAB] font-semibold italic text-right leading-tight w-[200px]">
                     {t('sliderTitle')}
                   </span>
-                  <svg width="45" height="45" viewBox="0 0 100 100" fill="none" className="text-[#2a9d8f] mr-6 md:mr-12 mt-1">
+                  <svg width="45" height="45" viewBox="0 0 100 100" fill="none" className="text-[#2B8FAB] mr-6 md:mr-12 mt-1">
                     <path d="M90,10 Q40,30 20,90" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
                     <polygon points="20,90 32,78 14,75" fill="currentColor" />
                   </svg>
@@ -95,17 +95,17 @@ export default function HeroSection() {
                     <CarouselContent className="-ml-4">
                       {courseCategories.map((cat, idx) => (
                         <CarouselItem key={idx} className="pl-4 basis-[140px] md:basis-[160px]">
-                          <div className="w-full h-[150px] md:h-[160px] relative bg-transparent border border-dashed border-[#a3a3a3] flex flex-col items-center justify-center p-3 md:p-4 transition-all duration-300 hover:border-[#2a9d8f] cursor-pointer group">
+                          <div className="w-full h-[150px] md:h-[160px] relative bg-transparent border border-dashed border-[#a3a3a3] flex flex-col items-center justify-center p-3 md:p-4 transition-all duration-300 hover:border-[#2B8FAB] cursor-pointer group">
                             {/* Badge */}
                             <div className={`absolute top-2 right-2 text-white text-[10px] font-bold px-1.5 py-0.5 rounded ${cat.badgeColor}`}>
                               +{cat.count}
                             </div>
                             {/* Thin Icon */}
                             <div className="mb-2 md:mb-3">
-                              <cat.icon className="w-10 h-10 md:w-12 md:h-12 text-[#42474c] stroke-[1px] group-hover:text-[#2a9d8f] transition-colors" />
+                              <cat.icon className="w-10 h-10 md:w-12 md:h-12 text-[#42474c] stroke-[1px] group-hover:text-[#2B8FAB] transition-colors" />
                             </div>
                             {/* Text */}
-                            <h3 className="text-center font-bold text-[#232434] text-[12px] md:text-[13px] leading-snug group-hover:text-[#2a9d8f] transition-colors">
+                            <h3 className="text-center font-bold text-[#232434] text-[12px] md:text-[13px] leading-snug group-hover:text-[#2B8FAB] transition-colors">
                               {cat.title}
                             </h3>
                           </div>

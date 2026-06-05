@@ -19,7 +19,7 @@ export default function HeroBackground() {
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -top-[20%] -left-[10%] w-[70vw] h-[70vw] max-w-[800px] max-h-[800px] mix-blend-multiply pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(42,157,143,0.95) 0%, rgba(42,157,143,0) 65%)" }}
+          style={{ background: "radial-gradient(circle, rgba(43,143,171,0.95) 0%, rgba(43,143,171,0) 65%)" }}
         />
 
         {/* Bottom Right Orange Orb */}
@@ -61,7 +61,7 @@ export default function HeroBackground() {
         <m.div
           animate={{ y: [0, 30, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute top-[58%] left-[7%] w-[16px] h-[16px] rounded-full border-[2px] border-[#2a9d8f]/50"
+          className="absolute top-[58%] left-[7%] w-[16px] h-[16px] rounded-full border-[2px] border-[#2B8FAB]/50"
         />
 
         {/* Small solid dot (upper middle) */}
