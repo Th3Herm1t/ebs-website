@@ -9,12 +9,17 @@ import HeroBackgroundVariant1 from "./HeroBackgroundVariant1";
 function ProgramGrid({ title, subtitle, programs }: { title: string, subtitle: string, programs: any[] }) {
   const getCatColor = (cat: string) => {
     switch (cat.toLowerCase()) {
+      // Licences
       case 'management': return 'bg-[#3b82f6]';
       case 'marketing': return 'bg-[#ec4899]';
       case 'finance': return 'bg-[#14b8a6]';
       case 'informatique': return 'bg-[#f43f5e]';
-      case 'ia': return 'bg-[#a855f7]';
+      case 'intelligence artificielle': return 'bg-[#a855f7]';
       case 'cybersécurité': return 'bg-[#eab308]';
+      // Masters
+      case 'finance avancée': return 'bg-[#10b981]';
+      case 'marketing 5.0': return 'bg-[#d946ef]';
+      case 'project management': return 'bg-[#6366f1]';
       default: return 'bg-[#f4a261]';
     }
   };

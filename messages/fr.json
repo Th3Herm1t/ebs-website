@@ -175,7 +175,7 @@
           "detail2": "IA Intégrée - 35 Certifications"
         },
         {
-          "cat": "IA",
+          "cat": "Intelligence Artificielle",
           "title": "Licence Nationale en Génie Logiciel - Option IA",
           "detail1": "6 Semestres - Présentiel",
           "detail2": "75 Certifications Disponibles"
@@ -189,19 +189,19 @@
       ],
       "masters": [
         {
-          "cat": "Finance",
+          "cat": "Finance Avancée",
           "title": "Master en Ingénierie Financière",
           "detail1": "4 Semestres - Présentiel",
           "detail2": "IA Intégrée - 15 Certifications"
         },
         {
-          "cat": "Marketing",
+          "cat": "Marketing 5.0",
           "title": "Master en CRM - Marketing & Transformation Digitale",
           "detail1": "4 Semestres - Présentiel",
           "detail2": "IA Intégrée - 49 Certifications"
         },
         {
-          "cat": "Management",
+          "cat": "Project Management",
           "title": "Master en Management des Projets Innovants & Startups",
           "detail1": "4 Semestres - Présentiel",
           "detail2": "IA Intégrée - 22 Certifications"
@@ -379,7 +379,7 @@
           "desc": "Obtenez des certifications reconnues par des leaders mondiaux tels que Google, Microsoft, IBM, Cisco et Harvard tout au long de votre parcours académique."
         },
         {
-          "title": "L'IA comme compétence transversale dans tous les Parcours",
+          "title": "L'IA comme compétence transversale",
           "desc": "Développez des compétences en intelligence artificielle applicables à votre domaine, qu'il s'agisse du management, du marketing, de la finance ou de l'informatique."
         },
         {
