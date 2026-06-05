@@ -11,13 +11,45 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
 
 const imageEvents = [
-  { img: "/images/banner/slide1.jpg", day: "20", month: "Oct", title: "Electrical Engineering of Batparder new event" },
-  { img: "/images/banner/slide2.jpg", day: "22", month: "Oct", title: "Architecture Design of International Art Fair 2023" },
+  {
+    title: "Master Marketing Digital et Data Analytics : Webinaire",
+    link: "https://ebs.tn/blog/master-marketing-digital-et-data-analytics-de-lebs/",
+    img: "https://ebs.tn/wp-content/uploads/2024/02/Master-Marketing-Digital-et-Data-Analytics-d_ESPIMA.webp",
+    day: "19",
+    month: "FÉV",
+    time: "10:00 - 12:00",
+    location: "Campus EBS"
+  },
+  {
+    title: "Métiers d'Avenir dans le Digital Marketing : Conférence",
+    link: "https://ebs.tn/blog/metiers-davenir-dans-le-digital-marketing-levolution-dynamique-du-paysage-professionnel/",
+    img: "https://ebs.tn/wp-content/uploads/2024/01/Metiers-d_Avenir-dans-le-Digital-Marketing.webp",
+    day: "26",
+    month: "JAN",
+    time: "14:00 - 16:30",
+    location: "Amphithéâtre"
+  }
 ];
 
 const listEvents = [
-  { day: "26", month: "Oct", title: "Chiter Astana Event" },
-  { day: "29", month: "Oct", title: "Dasel Bhai Program" },
+  {
+    title: "CV Renforcé par des Certifications : Workshop",
+    link: "https://ebs.tn/blog/cv-renforce-par-des-certifications-la-cle-de-la-reussite-pour-les-jeunes-diplomes/",
+    img: "https://ebs.tn/wp-content/uploads/2024/02/CV-Renforce-par-des-Certifications.webp",
+    day: "01",
+    month: "FÉV",
+    time: "09:00 - 12:00",
+    location: "Campus EBS"
+  },
+  {
+    title: "L'Enseignement Supérieur : Les Universités Privées",
+    link: "https://ebs.tn/blog/universites-privees-en-tunisie/",
+    img: "https://ebs.tn/wp-content/uploads/2024/02/Photo-principale-Enseignement-Superieur-dans-les-Universites-Privees-en-Tunisie_1.webp",
+    day: "29",
+    month: "FÉV",
+    time: "10:00 - 12:00",
+    location: "En Ligne"
+  }
 ];
 
 export default function EventsSection() {
@@ -46,22 +78,22 @@ export default function EventsSection() {
               <Card className="border-penn-border rounded-[6px] overflow-hidden h-full">
                 <div className="relative">
                   <Image src={event.img} alt={event.title} width={370} height={270} className="w-full h-[270px] object-cover" />
-                  <div className="absolute top-[15px] left-[15px] flex">
+                  <div className="absolute top-[15px] left-[15px] flex shadow-lg">
                     <span className="bg-penn-navy text-white text-lg font-bold px-3 py-1 rounded-l">{event.day}</span>
                     <span className="bg-penn-green text-white text-lg font-bold px-3 py-1 rounded-r">{event.month}</span>
                   </div>
                 </div>
                 <CardContent className="p-[25px]">
                   <h3>
-                    <Link href="/event" className="text-penn-navy font-extrabold text-lg leading-[28px] transition-colors hover:text-penn-green">
+                    <a href={event.link} target="_blank" rel="noopener noreferrer" className="text-penn-navy font-extrabold text-lg leading-[28px] transition-colors hover:text-penn-green block min-h-[56px]">
                       {event.title}
-                    </Link>
+                    </a>
                   </h3>
-                  <div className="flex gap-4 mt-2.5 text-penn-green text-sm">
-                    <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />10.00AM - 12.00PM</span>
-                    <span className="flex items-center gap-1"><LayoutGrid className="w-3.5 h-3.5" /><strong>At Penn School</strong></span>
+                  <div className="flex flex-wrap gap-4 mt-2.5 text-penn-green text-sm">
+                    <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{event.time}</span>
+                    <span className="flex items-center gap-1"><LayoutGrid className="w-3.5 h-3.5" /><strong>{event.location}</strong></span>
                   </div>
-                  <p className="mt-2.5 text-penn-body text-sm">Lorem ipsum dolor sit amet magna consectetur adipisicing elit.</p>
+                  <p className="mt-2.5 text-penn-body text-sm line-clamp-2">Rejoignez-nous pour cet événement exceptionnel de l'Espima Business School et découvrez de nouvelles opportunités.</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -75,23 +107,24 @@ export default function EventsSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 + i * 0.15 }}
+                className="h-full"
               >
-                <Card className="border-penn-border rounded-[6px]">
+                <Card className="border-penn-border rounded-[6px] h-full flex flex-col justify-center">
                   <CardContent className="p-[25px]">
-                    <div className="flex mb-3">
+                    <div className="flex mb-3 shadow-sm max-w-max">
                       <span className="bg-penn-navy text-white text-lg font-bold px-3 py-1 rounded-l">{event.day}</span>
                       <span className="bg-penn-green text-white text-lg font-bold px-3 py-1 rounded-r">{event.month}</span>
                     </div>
                     <h3>
-                      <Link href="/event" className="text-penn-navy font-extrabold text-lg transition-colors hover:text-penn-green">
+                      <a href={event.link} target="_blank" rel="noopener noreferrer" className="text-penn-navy font-extrabold text-lg transition-colors hover:text-penn-green">
                         {event.title}
-                      </Link>
+                      </a>
                     </h3>
-                    <div className="flex gap-4 mt-2.5 text-penn-green text-sm">
-                      <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />10.00AM - 12.00PM</span>
-                      <span className="flex items-center gap-1"><LayoutGrid className="w-3.5 h-3.5" /><strong>At Penn School</strong></span>
+                    <div className="flex flex-wrap gap-4 mt-2.5 text-penn-green text-sm">
+                      <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{event.time}</span>
+                      <span className="flex items-center gap-1"><LayoutGrid className="w-3.5 h-3.5" /><strong>{event.location}</strong></span>
                     </div>
-                    <p className="mt-2.5 text-penn-body text-sm">Lorem ipsum dolor sit amet magna consectetur adipisicing elit.</p>
+                    <p className="mt-2.5 text-penn-body text-sm line-clamp-2">Ne manquez pas cet événement organisé par EBS. Inscrivez-vous dès maintenant.</p>
                   </CardContent>
                 </Card>
               </motion.div>

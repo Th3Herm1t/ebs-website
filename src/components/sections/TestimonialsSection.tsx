@@ -9,9 +9,27 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
 
 const testimonials = [
-  { img: "/images/all-img/t1-stock.jpg", name: "James Clayton", role: "- Design Expert", bgClass: "bg-[#e1f7e8]" },
-  { img: "/images/all-img/t2-stock.jpg", name: "James Simmons", role: "- Marketing Expert", bgClass: "bg-[#f7e8d8]" },
-  { img: "/images/all-img/t3-stock.jpg", name: "Alex feroundo", role: "- Founder", bgClass: "bg-[#e8e8e8]" },
+  { 
+    img: "/images/all-img/t1-stock.jpg", 
+    name: "Yassine B.", 
+    role: "Étudiant en Master Finance", 
+    bgClass: "bg-[#e1f7e8]",
+    text: "Grâce à l'EBS, j'ai décroché mon premier emploi avant même la fin de mon Master."
+  },
+  { 
+    img: "/images/all-img/t2-stock.jpg", 
+    name: "Sarah M.", 
+    role: "Étudiante en Marketing", 
+    bgClass: "bg-[#f7e8d8]",
+    text: "Une expérience inoubliable avec des professeurs passionnés et un accompagnement très personnalisé."
+  },
+  { 
+    img: "/images/all-img/t3-stock.jpg", 
+    name: "Ahmed T.", 
+    role: "Alumni EBS", 
+    bgClass: "bg-[#e8e8e8]",
+    text: "Le partenariat avec l'UQAT m'a ouvert les portes d'une belle carrière à l'international."
+  },
 ];
 
 export default function TestimonialsSection() {
@@ -48,17 +66,17 @@ export default function TestimonialsSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="rounded-[10px] overflow-hidden"
+              className="rounded-[10px] overflow-hidden flex flex-col h-full"
             >
               {/* Stars + Quote */}
-              <div className="bg-white border border-penn-border p-[30px] rounded-t-[10px]">
+              <div className="bg-white border border-penn-border p-[30px] rounded-t-[10px] flex flex-col justify-center flex-1">
                 <div className="flex gap-1 mb-5">
                   {[...Array(5)].map((_, j) => (
                     <Star key={j} className="w-5 h-5 text-[#f9b401] fill-[#f9b401]" />
                   ))}
                 </div>
-                <p className="text-penn-body leading-[26px]">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod tempor.
+                <p className="text-penn-body leading-[26px] italic">
+                  "{t.text}"
                 </p>
               </div>
 
