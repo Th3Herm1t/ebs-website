@@ -18,9 +18,9 @@
     "hero": {
       "title1": "La",
       "titleHighlight": "Business School",
-      "title2": "Tournée vers Le Futur",
+      "title2": "Tournée vers le Futur",
       "desc1": "Formez-vous pour le monde de demain",
-      "desc2": "Business · Finance · Technologie · Intelligence Artificielle · Cybersécurité · Licences et Masters reconnus avec +150 certifications internationales gratuites disponibles",
+      "desc2": "Business · Finance · Technologie · Intelligence Artificielle · Cybersécurité · Licences et Masters reconnus avec +150 certifications internationales disponibles pour nos étudiants.",
       "sliderTitle": "Trouver le parcours qui vous convient",
       "categories": {
         "Licence": "Licence",
@@ -84,7 +84,7 @@
       },
       "s2": {
         "badge": "★ EXCLUSIF",
-        "title": "Intégration de +150 Certifications Internationales dans nos différents parcours",
+        "title": "Intégration de +150 Certifications Internationales dans nos différents cursus",
         "desc": "EBS intègre plus de 150 certifications internationales reconnues dans ses différents programmes de formation afin de renforcer les compétences académiques par des validations professionnelles concrètes. Ces certifications couvrent des domaines variés tels que le management, la finance, le marketing, l’intelligence artificielle, la gestion de projets, la cybersécurité et les technologies numériques. Cette approche permet aux étudiants d’enrichir leur profil, de valoriser leurs acquis et de se préparer aux standards et exigences du marché international.",
         "btn": "En savoir plus"
       },
@@ -96,7 +96,7 @@
       }
     },
     "about": {
-      "title": "Rejoignez la Business School",
+      "title": "EBS : l'Université Augmentée par l'IA",
       "titleHighlight": "tournée vers le futur",
       "desc": "Espima Business School évolue et fait évoluer ses programmes avec un objectif ultime : permettre à chaque étudiant de construire un profil plus compétitif, plus polyvalent et mieux préparé aux exigences du marché de l'emploi.",
       "f1Title": "L'IA comme outil différenciateur",
@@ -106,17 +106,19 @@
       "btn": "Parcourir les programmes"
     },
     "counters": {
-      "c1": "Certifications gratuites incluses",
-      "c2": "Programmes Licences & Masters",
-      "c3": "Partenaires universitaires",
-      "c4": "Taux de réussite",
+      "c1": "Certifications Internationales",
+      "c2": "Licences & Masters",
+      "c3": "Partenaires Universitaires",
+      "c4": "Taux de Réussite",
       "title": "EBS EN CHIFFRES",
       "subtitle": "Les Chiffres Clés",
       "subtitleHighlight": "de l'EBS"
     },
     "partners": {
-      "eco": "Nos Partenaires Économiques",
-      "acad": "Nos Partenaires Académiques Internationaux"
+      "eco": "Nos Partenaires",
+      "ecoHighlight": "Économiques",
+      "acad": "Nos Partenaires Académiques",
+      "acadHighlight": "Internationaux"
     },
     "coursepromo": {
       "title": "EBS INTERNATIONAL",

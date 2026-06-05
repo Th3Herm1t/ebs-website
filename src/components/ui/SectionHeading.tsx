@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 
 interface SectionHeadingProps {
-  title: string;
+  title?: string;
   subtitle: React.ReactNode;
   align?: "left" | "center";
   theme?: "light" | "dark";
@@ -31,22 +31,24 @@ export default function SectionHeading({
         className
       )}
     >
-      <h2
-        className={cn(
-          "text-[14px] font-bold mb-[10px] tracking-[1.5px] uppercase flex items-center",
-          align === "center" ? "justify-center" : "justify-start",
-          titleColor
-        )}
-      >
-        {align === "center" && (
+      {title && (
+        <h2
+          className={cn(
+            "text-[14px] font-bold mb-[10px] tracking-[1.5px] uppercase flex items-center",
+            align === "center" ? "justify-center" : "justify-start",
+            titleColor
+          )}
+        >
+          {align === "center" && (
+            <span className={cn("w-[40px] md:w-[80px] h-[2px] inline-block mx-3", lineColor)} />
+          )}
+          {title}
           <span className={cn("w-[40px] md:w-[80px] h-[2px] inline-block mx-3", lineColor)} />
-        )}
-        {title}
-        <span className={cn("w-[40px] md:w-[80px] h-[2px] inline-block mx-3", lineColor)} />
-      </h2>
+        </h2>
+      )}
       <p
         className={cn(
-          "m-0 text-[32px] md:text-[42px] font-extrabold capitalize leading-[1.2] md:leading-[1.1]",
+          "m-0 text-[32px] md:text-[42px] font-extrabold leading-[1.2] md:leading-[1.1]",
           align === "center" ? "w-full mx-auto" : "w-full md:w-[70%]",
           textColor,
           subtitleClassName

@@ -33,10 +33,10 @@ export default function Home() {
       <InfoSliderSection />
       <AboutSection />
       <CounterSection />
-      <PartnerLogos />
-      <CareerSection />
-      <AcademicPartners />
       <CoursePromoSection />
+      <AcademicPartners />
+      <CareerSection />
+      <PartnerLogos />
       <CoursesSection />
       <FeaturesSection />
       <NewsletterSection />

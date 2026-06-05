@@ -39,7 +39,7 @@ export default function AboutSection() {
               duration={0.8}
               className="mb-[30px] relative"
             >
-              <h2 className="font-bold mb-5 leading-[1.2] text-[28px] lg:text-[36px] text-penn-navy">
+              <h2 className="font-bold mb-5 leading-[1.2] text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] tracking-tight xl:whitespace-nowrap text-penn-navy">
                 {t('title')}
               </h2>
               <p className="mb-[30px] text-[15px] leading-[1.8] text-penn-body opacity-90">

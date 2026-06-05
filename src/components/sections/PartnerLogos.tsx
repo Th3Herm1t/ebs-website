@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { useTranslations } from 'next-intl';
+import SectionHeading from "@/components/ui/SectionHeading";
 
 const logos = [
   { file: "arforghe.png", name: "Arforghe" },
@@ -26,15 +27,13 @@ export default function PartnerLogos() {
 
   return (
     <section className="section-padding" ref={ref}>
-      <div className="max-w-[1400px] mx-auto px-5 lg:px-12 text-center">
+      <div className="max-w-[1400px] mx-auto px-5 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-penn-navy font-bold text-xl mb-10">
-            {t('eco')}
-          </h3>
+          <SectionHeading subtitle={<>{t('eco')} <span className="text-penn-green underline decoration-penn-green">{t('ecoHighlight')}</span></>} />
           <div className="overflow-hidden whitespace-nowrap w-full relative">
             <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-white to-transparent z-10" />
             <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-white to-transparent z-10" />
@@ -48,14 +47,14 @@ export default function PartnerLogos() {
                 <a
                   key={i}
                   href="#"
-                  className="inline-block opacity-50 hover:opacity-100 transition-opacity duration-300 flex-shrink-0"
+                  className="inline-block flex-shrink-0"
                 >
                   <Image
                     src={`/images/partenaires/${logo.file}`}
                     alt={logo.name}
-                    width={140}
-                    height={70}
-                    className="h-[50px] w-auto object-contain"
+                    width={180}
+                    height={90}
+                    className="h-[90px] w-auto object-contain"
                   />
                 </a>
               ))}
