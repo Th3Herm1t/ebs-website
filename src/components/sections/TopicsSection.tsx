@@ -13,6 +13,14 @@ export default function TopicsSection() {
     { icon: "/images/icon/cisco-2.svg", title: "Cisco" },
     { icon: "/images/icon/aws-2.svg", title: "AWS" },
     { icon: "/images/icon/hubspot.svg", title: "Hubspot" },
+    { icon: "/images/icon/Certification AHREFS.png", title: "Ahrefs" },
+    { icon: "/images/icon/Certification BLOOMBERG.png", title: "Bloomberg" },
+    { icon: "/images/icon/Certification DEPLEARNING.AI.png", title: "DeepLearning.AI" },
+    { icon: "/images/icon/Certification FORTINET.png", title: "Fortinet" },
+    { icon: "/images/icon/Certification META.png", title: "Meta" },
+    { icon: "/images/icon/Certification N8N.png", title: "n8n" },
+    { icon: "/images/icon/Certification PWC.png", title: "PwC" },
+    { icon: "/images/icon/Certification SEMRUSH.png", title: "Semrush" },
   ];
 
   return (
@@ -33,7 +41,7 @@ export default function TopicsSection() {
               delay={i * 0.1}
             >
               <div className="flex items-center gap-[20px] p-[25px] bg-white border border-penn-border rounded-[8px] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(1,41,112,0.1)] hover:border-t-2 hover:border-t-penn-green h-full">
-                <Image src={cert.icon} alt={cert.title} width={60} height={60} className="flex-shrink-0" />
+                <Image src={cert.icon} alt={cert.title} width={60} height={60} className="flex-shrink-0 object-contain" />
                 <div className="flex flex-col justify-center">
                   <h2 className="text-penn-navy font-extrabold text-lg">
                     <span className="transition-colors hover:text-penn-green cursor-pointer">{cert.title}</span>

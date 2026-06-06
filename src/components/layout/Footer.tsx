@@ -54,24 +54,6 @@ export default function Footer() {
       
       <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-12 relative z-10">
         
-        {/* Newsletter Banner */}
-        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-16 flex flex-wrap lg:flex-nowrap items-center justify-between gap-8 border border-white/10 shadow-xl">
-          <div className="flex-1">
-            <h3 className="text-white text-2xl font-bold mb-2">{tN('title')}</h3>
-            <p className="text-white/70">{tN('desc')}</p>
-          </div>
-          <div className="flex w-full lg:w-auto gap-3">
-            <input 
-              type="email" 
-              placeholder={tN('placeholder')} 
-              className="bg-white/10 text-white border border-white/20 placeholder:text-white/40 focus:border-penn-green focus:ring-1 focus:ring-penn-green outline-none flex-1 lg:w-[320px] rounded-lg px-4 py-3 transition-all" 
-            />
-            <button className="bg-penn-green text-white px-8 py-3 rounded-lg font-bold hover:bg-penn-green/80 transition-colors whitespace-nowrap">
-              {tN('btn')}
-            </button>
-          </div>
-        </div>
-
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           

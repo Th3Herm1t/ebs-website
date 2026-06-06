@@ -39,11 +39,12 @@ export default function Home() {
       <PartnerLogos />
       <CoursesSection />
       <FeaturesSection />
-      <NewsletterSection />
       <TopicsSection />
       <EventsSection />
       <TestimonialsSection />
       <BlogSection />
+      <BlogSection />
+      <NewsletterSection />
       <Footer />
     </>
   );

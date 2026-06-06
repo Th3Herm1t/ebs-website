@@ -273,7 +273,7 @@
     "testimonials": {
       "title": "TESTIMONIAL",
       "subtitle": "Ce que nos",
-      "subtitleHighlight": "étudiants disent",
+      "subtitleHighlight": "Étudiants Disent",
       "list": [
         {
           "img": "/images/all-img/t1-stock.jpg",
@@ -300,8 +300,8 @@
     },
     "articles": {
       "title": "ARTICLES",
-      "subtitle": "Nos derniers",
-      "subtitleHighlight": "blogs",
+      "subtitle": "Nos Derniers",
+      "subtitleHighlight": "Blogs",
       "readMore": "LIRE LA SUITE",
       "listText": [
         {
@@ -371,7 +371,7 @@
     },
     "features": {
       "title": "EBS UNIVERSE",
-      "subtitle": "Pourquoi choisir",
+      "subtitle": "Pourquoi Choisir",
       "subtitleHighlight": "notre Université",
       "list": [
         {
