@@ -115,8 +115,10 @@
       "subtitleHighlight": "of EBS"
     },
     "partners": {
-      "eco": "Our Economic Partners",
-      "acad": "Our International Academic Partners"
+      "eco": "Our Economic",
+      "ecoHighlight": "Partners",
+      "acad": "Our International Academic",
+      "acadHighlight": "Partners"
     },
     "coursepromo": {
       "title": "EBS INTERNATIONAL",

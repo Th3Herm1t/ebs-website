@@ -227,46 +227,46 @@
       "subtitleHighlight": "Évènements EBS",
       "listImage": [
         {
-          "title": "Master Marketing Digital et Data Analytics : Webinaire",
-          "link": "https://ebs.tn/blog/master-marketing-digital-et-data-analytics-de-lebs/",
+          "title": "EBS participe au salon de l'orientation « Wajjahni »",
+          "link": "#",
           "img": "https://ebs.tn/wp-content/uploads/2024/02/Master-Marketing-Digital-et-Data-Analytics-d_ESPIMA.webp",
-          "day": "19",
-          "month": "FÉV",
-          "time": "10:00 - 12:00",
-          "location": "Campus EBS",
-          "desc": "Rejoignez-nous pour cet événement exceptionnel de l'Espima Business School et découvrez de nouvelles opportunités."
+          "day": "01",
+          "month": "JUI",
+          "time": "01 - 07 Juillet 2026",
+          "location": "Palais des Congrès",
+          "desc": "EBS participe au salon de l'orientation Wajjahni du 01 au 07 Juillet 2026."
         },
         {
-          "title": "Métiers d'Avenir dans le Digital Marketing : Conférence",
-          "link": "https://ebs.tn/blog/metiers-davenir-dans-le-digital-marketing-levolution-dynamique-du-paysage-professionnel/",
+          "title": "EBS AI Day – L'IA Transforme les parcours académiques",
+          "link": "#",
           "img": "https://ebs.tn/wp-content/uploads/2024/01/Metiers-d_Avenir-dans-le-Digital-Marketing.webp",
-          "day": "26",
-          "month": "JAN",
-          "time": "14:00 - 16:30",
-          "location": "Amphithéâtre",
-          "desc": "Rejoignez-nous pour cet événement exceptionnel de l'Espima Business School et découvrez de nouvelles opportunités."
+          "day": "20",
+          "month": "MAI",
+          "time": "20 Mai 2026",
+          "location": "Campus EBS",
+          "desc": "EBS organise « EBS AI Day : l'IA transforme les métiers.. et les parcours académiques »."
         }
       ],
       "listText": [
         {
-          "title": "CV Renforcé par des Certifications : Workshop",
-          "link": "https://ebs.tn/blog/cv-renforce-par-des-certifications-la-cle-de-la-reussite-pour-les-jeunes-diplomes/",
+          "title": "EBS JOB FAIR – AI Career Boost: Stand Out In The Age of AI",
+          "link": "#",
           "img": "https://ebs.tn/wp-content/uploads/2024/02/CV-Renforce-par-des-Certifications.webp",
-          "day": "01",
-          "month": "FÉV",
-          "time": "09:00 - 12:00",
+          "day": "30",
+          "month": "AVR",
+          "time": "30 Avril 2026",
           "location": "Campus EBS",
-          "desc": "Ne manquez pas cet événement organisé par EBS. Inscrivez-vous dès maintenant."
+          "desc": "EBS organise « EBS Job Fair : AI Career Boost – Stand out in the age of AI »"
         },
         {
-          "title": "L'Enseignement Supérieur : Les Universités Privées",
-          "link": "https://ebs.tn/blog/universites-privees-en-tunisie/",
+          "title": "EBS Entrepreneurship Challenge",
+          "link": "#",
           "img": "https://ebs.tn/wp-content/uploads/2024/02/Photo-principale-Enseignement-Superieur-dans-les-Universites-Privees-en-Tunisie_1.webp",
-          "day": "29",
-          "month": "FÉV",
-          "time": "10:00 - 12:00",
-          "location": "En Ligne",
-          "desc": "Ne manquez pas cet événement organisé par EBS. Inscrivez-vous dès maintenant."
+          "day": "31",
+          "month": "MAR",
+          "time": "31 Mars - 03 Avril 2026",
+          "location": "Campus EBS",
+          "desc": "Un concours qui rassemble nos étudiants autour de la créativité et l'innovation."
         }
       ]
     },
