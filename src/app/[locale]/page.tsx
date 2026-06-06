@@ -43,7 +43,6 @@ export default function Home() {
       <EventsSection />
       <TestimonialsSection />
       <BlogSection />
-      <BlogSection />
       <NewsletterSection />
       <Footer />
     </>

@@ -13,14 +13,15 @@ export default function TopicsSection() {
     { icon: "/images/icon/cisco-2.svg", title: "Cisco" },
     { icon: "/images/icon/aws-2.svg", title: "AWS" },
     { icon: "/images/icon/hubspot.svg", title: "Hubspot" },
-    { icon: "/images/icon/Certification AHREFS.png", title: "Ahrefs" },
-    { icon: "/images/icon/Certification BLOOMBERG.png", title: "Bloomberg" },
-    { icon: "/images/icon/Certification DEPLEARNING.AI.png", title: "DeepLearning.AI" },
-    { icon: "/images/icon/Certification FORTINET.png", title: "Fortinet" },
-    { icon: "/images/icon/Certification META.png", title: "Meta" },
-    { icon: "/images/icon/Certification N8N.png", title: "n8n" },
-    { icon: "/images/icon/Certification PWC.png", title: "PwC" },
-    { icon: "/images/icon/Certification SEMRUSH.png", title: "Semrush" },
+    { icon: "/images/icon/Asset 1ahrefs.svg", title: "Ahrefs" },
+    { icon: "/images/icon/Asset 1bloomberg.svg", title: "Bloomberg" },
+    { icon: "/images/icon/deeplearning.ai.svg", title: "DeepLearning.AI" },
+    { icon: "/images/icon/fortinet.png", title: "Fortinet" },
+    { icon: "/images/icon/meta.png", title: "Meta" },
+    { icon: "/images/icon/n8n.png", title: "n8n" },
+    { icon: "/images/icon/pwc.png", title: "PwC" },
+    { icon: "/images/icon/semrush.svg", title: "Semrush" },
+    { icon: "/images/icon/harvard.png", title: "Harvard" },
   ];
 
   return (
