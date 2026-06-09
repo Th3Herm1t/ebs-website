@@ -7,3 +7,4 @@ export { CtaSection } from "./CtaSection";
 export { StickyForm } from "./StickyForm";
 export { ProcessSteps } from "./ProcessSteps";
 export { LogoGrid } from "./LogoGrid";
+export { InfiniteLogoMarquee } from "./InfiniteLogoMarquee";

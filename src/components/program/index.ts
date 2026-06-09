@@ -7,4 +7,5 @@ export { IACompetences } from "./IACompetences";
 export { InternationalPerspectives } from "./InternationalPerspectives";
 export { DebouchesGrid } from "./DebouchesGrid";
 export { ProgramCard } from "./ProgramCard";
+export * from "./MagneticProgramCard";
 export { type ProgramLPData, type ModuleItem, type CertItem, type PathwayItem, IA_CERTS_SHARED } from "./data";
