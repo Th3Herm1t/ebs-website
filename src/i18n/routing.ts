@@ -13,6 +13,19 @@ export const routing = defineRouting({
     '/': '/',
     '/licences': '/licences',
     '/masters': '/masters',
+    '/partenaires': '/partenaires',
+    '/certifications': '/certifications',
+    '/qui-sommes-nous': '/qui-sommes-nous',
+    '/vision-mission-valeurs': '/vision-mission-valeurs',
+    '/mot-du-president': '/mot-du-president',
+    '/corps-enseignant': '/corps-enseignant',
+    '/alumni': '/alumni',
+    '/campus': '/campus',
+    '/parcours-internationaux': '/parcours-internationaux',
+    '/etudier-a-letranger': '/etudier-a-letranger',
+    '/entreprises-partenaires': '/entreprises-partenaires',
+    '/tarifs': '/tarifs',
+    '/blog': '/blog',
   }
 });
 
