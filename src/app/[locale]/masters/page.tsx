@@ -63,7 +63,7 @@ export default function MastersPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {overview.map((prog) => (
-              <div key={prog.slug}>
+              <div key={prog.slug} className="h-full">
                 <MagneticProgramCard
                   title={prog.title}
                   subtitle={prog.subtitle}

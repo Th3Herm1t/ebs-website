@@ -42,6 +42,7 @@ export function MagneticProgramCard({
 
   return (
     <motion.div
+      className={cn("h-full", className)}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
     >
@@ -51,10 +52,9 @@ export function MagneticProgramCard({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         className={cn(
-          "group relative flex flex-col bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 transition-all duration-300 overflow-hidden",
+          "group relative flex flex-col h-full bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 transition-all duration-300 overflow-hidden",
           "hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]",
-          isFeatured && "lg:col-span-2 lg:flex-row lg:items-center lg:gap-8",
-          className
+          isFeatured && "lg:col-span-2 lg:flex-row lg:items-center lg:gap-8"
         )}
         style={{ borderBottom: `3px solid ${color}20` }}
       >
@@ -63,9 +63,9 @@ export function MagneticProgramCard({
           style={{ background: `radial-gradient(circle at var(--mouse-x,50%) var(--mouse-y,50%), ${color}, transparent 70%)` }}
         />
 
-        <div className={cn("relative z-10", isFeatured && "lg:flex-1")}>
+        <div className={cn("relative z-10 flex flex-col flex-1", isFeatured && "lg:flex-1")}>
           <span 
-            className="inline-flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-wide mb-3 px-2.5 py-1 rounded-full"
+            className="inline-flex items-center self-start gap-1.5 text-[12px] font-bold uppercase tracking-wide mb-3 px-2.5 py-1 rounded-full"
             style={{ backgroundColor: color + "10", color }}
           >
             {isFeatured && <Sparkles className="w-3 h-3" />}
@@ -83,7 +83,7 @@ export function MagneticProgramCard({
             {subtitle}
           </p>
 
-          <div className="inline-flex items-center gap-2 text-[13px] font-bold text-penn-green group-hover:gap-3 transition-all duration-200">
+          <div className="inline-flex items-center self-start mt-auto gap-2 text-[13px] font-bold text-penn-green group-hover:gap-3 transition-all duration-200">
             Découvrir le programme
             <ArrowRight className="w-3.5 h-3.5" />
           </div>

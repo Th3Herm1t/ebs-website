@@ -56,15 +56,16 @@ export default function LicencesPage() {
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {allPrograms.map((prog) => (
-              <MagneticProgramCard
-                key={prog.slug}
-                title={prog.title}
-                subtitle={prog.subtitle}
-                certifications={prog.totalCerts}
-                color={prog.color}
-                href={`/licences/${prog.slug}`}
-                isFeatured={false}
-              />
+              <div key={prog.slug} className="h-full">
+                <MagneticProgramCard
+                  title={prog.title}
+                  subtitle={prog.subtitle}
+                  certifications={prog.totalCerts}
+                  color={prog.color}
+                  href={`/licences/${prog.slug}`}
+                  isFeatured={false}
+                />
+              </div>
             ))}
           </div>
         </div>
