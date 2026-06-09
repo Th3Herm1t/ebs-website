@@ -1,4 +1,4 @@
-import { Award, BookOpen, Sparkles } from "lucide-react";
+import { Award, BookOpen, Globe, ShieldCheck, Sparkles } from "lucide-react";
 import { CtaSection, InfiniteLogoMarquee } from "@/components/shared";
 import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
@@ -68,6 +68,57 @@ export default function LicencesPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Pourquoi choisir une Licence à EBS ? */}
+      <section className="section-padding bg-white">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
+          <h2 className="text-[28px] md:text-[36px] font-extrabold text-penn-navy text-center mb-12">
+            Pourquoi choisir une Licence à EBS ?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
+                <Sparkles className="w-7 h-7 text-penn-green" />
+              </div>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">IA intégrée dans chaque filière</h3>
+              <p className="text-[15px] text-penn-body leading-relaxed">
+                L&apos;Intelligence Artificielle est une compétence transversale obligatoire dans tous nos programmes. Chaque étudiant repart avec 26 certifications IA reconnues mondialement.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
+                <Award className="w-7 h-7 text-penn-green" />
+              </div>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">150+ certifications gratuites</h3>
+              <p className="text-[15px] text-penn-body leading-relaxed">
+                Des certifications délivrées par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot et bien d&apos;autres — intégralement incluses dans votre formation, sans frais supplémentaires.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
+                <Globe className="w-7 h-7 text-penn-green" />
+              </div>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">Partenariats internationaux</h3>
+              <p className="text-[15px] text-penn-body leading-relaxed">
+                Poursuivez vos études en France, au Canada, en Italie ou à Oman grâce à nos 16 partenaires universitaires. Mobilité facilitée et doubles diplômes possibles.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Argument clé + Certifications logos */}
+      <section className="section-padding bg-penn-bg-light">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-12 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-penn-green/10 text-penn-green font-bold text-[13px] uppercase tracking-wider mb-6">
+            <ShieldCheck className="w-4 h-4" />
+            Certifications incluses
+          </div>
+          <p className="text-[19px] md:text-[22px] font-bold text-penn-navy leading-relaxed max-w-[800px] mx-auto">
+            En plus de votre diplôme reconnu par l&apos;État tunisien, vous repartez avec des certifications délivrées par Google, IBM, Harvard, Cisco, Bloomberg et Fortinet — sans aucun frais supplémentaire.
+          </p>
         </div>
       </section>
 

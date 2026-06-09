@@ -1,4 +1,4 @@
-import { Award, BookOpen, Sparkles } from "lucide-react";
+import { Award, BookOpen, Globe, ShieldCheck, Sparkles } from "lucide-react";
 import { Badge, CtaSection, InfiniteLogoMarquee } from "@/components/shared";
 import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
@@ -75,6 +75,57 @@ export default function MastersPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Pourquoi choisir un Master à EBS ? */}
+      <section className="section-padding bg-white">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
+          <h2 className="text-[28px] md:text-[36px] font-extrabold text-penn-navy text-center mb-12">
+            Pourquoi choisir un Master à EBS ?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
+                <Sparkles className="w-7 h-7 text-penn-green" />
+              </div>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">IA générative & automatisation</h3>
+              <p className="text-[15px] text-penn-body leading-relaxed">
+                Maîtrisez les technologies qui transforment les entreprises : agents IA, automatisation no-code, CRM intelligent avec HubSpot, n8n et IBM Watsonx.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
+                <Award className="w-7 h-7 text-penn-green" />
+              </div>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">Certifications professionnelles</h3>
+              <p className="text-[15px] text-penn-body leading-relaxed">
+                Des certifications PMI, Scrum, Bloomberg, HubSpot, IBM et bien d&apos;autres — intégrées à votre cursus pour booster votre employabilité dès la sortie.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
+                <Globe className="w-7 h-7 text-penn-green" />
+              </div>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">Ouverture internationale</h3>
+              <p className="text-[15px] text-penn-body leading-relaxed">
+                Accédez aux marchés de l&apos;emploi en France, au Canada et à l&apos;international grâce à nos partenariats avec des universités et grandes écoles accréditées.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications logos */}
+      <section className="section-padding bg-penn-bg-light">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-12 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-penn-green/10 text-penn-green font-bold text-[13px] uppercase tracking-wider mb-6">
+            <ShieldCheck className="w-4 h-4" />
+            Certifications incluses
+          </div>
+          <p className="text-[19px] md:text-[22px] font-bold text-penn-navy leading-relaxed max-w-[800px] mx-auto">
+            En plus de votre diplôme reconnu par l&apos;État tunisien, vous repartez avec des certifications délivrées par Google, IBM, Harvard, Bloomberg, HubSpot, PMI, DeepLearning.AI et bien d&apos;autres — sans aucun frais supplémentaire.
+          </p>
         </div>
       </section>
 
