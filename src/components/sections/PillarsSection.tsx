@@ -52,10 +52,10 @@ export default function PillarsSection() {
           <h3 className="text-[24px] md:text-[28px] xl:text-[32px] font-bold mb-4 lg:mb-6 leading-tight text-current">
             {pillar.title}
           </h3>
-          <p className="mb-5 lg:mb-6 text-[14px] lg:text-[15px] leading-[1.7] lg:leading-[1.8] opacity-90">
+          <p className="mb-5 lg:mb-6 text-[14px] lg:text-[15px] leading-tight lg:leading-tight opacity-90">
             {pillar.p1}
           </p>
-          <p className="mb-8 lg:mb-10 text-[14px] lg:text-[15px] leading-[1.7] lg:leading-[1.8] opacity-90">
+          <p className="mb-8 lg:mb-10 text-[14px] lg:text-[15px] leading-tight lg:leading-tight opacity-90">
             {pillar.p2}
           </p>
           <div className="mt-auto pt-4">

@@ -1,12 +1,9 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import PageHeader from "@/components/layout/PageHeader";
 import CoursesSection from "@/components/sections/CoursesSection";
 
 export default function CourseSidebarPage() {
   return (
     <>
-      <Header />
       <PageHeader 
         title="Course Sidebar" 
         breadcrumbs={[
@@ -39,7 +36,6 @@ export default function CourseSidebarPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

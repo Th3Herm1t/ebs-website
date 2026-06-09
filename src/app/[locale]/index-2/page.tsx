@@ -1,5 +1,3 @@
-import Header2 from "@/components/layout/Header2";
-import Footer from "@/components/layout/Footer";
 import HeroSection2 from "@/components/sections/HeroSection2";
 import TopPromo2 from "@/components/sections/TopPromo2";
 import TopicsSection from "@/components/sections/TopicsSection";
@@ -16,7 +14,6 @@ import BlogSection from "@/components/sections/BlogSection";
 export default function Index2Page() {
   return (
     <>
-      <Header2 />
       <HeroSection2 />
       <TopPromo2 />
       <TopicsSection />
@@ -29,7 +26,6 @@ export default function Index2Page() {
       <PricingSection />
       <NewsletterSection />
       <BlogSection />
-      <Footer />
     </>
   );
 }

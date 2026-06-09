@@ -1,5 +1,3 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import PageHeader from "@/components/layout/PageHeader";
 import TopPromo from "@/components/sections/TopPromo";
 import AboutSection from "@/components/sections/AboutSection";
@@ -12,7 +10,6 @@ import PartnerLogos from "@/components/sections/PartnerLogos";
 export default function AboutPage() {
   return (
     <>
-      <Header />
       
       <PageHeader 
         title="About Us" 
@@ -36,7 +33,6 @@ export default function AboutPage() {
       
       <PartnerLogos />
       
-      <Footer />
     </>
   );
 }

@@ -15,7 +15,7 @@ export default function HeroSection2() {
         <div className="row flex justify-center">
           <div className="w-full text-center">	
             <div className="home_content hc_pt mb-[40px]">
-              <h1 className="text-white text-[40px] md:text-[50px] lg:text-[60px] font-bold mb-[20px] leading-[1.2]">
+              <h1 className="text-white text-[40px] md:text-[50px] lg:text-[60px] font-bold mb-[20px] leading-tight">
                 Get smart <span className="text-penn-green underline decoration-2 underline-offset-8">opportunity for</span> your best future
               </h1>
               <p className="text-white text-[16px] md:text-[18px] max-w-[700px] mx-auto opacity-90">

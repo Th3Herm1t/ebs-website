@@ -72,7 +72,7 @@ export default function FeaturesSection() {
                       {feature.title}
                     </h3>
                   </div>
-                  <p className="text-penn-body text-[14px] leading-[1.7]">
+                  <p className="text-penn-body text-[14px] leading-tight">
                     {feature.description}
                   </p>
                 </CardContent>

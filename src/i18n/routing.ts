@@ -11,6 +11,8 @@ export const routing = defineRouting({
   // Provide a localized pathname for specific routes if needed
   pathnames: {
     '/': '/',
+    '/licences': '/licences',
+    '/masters': '/masters',
   }
 });
 

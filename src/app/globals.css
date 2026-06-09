@@ -134,6 +134,18 @@
 
 
 
+/* Partners marquee — pure CSS, infinite seamless scroll */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+}
+
 /* Penn CTA button animation */
 .cta {
   position: relative;

@@ -101,13 +101,13 @@ export default function InfoSliderSection() {
                       transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
                       className="flex flex-col items-start"
                     >
-                      <h2 className="text-penn-navy text-[28px] md:text-[32px] lg:text-[36px] font-extrabold leading-[1.15] mb-5 lg:mb-6 tracking-tight">
+                      <h2 className="text-penn-navy text-[28px] md:text-[32px] lg:text-[36px] font-extrabold leading-tight mb-5 lg:mb-6 tracking-tight">
                         {slide.title}
                       </h2>
                       
                       <div className="w-[80px] h-[3px] bg-gradient-to-r from-penn-green to-transparent mb-6 lg:mb-8"></div>
                       
-                      <p className="text-penn-body text-[15px] lg:text-[16px] leading-[1.8] mb-8 lg:mb-10">
+                      <p className="text-penn-body text-[15px] lg:text-[16px] leading-tight mb-8 lg:mb-10">
                         {slide.text}
                       </p>
                       

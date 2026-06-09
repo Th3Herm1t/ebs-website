@@ -1,5 +1,3 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import PartnerLogos from "@/components/sections/PartnerLogos";
 import TopPromo2 from "@/components/sections/TopPromo2";
@@ -15,7 +13,6 @@ import FaqSection from "@/components/sections/FaqSection";
 export default function Index3Page() {
   return (
     <>
-      <Header />
       <HeroSection />
       <PartnerLogos />
       <TopPromo2 />
@@ -27,7 +24,6 @@ export default function Index3Page() {
       <CoursePromoSection />
       <NewsletterSection />
       <FaqSection />
-      <Footer />
     </>
   );
 }

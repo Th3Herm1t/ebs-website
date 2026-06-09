@@ -1,11 +1,7 @@
 import Link from "next/link";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-
 export default function ThankYouPage() {
   return (
     <>
-      <Header />
       <section className="welcome-area relative h-[600px] bg-[#FFFAEE] flex items-center justify-center">
         <div className="container mx-auto px-4">
           <div className="row flex justify-center">
@@ -21,7 +17,6 @@ export default function ThankYouPage() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 }

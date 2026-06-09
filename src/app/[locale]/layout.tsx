@@ -56,6 +56,10 @@ export const metadata: Metadata = {
   },
 };
 
+import TopBar from "@/components/layout/TopBar";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+
 export default async function RootLayout({
   children,
   params
@@ -92,7 +96,12 @@ export default async function RootLayout({
       </head>
       <body className="min-h-full flex flex-col font-[family-name:var(--font-mulish)]">
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <TopBar />
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
           <LanguageSwitcher />
         </NextIntlClientProvider>
       </body>

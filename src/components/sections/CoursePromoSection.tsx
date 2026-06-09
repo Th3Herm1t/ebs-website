@@ -25,7 +25,7 @@ export default function CoursePromoSection() {
               </div>
 
               {/* Dynamic Headline */}
-              <h2 className="text-[48px] md:text-[60px] font-extrabold text-penn-navy leading-[1.1] mb-8 tracking-tight">
+              <h2 className="text-[48px] md:text-[60px] font-extrabold text-penn-navy leading-tight mb-8 tracking-tight">
                 {t('subtitle')} <br /> 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f4a261] to-[#e9c46a]">
                   {t('subtitleHighlight')}
@@ -33,7 +33,7 @@ export default function CoursePromoSection() {
               </h2>
 
               {/* Stylized Paragraph */}
-              <p className="text-lg md:text-[20px] text-penn-body/80 leading-[1.8] pl-6 border-l-4 border-[#f4a261] italic font-medium">
+              <p className="text-lg md:text-[20px] text-penn-body/80 leading-tight pl-6 border-l-4 border-[#f4a261] italic font-medium">
                 {t('desc')}
               </p>
             </ScrollReveal>

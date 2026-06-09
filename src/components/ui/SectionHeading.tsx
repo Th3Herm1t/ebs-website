@@ -48,7 +48,7 @@ export default function SectionHeading({
       )}
       <p
         className={cn(
-          "m-0 text-[32px] md:text-[42px] font-extrabold leading-[1.2] md:leading-[1.1]",
+          "m-0 text-[32px] md:text-[42px] font-extrabold leading-tight md:leading-tight",
           align === "center" ? "w-full mx-auto" : "w-full md:w-[70%]",
           textColor,
           subtitleClassName

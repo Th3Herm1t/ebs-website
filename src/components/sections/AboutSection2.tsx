@@ -30,7 +30,7 @@ export default function AboutSection2() {
               transition={{ duration: 1, delay: 0.1 }}
               className="ab_content"
             >
-              <h2 className="text-[40px] md:text-[45px] font-bold text-penn-navy leading-[1.2] mb-[20px]">
+              <h2 className="text-[40px] md:text-[45px] font-bold text-penn-navy leading-tight mb-[20px]">
                 Learn new skills to go <u className="decoration-2 underline-offset-8 text-penn-green"><span className="text-penn-green">ahead for your </span></u> career.
               </h2>
               <p className="text-penn-body text-[16px] leading-[28px] mb-[20px]">

@@ -1,7 +1,4 @@
 import dynamic from "next/dynamic";
-import TopBar from "@/components/layout/TopBar";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import TopPromo from "@/components/sections/TopPromo";
 
@@ -25,8 +22,6 @@ const BlogSection = dynamic(() => import("@/components/sections/BlogSection"));
 export default function Home() {
   return (
     <>
-      <TopBar />
-      <Header />
       <HeroSection />
       <TopPromo />
       <PillarsSection />
@@ -44,7 +39,6 @@ export default function Home() {
       <TestimonialsSection />
       <BlogSection />
       <NewsletterSection />
-      <Footer />
     </>
   );
 }

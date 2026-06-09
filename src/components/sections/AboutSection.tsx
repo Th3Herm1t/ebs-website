@@ -39,10 +39,10 @@ export default function AboutSection() {
               duration={0.8}
               className="mb-[30px] relative"
             >
-              <h2 className="font-bold mb-5 leading-[1.2] text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] tracking-tight xl:whitespace-nowrap text-penn-navy">
+              <h2 className="font-bold mb-5 leading-tight text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] tracking-tight xl:whitespace-nowrap text-penn-navy">
                 {t('title')}
               </h2>
-              <p className="mb-[30px] text-[15px] leading-[1.8] text-penn-body opacity-90">
+              <p className="mb-[30px] text-[15px] leading-tight text-penn-body opacity-90">
                 {t('desc')}
               </p>
             </ScrollReveal>
@@ -54,7 +54,7 @@ export default function AboutSection() {
                   <Brain className="w-6 h-6 lg:w-7 lg:h-7 mx-auto mt-4 lg:mt-5" />
                 </span>
                 <h4 className="font-extrabold overflow-hidden mb-2.5 text-[18px] lg:text-[20px] text-[#264653]">{t('f1Title')}</h4>
-                <p className="overflow-hidden text-[14px] lg:text-[15px] leading-[1.7] text-penn-body">{t('f1Desc')}</p>
+                <p className="overflow-hidden text-[14px] lg:text-[15px] leading-tight text-penn-body">{t('f1Desc')}</p>
               </div>
             </ScrollReveal>
 
@@ -65,7 +65,7 @@ export default function AboutSection() {
                   <Award className="w-6 h-6 lg:w-7 lg:h-7 mx-auto mt-4 lg:mt-5" />
                 </span>
                 <h4 className="font-extrabold overflow-hidden mb-2.5 text-[18px] lg:text-[20px] text-[#264653]">{t('f2Title')}</h4>
-                <p className="overflow-hidden text-[14px] lg:text-[15px] leading-[1.7] text-penn-body">{t('f2Desc')}</p>
+                <p className="overflow-hidden text-[14px] lg:text-[15px] leading-tight text-penn-body">{t('f2Desc')}</p>
               </div>
             </ScrollReveal>
 

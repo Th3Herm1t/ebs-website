@@ -44,7 +44,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-[38px] md:text-[50px] xl:text-[60px] font-extrabold leading-[1.15] tracking-tight mb-6 md:mb-8 text-[#232434]"
+                className="text-[38px] md:text-[50px] xl:text-[60px] font-extrabold leading-tight tracking-tight mb-6 md:mb-8 text-[#232434]"
               >
                 {t('title1')} <span className="text-[#2B8FAB]">{t('titleHighlight')}</span> {t('title2')}
               </motion.h1>
@@ -52,7 +52,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="mb-8 font-normal text-[16px] md:text-[18px] text-[#42474c] leading-[1.8] max-w-2xl pr-0 md:pr-8"
+                className="mb-8 font-normal text-[16px] md:text-[18px] text-[#42474c] leading-tight max-w-2xl pr-0 md:pr-8"
               >
                 <strong className="text-[#232434] text-[18px] md:text-[20px] block mb-2 md:mb-3">{t('desc1')}</strong>
                 {t('desc2')}
