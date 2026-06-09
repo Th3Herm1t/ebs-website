@@ -1,19 +1,16 @@
 import { Award, BookOpen, Sparkles } from "lucide-react";
-import { Badge, CtaSection, InfiniteLogoMarquee } from "@/components/shared";
+import { CtaSection, InfiniteLogoMarquee } from "@/components/shared";
 import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { licences } from "@/lib/programmes/licences";
 
-const businessPrograms = [
-  { ...licences.management, subtitle: "Formation au leadership et au pilotage d'organisations dans un monde digital.", featured: false },
-  { ...licences.marketing, subtitle: "La formation marketing digital la plus complète en Tunisie. Maîtrisez le digital et l'IA générative avec les outils de pointe (HubSpot, Google Ads, GA4).", featured: true },
-  { ...licences.finance, subtitle: "Certifications Bloomberg pour une carrière en finance internationale.", featured: false },
-];
-
-const techPrograms = [
-  { ...licences["informatique-standard"], subtitle: "Bases solides en ingénierie logicielle et systèmes informatiques.", featured: false },
-  { ...licences["informatique-ia"], subtitle: "La formation de référence en Intelligence Artificielle. Machine learning, deep learning et NLP avec les certifications Harvard et DeepLearning.AI.", featured: true },
-  { ...licences.cybersecurite, subtitle: "Ethical hacking, forensics, SOC avec Cisco, Fortinet et Google.", featured: false },
+const allPrograms = [
+  { ...licences.management, subtitle: "Formation au leadership et au pilotage d'organisations dans un monde digital." },
+  { ...licences.marketing, subtitle: "La formation marketing digital la plus complète en Tunisie." },
+  { ...licences.finance, subtitle: "Certifications Bloomberg pour une carrière en finance internationale." },
+  { ...licences["informatique-standard"], subtitle: "Bases solides en ingénierie logicielle et systèmes informatiques." },
+  { ...licences["informatique-ia"], subtitle: "Machine learning, deep learning et NLP avec les certifications Harvard et DeepLearning.AI." },
+  { ...licences.cybersecurite, subtitle: "Ethical hacking, forensics, SOC avec Cisco, Fortinet et Google." },
 ];
 
 const licencesCards = [
@@ -36,7 +33,7 @@ const licencesCards = [
   {
     icon: <BookOpen className="w-6 h-6" />,
     title: "6 Parcours",
-    subtitle: "Management & Tech",
+    subtitle: "Management · Finance · Tech",
     color: "#E89745",
     offsetY: -10,
     parallaxSpeed: 0.6,
@@ -55,55 +52,19 @@ export default function LicencesPage() {
 
       <InfiniteLogoMarquee />
 
-      {/* BUSINESS SECTION */}
-      <section className="pt-24 pb-12 bg-[#FAFAFA]">
+      <section className="section-padding bg-[#FAFAFA]">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
-          <div className="mb-12">
-            <Badge variant="default" size="lg" className="mb-4">EBS Business School</Badge>
-            <h2 className="text-[32px] lg:text-[40px] font-extrabold text-penn-navy leading-tight max-w-[600px]">
-              Formez-vous aux métiers du management et du digital.
-            </h2>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {businessPrograms.map((prog) => (
-              <div key={prog.slug}>
-                <MagneticProgramCard
-                  title={prog.title}
-                  subtitle={prog.subtitle}
-                  certifications={prog.totalCerts}
-                  color={prog.color}
-                  href={`/licences/${prog.slug}`}
-                  isFeatured={false}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TECH SECTION */}
-      <section className="pt-12 pb-24 bg-[#FAFAFA]">
-        <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
-          <div className="mb-12">
-            <Badge style={{ backgroundColor: "#9C27B015", color: "#9C27B0", borderColor: "#9C27B030" }} size="lg" className="mb-4">EBS IT & AI Academy</Badge>
-            <h2 className="text-[32px] lg:text-[40px] font-extrabold text-penn-navy leading-tight max-w-[600px]">
-              Devenez l'ingénieur de demain avec nos parcours Tech.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {techPrograms.map((prog) => (
-              <div key={prog.slug}>
-                <MagneticProgramCard
-                  title={prog.title}
-                  subtitle={prog.subtitle}
-                  certifications={prog.totalCerts}
-                  color={prog.color}
-                  href={`/licences/${prog.slug}`}
-                  isFeatured={false}
-                />
-              </div>
+            {allPrograms.map((prog) => (
+              <MagneticProgramCard
+                key={prog.slug}
+                title={prog.title}
+                subtitle={prog.subtitle}
+                certifications={prog.totalCerts}
+                color={prog.color}
+                href={`/licences/${prog.slug}`}
+                isFeatured={false}
+              />
             ))}
           </div>
         </div>
