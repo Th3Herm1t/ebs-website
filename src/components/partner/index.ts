@@ -4,3 +4,4 @@ export { PartnerPrograms } from "./PartnerPrograms";
 export { PartnerEligibility } from "./PartnerEligibility";
 export { PartnerAdvantages } from "./PartnerAdvantages";
 export { PartnerDebouches } from "./PartnerDebouches";
+export { PartnerPageContent } from "./PartnerPageContent";
