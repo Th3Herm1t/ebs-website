@@ -96,12 +96,16 @@ export default function Footer() {
               <span className="absolute -bottom-2 left-0 w-1/2 h-[2px] bg-penn-green" />
             </h4>
             <ul className="space-y-4">
-              <FooterLink href="/international" isBold>{t('links.international')}</FooterLink>
-              <FooterLink href="/entreprises">{t('links.entreprises')}</FooterLink>
+              <FooterLink href="/parcours-internationaux" isBold>{t('links.international')}</FooterLink>
+              <FooterLink href="/entreprises-partenaires">{t('links.entreprises')}</FooterLink>
               <FooterLink href="/stages" isBold>{t('links.stages')}</FooterLink>
+              <FooterLink href="/certifications">{t('links.certifications')}</FooterLink>
+              <FooterLink href="/ia-et-certifications">{t('links.ia')}</FooterLink>
               <FooterLink href="/blog">{t('links.blog')}</FooterLink>
               <FooterLink href="/contact">{t('links.contact')}</FooterLink>
               <FooterLink href="/campus">{t('links.campus')}</FooterLink>
+              <FooterLink href="/faq">{t('links.faq')}</FooterLink>
+              <FooterLink href="/tarifs">{t('links.tarifs')}</FooterLink>
               <FooterLink href="/evenements">{t('links.evenements')}</FooterLink>
             </ul>
           </div>
@@ -115,7 +119,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <FooterLink href="/licences">{t('links.licences')}</FooterLink>
               <FooterLink href="/masters">{t('links.masters')}</FooterLink>
-              <FooterLink href="/international" isBold>{t('links.parcours')}</FooterLink>
+              <FooterLink href="/parcours-internationaux" isBold>{t('links.parcours')}</FooterLink>
             </ul>
           </div>
 

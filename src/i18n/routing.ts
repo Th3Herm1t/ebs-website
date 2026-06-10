@@ -26,6 +26,8 @@ export const routing = defineRouting({
     '/entreprises-partenaires': '/entreprises-partenaires',
     '/tarifs': '/tarifs',
     '/blog': '/blog',
+    '/faq': '/faq',
+    '/ia-et-certifications': '/ia-et-certifications',
   }
 });
 
