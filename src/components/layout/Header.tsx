@@ -23,7 +23,6 @@ const navItems: NavItem[] = [
     children: [
       { label: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
       { label: "Vision, Mission & Valeurs", href: "/vision-mission-valeurs" },
-      { label: "Mot du Président", href: "/mot-du-president" },
       { label: "Corps Enseignant", href: "/corps-enseignant" },
       { label: "Alumni", href: "/alumni" },
       { label: "Campus", href: "/campus" },
