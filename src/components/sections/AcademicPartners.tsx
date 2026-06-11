@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { motion, useInView, useAnimationControls } from "motion/react";
-import { useRef, useState } from "react";
+import { useRef, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import SectionHeading from "@/components/ui/SectionHeading";
 
@@ -23,48 +22,64 @@ const logos = [
 ];
 
 export default function AcademicPartners() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const t = useTranslations('HomePage.partners');
-  const [isPaused, setIsPaused] = useState(false);
-  const controls = useAnimationControls();
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    intervalRef.current = setInterval(() => {
+      el.scrollLeft += 1;
+      if (el.scrollLeft >= el.scrollWidth / 2) {
+        el.scrollLeft = 0;
+      }
+    }, 30);
+
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+  }, []);
+
+  const scroll = (dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir === "left" ? -300 : 300, behavior: "smooth" });
+  };
+
+  const pauseScroll = () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+  const resumeScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    intervalRef.current = setInterval(() => {
+      el.scrollLeft += 1;
+      if (el.scrollLeft >= el.scrollWidth / 2) el.scrollLeft = 0;
+    }, 30);
+  };
 
   return (
-    <section className="section-padding" ref={ref}>
+    <section className="section-padding">
       <div className="max-w-[1400px] mx-auto px-5 lg:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <SectionHeading subtitle={<>{t('acad')} <span className="text-penn-green underline decoration-penn-green">{t('acadHighlight')}</span></>} />
+        <SectionHeading subtitle={<>{t('acad')} <span className="text-penn-green underline decoration-penn-green">{t('acadHighlight')}</span></>} />
+        <div className="relative group/marquee">
+          <button onClick={() => scroll("left")} className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 border border-penn-border shadow-md flex items-center justify-center text-penn-navy hover:text-[#2B8FAB] hover:border-[#2B8FAB] transition-all opacity-0 group-hover/marquee:opacity-100"><ChevronLeft className="w-5 h-5" /></button>
+          <button onClick={() => scroll("right")} className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 border border-penn-border shadow-md flex items-center justify-center text-penn-navy hover:text-[#2B8FAB] hover:border-[#2B8FAB] transition-all opacity-0 group-hover/marquee:opacity-100"><ChevronRight className="w-5 h-5" /></button>
+          <div className="absolute left-0 top-0 w-12 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 w-12 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
           <div
-            className="overflow-x-auto whitespace-nowrap w-full relative cursor-grab active:cursor-grabbing scrollbar-hide"
-            onMouseEnter={() => { setIsPaused(true); controls.stop(); }}
-            onMouseLeave={() => { setIsPaused(false); controls.start({ x: ["0%", "-50%"] }, { ease: "linear", duration: 30, repeat: Infinity }); }}
+            ref={scrollRef}
+            className="overflow-x-auto whitespace-nowrap w-full scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+            onMouseEnter={pauseScroll}
+            onMouseLeave={resumeScroll}
           >
-            <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-            <motion.div
-              animate={controls}
-              initial={{ x: "0%" }}
-              className="inline-flex items-center gap-16 w-max"
-            >
-              {[...logos, ...logos].map((logo, i) => (
+            <div className="inline-flex items-center gap-16 w-max">
+              {[...logos, ...logos, ...logos, ...logos].map((logo, i) => (
                 <a key={i} href="#" className="inline-block flex-shrink-0">
-                  <Image
-                    src={`/images/partenaires-academiques/${logo.file}`}
-                    alt={logo.name}
-                    width={180}
-                    height={90}
-                    className="h-[90px] w-auto object-contain"
-                  />
+                  <img src={`/images/partenaires-academiques/${logo.file}`} alt={logo.name} className="h-[90px] w-auto object-contain" />
                 </a>
               ))}
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
