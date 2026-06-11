@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 import { ArrowDown, Award, Briefcase, Globe, MapPin, Quote, Send, Star, Users } from "lucide-react";
 import { CtaSection } from "@/components/shared";
 
@@ -59,12 +60,17 @@ export default function AlumniPage() {
     <>
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-40 pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-penn-navy via-[#1a2035] to-penn-navy" />
+                {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/heroes/hero-alumni.jpg" alt="" fill className="object-cover" priority />
+        </div>
+        {/* Overlay */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-br from-penn-navy/50 via-[#1a2035]/50 to-penn-navy/50" />
         <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_50%_70%,_#2B8FAB_0%,_transparent_50%)]" />
         <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(43,143,171,0.04) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
-          <div className="max-w-[700px]">
+<div className="max-w-[700px]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

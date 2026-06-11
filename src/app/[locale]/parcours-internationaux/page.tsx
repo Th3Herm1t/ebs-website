@@ -5,13 +5,15 @@ import { ArrowDown, ArrowRight, Check, Globe, GraduationCap, Plane, Shield } fro
 import Image from "next/image";
 import Link from "next/link";
 import { CtaSection } from "@/components/shared";
+import { CountryFlag } from "@/components/shared/CountryFlag";
 
 const scenarios = [
   {
     step: "1 an à EBS",
     arrow: "→",
     dest: "Bachelor 2 en Italie",
-    pays: "🇮🇹 Link University — Rome",
+    pays: "Link University — Rome",
+    code: "IT",
     details: "Accès direct dès la 1ère année de Licence validée. Intégration en Bachelor 2.",
     color: "#43A047",
   },
@@ -19,7 +21,8 @@ const scenarios = [
     step: "2 ans à EBS",
     arrow: "→",
     dest: "Bachelor 3 en France",
-    pays: "🇫🇷 12 partenaires — France",
+    pays: "12 partenaires — France",
+    code: "FR",
     details: "Accès direct après validation de 2 années de Licence. Intégration en 3ème année.",
     color: "#1E88E5",
   },
@@ -27,7 +30,8 @@ const scenarios = [
     step: "3 ans à EBS",
     arrow: "→",
     dest: "Master Grande École",
-    pays: "🇫🇷🇨🇦 France & Canada",
+    pays: "France & Canada",
+    codes: ["FR", "CA"],
     details: "Après la Licence complète. Admission en Master ou Maîtrise chez nos partenaires.",
     color: "#E53935",
   },
@@ -35,7 +39,8 @@ const scenarios = [
     step: "M1 à EBS",
     arrow: "→",
     dest: "Maîtrise au Canada",
-    pays: "🇨🇦 UQAT — Québec",
+    pays: "UQAT — Québec",
+    code: "CA",
     details: "Après une année de Master à EBS. Maîtrise à l'UQAT. Résidence permanente possible.",
     color: "#2B8FAB",
   },
@@ -50,18 +55,18 @@ const etapes = [
 ];
 
 const partners = [
-  { name: "UQAT", country: "🇨🇦", slug: "uqat" },
-  { name: "EM Normandie", country: "🇫🇷", slug: "em-normandie" },
-  { name: "PSB Paris", country: "🇫🇷", slug: "psb" },
-  { name: "IDRAC", country: "🇫🇷", slug: "idrac" },
-  { name: "IFAG", country: "🇫🇷", slug: "ifag" },
-  { name: "IGEFI", country: "🇫🇷", slug: "igefi" },
-  { name: "Éklore", country: "🇫🇷", slug: "eklore" },
-  { name: "Epitech", country: "🇫🇷", slug: "epitech" },
-  { name: "EPSI", country: "🇫🇷", slug: "epsi" },
-  { name: "Excelia", country: "🇫🇷", slug: "excelia" },
-  { name: "Link Univ.", country: "🇮🇹", slug: "link-university" },
-  { name: "GUtech", country: "🇴🇲", slug: "gutech" },
+  { name: "UQAT", code: "CA", slug: "uqat" },
+  { name: "EM Normandie", code: "FR", slug: "em-normandie" },
+  { name: "PSB Paris", code: "FR", slug: "psb" },
+  { name: "IDRAC", code: "FR", slug: "idrac" },
+  { name: "IFAG", code: "FR", slug: "ifag" },
+  { name: "IGEFI", code: "FR", slug: "igefi" },
+  { name: "Éklore", code: "FR", slug: "eklore" },
+  { name: "Epitech", code: "FR", slug: "epitech" },
+  { name: "EPSI", code: "FR", slug: "epsi" },
+  { name: "Excelia", code: "FR", slug: "excelia" },
+  { name: "Link Univ.", code: "IT", slug: "link-university" },
+  { name: "GUtech", code: "OM", slug: "gutech" },
 ];
 
 export default function InternationalPage() {
@@ -69,12 +74,17 @@ export default function InternationalPage() {
     <>
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-40 pb-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-penn-navy via-[#1a2035] to-penn-navy" />
+                {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/heroes/hero-intl.jpg" alt="" fill className="object-cover" priority />
+        </div>
+        {/* Overlay */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-br from-penn-navy/50 via-[#1a2035]/50 to-penn-navy/50" />
         <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_30%_50%,_#2B8FAB_0%,_transparent_50%),radial-gradient(circle_at_70%_80%,_#43A047_0%,_transparent_50%)]" />
         <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(43,143,171,0.04) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
-          <div className="max-w-[750px]">
+<div className="max-w-[750px]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -140,21 +150,21 @@ export default function InternationalPage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
             {[
-              { slug: "uqat", logo: "/images/partenaires-academiques/uqat.png", name: "UQAT", pays: "Canada" },
-              { slug: "em-normandie", logo: null, name: "EM Normandie", pays: "France", initials: "EMN" },
-              { slug: "psb", logo: "/images/partenaires-academiques/psb.png", name: "PSB Paris", pays: "France" },
-              { slug: "idrac", logo: "/images/partenaires-academiques/idrac.png", name: "IDRAC", pays: "France" },
-              { slug: "ifag", logo: "/images/partenaires-academiques/ifag.png", name: "IFAG", pays: "France" },
-              { slug: "igefi", logo: "/images/partenaires-academiques/igefi.png", name: "IGEFI", pays: "France" },
-              { slug: "eklore", logo: "/images/partenaires-academiques/eklore.png", name: "Éklore", pays: "France" },
-              { slug: "epitech", logo: "/images/partenaires-academiques/epitech.png", name: "Epitech", pays: "France" },
-              { slug: "epsi", logo: "/images/partenaires-academiques/epsi.png", name: "EPSI", pays: "France" },
-              { slug: "excelia", logo: "/images/partenaires-academiques/excelia.png", name: "Excelia", pays: "France" },
-              { slug: "figs", logo: "/images/partenaires-academiques/figs (2).png", name: "FIGS Education", pays: "France" },
-              { slug: "supdecom", logo: "/images/partenaires-academiques/supdecom.png", name: "Sup'de Com", pays: "France" },
-              { slug: "link-university", logo: null, name: "Link University", pays: "Italie", initials: "LU" },
-              { slug: "redsup", logo: "/images/partenaires-academiques/redsup.png", name: "RedSup", pays: "France" },
-              { slug: "gutech", logo: "/images/partenaires-academiques/gutech.png", name: "GUtech", pays: "Oman" },
+              { slug: "uqat", logo: "/images/partenaires-academiques/uqat.png", name: "UQAT", pays: "Canada", code: "CA" },
+              { slug: "em-normandie", logo: null, name: "EM Normandie", pays: "France", code: "FR", initials: "EM" },
+              { slug: "psb", logo: "/images/partenaires-academiques/psb.png", name: "PSB Paris", pays: "France", code: "FR" },
+              { slug: "idrac", logo: "/images/partenaires-academiques/idrac.png", name: "IDRAC", pays: "France", code: "FR" },
+              { slug: "ifag", logo: "/images/partenaires-academiques/ifag.png", name: "IFAG", pays: "France", code: "FR" },
+              { slug: "igefi", logo: "/images/partenaires-academiques/igefi.png", name: "IGEFI", pays: "France", code: "FR" },
+              { slug: "eklore", logo: "/images/partenaires-academiques/eklore.png", name: "Éklore", pays: "France", code: "FR" },
+              { slug: "epitech", logo: "/images/partenaires-academiques/epitech.png", name: "Epitech", pays: "France", code: "FR" },
+              { slug: "epsi", logo: "/images/partenaires-academiques/epsi.png", name: "EPSI", pays: "France", code: "FR" },
+              { slug: "excelia", logo: "/images/partenaires-academiques/excelia.png", name: "Excelia", pays: "France", code: "FR" },
+              { slug: "figs", logo: "/images/partenaires-academiques/figs (2).png", name: "FIGS Education", pays: "France", code: "FR" },
+              { slug: "supdecom", logo: "/images/partenaires-academiques/supdecom.png", name: "Sup'de Com", pays: "France", code: "FR" },
+              { slug: "link-university", logo: null, name: "Link University", pays: "Italie", code: "IT", initials: "LU" },
+              { slug: "redsup", logo: "/images/partenaires-academiques/redsup.png", name: "RedSup", pays: "France", code: "FR" },
+              { slug: "gutech", logo: "/images/partenaires-academiques/gutech.png", name: "GUtech", pays: "Oman", code: "OM" },
             ].map((p, i) => (
               <motion.div
                 key={p.slug}
@@ -188,7 +198,10 @@ export default function InternationalPage() {
                     <p className="text-[13px] font-bold text-penn-navy group-hover:text-[#2B8FAB] transition-colors">
                       {p.name}
                     </p>
-                    <p className="text-[11px] text-penn-body/50">{p.pays}</p>
+                    <p className="text-[11px] text-penn-body/50 flex items-center gap-1 justify-center">
+                      <CountryFlag code={p.code} />
+                      {p.pays}
+                    </p>
                   </div>
                 </Link>
               </motion.div>
@@ -235,7 +248,10 @@ export default function InternationalPage() {
                   <span className="text-[15px] font-extrabold text-penn-navy">{s.dest}</span>
                 </div>
 
-                <p className="text-[12px] font-semibold text-penn-body/60 mb-3">{s.pays}</p>
+                <p className="text-[12px] font-semibold text-penn-body/60 mb-3 flex items-center gap-1.5">
+                  {s.codes ? s.codes.map((c: string) => <CountryFlag key={c} code={c} />) : s.code && <CountryFlag code={s.code} />}
+                  {s.pays}
+                </p>
                 <p className="text-[13px] text-penn-body/70 leading-relaxed">{s.details}</p>
               </motion.div>
             ))}

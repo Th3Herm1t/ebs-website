@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useSpring, useMotionValue, useTransform } from "motion/react";
+import Image from "next/image";
 import { Quote, PenLine, ArrowDown } from "lucide-react";
 import { CtaSection } from "@/components/shared";
 
@@ -59,7 +60,7 @@ export default function MotDuPresidentPage() {
           onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
           className="relative z-10 w-full max-w-[1400px] mx-auto px-5 lg:px-12 py-24 md:py-32"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-16 lg:gap-24 items-center">
+<div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-16 lg:gap-24 items-center">
 
             {/* LEFT — PORTRAIT (dominant visual) */}
             <motion.div

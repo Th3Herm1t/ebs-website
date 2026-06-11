@@ -4,18 +4,18 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { ArrowRight, Building2, Check, GraduationCap, MapPin, Star } from "lucide-react";
 import { CtaSection } from "@/components/shared";
+import { CountryFlag } from "@/components/shared/CountryFlag";
 import type { PartnerData } from "@/lib/partenaires/partenaires";
 
 const countryAccent: Record<string, string> = {
-  "🇨🇦": "#E53935",
-  "🇫🇷": "#1E88E5",
-  "🇮🇹": "#43A047",
-  "🇴🇲": "#FB8C00",
+  CA: "#E53935",
+  FR: "#1E88E5",
+  IT: "#43A047",
+  OM: "#FB8C00",
 };
 
 export function PartnerPageContent({ data }: { data: PartnerData }) {
-  const flag = data.country.slice(0, 2);
-  const accent = countryAccent[flag] ?? "#2B8FAB";
+  const accent = countryAccent[data.countryCode ?? ""] ?? "#2B8FAB";
 
   return (
     <>
@@ -30,7 +30,7 @@ export function PartnerPageContent({ data }: { data: PartnerData }) {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[12px] font-bold uppercase tracking-wide mb-8"
                   style={{ backgroundColor: accent + "15", color: accent }}>
-                  <MapPin className="w-3.5 h-3.5" />
+                  <CountryFlag code={data.countryCode ?? ""} className="w-4 h-3" />
                   {data.country}
                 </div>
               </motion.div>
@@ -52,7 +52,10 @@ export function PartnerPageContent({ data }: { data: PartnerData }) {
                   {data.name.charAt(0)}
                 </div>
               )}
-              <p className="text-[13px] text-penn-body/60 font-medium">{data.country}</p>
+              <p className="text-[13px] text-penn-body/60 font-medium flex items-center gap-1.5 justify-center">
+                <CountryFlag code={data.countryCode ?? ""} />
+                {data.country}
+              </p>
             </motion.div>
           </div>
         </div>

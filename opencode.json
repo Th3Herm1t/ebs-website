@@ -9,6 +9,24 @@
         "mcp"
       ],
       "enabled": true
+    },
+    "stock-images-mcp": {
+      "type": "local",
+      "command": [
+        "uv",
+        "--directory",
+        "C:\\Users\\abdel\\.gemini\\mcp\\stock-images-mcp",
+        "run",
+        "--with-requirements",
+        "requirements.txt",
+        "server.py"
+      ],
+      "env": {
+        "UNSPLASH_API_KEY": "u1GaQUBeQ42uI7D7rusR2Zip9kdm_yne1WzX--hkwIU",
+        "PEXELS_API_KEY": "MHrvHyU9nqsn2bbS9o4TvTbWbrMTZXzyDyZ8uqtZI5k972k0nQa3D6eo",
+        "PIXABAY_API_KEY": "56169890-92390b6e24de0d9c5fed79439"
+      },
+      "enabled": true
     }
   }
 }

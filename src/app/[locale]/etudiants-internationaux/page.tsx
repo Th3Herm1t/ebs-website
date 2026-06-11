@@ -4,13 +4,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, BadgeCheck, Banknote, BriefcaseMedical, Building, Bus, Check, ChevronDown, FileText, Globe, GraduationCap, HeartHandshake, Hotel, MapPin, Phone, Plane, Quote, Receipt, ShieldUser, Users } from "lucide-react";
 import { CtaSection } from "@/components/shared";
+import { CountryFlag } from "@/components/shared/CountryFlag";
 import AcademicPartners from "@/components/sections/AcademicPartners";
 
 const destinations = [
-  { pays: "Canada", partenaire: "UQAT", color: "#E53935", avantages: ["Immigration facilitée via le PEQ", "Maîtrise en Gestion de Projets, MBA", "Résidence permanente possible", "Qualité de vie exceptionnelle"] },
-  { pays: "France", partenaire: "12 partenaires", color: "#1E88E5", avantages: ["Visa étudiant facilité", "Grandes Écoles accréditées", "Multi-campus dans toute la France", "Accès au marché européen"] },
-  { pays: "Italie", partenaire: "Link University", color: "#43A047", avantages: ["Accès dès la 1ère année à EBS", "Bachelor et Masters à Rome", "Reconnue par l'État italien", "Visa Schengen — toute l'Europe"] },
-  { pays: "Oman", partenaire: "GUtech", color: "#FB8C00", avantages: ["Partenariat RWTH Aachen", "Cours en anglais", "Marché du Golfe", "Cadre moderne et sécurisé"] },
+  { pays: "Canada", code: "CA", partenaire: "UQAT", color: "#E53935", avantages: ["Immigration facilitée via le PEQ", "Maîtrise en Gestion de Projets, MBA", "Résidence permanente possible", "Qualité de vie exceptionnelle"] },
+  { pays: "France", code: "FR", partenaire: "12 partenaires", color: "#1E88E5", avantages: ["Visa étudiant facilité", "Grandes Écoles accréditées", "Multi-campus dans toute la France", "Accès au marché européen"] },
+  { pays: "Italie", code: "IT", partenaire: "Link University", color: "#43A047", avantages: ["Accès dès la 1ère année à EBS", "Bachelor et Masters à Rome", "Reconnue par l'État italien", "Visa Schengen — toute l'Europe"] },
+  { pays: "Oman", code: "OM", partenaire: "GUtech", color: "#FB8C00", avantages: ["Partenariat RWTH Aachen", "Cours en anglais", "Marché du Golfe", "Cadre moderne et sécurisé"] },
 ];
 
 const etapes = [
@@ -68,64 +69,39 @@ export default function EtudiantsInternationauxPage() {
 
   return (
     <>
-      {/* ═══════════ HERO + FORM ═══════════ */}
+      {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-40 pb-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-penn-navy via-[#1a2035] to-penn-navy" />
-        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_50%_40%,_#2B8FAB_0%,_transparent_50%)]" />
+        <div className="absolute inset-0 z-0">
+          <img src="/images/heroes/hero-intl.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0 z-[1] bg-gradient-to-br from-penn-navy/50 via-[#1a2035]/50 to-penn-navy/50" />
+        <div className="absolute inset-0 z-[1] opacity-[0.03] bg-[radial-gradient(circle_at_50%_40%,_#2B8FAB_0%,_transparent_50%)]" />
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 items-start">
-            <div>
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#2B8FAB] text-[12px] font-bold uppercase tracking-[3px] mb-8">
-                  <Globe className="w-4 h-4" />
-                  Étudiants Internationaux
-                </div>
-              </motion.div>
-              <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="text-[42px] md:text-[56px] lg:text-[64px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6">
-                Venez étudier<br />
-                <span className="text-[#2B8FAB]">en Tunisie</span> avec EBS.
-              </motion.h1>
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[16px] md:text-[18px] text-white/60 leading-relaxed max-w-[550px] mb-8">
-                De l&apos;aéroport à votre diplôme, une équipe dédiée vous accompagne à chaque étape. Visa, logement, installation — on s&apos;occupe de tout.
-              </motion.p>
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="flex flex-wrap gap-4">
-                {[
-                  { icon: <Check className="w-4 h-4" />, text: "Conventions signées" },
-                  { icon: <ShieldUser className="w-4 h-4" />, text: "Visa accompagné" },
-                  { icon: <GraduationCap className="w-4 h-4" />, text: "Diplômes reconnus" },
-                ].map((item) => (
-                  <div key={item.text} className="flex items-center gap-2 text-[13px] font-semibold text-white/50">
-                    <span className="text-[#2B8FAB]">{item.icon}</span> {item.text}
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
-              <div className="bg-white rounded-2xl shadow-xl border border-white/10 overflow-hidden sticky top-28">
-                <div className="bg-[#2B8FAB] px-6 py-4">
-                  <h3 className="text-white font-extrabold text-[16px]">Je candidate pour venir étudier</h3>
-                  <p className="text-white/80 text-[13px] mt-0.5">Réponse sous 24h · Gratuit · Sans engagement</p>
-                </div>
-                <form className="p-6 flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
-                  <input type="text" placeholder="Prénom *" required className="w-full h-10 px-3 text-sm border border-penn-border rounded-lg outline-none focus:border-[#2B8FAB] transition-colors" />
-                  <input type="text" placeholder="Nom *" required className="w-full h-10 px-3 text-sm border border-penn-border rounded-lg outline-none focus:border-[#2B8FAB] transition-colors" />
-                  <input type="email" placeholder="Email *" required className="w-full h-10 px-3 text-sm border border-penn-border rounded-lg outline-none focus:border-[#2B8FAB] transition-colors" />
-                  <input type="tel" placeholder="Téléphone / WhatsApp *" required className="w-full h-10 px-3 text-sm border border-penn-border rounded-lg outline-none focus:border-[#2B8FAB] transition-colors" />
-                  <select className="w-full h-10 px-3 text-sm border border-penn-border rounded-lg outline-none focus:border-[#2B8FAB] transition-colors text-penn-body">
-                    <option value="">Pays d&apos;origine</option>
-                    <option>Algérie</option><option>Maroc</option><option>Libye</option>
-                    <option>Côte d&apos;Ivoire</option><option>Sénégal</option><option>Cameroun</option>
-                    <option>Gabon</option><option>Congo</option><option>Mali</option>
-                    <option>Mauritanie</option><option>Autre</option>
-                  </select>
-                  <button type="submit" className="w-full h-11 bg-[#2B8FAB] text-white font-bold text-[14px] rounded-full hover:bg-penn-navy transition-colors">
-                    Envoyer ma candidature →
-                  </button>
-                  <p className="text-[11px] text-penn-body/60 text-center">✓ Gratuit · ✓ Sans engagement · ✓ Réponse sous 24h</p>
-                </form>
+          <div className="max-w-[750px]">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#2B8FAB] text-[12px] font-bold uppercase tracking-[3px] mb-8">
+                <Globe className="w-4 h-4" />
+                Étudiants Internationaux
               </div>
+            </motion.div>
+            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="text-[42px] md:text-[56px] lg:text-[64px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6">
+              Venez étudier<br />
+              <span className="text-[#2B8FAB]">en Tunisie</span> avec EBS.
+            </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[16px] md:text-[18px] text-white/60 leading-relaxed max-w-[550px] mb-8">
+              De l&apos;aéroport à votre diplôme, une équipe dédiée vous accompagne à chaque étape. Visa, logement, installation — on s&apos;occupe de tout.
+            </motion.p>
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="flex flex-wrap gap-4">
+              {[
+                { icon: <Check className="w-4 h-4" />, text: "Conventions signées" },
+                { icon: <ShieldUser className="w-4 h-4" />, text: "Visa accompagné" },
+                { icon: <GraduationCap className="w-4 h-4" />, text: "Diplômes reconnus" },
+              ].map((item) => (
+                <div key={item.text} className="flex items-center gap-2 text-[13px] font-semibold text-white/50">
+                  <span className="text-[#2B8FAB]">{item.icon}</span> {item.text}
+                </div>
+              ))}
             </motion.div>
           </div>
         </div>
@@ -246,7 +222,9 @@ export default function EtudiantsInternationauxPage() {
             {destinations.map((d, i) => (
               <motion.div key={d.pays} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.4, delay: i * 0.1 }} className="group bg-white rounded-2xl border border-penn-border p-6 lg:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300" style={{ borderTopWidth: "4px", borderTopColor: d.color }}>
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-extrabold text-[15px]" style={{ backgroundColor: d.color }}>{d.pays.charAt(0)}</div>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: d.color + "20" }}>
+                    <CountryFlag code={d.code} className="w-5 h-3.5" />
+                  </div>
                   <div>
                     <h3 className="text-[20px] font-extrabold text-penn-navy">{d.pays}</h3>
                     <p className="text-[13px] font-semibold" style={{ color: d.color }}>{d.partenaire}</p>
