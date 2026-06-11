@@ -127,22 +127,29 @@
                                          "subtitle":  "The Pathway",
                                          "subtitleHighlight":  "International",
                                          "desc":  "With a solid network of international academic partners, EBS offers its students the opportunity to start their studies in Tunisia and finish them in an international partner institution.",
-                                         "path1":  [
-                                                       "Two years of Bachelor at EBS",
-                                                       "Validation of acquired skills",
-                                                       "Language certification",
-                                                       "Immigration file preparation",
-                                                       "Grande École Bachelor in France",
-                                                       "Link University Bachelor in Italy"
-                                                   ],
-                                         "path2":  [
-                                                       "Three years of Bachelor at EBS",
-                                                       "Validation of acquired skills",
-                                                       "Language certification",
-                                                       "Immigration file preparation",
-                                                       "Master in Management in Canada",
-                                                       "Grande École Master in France"
-                                                   ],
+                                          "path1":  [
+                                                        "Two years of Bachelor at EBS",
+                                                        "Validation of acquired skills",
+                                                        "Language certification",
+                                                        "Immigration file preparation",
+                                                        "Bachelor 3 Grande École in France",
+                                                        "Bachelor 3 Link University in Italy"
+                                                    ],
+                                          "path2":  [
+                                                        "1 year of Bachelor at EBS",
+                                                        "Validation of acquired skills",
+                                                        "Language certification",
+                                                        "Immigration file preparation",
+                                                        "Bachelor 2 Link University in Italy"
+                                                    ],
+                                          "path3":  [
+                                                        "Three years of Bachelor at EBS",
+                                                        "Validation of acquired skills",
+                                                        "Language certification",
+                                                        "Immigration file preparation",
+                                                        "Master in Management in Canada",
+                                                        "Grande École Master in France"
+                                                    ],
                                          "btn":  "Learn more"
                                      },
                      "programs":  {

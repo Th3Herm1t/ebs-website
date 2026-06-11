@@ -132,10 +132,17 @@
         "Validation des acquis",
         "Certification de langue",
         "Préparation de dossier d'immigration",
-        "Bachelor Grande École en France",
-        "Bachelor Link University en Italie"
+        "Bachelor 3 Grande École en France",
+        "Bachelor 3 Link University en Italie"
       ],
       "path2": [
+        "1 an de Licence à EBS",
+        "Validation des acquis",
+        "Certification de langue",
+        "Préparation de dossier d'immigration",
+        "Bachelor 2 Link University en Italie"
+      ],
+      "path3": [
         "Trois ans de Licence à EBS",
         "Validation des acquis",
         "Certification de langue",

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, BadgeCheck, Banknote, BriefcaseMedical, Building, Bus, Check, ChevronDown, FileText, Globe, GraduationCap, HeartHandshake, Hotel, MapPin, Phone, Plane, Quote, Receipt, ShieldUser, Users } from "lucide-react";
 import { CtaSection } from "@/components/shared";
+import AcademicPartners from "@/components/sections/AcademicPartners";
 
 const destinations = [
   { pays: "Canada", partenaire: "UQAT", color: "#E53935", avantages: ["Immigration facilitée via le PEQ", "Maîtrise en Gestion de Projets, MBA", "Résidence permanente possible", "Qualité de vie exceptionnelle"] },
@@ -264,6 +265,9 @@ export default function EtudiantsInternationauxPage() {
           </div>
         </div>
       </section>
+
+      {/* ═══════════ ACADEMIC PARTNERS MARQUEE ═══════════ */}
+      <AcademicPartners />
 
       {/* ═══════════ TESTIMONIAL ═══════════ */}
       <section className="section-padding bg-penn-navy relative overflow-hidden">
