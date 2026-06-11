@@ -50,7 +50,17 @@ export default function PillarsSection() {
           className={`flex-1 ${pillar.bgColor} ${pillar.textColor} p-8 md:p-10 lg:p-12 xl:p-16 flex flex-col transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] z-10 hover:z-20`}
         >
           <h3 className="text-[24px] md:text-[28px] xl:text-[32px] font-bold mb-4 lg:mb-6 leading-tight text-current">
-            {pillar.title}
+            {(() => {
+              const words = pillar.title.split(' ');
+              const mid = Math.ceil(words.length / 2);
+              return (
+                <>
+                  {words.slice(0, mid).join(' ')}
+                  <br />
+                  {words.slice(mid).join(' ')}
+                </>
+              );
+            })()}
           </h3>
           <p className="mb-5 lg:mb-6 text-[14px] lg:text-[15px] leading-tight lg:leading-tight opacity-90">
             {pillar.p1}
