@@ -32,7 +32,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] flex items-center max-md:h-auto max-md:py-[80px] overflow-hidden"
+      className="relative min-h-[85vh] flex items-center max-md:h-auto max-md:py-[80px] pt-20 md:pt-24 pb-16 md:pb-24 overflow-hidden"
     >
       <HeroBackground />
       <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-12 relative z-10">

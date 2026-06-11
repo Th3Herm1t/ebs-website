@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant1 from "./HeroBackgroundVariant1";
+import ProgrammeFinder from "./ProgrammeFinder";
 
 function ProgramGrid({ title, subtitle, programs }: { title: string, subtitle: string, programs: any[] }) {
   const getCatColor = (cat: string) => {
@@ -106,6 +107,7 @@ export default function CoursesSection() {
       <div className="relative z-10 max-w-[1200px] mx-auto px-4">
         <ProgramGrid title={t('title')} subtitle={t('licencesSubtitle')} programs={licences} />
         <ProgramGrid title={t('title')} subtitle={t('mastersSubtitle')} programs={masters} />
+        <ProgrammeFinder />
       </div>
     </section>
   );
