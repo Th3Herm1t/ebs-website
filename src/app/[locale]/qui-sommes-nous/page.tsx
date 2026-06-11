@@ -1,6 +1,6 @@
 "use client";
 
-import { Award, BookOpen, Building2, ChevronDown, Globe, GraduationCap, Heart, Lightbulb, Monitor, ShieldCheck, Star, TrendingUp, Users } from "lucide-react";
+import { Award, BookOpen, Building2, ChevronDown, Globe, GraduationCap, Heart, Lightbulb, Monitor, Quote, ShieldCheck, Star, TrendingUp, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -91,6 +91,31 @@ export default function QuiSommesNousPage() {
           </motion.div>
         </div>
         <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2" animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}><ChevronDown className="w-6 h-6 text-white/30" /></motion.div>
+      </section>
+
+      {/* ═══════════ MOT DU PRÉSIDENT FONDATEUR ═══════════ */}
+      <section className="section-padding bg-penn-navy relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_50%_50%,_#2B8FAB_0%,_transparent_70%)]" />
+        <div className="relative z-10 max-w-[900px] mx-auto px-5 lg:px-12">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
+            <div className="flex items-center gap-4 mb-10">
+              <Quote className="w-10 h-10 text-[#2B8FAB]/30" />
+              <h2 className="text-[28px] md:text-[34px] font-extrabold text-white">Le mot du Président Fondateur</h2>
+            </div>
+            <div className="space-y-5 text-[15px] md:text-[16px] text-white/70 leading-relaxed">
+              <p>Espima Business School cultive, depuis sa création en 2013, un modèle spécifique fondé sur une identité et des valeurs fortes : l&apos;innovation, l&apos;ouverture, la responsabilité et l&apos;excellence. Notre pédagogie cible essentiellement l&apos;acquisition d&apos;une expérience par l&apos;étudiant, la promotion de sa créativité et de son esprit critique.</p>
+              <p>La remarquable réussite d&apos;EBS est due principalement aux objectifs que nous avons fixés dès le départ et aux moyens humains et matériels que nous avons mis en place pour former des étudiants dotés de véritables compétences transversales, capables de s&apos;adapter aux changements inéluctables qui transforment le monde d&apos;aujourd&apos;hui.</p>
+              <p>La taille de notre université, l&apos;animation de la vie étudiante et la dynamique scientifique font aujourd&apos;hui de l&apos;EBS un lieu de savoir, de vie, d&apos;échanges, d&apos;animation, d&apos;intégration et d&apos;engagement.</p>
+            </div>
+            <div className="mt-8 pt-8 border-t border-white/10 flex items-center gap-5">
+              <div className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center text-white font-extrabold text-[20px]">AN</div>
+              <div>
+                <p className="text-[18px] font-extrabold text-white">Abderraouf NAJAR</p>
+                <p className="text-[14px] text-white/50">Président — Espima Business School</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* ═══════════ CAMPUS & INFRASTRUCTURE ═══════════ */}

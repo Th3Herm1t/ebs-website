@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { motion, useInView, useAnimationControls } from "motion/react";
+import { useRef, useState } from "react";
 import { useTranslations } from 'next-intl';
 import SectionHeading from "@/components/ui/SectionHeading";
 
@@ -24,6 +24,8 @@ export default function PartnerLogos() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const t = useTranslations('HomePage.partners');
+  const [isPaused, setIsPaused] = useState(false);
+  const controls = useAnimationControls();
 
   return (
     <section className="section-padding" ref={ref}>
@@ -34,21 +36,21 @@ export default function PartnerLogos() {
           transition={{ duration: 0.6 }}
         >
           <SectionHeading subtitle={<>{t('eco')} <span className="text-penn-green underline decoration-penn-green">{t('ecoHighlight')}</span></>} />
-          <div className="overflow-hidden whitespace-nowrap w-full relative">
-            <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-white to-transparent z-10" />
-            <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-white to-transparent z-10" />
+          <div
+            className="overflow-x-auto whitespace-nowrap w-full relative cursor-grab active:cursor-grabbing scrollbar-hide"
+            onMouseEnter={() => { setIsPaused(true); controls.stop(); }}
+            onMouseLeave={() => { setIsPaused(false); controls.start({ x: ["0%", "-50%"] }, { ease: "linear", duration: 25, repeat: Infinity }); }}
+          >
+            <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
             <motion.div
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ ease: "linear", duration: 25, repeat: Infinity }}
-              className="inline-flex items-center gap-16"
+              animate={controls}
+              initial={{ x: "0%" }}
+              className="inline-flex items-center gap-16 w-max"
             >
               {[...logos, ...logos].map((logo, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="inline-block flex-shrink-0"
-                >
+                <a key={i} href="#" className="inline-block flex-shrink-0">
                   <Image
                     src={`/images/partenaires/${logo.file}`}
                     alt={logo.name}
