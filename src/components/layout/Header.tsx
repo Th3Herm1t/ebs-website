@@ -57,7 +57,7 @@ const navItems: NavItem[] = [
     href: "/parcours-internationaux",
     children: [
       { label: "Parcours International", href: "/parcours-internationaux" },
-      { label: "Étudiants Internationaux", href: "/etudier-a-letranger" },
+      { label: "Étudiants Internationaux", href: "/etudiants-internationaux" },
     ],
   },
   { key: "blog", href: "/blog" },
