@@ -3,6 +3,7 @@ import { Mulish } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import "../globals.css";
 
 const mulish = Mulish({
@@ -102,6 +103,7 @@ export default async function RootLayout({
             {children}
           </main>
           <Footer />
+          <FloatingWhatsApp />
           <LanguageSwitcher />
         </NextIntlClientProvider>
       </body>
