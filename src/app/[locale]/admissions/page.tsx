@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "motion/react";
 import {
   ChevronDown,
@@ -132,15 +133,19 @@ export default function AdmissionsPage() {
   return (
     <>
       {/* ═══════════ IMMERSIVE HERO ═══════════ */}
-      <section className="relative pt-40 pb-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-penn-navy via-[#1a2035] to-penn-navy" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 30% 50%, #2B8FAB 0%, transparent 60%), radial-gradient(circle at 70% 20%, #2B8FAB 0%, transparent 50%)",
-          }}
-        />
+      <section className="relative pt-40 pb-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/heroes/hero-admissions.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 z-[1] bg-gradient-to-br from-penn-navy/50 via-[#1a2035]/50 to-penn-navy/50" />
+        <div className="absolute inset-0 z-[1] opacity-[0.02] bg-[radial-gradient(circle_at_50%_70%,_#2B8FAB_0%,_transparent_50%)]" />
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div
