@@ -26,6 +26,7 @@ const navItems: NavItem[] = [
       { label: "Corps Enseignant", href: "/corps-enseignant" },
       { label: "Alumni", href: "/alumni" },
       { label: "Campus", href: "/campus" },
+      { label: "Admissions", href: "/admissions" },
     ],
   },
   {
@@ -59,7 +60,7 @@ const navItems: NavItem[] = [
       { label: "Étudiants Internationaux", href: "/etudiants-internationaux" },
     ],
   },
-  { key: "blog", href: "/blog" },
+  { key: "admissions", href: "/admissions" },
   { key: "contact", href: "/contact" },
 ];
 
@@ -138,7 +139,7 @@ export default function Header() {
               <span className="font-light mr-1.5">{t('call')}</span> +216 29 58 28 35
             </a>
             <Link
-              href="/postuler"
+              href="/preinscription"
               className="bg-[#2B8FAB] text-white border border-[#2B8FAB] py-2 xl:py-2.5 px-6 xl:px-10 font-bold rounded-full text-[13px] xl:text-[14px] inline-flex items-center justify-center transition-all hover:bg-white hover:text-[#2B8FAB] hover:border-[#2B8FAB] whitespace-nowrap"
             >
               {t('postuler')}

@@ -27,6 +27,8 @@ export const routing = defineRouting({
     '/blog': '/blog',
     '/faq': '/faq',
     '/ia-et-certifications': '/ia-et-certifications',
+    '/admissions': '/admissions',
+    '/preinscription': '/preinscription',
   }
 });
 
