@@ -29,6 +29,7 @@ export const routing = defineRouting({
     '/ia-et-certifications': '/ia-et-certifications',
     '/admissions': '/admissions',
     '/preinscription': '/preinscription',
+    '/contact': '/contact',
   }
 });
 

@@ -1,4 +1,5 @@
-import { Award, BookOpen, Globe, ShieldCheck, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, Award, BookOpen, Globe, ShieldCheck, Sparkles } from "lucide-react";
 import { Badge, CtaSection, InfiniteLogoMarquee } from "@/components/shared";
 import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
@@ -37,7 +38,16 @@ const mastersCards = [
   }
 ];
 
-export default function MastersPage() {
+export default async function MastersPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ program?: string }>;
+}) {
+  const { program } = await searchParams;
+  const filteredOverview = program
+    ? overview.filter(p => p.slug === program)
+    : overview;
+  const isFiltered = filteredOverview.length < overview.length && filteredOverview.length > 0;
   return (
     <>
       <ShowcaseHero
@@ -61,8 +71,14 @@ export default function MastersPage() {
             </p>
           </div>
 
+          {isFiltered && (
+            <Link href="/masters" className="inline-flex items-center gap-2 text-penn-green hover:underline mb-8 text-[15px] font-medium transition-colors">
+              <ArrowLeft className="w-4 h-4" />
+              Voir tous les masters
+            </Link>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {overview.map((prog) => (
+            {(filteredOverview.length > 0 ? filteredOverview : overview).map((prog) => (
               <div key={prog.slug} className="h-full">
                 <MagneticProgramCard
                   title={prog.title}

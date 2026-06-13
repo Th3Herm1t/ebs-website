@@ -53,7 +53,7 @@ When bringing content from v0.1 (Astro) or ebs.tn into this codebase, follow thi
 | `/qui-sommes-nous` | Refined | 4 piliers, campus, services étudiants |
 | `/vision-mission-valeurs` | Refined | Timeline, values grid |
 | `/corps-enseignant` | Refined | Faculty grid |
-| `/alumni` | Refined | 8 profiles, countries with flags |
+| `/alumni` | Refined | Leaflet world map + 15 countries, 8 profiles, secteurs, join form |
 | `/campus` | Refined | Facilities, gallery |
 | `/entreprises-partenaires` | Refined | B2B page |
 | `/tarifs` | Refined | Pricing cards, FAQ |
@@ -69,15 +69,13 @@ When bringing content from v0.1 (Astro) or ebs.tn into this codebase, follow thi
 4. Delete 22 old template routes
 5. Partner logo assets for EM Normandie, Link University
 
-## Recently Added (This Batch)
-- `/admissions` — full admissions overview with 4-step process, requirements, financing, calendar timeline, FAQ
-- `/preinscription` — 4-step multi-step form:
-  - Step 1: Personal info (nom, prénom, email, téléphone) with validation
-  - Step 2: Programme selection from real data (6 licences + 3 masters from `@/lib/programmes/`)
-  - Step 3: Optional document upload + message
-  - Step 4: Review/confirm before submission
-  - Features: localStorage persistence, AnimatePresence transitions, progress bar, Formspree webhook, success state
-- Header: "Postuler" button now links to `/preinscription`, "Admissions" added to Université dropdown
+## Recently Added
+- **Homepage program cards → filtered overview**: CoursesSection image, title, and category badge link to `/licences?program=slug` and `/masters?program=slug` using real slug values (management, marketing, finance, informatique-standard, etc.)
+- **searchParams filtering**: `licences/page.tsx` and `masters/page.tsx` are async server components accepting `searchParams: Promise<{ program?: string }>` — filters the programme grid to show only the matching programme, with a "Voir toutes les licences/masters" back link when filtered
+- **Alumni world map**: new `AlumniWorldMap` component with Leaflet interactive map (CartoDB tiles, circle markers scaled by count, pulsing Tunisia highlight, popups) + 15-country grid. Replaces old country list. Testimonials section removed. Added CI/SN/GB/TR flags to CountryFlag. Installed `leaflet` + `@types/leaflet`
+- `/admissions` — full overview page with 4-step process, requirements, financing, calendar timeline, FAQ
+- `/preinscription` — 4-step multi-step form with real programmes, localStorage, Formspree webhook
+- Header: "Postuler" → `/preinscription`, "Admissions" added to Université dropdown
 
 ## Common Pitfalls
 - Turbopack cache corruption after structural changes → delete `.next` folder

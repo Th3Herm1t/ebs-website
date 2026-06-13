@@ -7,7 +7,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant1 from "./HeroBackgroundVariant1";
 import ProgrammeFinder from "./ProgrammeFinder";
 
-function ProgramGrid({ title, subtitle, programs }: { title: string, subtitle: string, programs: any[] }) {
+function ProgramGrid({ title, subtitle, programs, type }: { title: string, subtitle: string, programs: any[], type: "licence" | "master" }) {
   const getCatColor = (cat: string) => {
     switch (cat.toLowerCase()) {
       // Licences
@@ -37,7 +37,9 @@ function ProgramGrid({ title, subtitle, programs }: { title: string, subtitle: s
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
-        {programs.map((course, i) => (
+        {programs.map((course, i) => {
+          const href = `/${type === "licence" ? "licences" : "masters"}?program=${course.slug}`;
+          return (
           <ScrollReveal
             key={i}
             initialY={30}
@@ -46,20 +48,20 @@ function ProgramGrid({ title, subtitle, programs }: { title: string, subtitle: s
             className="bg-white rounded-[6px] border border-penn-border overflow-hidden transition-all duration-300 hover:shadow-[0px_0_30px_rgba(1,41,112,0.08)] flex flex-col h-full"
           >
             {/* Image */}
-            <div className="relative">
-              <Image src={course.img} alt={course.title} width={370} height={220} className="w-full h-[220px] object-cover" />
-            </div>
+            <Link href={href} className="relative block overflow-hidden">
+              <Image src={course.img} alt={course.title} width={370} height={220} className="w-full h-[220px] object-cover transition-transform duration-500 hover:scale-105" />
+            </Link>
 
             {/* Content */}
             <div className="p-[25px] flex flex-col flex-grow">
               <div className="mb-4">
-                <Link href="/programmes" className={`${getCatColor(course.cat)} text-white text-[13px] font-semibold py-[5px] px-[14px] rounded inline-block hover:bg-opacity-80 transition-colors duration-300`}>
+                <Link href={href} className={`${getCatColor(course.cat)} text-white text-[13px] font-semibold py-[5px] px-[14px] rounded inline-block hover:opacity-90 transition-opacity`}>
                   {course.cat}
                 </Link>
               </div>
               
               <h3 className="mb-[20px] flex-grow">
-                <Link href="/programmes" className="text-penn-navy text-[20px] font-bold leading-[28px] transition-colors hover:text-penn-green">
+                <Link href={href} className="text-penn-navy text-[20px] font-bold leading-[28px] transition-colors hover:text-penn-green">
                   {course.title}
                 </Link>
               </h3>
@@ -77,7 +79,8 @@ function ProgramGrid({ title, subtitle, programs }: { title: string, subtitle: s
               </div>
             </div>
           </ScrollReveal>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
@@ -87,26 +90,26 @@ export default function CoursesSection() {
   const t = useTranslations('HomePage.programs');
 
   const licences = [
-    { img: "/images/all-img/c1-stock.jpg", cat: t('licences.0.cat'), title: t('licences.0.title'), detail1: t('licences.0.detail1'), detail2: t('licences.0.detail2') },
-    { img: "/images/all-img/c2-stock.jpg", cat: t('licences.1.cat'), title: t('licences.1.title'), detail1: t('licences.1.detail1'), detail2: t('licences.1.detail2') },
-    { img: "/images/all-img/c3-stock.jpg", cat: t('licences.2.cat'), title: t('licences.2.title'), detail1: t('licences.2.detail1'), detail2: t('licences.2.detail2') },
-    { img: "/images/all-img/c4-stock.jpg", cat: t('licences.3.cat'), title: t('licences.3.title'), detail1: t('licences.3.detail1'), detail2: t('licences.3.detail2') },
-    { img: "/images/all-img/c5-stock.jpg", cat: t('licences.4.cat'), title: t('licences.4.title'), detail1: t('licences.4.detail1'), detail2: t('licences.4.detail2') },
-    { img: "/images/all-img/c6-stock.jpg", cat: t('licences.5.cat'), title: t('licences.5.title'), detail1: t('licences.5.detail1'), detail2: t('licences.5.detail2') },
+    { img: "/images/all-img/c1-stock.jpg", cat: t('licences.0.cat'), title: t('licences.0.title'), detail1: t('licences.0.detail1'), detail2: t('licences.0.detail2'), slug: "management", type: "licence" as const },
+    { img: "/images/all-img/c2-stock.jpg", cat: t('licences.1.cat'), title: t('licences.1.title'), detail1: t('licences.1.detail1'), detail2: t('licences.1.detail2'), slug: "marketing", type: "licence" as const },
+    { img: "/images/all-img/c3-stock.jpg", cat: t('licences.2.cat'), title: t('licences.2.title'), detail1: t('licences.2.detail1'), detail2: t('licences.2.detail2'), slug: "finance", type: "licence" as const },
+    { img: "/images/all-img/c4-stock.jpg", cat: t('licences.3.cat'), title: t('licences.3.title'), detail1: t('licences.3.detail1'), detail2: t('licences.3.detail2'), slug: "informatique-standard", type: "licence" as const },
+    { img: "/images/all-img/c5-stock.jpg", cat: t('licences.4.cat'), title: t('licences.4.title'), detail1: t('licences.4.detail1'), detail2: t('licences.4.detail2'), slug: "informatique-ia", type: "licence" as const },
+    { img: "/images/all-img/c6-stock.jpg", cat: t('licences.5.cat'), title: t('licences.5.title'), detail1: t('licences.5.detail1'), detail2: t('licences.5.detail2'), slug: "cybersecurite", type: "licence" as const },
   ];
 
   const masters = [
-    { img: "/images/all-img/c1-stock.jpg", cat: t('masters.0.cat'), title: t('masters.0.title'), detail1: t('masters.0.detail1'), detail2: t('masters.0.detail2') },
-    { img: "/images/all-img/c2-stock.jpg", cat: t('masters.1.cat'), title: t('masters.1.title'), detail1: t('masters.1.detail1'), detail2: t('masters.1.detail2') },
-    { img: "/images/all-img/c3-stock.jpg", cat: t('masters.2.cat'), title: t('masters.2.title'), detail1: t('masters.2.detail1'), detail2: t('masters.2.detail2') },
+    { img: "/images/all-img/c1-stock.jpg", cat: t('masters.0.cat'), title: t('masters.0.title'), detail1: t('masters.0.detail1'), detail2: t('masters.0.detail2'), slug: "ingenierie-financiere", type: "master" as const },
+    { img: "/images/all-img/c2-stock.jpg", cat: t('masters.1.cat'), title: t('masters.1.title'), detail1: t('masters.1.detail1'), detail2: t('masters.1.detail2'), slug: "crm", type: "master" as const },
+    { img: "/images/all-img/c3-stock.jpg", cat: t('masters.2.cat'), title: t('masters.2.title'), detail1: t('masters.2.detail1'), detail2: t('masters.2.detail2'), slug: "startups", type: "master" as const },
   ];
 
   return (
     <section className="relative overflow-hidden section-padding bg-[#fdfdfd]">
       <HeroBackgroundVariant1 />
       <div className="relative z-10 max-w-[1200px] mx-auto px-4">
-        <ProgramGrid title={t('title')} subtitle={t('licencesSubtitle')} programs={licences} />
-        <ProgramGrid title={t('title')} subtitle={t('mastersSubtitle')} programs={masters} />
+        <ProgramGrid title={t('title')} subtitle={t('licencesSubtitle')} programs={licences} type="licence" />
+        <ProgramGrid title={t('title')} subtitle={t('mastersSubtitle')} programs={masters} type="master" />
         <ProgrammeFinder />
       </div>
     </section>

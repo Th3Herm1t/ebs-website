@@ -71,7 +71,7 @@ export default function AboutSection() {
 
             <ScrollReveal initialY={30} delay={0.4}>
               <Link
-                href="/programmes"
+                href="/licences"
                 className="bg-[#2B8FAB] text-white py-[10px] px-[30px] font-bold rounded-full text-[15px] inline-block transition-all relative overflow-hidden shadow-[10px_15px_18px_rgba(23,23,36,0.1)] group"
               >
                 <span className="relative z-10">{t('btn')}</span>

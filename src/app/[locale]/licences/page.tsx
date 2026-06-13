@@ -1,4 +1,5 @@
-import { Award, BookOpen, Globe, ShieldCheck, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, Award, BookOpen, Globe, ShieldCheck, Sparkles } from "lucide-react";
 import { CtaSection, InfiniteLogoMarquee } from "@/components/shared";
 import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
@@ -40,7 +41,16 @@ const licencesCards = [
   }
 ];
 
-export default function LicencesPage() {
+export default async function LicencesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ program?: string }>;
+}) {
+  const { program } = await searchParams;
+  const filteredPrograms = program
+    ? allPrograms.filter(p => p.slug === program)
+    : allPrograms;
+  const isFiltered = filteredPrograms.length < allPrograms.length && filteredPrograms.length > 0;
   return (
     <>
       <ShowcaseHero
@@ -54,8 +64,14 @@ export default function LicencesPage() {
 
       <section className="section-padding bg-[#FAFAFA]">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
+          {isFiltered && (
+            <Link href="/licences" className="inline-flex items-center gap-2 text-penn-green hover:underline mb-8 text-[15px] font-medium transition-colors">
+              <ArrowLeft className="w-4 h-4" />
+              Voir toutes les licences
+            </Link>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {allPrograms.map((prog) => (
+            {(filteredPrograms.length > 0 ? filteredPrograms : allPrograms).map((prog) => (
               <div key={prog.slug} className="h-full">
                 <MagneticProgramCard
                   title={prog.title}

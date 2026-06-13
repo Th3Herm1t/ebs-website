@@ -29,7 +29,9 @@ export function InfiniteLogoMarquee({ className }: { className?: string }) {
   const scroll = (dir: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
+    pauseScroll();
     el.scrollBy({ left: dir === "left" ? -300 : 300, behavior: "smooth" });
+    setTimeout(resumeScroll, 500);
   };
 
   const pauseScroll = () => { if (intervalRef.current) clearInterval(intervalRef.current); };

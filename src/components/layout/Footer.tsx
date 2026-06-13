@@ -98,7 +98,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <FooterLink href="/parcours-internationaux" isBold>{t('links.international')}</FooterLink>
               <FooterLink href="/entreprises-partenaires">{t('links.entreprises')}</FooterLink>
-              <FooterLink href="/stages" isBold>{t('links.stages')}</FooterLink>
+              <FooterLink href="/entreprises-partenaires">{t('links.stages')}</FooterLink>
               <FooterLink href="/certifications">{t('links.certifications')}</FooterLink>
               <FooterLink href="/ia-et-certifications">{t('links.ia')}</FooterLink>
               <FooterLink href="/blog">{t('links.blog')}</FooterLink>
@@ -106,7 +106,7 @@ export default function Footer() {
               <FooterLink href="/campus">{t('links.campus')}</FooterLink>
               <FooterLink href="/faq">{t('links.faq')}</FooterLink>
               <FooterLink href="/tarifs">{t('links.tarifs')}</FooterLink>
-              <FooterLink href="/evenements">{t('links.evenements')}</FooterLink>
+              <FooterLink href="/blog">{t('links.evenements')}</FooterLink>
             </ul>
           </div>
 

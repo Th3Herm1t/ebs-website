@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { Award, Briefcase, Globe, GraduationCap, HeartHandshake, MapPin, Send, Star, Users } from "lucide-react";
 import { CtaSection } from "@/components/shared";
-import { CountryFlag } from "@/components/shared/CountryFlag";
+import AlumniWorldMap from "@/components/alumni/AlumniWorldMap";
 
 const alumniProfiles = [
   { name: "Mohamed Amine Hamdi", role: "Community Manager — Tinith Services", promo: "Master Marketing Digital — 2019/2020", country: "Tunisie", img: null, initials: "MH" },
@@ -15,19 +15,6 @@ const alumniProfiles = [
   { name: "Kais Layouni", role: "Business Analyst — MENINX Holding", promo: "Licence Finance — 2017/2018", country: "Tunisie", img: null, initials: "KL" },
   { name: "Hend Bedoui", role: "Analyste Financier — LEASE TUNIS", promo: "Master Ing. Financière — 2015/2016", country: "Tunisie", img: null, initials: "HB" },
   { name: "Oussama Ayadi", role: "Expert Technique — GIZ Tunisie", promo: "Master Marketing Bancaire — 2016/2017", country: "Tunisie", img: null, initials: "OA" },
-];
-
-const alumniCountries = [
-  { country: "Tunisie", code: "TN", count: 350 },
-  { country: "France", code: "FR", count: 45 },
-  { country: "Canada", code: "CA", count: 20 },
-  { country: "Allemagne", code: "DE", count: 12 },
-  { country: "Belgique", code: "BE", count: 8 },
-  { country: "Suisse", code: "CH", count: 7 },
-  { country: "Émirats", code: "AE", count: 15 },
-  { country: "Qatar", code: "QA", count: 6 },
-  { country: "Arabie Saoudite", code: "SA", count: 5 },
-  { country: "Maroc", code: "MA", count: 8 },
 ];
 
 const missions = [
@@ -139,56 +126,7 @@ export default function AlumniPage() {
         </div>
       </section>
 
-      {/* ═══════════ RÉSEAU ALUMNI — MONDE ═══════════ */}
-      <section className="section-padding bg-white">
-        <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-14">
-            <span className="inline-block text-[13px] font-bold uppercase tracking-[3px] text-[#2B8FAB] mb-4">Réseau Alumni</span>
-            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">Nos diplômés dans le monde</h2>
-            <p className="text-[16px] text-penn-body mt-3 max-w-[600px] mx-auto">15+ pays, 500+ diplômés — un réseau qui s&apos;étend chaque année.</p>
-          </motion.div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-[1000px] mx-auto">
-            {alumniCountries.map((c, i) => (
-              <motion.div key={c.code} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.3, delay: i * 0.04 }} className={`flex items-center gap-2.5 px-4 py-3 rounded-xl border transition-all ${c.code === "TN" ? "border-[#2B8FAB]/30 bg-[#2B8FAB]/5" : "border-penn-border bg-penn-bg-light hover:border-[#2B8FAB]/20"}`}>
-                <CountryFlag code={c.code} className="w-6 h-4" />
-                <div>
-                  <span className="font-extrabold text-[13px] text-penn-navy block leading-tight">{c.country}</span>
-                  <span className="text-[11px] text-penn-body/50">{c.count} diplômés</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════ TESTIMONIALS ═══════════ */}
-      <section className="section-padding bg-penn-bg-light">
-        <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-14">
-            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">Témoignages de nos diplômés</h2>
-          </motion.div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {[
-              { name: "Ahmed MEJRI", role: "Data Analyst — Orange Tunisie", promo: "Licence Informatique — 2019", text: "Grâce aux certifications Google et IBM obtenues pendant ma Licence à EBS, j'ai décroché mon premier emploi avant même d'être diplômé. Aujourd'hui, je manage une équipe de 5 analystes.", initials: "AM" },
-              { name: "Sarra BEN ALI", role: "Digital Marketing Manager — Publicis", promo: "Licence Marketing — 2020", text: "La Licence Marketing d'EBS m'a donné les armes pour réussir en agence. Les certifications HubSpot et Google Ads m'ont ouverte les portes de Publicis.", initials: "SB" },
-              { name: "Youssef GHARBI", role: "Project Manager — UQAT Canada", promo: "Licence Management — 2018", text: "J'ai commencé ma Licence à EBS et je l'ai terminée à l'UQAT au Canada grâce au partenariat. Aujourd'hui je travaille à Montréal et j'ai obtenu ma résidence permanente.", initials: "YG" },
-              { name: "Mariem KALLEL", role: "Financial Analyst — KPMG Tunisie", promo: "Licence Finance — 2021", text: "Les simulations Bloomberg et Forage m'ont préparée aux réalités du métier. Dès mon premier entretien chez KPMG, les recruteurs ont été impressionnés par mes certifications.", initials: "MK" },
-            ].map((t, i) => (
-              <motion.div key={t.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.1 }} className="bg-white rounded-2xl border border-penn-border p-6 lg:p-8 hover:shadow-md transition-all">
-                <p className="text-[15px] text-penn-body leading-relaxed mb-6 italic">&ldquo;{t.text}&rdquo;</p>
-                <div className="flex items-center gap-4 pt-4 border-t border-penn-border">
-                  <div className="w-11 h-11 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center text-[#2B8FAB] font-extrabold text-[15px]">{t.initials}</div>
-                  <div>
-                    <p className="text-[15px] font-extrabold text-penn-navy">{t.name}</p>
-                    <p className="text-[13px] text-penn-body/60">{t.role}</p>
-                    <p className="text-[11px] text-penn-body/40 mt-0.5">{t.promo}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <AlumniWorldMap locale="fr" />
 
       {/* ═══════════ SECTEURS ═══════════ */}
       <section className="section-padding bg-white">
