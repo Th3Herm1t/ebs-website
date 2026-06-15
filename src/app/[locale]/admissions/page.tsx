@@ -14,7 +14,7 @@ import {
   GraduationCap,
   ArrowRight,
 } from "lucide-react";
-import { Badge, CtaSection } from "@/components/shared";
+import { Badge } from "@/components/shared";
 import {
   Accordion,
   AccordionContent,
@@ -706,13 +706,6 @@ export default function AdmissionsPage() {
         </div>
       </section>
 
-      <CtaSection
-        title="Des questions sur l'admission ?"
-        subtitle="Notre équipe est disponible par téléphone, email ou WhatsApp."
-        primaryCta={{ label: "Nous contacter", href: "/contact" }}
-        secondaryCta={{ label: "Pré-inscription", href: "/preinscription" }}
-        background="penn-navy"
-      />
     </>
   );
 }
