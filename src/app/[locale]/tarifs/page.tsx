@@ -51,35 +51,55 @@ const inclusions = [
 
 const programmes = [
   {
-    title: "Licence",
+    title: "Licence National",
     subtitle: "Bac+3",
     duree: "3 ans",
+    price: "7 500 DT",
+    priceLabel: "/ An",
     programmes: [
       "Management",
       "Marketing",
       "Finance",
-      "Informatique Standard",
-      "Informatique IA",
+      "Informatique — Standard",
+      "Informatique — IA",
       "Cybersécurité",
     ],
     earlyBird: "Jusqu'au 31 Juillet",
     href: "/licences",
     color: "#2B8FAB",
-    bgColor: "#2B8FAB12",
+    featured: false,
+  },
+  {
+    title: "Licence International",
+    subtitle: "Bac+3",
+    duree: "3 ans",
+    price: "9 500 DT",
+    priceLabel: "/ An",
+    programmes: [
+      "L1 Tunisie → B2/B3 Link University — Italie",
+      "L1/L2 Tunisie → B3 Grande École — France",
+      "L1/L2/L3 Tunisie → M1 Canada / France / Italie",
+    ],
+    earlyBird: "Jusqu'au 31 Juillet",
+    href: "/parcours-internationaux",
+    color: "#E89745",
+    featured: true,
   },
   {
     title: "Master",
     subtitle: "Bac+5",
     duree: "2 ans",
+    price: "Sur demande",
+    priceLabel: "",
     programmes: [
+      "Management de Projets Innovants & Startups",
       "CRM & Transformation Digitale",
-      "Projets Innovants & Startups",
       "Ingénierie Financière",
     ],
     earlyBird: "Jusqu'au 31 Août",
     href: "/masters",
     color: "#2196F3",
-    bgColor: "#2196F312",
+    featured: false,
   },
 ];
 
@@ -258,7 +278,7 @@ export default function TarifsPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {programmes.map((prog, i) => (
               <motion.div
                 key={prog.title}
@@ -268,15 +288,20 @@ export default function TarifsPage() {
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 className="relative group"
               >
-                <div className="bg-white rounded-2xl border border-penn-border p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                  <div className="text-center mb-8">
+                <div className={`bg-white rounded-2xl border p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col ${prog.featured ? "border-[#E89745]/40 shadow-lg shadow-[#E89745]/10" : "border-penn-border"}`}>
+                  {prog.featured && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#E89745] text-white text-[11px] font-bold uppercase tracking-wider px-4 py-1 rounded-full">
+                      Parcours International
+                    </div>
+                  )}
+                  <div className="text-center mb-6">
                     <span
                       className="inline-block text-[14px] font-bold uppercase tracking-[3px] mb-2"
                       style={{ color: prog.color }}
                     >
                       {prog.subtitle}
                     </span>
-                    <h3 className="text-[32px] font-extrabold text-penn-navy">
+                    <h3 className="text-[28px] font-extrabold text-penn-navy">
                       {prog.title}
                     </h3>
                     <p className="text-[14px] text-penn-body mt-1">
@@ -284,11 +309,20 @@ export default function TarifsPage() {
                     </p>
                   </div>
 
+                  <div className="text-center mb-6">
+                    <span className="text-[42px] font-extrabold text-penn-navy leading-none">
+                      {prog.price}
+                    </span>
+                    {prog.priceLabel && (
+                      <span className="text-[16px] text-penn-body ml-1">{prog.priceLabel}</span>
+                    )}
+                  </div>
+
                   <div className="space-y-3 mb-8 flex-1">
                     {prog.programmes.map((p) => (
                       <div
                         key={p}
-                        className="flex items-center gap-3 text-[15px] text-penn-navy font-medium"
+                        className="flex items-center gap-3 text-[14px] text-penn-navy font-medium"
                       >
                         <Check className="w-4 h-4 shrink-0" style={{ color: prog.color }} />
                         {p}
@@ -316,13 +350,13 @@ export default function TarifsPage() {
 
                     <Link
                       href={prog.href}
-                      className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-bold text-[15px] transition-all duration-300"
+                      className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-bold text-[15px] transition-all duration-300 hover:opacity-90"
                       style={{
                         backgroundColor: prog.color,
                         color: "white",
                       }}
                     >
-                      Voir les programmes
+                      {prog.featured ? "Voir les parcours" : "Voir les programmes"}
                       <ChevronDown className="w-4 h-4 -rotate-90" />
                     </Link>
                   </div>
@@ -479,7 +513,7 @@ export default function TarifsPage() {
         title="Prêt à investir dans votre avenir ?"
         subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant."
         primaryCta={{ label: "Voir nos programmes", href: "/licences" }}
-        secondaryCta={{ label: "Pré-inscription", href: "/contact" }}
+        secondaryCta={{ label: "Pré-inscription", href: "/preinscription" }}
         background="penn-green"
       />
     </>

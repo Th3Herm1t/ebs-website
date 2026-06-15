@@ -94,7 +94,7 @@ const faq = [
   },
   {
     q: "Quel est le coût de la scolarité ?",
-    a: "Les frais varient selon le programme : à partir de 6 000 DT/an pour la Licence Informatique, 8 200 DT/an pour les autres Licences, et 8 500 DT/an pour les Masters. Les 150+ certifications sont incluses.",
+    a: "Les frais de scolarité sont de 7 500 DT/an pour la Licence Nationale (6 parcours) et 9 500 DT/an pour la Licence Internationale (parcours France, Canada, Italie). Les Masters sont sur devis. Les 150+ certifications internationales sont incluses sans frais supplémentaires.",
   },
   {
     q: "Des facilités de paiement sont-elles disponibles ?",
@@ -393,19 +393,22 @@ export default function AdmissionsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             {[
               {
-                label: "Licence Informatique",
-                price: "6 000",
-                sub: "14 certifications incluses",
+                label: "Licence National",
+                price: "7 500",
+                suffix: "DT/an",
+                sub: "6 parcours · 150+ certifs incluses",
               },
               {
-                label: "Autres Licences",
-                price: "8 200",
-                sub: "10 certifications incluses",
+                label: "Licence International",
+                price: "9 500",
+                suffix: "DT/an",
+                sub: "Parcours France · Canada · Italie",
               },
               {
-                label: "Masters",
-                price: "8 500",
-                sub: "4 à 8 certifications incluses",
+                label: "Master",
+                price: "Sur demande",
+                suffix: "",
+                sub: "3 parcours · 150+ certifs incluses",
               },
             ].map((item, i) => (
               <motion.div
@@ -422,7 +425,9 @@ export default function AdmissionsPage() {
                 <span className="font-extrabold text-3xl text-[#2B8FAB]">
                   {item.price}
                 </span>
-                <span className="text-penn-body text-sm ml-1">DT/an</span>
+                {item.suffix && (
+                  <span className="text-penn-body text-sm ml-1">{item.suffix}</span>
+                )}
                 <p className="text-xs text-penn-body mt-2">{item.sub}</p>
               </motion.div>
             ))}
