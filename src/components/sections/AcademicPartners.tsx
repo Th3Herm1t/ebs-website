@@ -63,8 +63,8 @@ export default function AcademicPartners() {
       <div className="max-w-[1400px] mx-auto px-5 lg:px-12">
         <SectionHeading subtitle={<>{t('acad')} <span className="text-penn-green underline decoration-penn-green">{t('acadHighlight')}</span></>} />
         <div className="relative group/marquee">
-          <button onClick={() => scroll("left")} className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 border border-penn-border shadow-md flex items-center justify-center text-penn-navy hover:text-[#2B8FAB] hover:border-[#2B8FAB] transition-all opacity-0 group-hover/marquee:opacity-100"><ChevronLeft className="w-5 h-5" /></button>
-          <button onClick={() => scroll("right")} className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 border border-penn-border shadow-md flex items-center justify-center text-penn-navy hover:text-[#2B8FAB] hover:border-[#2B8FAB] transition-all opacity-0 group-hover/marquee:opacity-100"><ChevronRight className="w-5 h-5" /></button>
+          <button onClick={() => scroll("left")} className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-[#2B8FAB]/30 shadow-md flex items-center justify-center text-[#2B8FAB] hover:bg-[#2B8FAB] hover:text-white transition-all"><ChevronLeft className="w-5 h-5" /></button>
+          <button onClick={() => scroll("right")} className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-[#2B8FAB]/30 shadow-md flex items-center justify-center text-[#2B8FAB] hover:bg-[#2B8FAB] hover:text-white transition-all"><ChevronRight className="w-5 h-5" /></button>
           <div className="absolute left-0 top-0 w-12 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 w-12 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
           <div

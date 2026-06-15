@@ -49,8 +49,8 @@ export function InfiniteLogoMarquee({ className }: { className?: string }) {
       <div className="absolute left-0 top-0 w-16 md:w-40 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 w-16 md:w-40 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
       <div className="relative group/marquee w-full">
-        <button onClick={() => scroll("left")} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 border border-gray-200 shadow-md flex items-center justify-center text-gray-600 hover:text-[#2B8FAB] hover:border-[#2B8FAB] transition-all opacity-0 group-hover/marquee:opacity-100"><ChevronLeft className="w-5 h-5" /></button>
-        <button onClick={() => scroll("right")} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 border border-gray-200 shadow-md flex items-center justify-center text-gray-600 hover:text-[#2B8FAB] hover:border-[#2B8FAB] transition-all opacity-0 group-hover/marquee:opacity-100"><ChevronRight className="w-5 h-5" /></button>
+        <button onClick={() => scroll("left")} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-[#2B8FAB]/30 shadow-md flex items-center justify-center text-[#2B8FAB] hover:bg-[#2B8FAB] hover:text-white transition-all"><ChevronLeft className="w-5 h-5" /></button>
+        <button onClick={() => scroll("right")} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-[#2B8FAB]/30 shadow-md flex items-center justify-center text-[#2B8FAB] hover:bg-[#2B8FAB] hover:text-white transition-all"><ChevronRight className="w-5 h-5" /></button>
         <div
           ref={scrollRef}
           className="overflow-x-auto w-full scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"

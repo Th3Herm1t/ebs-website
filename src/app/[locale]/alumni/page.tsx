@@ -2,19 +2,19 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
-import { Award, Briefcase, Globe, GraduationCap, HeartHandshake, MapPin, Send, Star, Users } from "lucide-react";
+import { Award, Briefcase, Globe, HeartHandshake, Send, Sparkles, Star } from "lucide-react";
 import { CtaSection } from "@/components/shared";
 import AlumniWorldMap from "@/components/alumni/AlumniWorldMap";
 
 const alumniProfiles = [
-  { name: "Mohamed Amine Hamdi", role: "Community Manager — Tinith Services", promo: "Master Marketing Digital — 2019/2020", country: "Tunisie", img: null, initials: "MH" },
-  { name: "Dorra Ben Turkia", role: "Contrôleuse de Gestion — Habitat France", promo: "Master Ingénierie Financière — 2018/2019", country: "Paris, France", img: null, initials: "DB" },
-  { name: "Maroua Jeribi", role: "Consultante SIRH Oracle — Paris", promo: "Master GRH — 2018/2019", country: "Paris, France", img: null, initials: "MJ" },
-  { name: "Hend Jaber", role: "Conceptualizer — BOUMRANG Tunis", promo: "Master Ingénierie Financière — 2015/2016", country: "Tunisie", img: null, initials: "HJ" },
-  { name: "Hend Nasri", role: "Digital Marketing Manager — Lezarts.Digital", promo: "Master Marketing Digital — 2019/2020", country: "Tunisie", img: null, initials: "HN" },
-  { name: "Kais Layouni", role: "Business Analyst — MENINX Holding", promo: "Licence Finance — 2017/2018", country: "Tunisie", img: null, initials: "KL" },
-  { name: "Hend Bedoui", role: "Analyste Financier — LEASE TUNIS", promo: "Master Ing. Financière — 2015/2016", country: "Tunisie", img: null, initials: "HB" },
-  { name: "Oussama Ayadi", role: "Expert Technique — GIZ Tunisie", promo: "Master Marketing Bancaire — 2016/2017", country: "Tunisie", img: null, initials: "OA" },
+  { name: "Mohamed Amine Hamdi", text: "a obtenu son diplôme de Master en Marketing Digital promotion 2019/2020. Actuellement il occupe un poste de Community Manager chez Tinith services Tunis", img: "https://ebs.tn/wp-content/uploads/2022/07/amin-hamdi.jpeg", initials: "MH" },
+  { name: "Dorra Ben Turkia", text: "a obtenu son diplôme de Master Ingénierie et Analyse Quantitative pour la Finance et l'Assurance promotion 2018/2019. Actuellement elle occupe un poste de Contrôleuse de Gestion chez Habitat France Paris", img: "https://ebs.tn/wp-content/uploads/2022/07/dorra-ben-turkia-1022x1024.jpeg", initials: "DB" },
+  { name: "Maroua Jeribi", text: "a obtenu son diplôme de Master Professionnel en Gestion des Ressources Humaines promotion 2018/2019. Actuellement elle occupe un poste de Consultante SIRH Oracle Paris", img: "https://ebs.tn/wp-content/uploads/2022/07/maroua-jeribi-1022x1024.jpeg", initials: "MJ" },
+  { name: "Hend Jaber", text: "a obtenu son diplôme de Master Ingénierie Financière promotion 2015/2016. Actuellement elle occupe un poste de Conceptualizer chez BOUMRANG Tunis", img: "https://ebs.tn/wp-content/uploads/2022/07/hend-jaber.jpeg", initials: "HJ" },
+  { name: "Hend Nasri", text: "a obtenu son diplôme de Master en Marketing Digital promotion 2019/2020. Actuellement elle occupe un poste de Digital Marketing Manager chez Lezarts.Digital Tunis", img: "https://ebs.tn/wp-content/uploads/2022/07/hend-nasri-1024x1024.jpeg", initials: "HN" },
+  { name: "Kais Layouni", text: "a obtenu son diplôme de Licence en Finance promotion 2017/2018. Actuellement il occupe un poste de Business Analyst chez MENINX Holding Tunis", img: "https://ebs.tn/wp-content/uploads/2022/07/kais-layouni.jpeg", initials: "KL" },
+  { name: "Hend Bedoui", text: "a obtenu son diplôme de Master Ingénierie Financière promotion 2015/2016. Actuellement elle occupe un poste de Analyste Financier LEASE TUNIS", img: "https://ebs.tn/wp-content/uploads/2022/07/hind-bedoui.jpeg", initials: "HB" },
+  { name: "Oussama Ayadi", text: "a obtenu son diplôme de Master en Marketing Bancaire promotion 2016/2017. Actuellement il occupe un poste de Expert Technique chez GIZ Tunisie Tunis", img: "https://ebs.tn/wp-content/uploads/2022/07/oussama-ayadi-1024x1024.jpeg", initials: "OA" },
 ];
 
 const missions = [
@@ -110,16 +110,17 @@ export default function AlumniPage() {
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {alumniProfiles.map((p, i) => (
-              <motion.div key={p.name} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.06 }} className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-5 hover:border-white/[0.12] hover:bg-white/[0.05] transition-all duration-300 group">
-                <div className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center text-white font-extrabold text-[18px] mb-4 group-hover:scale-110 transition-transform">{p.initials}</div>
-                <h3 className="text-[15px] font-extrabold text-white mb-1">{p.name}</h3>
-                <p className="text-[13px] text-white/50 leading-snug mb-2">{p.role}</p>
-                <div className="pt-3 border-t border-white/[0.06]">
-                  <p className="text-[11px] text-white/30">{p.promo}</p>
-                  <p className="text-[11px] text-[#2B8FAB]/70 mt-0.5 flex items-center gap-1">
-                    <MapPin className="w-3 h-3" /> {p.country}
-                  </p>
+              <motion.div key={p.name} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.06 }} className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-2xl overflow-hidden hover:border-white/[0.12] hover:bg-white/[0.05] transition-all duration-300 group">
+                <div className="w-full aspect-[1] overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                  {p.img ? (
+                    <img src={p.img} alt={p.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full bg-[#2B8FAB]/10 flex items-center justify-center text-white font-extrabold text-[32px]">{p.initials}</div>
+                  )}
                 </div>
+                <p className="text-[14px] text-white/70 leading-relaxed p-5">
+                  <strong className="text-white font-extrabold">{p.name}</strong> {p.text}
+                </p>
               </motion.div>
             ))}
           </div>

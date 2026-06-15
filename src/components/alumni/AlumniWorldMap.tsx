@@ -55,6 +55,7 @@ export default function AlumniWorldMap({ locale = "fr" }: { locale?: string }) {
         maxZoom: 6,
         scrollWheelZoom: false,
         attributionControl: false,
+        zoomControl: false,
       });
 
       L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
