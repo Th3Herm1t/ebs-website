@@ -25,6 +25,7 @@ const navItems: NavItem[] = [
       { label: "Vision, Mission & Valeurs", href: "/vision-mission-valeurs" },
       { label: "L'approche EBS", href: "/ia-et-certifications" },
       { label: "Corps Enseignant", href: "/corps-enseignant" },
+      { label: "Actualités EBS", href: "/actualites" },
       { label: "Alumni", href: "/alumni" },
       { label: "Campus", href: "/campus" },
     ],

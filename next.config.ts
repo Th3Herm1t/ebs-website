@@ -12,6 +12,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'ebs.tn',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.uqat.ca',
+      },
+      {
+        protocol: 'https',
+        hostname: 'uqat.ca',
+      },
     ],
   },
 };

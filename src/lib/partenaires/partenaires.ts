@@ -5,73 +5,228 @@ export interface PartnerData {
   countryCode?: string;
   type: string;
   logo?: string;
+  heroImage?: string;
   presentation: string;
-  programmes: { nom: string; duree: string; details: string }[];
+  programmes: { nom: string; duree: string; details: string; richExpanded?: { type: "bullets" | "grid" | "text" | "thesis"; items?: string[]; thesisProjects?: { author: string; year: string; topic: string }[]; testimonial?: { quote: string; name: string; role: string; photo: string }; extra?: string; bourse?: string }[] }[];
   eligibilite: string;
   avantages: string[];
   debouches: string[];
+  keyStats?: { label: string; value: string; icon?: string }[];
+  pricing?: { label: string; amount: string; period: string; note?: string; featured?: boolean }[];
+  imageSection?: { src: string; caption?: string };
+  professors?: { nom: string; img: string }[];
+  testimonials?: { quote: string; name: string; role: string; photo: string; programKey: string }[];
+  residencyBadge?: { text: string; sub: string };
+  accreditationImage?: string;
+  accreditations?: { label: string; description: string; logo?: string }[];
+  extraSections?: { title: string; body: string; }[];
 }
 
 export const partenaires: Record<string, PartnerData> = {
+  audencia: {
+    slug: "audencia",
+    name: "Audencia",
+    country: "🇫🇷 France",
+    countryCode: "FR",
+    logo: "/images/partenaires-academiques/logo-audencia.png",
+    heroImage: "/images/heroes/hero-alumni.jpg",
+    type: "Grande École de Commerce — Triple accréditée EQUIS · AACSB · AMBA",
+    presentation: "Triplement accréditée (EQUIS, AACSB et AMBA), Audencia Business School est membre de la Conférence des Grandes Écoles. Classée 11ème meilleure école de commerce en France (Le Figaro Étudiant) et 6ème par l'Express-NextEdu, Audencia compte 11 campus dans le monde, 180 professeurs permanents et +900 entreprises partenaires. Fondée à Nantes, elle forme depuis plus d'un siècle des leaders responsables et audacieux.",
+    programmes: [
+      { nom: "Bachelor in Management", duree: "1 an (L3)", details: "Accès après avoir effectué les 2 premières années à EBS. Formation post-bac en 3 ans sur le campus de Nantes." },
+      { nom: "PGE — Programme Grande École (Grade de Master)", duree: "2 ans", details: "Accès après avoir obtenu la Licence à EBS. Programme visé Bac+5, classé 25ème Master in Management Monde (Financial Times). Spécialisations en finance, marketing, management, entrepreneuriat." },
+      { nom: "MSc — Master of Science (M1 ou M2)", duree: "1 ou 2 ans", details: "Inscription en M1 après la Licence EBS, ou en M2 après le M1 à EBS. Large choix de spécialisations en finance, marketing, management international, supply chain, data." },
+    ],
+    eligibilite: "Être inscrit à EBS. Avoir 12 de moyenne sur les années précédant celle de l'inscription. Avoir un bon niveau d'anglais et de français. Étude de dossier et entretien de sélection.",
+    avantages: [
+      "Triple accréditation EQUIS + AACSB + AMBA — top 1% mondial des écoles de commerce",
+      "Classée 11ème meilleure école de commerce en France (Le Figaro)",
+      "11 campus en France et à l'international (Nantes, Paris, Shenzhen, São Paulo, Sydney...)",
+      "180 professeurs permanents, +900 entreprises partenaires",
+      "90% des diplômés trouvent un emploi dans les 6 mois",
+      "+47 000 alumni dans le monde entier",
+      "Visa étudiant France facilité par la convention EBS — Audencia",
+      "Parcours en alternance possibles sur certains programmes",
+    ],
+    debouches: [
+      "Manager international / Chef de projet",
+      "Directeur marketing / Brand Manager",
+      "Analyste financier / Banquier d'affaires",
+      "Consultant en stratégie (MBB, Big 4)",
+      "Entrepreneur / Fondateur de startup",
+      "Supply Chain Manager / Responsable logistique",
+      "Data Analyst / Business Intelligence Manager",
+    ],
+    keyStats: [
+      { label: "Étudiants", value: "7 000+" },
+      { label: "Campus", value: "11" },
+      { label: "Entreprises", value: "900+" },
+      { label: "Alumni", value: "47 000+" },
+    ],
+    accreditations: [
+      { label: "AACSB", description: "Accréditation mondiale de référence — seules 5% des écoles la détiennent", logo: "/images/partenaires-academiques/AACSB-logo-accredited-color-PMS_Website-1024x346.png" },
+      { label: "EQUIS", description: "Label d'excellence académique et internationale de l'EFMD", logo: "/images/partenaires-academiques/EFMD-Global-EQUIS-Accredited-Pantonelm.png" },
+      { label: "AMBA", description: "Accréditation de référence pour les programmes MBA et post-graduate", logo: "/images/partenaires-academiques/amba-logo-association-of-mba-accredited-1244274_copie-removebg-preview.png" },
+    ],
+  },
   uqat: {
     slug: "uqat",
     name: "UQAT",
     country: "🇨🇦 Canada",
     countryCode: "CA",
     logo: "/images/partenaires-academiques/uqat.png",
+    heroImage: "https://www.uqat.ca/resources/medias/covers/mait-en-gestion-de-projet-profil-professionnel.jpg",
     type: "Université publique québécoise — Membre du réseau Université du Québec",
-    presentation: "L'Université du Québec en Abitibi-Témiscamingue (UQAT) est une université publique québécoise fondée en 1983. Membre du réseau de l'Université du Québec, elle est reconnue pour l'excellence de ses programmes en gestion de projets, management, informatique et sciences de l'administration.",
+    presentation: "L'Université du Québec en Abitibi-Témiscamingue (UQAT) est une université publique canadienne affiliée au réseau de l'Université du Québec qui compte dix établissements. Elle offre plus de 100 programmes d'études couvrant les trois cycles d'études (Bachelor, Maîtrise et Doctorat) dans des domaines variés. Avec ses 14 chaires de recherche et ses 11 unités de recherche, l'UQAT est première au Canada pour le volume de recherche par étudiant de cycles supérieurs.",
     programmes: [
-      { nom: "Maîtrise en Gestion de Projets", duree: "1 an et demi", details: "Programme officiel reconnu PMP-compatible. Cours en présentiel à Val-d'Or ou Rouyn-Noranda." },
-      { nom: "MBA — Maîtrise en Administration des Affaires", duree: "2 ans", details: "Option management, gestion internationale ou entrepreneuriat." },
-      { nom: "Maîtrise en Sciences de la Gestion", duree: "2 ans", details: "Recherche ou application pratique. Finance, management, marketing." },
+      {
+        nom: "MGP — Maîtrise en Gestion de Projet (profil professionnel)",
+        duree: "2 ans",
+        details: "L'objectif fondamental du programme MGP est de former des gestionnaires dotés d'une vision stratégique et intégrée du domaine, aptes à gérer stratégiquement et efficacement des projets, programmes et portefeuilles, de leur conception jusqu'à l'obtention des bénéfices. Programme de cours (profil professionnel).",
+        richExpanded: [
+          { type: "bullets", items: ["L'utilisation d'outils techniques vous permettant de planifier et de gérer tout type de projet et d'en faire le suivi.", "Une formation offerte à temps partiel (cours de soir et de fin de semaine) qui vous permet de concilier les études, le travail et la famille.", "Des professeurs d'expérience et des chargés de cours chevronnés qui vous offrent un enseignement pratique de la gestion de projet."], extra: "Forces de la MGP" },
+          { type: "text", testimonial: { quote: "J'ai pu devenir directrice générale d'une entreprise du secteur hôtelier grâce au DESS en gestion de projet qui m'a donné toutes les compétences nécessaires.", name: "Zabrina Rojas", role: "Diplômée DESS + Maîtrise en gestion de projet", photo: "https://www.uqat.ca/resources/medias/etudes/temoignages/zabrina-rojas.jpg" } },
+          { type: "text", bourse: "Bourse d'accueil : 25% des frais de scolarité majorés couverts pour les étudiants internationaux, pour 6 sessions consécutives." },
+        ],
+      },
+      {
+        nom: "MGO — Maîtrise en Gestion des Organisations (profil recherche)",
+        duree: "2 ans",
+        details: "Cette maîtrise vise à développer vos connaissances et vos habiletés en recherche, vous permettant de faire progresser des organisations et de contribuer à l'avancement du savoir. Innovation, entrepreneuriat, efficacité organisationnelle, gestion du changement, développement régional ou mondialisation des échanges — la MGO enrichira votre vision de gestionnaire par de nouvelles perspectives.",
+        richExpanded: [
+          { type: "grid", items: ["Changement organisationnel et RH", "Climat psychologique au travail", "Développement durable (secteur minier)", "Développement local et régional", "Entrepreneuriat", "Évaluation de la performance", "Gestion allégée (Lean management)", "Nouveaux modèles d'affaires électroniques", "Systèmes d'information et TI"], extra: "Champs de recherche" },
+          { type: "thesis", thesisProjects: [{ author: "A. Ben Abdel Wahed", year: "2024", topic: "Facteurs de rétention des employés — secteur manufacturier" }, { author: "M. Labrecque-Denis", year: "2024", topic: "Développement des écosystèmes technocréatifs en régions périphériques" }, { author: "M-P. Côté", year: "2023", topic: "Responsabilité sociale et identification sociale des employés" }, { author: "K. Gareau", year: "2023", topic: "Fidélisation des donateurs — modélisation du parcours philanthropique" }, { author: "É. Alain", year: "2020", topic: "Modèle intégrant créativité et analyse fonctionnelle en innovation" }], extra: "Thèses récentes" },
+          { type: "text", testimonial: { quote: "Étudier à la MGO a vraiment été l'une des meilleures décisions de ma vie. L'encadrement attentif et bienveillant des professeurs a vraiment fait la différence.", name: "Larissa Fomena Neuchy", role: "Finissante MGO, étudiante internationale", photo: "https://www.uqat.ca/resources/medias/etudes/temoignages/llarissa-fomena-neuchy.jpg" } },
+          { type: "text", bourse: "Bourse d'accueil : 50% des frais de scolarité majorés couverts pour les étudiants internationaux, pour 4 sessions consécutives." },
+        ],
+      },
     ],
-    eligibilite: "Tous les programmes EBS (Licences et Masters) sont éligibles à une poursuite d'études à l'UQAT, sous réserve des critères d'admission. Convention inter-universitaire EBS–UQAT facilitant la reconnaissance des crédits.",
+    eligibilite: "Détenir le diplôme de Licence ou de Master d'ESPIMA Business School (études équivalentes au grade de bachelier au Québec) ou l'équivalent ; Avoir réussi les cours avec une moyenne équivalente à un minimum de 11 sur 20 ; Avoir réussi le programme de préparation pour la maîtrise en gestion de projet préparé par ESPIMA Business School ; Satisfaire aux conditions d'admission en vigueur du programme MGP de l'UQAT ; Posséder une connaissance adéquate du français et une compréhension suffisante de l'anglais.",
     avantages: [
+      "Diplôme de Maîtrise d'une université publique canadienne reconnu à l'échelle internationale",
+      "Maîtrise en gestion de projet particulièrement reconnue en entreprise",
+      "Frais de scolarité identiques à ceux des étudiants canadiens (tarifs réduits)",
+      "Région dynamique avec plusieurs opportunités d'emplois",
+      "Possibilité de jobs étudiants à temps plein sur le campus et à temps partiel en dehors",
+      "Logement disponible sur le campus",
       "Visa étudiant facilité grâce à la convention inter-universitaire EBS–UQAT",
-      "Reconnaissance des crédits EBS pour admission directe en Maîtrise",
-      "Accès au marché de l'emploi canadien (Québec) dès le stage de fin d'études",
       "Possibilité de résidence permanente via le Programme de l'expérience québécoise (PEQ)",
-      "Université publique : frais de scolarité accessibles",
-      "Campus sécurisé, qualité de vie exceptionnelle",
+      "Bourses d'accueil couvrant 25% des frais de scolarité majorés (étudiants internationaux)",
     ],
     debouches: [
-      "Gestionnaire de projets international",
+      "Gestionnaire de projets international (PMP-ready)",
       "Directeur de programme / PMO",
-      "Consultant en management",
-      "Chef de projet IT / IA",
-      "Chercheur / Doctorant en gestion",
+      "Consultant en management stratégique",
+      "Chef de projet IT / Transformation digitale",
+      "Analyste-chercheur en gestion des organisations",
+      "Entrepreneur / Fondateur de startup",
     ],
+    keyStats: [
+      { label: "Programmes", value: "100+" },
+      { label: "Chaires", value: "14" },
+      { label: "Étudiants", value: "3 000+" },
+      { label: "Campus", value: "3" },
+    ],
+    pricing: [
+      { label: "Étudiants internationaux", amount: "~7 500", period: "€/an", note: "Bourse d'accueil : -25%" },
+      { label: "Frais identiques", amount: "Mêmes frais", period: "que les Québécois", note: "Avantage exclusif EBS-UQAT", featured: true },
+      { label: "Bourse d'accueil", amount: "25–50", period: "%", note: "Selon le programme choisi" },
+    ],
+    imageSection: { src: "https://ebs.tn/wp-content/uploads/2022/09/img-uqat.png", caption: "Abitibi-Témiscamingue, Québec" },
+    professors: [
+      { nom: "Louis Belisle", img: "https://www.uqat.ca/resources/medias/professeurs/professeur-louis-belisle.jpg" },
+      { nom: "Jérôme Deschênes", img: "https://www.uqat.ca/resources/medias/professeurs/professeur-jerome-deschenes.jpg" },
+      { nom: "Augustin Épenda", img: "https://www.uqat.ca/resources/medias/professeurs/professeur-augustin-ependa.jpg" },
+      { nom: "Julie-Andrée Girard", img: "https://www.uqat.ca/resources/medias/professeurs/profeseure-julie-andree-girard.jpg" },
+      { nom: "Oscar Labra", img: "https://www.uqat.ca/resources/medias/professeurs/professeur-oscar-labra.jpg" },
+      { nom: "Ahmed Marhfor", img: "https://www.uqat.ca/resources/medias/professeurs/professeur-ahmed-marhfor.jpg" },
+      { nom: "Wassila Merkouche", img: "https://www.uqat.ca/resources/medias/professeurs/professeure-wassila-merkouche.jpg" },
+      { nom: "Yasmine Mohamed", img: "https://www.uqat.ca/resources/medias/professeurs/professeure-yasmine-mohamed.jpg" },
+      { nom: "Doina Muresanu", img: "https://www.uqat.ca/resources/medias/professeurs/professeure-doina-muresanu.jpg" },
+      { nom: "Mycalle Trudel", img: "https://www.uqat.ca/resources/medias/professeurs/professeure-doina-muresanu.jpg" },
+    ],
+    testimonials: [
+      { quote: "J'ai pu devenir directrice générale d'une entreprise du secteur hôtelier grâce au DESS en gestion de projet qui m'a donné toutes les compétences nécessaires.", name: "Zabrina Rojas", role: "Diplômée DESS + Maîtrise en gestion de projet", photo: "https://www.uqat.ca/resources/medias/etudes/temoignages/zabrina-rojas.jpg", programKey: "MGP" },
+      { quote: "Étudier à la MGO a vraiment été l'une des meilleures décisions de ma vie. L'encadrement attentif et bienveillant des professeurs a vraiment fait la différence.", name: "Larissa Fomena Neuchy", role: "Finissante MGO, étudiante internationale", photo: "https://www.uqat.ca/resources/medias/etudes/temoignages/llarissa-fomena-neuchy.jpg", programKey: "MGO" },
+    ],
+    residencyBadge: { text: "Résidence permanente possible via le PEQ", sub: "Programme de l'expérience québécoise" },
   },
 
   "em-normandie": {
     slug: "em-normandie",
-    name: "EM Normandie Business School",
+    name: "EM Normandie",
     country: "🇫🇷 France",
     countryCode: "FR",
-    type: "Grande École de Commerce — Triple accréditée EQUIS, AACSB, AMBA",
-    presentation: "Fondée en 1871 à Le Havre, l'EM Normandie Business School est l'une des plus anciennes et des plus reconnues grandes écoles de commerce françaises. Triple accréditée EQUIS, AACSB et AMBA, elle propose des programmes en management, finance, marketing et entrepreneuriat avec une forte dimension internationale.",
+    logo: "https://ebs.tn/wp-content/uploads/2022/08/EM_Normandie-Logo.png",
+    type: "Grande École de Commerce — Triple accréditée EQUIS · AACSB · AMBA",
+    presentation: "150 ans d'innovations et de conquêtes ont permis à l'EM Normandie de s'imposer comme l'une des meilleures Business Schools mondiales. Triple accréditée EQUIS, AACSB et AMBA — seulement 1% des écoles de commerce dans le monde détiennent cette double accréditation. Classée 18ème meilleure école de commerce en France (Le Figaro Étudiant). Elle compte aujourd'hui plus de 5 800 apprenants répartis sur 6 campus : Caen, Le Havre, Paris, Dubaï, Dublin et Oxford.",
     programmes: [
-      { nom: "Master Grande École (Programme visé Bac+5)", duree: "2 ans", details: "Spécialisations : Management International · Digital Marketing · Finance · Entrepreneuriat · Supply Chain." },
-      { nom: "MSc Management International", duree: "1 an", details: "Accès direct depuis Master EBS. Cours en français et anglais." },
-      { nom: "Bachelor in International Business (3ème année)", duree: "1 an", details: "Accès depuis Licence 2 EBS. Parcours international en anglais." },
+      {
+        nom: "Bachelor in Management",
+        duree: "1 an (L3)",
+        details: "Accès après avoir effectué les 2 premières années à EBS. Formation en management, marketing et commerce international.",
+      },
+      {
+        nom: "PGE — Programme Grande École (Grade de Master)",
+        duree: "2 ans",
+        details: "Accès après avoir obtenu la Licence à EBS. Programme visé Bac+5, grade de Master reconnu par l'État français. Spécialisations : Management International · Digital Marketing · Finance · Entrepreneuriat · Supply Chain.",
+      },
+      {
+        nom: "MSc — Master of Science (M1 ou M2)",
+        duree: "1 ou 2 ans",
+        details: "Inscription en M1 après la Licence EBS, ou en M2 après le M1 à EBS. 10 spécialisations disponibles : Financial Data Management, International Events, Logistics & Port, Luxury & Lifestyle, FinTech à Oxford, Digital Marketing à Dublin, etc.",
+      },
     ],
-    eligibilite: "Accès direct depuis les Licences et Masters EBS dans les domaines management, marketing, finance et digital. Convention de partenariat formelle EBS — EM Normandie.",
+    eligibilite: "Être inscrit à EBS. Avoir 12 de moyenne sur les années précédant celle de l'inscription. Avoir un bon niveau d'anglais et de français. Étude de dossier et entretien de sélection. Score TOEIC 750 minimum (filière anglophone) ou TOEIC 600 (filière francophone).",
     avantages: [
-      "Diplôme triple accrédité reconnu mondialement — visé par l'État français",
-      "Campus sur 4 villes : Le Havre, Caen, Paris, Oxford — mobilité possible",
-      "Réseau alumni de 28 000+ diplômés dans 100+ pays",
-      "Stage de 6 mois obligatoire en entreprise internationale",
-      "Visa étudiant France facilité par la convention EBS",
-      "Rang régulièrement dans le top 20 des écoles de commerce françaises",
+      "Triple accréditation EQUIS + AACSB + AMBA — top 1% mondial des écoles de commerce",
+      "6 campus internationaux : Caen, Le Havre, Paris, Dubaï, Dublin, Oxford",
+      "Réseau de 5 000+ entreprises partenaires, 70 000+ offres de stages/emplois",
+      "1 000+ étudiants internationaux de 65 nationalités chaque année",
+      "105 professeurs permanents, 100% titulaires d'un doctorat",
+      "800+ intervenants professionnels de haut niveau (KPMG, Nestlé, Orange...)",
+      "1 600 alternants par an, CFA intégré, 1 500 offres d'alternance",
+      "400+ événements de recrutement par an",
+      "Visa étudiant France facilité par la convention EBS — EM Normandie",
+      "Diplôme visé par l'État français, grade de Master reconnu",
     ],
     debouches: [
       "Manager international / Chef de projet",
       "Directeur marketing / CMO",
-      "Analyste financier / Banquier",
-      "Consultant en stratégie",
+      "Analyste financier / Banquier (M&A, FinTech)",
+      "Consultant en stratégie (Big 4)",
       "Entrepreneur / Fondateur de startup",
+      "Supply Chain Manager",
+      "Expert Luxury & Lifestyle Management",
       "Directeur général (trajectoire 7-10 ans)",
+    ],
+    keyStats: [
+      { label: "Étudiants", value: "5 800" },
+      { label: "Campus", value: "6" },
+      { label: "Nationalités", value: "65+" },
+      { label: "Entreprises", value: "5 000+" },
+    ],
+    pricing: [
+      { label: "MIM — Programme Grande École", amount: "~10 500", period: "€/an", note: "Master visé par l'État français" },
+      { label: "MSc — Master of Science", amount: "~13 000", period: "€/an", note: "10 spécialisations disponibles" },
+      { label: "MS — Mastère Spécialisé", amount: "~9 500", period: "€/an", note: "Bac+6, label CGE" },
+    ],
+    imageSection: { src: "https://ebs.tn/wp-content/uploads/2022/09/img-page-em-presentiel.png" },
+    accreditations: [
+      { label: "AACSB", description: "La plus prestigieuse accréditation mondiale en management — seules 5% des écoles de commerce la détiennent" },
+      { label: "EQUIS", description: "Label d'excellence académique et internationale décerné par l'EFMD" },
+      { label: "AMBA", description: "Accréditation de référence pour les programmes MBA et post-graduate" },
+    ],
+    accreditationImage: "https://ebs.tn/wp-content/uploads/2022/08/Calque-2-2.png",
+    extraSections: [
+      {
+        title: "10 MSc — Masters of Science",
+        body: "---LISTE\n1. MSc Financial Data Management — Paris (+Le Havre)\n2. MSc International Events Management — Paris (+Le Havre)\n3. MSc International Logistics & Port Management — Le Havre\n4. MSc International Marketing & Business Development — Caen (+Le Havre)\n5. MSc Marketing & Digital in Luxury & Lifestyle — Paris (+Le Havre)\n6. MSc Banking, Finance & FinTech — Oxford (+Le Havre)\n7. MSc Supply Chain Management — Le Havre\n8. MSc Sustainable Business & Strategy — Paris (+Le Havre)\n9. MSc Digital Strategy & Innovation — Paris (+Le Havre)\n10. MSc Digital Marketing & Sales — Dublin (+Le Havre)\n\nAccès en 1ère année (2 ans) ou 2ème année (1 an) selon le profil. Certaines spécialisations sont disponibles en alternance.\n\n[https://www.em-normandie.com/fr/mastere-specialise-master-of-science|Voir tous les MSc sur le site EM Normandie →]"
+      },
+      {
+        title: "Qu'est-ce qu'une Grande École de Management ?",
+        body: "Une Grande École forme des managers responsables, agiles, capables d'exercer leurs compétences dans une multitude de domaines : entrepreneuriat, logistique, Supply Chain, gestion des ressources humaines, commerce international, luxe, intelligence artificielle, marketing…\n\nUn haut niveau académique, des connexions étroites avec le monde de l'entreprise, une forte ouverture internationale, un accompagnement personnalisé et des investissements permanents en faveur de l'innovation pédagogique sont les principaux critères d'excellence attendus au sein d'une Grande École de management.\n\nLes Grandes Écoles reconnues au niveau mondial, comme l'EM Normandie, font l'objet d'accréditations internationales comme AACSB et EQUIS (seulement 1% des écoles de commerce dans le monde ont cette double accréditation)."
+      }
     ],
   },
 
@@ -81,30 +236,46 @@ export const partenaires: Record<string, PartnerData> = {
     country: "🇫🇷 France",
     countryCode: "FR",
     logo: "/images/partenaires-academiques/psb.png",
-    type: "Grande École de commerce et de management — Visée Bac+5",
-    presentation: "PSB Paris School of Business est une grande école de commerce parisienne proposant des formations Bachelor et Master en management, finance, marketing, digital et innovation. Implantée au cœur de Paris, PSB bénéficie d'un réseau d'entreprises partenaires dense et d'une forte insertion professionnelle.",
+    type: "Grande École de Commerce — Triple accréditée AACSB · EQUIS · AMBA",
+    presentation: "Paris School of Business est une Grande École de commerce triplement accréditée EQUIS, AACSB et AMBA. Membre de la Conférence des Grandes Écoles, elle est classée dans le top 3 des écoles de commerce post-bac à Paris et dans le top 20 en France (Le Figaro Étudiant). Fondée en 2015, elle compte 4 000+ étudiants, 20 000+ alumni et un campus moderne au cœur du 5ème arrondissement de Paris.",
     programmes: [
-      { nom: "Master Grande École — Management", duree: "2 ans", details: "Spécialisation Finance, Marketing Digital, Entrepreneuriat ou Supply Chain." },
-      { nom: "MSc Finance de Marché", duree: "1 an", details: "Spécialisation marchés financiers, M&A, gestion de portefeuille." },
-      { nom: "MSc Marketing & Digital Business", duree: "1 an", details: "Digital marketing, e-commerce, data marketing." },
+      { nom: "Bachelor in Management", duree: "1 an (L3)", details: "Accès après avoir effectué les 2 premières années à EBS. Bachelor Management International ou Bachelor Tech for Management." },
+      { nom: "PGE — Programme Grande École (Grade de Master)", duree: "2 ans", details: "Accès après avoir obtenu la Licence à EBS. Cursus en 5 ans visé Bac+5. Spécialisations en Finance, Management, Marketing & Data, Commerce & Entrepreneuriat." },
+      { nom: "MSc — Master of Science (M1 ou M2)", duree: "1 ou 2 ans", details: "Inscription en M1 après la Licence EBS, ou en M2 après le M1 à EBS. 10+ MSc : AI & Cybersecurity, International Finance, Luxury & Fashion, Supply Chain, Data Management, etc." },
     ],
-    eligibilite: "Accès depuis les Licences EBS (Management, Marketing, Finance). Convention directe EBS → PSB pour admission simplifiée.",
+    eligibilite: "Être inscrit à EBS. Avoir 12 de moyenne sur les années précédant celle de l'inscription. Avoir un bon niveau d'anglais et de français. Étude de dossier et entretien de sélection.",
     avantages: [
-      "Campus au cœur de Paris — accès à l'écosystème économique parisien",
-      "Réseau d'entreprises partenaires actif à Paris et en Île-de-France",
-      "Programmes disponibles en français et en anglais",
-      "Admission facilitée depuis EBS grâce à la convention",
-      "Visa étudiant France simplifié",
+      "Triple accréditation AACSB + EQUIS + AMBA — top 1% mondial",
+      "Classée dans le top 3 des écoles post-bac à Paris",
+      "Campus moderne au cœur de Paris (5ème arrondissement)",
+      "4 000+ étudiants, 20 000+ alumni",
+      "Réseau international d'universités partenaires",
+      "Alternance possible dans plusieurs programmes",
+      "Visa étudiant France facilité via convention EBS",
+      "Membre de la Conférence des Grandes Écoles (CGE)",
     ],
     debouches: [
-      "Manager commercial / Business Developer",
+      "Manager international / Business Developer",
       "Analyste financier / Contrôleur de gestion",
       "Digital Marketing Manager",
-      "Responsable Supply Chain",
+      "Consultant en stratégie",
       "Chef de produit / Product Manager",
+      "Responsable Supply Chain",
+      "Entrepreneur / Fondateur de startup",
+      "Data Analyst / Business Intelligence",
+    ],
+    keyStats: [
+      { label: "Étudiants", value: "4 000+" },
+      { label: "Alumni", value: "20 000+" },
+      { label: "Campus", value: "Paris" },
+      { label: "Accréditations", value: "3" },
+    ],
+    accreditations: [
+      { label: "AACSB", description: "Accréditation mondiale de référence en management", logo: "/images/partenaires-academiques/AACSB-logo-accredited-color-PMS_Website-1024x346.png" },
+      { label: "EQUIS", description: "Label d'excellence académique et internationale de l'EFMD", logo: "/images/partenaires-academiques/EFMD-Global-EQUIS-Accredited-Pantonelm.png" },
+      { label: "AMBA", description: "Accréditation de référence pour les programmes MBA", logo: "/images/partenaires-academiques/amba-logo-association-of-mba-accredited-1244274_copie-removebg-preview.png" },
     ],
   },
-
   idrac: {
     slug: "idrac",
     name: "IDRAC Business School",
@@ -193,29 +364,36 @@ export const partenaires: Record<string, PartnerData> = {
 
   eklore: {
     slug: "eklore",
-    name: "Éklore ed. School of Management",
+    name: "Éklore-ed",
     country: "🇫🇷 France",
     countryCode: "FR",
     logo: "/images/partenaires-academiques/eklore.png",
-    type: "École de management innovante — Groupe FIGS Education",
-    presentation: "Éklore ed. School of Management est une école de management innovante appartenant au Groupe FIGS Education. Elle propose des formations en management, marketing et entrepreneuriat avec une pédagogie résolument tournée vers l'innovation et les compétences du futur, dont l'Intelligence Artificielle.",
+    type: "Grande École de Commerce — Accréditée EFMD · Membre CGE",
+    presentation: "Éklore-ed, anciennement ESC Pau BS, est une Grande École de commerce accréditée EFMD et membre de la Conférence des Grandes Écoles. Elle propose des diplômes allant du Bac au Bac+5, en formation initiale et en alternance, tous reconnus par l'État, dans les domaines du management, de la gestion d'entreprises, du commerce et du marketing sportif. Avec ses 3 campus (Pau, Grenoble, Saint-Denis), 2 600+ étudiants et 21 000+ diplômés, éklore-ed allie excellence académique et bien-être étudiant.",
     programmes: [
-      { nom: "Bachelor Management & Innovation", duree: "1 an (L3)", details: "Accès depuis Licence 2 EBS. Axé innovation et transformation digitale." },
-      { nom: "Master Management des Organisations", duree: "2 ans", details: "Spécialisation Management & IA · Marketing Digital · Entrepreneuriat." },
+      { nom: "Bachelor in Management", duree: "1 an (L3)", details: "Accès après avoir effectué les 2 premières années à EBS. Formation reconnue par l'État, disponible en initial ou alternance." },
+      { nom: "PGE — Programme Grande École (Grade de Master)", duree: "2 ans", details: "Accès après avoir obtenu la Licence à EBS. Diplôme visé Bac+5, grade de Master. Spécialisations en management, gestion d'entreprises, commerce." },
+      { nom: "Mastère Manager du Développement Commercial", duree: "2 ans", details: "Accès en M1 après la Licence EBS. Formation professionnalisante en développement commercial et management des ventes." },
     ],
-    eligibilite: "Accès depuis les Licences EBS (Management, Marketing). Partenariat formel EBS — Éklore ed.",
+    eligibilite: "Être inscrit à EBS. Avoir 12 de moyenne sur les années précédant celle de l'inscription. Avoir un bon niveau d'anglais et de français. Étude de dossier et entretien de sélection.",
     avantages: [
-      "Pédagogie innovante centrée sur les compétences du futur (IA, digital)",
-      "Synergies avec l'approche EBS (IA transversale, certifications)",
-      "Réseau FIGS Education — accès à un réseau d'écoles complémentaires",
-      "Visa étudiant France facilité",
+      "Accréditée EFMD — reconnaissance académique internationale",
+      "Membre de la Conférence des Grandes Écoles (CGE)",
+      "3 campus en France : Pau, Grenoble, Saint-Denis",
+      "Diplômes reconnus par l'État du Bac au Bac+5",
+      "Formations en initial et en alternance",
+      "2 600+ étudiants, 21 000+ diplômés",
+      "Pédagogie centrée sur le bien-être étudiant",
+      "Visa étudiant France facilité via convention EBS",
+      "Spécialisation unique en marketing sportif",
     ],
     debouches: [
-      "Manager de l'innovation",
-      "Chef de projet digital",
-      "Product Manager",
-      "Entrepreneur / Intrapreneur",
-      "Responsable transformation organisationnelle",
+      "Manager commercial / Business Developer",
+      "Responsable marketing et communication",
+      "Chef de projet / Product Manager",
+      "Manager du développement commercial",
+      "Entrepreneur / Créateur d'entreprise",
+      "Responsable marketing sportif",
     ],
   },
 
@@ -337,6 +515,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "Link University",
     country: "🇮🇹 Italie",
     countryCode: "IT",
+    logo: "/images/partenaires-academiques/link-university.jpeg",
     type: "Université privée italienne reconnue par l'État italien — Campus Rome",
     presentation: "L'Università degli Studi Link (Link University) est une université privée italienne implantée à Rome. Reconnue par le Ministère de l'Enseignement Supérieur italien (MIUR), elle propose des programmes en management, sciences humaines, droit, communication et technologies. Partenaire stratégique d'EBS, Link University offre un accès à l'Europe du Sud dès la première année de Licence.",
     programmes: [

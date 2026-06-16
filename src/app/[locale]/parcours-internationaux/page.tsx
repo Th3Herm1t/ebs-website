@@ -56,6 +56,7 @@ const etapes = [
 
 const partners = [
   { name: "UQAT", code: "CA", slug: "uqat" },
+  { name: "Audencia", code: "FR", slug: "audencia" },
   { name: "EM Normandie", code: "FR", slug: "em-normandie" },
   { name: "PSB Paris", code: "FR", slug: "psb" },
   { name: "IDRAC", code: "FR", slug: "idrac" },
@@ -151,7 +152,8 @@ export default function InternationalPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
             {[
               { slug: "uqat", logo: "/images/partenaires-academiques/uqat.png", name: "UQAT", pays: "Canada", code: "CA" },
-              { slug: "em-normandie", logo: null, name: "EM Normandie", pays: "France", code: "FR", initials: "EM" },
+              { slug: "audencia", logo: "/images/partenaires-academiques/logo-audencia.png", name: "Audencia", pays: "France", code: "FR" },
+              { slug: "em-normandie", logo: "https://ebs.tn/wp-content/uploads/2022/08/EM_Normandie-Logo.png", name: "EM Normandie", pays: "France", code: "FR" },
               { slug: "psb", logo: "/images/partenaires-academiques/psb.png", name: "PSB Paris", pays: "France", code: "FR" },
               { slug: "idrac", logo: "/images/partenaires-academiques/idrac.png", name: "IDRAC", pays: "France", code: "FR" },
               { slug: "ifag", logo: "/images/partenaires-academiques/ifag.png", name: "IFAG", pays: "France", code: "FR" },
@@ -162,7 +164,7 @@ export default function InternationalPage() {
               { slug: "excelia", logo: "/images/partenaires-academiques/excelia.png", name: "Excelia", pays: "France", code: "FR" },
               { slug: "figs", logo: "/images/partenaires-academiques/figs (2).png", name: "FIGS Education", pays: "France", code: "FR" },
               { slug: "supdecom", logo: "/images/partenaires-academiques/supdecom.png", name: "Sup'de Com", pays: "France", code: "FR" },
-              { slug: "link-university", logo: null, name: "Link University", pays: "Italie", code: "IT", initials: "LU" },
+              { slug: "link-university", logo: "/images/partenaires-academiques/link-university.jpeg", name: "Link University", pays: "Italie", code: "IT" },
               { slug: "redsup", logo: "/images/partenaires-academiques/redsup.png", name: "RedSup", pays: "France", code: "FR" },
               { slug: "gutech", logo: "/images/partenaires-academiques/gutech.png", name: "GUtech", pays: "Oman", code: "OM" },
             ].map((p, i) => (
@@ -179,18 +181,16 @@ export default function InternationalPage() {
                 >
                   {p.logo ? (
                     <div className="w-full h-16 flex items-center justify-center">
-                      <Image
+                      <img
                         src={p.logo}
                         alt={p.name}
-                        width={140}
-                        height={50}
-                        className="max-h-12 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                        className="max-h-12 max-w-[140px] w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
                       />
                     </div>
                   ) : (
                     <div className="w-16 h-16 rounded-2xl bg-penn-bg-light flex items-center justify-center">
                       <span className="text-[18px] font-extrabold text-penn-navy/30 group-hover:text-[#2B8FAB]/50 transition-colors">
-                        {p.initials}
+                        {p.name.charAt(0)}
                       </span>
                     </div>
                   )}

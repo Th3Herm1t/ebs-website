@@ -84,7 +84,7 @@ export default function QuiSommesNousPage() {
           </div>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">2013</p><p className="text-[13px] text-white/50 font-medium">Fondation</p></div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">9</p><p className="text-[13px] text-white/50 font-medium">Programmes</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">7</p><p className="text-[13px] text-white/50 font-medium">Programmes</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center"><p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">150+</p><p className="text-[13px] text-white/50 font-medium">Certifications gratuites</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">95%</p><p className="text-[13px] text-white/50 font-medium">Taux de réussite</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">16</p><p className="text-[13px] text-white/50 font-medium">Partenaires internationaux</p></div>
@@ -96,23 +96,47 @@ export default function QuiSommesNousPage() {
       {/* ═══════════ MOT DU PRÉSIDENT FONDATEUR ═══════════ */}
       <section className="section-padding bg-penn-navy relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_50%_50%,_#2B8FAB_0%,_transparent_70%)]" />
-        <div className="relative z-10 max-w-[900px] mx-auto px-5 lg:px-12">
+        <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(43,143,171,0.06) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+        <div className="relative z-10 max-w-[1100px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
-            <div className="flex items-center gap-4 mb-10">
-              <Quote className="w-10 h-10 text-[#2B8FAB]/30" />
-              <h2 className="text-[28px] md:text-[34px] font-extrabold text-white">Le mot du Président Fondateur</h2>
-            </div>
-            <div className="space-y-5 text-[15px] md:text-[16px] text-white/70 leading-relaxed">
-              <p>Espima Business School cultive, depuis sa création en 2013, un modèle spécifique fondé sur une identité et des valeurs fortes : l&apos;innovation, l&apos;ouverture, la responsabilité et l&apos;excellence. Notre pédagogie cible essentiellement l&apos;acquisition d&apos;une expérience par l&apos;étudiant, la promotion de sa créativité et de son esprit critique.</p>
-              <p>La remarquable réussite d&apos;EBS est due principalement aux objectifs que nous avons fixés dès le départ et aux moyens humains et matériels que nous avons mis en place pour former des étudiants dotés de véritables compétences transversales, capables de s&apos;adapter aux changements inéluctables qui transforment le monde d&apos;aujourd&apos;hui.</p>
-              <p>La taille de notre université, l&apos;animation de la vie étudiante et la dynamique scientifique font aujourd&apos;hui de l&apos;EBS un lieu de savoir, de vie, d&apos;échanges, d&apos;animation, d&apos;intégration et d&apos;engagement.</p>
-            </div>
-            <div className="mt-8 pt-8 border-t border-white/10 flex items-center gap-5">
-              <div className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center text-white font-extrabold text-[20px]">AN</div>
-              <div>
-                <p className="text-[18px] font-extrabold text-white">Abderraouf NAJAR</p>
-                <p className="text-[14px] text-white/50">Président — Espima Business School</p>
+            <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+              {/* Photo */}
+              <div className="w-full lg:w-1/2 shrink-0">
+                <div className="relative h-full min-h-[300px]">
+                  <div className="absolute -inset-3 bg-gradient-to-br from-[#2B8FAB]/20 via-[#2B8FAB]/5 to-transparent rounded-3xl blur-2xl" />
+                  <div className="absolute -inset-1 bg-gradient-to-br from-[#2B8FAB]/40 to-transparent rounded-2xl opacity-50" />
+                  <div className="relative h-full rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-black/30">
+                    <img
+                      src="https://ebs.tn/wp-content/uploads/2022/09/PHOTO-PRESIDENT-DE-LEBS.jpg"
+                      alt="Abderraouf NAJAR"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
+
+              {/* Text */}
+              <div className="w-full lg:w-1/2 flex flex-col justify-center">
+                <Quote className="w-10 h-10 text-[#2B8FAB]/30 mb-6" />
+                <h2 className="text-[28px] md:text-[36px] font-extrabold text-white mb-8 leading-tight">
+                  Le mot du<br />
+                  <span className="text-[#2B8FAB]">Président Fondateur</span>
+                </h2>
+                <div className="space-y-4 text-[15px] md:text-[16px] text-white/70 leading-relaxed">
+                  <p>Espima Business School cultive, depuis sa création en 2013, un modèle spécifique fondé sur une identité et des valeurs fortes : l&apos;innovation, l&apos;ouverture, la responsabilité et l&apos;excellence. Notre pédagogie cible essentiellement l&apos;acquisition d&apos;une expérience par l&apos;étudiant, la promotion de sa créativité et de son esprit critique.</p>
+                  <p>La remarquable réussite d&apos;EBS est due principalement aux objectifs que nous avons fixés dès le départ et aux moyens humains et matériels que nous avons mis en place pour former des étudiants dotés de véritables compétences transversales, capables de s&apos;adapter aux changements inéluctables qui transforment le monde d&apos;aujourd&apos;hui.</p>
+                  <p>La taille de notre université, l&apos;animation de la vie étudiante et la dynamique scientifique font aujourd&apos;hui de l&apos;EBS un lieu de savoir, de vie, d&apos;échanges, d&apos;animation, d&apos;intégration et d&apos;engagement.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Signature */}
+            <div className="mt-10 pt-10 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
+              <div>
+                <p className="text-[20px] font-extrabold text-white">Abderraouf NAJAR</p>
+                <p className="text-[14px] text-white/50 mt-1">Président — Espima Business School</p>
+              </div>
+              <div className="hidden sm:block w-32 h-px bg-[#2B8FAB]/30" />
             </div>
           </motion.div>
         </div>
@@ -198,7 +222,7 @@ export default function QuiSommesNousPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {[
               { end: 2013, label: "Année de fondation", icon: <Building2 className="w-7 h-7" /> },
-              { end: 9, label: "Programmes disponibles", sublabel: "6 Licences · 3 Masters", icon: <BookOpen className="w-7 h-7" /> },
+              { end: 7, label: "Programmes disponibles", sublabel: "4 Licences · 3 Masters", icon: <BookOpen className="w-7 h-7" /> },
               { end: 150, suffix: "+", label: "Certifications gratuites", sublabel: "Google · IBM · Harvard · Bloomberg...", icon: <Award className="w-7 h-7" />, featured: true },
               { end: 95, suffix: "%", label: "Taux de réussite", icon: <TrendingUp className="w-7 h-7" />, featured: true },
               { end: 16, label: "Partenaires internationaux", sublabel: "France · Canada · Italie · Oman", icon: <Globe className="w-7 h-7" /> },
