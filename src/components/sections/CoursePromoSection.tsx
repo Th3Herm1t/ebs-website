@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
+import { Badge } from "@/components/shared";
 import { useTranslations } from 'next-intl';
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -17,10 +18,10 @@ export default function CoursePromoSection() {
         <div className="flex flex-wrap items-center mb-16">
           <div className="w-full lg:w-6/12 lg:pr-8">
             <ScrollReveal initialX={-40} duration={0.8}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-penn-green/10 text-penn-green font-bold text-[13px] tracking-widest uppercase mb-6 border border-penn-green/20 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-penn-green animate-pulse"></span>
+              <Badge variant="default" size="lg" className="mb-6">
+                <span className="w-2 h-2 rounded-full bg-penn-green animate-pulse" />
                 {t('title')}
-              </div>
+              </Badge>
               <h2 className="text-[48px] md:text-[60px] font-extrabold text-penn-navy leading-tight mb-8 tracking-tight">
                 {t('subtitle')} <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f4a261] to-[#e9c46a]">

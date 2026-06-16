@@ -158,9 +158,9 @@ export default function VisionPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
           >
-            <span className="inline-block text-[13px] font-bold uppercase tracking-[3px] text-[#2B8FAB] mb-6">
+            <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
               Notre Vision
-            </span>
+            </Badge>
           </motion.div>
 
           <motion.blockquote

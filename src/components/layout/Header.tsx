@@ -23,10 +23,10 @@ const navItems: NavItem[] = [
     children: [
       { label: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
       { label: "Vision, Mission & Valeurs", href: "/vision-mission-valeurs" },
+      { label: "L'approche EBS", href: "/ia-et-certifications" },
       { label: "Corps Enseignant", href: "/corps-enseignant" },
       { label: "Alumni", href: "/alumni" },
       { label: "Campus", href: "/campus" },
-      { label: "Admissions", href: "/admissions" },
     ],
   },
   {

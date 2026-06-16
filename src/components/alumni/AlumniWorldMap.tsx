@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
+import { Badge } from "@/components/shared";
 import { CountryFlag } from "@/components/shared/CountryFlag";
 
 interface AlumniLocation {
@@ -121,9 +122,9 @@ export default function AlumniWorldMap({ locale = "fr" }: { locale?: string }) {
           viewport={{ once: true, margin: "-80px" }}
           className="text-center mb-14"
         >
-          <span className="inline-block text-[13px] font-bold uppercase tracking-[3px] text-[#2B8FAB] mb-4">
+          <Badge variant="default" size="lg" className="mb-4">
             {isFr ? "Réseau Alumni" : "Alumni Network"}
-          </span>
+          </Badge>
           <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
             {isFr ? "Nos diplômés dans le monde" : "Our graduates worldwide"}
           </h2>

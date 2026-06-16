@@ -192,7 +192,7 @@ export default function QuiSommesNousPage() {
       <section className="section-padding bg-white">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-16">
-            <span className="inline-block text-[14px] font-bold uppercase tracking-[3px] text-[#2B8FAB] mb-4">EBS en chiffres</span>
+            <Badge variant="default" size="lg" className="mb-4">EBS en chiffres</Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-penn-navy leading-[1.1]">L'excellence en quelques chiffres</h2>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
@@ -250,7 +250,7 @@ export default function QuiSommesNousPage() {
         <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(43,143,171,0.06) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
         <div className="relative z-10 max-w-[1160px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-16">
-            <span className="inline-block text-[14px] font-bold uppercase tracking-[3px] text-[#2B8FAB] mb-4">Services étudiants</span>
+            <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80">Services étudiants</Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-white leading-[1.1]">Tout pour réussir</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">

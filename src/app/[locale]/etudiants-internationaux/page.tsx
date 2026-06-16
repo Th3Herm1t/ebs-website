@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, BadgeCheck, Banknote, BriefcaseMedical, Building, Bus, Check, ChevronDown, FileText, Globe, GraduationCap, HeartHandshake, Hotel, MapPin, Phone, Plane, Quote, Receipt, ShieldUser, Users } from "lucide-react";
-import { CtaSection } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 import { CountryFlag } from "@/components/shared/CountryFlag";
 import AcademicPartners from "@/components/sections/AcademicPartners";
 
@@ -80,10 +80,10 @@ export default function EtudiantsInternationauxPage() {
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
           <div className="max-w-[750px]">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#2B8FAB] text-[12px] font-bold uppercase tracking-[3px] mb-8">
-                <Globe className="w-4 h-4" />
-                Étudiants Internationaux
-              </div>
+            <Badge variant="outline" size="lg" className="mb-8 border-white/20 text-white/80">
+              <Globe className="w-4 h-4" />
+              Étudiants Internationaux
+            </Badge>
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="text-[42px] md:text-[56px] lg:text-[64px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6">
               Venez étudier<br />
@@ -115,7 +115,7 @@ export default function EtudiantsInternationauxPage() {
       <section className="section-padding bg-white">
         <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-16">
-            <span className="inline-block text-[13px] font-bold uppercase tracking-[3px] text-[#2B8FAB] mb-4">Notre engagement</span>
+            <Badge variant="default" size="lg" className="mb-4">Notre engagement</Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-penn-navy leading-[1.15] mb-4">
               On s&apos;occupe de tout.
               <br />
@@ -151,7 +151,7 @@ export default function EtudiantsInternationauxPage() {
 
         <div className="relative z-10 max-w-[1100px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-16">
-            <span className="inline-block text-[13px] font-bold uppercase tracking-[3px] text-[#2B8FAB] mb-4">Votre parcours</span>
+            <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80">Votre parcours</Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-white leading-[1.1]">
               De votre pays à votre diplôme,
               <br />
@@ -214,7 +214,7 @@ export default function EtudiantsInternationauxPage() {
       <section className="section-padding bg-white">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="text-center mb-14">
-            <span className="inline-block text-[13px] font-bold uppercase tracking-[3px] text-[#2B8FAB] mb-4">Depuis l&apos;international</span>
+            <Badge variant="default" size="lg" className="mb-4">Depuis l&apos;international</Badge>
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">Vous venez de loin.<br />Votre avenir est ici.</h2>
           </motion.div>
 

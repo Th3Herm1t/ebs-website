@@ -245,9 +245,9 @@ export default function BlogPage() {
             viewport={{ once: true, margin: "-80px" }}
             className="text-center mb-16"
           >
-            <span className="inline-block text-[14px] font-bold uppercase tracking-[3px] text-[#2B8FAB] mb-4">
-              À venir
-            </span>
+              <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80">
+                À venir
+              </Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-white leading-[1.1]">
               Premiers articles en préparation
             </h2>

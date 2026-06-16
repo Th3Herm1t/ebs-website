@@ -337,9 +337,9 @@ export default function IAEtCertificationsPage() {
             viewport={{ once: true, margin: "-80px" }}
             className="text-center mb-16"
           >
-            <span className="inline-block text-[14px] font-bold uppercase tracking-[3px] text-[#9C27B0] mb-4">
-              Compétences fondamentales
-            </span>
+              <Badge variant="outline" size="lg" className="mb-4 border-[#9C27B0]/30 text-[#9C27B0]">
+                Compétences fondamentales
+              </Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-white leading-[1.1]">
               Les 5 compétences IA que maîtrisent
               <br />

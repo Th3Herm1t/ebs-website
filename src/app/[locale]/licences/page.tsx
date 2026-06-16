@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, Award, BookOpen, Globe, ShieldCheck, Sparkles } from "lucide-react";
-import { CtaSection, InfiniteLogoMarquee } from "@/components/shared";
+import { Badge, CtaSection, InfiniteLogoMarquee } from "@/components/shared";
 import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { licences } from "@/lib/programmes/licences";
@@ -128,10 +128,10 @@ export default async function LicencesPage({
       {/* Argument clé + Certifications logos */}
       <section className="section-padding bg-penn-bg-light">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-penn-green/10 text-penn-green font-bold text-[13px] uppercase tracking-wider mb-6">
+          <Badge variant="default" size="lg" className="mb-6">
             <ShieldCheck className="w-4 h-4" />
             Certifications incluses
-          </div>
+          </Badge>
           <p className="text-[19px] md:text-[22px] font-bold text-penn-navy leading-relaxed max-w-[800px] mx-auto">
             En plus de votre diplôme reconnu par l&apos;État tunisien, vous repartez avec des certifications délivrées par Google, IBM, Harvard, Cisco, Bloomberg et Fortinet — sans aucun frais supplémentaire.
           </p>

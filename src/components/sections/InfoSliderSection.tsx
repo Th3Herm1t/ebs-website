@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Sparkles, ArrowRight } from "lucide-react";
+import { Badge } from "@/components/shared";
 import {
   Carousel,
   CarouselContent,
@@ -88,10 +89,11 @@ export default function InfoSliderSection() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: false }}
                       transition={{ duration: 0.5, ease: "backOut", delay: 0.2 }}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-penn-green/10 text-penn-green font-bold text-[12px] uppercase tracking-wider mb-5 lg:mb-6"
                     >
-                      <Sparkles className="w-4 h-4" />
-                      {slide.subtitle.replace('★ ', '')}
+                      <Badge variant="default" size="sm" className="mb-5 lg:mb-6">
+                        <Sparkles className="w-3.5 h-3.5" />
+                        {slide.subtitle.replace('★ ', '')}
+                      </Badge>
                     </motion.div>
                     
                     <motion.div

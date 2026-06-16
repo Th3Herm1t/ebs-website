@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/shared";
 
 interface ProgramPresentationProps {
   surtitre: string;
@@ -15,9 +16,9 @@ export function ProgramPresentation({
 }: ProgramPresentationProps) {
   return (
     <div className={cn("max-w-[900px]", className)}>
-      <span className="text-penn-green font-bold text-[13px] uppercase tracking-widest mb-3 block">
+      <Badge variant="default" size="sm" className="mb-3">
         {surtitre}
-      </span>
+      </Badge>
       <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy leading-tight mb-4">
         {title}
       </h2>

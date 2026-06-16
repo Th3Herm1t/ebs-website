@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import { ArrowDown, Bus, Building, Clock, Coffee, Hotel, MapPin, Monitor, ParkingCircle, Wifi, Camera } from "lucide-react";
-import { CtaSection } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 
 const campusSpaces = [
   { title: "Amphithéâtre", icon: <Building className="w-8 h-8" />, color: "#2B8FAB" },
@@ -43,10 +43,10 @@ export default function CampusPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-3 text-[#2B8FAB]/60 text-[12px] font-bold uppercase tracking-[4px] mb-8">
-                <MapPin className="w-4 h-4" />
+              <Badge variant="outline" size="lg" className="mb-8 border-white/20 text-white/80">
+                <MapPin className="w-3.5 h-3.5" />
                 10 Rue Socrate, Z.I Kheireddine — Le Kram, Tunis
-              </div>
+              </Badge>
             </motion.div>
 
             <motion.h1

@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { ArrowDown, ArrowRight, Check, Globe, GraduationCap, Plane, Shield } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { CtaSection } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 import { CountryFlag } from "@/components/shared/CountryFlag";
 
 const scenarios = [
@@ -90,10 +90,10 @@ export default function InternationalPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-3 text-[#2B8FAB]/60 text-[12px] font-bold uppercase tracking-[4px] mb-8">
-                <Globe className="w-4 h-4" />
-                Parcours Internationaux
-              </div>
+            <Badge variant="outline" size="lg" className="mb-8 border-white/20 text-white/80">
+              <Globe className="w-4 h-4" />
+              Parcours Internationaux
+            </Badge>
             </motion.div>
 
             <motion.h1
@@ -137,9 +137,9 @@ export default function InternationalPage() {
             viewport={{ once: true, margin: "-60px" }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-[13px] font-bold uppercase tracking-[3px] text-[#2B8FAB] mb-4">
+            <Badge variant="default" size="lg" className="mb-4">
               Notre réseau
-            </span>
+            </Badge>
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">
               16 universités partenaires
             </h2>
@@ -311,9 +311,9 @@ export default function InternationalPage() {
             viewport={{ once: true, margin: "-60px" }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-[13px] font-bold uppercase tracking-[3px] text-[#2B8FAB] mb-4">
+            <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80">
               Pourquoi partir ?
-            </span>
+            </Badge>
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-white leading-[1.15]">
               Étudier à l&apos;international depuis EBS
             </h2>

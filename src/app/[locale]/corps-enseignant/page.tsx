@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { Award, ArrowDown, Search, Users } from "lucide-react";
-import { CtaSection } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 
 type Domain = "Tous" | "Management" | "Marketing" | "Finance" | "Informatique" | "IA" | "International";
 
@@ -136,10 +136,10 @@ export default function CorpsEnseignantPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-3 text-[#2B8FAB]/60 text-[12px] font-bold uppercase tracking-[4px] mb-8">
-                <div className="w-8 h-px bg-[#2B8FAB]/30" />
+              <Badge variant="outline" size="lg" className="mb-8 border-white/20 text-white/80">
+                <div className="w-1 h-1 rounded-full bg-[#2B8FAB]" />
                 Corps Enseignant
-              </div>
+              </Badge>
             </motion.div>
 
             <motion.h1
