@@ -24,7 +24,7 @@ export default function InfoSliderSection() {
   const slides = [
     {
       id: 1,
-      image: "/images/all-img/infoslider-1.jpg",
+      image: "/images/all-img/infoslider-2.jpg",
       subtitle: t('s1.badge'),
       title: t('s1.title'),
       text: t('s1.desc'),
@@ -32,7 +32,7 @@ export default function InfoSliderSection() {
     },
     {
       id: 2,
-      image: "/images/all-img/infoslider-2.jpg",
+      image: "/images/all-img/infoslider-1.jpg",
       subtitle: t('s2.badge'),
       title: t('s2.title'),
       text: t('s2.desc'),
