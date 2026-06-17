@@ -31,6 +31,7 @@ export const routing = defineRouting({
     '/preinscription': '/preinscription',
     '/contact': '/contact',
     '/actualites': '/actualites',
+    '/brochures': '/brochures',
   }
 });
 

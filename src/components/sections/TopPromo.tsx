@@ -19,7 +19,7 @@ export default function TopPromo() {
       desc: t('p1.desc'),
       ctaText: t('p1.btn'),
       bgColor: "bg-[#264653]",
-      link: "#",
+      link: "/brochures",
       image: "/images/toppromo/brochure.jpg",
     },
     {
@@ -28,8 +28,8 @@ export default function TopPromo() {
       desc: t('p2.desc'),
       ctaText: t('p2.btn'),
       bgColor: "bg-[#2B8FAB]",
-      link: "#",
-      image: "/images/toppromo/conseiller.jpg",
+      link: "/contact",
+      image: "/images/toppromo/candidature.jpg",
     },
     {
       id: "apply",
@@ -37,8 +37,8 @@ export default function TopPromo() {
       desc: t('p3.desc'),
       ctaText: t('p3.btn'),
       bgColor: "bg-[#f4a261]",
-      link: "#",
-      image: "/images/toppromo/candidature.jpg",
+      link: "/preinscription",
+      image: "/images/toppromo/conseiller.jpg",
     },
   ];
 
