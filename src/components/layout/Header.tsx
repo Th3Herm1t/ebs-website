@@ -137,7 +137,7 @@ export default function Header() {
               href="tel:+21629582835" 
               className="text-[#2B8FAB] hover:text-[#2B8FAB]/80 transition-colors font-bold text-[14px] xl:text-[16px] whitespace-nowrap"
             >
-              <span className="font-light mr-1.5">{t('call')}</span> +216 29 58 28 35
+              <span className="font-light mr-1.5">{t('call')}</span> +216 53 355 196
             </a>
             <Link
               href="/preinscription"

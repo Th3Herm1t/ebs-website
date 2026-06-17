@@ -88,7 +88,7 @@ export default async function MasterLPPage({ params }: PageParams) {
         subtitle={`Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin. Réponse garantie sous 24h.`}
         primaryCta={{ label: "Pré-inscription gratuite", href: `#form` }}
         secondaryCta={{ label: "Télécharger la brochure", href: `/brochures/${data.slug}.pdf` }}
-        whatsapp="+216 29 58 28 35"
+        whatsapp="+216 53 355 196"
         background={data.color}
       />
     </>

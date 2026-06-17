@@ -151,7 +151,7 @@ export default function Footer() {
                   <Phone className="w-5 h-5 text-penn-green group-hover:text-white transition-colors" />
                 </div>
                 <div className="flex flex-col text-white/80 text-[15px]">
-                  <span>+216 29 58 28 35</span>
+                  <span>+216 53 355 196</span>
                   <span>+216 71 18 26 25</span>
                 </div>
               </li>

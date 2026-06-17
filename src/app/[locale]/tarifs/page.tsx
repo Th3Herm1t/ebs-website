@@ -502,7 +502,7 @@ export default function TarifsPage() {
                 className="inline-flex items-center gap-2 font-bold text-[15px] text-penn-navy hover:text-[#2B8FAB] transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                +216 29 58 28 35
+                +216 53 355 196
               </a>
             </div>
           </motion.div>

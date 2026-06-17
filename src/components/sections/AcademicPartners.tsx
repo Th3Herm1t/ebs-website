@@ -6,6 +6,9 @@ import { useTranslations } from 'next-intl';
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const logos = [
+  { file: "logo-audencia.png", name: "Audencia" },
+  { file: "https://ebs.tn/wp-content/uploads/2022/08/EM_Normandie-Logo.png", name: "EM Normandie" },
+  { file: "link-university.jpeg", name: "Link University" },
   { file: "eklore.png", name: "Eklore" },
   { file: "epitech.png", name: "Epitech" },
   { file: "epsi.png", name: "EPSI" },
@@ -76,7 +79,7 @@ export default function AcademicPartners() {
             <div className="inline-flex items-center gap-16 w-max">
               {[...logos, ...logos, ...logos, ...logos].map((logo, i) => (
                 <a key={i} href="#" className="inline-block flex-shrink-0">
-                  <img src={`/images/partenaires-academiques/${logo.file}`} alt={logo.name} className="h-[90px] w-auto object-contain" />
+                  <img src={logo.file.startsWith("http") ? logo.file : `/images/partenaires-academiques/${logo.file}`} alt={logo.name} className="h-[90px] w-auto object-contain" />
                 </a>
               ))}
             </div>

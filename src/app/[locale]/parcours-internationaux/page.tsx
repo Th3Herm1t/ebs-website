@@ -353,7 +353,7 @@ export default function InternationalPage() {
         title="Prêt(e) à partir étudier à l'international ?"
         subtitle="Candidatez dès maintenant au Parcours International EBS. Notre équipe vous accompagne à chaque étape."
         primaryCta={{ label: "Candidatez au Parcours International", href: "/etudier-a-letranger" }}
-        whatsapp="+216 29 58 28 35"
+        whatsapp="+216 53 355 196"
         background="penn-green"
       />
     </>

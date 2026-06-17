@@ -485,7 +485,7 @@ export default function AdmissionsPage() {
                     href="tel:+21629582835"
                     className="text-penn-navy hover:text-[#2B8FAB] transition-colors font-medium"
                   >
-                    +216 29 58 28 35
+                    +216 53 355 196
                   </a>
                 </div>
                 <div className="flex items-center gap-3 text-[14px]">
