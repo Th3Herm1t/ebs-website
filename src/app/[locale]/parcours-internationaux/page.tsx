@@ -129,6 +129,42 @@ export default function InternationalPage() {
         </div>
       </section>
 
+      {/* ═══════════ INTRO PARAGRAPH ═══════════ */}
+      <section className="bg-white">
+        <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            className="bg-penn-bg-light rounded-2xl border border-penn-border/60 p-8 lg:p-10 relative overflow-hidden"
+          >
+            <div
+              className="absolute top-0 left-0 w-1.5 h-full"
+              style={{ backgroundColor: "#2B8FAB" }}
+            />
+            <div className="flex items-start gap-5">
+              <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center shrink-0">
+                <Globe className="w-6 h-6 text-[#2B8FAB]" />
+              </div>
+              <div>
+                <h3 className="text-[19px] font-extrabold text-penn-navy mb-3">
+                  Le Parcours International de l&apos;EBS
+                </h3>
+                <p className="text-[16px] md:text-[17px] text-penn-navy/70 leading-relaxed">
+                  Permet aux étudiants de poursuivre leurs études en France, au Canada,
+                  en Italie ou à Oman dans l&apos;une de nos 16 universités partenaires.
+                  Plusieurs formules de partenariats offrent la possibilité de continuer
+                  à l&apos;étranger à partir d&apos;un Bac+1, Bac+2 ou Bac+3 validé à
+                  l&apos;EBS, et d&apos;obtenir une Licence ou un Master en 1 ou 2 ans.
+                  Une ouverture sur des institutions de renommée mondiale et une expérience
+                  interculturelle unique pour réussir ses études et sa carrière.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ═══════════ PARTNER GRID ═══════════ */}
       <section className="section-padding bg-white">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
@@ -253,6 +289,55 @@ export default function InternationalPage() {
                   {s.pays}
                 </p>
                 <p className="text-[13px] text-penn-body/70 leading-relaxed">{s.details}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ EN QUELQUES MOTS ═══════════ */}
+      <section className="section-padding bg-penn-bg-light">
+        <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            className="text-center mb-14"
+          >
+            <Badge variant="default" size="lg" className="mb-4">En bref</Badge>
+            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">
+              Le parcours international en quelques mots
+            </h2>
+            <p className="text-[16px] text-penn-body/60 max-w-[600px] mx-auto">
+              Ce que le Parcours International EBS vous apporte concrètement.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[900px] mx-auto">
+            {[
+              { text: "Des programmes de Licences et de Masters de haut niveau dans des universités partenaires reconnues.", color: "#2B8FAB" },
+              { text: "Un enseignement complémentaire pour enrichir le parcours et préparer à la mobilité internationale et à la double diplômation.", color: "#2196F3" },
+              { text: "Des formations en Soft Skills : communication, management interculturel, culture générale, anglais.", color: "#9C27B0" },
+              { text: "Des activités internationales : conférences thématiques, séminaires en France, préparation TOEIC, voyages d'études.", color: "#FF9800" },
+              { text: "Des co-diplômations en Licences et Masters avec les universités partenaires.", color: "#E91E8C" },
+              { text: "Des stages rémunérés en France dans le cadre du parcours international.", color: "#43A047" },
+              { text: "La possibilité de suivre des cursus 100% en anglais pour une carrière globale.", color: "#2B8FAB" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="flex items-start gap-4 p-5 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/20 hover:shadow-sm transition-all duration-300 group"
+              >
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: `${item.color}12` }}
+                >
+                  <Check className="w-5 h-5" style={{ color: item.color }} />
+                </div>
+                <p className="text-[15px] text-penn-navy/80 leading-relaxed mt-1.5">{item.text}</p>
               </motion.div>
             ))}
           </div>
