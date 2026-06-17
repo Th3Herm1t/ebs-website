@@ -28,6 +28,7 @@ export default function InfoSliderSection() {
       subtitle: t('s1.badge'),
       title: t('s1.title'),
       text: t('s1.desc'),
+      button: t('s1.btn'),
       link: "#"
     },
     {
@@ -36,6 +37,7 @@ export default function InfoSliderSection() {
       subtitle: t('s2.badge'),
       title: t('s2.title'),
       text: t('s2.desc'),
+      button: t('s2.btn'),
       link: "#"
     },
     {
@@ -44,7 +46,8 @@ export default function InfoSliderSection() {
       subtitle: t('s3.badge'),
       title: t('s3.title'),
       text: t('s3.desc'),
-      link: "#"
+      button: t('s3.btn'),
+      link: "/admissions"
     }
   ];
 
@@ -121,7 +124,7 @@ export default function InfoSliderSection() {
                         transition={{ duration: 0.5, ease: "backOut", delay: 0.6 }}
                         className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-penn-green text-white font-bold text-[14px] uppercase tracking-wider transition-colors duration-300 hover:bg-penn-navy hover:shadow-lg rounded-sm"
                       >
-                        En savoir plus
+                        {slide.button || "En savoir plus"}
                         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </motion.a>
                     </motion.div>
