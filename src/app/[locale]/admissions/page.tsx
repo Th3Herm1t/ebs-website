@@ -12,6 +12,7 @@ import {
   Check,
   Phone,
   GraduationCap,
+  HeartHandshake,
   ArrowRight,
 } from "lucide-react";
 import { Badge } from "@/components/shared";
@@ -358,163 +359,84 @@ export default function AdmissionsPage() {
         </div>
       </section>
 
-      {/* ═══════════ FINANCING & PAYMENT ═══════════ */}
-      <section className="section-padding bg-white">
-        <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14">
-            <div className="lg:col-span-7">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-              >
-                <Badge variant="default" size="lg" className="mb-4">
-                  Financement & Tarifs
-                </Badge>
-                <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-tight">
-                  Tout est transparent.
-                </h2>
-              </motion.div>
-            </div>
-            <div className="lg:col-span-5">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ delay: 0.1 }}
-                className="text-[16px] text-penn-body leading-relaxed"
-              >
-                Les frais de scolarité incluent toutes les certifications
-                internationales. Aucun coût caché.
-              </motion.p>
-            </div>
-          </div>
+      {/* ═══════════ NOS FORMATIONS ═══════════ */}
+      <section className="section-padding bg-penn-bg-light">
+        <div className="max-w-[1000px] mx-auto px-5 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            className="text-center mb-14"
+          >
+            <Badge variant="default" size="lg" className="mb-4">Nos formations</Badge>
+            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
+              Licences & Masters
+            </h2>
+            <p className="text-[16px] text-penn-body mt-3 max-w-[600px] mx-auto">
+              Contactez-nous pour une simulation personnalisée. Chaque situation est unique et mérite un accompagnement sur mesure.
+            </p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {
-                label: "Licence National",
-                price: "7 500",
-                suffix: "DT/an",
-                sub: "6 parcours · 150+ certifs incluses",
-              },
-              {
-                label: "Licence International",
-                price: "9 500",
-                suffix: "DT/an",
-                sub: "Parcours France · Canada · Italie",
-              },
-              {
-                label: "Master",
-                price: "Sur demande",
-                suffix: "",
-                sub: "3 parcours · 150+ certifs incluses",
-              },
-            ].map((item, i) => (
+              { title: "Licence", subtitle: "National", duree: "3 ans", color: "#2B8FAB", details: "6 parcours disponibles en management, marketing, finance et informatique (standard, IA, cybersécurité)." },
+              { title: "Licence", subtitle: "International", duree: "3 ans", color: "#FF9800", details: "3 parcours en partenariat avec des universités en France, au Canada et en Italie. Mobilité à l'étranger.", featured: true },
+              { title: "Master", subtitle: "Professionnel", duree: "2 ans", color: "#9C27B0", details: "3 parcours : CRM & Transformation Digitale, Projets Innovants & Startups, Ingénierie Financière." },
+            ].map((prog, i) => (
               <motion.div
-                key={item.label}
+                key={prog.subtitle}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-penn-bg-light border border-penn-border/40 rounded-2xl p-7"
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="relative group"
               >
-                <p className="text-xs font-bold uppercase tracking-wider text-penn-body mb-3">
-                  {item.label}
-                </p>
-                <span className="font-extrabold text-3xl text-[#2B8FAB]">
-                  {item.price}
-                </span>
-                {item.suffix && (
-                  <span className="text-penn-body text-sm ml-1">{item.suffix}</span>
-                )}
-                <p className="text-xs text-penn-body mt-2">{item.sub}</p>
+                <div className={`bg-white rounded-2xl border p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col ${prog.featured ? "border-[#FF9800]/40 shadow-lg shadow-[#FF9800]/10" : "border-penn-border"}`}>
+                  {prog.featured && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FF9800] text-white text-[11px] font-bold uppercase tracking-wider px-4 py-1 rounded-full">
+                      Parcours International
+                    </div>
+                  )}
+                  <div className="text-center mb-5">
+                    <span className="inline-block text-[14px] font-bold uppercase tracking-[3px] mb-2" style={{ color: prog.color }}>{prog.subtitle}</span>
+                    <h3 className="text-[26px] font-extrabold text-penn-navy">{prog.title}</h3>
+                    <p className="text-[13px] text-penn-body mt-1">Durée : {prog.duree}</p>
+                  </div>
+                  <p className="text-[14px] text-penn-body/60 leading-relaxed text-center flex-1 mb-5">{prog.details}</p>
+                  <Link href="/preinscription" className="block w-full py-3 rounded-full text-center text-white font-bold text-[14px] hover:opacity-90 transition-opacity" style={{ backgroundColor: prog.color }}>
+                    Préinscription
+                  </Link>
+                </div>
               </motion.div>
             ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              className="bg-penn-bg-light border border-penn-border/40 rounded-2xl p-7"
-            >
-              <h3 className="font-extrabold text-[16px] text-penn-navy mb-4">
-                Facilités de paiement
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  "Paiement en 3 tranches (inscription + 2 versements trimestriels)",
-                  "Paiement en 4 tranches sur demande (inscription + 3 versements)",
-                  "Frais d'inscription : 1 500 DT à la confirmation (déduits du total)",
-                  "Réduction fratrie : -10% pour le 2ème enfant inscrit à l'EBS",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 text-[14px] text-penn-body leading-relaxed"
-                  >
-                    <span
-                      className="w-1.5 h-1.5 bg-[#2B8FAB] shrink-0 mt-2 rounded-full"
-                      aria-hidden="true"
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ delay: 0.1 }}
-              className="bg-[#2B8FAB]/5 border border-[#2B8FAB]/15 rounded-2xl p-7"
-            >
-              <h3 className="font-extrabold text-[16px] text-penn-navy mb-4">
-                Conseillère admission
-              </h3>
-              <p className="text-[14px] text-penn-body leading-relaxed mb-4">
-                Pour toute question sur les tarifs, les facilités de paiement ou
-                ton dossier, contacte directement notre équipe.
-              </p>
-              <div className="space-y-2">
-                <div className="flex items-center gap-3 text-[14px]">
-                  <Phone className="w-4 h-4 text-[#2B8FAB]" />
-                  <a
-                    href="tel:+21629582835"
-                    className="text-penn-navy hover:text-[#2B8FAB] transition-colors font-medium"
-                  >
-                    +216 53 355 196
-                  </a>
-                </div>
-                <div className="flex items-center gap-3 text-[14px]">
-                  <svg
-                    className="w-4 h-4 text-[#2B8FAB]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  >
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
-                  <a
-                    href="mailto:admission@ebs.tn"
-                    className="text-penn-navy hover:text-[#2B8FAB] transition-colors font-medium"
-                  >
-                    admission@ebs.tn
-                  </a>
-                </div>
-                <p className="text-[12px] text-penn-body mt-3">
-                  Disponible du lundi au vendredi, 9h–17h.
-                </p>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
 
+      {/* ═══════════ SIMULATION PERSONNALISÉE ═══════════ */}
+      <section className="section-padding bg-white">
+        <div className="max-w-[700px] mx-auto px-5 lg:px-12 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
+            <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6">
+              <HeartHandshake className="w-8 h-8 text-[#2B8FAB]" />
+            </div>
+            <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy mb-4">
+              Demandez une simulation personnalisée
+            </h2>
+            <p className="text-[15px] text-penn-body leading-relaxed mb-10 max-w-[500px] mx-auto">
+              Chaque situation est unique. Notre équipe vous recontacte dans les 24h avec un devis adapté à votre profil et à votre programme.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/contact" className="inline-flex items-center gap-2 bg-[#2B8FAB] text-white font-bold text-[15px] py-3.5 px-8 rounded-full hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20">
+                Nous contacter <MessageSquare className="w-4 h-4" />
+              </Link>
+              <a href="tel:+21653355196" className="inline-flex items-center gap-2 font-bold text-[15px] text-penn-navy hover:text-[#2B8FAB] transition-colors">
+                <Phone className="w-4 h-4" /> +216 53 355 196
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
       {/* ═══════════ INTAKE INFO ═══════════ */}
       <section className="bg-penn-navy relative overflow-hidden">
         <div

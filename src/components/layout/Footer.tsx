@@ -96,8 +96,6 @@ export default function Footer() {
               <span className="absolute -bottom-2 left-0 w-1/2 h-[2px] bg-penn-green" />
             </h4>
             <ul className="space-y-4">
-              <FooterLink href="/parcours-internationaux" isBold>{t('links.international')}</FooterLink>
-              <FooterLink href="/entreprises-partenaires">{t('links.entreprises')}</FooterLink>
               <FooterLink href="/recruter-nos-etudiants">{t('links.stages')}</FooterLink>
               <FooterLink href="/certifications">{t('links.certifications')}</FooterLink>
               <FooterLink href="/ia-et-certifications">{t('links.ia')}</FooterLink>
@@ -105,7 +103,6 @@ export default function Footer() {
               <FooterLink href="/contact">{t('links.contact')}</FooterLink>
               <FooterLink href="/campus">{t('links.campus')}</FooterLink>
               <FooterLink href="/faq">{t('links.faq')}</FooterLink>
-              <FooterLink href="/tarifs">{t('links.tarifs')}</FooterLink>
               <FooterLink href="/blog">{t('links.evenements')}</FooterLink>
             </ul>
           </div>

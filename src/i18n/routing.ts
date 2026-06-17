@@ -23,7 +23,6 @@ export const routing = defineRouting({
     '/parcours-internationaux': '/parcours-internationaux',
     '/etudiants-internationaux': '/etudiants-internationaux',
     '/entreprises-partenaires': '/entreprises-partenaires',
-    '/tarifs': '/tarifs',
     '/blog': '/blog',
     '/faq': '/faq',
     '/ia-et-certifications': '/ia-et-certifications',
