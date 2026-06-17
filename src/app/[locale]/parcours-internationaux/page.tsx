@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useState } from "react";
-import { ArrowDown, ArrowRight, Check, Globe, GraduationCap, Plane, Shield, Send, Mail, Phone, Handshake, Building2, X } from "lucide-react";
+import { ArrowDown, ArrowRight, Check, Globe, GraduationCap, Plane, Shield } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge, CtaSection } from "@/components/shared";
@@ -350,9 +349,6 @@ export default function InternationalPage() {
         </div>
       </section>
 
-      {/* ═══════════ BECOME ACADEMIC PARTNER ═══════════ */}
-      <BecomeAcademicPartner />
-
       <CtaSection
         title="Prêt(e) à partir étudier à l'international ?"
         subtitle="Candidatez dès maintenant au Parcours International EBS. Notre équipe vous accompagne à chaque étape."
@@ -361,132 +357,5 @@ export default function InternationalPage() {
         background="penn-green"
       />
     </>
-  );
-}
-
-function BecomeAcademicPartner() {
-  const [open, setOpen] = useState(false);
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      await fetch("https://formspree.io/f/xeojaqdr", {
-        method: "POST",
-        body: new FormData(e.currentTarget),
-        headers: { Accept: "application/json" },
-      });
-      setSent(true);
-    } catch {
-      setSent(true);
-    }
-  };
-
-  return (
-    <section className="section-padding bg-penn-bg-light">
-      <div className="max-w-[700px] mx-auto px-5 lg:px-12 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
-          <div className="bg-white rounded-2xl border border-penn-border shadow-sm p-10">
-            {sent ? (
-              <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200, damping: 15 }}>
-                <div className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-4">
-                  <Check className="w-7 h-7 text-[#2B8FAB]" />
-                </div>
-                <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">Demande envoyée !</h3>
-                <p className="text-[14px] text-penn-body/50 max-w-[350px] mx-auto">Notre équipe vous contactera pour étudier votre candidature de partenariat académique.</p>
-              </motion.div>
-            ) : (
-              <>
-                <div className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-5">
-                  <Handshake className="w-7 h-7 text-[#2B8FAB]" />
-                </div>
-                <h3 className="text-[22px] font-extrabold text-penn-navy mb-2">Devenir partenaire académique</h3>
-                <p className="text-[14px] text-penn-body/50 max-w-[430px] mx-auto mb-8">
-                  Vous représentez une université ou une école internationale et souhaitez établir un partenariat avec EBS ?
-                </p>
-                <button
-                  onClick={() => setOpen(true)}
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#2B8FAB] text-white font-bold text-[14px] hover:bg-[#1e7a94] transition-all shadow-lg shadow-[#2B8FAB]/15"
-                >
-                  Candidater comme partenaire <ArrowRight className="w-4 h-4" />
-                </button>
-              </>
-            )}
-          </div>
-        </motion.div>
-      </div>
-
-      {open && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4" onClick={() => setOpen(false)}>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            onClick={(e) => e.stopPropagation()}
-            className="relative bg-white rounded-2xl max-w-[520px] w-full shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
-          >
-            <div className="p-6 border-b border-penn-border/30 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <Globe className="w-5 h-5 text-[#2B8FAB]" />
-                <h3 className="text-[16px] font-extrabold text-penn-navy">Candidature Partenaire Académique</h3>
-              </div>
-              <button onClick={() => setOpen(false)} className="p-2 rounded-lg hover:bg-penn-bg-light">
-                <X className="w-4 h-4 text-penn-body/40" />
-              </button>
-            </div>
-            <form onSubmit={handleSubmit} className="p-6 space-y-4">
-              <input type="hidden" name="_subject" value="Candidature Partenaire Académique — EBS" />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Institution *</label>
-                  <input name="institution" required className="w-full px-4 py-3 rounded-xl border-2 border-penn-border/30 text-[14px] text-penn-navy focus:outline-none focus:border-[#2B8FAB]" placeholder="Nom de l'université / école" />
-                </div>
-                <div>
-                  <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Pays *</label>
-                  <input name="pays" required className="w-full px-4 py-3 rounded-xl border-2 border-penn-border/30 text-[14px] text-penn-navy focus:outline-none focus:border-[#2B8FAB]" placeholder="Ex: France, Canada..." />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Personne à contacter *</label>
-                  <input name="contact" required className="w-full px-4 py-3 rounded-xl border-2 border-penn-border/30 text-[14px] text-penn-navy focus:outline-none focus:border-[#2B8FAB]" placeholder="Nom et prénom" />
-                </div>
-                <div>
-                  <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Fonction</label>
-                  <input name="fonction" className="w-full px-4 py-3 rounded-xl border-2 border-penn-border/30 text-[14px] text-penn-navy focus:outline-none focus:border-[#2B8FAB]" placeholder="Directeur, Doyen..." />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Email *</label>
-                  <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl border-2 border-penn-border/30 text-[14px] text-penn-navy focus:outline-none focus:border-[#2B8FAB]" placeholder="email@institution.edu" />
-                </div>
-                <div>
-                  <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Téléphone</label>
-                  <input type="tel" name="telephone" className="w-full px-4 py-3 rounded-xl border-2 border-penn-border/30 text-[14px] text-penn-navy focus:outline-none focus:border-[#2B8FAB]" placeholder="+..." />
-                </div>
-              </div>
-              <div>
-                <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Type de partenariat envisagé</label>
-                <select name="type" className="w-full px-4 py-3 rounded-xl border-2 border-penn-border/30 text-[14px] text-penn-navy bg-white focus:outline-none focus:border-[#2B8FAB]">
-                  <option value="echange">Échange d'étudiants</option>
-                  <option value="double">Double diplôme</option>
-                  <option value="recherche">Recherche conjointe</option>
-                  <option value="mobilite">Mobilité enseignante</option>
-                  <option value="autre">Autre</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Message</label>
-                <textarea name="message" rows={4} className="w-full px-4 py-3 rounded-xl border-2 border-penn-border/30 text-[14px] text-penn-navy placeholder:text-penn-body/25 focus:outline-none focus:border-[#2B8FAB] resize-none" placeholder="Décrivez votre projet de partenariat..." />
-              </div>
-              <button type="submit" className="w-full py-3.5 rounded-xl bg-[#2B8FAB] text-white font-bold text-[14px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15">
-                <Send className="w-4 h-4" /> Envoyer la candidature
-              </button>
-            </form>
-          </motion.div>
-        </div>
-      )}
-    </section>
   );
 }

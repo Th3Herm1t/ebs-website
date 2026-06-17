@@ -14,6 +14,8 @@ import {
   GraduationCap,
   HeartHandshake,
   ArrowRight,
+  Clock,
+  Globe,
 } from "lucide-react";
 import { Badge } from "@/components/shared";
 import {
@@ -361,54 +363,200 @@ export default function AdmissionsPage() {
 
       {/* ═══════════ NOS FORMATIONS ═══════════ */}
       <section className="section-padding bg-penn-bg-light">
-        <div className="max-w-[1000px] mx-auto px-5 lg:px-12">
+        <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            className="text-center mb-14"
+            className="text-center mb-16"
           >
             <Badge variant="default" size="lg" className="mb-4">Nos formations</Badge>
-            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
+            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">
               Licences & Masters
             </h2>
-            <p className="text-[16px] text-penn-body mt-3 max-w-[600px] mx-auto">
-              Contactez-nous pour une simulation personnalisée. Chaque situation est unique et mérite un accompagnement sur mesure.
+            <p className="text-[16px] text-penn-body/70 leading-relaxed max-w-[640px] mx-auto">
+              Des formations professionnalisantes reconnues par l&apos;État, avec
+              plus de 150 certifications internationales incluses.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: "Licence", subtitle: "National", duree: "3 ans", color: "#2B8FAB", details: "6 parcours disponibles en management, marketing, finance et informatique (standard, IA, cybersécurité)." },
-              { title: "Licence", subtitle: "International", duree: "3 ans", color: "#FF9800", details: "3 parcours en partenariat avec des universités en France, au Canada et en Italie. Mobilité à l'étranger.", featured: true },
-              { title: "Master", subtitle: "Professionnel", duree: "2 ans", color: "#9C27B0", details: "3 parcours : CRM & Transformation Digitale, Projets Innovants & Startups, Ingénierie Financière." },
-            ].map((prog, i) => (
-              <motion.div
-                key={prog.subtitle}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="relative group"
-              >
-                <div className={`bg-white rounded-2xl border p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col ${prog.featured ? "border-[#FF9800]/40 shadow-lg shadow-[#FF9800]/10" : "border-penn-border"}`}>
-                  {prog.featured && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FF9800] text-white text-[11px] font-bold uppercase tracking-wider px-4 py-1 rounded-full">
-                      Parcours International
-                    </div>
-                  )}
-                  <div className="text-center mb-5">
-                    <span className="inline-block text-[14px] font-bold uppercase tracking-[3px] mb-2" style={{ color: prog.color }}>{prog.subtitle}</span>
-                    <h3 className="text-[26px] font-extrabold text-penn-navy">{prog.title}</h3>
-                    <p className="text-[13px] text-penn-body mt-1">Durée : {prog.duree}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {/* ── LICENCE NATIONALE ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: 0 }}
+            >
+              <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
+                <div className="px-6 lg:px-7 pt-6 lg:pt-7 pb-4 border-b border-penn-border/50">
+                  <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-[#2B8FAB] bg-[#2B8FAB]/8 px-3 py-1 rounded-full mb-3">
+                    Parcours National
+                  </span>
+                  <h3 className="text-[24px] font-extrabold text-penn-navy mb-1">Licence</h3>
+                  <p className="text-[28px] font-extrabold text-[#2B8FAB] leading-none">
+                    7 500 <span className="text-[15px] font-bold text-penn-body/50">DT / An</span>
+                  </p>
+                </div>
+
+                <div className="px-6 lg:px-7 py-5 flex-1">
+                  <p className="text-[11px] font-bold uppercase tracking-[1.5px] text-penn-body/40 mb-4">
+                    6 parcours
+                  </p>
+                  <ul className="space-y-2.5">
+                    {[
+                      "Management",
+                      "Finance",
+                      "Marketing",
+                      "Informatique – Standard",
+                      "Informatique – IA",
+                      "Informatique – Cybersécurité",
+                    ].map((p) => (
+                      <li key={p} className="flex items-center gap-2.5 text-[14px] text-penn-navy/75">
+                        <Check className="w-[15px] h-[15px] text-[#2B8FAB] shrink-0" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="px-6 lg:px-7 pb-6 lg:pb-7">
+                  <div className="flex items-center gap-1.5 text-[12px] text-penn-body/40 mb-4">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>3 ans — Bac+3 — 6 semestres</span>
                   </div>
-                  <p className="text-[14px] text-penn-body/60 leading-relaxed text-center flex-1 mb-5">{prog.details}</p>
-                  <Link href="/preinscription" className="block w-full py-3 rounded-full text-center text-white font-bold text-[14px] hover:opacity-90 transition-opacity" style={{ backgroundColor: prog.color }}>
-                    Préinscription
+                  <Link
+                    href="/licences"
+                    className="inline-flex items-center gap-1.5 text-[13px] font-bold text-[#2B8FAB] group-hover:gap-2 transition-all"
+                  >
+                    Voir les parcours
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
+
+            {/* ── LICENCE INTERNATIONALE ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
+                <div className="px-6 lg:px-7 pt-6 lg:pt-7 pb-4 border-b border-penn-border/50">
+                  <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-[#FF9800] bg-[#FF9800]/8 px-3 py-1 rounded-full mb-3">
+                    Parcours International
+                  </span>
+                  <h3 className="text-[24px] font-extrabold text-penn-navy mb-1">Licence</h3>
+                  <p className="text-[28px] font-extrabold text-[#FF9800] leading-none">
+                    9 500 <span className="text-[15px] font-bold text-penn-body/50">DT / An</span>
+                  </p>
+                </div>
+
+                <div className="px-6 lg:px-7 py-5 flex-1">
+                  <p className="text-[11px] font-bold uppercase tracking-[1.5px] text-penn-body/40 mb-4">
+                    3 destinations
+                  </p>
+                  <ul className="space-y-3.5">
+                    <li className="flex items-start gap-2.5">
+                      <Globe className="w-[15px] h-[15px] text-[#FF9800] shrink-0 mt-0.5" />
+                      <span className="text-[13px] text-penn-navy/75 leading-snug">
+                        L1 en Tunisie → B2/B3{" "}
+                        <span className="font-semibold text-penn-navy">Link University — Italie</span>
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Globe className="w-[15px] h-[15px] text-[#FF9800] shrink-0 mt-0.5" />
+                      <span className="text-[13px] text-penn-navy/75 leading-snug">
+                        L1/L2 en Tunisie → B3{" "}
+                        <span className="font-semibold text-penn-navy">Grande école — France</span>
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Globe className="w-[15px] h-[15px] text-[#FF9800] shrink-0 mt-0.5" />
+                      <span className="text-[13px] text-penn-navy/75 leading-snug">
+                        L1/L2/L3 en Tunisie → M1 au{" "}
+                        <span className="font-semibold text-penn-navy">Canada / France / Italie</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="px-6 lg:px-7 pb-6 lg:pb-7">
+                  <div className="flex items-center gap-1.5 text-[12px] text-penn-body/40 mb-4">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>3 ans — Double diplôme — Mobilité</span>
+                  </div>
+                  <Link
+                    href="/parcours-internationaux"
+                    className="inline-flex items-center gap-1.5 text-[13px] font-bold text-[#FF9800] group-hover:gap-2 transition-all"
+                  >
+                    Voir les destinations
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* ── MASTER ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="md:col-span-2 lg:col-span-1"
+            >
+              <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
+                <div className="px-6 lg:px-7 pt-6 lg:pt-7 pb-4 border-b border-penn-border/50">
+                  <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-[#9C27B0] bg-[#9C27B0]/8 px-3 py-1 rounded-full mb-3">
+                    Master Professionnel
+                  </span>
+                  <h3 className="text-[24px] font-extrabold text-penn-navy mb-1">Master</h3>
+                  <p className="text-[15px] font-bold text-penn-body/50">Sur devis</p>
+                </div>
+
+                <div className="px-6 lg:px-7 py-5 flex-1">
+                  <p className="text-[11px] font-bold uppercase tracking-[1.5px] text-penn-body/40 mb-4">
+                    3 masters
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-[15px] h-[15px] text-[#9C27B0] shrink-0 mt-0.5" />
+                      <span className="text-[14px] text-penn-navy/75 leading-snug">
+                        Management de Projets Innovants & Startups
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-[15px] h-[15px] text-[#9C27B0] shrink-0 mt-0.5" />
+                      <span className="text-[14px] text-penn-navy/75 leading-snug">
+                        CRM & Transformation Digitale
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-[15px] h-[15px] text-[#9C27B0] shrink-0 mt-0.5" />
+                      <span className="text-[14px] text-penn-navy/75 leading-snug">
+                        Ingénierie Financière
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="px-6 lg:px-7 pb-6 lg:pb-7">
+                  <div className="flex items-center gap-1.5 text-[12px] text-penn-body/40 mb-4">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>2 ans — Bac+5 — 4 semestres</span>
+                  </div>
+                  <Link
+                    href="/masters"
+                    className="inline-flex items-center gap-1.5 text-[13px] font-bold text-[#9C27B0] group-hover:gap-2 transition-all"
+                  >
+                    Voir les masters
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

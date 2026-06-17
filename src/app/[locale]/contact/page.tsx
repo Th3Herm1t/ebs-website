@@ -69,7 +69,7 @@ const quickActions = [
     icon: <Building2 className="w-5 h-5" />,
     title: "Entreprises",
     desc: "Proposez un partenariat, un stage ou un recrutement.",
-    href: "/entreprises-partenaires",
+    href: "/partenaires-economiques",
     label: "Collaborer",
   },
 ];

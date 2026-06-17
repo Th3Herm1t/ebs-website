@@ -33,7 +33,7 @@ export default function PillarsSection() {
       p1: t('p3.desc1'),
       p2: t('p3.desc2'),
       cta: t('p3.btn'),
-      link: "/entreprises-partenaires"
+      link: "/partenaires-economiques"
     }
   ];
 

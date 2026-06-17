@@ -22,7 +22,8 @@ export const routing = defineRouting({
     '/campus': '/campus',
     '/parcours-internationaux': '/parcours-internationaux',
     '/etudiants-internationaux': '/etudiants-internationaux',
-    '/entreprises-partenaires': '/entreprises-partenaires',
+    '/partenaires-economiques': '/partenaires-economiques',
+    '/partenaires-academiques': '/partenaires-academiques',
     '/blog': '/blog',
     '/faq': '/faq',
     '/ia-et-certifications': '/ia-et-certifications',
@@ -31,7 +32,6 @@ export const routing = defineRouting({
     '/contact': '/contact',
     '/actualites': '/actualites',
     '/brochures': '/brochures',
-    '/devenir-partenaire': '/devenir-partenaire',
     '/recruter-nos-etudiants': '/recruter-nos-etudiants',
   }
 });
