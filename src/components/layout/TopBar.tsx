@@ -71,7 +71,7 @@ export default function TopBar() {
           </div>
           <div className="flex items-center gap-2">
             <Phone className="w-[14px] h-[14px] text-[#42474c]" />
-            <span className="text-[#42474c] text-[13px] font-medium opacity-80">+216 71 18 26 25</span>
+            <span className="text-[#42474c] text-[13px] font-medium opacity-80">+216 53 355 196</span>
           </div>
         </div>
 

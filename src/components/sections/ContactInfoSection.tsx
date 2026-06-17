@@ -13,7 +13,7 @@ const contactInfo = [
   {
     icon: Smartphone,
     title: "Telephone",
-    lines: ["+216 53 355 196", "+216 71 18 26 25"],
+    lines: ["+216 53 355 196"],
   },
   {
     icon: Mail,

@@ -149,7 +149,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col text-white/80 text-[15px]">
                   <span>+216 53 355 196</span>
-                  <span>+216 71 18 26 25</span>
+                  <span>+216 53 355 196</span>
                 </div>
               </li>
               <li className="flex gap-4 items-center group mt-2">
