@@ -27,7 +27,6 @@ const navItems: NavItem[] = [
       { label: "Corps Enseignant", href: "/corps-enseignant" },
       { label: "Partenaires Académiques", href: "/partenaires-academiques" },
       { label: "Partenaires Économiques", href: "/partenaires-economiques" },
-      { label: "Recruter nos étudiants", href: "/recruter-nos-etudiants" },
       { label: "Actualités EBS", href: "/actualites" },
       { label: "FAQ", href: "/faq" },
       { label: "Alumni", href: "/alumni" },

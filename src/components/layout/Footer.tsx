@@ -96,7 +96,6 @@ export default function Footer() {
               <span className="absolute -bottom-2 left-0 w-1/2 h-[2px] bg-penn-green" />
             </h4>
             <ul className="space-y-4">
-              <FooterLink href="/recruter-nos-etudiants">{t('links.stages')}</FooterLink>
               <FooterLink href="/certifications">{t('links.certifications')}</FooterLink>
               <FooterLink href="/ia-et-certifications">{t('links.ia')}</FooterLink>
               <FooterLink href="/blog">{t('links.blog')}</FooterLink>

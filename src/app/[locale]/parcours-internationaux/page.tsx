@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowDown, ArrowRight, Check, Globe, GraduationCap, Mail, Phone, Plane, Send, Shield, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Badge, CtaSection } from "@/components/shared";
+import { Badge } from "@/components/shared";
 import { CountryFlag } from "@/components/shared/CountryFlag";
 
 const scenarios = [
@@ -288,7 +288,7 @@ export default function InternationalPage() {
       </section>
 
       {/* ═══════════ INTRO PARAGRAPH ═══════════ */}
-      <section className="bg-white">
+      <section className="bg-white pt-10 lg:pt-14 pb-8 lg:pb-12">
         <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -592,13 +592,43 @@ export default function InternationalPage() {
         </div>
       </section>
 
-      <CtaSection
-        title="Prêt(e) à partir étudier à l'international ?"
-        subtitle="Candidatez dès maintenant au Parcours International EBS. Notre équipe vous accompagne à chaque étape."
-        primaryCta={{ label: "Candidatez au Parcours International", href: "/etudier-a-letranger" }}
-        whatsapp="+216 53 355 196"
-        background="penn-green"
-      />
+      {/* ═══════════ BESOIN D'INFO ═══════════ */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2B8FAB] to-[#1a6d84]" />
+        <div className="relative z-10 max-w-[600px] mx-auto px-5 lg:px-12 py-16 lg:py-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+          >
+            <div className="w-14 h-14 rounded-2xl bg-white/15 flex items-center justify-center mx-auto mb-5">
+              <Phone className="w-7 h-7 text-white" />
+            </div>
+            <h2 className="text-[28px] md:text-[36px] font-extrabold text-white mb-4">
+              Besoin d&apos;info ?
+            </h2>
+            <p className="text-[15px] md:text-[17px] text-white/70 leading-relaxed mb-8 max-w-[400px] mx-auto">
+              Notre équipe est disponible pour répondre à toutes vos questions sur le Parcours International.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="tel:+21653355196"
+                className="inline-flex items-center gap-2.5 bg-white text-penn-navy font-bold text-[15px] py-3.5 px-7 rounded-full hover:bg-white/90 transition-all shadow-lg"
+              >
+                <Phone className="w-4 h-4" />
+                +216 53 355 196
+              </a>
+              <a
+                href="mailto:contact@ebs.tn"
+                className="inline-flex items-center gap-2.5 bg-white/10 text-white font-bold text-[15px] py-3.5 px-7 rounded-full border border-white/20 hover:bg-white/15 transition-all"
+              >
+                <Mail className="w-4 h-4" />
+                contact@ebs.tn
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </>
   );
 }

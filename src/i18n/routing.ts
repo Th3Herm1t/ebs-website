@@ -32,7 +32,6 @@ export const routing = defineRouting({
     '/contact': '/contact',
     '/actualites': '/actualites',
     '/brochures': '/brochures',
-    '/recruter-nos-etudiants': '/recruter-nos-etudiants',
   }
 });
 
