@@ -29,14 +29,7 @@ export const metadata: Metadata = {
     title: 'Espima Business School (EBS)',
     description: 'Votre avenir commence ici.',
     siteName: 'Espima Business School',
-    images: [
-      {
-        url: '/images/all-img/hero.png', // Temporary fallback
-        width: 1200,
-        height: 630,
-        alt: 'EBS Campus',
-      },
-    ],
+    images: [{ url: '/images/all-img/hero.png', width: 1200, height: 630, alt: 'EBS Campus' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -44,17 +37,7 @@ export const metadata: Metadata = {
     description: 'Université privée d’informatique et de management en Tunisie.',
     images: ['/images/all-img/hero.png'],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+  robots: { index: true, follow: true },
 };
 
 import TopBar from "@/components/layout/TopBar";
@@ -71,7 +54,6 @@ export default async function RootLayout({
   const { locale } = await params;
   const messages = await getMessages();
 
-  // CollegeOrUniversity JSON-LD
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollegeOrUniversity',
@@ -80,28 +62,19 @@ export default async function RootLayout({
     url: 'https://ebs.tn',
     logo: 'https://ebs.tn/images/logo/logo.png',
     description: 'ESPIMA Business School est une université privée d’informatique et de management en Tunisie fondée en 2013.',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Tunis',
-      addressCountry: 'TN'
-    }
+    address: { '@type': 'PostalAddress', addressLocality: 'Tunis', addressCountry: 'TN' }
   };
 
   return (
-    <html lang={locale} className={`${mulish.variable} antialiased`}>
+    <html lang={locale} suppressHydrationWarning className={`${mulish.variable} antialiased`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="min-h-full flex flex-col font-[family-name:var(--font-mulish)]">
         <NextIntlClientProvider messages={messages}>
           <TopBar />
           <Header />
-          <main className="flex-1">
-            {children}
-          </main>
+          <main className="flex-1">{children}</main>
           <Footer />
           <FloatingWhatsApp />
           <LanguageSwitcher />

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import HeroBackground from "./HeroBackground";
 import { GraduationCap, Award, Globe, Briefcase, TrendingUp, LineChart, Monitor, Brain, Shield } from "lucide-react";
@@ -18,15 +19,15 @@ export default function HeroSection() {
   const t = useTranslations('HomePage.hero');
 
   const courseCategories = [
-    { title: t('categories.Licence'), count: 4, icon: GraduationCap, badgeColor: "bg-[#f4a261]" },
-    { title: t('categories.Master'), count: 3, icon: Award, badgeColor: "bg-[#84cc16]" },
-    { title: t('categories.Parcours International'), count: 14, icon: Globe, badgeColor: "bg-[#8b5cf6]" },
-    { title: t('categories.Management'), count: 2, icon: Briefcase, badgeColor: "bg-[#3b82f6]" },
-    { title: t('categories.Marketing'), count: 2, icon: TrendingUp, badgeColor: "bg-[#ec4899]" },
-    { title: t('categories.Finance'), count: 2, icon: LineChart, badgeColor: "bg-[#14b8a6]" },
-    { title: t('categories.Informatique'), count: 3, icon: Monitor, badgeColor: "bg-[#f43f5e]" },
-    { title: t('categories.Intelligence Artificielle'), count: 1, icon: Brain, badgeColor: "bg-[#a855f7]" },
-    { title: t('categories.Cybersécurité'), count: 1, icon: Shield, badgeColor: "bg-[#eab308]" },
+    { title: t('categories.Licence'), count: 4, icon: GraduationCap, badgeColor: "bg-[#f4a261]", href: "/licences" },
+    { title: t('categories.Master'), count: 3, icon: Award, badgeColor: "bg-[#84cc16]", href: "/masters" },
+    { title: t('categories.Parcours International'), count: 14, icon: Globe, badgeColor: "bg-[#8b5cf6]", href: "/parcours-internationaux" },
+    { title: t('categories.Management'), count: 2, icon: Briefcase, badgeColor: "bg-[#3b82f6]", href: "/licences?program=management" },
+    { title: t('categories.Marketing'), count: 2, icon: TrendingUp, badgeColor: "bg-[#ec4899]", href: "/licences?program=marketing" },
+    { title: t('categories.Finance'), count: 2, icon: LineChart, badgeColor: "bg-[#14b8a6]", href: "/licences?program=finance" },
+    { title: t('categories.Informatique'), count: 3, icon: Monitor, badgeColor: "bg-[#f43f5e]", href: "/licences?program=informatique-standard" },
+    { title: t('categories.Intelligence Artificielle'), count: 1, icon: Brain, badgeColor: "bg-[#a855f7]", href: "/licences?program=informatique-ia" },
+    { title: t('categories.Cybersécurité'), count: 1, icon: Shield, badgeColor: "bg-[#eab308]", href: "/licences?program=cybersecurite" },
   ];
 
   return (
@@ -95,7 +96,7 @@ export default function HeroSection() {
                     <CarouselContent className="-ml-4">
                       {courseCategories.map((cat, idx) => (
                         <CarouselItem key={idx} className="pl-4 basis-[140px] md:basis-[160px]">
-                          <div className="w-full h-[150px] md:h-[160px] relative bg-transparent border border-dashed border-[#a3a3a3] flex flex-col items-center justify-center p-3 md:p-4 transition-all duration-300 hover:border-[#2B8FAB] cursor-pointer group">
+                          <Link href={cat.href} className="w-full h-[150px] md:h-[160px] relative bg-transparent border border-dashed border-[#a3a3a3] flex flex-col items-center justify-center p-3 md:p-4 transition-all duration-300 hover:border-[#2B8FAB] cursor-pointer group">
                             {/* Badge */}
                             <div className={`absolute top-2 right-2 text-white text-[10px] font-bold px-1.5 py-0.5 rounded ${cat.badgeColor}`}>
                               {cat.count}
@@ -108,7 +109,7 @@ export default function HeroSection() {
                             <h3 className="text-center font-bold text-[#232434] text-[12px] md:text-[13px] leading-snug group-hover:text-[#2B8FAB] transition-colors">
                               {cat.title}
                             </h3>
-                          </div>
+                          </Link>
                         </CarouselItem>
                       ))}
                     </CarouselContent>
