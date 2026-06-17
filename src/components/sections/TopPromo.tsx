@@ -8,9 +8,9 @@ import { useTranslations } from 'next-intl';
 import { cn } from "@/lib/utils";
 
 const timeSlots = [
-  { label: "Matin (9h – 12h)", value: "morning", icon: "🌅" },
-  { label: "Après-midi (14h – 17h)", value: "afternoon", icon: "☀️" },
-  { label: "Soirée (17h – 19h)", value: "evening", icon: "🌆" },
+  { label: "Ce matin", sub: "9h – 12h", value: "morning" },
+  { label: "Cet après-midi", sub: "14h – 17h", value: "afternoon" },
+  { label: "Ce soir", sub: "17h – 19h", value: "evening" },
 ];
 
 export default function TopPromo() {
@@ -21,28 +21,44 @@ export default function TopPromo() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState<string>("");
   const [phone, setPhone] = useState("");
+  const [error, setError] = useState("");
   const [formState, setFormState] = useState<"idle" | "sending" | "sent">("idle");
 
-  const handleSubmit = async () => {
-    if (!phone.trim() || !selectedSlot) return;
+  const validatePhone = (val: string) => {
+    const digits = val.replace(/\D/g, "");
+    if (digits.length < 8) return "Numéro trop court";
+    if (digits.length > 15) return "Numéro trop long";
+    return "";
+  };
+
+  const submitCallback = async (urgent: boolean) => {
+    const err = validatePhone(phone);
+    if (err) { setError(err); return; }
+    setError("");
     setFormState("sending");
     try {
       await fetch("https://formspree.io/f/xeojaqdr", {
         method: "POST",
-        body: JSON.stringify({ phone, slot: selectedSlot, _subject: "Demande de rappel — EBS" }),
+        body: JSON.stringify({
+          phone,
+          slot: urgent ? "immediate" : selectedSlot,
+          urgent,
+          _subject: urgent ? "Rappel immédiat — EBS" : `Rappel planifié (${selectedSlot}) — EBS`,
+        }),
         headers: { "Content-Type": "application/json" },
       });
-      setFormState("sent");
-    } catch {
-      setFormState("sent"); // show success anyway for UX
-    }
+    } catch {}
+    setFormState("sent");
   };
 
   const resetModal = () => {
     setModalOpen(false);
-    setSelectedSlot("");
-    setPhone("");
-    setFormState("idle");
+    setTimeout(() => {
+      setSelectedSlot("");
+      setPhone("");
+      setError("");
+      setFormState("idle");
+    }, 300);
   };
 
   const promos = [
@@ -54,7 +70,6 @@ export default function TopPromo() {
       bgColor: "bg-[#264653]",
       link: "/brochures",
       image: "/images/toppromo/brochure.jpg",
-      asButton: false,
     },
     {
       id: "whatsapp",
@@ -64,7 +79,6 @@ export default function TopPromo() {
       bgColor: "bg-[#2B8FAB]",
       link: "",
       image: "/images/toppromo/candidature.jpg",
-      asButton: true,
     },
     {
       id: "apply",
@@ -74,7 +88,6 @@ export default function TopPromo() {
       bgColor: "bg-[#f4a261]",
       link: "/preinscription",
       image: "/images/toppromo/conseiller.jpg",
-      asButton: false,
     },
   ];
 
@@ -97,17 +110,17 @@ export default function TopPromo() {
                 <div className="relative z-10">
                   <h3 className="text-[20px] font-extrabold mb-[15px] text-penn-navy">{promo.title}</h3>
                   <p className="mb-10 text-penn-body">{promo.desc}</p>
-                  {promo.asButton ? (
+                  {promo.id === "whatsapp" ? (
                     <button
                       onClick={() => setModalOpen(true)}
-                      className={cn("inline-block px-8 py-3 rounded-full text-white uppercase text-[13px] tracking-wide font-bold transition-opacity hover:opacity-90", promo.bgColor)}
+                      className={cn("inline-block px-8 py-3 rounded-full text-white uppercase text-[13px] tracking-wide font-bold transition-all hover:opacity-90 hover:shadow-lg", promo.bgColor)}
                     >
                       {promo.ctaText}
                     </button>
                   ) : (
                     <a
                       href={promo.link}
-                      className={cn("inline-block px-8 py-3 rounded-full text-white uppercase text-[13px] tracking-wide font-bold transition-opacity hover:opacity-90", promo.bgColor)}
+                      className={cn("inline-block px-8 py-3 rounded-full text-white uppercase text-[13px] tracking-wide font-bold transition-all hover:opacity-90 hover:shadow-lg", promo.bgColor)}
                     >
                       {promo.ctaText}
                     </a>
@@ -123,120 +136,187 @@ export default function TopPromo() {
       <AnimatePresence>
         {modalOpen && (
           <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4" onClick={resetModal}>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            />
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
               onClick={(e) => e.stopPropagation()}
-              className="relative bg-white rounded-2xl max-w-[480px] w-full shadow-2xl overflow-hidden"
+              className="relative bg-white rounded-2xl max-w-[440px] w-full shadow-2xl overflow-hidden"
             >
-              {formState === "sent" ? (
-                <div className="p-8 md:p-10 text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-5">
-                    <Check className="w-8 h-8 text-[#2B8FAB]" />
-                  </div>
-                  <h3 className="text-[22px] font-extrabold text-penn-navy mb-2">Demande envoyée !</h3>
-                  <p className="text-[14px] text-penn-body/60 mb-6 max-w-[300px] mx-auto">
-                    Un conseiller vous appellera au <strong className="text-penn-navy">{phone}</strong> dans le créneau sélectionné.
-                  </p>
-                  <div className="flex flex-col gap-3">
-                    <a
-                      href={`tel:+21653355196`}
-                      className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#2B8FAB] text-white font-bold text-[14px] hover:bg-[#2B8FAB]/90 transition-all"
-                    >
-                      <Phone className="w-4 h-4" /> Appeler maintenant
-                    </a>
-                    <button onClick={resetModal} className="text-[14px] font-bold text-penn-body/40 hover:text-penn-navy transition-colors">
-                      Fermer
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <>
-                  <div className="p-6 md:p-8 border-b border-penn-border/50 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-[#2B8FAB]" />
-                      </div>
-                      <div>
-                        <h3 className="text-[16px] font-extrabold text-penn-navy">Parler à un conseiller</h3>
-                        <p className="text-[12px] text-penn-body/40">Choisissez votre créneau</p>
-                      </div>
-                    </div>
-                    <button onClick={resetModal} className="p-2 rounded-lg hover:bg-penn-bg-light transition-colors">
-                      <X className="w-5 h-5 text-penn-body/40" />
-                    </button>
-                  </div>
-
-                  <div className="p-6 md:p-8 space-y-6">
-                    {/* Phone */}
-                    <div>
-                      <label className="block text-[13px] font-bold text-penn-navy mb-2">Votre numéro</label>
-                      <div className="relative">
-                        <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-penn-body/30" />
-                        <input
-                          type="tel"
-                          value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
-                          placeholder="+216 XX XXX XXX"
-                          className="w-full pl-11 pr-4 py-3 rounded-xl border border-penn-border text-[14px] text-penn-navy placeholder:text-penn-body/30 focus:outline-none focus:border-[#2B8FAB] focus:ring-2 focus:ring-[#2B8FAB]/10 transition-all"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Time slots */}
-                    <div>
-                      <label className="block text-[13px] font-bold text-penn-navy mb-3">Créneau souhaité</label>
-                      <div className="space-y-2">
-                        {timeSlots.map((slot) => (
-                          <button
-                            key={slot.value}
-                            onClick={() => setSelectedSlot(slot.value)}
-                            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl border-2 text-left text-[14px] font-semibold transition-all ${
-                              selectedSlot === slot.value
-                                ? "border-[#2B8FAB] bg-[#2B8FAB]/5 text-penn-navy"
-                                : "border-penn-border/50 text-penn-body/60 hover:border-penn-border hover:text-penn-navy"
-                            }`}
-                          >
-                            <Clock className="w-4 h-4 shrink-0" />
-                            <span className="flex-1">{slot.label}</span>
-                            {selectedSlot === slot.value && <Check className="w-4 h-4 text-[#2B8FAB]" />}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Actions */}
-                    <div className="flex flex-col gap-3 pt-2">
-                      <button
-                        onClick={handleSubmit}
-                        disabled={formState === "sending" || !phone.trim() || !selectedSlot}
-                        className="w-full py-3 rounded-xl bg-[#2B8FAB] text-white font-bold text-[14px] hover:bg-[#2B8FAB]/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                      >
-                        {formState === "sending" ? "Envoi..." : <><Send className="w-4 h-4" /> Être rappelé</>}
-                      </button>
-
-                      <div className="relative flex items-center gap-3">
-                        <div className="flex-1 h-px bg-penn-border/50" />
-                        <span className="text-[11px] font-semibold text-penn-body/30 uppercase">ou</span>
-                        <div className="flex-1 h-px bg-penn-border/50" />
-                      </div>
-
-                      <a
-                        href="tel:+21653355196"
-                        className="w-full py-3 rounded-xl border-2 border-penn-border text-penn-navy font-bold text-[14px] hover:border-[#2B8FAB]/30 hover:bg-penn-bg-light transition-all flex items-center justify-center gap-2"
-                      >
-                        <Phone className="w-4 h-4" /> Appeler immédiatement
-                      </a>
-                    </div>
-                  </div>
-                </>
-              )}
+              <AnimatePresence mode="wait">
+                {formState === "sent" ? (
+                  <SuccessView phone={phone} onClose={resetModal} />
+                ) : (
+                  <FormView
+                    key="form"
+                    phone={phone}
+                    setPhone={(v) => { setPhone(v); setError(""); }}
+                    selectedSlot={selectedSlot}
+                    setSelectedSlot={setSelectedSlot}
+                    formState={formState}
+                    error={error}
+                    onSubmit={submitCallback}
+                    onClose={resetModal}
+                  />
+                )}
+              </AnimatePresence>
             </motion.div>
           </div>
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+/* ─────────────────────────────────── */
+
+function FormView({
+  phone, setPhone, selectedSlot, setSelectedSlot,
+  formState, error, onSubmit, onClose,
+}: {
+  phone: string;
+  setPhone: (v: string) => void;
+  selectedSlot: string;
+  setSelectedSlot: (v: string) => void;
+  formState: string;
+  error: string;
+  onSubmit: (urgent: boolean) => void;
+  onClose: () => void;
+}) {
+  const isValid = phone.trim().length > 0 && !error;
+
+  return (
+    <>
+      {/* Header */}
+      <div className="px-6 pt-6 pb-4 flex items-start justify-between">
+        <div>
+          <h3 className="text-[18px] font-extrabold text-penn-navy">Un conseiller vous appelle</h3>
+          <p className="text-[13px] text-penn-body/40 mt-0.5">Gratuit et sans engagement</p>
+        </div>
+        <button onClick={onClose} className="p-2 rounded-xl hover:bg-penn-bg-light transition-colors -mr-2 -mt-1">
+          <X className="w-4 h-4 text-penn-body/30" />
+        </button>
+      </div>
+
+      {/* Body */}
+      <div className="px-6 pb-6 space-y-5">
+        {/* Phone */}
+        <div>
+          <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Votre numéro</label>
+          <input
+            type="tel"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            placeholder="+216 XX XXX XXX"
+            autoFocus
+            className={`w-full px-4 py-3 rounded-xl border-2 text-[16px] font-semibold text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:ring-4 transition-all tracking-wide ${
+              error
+                ? "border-red-400 focus:border-red-400 focus:ring-red-400/10 bg-red-50/30"
+                : isValid
+                  ? "border-[#2B8FAB] focus:border-[#2B8FAB] focus:ring-[#2B8FAB]/5 bg-[#2B8FAB]/[0.03]"
+                  : "border-penn-border/40 focus:border-[#2B8FAB] focus:ring-[#2B8FAB]/5"
+            }`}
+          />
+          {error && (
+            <p className="text-[12px] text-red-500 font-semibold mt-1.5 flex items-center gap-1">
+              <X className="w-3 h-3" /> {error}
+            </p>
+          )}
+        </div>
+
+        {/* Time slots */}
+        <div>
+          <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-3">Créneau souhaité</label>
+          <div className="grid grid-cols-3 gap-2">
+            {timeSlots.map((slot) => {
+              const active = selectedSlot === slot.value;
+              return (
+                <button
+                  key={slot.value}
+                  onClick={() => setSelectedSlot(slot.value)}
+                  className={`relative flex flex-col items-center gap-1 py-4 px-2 rounded-xl border-2 transition-all duration-200 ${
+                    active
+                      ? "border-[#2B8FAB] bg-[#2B8FAB] text-white shadow-lg shadow-[#2B8FAB]/20 scale-[1.02]"
+                      : "border-penn-border/30 bg-white hover:border-penn-border/60 hover:bg-penn-bg-light hover:scale-[1.01]"
+                  }`}
+                >
+                  <Clock className={`w-4 h-4 transition-colors ${active ? "text-white/80" : "text-penn-body/25"}`} />
+                  <span className={`text-[12px] font-bold leading-tight ${active ? "text-white" : "text-penn-body/50"}`}>
+                    {slot.label}
+                  </span>
+                  <span className={`text-[10px] font-semibold ${active ? "text-white/60" : "text-penn-body/30"}`}>
+                    {slot.sub}
+                  </span>
+                  {active && (
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-white flex items-center justify-center shadow"
+                    >
+                      <Check className="w-2.5 h-2.5 text-[#2B8FAB]" />
+                    </motion.div>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* CTA row */}
+        <div className="flex gap-3 pt-1">
+          <button
+            onClick={() => onSubmit(false)}
+            disabled={formState === "sending" || !phone.trim() || !selectedSlot || !!error}
+            className="flex-1 py-3 rounded-xl bg-[#2B8FAB] text-white font-bold text-[14px] hover:bg-[#1e7a94] transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15 active:scale-[0.98]"
+          >
+            {formState === "sending" ? "..." : <><Send className="w-4 h-4" /> Être rappelé</>}
+          </button>
+          <button
+            onClick={() => onSubmit(true)}
+            disabled={formState === "sending" || !phone.trim() || !!error}
+            className="py-3 px-4 rounded-xl border-2 border-penn-navy/15 bg-penn-navy text-white font-bold text-[14px] hover:bg-penn-navy/90 transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-1.5 shrink-0 shadow-lg shadow-penn-navy/10 active:scale-[0.98]"
+          >
+            <Phone className="w-4 h-4" /> <span className="hidden sm:inline">Appelez-moi </span>vite
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function SuccessView({ phone, onClose }: { phone: string; onClose: () => void }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      className="p-8 text-center"
+    >
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.1 }}
+        className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-5"
+      >
+        <Check className="w-8 h-8 text-[#2B8FAB]" />
+      </motion.div>
+      <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">C&apos;est noté !</h3>
+      <p className="text-[14px] text-penn-body/50 leading-relaxed max-w-[280px] mx-auto">
+        Un conseiller EBS va vous appeler{phone ? <> au <strong className="text-penn-navy">{phone}</strong></> : ""} dans les plus brefs délais.
+      </p>
+      <button
+        onClick={onClose}
+        className="mt-6 px-8 py-2.5 rounded-xl bg-penn-bg-light text-penn-navy font-bold text-[13px] hover:bg-penn-border/30 transition-colors"
+      >
+        Fermer
+      </button>
+    </motion.div>
   );
 }

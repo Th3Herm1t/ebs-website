@@ -13,7 +13,7 @@ export default function PillarsSection() {
       p1: t('p1.desc1'),
       p2: t('p1.desc2'),
       cta: t('p1.btn'),
-      link: "#"
+      link: "/parcours-internationaux"
     },
     {
       id: "tech",
@@ -23,7 +23,7 @@ export default function PillarsSection() {
       p1: t('p2.desc1'),
       p2: t('p2.desc2'),
       cta: t('p2.btn'),
-      link: "#"
+      link: "/certifications"
     },
     {
       id: "partners",
@@ -33,7 +33,7 @@ export default function PillarsSection() {
       p1: t('p3.desc1'),
       p2: t('p3.desc2'),
       cta: t('p3.btn'),
-      link: "#"
+      link: "/entreprises-partenaires"
     }
   ];
 
