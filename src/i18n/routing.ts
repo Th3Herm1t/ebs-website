@@ -32,6 +32,8 @@ export const routing = defineRouting({
     '/contact': '/contact',
     '/actualites': '/actualites',
     '/brochures': '/brochures',
+    '/devenir-partenaire': '/devenir-partenaire',
+    '/recruter-nos-etudiants': '/recruter-nos-etudiants',
   }
 });
 

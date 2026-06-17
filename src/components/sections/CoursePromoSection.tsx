@@ -69,7 +69,7 @@ export default function CoursePromoSection() {
         <ScrollReveal initialY={20} duration={0.6} delay={0.5}>
           <div className="flex justify-center mt-12">
             <Link
-              href="/etudiants-internationaux"
+              href="/parcours-internationaux"
               className="inline-flex items-center gap-3 bg-[#2B8FAB] text-white font-bold text-[16px] py-4 px-10 rounded-full hover:bg-penn-navy transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20 hover:shadow-xl hover:-translate-y-0.5"
             >
               J&apos;opte pour le parcours international

@@ -98,7 +98,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <FooterLink href="/parcours-internationaux" isBold>{t('links.international')}</FooterLink>
               <FooterLink href="/entreprises-partenaires">{t('links.entreprises')}</FooterLink>
-              <FooterLink href="/entreprises-partenaires">{t('links.stages')}</FooterLink>
+              <FooterLink href="/recruter-nos-etudiants">{t('links.stages')}</FooterLink>
               <FooterLink href="/certifications">{t('links.certifications')}</FooterLink>
               <FooterLink href="/ia-et-certifications">{t('links.ia')}</FooterLink>
               <FooterLink href="/blog">{t('links.blog')}</FooterLink>
