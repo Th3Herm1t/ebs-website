@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "motion/react";
-import { ArrowDown, ArrowRight, Check, Globe, GraduationCap, Plane, Shield } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { ArrowDown, ArrowRight, Check, Globe, GraduationCap, Mail, Phone, Plane, Send, Shield, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge, CtaSection } from "@/components/shared";
@@ -71,6 +72,23 @@ const partners = [
 ];
 
 export default function InternationalPage() {
+  const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const handleHeroSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormState("sending");
+    try {
+      await fetch("https://formspree.io/f/xeojaqdr", {
+        method: "POST",
+        body: new FormData(e.currentTarget),
+        headers: { Accept: "application/json" },
+      });
+      setFormState("sent");
+    } catch {
+      setFormState("error");
+    }
+  };
+
   return (
     <>
       {/* ═══════════ HERO ═══════════ */}
@@ -84,48 +102,188 @@ export default function InternationalPage() {
         <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_30%_50%,_#2B8FAB_0%,_transparent_50%),radial-gradient(circle_at_70%_80%,_#43A047_0%,_transparent_50%)]" />
         <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(43,143,171,0.04) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
 
-        <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
-<div className="max-w-[750px]">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-            <Badge variant="outline" size="lg" className="mb-8 border-white/20 text-white/80">
-              <Globe className="w-4 h-4" />
-              Parcours Internationaux
-            </Badge>
-            </motion.div>
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-16">
+          <div className="flex flex-col lg:flex-row items-start lg:justify-between gap-14 lg:gap-20">
+            {/* ── Left: Text ── */}
+            <div className="flex-1 max-w-[660px]">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
+                  <Globe className="w-4 h-4" />
+                  Parcours Internationaux
+                </Badge>
+              </motion.div>
 
-            <motion.h1
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.15 }}
+                className="text-[40px] md:text-[54px] lg:text-[60px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
+              >
+                Votre passeport vers
+                <br />
+                <span className="text-[#2B8FAB]">le Canada, la France{" "}
+                  <span className="whitespace-nowrap">et l&apos;Italie.</span>
+                </span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.35 }}
+                className="text-[17px] md:text-[18px] text-white/60 leading-relaxed mb-6"
+              >
+                Étudiez à EBS. Continuez dans le monde. Nos partenariats avec 16
+                universités vous ouvrent des perspectives académiques et
+                professionnelles sans frontières.
+              </motion.p>
+            </div>
+
+            {/* ── Right: Form Card ── */}
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-              className="text-[40px] md:text-[54px] lg:text-[68px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
+              transition={{ duration: 0.7, delay: 0.5 }}
+              className="              lg:w-[440px] shrink-0 w-full"
             >
-              Votre passeport vers
-              <br />
-              <span className="text-[#2B8FAB]">le Canada, la France et l&apos;Italie.</span>
-            </motion.h1>
+              <div className="bg-white rounded-2xl shadow-2xl shadow-black/20 overflow-hidden">
+                <AnimatePresence mode="wait">
+                  {formState === "sent" ? (
+                    <motion.div
+                      key="success"
+                      initial={{ opacity: 0, scale: 0.97 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="p-8 text-center"
+                    >
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                        className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-4"
+                      >
+                        <Check className="w-7 h-7 text-[#2B8FAB]" />
+                      </motion.div>
+                      <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">Demande envoyée !</h3>
+                      <p className="text-[14px] text-penn-body/50 leading-relaxed">
+                        Notre équipe vous contactera sous 48h pour discuter de votre projet international.
+                      </p>
+                      <button
+                        onClick={() => setFormState("idle")}
+                        className="mt-5 text-[13px] font-bold text-[#2B8FAB] hover:underline"
+                      >
+                        Envoyer une autre demande
+                      </button>
+                    </motion.div>
+                  ) : (
+                    <motion.form
+                      key="form"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      onSubmit={handleHeroSubmit}
+                      className="p-7 lg:p-8"
+                    >
+                      <input type="hidden" name="_subject" value="Candidature Parcours International — EBS" />
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-              className="text-[17px] md:text-[19px] text-white/60 leading-relaxed max-w-[600px]"
-            >
-              Étudiez à EBS. Continuez dans le monde. Nos partenariats avec 16 universités vous ouvrent des perspectives académiques et professionnelles sans frontières.
-            </motion.p>
+                      <div className="flex items-center gap-2.5 mb-5">
+                        <div className="w-8 h-8 rounded-lg bg-[#2B8FAB]/10 flex items-center justify-center">
+                          <Send className="w-4 h-4 text-[#2B8FAB]" />
+                        </div>
+                        <h3 className="text-[15px] font-extrabold text-penn-navy">
+                          Démarrez votre parcours
+                        </h3>
+                      </div>
+
+                      <div className="space-y-3.5">
+                        <div className="relative">
+                          <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-penn-body/25" />
+                          <input
+                            name="nom"
+                            required
+                            placeholder="Nom et prénom"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl border border-penn-border/40 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/25 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all"
+                          />
+                        </div>
+                        <div className="relative">
+                          <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-penn-body/25" />
+                          <input
+                            type="email"
+                            name="email"
+                            required
+                            placeholder="Adresse email"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl border border-penn-border/40 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/25 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all"
+                          />
+                        </div>
+                        <div className="relative">
+                          <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-penn-body/25" />
+                          <input
+                            type="tel"
+                            name="telephone"
+                            required
+                            placeholder="Téléphone"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl border border-penn-border/40 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/25 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all"
+                          />
+                        </div>
+                        <div>
+                          <select
+                            name="niveau"
+                            className="w-full px-4 py-3 rounded-xl border border-penn-border/40 text-[14px] font-medium text-penn-navy bg-white focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all"
+                          >
+                            <option value="">Votre niveau actuel</option>
+                            <option value="bac">Bac (entrée en L1)</option>
+                            <option value="bac1">Bac+1</option>
+                            <option value="bac2">Bac+2</option>
+                            <option value="licence">Licence (Bac+3)</option>
+                            <option value="master1">Master 1</option>
+                          </select>
+                        </div>
+                        <div>
+                          <select
+                            name="pays"
+                            className="w-full px-4 py-3 rounded-xl border border-penn-border/40 text-[14px] font-medium text-penn-navy bg-white focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all"
+                          >
+                            <option value="">Pays visé</option>
+                            <option value="france">France</option>
+                            <option value="canada">Canada</option>
+                            <option value="italie">Italie</option>
+                            <option value="oman">Oman</option>
+                            <option value="indecis">Je ne sais pas encore</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={formState === "sending"}
+                        className="w-full mt-5 py-3.5 rounded-xl bg-[#2B8FAB] text-white font-bold text-[14px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15 disabled:opacity-60 active:scale-[0.98]"
+                      >
+                        {formState === "sending" ? (
+                          "Envoi..."
+                        ) : (
+                          <>
+                            <Send className="w-4 h-4" />
+                            Être recontacté(e)
+                          </>
+                        )}
+                      </button>
+
+                      {formState === "error" && (
+                        <p className="text-[12px] text-red-500 text-center mt-3">
+                          Une erreur est survenue. Veuillez réessayer.
+                        </p>
+                      )}
+
+                      <p className="text-[11px] text-penn-body/30 text-center mt-3 leading-relaxed">
+                        Réponse sous 48h · Gratuit · Sans engagement
+                      </p>
+                    </motion.form>
+                  )}
+                </AnimatePresence>
+              </div>
+            </motion.div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-12"
-          >
-            <ArrowDown className="w-5 h-5 text-white/20 animate-bounce mx-auto" />
-          </motion.div>
         </div>
       </section>
 
