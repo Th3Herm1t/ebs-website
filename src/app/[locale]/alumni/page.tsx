@@ -87,7 +87,7 @@ export default function AlumniPage() {
               { value: "500+", label: "Diplômés" },
               { value: "5", label: "Secteurs d'activité" },
             ].map((s) => (
-              <div key={s.label} className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-5 text-center">
+              <div key={s.value + s.label} className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-5 text-center">
                 <p className={`text-[28px] md:text-[36px] font-extrabold leading-none mb-1 ${s.value === "500+" ? "text-[#2B8FAB]" : "text-white"}`}>{s.value}</p>
                 <p className="text-[13px] text-white/40 font-medium">{s.label}</p>
               </div>
@@ -197,7 +197,117 @@ export default function AlumniPage() {
         </div>
       </section>
 
-      <CtaSection title="Vous êtes diplômé(e) EBS ? Devenez mentor." subtitle="Partagez votre expérience avec nos étudiants et contribuez à former la prochaine génération de leaders." primaryCta={{ label: "Devenir mentor", href: "/contact" }} background="penn-green" />
+      <section className="section-padding bg-[#2B8FAB] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_50%_50%,_white_0%,_transparent_70%)]" />
+        <div className="relative z-10 max-w-[900px] mx-auto px-5 lg:px-12 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
+            <Badge variant="outline" size="lg" className="mb-6 border-white/30 text-white/90">Mentorat</Badge>
+            <h2 className="text-[28px] md:text-[36px] font-extrabold text-white mb-4">
+              Vous êtes diplômé(e) EBS ? <span className="text-white">Devenez mentor</span>.
+            </h2>
+            <p className="text-[16px] text-white/70 max-w-[550px] mx-auto mb-8 leading-relaxed">
+              Partagez votre expérience avec nos étudiants et contribuez à former la prochaine génération de leaders.
+            </p>
+            <button onClick={() => setMentorModalOpen(true)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-[#2B8FAB] font-bold text-[14px] hover:bg-white/90 transition-all shadow-lg shadow-white/20">
+              Devenir mentor
+            </button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════ MODAL MENTOR ═══════════ */}
+      <AnimatePresence>
+        {mentorModalOpen && (
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4" onClick={() => setMentorModalOpen(false)}>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative bg-white rounded-2xl max-w-[600px] w-full max-h-[85vh] overflow-y-auto shadow-2xl"
+            >
+              <div className="sticky top-0 z-10 bg-white rounded-t-2xl border-b border-penn-border px-8 py-5 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center text-[#2B8FAB]"><GraduationCap className="w-5 h-5" /></div>
+                  <h3 className="text-[18px] font-extrabold text-penn-navy">Devenir mentor</h3>
+                </div>
+                <button onClick={() => setMentorModalOpen(false)} className="p-2 rounded-xl hover:bg-gray-100 transition-all"><X className="w-5 h-5 text-penn-body" /></button>
+              </div>
+
+              <div className="p-8">
+                {formState === "sent" ? (
+                  <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="py-12 text-center">
+                    <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-5">
+                      <Send className="w-8 h-8 text-[#2B8FAB]" />
+                    </div>
+                    <h3 className="text-[22px] font-extrabold text-penn-navy mb-2">Merci !</h3>
+                    <p className="text-[14px] text-penn-body/50 max-w-[350px] mx-auto">Votre candidature a bien été reçue. Notre équipe vous contactera rapidement.</p>
+                    <button onClick={() => { setMentorModalOpen(false); setFormState("idle"); }} className="mt-6 text-[#2B8FAB] font-bold text-[14px] hover:underline">Fermer</button>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleMentorSubmit} className="space-y-5">
+                    <input type="hidden" name="_subject" value="Candidature Mentor — EBS" />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Nom complet</label>
+                        <input name="name" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="Votre nom" />
+                      </div>
+                      <div>
+                        <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Email</label>
+                        <input name="email" type="email" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="email@exemple.com" />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Téléphone</label>
+                        <input name="phone" type="tel" className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="+216 XX XXX XXX" />
+                      </div>
+                      <div>
+                        <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Poste actuel / Entreprise</label>
+                        <input name="poste" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="Ex: Data Scientist @ Company" />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Secteur d'expertise</label>
+                        <select name="secteur" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all appearance-none bg-white">
+                          <option value="">Sélectionnez</option>
+                          <option value="Banque & Finance">Banque & Finance</option>
+                          <option value="Digital & Marketing">Digital & Marketing</option>
+                          <option value="Tech & IA">Tech & IA</option>
+                          <option value="Conseil">Conseil</option>
+                          <option value="Entrepreneuriat">Entrepreneuriat</option>
+                          <option value="Industrie 4.0">Industrie 4.0</option>
+                          <option value="Autre">Autre</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Années d'expérience</label>
+                        <select name="experience" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all appearance-none bg-white">
+                          <option value="">Sélectionnez</option>
+                          <option value="1-3 ans">1–3 ans</option>
+                          <option value="3-5 ans">3–5 ans</option>
+                          <option value="5-10 ans">5–10 ans</option>
+                          <option value="10+ ans">10+ ans</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Message / Motivation</label>
+                      <textarea name="message" rows={4} required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all resize-none" placeholder="Pourquoi souhaitez-vous devenir mentor ?" />
+                    </div>
+                    <button type="submit" disabled={formState === "sending"} className="w-full py-4 rounded-xl bg-[#2B8FAB] text-white font-bold text-[15px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15 disabled:opacity-50 active:scale-[0.98]">
+                      {formState === "sending" ? "Envoi..." : <><Send className="w-5 h-5" /> Envoyer ma candidature</>}
+                    </button>
+                    {formState === "error" && <p className="text-[13px] text-red-500 text-center">Une erreur est survenue. Veuillez réessayer.</p>}
+                  </form>
+                )}
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

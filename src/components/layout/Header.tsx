@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useTranslations } from 'next-intl';
 
@@ -72,6 +73,8 @@ const navItems: NavItem[] = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
+  const isProgramPage = /^\/(fr|en)?\/?(licences|masters)\/[^/]+$/.test(pathname);
   const tNav = useTranslations('HomePage.header.nav');
   const t = useTranslations('HomePage.header');
 
@@ -143,12 +146,14 @@ export default function Header() {
             >
               <span className="font-light mr-1.5">{t('call')}</span> +216 53 355 196
             </a>
-            <Link
-              href="/preinscription"
-              className="bg-[#2B8FAB] text-white border border-[#2B8FAB] py-2 xl:py-2.5 px-6 xl:px-10 font-bold rounded-full text-[13px] xl:text-[14px] inline-flex items-center justify-center transition-all hover:bg-white hover:text-[#2B8FAB] hover:border-[#2B8FAB] whitespace-nowrap"
-            >
-              {t('postuler')}
-            </Link>
+            {!isProgramPage && (
+              <Link
+                href="/preinscription"
+                className="bg-[#2B8FAB] text-white border border-[#2B8FAB] py-2 xl:py-2.5 px-6 xl:px-10 font-bold rounded-full text-[13px] xl:text-[14px] inline-flex items-center justify-center transition-all hover:bg-white hover:text-[#2B8FAB] hover:border-[#2B8FAB] whitespace-nowrap"
+              >
+                {t('postuler')}
+              </Link>
+            )}
           </div>
 
           {/* Mobile toggle */}

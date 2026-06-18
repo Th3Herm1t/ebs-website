@@ -61,7 +61,7 @@ export default async function MasterLPPage({ params }: PageParams) {
             <ModulesAccordion modules={data.modules} color={data.color} />
           </div>
 
-          <div>
+          <div id="certifications">
             <h3 className="text-[22px] font-extrabold text-penn-navy mb-5">
               ★ {data.totalCerts}+ certifications incluses
             </h3>
@@ -86,10 +86,10 @@ export default async function MasterLPPage({ params }: PageParams) {
       <CtaSection
         title={`Prêt(e) à rejoindre le programme ${data.title} ?`}
         subtitle={`Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin. Réponse garantie sous 24h.`}
-        primaryCta={{ label: "Pré-inscription gratuite", href: `#form` }}
+        primaryCta={{ label: "Certifications incluses", href: "#certifications" }}
         secondaryCta={{ label: "Télécharger la brochure", href: `/brochures/${data.slug}.pdf` }}
         whatsapp="+216 53 355 196"
-        background={data.color}
+        background="penn-green"
       />
     </>
   );

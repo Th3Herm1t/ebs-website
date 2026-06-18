@@ -141,7 +141,7 @@ export default async function LicencesPage({
       <CtaSection
         title="Prêt(e) à choisir votre Licence ?"
         subtitle="Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin."
-        primaryCta={{ label: "Contactez-nous", href: "/contact" }}
+        primaryCta={{ label: "Commencer ma pré-inscription", href: "/preinscription" }}
         background="penn-green"
       />
     </>

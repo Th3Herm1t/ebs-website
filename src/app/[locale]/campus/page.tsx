@@ -1,9 +1,10 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { ArrowDown, Bus, Building, Clock, Coffee, Hotel, MapPin, Monitor, ParkingCircle, Wifi, Camera, Gamepad2, Utensils, BookOpen } from "lucide-react";
-import { Badge, CtaSection } from "@/components/shared";
+import { ArrowDown, Bus, Building, CalendarDays, Clock, Coffee, Hotel, MapPin, Monitor, ParkingCircle, Wifi, Camera, Gamepad2, Utensils, BookOpen, Mail, Phone, Send, X, User } from "lucide-react";
+import { Badge } from "@/components/shared";
 
 const campusSpaces = [
   { title: "Salle Polyvalente", icon: <Building className="w-8 h-8" />, color: "#2B8FAB" },
@@ -25,6 +26,24 @@ const equipements = [
 ];
 
 export default function CampusPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormState("sending");
+    try {
+      await fetch("https://formspree.io/f/xeojaqdr", {
+        method: "POST",
+        body: new FormData(e.currentTarget),
+        headers: { Accept: "application/json" },
+      });
+      setFormState("sent");
+    } catch {
+      setFormState("error");
+    }
+  };
+
   return (
     <>
       {/* ═══════════ HERO ═══════════ */}
@@ -272,12 +291,103 @@ export default function CampusPage() {
         </div>
       </section>
 
-      <CtaSection
-        title="Venez visiter notre campus !"
-        subtitle="Prenez rendez-vous pour une visite personnalisée et découvrez l'environnement EBS."
-        primaryCta={{ label: "Prendre rendez-vous", href: "/contact" }}
-        background="penn-green"
-      />
+      <section className="section-padding bg-[#2B8FAB] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_50%_50%,_white_0%,_transparent_70%)]" />
+        <div className="relative z-10 max-w-[900px] mx-auto px-5 lg:px-12 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
+            <Badge variant="outline" size="lg" className="mb-6 border-white/30 text-white/90">Visite du Campus</Badge>
+            <h2 className="text-[28px] md:text-[36px] font-extrabold text-white mb-4">
+              Venez visiter notre campus <span className="text-white">!</span>
+            </h2>
+            <p className="text-[16px] text-white/70 max-w-[550px] mx-auto mb-8 leading-relaxed">
+              Prenez rendez-vous pour une visite personnalisée et découvrez l'environnement EBS.
+            </p>
+            <button onClick={() => setModalOpen(true)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-[#2B8FAB] font-bold text-[14px] hover:bg-white/90 transition-all shadow-lg shadow-white/20">
+              <CalendarDays className="w-5 h-5" /> Prendre rendez-vous
+            </button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════ MODAL RENDEZ-VOUS ═══════════ */}
+      <AnimatePresence>
+        {modalOpen && (
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4" onClick={() => setModalOpen(false)}>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative bg-white rounded-2xl max-w-[600px] w-full max-h-[85vh] overflow-y-auto shadow-2xl"
+            >
+              <div className="sticky top-0 z-10 bg-white rounded-t-2xl border-b border-penn-border px-8 py-5 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center text-[#2B8FAB]"><CalendarDays className="w-5 h-5" /></div>
+                  <h3 className="text-[18px] font-extrabold text-penn-navy">Prendre rendez-vous</h3>
+                </div>
+                <button onClick={() => setModalOpen(false)} className="p-2 rounded-xl hover:bg-gray-100 transition-all"><X className="w-5 h-5 text-penn-body" /></button>
+              </div>
+
+              <div className="p-8">
+                {formState === "sent" ? (
+                  <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="py-12 text-center">
+                    <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-5">
+                      <Send className="w-8 h-8 text-[#2B8FAB]" />
+                    </div>
+                    <h3 className="text-[22px] font-extrabold text-penn-navy mb-2">Merci !</h3>
+                    <p className="text-[14px] text-penn-body/50 max-w-[350px] mx-auto">Votre demande de visite a bien été reçue. Notre équipe vous contactera sous 48h pour confirmer le rendez-vous.</p>
+                    <button onClick={() => { setModalOpen(false); setFormState("idle"); }} className="mt-6 text-[#2B8FAB] font-bold text-[14px] hover:underline">Fermer</button>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <input type="hidden" name="_subject" value="Demande de Visite Campus — EBS" />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Nom complet</label>
+                        <input name="name" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="Votre nom" />
+                      </div>
+                      <div>
+                        <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Email</label>
+                        <input name="email" type="email" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="email@exemple.com" />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Téléphone</label>
+                        <input name="phone" type="tel" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="+216 XX XXX XXX" />
+                      </div>
+                      <div>
+                        <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Date souhaitée</label>
+                        <input name="date" type="date" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Créneau horaire souhaité</label>
+                      <select name="creneau" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all appearance-none bg-white">
+                        <option value="">Sélectionnez un créneau</option>
+                        <option value="09:00-10:00">09:00 – 10:00</option>
+                        <option value="10:00-11:00">10:00 – 11:00</option>
+                        <option value="11:00-12:00">11:00 – 12:00</option>
+                        <option value="14:00-15:00">14:00 – 15:00</option>
+                        <option value="15:00-16:00">15:00 – 16:00</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Message (optionnel)</label>
+                      <textarea name="message" rows={3} className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all resize-none" placeholder="Une question particulière ? Un programme qui vous intéresse ?" />
+                    </div>
+                    <button type="submit" disabled={formState === "sending"} className="w-full py-4 rounded-xl bg-[#2B8FAB] text-white font-bold text-[15px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15 disabled:opacity-50 active:scale-[0.98]">
+                      {formState === "sending" ? "Envoi..." : <><Send className="w-5 h-5" /> Envoyer ma demande</>}
+                    </button>
+                    {formState === "error" && <p className="text-[13px] text-red-500 text-center">Une erreur est survenue. Veuillez réessayer.</p>}
+                  </form>
+                )}
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
