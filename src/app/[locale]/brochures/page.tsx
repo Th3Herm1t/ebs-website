@@ -177,7 +177,7 @@ export default function BrochuresPage() {
         title="Prêt à rejoindre EBS ?"
         subtitle="Téléchargez la brochure qui vous correspond et faites le premier pas vers votre avenir."
         primaryCta={{ label: "Préinscription", href: "/preinscription" }}
-        secondaryCta={{ label: "Toutes les formations", href: "/licences" }}
+        secondaryCta={{ label: "Toutes les formations", href: "/nos-programmes" }}
       />
     </main>
   );

@@ -271,7 +271,7 @@ export default function VisionPage() {
       <CtaSection
         title="Rejoignez une université qui a une vision."
         subtitle="Découvrez nos programmes et construisez votre avenir avec nous."
-        primaryCta={{ label: "Voir nos programmes", href: "/licences" }}
+        primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         background="penn-green"
       />
     </>

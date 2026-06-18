@@ -288,7 +288,7 @@ export default function PreinscriptionPage() {
                     <span>→</span>
                   </a>
                   <Link
-                    href="/licences"
+                    href="/nos-programmes"
                     className="inline-flex items-center gap-2 text-[14px] font-bold text-penn-navy hover:text-[#2B8FAB] transition-colors"
                   >
                     Retour aux programmes

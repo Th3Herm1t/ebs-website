@@ -77,9 +77,9 @@ export default async function MastersPage({
               Voir tous les masters
             </Link>
           )}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
             {(filteredOverview.length > 0 ? filteredOverview : overview).map((prog) => (
-              <div key={prog.slug} className="h-full">
+              <div key={prog.slug} className="w-full md:w-[calc(50%-12px)] lg:w-[calc((100%-64px)/3)] flex flex-col">
                 <MagneticProgramCard
                   title={prog.title}
                   subtitle={prog.subtitle}

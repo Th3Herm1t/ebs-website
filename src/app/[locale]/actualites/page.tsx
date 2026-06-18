@@ -771,7 +771,7 @@ export default function ActualitesPage() {
                     Rejoindre EBS <ChevronRight className="w-4 h-4" />
                   </Link>
                   <Link
-                    href="/licences"
+                    href="/nos-programmes"
                     className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-penn-border text-penn-navy text-[13px] font-bold hover:border-[#2B8FAB]/30 hover:text-[#2B8FAB] transition-all"
                   >
                     Voir les formations

@@ -46,12 +46,12 @@ const services = [
   { icon: <Globe className="w-5 h-5" />, title: "Bureau International", desc: "Accompagnement visa, dossiers de candidature aux partenaires, préparation au départ à l'étranger.", color: "#E91E8C" },
   { icon: <BookOpen className="w-5 h-5" />, title: "Bibliothèque & E-Learning", desc: "Accès aux ressources numériques, manuels, cours en ligne complémentaires et bases de données.", color: "#FF9800" },
   { icon: <Users className="w-5 h-5" />, title: "Tutorat & Soutien", desc: "Séances de rattrapage, tutorat par les pairs, accompagnement individuel pour les étudiants en difficulté.", color: "#9C27B0" },
-  { icon: <Monitor className="w-5 h-5" />, title: "Espaces de Coworking", desc: "Zones de travail collaboratif, salles de projet et espaces dédiés aux travaux de groupe.", color: "#00BCD4" },
+  { icon: <Monitor className="w-5 h-5" />, title: "Espaces de détente", desc: "Zones de travail collaboratif, salles de projet, salle des jeux, buvette et espaces de détente.", color: "#00BCD4" },
 ];
 
 const ctaCards = [
-  { icon: <BookOpen className="w-6 h-6" />, title: "Nos Programmes", desc: "Licences et Masters en management, finance, marketing et tech.", href: "/licences", label: "Explorer" },
-  { icon: <GraduationCap className="w-6 h-6" />, title: "Pré-inscription", desc: "Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin.", href: "/contact", label: "Postuler" },
+  { icon: <BookOpen className="w-6 h-6" />, title: "Nos Programmes", desc: "Licences et Masters en management, finance, marketing et tech.", href: "/nos-programmes", label: "Explorer" },
+  { icon: <GraduationCap className="w-6 h-6" />, title: "Pré-inscription", desc: "Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin.", href: "/preinscription", label: "Postuler" },
   { icon: <Globe className="w-6 h-6" />, title: "International", desc: "16 partenaires dans 4 pays pour vos études à l'étranger.", href: "/parcours-internationaux", label: "Découvrir" },
   { icon: <ShieldCheck className="w-6 h-6" />, title: "Certifications", desc: "150+ certifications gratuites incluses dans votre formation.", href: "/certifications", label: "Explorer" },
 ];
@@ -151,7 +151,7 @@ export default function QuiSommesNousPage() {
               <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy">Un campus pensé pour votre réussite</h2>
             </div>
             <p className="text-[16px] text-penn-body leading-relaxed mb-6">
-              EBS dispose de toutes les commodités nécessaires à l'épanouissement de ses étudiants : une superficie de 3000 m² avec un bâtiment moderne entièrement climatisé et équipé de WIFI haut débit, une buvette, un espace de repos et de détente offrant un cadre convivial permettant aux étudiants de se rencontrer et d'échanger leurs expériences, avec une vie associative active et des compétitions sportives.
+              EBS dispose de toutes les commodités nécessaires à l'épanouissement de ses étudiants : une superficie de 3000 m² avec un bâtiment moderne entièrement climatisé et équipé de WIFI haut débit, une salle polyvalente, un espace de détente, une salle des jeux et une buvette, offrant un cadre convivial permettant aux étudiants de se rencontrer et d'échanger leurs expériences, avec une vie associative active et des compétitions sportives.
             </p>
             <p className="text-[16px] text-penn-body leading-relaxed">
               La réussite personnelle et professionnelle des étudiants d'Espima Business School est la conséquence directe du bon choix qu'ils ont fait de l'université privée, qui garantit la qualité de l'enseignement dispensé.
@@ -308,7 +308,7 @@ export default function QuiSommesNousPage() {
         </div>
       </section>
 
-      <CtaSection title="Rejoignez la première université tunisienne avec l'IA intégrée." subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant." primaryCta={{ label: "Voir nos programmes", href: "/licences" }} secondaryCta={{ label: "Pré-inscription", href: "/contact" }} background="penn-green" />
+      <CtaSection title="Rejoignez la première université tunisienne avec l'IA intégrée." subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant." primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }} secondaryCta={{ label: "Pré-inscription", href: "/preinscription" }} background="penn-green" />
     </>
   );
 }

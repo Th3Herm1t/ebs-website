@@ -201,7 +201,7 @@ export default function AdmissionsPage() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              href="/licences"
+              href="/nos-programmes"
               className="inline-flex items-center gap-2 font-bold text-[15px] text-white/70 hover:text-white transition-colors py-3.5 px-8"
             >
               Explorer les programmes
@@ -765,7 +765,7 @@ export default function AdmissionsPage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/licences"
+                href="/nos-programmes"
                 className="inline-flex items-center gap-2 font-bold text-[15px] text-white/70 hover:text-white transition-colors py-3.5 px-8"
               >
                 Explorer les programmes

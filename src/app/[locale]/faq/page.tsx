@@ -309,7 +309,7 @@ export default function FaqPage() {
       <CtaSection
         title="Prêt à rejoindre EBS ?"
         subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant."
-        primaryCta={{ label: "Voir nos programmes", href: "/licences" }}
+        primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         secondaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"
       />

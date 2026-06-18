@@ -113,9 +113,10 @@ export default function Footer() {
               <span className="absolute -bottom-2 left-0 w-1/2 h-[2px] bg-penn-green" />
             </h4>
             <ul className="space-y-4">
+              <FooterLink href="/nos-programmes" isBold>Nos Programmes</FooterLink>
               <FooterLink href="/licences">{t('links.licences')}</FooterLink>
               <FooterLink href="/masters">{t('links.masters')}</FooterLink>
-              <FooterLink href="/parcours-internationaux" isBold>{t('links.parcours')}</FooterLink>
+              <FooterLink href="/parcours-internationaux">{t('links.parcours')}</FooterLink>
             </ul>
           </div>
 

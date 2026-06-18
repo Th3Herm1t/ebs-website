@@ -84,9 +84,9 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
+            className="flex flex-wrap justify-center gap-4 md:gap-6"
           >
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-48px)/3)]">
               <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">
                 {totalCerts}+
               </p>
@@ -94,13 +94,13 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
                 Certifications disponibles
               </p>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-48px)/3)]">
               <p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">
                 {data.categories.length}
               </p>
               <p className="text-[12px] text-white/50 font-medium">Domaines</p>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-48px)/3)]">
               <Award className="w-6 h-6 text-[#2B8FAB] mx-auto mb-1" />
               <p className="text-[12px] text-white/50 font-medium">
                 100% gratuit pour nos étudiants

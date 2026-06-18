@@ -343,7 +343,7 @@ export default function InternationalPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {[
               { slug: "uqat", logo: "/images/partenaires-academiques/uqat.png", name: "UQAT", pays: "Canada", code: "CA" },
               { slug: "audencia", logo: "/images/partenaires-academiques/logo-audencia.png", name: "Audencia", pays: "France", code: "FR" },
@@ -368,6 +368,7 @@ export default function InternationalPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-20px" }}
                 transition={{ duration: 0.3, delay: i * 0.04 }}
+                className="w-[calc(50%-8px)] sm:w-[calc(33.33%-11px)] md:w-[calc(25%-12px)]"
               >
                 <Link
                   href={`/partenaires/${p.slug}`}
@@ -471,7 +472,7 @@ export default function InternationalPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[900px] mx-auto">
+          <div className="flex flex-wrap justify-center gap-4 max-w-[900px] mx-auto">
             {[
               { text: "Des programmes de Licences et de Masters de haut niveau dans des universités partenaires reconnues.", color: "#2B8FAB" },
               { text: "Un enseignement complémentaire pour enrichir le parcours et préparer à la mobilité internationale et à la double diplômation.", color: "#2196F3" },
@@ -487,7 +488,7 @@ export default function InternationalPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="flex items-start gap-4 p-5 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/20 hover:shadow-sm transition-all duration-300 group"
+                className="flex items-start gap-4 p-5 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/20 hover:shadow-sm transition-all duration-300 group w-full md:w-[calc(50%-8px)]"
               >
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110"
@@ -516,7 +517,7 @@ export default function InternationalPage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative">
+          <div className="flex flex-wrap justify-center gap-4 relative">
             {etapes.map((e, i) => (
               <motion.div
                 key={e.number}
@@ -524,7 +525,7 @@ export default function InternationalPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="relative bg-white rounded-2xl border border-penn-border p-5 text-center hover:shadow-md transition-all duration-300"
+                className="relative bg-white rounded-2xl border border-penn-border p-5 text-center hover:shadow-md transition-all duration-300 w-full sm:w-[calc(50%-8px)] lg:w-[calc((100%-64px)/5)]"
               >
                 <div className="w-10 h-10 rounded-full bg-penn-navy text-white flex items-center justify-center mx-auto mb-3 font-extrabold text-[13px]">
                   {e.number}

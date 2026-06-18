@@ -252,10 +252,10 @@ export default function IAEtCertificationsPage() {
                 Programmes concernés
               </p>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <Sparkles className="w-7 h-7 text-[#9C27B0] mx-auto mb-1" />
-              <p className="text-[12px] text-white/50 font-medium">
-                Depuis 2026
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center flex flex-col justify-center items-center">
+              <Sparkles className="w-10 h-10 md:w-[44px] md:h-[44px] text-[#9C27B0] mx-auto mb-1" />
+              <p className="text-[12px] text-white/50 font-medium mt-1">
+                Nouveauté 2026
               </p>
             </div>
           </motion.div>
@@ -549,7 +549,7 @@ export default function IAEtCertificationsPage() {
                 icon: <Zap className="w-6 h-6" />,
                 title: "Pré-inscription",
                 desc: "Candidatures 2026–2027 ouvertes.",
-                href: "/contact",
+                href: "/preinscription",
                 label: "Postuler",
               },
             ].map((card, i) => (
@@ -589,7 +589,7 @@ export default function IAEtCertificationsPage() {
       <CtaSection
         title="Rejoignez la première université tunisienne avec l'IA comme compétence fondamentale."
         subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant."
-        primaryCta={{ label: "Voir nos programmes", href: "/licences" }}
+        primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         secondaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"
       />

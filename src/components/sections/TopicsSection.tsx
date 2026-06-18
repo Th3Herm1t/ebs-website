@@ -33,13 +33,14 @@ export default function TopicsSection() {
             <>{t('subtitle')} <span className="text-penn-green underline decoration-penn-green">{t('subtitleHighlight')}</span></>
           }
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+        <div className="flex flex-wrap justify-center gap-[30px]">
           {certifications.map((cert, i) => (
             <ScrollReveal
               key={i}
               initialY={30}
               duration={0.6}
               delay={i * 0.1}
+              className="w-full sm:w-[calc(50%-15px)] lg:w-[calc((100%-60px)/3)]"
             >
               <div className="flex items-center gap-[20px] p-[25px] bg-white border border-penn-border rounded-[8px] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(1,41,112,0.1)] hover:border-t-2 hover:border-t-penn-green h-full">
                 <Image src={cert.icon} alt={cert.title} width={60} height={60} className="flex-shrink-0 object-contain" />

@@ -48,7 +48,7 @@ const quickActions = [
     icon: <GraduationCap className="w-5 h-5" />,
     title: "Pré-inscription",
     desc: "Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin.",
-    href: "/contact",
+    href: "/preinscription",
     label: "Postuler",
   },
   {
@@ -440,8 +440,8 @@ export default function ContactPage() {
       <CtaSection
         title="Prêt à rejoindre EBS ?"
         subtitle="Déposez votre candidature dès maintenant. C'est gratuit et sans engagement."
-        primaryCta={{ label: "Pré-inscription", href: "/contact" }}
-        secondaryCta={{ label: "Voir nos programmes", href: "/licences" }}
+        primaryCta={{ label: "Pré-inscription", href: "/preinscription" }}
+        secondaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         background="penn-green"
       />
     </>

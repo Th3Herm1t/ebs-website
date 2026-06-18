@@ -421,7 +421,7 @@ export default function CertificationsPage() {
                 ),
                 title: "Pré-inscription",
                 desc: "Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin.",
-                href: "/contact",
+                href: "/preinscription",
                 label: "Postuler",
               },
             ].map((card, i) => (
@@ -462,8 +462,7 @@ export default function CertificationsPage() {
         title="Rejoignez la seule université tunisienne qui vous certifie gratuitement par les leaders mondiaux."
         subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant."
         primaryCta={{
-          label: "Voir nos programmes",
-          href: "/licences",
+          label: "Voir nos programmes", href: "/nos-programmes",
         }}
         secondaryCta={{
           label: "Nous contacter",

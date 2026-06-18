@@ -37,14 +37,14 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
+        <div className="flex flex-wrap justify-center gap-[30px]">
           {testimonials.map((testimonial, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="rounded-[10px] overflow-hidden flex flex-col h-full"
+              className="rounded-[10px] overflow-hidden flex flex-col w-full md:w-[calc((100%-60px)/3)] h-full"
             >
               {/* Stars + Quote */}
               <div className="bg-white border border-penn-border p-[30px] rounded-t-[10px] flex flex-col justify-center flex-1">

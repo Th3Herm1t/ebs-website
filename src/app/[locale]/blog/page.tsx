@@ -389,7 +389,7 @@ export default function BlogPage() {
                 icon: <Calendar className="w-6 h-6" />,
                 title: "Pré-inscription",
                 desc: "Candidatures 2026–2027 ouvertes.",
-                href: "/contact",
+                href: "/preinscription",
                 label: "Postuler",
               },
             ].map((link, i) => (
@@ -429,7 +429,7 @@ export default function BlogPage() {
       <CtaSection
         title="Prêt à construire votre avenir avec EBS ?"
         subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant."
-        primaryCta={{ label: "Voir nos programmes", href: "/licences" }}
+        primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         secondaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"
       />

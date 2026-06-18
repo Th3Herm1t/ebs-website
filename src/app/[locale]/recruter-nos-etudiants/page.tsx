@@ -163,7 +163,7 @@ export default function RecruterNosEtudiantsPage() {
         title="Une question ?"
         subtitle="Notre Career Center est à votre disposition pour vous accompagner."
         primaryCta={{ label: "Nous contacter", href: "/contact" }}
-        secondaryCta={{ label: "Voir les formations", href: "/licences" }}
+        secondaryCta={{ label: "Voir les formations", href: "/nos-programmes" }}
       />
     </main>
   );

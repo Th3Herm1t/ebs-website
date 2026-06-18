@@ -634,7 +634,7 @@ export default function PartenairesAcademiquesPage() {
         title="Rejoignez notre réseau universitaire mondial."
         subtitle="16 partenaires nous font déjà confiance. Et si la vôtre était la prochaine ?"
         primaryCta={{ label: "Candidater", href: "#formulaire" }}
-        secondaryCta={{ label: "Voir nos formations", href: "/licences" }}
+        secondaryCta={{ label: "Voir nos formations", href: "/nos-programmes" }}
         background="penn-green"
       />
     </>

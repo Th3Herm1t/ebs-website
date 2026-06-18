@@ -141,7 +141,7 @@ export default function AlumniWorldMap({ locale = "fr" }: { locale?: string }) {
           className="w-full h-[420px] rounded-xl border border-penn-border mb-10"
         />
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        <div className="flex flex-wrap justify-center gap-3">
           {sorted.map((loc, i) => (
             <motion.div
               key={loc.code}
@@ -149,7 +149,7 @@ export default function AlumniWorldMap({ locale = "fr" }: { locale?: string }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.3, delay: i * 0.04 }}
-              className={`flex items-center gap-2.5 px-4 py-3 rounded-xl border transition-all ${
+              className={`flex items-center gap-2.5 px-4 py-3 rounded-xl border transition-all w-[calc(50%-6px)] sm:w-[calc(33.33%-8px)] md:w-[calc(20%-9.6px)] ${
                 loc.highlight
                   ? "border-[#2B8FAB]/30 bg-[#2B8FAB]/5"
                   : "border-penn-border bg-penn-bg-light hover:border-[#2B8FAB]/20"

@@ -28,6 +28,7 @@ const navItems: NavItem[] = [
       { label: "Partenaires Académiques", href: "/partenaires-academiques" },
       { label: "Partenaires Économiques", href: "/partenaires-economiques" },
       { label: "Actualités EBS", href: "/actualites" },
+      { label: "Certifications", href: "/certifications" },
       { label: "FAQ", href: "/faq" },
       { label: "Alumni", href: "/alumni" },
       { label: "Campus", href: "/campus" },

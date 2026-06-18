@@ -41,14 +41,16 @@ export default function AllEventsSection() {
           subtitle={<>Join With Us <span className="text-penn-green underline decoration-penn-green">Our Events</span></>} 
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+        <div className="flex flex-wrap justify-center gap-[30px]">
           {allEventsData.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={item.type === "list" ? "flex flex-col gap-[30px]" : "bg-white border border-penn-border rounded-[6px] overflow-hidden"}
+              className={`w-full sm:w-[calc(50%-15px)] lg:w-[calc((100%-60px)/3)] ${
+                item.type === "list" ? "flex flex-col gap-[30px]" : "bg-white border border-penn-border rounded-[6px] overflow-hidden"
+              }`}
             >
               {item.type === "image" ? (
                 <>

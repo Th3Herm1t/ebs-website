@@ -120,7 +120,7 @@ export default function CampusPage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {campusSpaces.map((space, i) => (
               <motion.div
                 key={space.title}
@@ -128,7 +128,7 @@ export default function CampusPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group relative aspect-[4/5] rounded-2xl overflow-hidden border border-penn-border hover:shadow-xl transition-all duration-300"
+                className="group relative aspect-[4/5] w-[calc(50%-8px)] md:w-[calc(33.33%-11px)] lg:w-[calc(20%-13px)] rounded-2xl overflow-hidden border border-penn-border hover:shadow-xl transition-all duration-300"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-penn-bg-light to-white flex flex-col items-center justify-center p-4 text-center group-hover:scale-105 transition-transform duration-500">
                   <div

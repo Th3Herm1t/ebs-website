@@ -36,7 +36,7 @@ function ProgramGrid({ title, subtitle, programs, type }: { title: string, subti
         } 
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+      <div className="flex flex-wrap justify-center gap-[30px]">
         {programs.map((course, i) => {
           const href = `/${type === "licence" ? "licences" : "masters"}?program=${course.slug}`;
           return (
@@ -45,7 +45,7 @@ function ProgramGrid({ title, subtitle, programs, type }: { title: string, subti
             initialY={30}
             duration={0.6}
             delay={i * 0.1}
-            className="bg-white rounded-[6px] border border-penn-border overflow-hidden transition-all duration-300 hover:shadow-[0px_0_30px_rgba(1,41,112,0.08)] flex flex-col h-full"
+            className="bg-white rounded-[6px] border border-penn-border overflow-hidden transition-all duration-300 hover:shadow-[0px_0_30px_rgba(1,41,112,0.08)] flex flex-col h-full w-full md:w-[calc(50%-15px)] lg:w-[calc((100%-60px)/3)]"
           >
             {/* Image */}
             <Link href={href} className="relative block overflow-hidden">
