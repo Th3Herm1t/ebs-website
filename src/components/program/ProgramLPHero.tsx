@@ -79,13 +79,13 @@ export function ProgramLPHero({
 
             <div className="flex flex-wrap items-center gap-4">
               <Link
-                href={`/${type === "licence" ? "licences" : "masters"}/${slug}#form`}
+                href="#certifications"
                 className={cn(
                   "inline-flex items-center gap-2 h-12 px-8 font-bold text-[14px] uppercase tracking-wide rounded-full text-white transition-all duration-200 hover:opacity-90"
                 )}
                 style={{ backgroundColor: color }}
               >
-                Pré-inscription gratuite
+                Certifications incluses
                 <ArrowRight className="w-4 h-4" />
               </Link>
 

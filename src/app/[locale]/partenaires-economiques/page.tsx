@@ -328,7 +328,7 @@ export default function PartenairesEconomiquesPage() {
               <p className="text-[12px] text-white/50 font-medium">Filières de recrutement</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <GraduationCap className="w-7 h-7 text-[#2B8FAB] mx-auto mb-1" />
+              <GraduationCap className="w-10 h-10 md:w-14 md:h-14 text-[#2B8FAB] mx-auto mb-1" />
               <p className="text-[12px] text-white/50 font-medium">Promotions 2026-2027</p>
             </div>
           </motion.div>
