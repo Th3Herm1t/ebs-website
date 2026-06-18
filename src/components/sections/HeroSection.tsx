@@ -21,7 +21,7 @@ export default function HeroSection() {
   const courseCategories = [
     { title: t('categories.Licence'), count: 4, icon: GraduationCap, badgeColor: "bg-[#f4a261]", href: "/licences" },
     { title: t('categories.Master'), count: 3, icon: Award, badgeColor: "bg-[#84cc16]", href: "/masters" },
-    { title: t('categories.Parcours International'), count: 14, icon: Globe, badgeColor: "bg-[#8b5cf6]", href: "/parcours-internationaux" },
+    { title: t('categories.Parcours International'), count: 14, icon: Globe, badgeColor: "bg-[#8b5cf6]", href: "/parcours-international" },
     { title: t('categories.Management'), count: 2, icon: Briefcase, badgeColor: "bg-[#3b82f6]", href: "/licences?program=management" },
     { title: t('categories.Marketing'), count: 2, icon: TrendingUp, badgeColor: "bg-[#ec4899]", href: "/licences?program=marketing" },
     { title: t('categories.Finance'), count: 2, icon: LineChart, badgeColor: "bg-[#14b8a6]", href: "/licences?program=finance" },

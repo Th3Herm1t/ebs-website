@@ -13,7 +13,7 @@ export default function PillarsSection() {
       p1: t('p1.desc1'),
       p2: t('p1.desc2'),
       cta: t('p1.btn'),
-      link: "/parcours-internationaux"
+      link: "/parcours-international"
     },
     {
       id: "tech",

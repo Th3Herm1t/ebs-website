@@ -82,7 +82,7 @@ export default function InternationalPage() {
               >
                 <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
                   <Globe className="w-4 h-4" />
-                  Parcours Internationaux
+                  Parcours International
                 </Badge>
               </motion.div>
 

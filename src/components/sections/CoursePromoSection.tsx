@@ -36,13 +36,14 @@ export default function CoursePromoSection() {
 
           <div className="w-full lg:w-6/12 max-md:mt-10">
             <ScrollReveal initialX={40} duration={0.8}>
-              <Image
-                src="/images/all-img/promo-stock.png"
-                alt="EBS Students"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/all-img/promo-parcours-international.png"
+                  alt="EBS Students"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -69,7 +70,7 @@ export default function CoursePromoSection() {
         <ScrollReveal initialY={20} duration={0.6} delay={0.5}>
           <div className="flex justify-center mt-12">
             <Link
-              href="/parcours-internationaux"
+              href="/parcours-international"
               className="inline-flex items-center gap-3 bg-[#2B8FAB] text-white font-bold text-[16px] py-4 px-10 rounded-full hover:bg-penn-navy transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20 hover:shadow-xl hover:-translate-y-0.5"
             >
               J&apos;opte pour le parcours international

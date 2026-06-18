@@ -52,7 +52,7 @@ const services = [
 const ctaCards = [
   { icon: <BookOpen className="w-6 h-6" />, title: "Nos Programmes", desc: "Licences et Masters en management, finance, marketing et tech.", href: "/nos-programmes", label: "Explorer" },
   { icon: <GraduationCap className="w-6 h-6" />, title: "Pré-inscription", desc: "Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin.", href: "/preinscription", label: "Postuler" },
-  { icon: <Globe className="w-6 h-6" />, title: "International", desc: "16 partenaires dans 4 pays pour vos études à l'étranger.", href: "/parcours-internationaux", label: "Découvrir" },
+  { icon: <Globe className="w-6 h-6" />, title: "International", desc: "16 partenaires dans 4 pays pour vos études à l'étranger.", href: "/parcours-international", label: "Découvrir" },
   { icon: <ShieldCheck className="w-6 h-6" />, title: "Certifications", desc: "150+ certifications gratuites incluses dans votre formation.", href: "/certifications", label: "Explorer" },
 ];
 

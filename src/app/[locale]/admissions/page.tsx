@@ -97,7 +97,7 @@ const faq = [
   },
   {
     q: "Quel est le coût de la scolarité ?",
-    a: "Les frais de scolarité sont de 7 500 DT/an pour la Licence Nationale (6 parcours) et 9 500 DT/an pour la Licence Internationale (parcours France, Canada, Italie). Les Masters sont sur devis. Les 150+ certifications internationales sont incluses sans frais supplémentaires.",
+     a: "Les frais de scolarité sont de 7 500 DT/an pour la Licence Nationale (6 parcours), 9 500 DT/an pour la Licence Internationale (parcours France, Canada, Italie) et 8 500 DT/an pour les Masters. Les 150+ certifications internationales sont incluses sans frais supplémentaires.",
   },
   {
     q: "Des facilités de paiement sont-elles disponibles ?",
@@ -489,7 +489,7 @@ export default function AdmissionsPage() {
                     <span>3 ans — Double diplôme — Mobilité</span>
                   </div>
                   <Link
-                    href="/parcours-internationaux"
+                    href="/parcours-international"
                     className="inline-flex items-center gap-1.5 text-[13px] font-bold text-[#FF9800] group-hover:gap-2 transition-all"
                   >
                     Voir les destinations
@@ -513,7 +513,7 @@ export default function AdmissionsPage() {
                     Master Professionnel
                   </span>
                   <h3 className="text-[24px] font-extrabold text-penn-navy mb-1">Master</h3>
-                  <p className="text-[15px] font-bold text-penn-body/50">Sur devis</p>
+                  <p className="text-[15px] font-bold text-penn-body/50">8 500 <span className="text-[12px] font-bold text-penn-body/30">DT / An</span></p>
                 </div>
 
                 <div className="px-6 lg:px-7 py-5 flex-1">

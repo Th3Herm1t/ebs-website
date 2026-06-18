@@ -21,7 +21,7 @@ export const routing = defineRouting({
     '/corps-enseignant': '/corps-enseignant',
     '/alumni': '/alumni',
     '/campus': '/campus',
-    '/parcours-internationaux': '/parcours-internationaux',
+    '/parcours-international': '/parcours-international',
     '/etudiants-internationaux': '/etudiants-internationaux',
     '/partenaires-economiques': '/partenaires-economiques',
     '/partenaires-academiques': '/partenaires-academiques',

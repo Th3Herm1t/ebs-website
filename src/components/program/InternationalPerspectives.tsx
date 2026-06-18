@@ -52,7 +52,7 @@ export function InternationalPerspectives({
       </div>
 
       <Link
-        href="/parcours-internationaux"
+        href="/parcours-international"
         className="inline-flex items-center gap-2 mt-5 text-[14px] font-bold text-penn-green hover:text-penn-navy transition-colors"
       >
         Découvrir tous nos partenaires internationaux

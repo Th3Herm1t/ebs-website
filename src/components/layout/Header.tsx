@@ -60,9 +60,9 @@ const navItems: NavItem[] = [
   },
   {
     key: "international",
-    href: "/parcours-internationaux",
+    href: "/parcours-international",
     children: [
-      { label: "Parcours International", href: "/parcours-internationaux" },
+      { label: "Parcours International", href: "/parcours-international" },
       { label: "Étudiants Internationaux", href: "/etudiants-internationaux" },
     ],
   },

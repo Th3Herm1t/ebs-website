@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function PartenairesPage() {
-  redirect("/parcours-internationaux");
+  redirect("/parcours-international");
 }

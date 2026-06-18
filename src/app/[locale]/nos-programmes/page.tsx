@@ -148,7 +148,7 @@ export default function NosProgrammesPage() {
               <p className="text-[17px] text-white/80 leading-relaxed mb-8">
                 Grâce à nos 16 partenaires académiques en France, Canada, Italie et Oman, accédez à des programmes de mobilité, doubles diplômes et poursuites d'études à l'international. L'équipe du Bureau International vous accompagne du choix de la destination jusqu'à l'obtention de votre visa.
               </p>
-              <Link href="/parcours-internationaux" className="inline-flex items-center justify-center gap-2 h-14 px-8 rounded-full bg-white text-penn-navy font-bold hover:bg-penn-bg transition-colors">
+              <Link href="/parcours-international" className="inline-flex items-center justify-center gap-2 h-14 px-8 rounded-full bg-white text-penn-navy font-bold hover:bg-penn-bg transition-colors">
                 Découvrir l'International <Globe className="w-5 h-5" />
               </Link>
             </div>

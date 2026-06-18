@@ -305,7 +305,7 @@ export default function EtudiantsInternationauxPage() {
         </div>
       </section>
 
-      <CtaSection title="Une question sur votre venue en Tunisie ?" subtitle="Notre équipe internationale vous répond sous 24h." primaryCta={{ label: "Nous contacter", href: "/contact" }} whatsapp="+216 53 355 196" background="penn-green" />
+      <CtaSection title="Une question sur votre venue en Tunisie ?" subtitle="Notre équipe internationale vous répond sous 24h." primaryCta={{ label: "Pré-inscription", href: "/preinscription" }} whatsapp="+216 53 355 196" background="penn-green" />
     </>
   );
 }

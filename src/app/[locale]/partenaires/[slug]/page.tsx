@@ -38,7 +38,7 @@ export default function PartenaireDetailPage() {
           <Building2 className="w-16 h-16 text-penn-border mx-auto mb-4" />
           <h1 className="text-2xl font-extrabold text-penn-navy mb-2">Partenaire introuvable</h1>
           <p className="text-penn-body/60 mb-6">Ce partenaire n&apos;existe pas ou a été déplacé.</p>
-          <Link href="/parcours-internationaux" className="text-[#2B8FAB] font-bold hover:underline">Voir tous les partenaires →</Link>
+          <Link href="/parcours-international" className="text-[#2B8FAB] font-bold hover:underline">Voir tous les partenaires →</Link>
         </div>
       </main>
     );
@@ -417,7 +417,7 @@ export default function PartenaireDetailPage() {
         title={partner.countryCode === "CA" ? "Prêt à étudier au Canada ?" : "Prêt à étudier en France ?"}
         subtitle="Faites le premier pas vers une carrière internationale. Préinscrivez-vous dès maintenant."
         primaryCta={{ label: "Préinscription", href: "/preinscription" }}
-        secondaryCta={{ label: "Tous les partenaires", href: "/parcours-internationaux" }}
+        secondaryCta={{ label: "Tous les partenaires", href: "/parcours-international" }}
       />
     </main>
   );

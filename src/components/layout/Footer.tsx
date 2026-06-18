@@ -116,7 +116,7 @@ export default function Footer() {
               <FooterLink href="/nos-programmes" isBold>Nos Programmes</FooterLink>
               <FooterLink href="/licences">{t('links.licences')}</FooterLink>
               <FooterLink href="/masters">{t('links.masters')}</FooterLink>
-              <FooterLink href="/parcours-internationaux">{t('links.parcours')}</FooterLink>
+              <FooterLink href="/parcours-international">{t('links.parcours')}</FooterLink>
             </ul>
           </div>
 
