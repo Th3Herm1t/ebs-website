@@ -2,24 +2,26 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
-import { ArrowDown, Bus, Building, Clock, Coffee, Hotel, MapPin, Monitor, ParkingCircle, Wifi, Camera } from "lucide-react";
+import { ArrowDown, Bus, Building, Clock, Coffee, Hotel, MapPin, Monitor, ParkingCircle, Wifi, Camera, Gamepad2, Utensils, BookOpen } from "lucide-react";
 import { Badge, CtaSection } from "@/components/shared";
 
 const campusSpaces = [
-  { title: "Amphithéâtre", icon: <Building className="w-8 h-8" />, color: "#2B8FAB" },
-  { title: "Salle informatique", icon: <Monitor className="w-8 h-8" />, color: "#9C27B0" },
-  { title: "Coworking", icon: <Coffee className="w-8 h-8" />, color: "#E89745" },
-  { title: "Bibliothèque", icon: <Building className="w-8 h-8" />, color: "#00BCD4" },
-  { title: "Espaces communs", icon: <Camera className="w-8 h-8" />, color: "#E91E8C" },
+  { title: "Salle Polyvalente", icon: <Building className="w-8 h-8" />, color: "#2B8FAB" },
+  { title: "Salle Informatique", icon: <Monitor className="w-8 h-8" />, color: "#9C27B0" },
+  { title: "Espaces de Détente", icon: <Coffee className="w-8 h-8" />, color: "#E89745" },
+  { title: "Salle des Jeux", icon: <Gamepad2 className="w-8 h-8" />, color: "#4CAF50" },
+  { title: "Buvette", icon: <Utensils className="w-8 h-8" />, color: "#FF9800" },
+  { title: "Bibliothèque", icon: <BookOpen className="w-8 h-8" />, color: "#00BCD4" },
+  { title: "Espaces Communs", icon: <Camera className="w-8 h-8" />, color: "#E91E8C" },
 ];
 
 const equipements = [
-  { icon: <Monitor className="w-5 h-5" />, label: "Salles de cours équipées", desc: "Projecteurs, tableaux interactifs, prises connectées" },
-  { icon: <Monitor className="w-5 h-5" />, label: "Laboratoire informatique", desc: "PC dernière génération, logiciels professionnels" },
-  { icon: <Wifi className="w-5 h-5" />, label: "WiFi haut débit", desc: "Connexion fibre optique sur tout le campus" },
-  { icon: <Coffee className="w-5 h-5" />, label: "Espace détente", desc: "Cafétéria, terrasse, salle de pause" },
+  { icon: <Monitor className="w-5 h-5" />, label: "Salles de Cours Équipées", desc: "Projecteurs, tableaux interactifs, prises connectées" },
+  { icon: <Monitor className="w-5 h-5" />, label: "Laboratoire Informatique", desc: "PC dernière génération, logiciels professionnels" },
+  { icon: <Wifi className="w-5 h-5" />, label: "WiFi Haut Débit", desc: "Connexion fibre optique sur tout le campus" },
+  { icon: <Coffee className="w-5 h-5" />, label: "Espace de Détente", desc: "Cafétéria, terrasse, salle de pause" },
   { icon: <Bus className="w-5 h-5" />, label: "Transports & Accès", desc: "Bus, métro léger, parking étudiants" },
-  { icon: <Hotel className="w-5 h-5" />, label: "Logement à proximité", desc: "Résidences étudiantes et appartements" },
+  { icon: <Hotel className="w-5 h-5" />, label: "Logement à Proximité", desc: "Résidences étudiantes et appartements" },
 ];
 
 export default function CampusPage() {
@@ -114,7 +116,7 @@ export default function CampusPage() {
             className="text-center mb-14"
           >
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
-              Explorez le campus
+              Explorez le Campus
             </h2>
           </motion.div>
 
@@ -161,7 +163,7 @@ export default function CampusPage() {
               <Camera className="w-9 h-9 text-[#2B8FAB]" />
             </div>
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-white leading-[1.15] mb-4">
-              Visite virtuelle 360°
+              Visite Virtuelle 360°
             </h2>
             <p className="text-[17px] text-white/60 mb-8 max-w-[600px] mx-auto">
               Explorez le campus depuis chez vous avec notre visite virtuelle immersive. Une expérience à 360° pour découvrir chaque espace avant votre arrivée.
@@ -184,7 +186,7 @@ export default function CampusPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
               >
-                <h2 className="text-[34px] font-extrabold text-penn-navy mb-8">Informations pratiques</h2>
+                <h2 className="text-[34px] font-extrabold text-penn-navy mb-8">Informations Pratiques</h2>
 
                 {/* Address */}
                 <div className="flex items-start gap-4 p-5 bg-penn-bg-light rounded-2xl border border-penn-border mb-4">
