@@ -513,7 +513,7 @@ export default function AdmissionsPage() {
                     Master Professionnel
                   </span>
                   <h3 className="text-[24px] font-extrabold text-penn-navy mb-1">Master</h3>
-                  <p className="text-[15px] font-bold text-penn-body/50">8 500 <span className="text-[12px] font-bold text-penn-body/30">DT / An</span></p>
+                   <p className="text-[28px] font-extrabold text-[#9C27B0] leading-none">8 500 <span className="text-[15px] font-bold text-penn-body/50">DT / An</span></p>
                 </div>
 
                 <div className="px-6 lg:px-7 py-5 flex-1">

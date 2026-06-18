@@ -1,8 +1,7 @@
 "use client";
 
-import { Award, BookOpen, Building2, ChevronDown, Globe, GraduationCap, Heart, Lightbulb, Monitor, Quote, ShieldCheck, Star, TrendingUp, Users } from "lucide-react";
+import { Award, BookOpen, Building2, ChevronDown, Globe, Heart, Lightbulb, Monitor, Quote, ShieldCheck, Star, TrendingUp, Users } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "motion/react";
 import { Badge, CtaSection } from "@/components/shared";
 
@@ -49,12 +48,6 @@ const services = [
   { icon: <Monitor className="w-5 h-5" />, title: "Espaces de détente", desc: "Zones de travail collaboratif, salles de projet, salle des jeux, buvette et espaces de détente.", color: "#00BCD4" },
 ];
 
-const ctaCards = [
-  { icon: <BookOpen className="w-6 h-6" />, title: "Nos Programmes", desc: "Licences et Masters en management, finance, marketing et tech.", href: "/nos-programmes", label: "Explorer" },
-  { icon: <GraduationCap className="w-6 h-6" />, title: "Pré-inscription", desc: "Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin.", href: "/preinscription", label: "Postuler" },
-  { icon: <Globe className="w-6 h-6" />, title: "International", desc: "16 partenaires dans 4 pays pour vos études à l'étranger.", href: "/parcours-international", label: "Découvrir" },
-  { icon: <ShieldCheck className="w-6 h-6" />, title: "Certifications", desc: "150+ certifications gratuites incluses dans votre formation.", href: "/certifications", label: "Explorer" },
-];
 
 export default function QuiSommesNousPage() {
   return (
@@ -290,23 +283,13 @@ export default function QuiSommesNousPage() {
       </section>
 
       {/* ═══════════ QUICK CTAs ═══════════ */}
-      <section className="section-padding bg-white">
-        <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="text-[34px] md:text-[44px] font-extrabold text-penn-navy text-center mb-16">Prêt à construire votre avenir ?</motion.h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {ctaCards.map((card, i) => (
-              <motion.div key={card.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.1 }}>
-                <Link href={card.href} className="group relative bg-white rounded-2xl border border-penn-border p-6 lg:p-8 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full hover:border-[#2B8FAB]/30">
-                  <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-4 text-[#2B8FAB] group-hover:scale-110 transition-transform">{card.icon}</div>
-                  <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-[#2B8FAB] transition-colors">{card.title}</h3>
-                  <p className="text-[14px] text-penn-body leading-relaxed mb-4 flex-1">{card.desc}</p>
-                  <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-[#2B8FAB]">{card.label} <span className="group-hover:translate-x-1 transition-transform">→</span></span>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        title="Prêt à construire votre avenir ?"
+        subtitle="Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin."
+        primaryCta={{ label: "Pré-inscription", href: "/preinscription" }}
+        secondaryCta={{ label: "Explorer nos programmes", href: "/nos-programmes" }}
+        background="white"
+      />
 
       <CtaSection title="Rejoignez la première université tunisienne avec l'IA intégrée." subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant." primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }} secondaryCta={{ label: "Pré-inscription", href: "/preinscription" }} background="penn-green" />
     </>
