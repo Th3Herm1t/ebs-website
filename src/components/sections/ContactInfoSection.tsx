@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Send email",
-    lines: ["contact@ebs.tn"],
+    lines: ["info@ebs.tn"],
   },
 ];
 

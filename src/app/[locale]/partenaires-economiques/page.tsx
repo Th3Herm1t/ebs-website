@@ -78,7 +78,6 @@ const typesCollaboration = [
     icon: <Clock className="w-7 h-7" />,
     title: "Alternance",
     desc: "Un étudiant 2-3 jours/semaine dans votre entreprise. Formation prise en charge par EBS.",
-    badge: "Avantage fiscal",
     color: "#2196F3",
   },
   {
@@ -124,7 +123,7 @@ const profilDiplomes = [
 ];
 
 const steps = [
-  { step: "01", title: "Vous Candidatez", desc: "Remplissez le formulaire avec les informations de votre entreprise et vos besoins." },
+  { step: "01", title: "Exprimez votre Intérêt", desc: "Remplissez le formulaire avec les informations de votre entreprise et vos besoins." },
   { step: "02", title: "Nous Échangeons", desc: "Notre équipe vous contacte pour comprendre vos objectifs et définir le cadre." },
   { step: "03", title: "Convention Signée", desc: "Nous formalisons le partenariat et lançons les premières actions." },
 ];
@@ -135,12 +134,6 @@ const existingPartners = [
     sector: "Fabrication Électronique",
     desc: "Leader mondial de la sous-traitance électronique (EMS) avec 18 usines sur 4 continents. Spécialiste de l'ingénierie haut de gamme, du prototypage à la production de masse pour l'aérospatiale, l'automobile, le médical et l'IoT.",
     logo: "/images/partenaires/asteelflash.png",
-  },
-  {
-    name: "ARFORGHE",
-    sector: "Formation & RH",
-    desc: "Association des Responsables de Formation et de Gestion Humaine en Entreprises, fondée en 1976 à Tunis. Réseau professionnel de référence pour les décideurs RH en Tunisie.",
-    logo: "/images/partenaires/arforghe.png",
   },
   {
     name: "Sopra HR",
@@ -195,6 +188,12 @@ const existingPartners = [
     sector: "Services Financiers",
     desc: "Spécialiste tunisien des services financiers, proposant des solutions d'affacturage et de financement pour optimiser la trésorerie des entreprises.",
     logo: "/images/partenaires/unifactor.png",
+  },
+  {
+    name: "ARFORGHE",
+    sector: "Formation & RH",
+    desc: "Association des Responsables de Formation et de Gestion Humaine en Entreprises, fondée en 1976 à Tunis. Réseau professionnel de référence pour les décideurs RH en Tunisie.",
+    logo: "/images/partenaires/arforghe.png",
   },
 ];
 
@@ -632,7 +631,7 @@ export default function PartenairesEconomiquesPage() {
             viewport={{ once: true, margin: "-80px" }}
             className="text-center mb-10"
           >
-            <Badge size="lg" className="mb-4">Candidature</Badge>
+            <Badge size="lg" className="mb-4">Devenir Partenaire</Badge>
             <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy mb-3">
               Formulaire de partenariat
             </h2>
@@ -658,7 +657,7 @@ export default function PartenairesEconomiquesPage() {
                   >
                     <Check className="w-8 h-8 text-[#2B8FAB]" />
                   </motion.div>
-                  <h3 className="text-[22px] font-extrabold text-penn-navy mb-2">Candidature envoyée !</h3>
+                  <h3 className="text-[22px] font-extrabold text-penn-navy mb-2">Demande envoyée !</h3>
                   <p className="text-[14px] text-penn-body/50 max-w-[350px] mx-auto">
                     Notre équipe étudiera votre dossier et vous contactera rapidement.
                   </p>
@@ -666,12 +665,12 @@ export default function PartenairesEconomiquesPage() {
                     onClick={() => setFormState("idle")}
                     className="mt-6 text-[#2B8FAB] font-bold text-[14px] hover:underline"
                   >
-                    Envoyer une autre candidature
+                    Envoyer une autre demande
                   </button>
                 </motion.div>
               ) : (
                 <motion.form key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} onSubmit={handleSubmit} className="p-8 md:p-10">
-                  <input type="hidden" name="_subject" value="Candidature Partenaire — EBS" />
+                  <input type="hidden" name="_subject" value="Demande de Partenariat — EBS" />
 
                   <div className="space-y-8">
                     {/* Entreprise */}
@@ -762,7 +761,7 @@ export default function PartenairesEconomiquesPage() {
                     disabled={formState === "sending"}
                     className="w-full mt-8 py-4 rounded-xl bg-[#2B8FAB] text-white font-bold text-[15px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15 disabled:opacity-50 active:scale-[0.98]"
                   >
-                    {formState === "sending" ? "Envoi..." : <><Send className="w-5 h-5" /> Envoyer la candidature</>}
+                    {formState === "sending" ? "Envoi..." : <><Send className="w-5 h-5" /> Envoyer ma demande</>}
                   </button>
                   {formState === "error" && (
                     <p className="text-[13px] text-red-500 text-center mt-3">Une erreur est survenue. Veuillez réessayer.</p>
@@ -802,11 +801,11 @@ export default function PartenairesEconomiquesPage() {
                 <span className="text-[15px] font-bold text-penn-navy">+216 53 355 196</span>
               </a>
               <a
-                href="mailto:contact@ebs.tn"
+                href="mailto:info@ebs.tn"
                 className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
               >
                 <Mail className="w-5 h-5 text-[#2B8FAB]" />
-                <span className="text-[15px] font-bold text-penn-navy">contact@ebs.tn</span>
+                <span className="text-[15px] font-bold text-penn-navy">info@ebs.tn</span>
               </a>
               <Link
                 href="/contact"

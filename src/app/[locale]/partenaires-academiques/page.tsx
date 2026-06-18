@@ -117,7 +117,7 @@ export const academicPartners = [
     pays: "Italie",
     code: "IT",
     slug: "link-university",
-    logo: "/images/partenaires-academiques/link-university.jpeg",
+    logo: "/images/partenaires-academiques/udl.png",
     desc: "Université privée italienne reconnue par le MIUR, implantée à Rome. Programmes en management, droit, communication et technologies. Accès à l'Europe du Sud dès la L1.",
   },
   {
@@ -453,7 +453,7 @@ export default function PartenairesAcademiquesPage() {
       </section>
 
       {/* ═══════════ FORMULAIRE DE PARTENARIAT ACADÉMIQUE ═══════════ */}
-      <section className="section-padding bg-white">
+      <section id="devenir-partenaire" className="section-padding bg-white">
         <div className="max-w-[800px] mx-auto px-5 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -620,11 +620,11 @@ export default function PartenairesAcademiquesPage() {
                 <span className="text-[15px] font-bold text-penn-navy">+216 53 355 196</span>
               </a>
               <a
-                href="mailto:contact@ebs.tn"
+                href="mailto:info@ebs.tn"
                 className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
               >
                 <Mail className="w-5 h-5 text-[#2B8FAB]" />
-                <span className="text-[15px] font-bold text-penn-navy">contact@ebs.tn</span>
+                <span className="text-[15px] font-bold text-penn-navy">info@ebs.tn</span>
               </a>
             </div>
           </motion.div>
@@ -634,7 +634,7 @@ export default function PartenairesAcademiquesPage() {
       <CtaSection
         title="Rejoignez notre réseau universitaire mondial."
         subtitle="16 partenaires nous font déjà confiance. Et si la vôtre était la prochaine ?"
-        primaryCta={{ label: "Candidater", href: "#formulaire" }}
+        primaryCta={{ label: "Devenir partenaire", href: "#devenir-partenaire" }}
         secondaryCta={{ label: "Voir nos formations", href: "/nos-programmes" }}
         background="penn-green"
       />

@@ -585,11 +585,11 @@ export default function InternationalPage() {
                 +216 53 355 196
               </a>
               <a
-                href="mailto:contact@ebs.tn"
+                href="mailto:info@ebs.tn"
                 className="inline-flex items-center gap-2.5 bg-white/10 text-white font-bold text-[15px] py-3.5 px-7 rounded-full border border-white/20 hover:bg-white/15 transition-all"
               >
                 <Mail className="w-4 h-4" />
-                contact@ebs.tn
+                info@ebs.tn
               </a>
             </div>
           </motion.div>

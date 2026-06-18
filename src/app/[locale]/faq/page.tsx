@@ -286,12 +286,12 @@ export default function FaqPage() {
                 </span>
               </a>
               <a
-                href="mailto:contact@ebs.tn"
+                href="mailto:info@ebs.tn"
                 className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
               >
                 <Mail className="w-5 h-5 text-[#2B8FAB]" />
                 <span className="text-[14px] font-bold text-penn-navy">
-                  contact@ebs.tn
+                  info@ebs.tn
                 </span>
               </a>
               <Link

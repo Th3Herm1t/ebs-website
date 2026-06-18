@@ -515,7 +515,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "Link University",
     country: "🇮🇹 Italie",
     countryCode: "IT",
-    logo: "/images/partenaires-academiques/link-university.jpeg",
+    logo: "/images/partenaires-academiques/udl.png",
     type: "Université privée italienne reconnue par l'État italien — Campus Rome",
     presentation: "L'Università degli Studi Link (Link University) est une université privée italienne implantée à Rome. Reconnue par le Ministère de l'Enseignement Supérieur italien (MIUR), elle propose des programmes en management, sciences humaines, droit, communication et technologies. Partenaire stratégique d'EBS, Link University offre un accès à l'Europe du Sud dès la première année de Licence.",
     programmes: [

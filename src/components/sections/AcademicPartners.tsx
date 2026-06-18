@@ -8,7 +8,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 const logos = [
   { file: "logo-audencia.png", name: "Audencia" },
   { file: "/images/ebs-tn/EM_Normandie-Logo.png", name: "EM Normandie" },
-  { file: "link-university.jpeg", name: "Link University" },
+  { file: "udl.png", name: "Link University" },
   { file: "eklore.png", name: "Eklore" },
   { file: "epitech.png", name: "Epitech" },
   { file: "epsi.png", name: "EPSI" },

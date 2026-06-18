@@ -37,8 +37,8 @@ const contactCards = [
   {
     icon: <Mail className="w-7 h-7" />,
     title: "Email",
-    lines: ["contact@ebs.tn"],
-    action: { label: "Écrire", href: "mailto:contact@ebs.tn" },
+    lines: ["info@ebs.tn"],
+    action: { label: "Écrire", href: "mailto:info@ebs.tn" },
     color: "#E91E8C",
   },
 ];
