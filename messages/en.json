@@ -239,7 +239,7 @@
                                                       {
                                                           "title":  "Digital Marketing and Data Analytics Master : Webinar",
                                                           "link":  "https://ebs.tn/blog/master-marketing-digital-et-data-analytics-de-lebs/",
-                                                          "img":  "https://ebs.tn/wp-content/uploads/2024/02/Master-Marketing-Digital-et-Data-Analytics-d_ESPIMA.webp",
+                                                          "img":  "/images/master-marketing-digital-data-analytics.webp",
                                                           "day":  "19",
                                                           "month":  "FEB",
                                                           "time":  "10:00 - 12:00",
@@ -249,7 +249,7 @@
                                                       {
                                                           "title":  "Future Careers in Digital Marketing : Conference",
                                                           "link":  "https://ebs.tn/blog/metiers-davenir-dans-le-digital-marketing-levolution-dynamique-du-paysage-professionnel/",
-                                                          "img":  "https://ebs.tn/wp-content/uploads/2024/01/Metiers-d_Avenir-dans-le-Digital-Marketing.webp",
+                                                          "img":  "/images/metiers-avenir-digital-marketing.webp",
                                                           "day":  "26",
                                                           "month":  "JAN",
                                                           "time":  "14:00 - 16:30",
@@ -259,21 +259,21 @@
                                                   ],
                                     "listText":  [
                                                      {
-                                                         "title":  "CV Strengthened by Certifications : Workshop",
-                                                         "link":  "https://ebs.tn/blog/cv-renforce-par-des-certifications-la-cle-de-la-reussite-pour-les-jeunes-diplomes/",
-                                                         "img":  "https://ebs.tn/wp-content/uploads/2024/02/CV-Renforce-par-des-Certifications.webp",
-                                                         "day":  "01",
+"title":  "CV Strengthened by Certifications : Workshop",
+                                                          "link":  "https://ebs.tn/blog/cv-renforce-par-des-certifications-la-cle-de-la-reussite-pour-les-jeunes-diplomes/",
+                                                          "img":  "/images/cv-renforce-certifications.webp",
+                                                          "day":  "01",
                                                          "month":  "FEB",
                                                          "time":  "09:00 - 12:00",
                                                          "location":  "EBS Campus",
                                                          "desc":  "Do not miss this event organized by EBS. Register now."
                                                      },
                                                      {
-                                                         "title":  "Higher Education : Private Universities",
-                                                         "link":  "https://ebs.tn/blog/universites-privees-en-tunisie/",
-                                                         "img":  "https://ebs.tn/wp-content/uploads/2024/02/Photo-principale-Enseignement-Superieur-dans-les-Universites-Privees-en-Tunisie_1.webp",
-                                                         "day":  "29",
-                                                         "month":  "FEB",
+"title":  "Higher Education : Private Universities",
+                                                            "link":  "https://ebs.tn/blog/universites-privees-en-tunisie/",
+                                                            "img":  "/images/enseignement-superieur-universites-privees.webp",
+                                                            "day":  "29",
+                                                            "month":  "FEB",
                                                          "time":  "10:00 - 12:00",
                                                          "location":  "Online",
                                                          "desc":  "Do not miss this event organized by EBS. Register now."
@@ -331,14 +331,14 @@
                                                         {
                                                             "title":  "Three Exceptional Masters in Partnership with ADP and ASTEELFLASH : Your Career within Reach!",
                                                             "link":  "https://ebs.tn/blog/espima-business-school-propose-pour-ses-etudiants-trois-masters-exceptionnels-en-partenariat-avec-adp-et-asteelflash-votre-carriere-a-portee-de-main/",
-                                                            "img":  "https://ebs.tn/wp-content/uploads/2024/03/PHOTO-COUV-TROIS-MASTERS-AVEC-ADP-ET-ASTEELFLASH-min.webp",
+                                                            "img":  "/images/trois-masters-adp-asteelflash.webp",
                                                             "date":  "March 25, 2024",
                                                             "category":  "Career"
                                                         },
                                                         {
                                                             "title":  "Higher Education in Private Universities in Tunisia",
                                                             "link":  "https://ebs.tn/blog/universites-privees-en-tunisie/",
-                                                            "img":  "https://ebs.tn/wp-content/uploads/2024/02/Photo-principale-Enseignement-Superieur-dans-les-Universites-Privees-en-Tunisie_1.webp",
+                                                            "img":  "/images/enseignement-superieur-universites-privees.webp",
                                                             "date":  "February 29, 2024",
                                                             "category":  "News"
                                                         }

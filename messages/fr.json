@@ -240,7 +240,7 @@
         {
           "title": "EBS participe au salon de l'orientation « Wajjahni »",
           "link": "#",
-          "img": "https://ebs.tn/wp-content/uploads/2024/02/Master-Marketing-Digital-et-Data-Analytics-d_ESPIMA.webp",
+          "img": "/images/master-marketing-digital-data-analytics.webp",
           "day": "01",
           "month": "JUI",
           "time": "01 - 07 Juillet 2026",
@@ -250,7 +250,7 @@
         {
           "title": "EBS AI Day – L'IA Transforme les parcours académiques",
           "link": "#",
-          "img": "https://ebs.tn/wp-content/uploads/2024/01/Metiers-d_Avenir-dans-le-Digital-Marketing.webp",
+          "img": "/images/metiers-avenir-digital-marketing.webp",
           "day": "20",
           "month": "MAI",
           "time": "20 Mai 2026",
@@ -262,7 +262,7 @@
         {
           "title": "EBS JOB FAIR – AI Career Boost: Stand Out In The Age of AI",
           "link": "#",
-          "img": "https://ebs.tn/wp-content/uploads/2024/02/CV-Renforce-par-des-Certifications.webp",
+          "img": "/images/cv-renforce-certifications.webp",
           "day": "30",
           "month": "AVR",
           "time": "30 Avril 2026",
@@ -272,7 +272,7 @@
         {
           "title": "EBS Entrepreneurship Challenge",
           "link": "#",
-          "img": "https://ebs.tn/wp-content/uploads/2024/02/Photo-principale-Enseignement-Superieur-dans-les-Universites-Privees-en-Tunisie_1.webp",
+          "img": "/images/enseignement-superieur-universites-privees.webp",
           "day": "31",
           "month": "MAR",
           "time": "31 Mars - 03 Avril 2026",
@@ -332,14 +332,14 @@
         {
           "title": "Trois Masters Exceptionnels en Partenariat avec ADP et ASTEELFLASH : Votre Carrière à Portée de Main !",
           "link": "https://ebs.tn/blog/espima-business-school-propose-pour-ses-etudiants-trois-masters-exceptionnels-en-partenariat-avec-adp-et-asteelflash-votre-carriere-a-portee-de-main/",
-          "img": "https://ebs.tn/wp-content/uploads/2024/03/PHOTO-COUV-TROIS-MASTERS-AVEC-ADP-ET-ASTEELFLASH-min.webp",
+          "img": "/images/trois-masters-adp-asteelflash.webp",
           "date": "25 mars 2024",
           "category": "Carrière"
         },
         {
           "title": "L'Enseignement Supérieur dans les Universités Privées en Tunisie",
           "link": "https://ebs.tn/blog/universites-privees-en-tunisie/",
-          "img": "https://ebs.tn/wp-content/uploads/2024/02/Photo-principale-Enseignement-Superieur-dans-les-Universites-Privees-en-Tunisie_1.webp",
+          "img": "/images/enseignement-superieur-universites-privees.webp",
           "date": "29 février 2024",
           "category": "Actualités"
         }

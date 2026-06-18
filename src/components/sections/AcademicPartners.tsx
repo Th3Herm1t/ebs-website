@@ -79,7 +79,7 @@ export default function AcademicPartners() {
             <div className="inline-flex items-center gap-16 w-max">
               {[...logos, ...logos, ...logos, ...logos].map((logo, i) => (
                 <a key={i} href="#" className="inline-block flex-shrink-0">
-                  <img src={logo.file.startsWith("http") ? logo.file : `/images/partenaires-academiques/${logo.file}`} alt={logo.name} className="h-[90px] w-auto object-contain" />
+                  <img src={logo.file.startsWith("http") || logo.file.startsWith("/") ? logo.file : `/images/partenaires-academiques/${logo.file}`} alt={logo.name} className="h-[90px] w-auto object-contain" />
                 </a>
               ))}
             </div>
