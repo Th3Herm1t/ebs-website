@@ -282,15 +282,6 @@ export default function QuiSommesNousPage() {
         </div>
       </section>
 
-      {/* ═══════════ QUICK CTAs ═══════════ */}
-      <CtaSection
-        title="Prêt à construire votre avenir ?"
-        subtitle="Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin."
-        primaryCta={{ label: "Pré-inscription", href: "/preinscription" }}
-        secondaryCta={{ label: "Explorer nos programmes", href: "/nos-programmes" }}
-        background="white"
-      />
-
       <CtaSection title="Rejoignez la première université tunisienne avec l'IA intégrée." subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant." primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }} secondaryCta={{ label: "Pré-inscription", href: "/preinscription" }} background="penn-green" />
     </>
   );
