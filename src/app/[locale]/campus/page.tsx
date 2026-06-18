@@ -59,7 +59,7 @@ export default function CampusPage() {
             >
               Un espace pensé pour
               <br />
-              <span className="text-[#2B8FAB]">votre réussite.</span>
+              <span className="text-[#2B8FAB]">votre réussite</span>.
             </motion.h1>
 
             <motion.p

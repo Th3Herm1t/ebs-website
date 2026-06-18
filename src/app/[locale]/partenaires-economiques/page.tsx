@@ -296,7 +296,7 @@ export default function PartenairesEconomiquesPage() {
           >
             Recrutez les talents
             <br />
-            <span className="text-[#2B8FAB]">de demain</span>, aujourd&apos;hui.
+            <span className="text-[#2B8FAB]">de demain</span>, aujourd&apos;hui<span className="text-[#2B8FAB]">.</span>
           </motion.h1>
 
           <motion.p

@@ -150,7 +150,7 @@ export default function CorpsEnseignantPage() {
             >
               Un corps enseignant d&apos;excellence,
               <br />
-              <span className="text-[#2B8FAB]">entre académie et entreprise.</span>
+              <span className="text-[#2B8FAB]">entre académie et entreprise</span>.
             </motion.h1>
 
             <motion.p
@@ -168,15 +168,14 @@ export default function CorpsEnseignantPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16"
+            className="flex flex-wrap justify-center gap-4 mt-16"
           >
             {[
-              { value: "20+", label: "Enseignants qualifiés" },
-              { value: "6", label: "Domaines d'expertise" },
+              { value: "50+", label: "Enseignants" },
+              { value: "60+", label: "Domaines d'expertise" },
               { value: "80%", label: "Issus du monde professionnel" },
-              { value: "15+", label: "Nationalités" },
             ].map((s) => (
-              <div key={s.label} className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-5 text-center">
+              <div key={s.label} className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-32px)/3)]">
                 <p className="text-[28px] md:text-[36px] font-extrabold text-white leading-none mb-1">{s.value}</p>
                 <p className="text-[13px] text-white/40 font-medium">{s.label}</p>
               </div>

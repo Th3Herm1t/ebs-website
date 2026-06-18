@@ -33,6 +33,8 @@ When bringing content from v0.1 (Astro) or ebs.tn into this codebase, follow thi
 - Accordion: shadcn ui wrapper, `value` on items, `defaultValue` on root — base-ui accordion inside
 - Programme colours: Management=#2196F3, Marketing=#E91E8C, Finance=#00BCD4, Info-Standard=#FF5722, Info-IA=#9C27B0, Cyber=#FF9800, CRM=#E91E63, Startups=#5E35B1, Ing.Fin=#00897B
 - Partner accent colours: Canada=#E53935, France=#1E88E5, Italy=#43A047, Oman=#FB8C00
+- Contrast Period Typography: Major titles (H1/H2 inside heroes/CTAs) ending in a period must contrast the last word and period. If the last word is in accent color (#2B8FAB), keep the period outside the span (defaults to white/navy). If the last word is in white/navy, wrap the period in `<span className="text-[#2B8FAB]">.</span>`.
+
 
 ## Current Page Status (37+ pages)
 | Page | Status | Notes |

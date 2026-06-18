@@ -55,7 +55,7 @@ export default function AlumniPage() {
               </Badge>
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="text-[40px] md:text-[52px] lg:text-[64px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6">
-              Des diplômés qui réussissent<br /><span className="text-[#2B8FAB]">partout dans le monde.</span>
+              Des diplômés qui réussissent<br /><span className="text-[#2B8FAB]">partout dans le monde</span>.
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[17px] md:text-[19px] text-white/60 leading-relaxed max-w-[550px]">
               EBS Alumni vous aide à développer votre carrière en mettant à votre disposition de nombreuses offres de stages et d&apos;emplois.

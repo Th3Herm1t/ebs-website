@@ -23,15 +23,7 @@ import {
 import { Badge, CtaSection } from "@/components/shared";
 import { CountryFlag } from "@/components/shared/CountryFlag";
 
-const academicPartners = [
-  {
-    name: "Audencia",
-    pays: "France",
-    code: "FR",
-    slug: "audencia",
-    logo: "/images/partenaires-academiques/logo-audencia.png",
-    desc: "Triple accréditée EQUIS, AACSB, AMBA. Membre de la Conférence des Grandes Écoles. Classée parmi les 11 meilleures écoles de commerce françaises (Le Figaro). 11 campus dans le monde, 180 professeurs permanents.",
-  },
+export const academicPartners = [
   {
     name: "UQAT",
     pays: "Canada",
@@ -151,6 +143,14 @@ const academicPartners = [
     slug: "redsup",
     logo: "/images/partenaires-academiques/redsup.png",
     desc: "Réseau d'enseignement supérieur accompagnant les étudiants internationaux vers les grandes écoles et universités partenaires en France.",
+  },
+  {
+    name: "Audencia",
+    pays: "France",
+    code: "FR",
+    slug: "audencia",
+    logo: "/images/partenaires-academiques/logo-audencia.png",
+    desc: "Triple accréditée EQUIS, AACSB, AMBA. Membre de la Conférence des Grandes Écoles. Classée parmi les 11 meilleures écoles de commerce françaises (Le Figaro). 11 campus dans le monde, 180 professeurs permanents.",
   },
 ];
 
@@ -273,7 +273,7 @@ export default function PartenairesAcademiquesPage() {
           >
             Notre réseau
             <br />
-            <span className="text-[#2B8FAB]">universitaire</span> mondial.
+            <span className="text-[#2B8FAB]">universitaire</span> mondial<span className="text-[#2B8FAB]">.</span>
           </motion.h1>
 
           <motion.p
@@ -305,9 +305,9 @@ export default function PartenairesAcademiquesPage() {
               <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">12</p>
               <p className="text-[12px] text-white/50 font-medium">En France</p>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <GraduationCap className="w-7 h-7 text-[#2B8FAB] mx-auto mb-1" />
-              <p className="text-[12px] text-white/50 font-medium">Doubles diplômes</p>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center flex flex-col justify-center h-full">
+              <Building2 className="w-10 h-10 md:w-[44px] md:h-[44px] text-[#2B8FAB] mx-auto mb-1" />
+              <p className="text-[12px] text-white/50 font-medium">Grandes Écoles</p>
             </div>
           </motion.div>
         </div>
@@ -580,7 +580,7 @@ export default function PartenairesAcademiquesPage() {
                     disabled={formState === "sending"}
                     className="w-full mt-8 py-4 rounded-xl bg-[#2B8FAB] text-white font-bold text-[15px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15 disabled:opacity-50 active:scale-[0.98]"
                   >
-                    {formState === "sending" ? "Envoi..." : <><Send className="w-5 h-5" /> Envoyer la candidature</>}
+                    {formState === "sending" ? "Envoi..." : <><Send className="w-5 h-5" /> Envoyer</>}
                   </button>
                   {formState === "error" && (
                     <p className="text-[13px] text-red-500 text-center mt-3">Une erreur est survenue. Veuillez réessayer.</p>

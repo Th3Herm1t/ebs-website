@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/shared";
 import { CountryFlag } from "@/components/shared/CountryFlag";
+import { academicPartners } from "../partenaires-academiques/page";
 
 const scenarios = [
   {
@@ -55,21 +56,6 @@ const etapes = [
   { number: "05", title: "Emploi", desc: "Accès au marché du travail local et résidence permanente" },
 ];
 
-const partners = [
-  { name: "UQAT", code: "CA", slug: "uqat" },
-  { name: "Audencia", code: "FR", slug: "audencia" },
-  { name: "EM Normandie", code: "FR", slug: "em-normandie" },
-  { name: "PSB Paris", code: "FR", slug: "psb" },
-  { name: "IDRAC", code: "FR", slug: "idrac" },
-  { name: "IFAG", code: "FR", slug: "ifag" },
-  { name: "IGEFI", code: "FR", slug: "igefi" },
-  { name: "Éklore", code: "FR", slug: "eklore" },
-  { name: "Epitech", code: "FR", slug: "epitech" },
-  { name: "EPSI", code: "FR", slug: "epsi" },
-  { name: "Excelia", code: "FR", slug: "excelia" },
-  { name: "Link Univ.", code: "IT", slug: "link-university" },
-  { name: "GUtech", code: "OM", slug: "gutech" },
-];
 
 export default function InternationalPage() {
   const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -126,8 +112,9 @@ export default function InternationalPage() {
                 Votre passeport vers
                 <br />
                 <span className="text-[#2B8FAB]">le Canada, la France{" "}
-                  <span className="whitespace-nowrap">et l&apos;Italie.</span>
+                  <span className="whitespace-nowrap">et l&apos;Italie</span>
                 </span>
+                .
               </motion.h1>
 
               <motion.p
@@ -343,59 +330,37 @@ export default function InternationalPage() {
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            {[
-              { slug: "uqat", logo: "/images/partenaires-academiques/uqat.png", name: "UQAT", pays: "Canada", code: "CA" },
-              { slug: "audencia", logo: "/images/partenaires-academiques/logo-audencia.png", name: "Audencia", pays: "France", code: "FR" },
-              { slug: "em-normandie", logo: "/images/ebs-tn/EM_Normandie-Logo.png", name: "EM Normandie", pays: "France", code: "FR" },
-              { slug: "psb", logo: "/images/partenaires-academiques/psb.png", name: "PSB Paris", pays: "France", code: "FR" },
-              { slug: "idrac", logo: "/images/partenaires-academiques/idrac.png", name: "IDRAC", pays: "France", code: "FR" },
-              { slug: "ifag", logo: "/images/partenaires-academiques/ifag.png", name: "IFAG", pays: "France", code: "FR" },
-              { slug: "igefi", logo: "/images/partenaires-academiques/igefi.png", name: "IGEFI", pays: "France", code: "FR" },
-              { slug: "eklore", logo: "/images/partenaires-academiques/eklore.png", name: "Éklore", pays: "France", code: "FR" },
-              { slug: "epitech", logo: "/images/partenaires-academiques/epitech.png", name: "Epitech", pays: "France", code: "FR" },
-              { slug: "epsi", logo: "/images/partenaires-academiques/epsi.png", name: "EPSI", pays: "France", code: "FR" },
-              { slug: "excelia", logo: "/images/partenaires-academiques/excelia.png", name: "Excelia", pays: "France", code: "FR" },
-              { slug: "figs", logo: "/images/partenaires-academiques/figs (2).png", name: "FIGS Education", pays: "France", code: "FR" },
-              { slug: "supdecom", logo: "/images/partenaires-academiques/supdecom.png", name: "Sup'de Com", pays: "France", code: "FR" },
-              { slug: "link-university", logo: "/images/partenaires-academiques/link-university.jpeg", name: "Link University", pays: "Italie", code: "IT" },
-              { slug: "redsup", logo: "/images/partenaires-academiques/redsup.png", name: "RedSup", pays: "France", code: "FR" },
-              { slug: "gutech", logo: "/images/partenaires-academiques/gutech.png", name: "GUtech", pays: "Oman", code: "OM" },
-            ].map((p, i) => (
+          <div className="flex flex-wrap justify-center gap-5 lg:gap-6">
+            {academicPartners.map((partner, i) => (
               <motion.div
-                key={p.slug}
-                initial={{ opacity: 0, y: 20 }}
+                key={partner.slug}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-20px" }}
-                transition={{ duration: 0.3, delay: i * 0.04 }}
-                className="w-[calc(50%-8px)] sm:w-[calc(33.33%-11px)] md:w-[calc(25%-12px)]"
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="w-full sm:w-[calc(50%-10px)] lg:w-[calc((100%-48px)/3)]"
               >
                 <Link
-                  href={`/partenaires/${p.slug}`}
-                  className="group flex flex-col items-center gap-3 bg-white rounded-xl border border-penn-border p-5 h-full hover:shadow-md hover:border-[#2B8FAB]/30 hover:-translate-y-1 transition-all duration-200"
+                  href={`/partenaires/${partner.slug}`}
+                  className="group block h-full"
                 >
-                  {p.logo ? (
-                    <div className="w-full h-16 flex items-center justify-center">
+                  <div className="bg-white rounded-2xl border border-penn-border p-6 lg:p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                    <div className="h-20 flex items-center justify-between mb-5">
                       <img
-                        src={p.logo}
-                        alt={p.name}
-                        className="max-h-12 max-w-[140px] w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="max-h-14 max-w-[150px] object-contain"
                       />
+                      <CountryFlag code={partner.code} />
                     </div>
-                  ) : (
-                    <div className="w-16 h-16 rounded-2xl bg-penn-bg-light flex items-center justify-center">
-                      <span className="text-[18px] font-extrabold text-penn-navy/30 group-hover:text-[#2B8FAB]/50 transition-colors">
-                        {p.name.charAt(0)}
-                      </span>
-                    </div>
-                  )}
-                  <div className="text-center">
-                    <p className="text-[13px] font-bold text-penn-navy group-hover:text-[#2B8FAB] transition-colors">
-                      {p.name}
-                    </p>
-                    <p className="text-[11px] text-penn-body/50 flex items-center gap-1 justify-center">
-                      <CountryFlag code={p.code} />
-                      {p.pays}
+                    <h4 className="text-[16px] font-extrabold text-penn-navy mb-1.5 group-hover:text-[#2B8FAB] transition-colors">
+                      {partner.name}
+                    </h4>
+                    <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#2B8FAB] bg-[#2B8FAB]/8 px-2.5 py-1 rounded-full mb-3 w-fit">
+                      {partner.pays}
+                    </span>
+                    <p className="text-[13px] text-penn-body/55 leading-relaxed flex-1">
+                      {partner.desc}
                     </p>
                   </div>
                 </Link>

@@ -87,7 +87,7 @@ export default function EtudiantsInternationauxPage() {
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="text-[42px] md:text-[56px] lg:text-[64px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6">
               Venez étudier<br />
-              <span className="text-[#2B8FAB]">en Tunisie</span> avec EBS.
+              <span className="text-[#2B8FAB]">en Tunisie</span> avec EBS<span className="text-[#2B8FAB]">.</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[16px] md:text-[18px] text-white/60 leading-relaxed max-w-[550px] mb-8">
               De l&apos;aéroport à votre diplôme, une équipe dédiée vous accompagne à chaque étape. Visa, logement, installation — on s&apos;occupe de tout.
@@ -215,7 +215,7 @@ export default function EtudiantsInternationauxPage() {
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="text-center mb-14">
             <Badge variant="default" size="lg" className="mb-4">Depuis l&apos;international</Badge>
-            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">Vous venez de loin.<br />Votre avenir est ici.</h2>
+            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">Vous venez de loin.<br />Votre avenir est <span className="text-[#2B8FAB]">ici</span>.</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1100px] mx-auto">

@@ -191,7 +191,7 @@ export default function FaqPage() {
           >
             Des questions ?
             <br />
-            <span className="text-[#2B8FAB]">On a les réponses.</span>
+            <span className="text-[#2B8FAB]">On a les réponses</span>.
           </motion.h1>
 
           <motion.p

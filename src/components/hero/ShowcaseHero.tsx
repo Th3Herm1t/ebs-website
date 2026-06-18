@@ -69,23 +69,32 @@ export function ShowcaseHero({ badge, title, subtitle, cards }: ShowcaseHeroProp
             </motion.div>
 
             <h1 className="text-[40px] md:text-[56px] lg:text-[64px] font-extrabold text-penn-navy leading-[1.05] tracking-[-1px] mb-6 flex flex-wrap gap-x-[0.25em] gap-y-2">
-              {titleWords.map((word, i) => (
-                <span key={i} className="overflow-hidden inline-block">
-                  <motion.span
-                    className="inline-block"
-                    initial={{ opacity: 0, y: "100%" }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      type: "spring",
-                      damping: 18,
-                      stiffness: 120,
-                      delay: 0.1 + i * 0.05,
-                    }}
-                  >
-                    {word}
-                  </motion.span>
-                </span>
-              ))}
+              {titleWords.map((word, i) => {
+                const isLast = i === titleWords.length - 1;
+                const hasDot = isLast && word.endsWith(".");
+                const displayWord = hasDot ? word.slice(0, -1) : word;
+                
+                return (
+                  <span key={i} className="overflow-hidden inline-block">
+                    <motion.span
+                      className="inline-block"
+                      initial={{ opacity: 0, y: "100%" }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        type: "spring",
+                        damping: 18,
+                        stiffness: 120,
+                        delay: 0.1 + i * 0.05,
+                      }}
+                    >
+                      {displayWord}
+                    </motion.span>
+                    {hasDot && (
+                      <span className="text-[#2B8FAB]">.</span>
+                    )}
+                  </span>
+                );
+              })}
             </h1>
 
             <motion.p 
