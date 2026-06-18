@@ -156,6 +156,45 @@ const programmeBreakdown = [
   },
 ];
 
+const getProviderLogo = (provider: string) => {
+  switch (provider.toLowerCase()) {
+    case "google":
+      return <img src="/images/icon/google.svg" alt="Google" className="w-6 h-6 object-contain" />;
+    case "ibm":
+      return <img src="/images/icon/ibm.svg" alt="IBM" className="w-6 h-6 object-contain" />;
+    case "harvard":
+      return <img src="/images/icon/harvard.png" alt="Harvard" className="w-6 h-6 object-contain" />;
+    case "deeplearning.ai":
+      return <img src="/images/icon/deeplearning.ai.svg" alt="DeepLearning.AI" className="w-6 h-6 object-contain" />;
+    case "hubspot":
+      return <img src="/images/icon/hubspot.svg" alt="HubSpot" className="w-6 h-6 object-contain" />;
+    case "semrush":
+      return <img src="/images/icon/semrush.svg" alt="SEMrush" className="w-6 h-6 object-contain" />;
+    case "cisco":
+      return <img src="/images/icon/cisco-2.svg" alt="Cisco" className="w-6 h-6 object-contain" />;
+    case "microsoft":
+      return <img src="/images/icon/microsoft.svg" alt="Microsoft" className="w-6 h-6 object-contain" />;
+    case "n8n":
+      return <img src="/images/icon/n8n.png" alt="n8n" className="w-6 h-6 object-contain" />;
+    case "databricks":
+      return (
+        <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L3 7L12 12L21 7L12 2Z" fill="#FF3621" />
+          <path d="M3 12L12 17L21 12" stroke="#FF3621" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M3 17L12 22L21 17" stroke="#FF3621" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "scrumstudy":
+      return (
+        <div className="w-6 h-6 rounded-full bg-[#006699] flex items-center justify-center text-white text-[11px] font-extrabold font-serif">
+          S
+        </div>
+      );
+    default:
+      return <Award className="w-5 h-5 text-[#9C27B0]" />;
+  }
+};
+
 export default function IAEtCertificationsPage() {
   return (
     <>
@@ -347,7 +386,7 @@ export default function IAEtCertificationsPage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {iaCompetences.map((comp, i) => (
               <motion.div
                 key={comp.title}
@@ -356,7 +395,7 @@ export default function IAEtCertificationsPage() {
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 whileHover={{ y: -4, scale: 1.02 }}
-                className="relative group bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] hover:border-white/[0.12] hover:bg-white/[0.05] rounded-2xl p-6 lg:p-8 transition-all duration-300"
+                className="relative group bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] hover:border-white/[0.12] hover:bg-white/[0.05] rounded-2xl p-6 lg:p-8 transition-all duration-300 w-full md:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]"
               >
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
@@ -403,7 +442,7 @@ export default function IAEtCertificationsPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="flex flex-wrap justify-center gap-3">
             {iaCertList.map((cert, i) => (
               <motion.div
                 key={cert.name}
@@ -411,10 +450,10 @@ export default function IAEtCertificationsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-20px" }}
                 transition={{ duration: 0.4, delay: i * 0.03 }}
-                className="flex items-center gap-4 px-5 py-4 bg-penn-bg-light rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300 group"
+                className="flex items-center gap-4 px-5 py-4 bg-penn-bg-light rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300 group w-full sm:w-[calc(50%-6px)] lg:w-[calc((100%-24px)/3)]"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#9C27B0]/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                  <Award className="w-4 h-4 text-[#9C27B0]" />
+                <div className="w-10 h-10 rounded-lg bg-white border border-penn-border/40 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform overflow-hidden p-1.5 bg-gradient-to-br from-white to-penn-bg-light shadow-sm">
+                  {getProviderLogo(cert.provider)}
                 </div>
                 <div className="min-w-0">
                   <p className="text-[13px] font-semibold text-penn-navy leading-snug">

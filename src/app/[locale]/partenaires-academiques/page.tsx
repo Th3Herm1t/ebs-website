@@ -370,7 +370,7 @@ export default function PartenairesAcademiquesPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+          <div className="flex flex-wrap justify-center gap-5 lg:gap-6">
             {academicPartners.map((partner, i) => (
               <motion.div
                 key={partner.slug}
@@ -378,6 +378,7 @@ export default function PartenairesAcademiquesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="w-full sm:w-[calc(50%-10px)] lg:w-[calc((100%-48px)/3)]"
               >
                 <Link
                   href={`/partenaires/${partner.slug}`}
@@ -427,7 +428,7 @@ export default function PartenairesAcademiquesPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {avantagesAcademiques.map((item, i) => (
               <motion.div
                 key={item.title}
@@ -435,7 +436,7 @@ export default function PartenairesAcademiquesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group bg-white rounded-2xl border border-penn-border p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group bg-white rounded-2xl border border-penn-border p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full md:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]"
               >
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"

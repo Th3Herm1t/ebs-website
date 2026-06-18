@@ -254,15 +254,12 @@ export default function VisionPage() {
             </h2>
           </motion.div>
 
-          {/* 3 + 2 centered grid for 5 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {valeurs.slice(0, 3).map((v, i) => (
-              <ValeurCard key={v.nom} valeur={v} index={i} />
-            ))}
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-[860px] mx-auto">
-            {valeurs.slice(3, 5).map((v, i) => (
-              <ValeurCard key={v.nom} valeur={v} index={i + 3} />
+          {/* Centered flex wrapper for 5 cards */}
+          <div className="flex flex-wrap justify-center gap-6">
+            {valeurs.map((v, i) => (
+              <div key={v.nom} className="w-full md:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)] flex">
+                <ValeurCard valeur={v} index={i} />
+              </div>
             ))}
           </div>
         </div>
@@ -285,7 +282,7 @@ function ValeurCard({ valeur, index }: { valeur: typeof valeurs[0]; index: numbe
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-white rounded-2xl border border-penn-border p-6 lg:p-8 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+      className="group relative bg-white rounded-2xl border border-penn-border p-6 lg:p-8 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full"
       style={{ borderLeftWidth: "4px", borderLeftColor: valeur.color }}
     >
       <div className="flex items-start gap-4 mb-4">

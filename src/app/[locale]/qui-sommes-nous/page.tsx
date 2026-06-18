@@ -82,12 +82,12 @@ export default function QuiSommesNousPage() {
               EBS Tunis — Espima Business School — est une université privée reconnue par l'État tunisien. Notre mission : former des professionnels immédiatement opérationnels grâce à un modèle unique alliant diplôme, certifications internationales et expérience terrain.
             </motion.p>
           </div>
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">2013</p><p className="text-[13px] text-white/50 font-medium">Fondation</p></div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">7</p><p className="text-[13px] text-white/50 font-medium">Programmes</p></div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center"><p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">150+</p><p className="text-[13px] text-white/50 font-medium">Certifications gratuites</p></div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">95%</p><p className="text-[13px] text-white/50 font-medium">Taux de réussite</p></div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">16</p><p className="text-[13px] text-white/50 font-medium">Partenaires internationaux</p></div>
+          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex flex-wrap justify-center gap-4 md:gap-6">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">2013</p><p className="text-[13px] text-white/50 font-medium">Fondation</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">7</p><p className="text-[13px] text-white/50 font-medium">Programmes</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">150+</p><p className="text-[13px] text-white/50 font-medium">Certifications gratuites</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">95%</p><p className="text-[13px] text-white/50 font-medium">Taux de réussite</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">16</p><p className="text-[13px] text-white/50 font-medium">Partenaires internationaux</p></div>
           </motion.div>
         </div>
         <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2" animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}><ChevronDown className="w-6 h-6 text-white/30" /></motion.div>
@@ -296,7 +296,7 @@ export default function QuiSommesNousPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {ctaCards.map((card, i) => (
               <motion.div key={card.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.1 }}>
-                <Link href={card.href} className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#2B8FAB]/30">
+                <Link href={card.href} className="group relative bg-white rounded-2xl border border-penn-border p-6 lg:p-8 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full hover:border-[#2B8FAB]/30">
                   <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-4 text-[#2B8FAB] group-hover:scale-110 transition-transform">{card.icon}</div>
                   <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-[#2B8FAB] transition-colors">{card.title}</h3>
                   <p className="text-[14px] text-penn-body leading-relaxed mb-4 flex-1">{card.desc}</p>

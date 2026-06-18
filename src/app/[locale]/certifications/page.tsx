@@ -173,7 +173,7 @@ export default function CertificationsPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {providerList.map((p, i) => {
               const certCount = p.categories.reduce(
                 (s, cat) => s + cat.certs.length,
@@ -189,6 +189,7 @@ export default function CertificationsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.5, delay: i * 0.06 }}
+                  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]"
                 >
                   <Link
                     href={`/certifications/${p.slug}`}

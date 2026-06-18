@@ -186,9 +186,9 @@ export default function PartenaireDetailPage() {
             <h2 className="text-[30px] md:text-[38px] font-extrabold text-penn-navy mb-3">Programmes accessibles</h2>
             <p className="text-[15px] text-penn-body/50 max-w-[550px] mx-auto">{partner.programmes.length} programme{partner.programmes.length > 1 ? "s" : ""} accessible{partner.programmes.length > 1 ? "s" : ""} via le partenariat EBS — {partner.name}.</p>
           </div>
-          <div className={`grid gap-6 ${partner.programmes.length === 1 ? "max-w-[550px] mx-auto" : partner.programmes.length === 2 ? "grid-cols-1 lg:grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}>
+          <div className={`flex flex-wrap justify-center gap-6 ${partner.programmes.length === 1 ? "max-w-[550px] mx-auto" : ""}`}>
             {partner.programmes.map((prog, i) => (
-              <ProgramCard key={i} accent={accent} programme={prog} index={i} />
+              <ProgramCard key={i} accent={accent} programme={prog} index={i} total={partner.programmes.length} />
             ))}
           </div>
         </div>
@@ -261,9 +261,9 @@ export default function PartenaireDetailPage() {
             </h2>
             <p className="text-[15px] text-white/45 max-w-[550px] mx-auto">{partner.avantages.length} avantages du partenariat EBS — {partner.name}.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {partner.avantages.map((avantage, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.05 }} className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300">
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.05 }} className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300 w-full md:w-[calc(50%-8px)] lg:w-[calc((100%-32px)/3)]">
                 <Check className="w-4 h-4 mb-3" style={{ color: accent }} />
                 <p className="text-[14px] text-white/65 leading-relaxed">{avantage}</p>
               </motion.div>
@@ -313,9 +313,9 @@ export default function PartenaireDetailPage() {
             <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy mb-3">Débouchés professionnels</h2>
             <p className="text-[15px] text-penn-body/50 max-w-[500px] mx-auto">Après votre diplôme {partner.name}, en France et à l&apos;international.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[900px] mx-auto">
+          <div className="flex flex-wrap justify-center gap-4 max-w-[900px] mx-auto">
             {partner.debouches.map((metier, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.06 }} className="bg-white rounded-xl border border-penn-border p-4 flex items-center gap-3 hover:border-opacity-100 hover:shadow-md transition-all group"
+              <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.06 }} className="bg-white rounded-xl border border-penn-border p-4 flex items-center gap-3 hover:border-opacity-100 hover:shadow-md transition-all group w-full md:w-[calc(50%-8px)] lg:w-[calc((100%-32px)/3)]"
                 style={{ ["--hover-border" as string]: `${accent}30` } as React.CSSProperties}
               >
                 <Briefcase className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" style={{ color: accent }} />
@@ -434,7 +434,7 @@ function Field({ label, name, type = "text", required }: { label: string; name: 
   );
 }
 
-function ProgramCard({ accent, programme, index }: { accent: string; programme: PartnerData["programmes"][number]; index: number }) {
+function ProgramCard({ accent, programme, index, total }: { accent: string; programme: PartnerData["programmes"][number]; index: number; total: number }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -443,7 +443,13 @@ function ProgramCard({ accent, programme, index }: { accent: string; programme: 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ delay: index * 0.08 }}
-      className="bg-white rounded-2xl border border-penn-border overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col"
+      className={`bg-white rounded-2xl border border-penn-border overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col ${
+        total === 1
+          ? "w-full"
+          : total === 2
+          ? "w-full lg:w-[calc(50%-12px)]"
+          : "w-full md:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]"
+      }`}
     >
       <div className="p-6 flex flex-col flex-1">
         <div className="flex items-start gap-4 mb-4">
