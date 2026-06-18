@@ -5,7 +5,7 @@ import { ArrowRight, FileText } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/shared/Badge";
 import { StatBar } from "@/components/shared/StatBar";
-import { StickyForm } from "@/components/shared/StickyForm";
+import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { cn } from "@/lib/utils";
 
 interface ProgramLPHeroProps {
@@ -107,8 +107,8 @@ export function ProgramLPHero({
             id="form"
             className="h-full lg:hidden"
           >
-            <StickyForm
-              title={`Déposez votre candidature`}
+            <AdmissionForm
+              type={type}
               programmeName={title}
             />
           </motion.div>

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { ProgramLPHero, ProgramPresentation, PublicCible, ModulesAccordion, CertificationsTable, IACompetences, InternationalPerspectives, DebouchesGrid } from "@/components/program";
-import { CtaSection, StickyForm } from "@/components/shared";
+import { AdmissionForm } from "@/components/forms/AdmissionForm";
+import { CtaSection } from "@/components/shared";
 import { masters } from "@/lib/programmes/masters";
 
 interface PageParams {
@@ -20,7 +21,7 @@ export default async function MasterLPPage({ params }: PageParams) {
           <div className="max-w-[1280px] mx-auto px-5 lg:px-12 h-full relative">
             <div className="absolute right-5 lg:right-12 top-0 w-[380px] h-full pt-[196px]">
               <div className="sticky top-[120px] pointer-events-auto">
-                <StickyForm title="Déposez votre candidature" programmeName={data.title} />
+                <AdmissionForm type="master" programmeName={data.title} />
               </div>
             </div>
           </div>
