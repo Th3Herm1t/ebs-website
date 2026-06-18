@@ -328,9 +328,9 @@ const allTags: ArticleTag[] = [
 ];
 
 const tabs: { key: Tab; label: string; icon: React.ReactNode; desc: string }[] = [
-  { key: "alaune", label: "À la Une", icon: <Sparkles className="w-4 h-4" />, desc: "L'article phare qui fait l'actualité d'EBS" },
   { key: "actualites", label: "Actualités", icon: <Newspaper className="w-4 h-4" />, desc: "26 articles — partenariats, salons, conférences" },
   { key: "evenements", label: "Événements", icon: <Calendar className="w-4 h-4" />, desc: "21 événements — challenges, cérémonies, intégrations" },
+  { key: "alaune", label: "À la Une", icon: <Sparkles className="w-4 h-4" />, desc: "L'article phare qui fait l'actualité d'EBS" },
 ];
 
 const stats = [
@@ -341,7 +341,7 @@ const stats = [
 ];
 
 export default function ActualitesPage() {
-  const [activeTab, setActiveTab] = useState<Tab>("alaune");
+  const [activeTab, setActiveTab] = useState<Tab>("actualites");
   const [activeTag, setActiveTag] = useState<ArticleTag | null>(null);
   const [modalArticle, setModalArticle] = useState<Article | null>(null);
   const [visibleCount, setVisibleCount] = useState(9);
@@ -675,7 +675,7 @@ export default function ActualitesPage() {
               Newsletter EBS
             </Badge>
             <h2 className="text-[28px] md:text-[36px] font-extrabold text-white mb-4">
-              Restez connecté à <span className="text-[#FF9800]">l&apos;actualité</span>
+              Restez connecté à <span className="text-white">l&apos;actualité</span>
             </h2>
             <p className="text-[16px] text-white/70 max-w-[500px] mx-auto mb-10 leading-relaxed">
               Recevez les dernières nouvelles, événements et opportunités directement dans votre boîte mail.
@@ -687,7 +687,7 @@ export default function ActualitesPage() {
                 placeholder="Votre adresse email"
                 className="flex-1 w-full px-5 py-3.5 rounded-full bg-white/15 border border-white/30 text-white placeholder:text-white/50 text-[14px] focus:outline-none focus:border-white/60 focus:ring-2 focus:ring-white/20 transition-all"
               />
-              <button className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#FF9800] text-white font-bold text-[14px] hover:bg-[#FF9800]/90 transition-all shadow-lg shadow-[#FF9800]/20 hover:shadow-[#FF9800]/30">
+              <button className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-[#2B8FAB] font-bold text-[14px] hover:bg-white/90 transition-all shadow-lg shadow-white/20 hover:shadow-white/30">
                 S&apos;abonner
               </button>
             </div>

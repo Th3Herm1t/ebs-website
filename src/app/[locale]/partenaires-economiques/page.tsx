@@ -623,7 +623,7 @@ export default function PartenairesEconomiquesPage() {
       </section>
 
       {/* ═══════════ FORMULAIRE DE PARTENARIAT ═══════════ */}
-      <section className="section-padding bg-white">
+      <section id="formulaire-partenariat" className="section-padding bg-white">
         <div className="max-w-[800px] mx-auto px-5 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -807,13 +807,13 @@ export default function PartenairesEconomiquesPage() {
                 <Mail className="w-5 h-5 text-[#2B8FAB]" />
                 <span className="text-[15px] font-bold text-penn-navy">info@ebs.tn</span>
               </a>
-              <Link
-                href="/contact"
+              <a
+                href="#formulaire-partenariat"
                 className="flex items-center gap-3 justify-center p-4 bg-[#2B8FAB] text-white rounded-xl hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20"
               >
                 <Building2 className="w-5 h-5" />
-                <span className="text-[15px] font-bold">Formulaire entreprise</span>
-              </Link>
+                <span className="text-[15px] font-bold">Formulaire de partenariat</span>
+              </a>
             </div>
           </motion.div>
         </div>

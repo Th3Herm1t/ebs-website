@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { Award, Briefcase, Globe, HeartHandshake, Send, Sparkles, Star } from "lucide-react";
+import { Award, Briefcase, Globe, GraduationCap, HeartHandshake, Mail, Phone, Send, Sparkles, Star, X } from "lucide-react";
 import { CtaSection } from "@/components/shared";
 import { Badge } from "@/components/shared";
 import AlumniWorldMap from "@/components/alumni/AlumniWorldMap";
@@ -33,9 +34,27 @@ const secteurs = [
   { icon: <Award className="w-6 h-6" />, nom: "Tech & IA", desc: "Data scientists, ML engineers, experts cybersécurité dans les entreprises technologiques." },
   { icon: <Globe className="w-6 h-6" />, nom: "Conseil", desc: "Consultants en stratégie, management et transformation digitale chez les Big Four." },
   { icon: <Star className="w-6 h-6" />, nom: "Entrepreneuriat", desc: "Fondateurs de startups, incubés et accélérés par le réseau EBS et ses partenaires." },
+  { icon: <Award className="w-6 h-6" />, nom: "Industrie 4.0", desc: "Spécialistes en automatisation, IoT, maintenance prédictive et transformation industrielle." },
 ];
 
 export default function AlumniPage() {
+  const [mentorModalOpen, setMentorModalOpen] = useState(false);
+  const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const handleMentorSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormState("sending");
+    try {
+      await fetch("https://formspree.io/f/xeojaqdr", {
+        method: "POST",
+        body: new FormData(e.currentTarget),
+        headers: { Accept: "application/json" },
+      });
+      setFormState("sent");
+    } catch {
+      setFormState("error");
+    }
+  };
   return (
     <>
       {/* ═══════════ HERO ═══════════ */}
@@ -63,13 +82,13 @@ export default function AlumniPage() {
           </div>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
             {[
-              { value: "93%", label: "Embauchés en 3 mois" },
-              { value: "15+", label: "Pays de destination" },
+              { value: "90%", label: "Embauchés en 3 mois" },
+              { value: "15", label: "Secteurs d'activité" },
               { value: "500+", label: "Diplômés" },
               { value: "5", label: "Secteurs d'activité" },
             ].map((s) => (
               <div key={s.label} className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-5 text-center">
-                <p className="text-[28px] md:text-[36px] font-extrabold text-white leading-none mb-1">{s.value}</p>
+                <p className={`text-[28px] md:text-[36px] font-extrabold leading-none mb-1 ${s.value === "500+" ? "text-[#2B8FAB]" : "text-white"}`}>{s.value}</p>
                 <p className="text-[13px] text-white/40 font-medium">{s.label}</p>
               </div>
             ))}
@@ -153,12 +172,18 @@ export default function AlumniPage() {
       <section className="section-padding bg-penn-bg-light">
         <div className="max-w-[900px] mx-auto px-5 lg:px-12">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="text-[28px] md:text-[34px] font-extrabold text-penn-navy text-center mb-10">Rejoignez-nous !</motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-penn-border p-6 lg:p-8">
               <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-4 text-[#2B8FAB]"><Send className="w-6 h-6" /></div>
               <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">Mettez à jour votre profil</h3>
               <p className="text-[14px] text-penn-body mb-4">Vous êtes diplômé(e) EBS ? Tenez-nous informés de votre parcours et restez connecté(e) au réseau.</p>
               <a href="/contact" className="inline-flex items-center gap-2 text-[14px] font-bold text-[#2B8FAB] hover:text-penn-navy transition-colors">Mettre à jour mon profil →</a>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-penn-border p-6 lg:p-8 cursor-pointer hover:border-[#2B8FAB]/30 hover:shadow-md transition-all" onClick={() => setMentorModalOpen(true)}>
+              <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-4 text-[#2B8FAB]"><GraduationCap className="w-6 h-6" /></div>
+              <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">Devenir mentor</h3>
+              <p className="text-[14px] text-penn-body mb-4">Partagez votre expertise avec les étudiants EBS et contribuez à former la prochaine génération.</p>
+              <span className="inline-flex items-center gap-2 text-[14px] font-bold text-[#2B8FAB] hover:text-penn-navy transition-colors">Devenir mentor →</span>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-penn-border p-6 lg:p-8">
               <div className="w-12 h-12 rounded-xl bg-[#0A66C2]/10 flex items-center justify-center mb-4 text-[#0A66C2]">
