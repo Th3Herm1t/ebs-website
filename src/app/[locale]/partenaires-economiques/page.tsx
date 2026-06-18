@@ -36,31 +36,31 @@ import { Badge, CtaSection } from "@/components/shared";
 const avantagesEntreprise = [
   {
     icon: <Award className="w-6 h-6" />,
-    title: "Talents certifiés",
+    title: "Talents Certifiés",
     desc: "Vos futurs collaborateurs sont certifiés par Google, IBM, Harvard, Bloomberg, Cisco — avant même d'avoir leur diplôme.",
     color: "#2B8FAB",
   },
   {
     icon: <Rocket className="w-6 h-6" />,
-    title: "Opérationnels immédiatement",
+    title: "Opérationnels Immédiatement",
     desc: "Pédagogie pratique, simulations pro Forage, projets réels. Un stagiaire EBS est productif dès la première semaine.",
     color: "#2196F3",
   },
   {
     icon: <Brain className="w-6 h-6" />,
-    title: "IA-native",
+    title: "IA-Native",
     desc: "Tous nos étudiants maîtrisent l'IA générative, le prompting et l'automatisation. Une compétence que vos équipes n'ont pas encore.",
     color: "#9C27B0",
   },
   {
     icon: <Globe className="w-6 h-6" />,
-    title: "Bilingues & internationaux",
+    title: "Bilingues & Internationaux",
     desc: "Anglais professionnel, partenariats internationaux, expérience multiculturelle. Prêts pour vos équipes globales.",
     color: "#FF9800",
   },
   {
     icon: <Target className="w-6 h-6" />,
-    title: "Recrutement sans risque",
+    title: "Recrutement Sans Risque",
     desc: "Testez nos talents en stage ou en alternance avant de les recruter. Zéro risque, 100% de valeur ajoutée.",
     color: "#E91E8C",
   },
@@ -89,7 +89,7 @@ const typesCollaboration = [
   },
   {
     icon: <Lightbulb className="w-7 h-7" />,
-    title: "Projet réel",
+    title: "Projet Réel",
     desc: "Confiez un projet à une équipe d'étudiants encadrée par nos professeurs. Résultats concrets garantis.",
     color: "#FF9800",
   },
@@ -124,9 +124,9 @@ const profilDiplomes = [
 ];
 
 const steps = [
-  { step: "01", title: "Vous candidatez", desc: "Remplissez le formulaire avec les informations de votre entreprise et vos besoins." },
-  { step: "02", title: "Nous échangeons", desc: "Notre équipe vous contacte pour comprendre vos objectifs et définir le cadre." },
-  { step: "03", title: "Convention signée", desc: "Nous formalisons le partenariat et lançons les premières actions." },
+  { step: "01", title: "Vous Candidatez", desc: "Remplissez le formulaire avec les informations de votre entreprise et vos besoins." },
+  { step: "02", title: "Nous Échangeons", desc: "Notre équipe vous contacte pour comprendre vos objectifs et définir le cadre." },
+  { step: "03", title: "Convention Signée", desc: "Nous formalisons le partenariat et lançons les premières actions." },
 ];
 
 const existingPartners = [

@@ -132,7 +132,7 @@ export const partenaires: Record<string, PartnerData> = {
       { label: "Frais identiques", amount: "Mêmes frais", period: "que les Québécois", note: "Avantage exclusif EBS-UQAT", featured: true },
       { label: "Bourse d'accueil", amount: "25–50", period: "%", note: "Selon le programme choisi" },
     ],
-    imageSection: { src: "https://ebs.tn/wp-content/uploads/2022/09/img-uqat.png", caption: "Abitibi-Témiscamingue, Québec" },
+    imageSection: { src: "/images/ebs-tn/img-uqat.png", caption: "Abitibi-Témiscamingue, Québec" },
     professors: [
       { nom: "Louis Belisle", img: "https://www.uqat.ca/resources/medias/professeurs/professeur-louis-belisle.jpg" },
       { nom: "Jérôme Deschênes", img: "https://www.uqat.ca/resources/medias/professeurs/professeur-jerome-deschenes.jpg" },
@@ -157,7 +157,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "EM Normandie",
     country: "🇫🇷 France",
     countryCode: "FR",
-    logo: "https://ebs.tn/wp-content/uploads/2022/08/EM_Normandie-Logo.png",
+    logo: "/images/ebs-tn/EM_Normandie-Logo.png",
     type: "Grande École de Commerce — Triple accréditée EQUIS · AACSB · AMBA",
     presentation: "150 ans d'innovations et de conquêtes ont permis à l'EM Normandie de s'imposer comme l'une des meilleures Business Schools mondiales. Triple accréditée EQUIS, AACSB et AMBA — seulement 1% des écoles de commerce dans le monde détiennent cette double accréditation. Classée 18ème meilleure école de commerce en France (Le Figaro Étudiant). Elle compte aujourd'hui plus de 5 800 apprenants répartis sur 6 campus : Caen, Le Havre, Paris, Dubaï, Dublin et Oxford.",
     programmes: [
@@ -211,13 +211,13 @@ export const partenaires: Record<string, PartnerData> = {
       { label: "MSc — Master of Science", amount: "~13 000", period: "€/an", note: "10 spécialisations disponibles" },
       { label: "MS — Mastère Spécialisé", amount: "~9 500", period: "€/an", note: "Bac+6, label CGE" },
     ],
-    imageSection: { src: "https://ebs.tn/wp-content/uploads/2022/09/img-page-em-presentiel.png" },
+    imageSection: { src: "/images/ebs-tn/img-page-em-presentiel.png" },
     accreditations: [
       { label: "AACSB", description: "La plus prestigieuse accréditation mondiale en management — seules 5% des écoles de commerce la détiennent" },
       { label: "EQUIS", description: "Label d'excellence académique et internationale décerné par l'EFMD" },
       { label: "AMBA", description: "Accréditation de référence pour les programmes MBA et post-graduate" },
     ],
-    accreditationImage: "https://ebs.tn/wp-content/uploads/2022/08/Calque-2-2.png",
+    accreditationImage: "/images/ebs-tn/Calque-2-2.png",
     extraSections: [
       {
         title: "10 MSc — Masters of Science",

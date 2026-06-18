@@ -100,7 +100,7 @@
                                     },
                      "about":  {
                                    "title":  "Join the Business School",
-                                   "titleHighlight":  "focused on the future",
+                                   "titleHighlight":  "Focused on the Future",
                                    "desc":  "Espima Business School evolves its programs with one ultimate goal: to allow each student to build a more competitive profile, better prepared for the demands of the job market.",
                                    "f1Title":  "AI as a differentiator",
                                    "f1Desc":  "At EBS, every student - regardless of their field - masters the AI tools most demanded by recruiters. From management bachelor\u0027s to financial engineering master\u0027s. It\u0027s not an option: it\u0027s our commitment to your employability.",
@@ -109,10 +109,10 @@
                                    "btn":  "Discover the EBS approach"
                                },
                      "counters":  {
-                                      "c1":  "Free certifications included",
+                                      "c1":  "Free Certifications Included",
                                       "c2":  "Bachelor \u0026 Master Programs",
-                                      "c3":  "International university partners",
-                                      "c4":  "Success rate",
+                                      "c3":  "International University Partners",
+                                      "c4":  "Success Rate",
                                       "title":  "EBS IN NUMBERS",
                                       "subtitle":  "Key Figures",
                                       "subtitleHighlight":  "of EBS"
@@ -283,7 +283,7 @@
                      "testimonials":  {
                                           "title":  "TESTIMONIAL",
                                           "subtitle":  "What our",
-                                          "subtitleHighlight":  "students say",
+                                          "subtitleHighlight":  "Students Say",
                                           "list":  [
                                                        {
                                                            "img":  "/images/all-img/t1-stock.jpg",
@@ -311,7 +311,7 @@
                      "articles":  {
                                       "title":  "ARTICLES",
                                       "subtitle":  "Our latest",
-                                      "subtitleHighlight":  "blogs",
+                                      "subtitleHighlight":  "Blogs",
                                       "readMore":  "READ MORE",
                                       "listText":  [
                                                        {
@@ -372,8 +372,8 @@
                                 },
                      "career":  {
                                     "tag":  "EBS CAREER",
-                                    "title1":  "Career opportunities",
-                                    "title2":  "With our corporate partners",
+                                    "title1":  "Career Opportunities",
+                                    "title2":  "With Our Corporate Partners",
                                     "desc1":  "Thanks to its network of corporate partners, EBS facilitates its students\u0027 access to internships, corporate projects, and pre-employment opportunities in various business sectors.",
                                     "desc2":  "In many cases, students who have completed their internship within a partner company enjoy a significant advantage during recruitment, as the company has already been able to evaluate their skills, potential, and integration capacity.",
                                     "steps":  [
@@ -386,7 +386,7 @@
                      "features":  {
                                       "title":  "EBS UNIVERSE",
                                       "subtitle":  "Why choose",
-                                      "subtitleHighlight":  "our University",
+                                      "subtitleHighlight":  "Our University",
                                       "list":  [
                                                    {
                                                        "title":  "Integrated International Certifications",

@@ -347,7 +347,7 @@ export default function InternationalPage() {
             {[
               { slug: "uqat", logo: "/images/partenaires-academiques/uqat.png", name: "UQAT", pays: "Canada", code: "CA" },
               { slug: "audencia", logo: "/images/partenaires-academiques/logo-audencia.png", name: "Audencia", pays: "France", code: "FR" },
-              { slug: "em-normandie", logo: "https://ebs.tn/wp-content/uploads/2022/08/EM_Normandie-Logo.png", name: "EM Normandie", pays: "France", code: "FR" },
+              { slug: "em-normandie", logo: "/images/ebs-tn/EM_Normandie-Logo.png", name: "EM Normandie", pays: "France", code: "FR" },
               { slug: "psb", logo: "/images/partenaires-academiques/psb.png", name: "PSB Paris", pays: "France", code: "FR" },
               { slug: "idrac", logo: "/images/partenaires-academiques/idrac.png", name: "IDRAC", pays: "France", code: "FR" },
               { slug: "ifag", logo: "/images/partenaires-academiques/ifag.png", name: "IFAG", pays: "France", code: "FR" },

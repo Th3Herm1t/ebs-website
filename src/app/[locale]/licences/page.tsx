@@ -98,7 +98,7 @@ export default async function LicencesPage({
               <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
                 <Sparkles className="w-7 h-7 text-penn-green" />
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">IA intégrée dans chaque filière</h3>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">IA Intégrée dans Chaque Filière</h3>
               <p className="text-[15px] text-penn-body leading-relaxed">
                 L&apos;Intelligence Artificielle est une compétence transversale obligatoire dans tous nos programmes. Chaque étudiant repart avec 26 certifications IA reconnues mondialement.
               </p>
@@ -107,7 +107,7 @@ export default async function LicencesPage({
               <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
                 <Award className="w-7 h-7 text-penn-green" />
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">150+ certifications gratuites</h3>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">150+ Certifications Gratuites</h3>
               <p className="text-[15px] text-penn-body leading-relaxed">
                 Des certifications délivrées par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot et bien d&apos;autres — intégralement incluses dans votre formation, sans frais supplémentaires.
               </p>
@@ -116,7 +116,7 @@ export default async function LicencesPage({
               <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
                 <Globe className="w-7 h-7 text-penn-green" />
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">Partenariats internationaux</h3>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">Partenariats Internationaux</h3>
               <p className="text-[15px] text-penn-body leading-relaxed">
                 Poursuivez vos études en France, au Canada, en Italie ou à Oman grâce à nos 16 partenaires universitaires. Mobilité facilitée et doubles diplômes possibles.
               </p>

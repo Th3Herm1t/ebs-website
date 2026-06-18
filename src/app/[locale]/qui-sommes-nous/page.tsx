@@ -8,33 +8,33 @@ import { Badge, CtaSection } from "@/components/shared";
 
 const timeline = [
   { year: "2013", title: "Fondation d'EBS", text: "Création d'Espima Business School à Tunis. Agrément N°2013/02 du Ministère de l'Enseignement Supérieur. Une conviction : la Tunisie mérite des formations aux standards internationaux.", highlight: false },
-  { year: "2016", title: "Premiers partenariats", text: "Signature des premières conventions avec des universités françaises. Déploiement des programmes de Licence en Management, Marketing, Finance et Informatique.", highlight: false },
-  { year: "2020", title: "Expansion internationale", text: "Le réseau s'étend : UQAT Canada, EM Normandie, PSB Paris. Ouverture des parcours internationaux. Lancement des Masters professionnels.", highlight: false },
-  { year: "2026", title: "Le virage IA", text: "EBS devient la première université tunisienne à intégrer l'IA comme compétence transversale obligatoire. 150+ certifications internationales gratuites. Partenariats avec Google, IBM, Harvard, Bloomberg et 15+ fournisseurs mondiaux.", highlight: true },
+  { year: "2016", title: "Premiers Partenariats", text: "Signature des premières conventions avec des universités françaises. Déploiement des programmes de Licence en Management, Marketing, Finance et Informatique.", highlight: false },
+  { year: "2020", title: "Expansion Internationale", text: "Le réseau s'étend : UQAT Canada, EM Normandie, PSB Paris. Ouverture des parcours internationaux. Lancement des Masters professionnels.", highlight: false },
+  { year: "2026", title: "Le Virage IA", text: "EBS devient la première université tunisienne à intégrer l'IA comme compétence transversale obligatoire. 150+ certifications internationales gratuites. Partenariats avec Google, IBM, Harvard, Bloomberg et 15+ fournisseurs mondiaux.", highlight: true },
 ];
 
 const piliers = [
   {
     icon: <Star className="w-7 h-7" />,
-    title: "Qualité de l'enseignement",
+    title: "Qualité de l'Enseignement",
     desc: "EBS est une business school moderne et dynamique, qui propose des parcours et des diplômes de qualité, en Licence et en Master, répondant aux standards internationaux. Les partenariats internationaux, les codiplômations et les certifications attestent de la qualité des études universitaires à EBS.",
     color: "#2B8FAB",
   },
   {
     icon: <Lightbulb className="w-7 h-7" />,
-    title: "Pédagogie innovante",
+    title: "Pédagogie Innovante",
     desc: "Notre université a mis en place un système d'enseignement utilisant les nouvelles technologies, avec une plateforme de E-Learning favorisant l'autonomie et l'interaction. EBS a mis l'accent sur le « learning by doing » dont les objectifs sont de développer la créativité, le travail en équipe, l'esprit d'analyse et le leadership.",
     color: "#2196F3",
   },
   {
     icon: <Heart className="w-7 h-7" />,
-    title: "Développement personnel et professionnel",
+    title: "Développement Personnel et Professionnel",
     desc: "Le développement personnel occupe une place très importante dans notre université. Notre objectif : développer la confiance en soi, l'ouverture d'esprit et la culture générale pour former des entrepreneurs, des managers et des hauts cadres ambitieux, efficaces et responsables.",
     color: "#E91E8C",
   },
   {
     icon: <Globe className="w-7 h-7" />,
-    title: "Ouverture sur l'environnement",
+    title: "Ouverture sur l'Environnement",
     desc: "EBS est un pont d'échange entre le monde professionnel et le monde académique. Plusieurs conventions ont été signées avec des grands groupes pour offrir les meilleures opportunités de stages et d'emplois. Des accords de collaboration avec des universités étrangères favorisent la mobilité des étudiants et des enseignants.",
     color: "#FF9800",
   },
@@ -42,11 +42,11 @@ const piliers = [
 
 const services = [
   { icon: <Building2 className="w-5 h-5" />, title: "Career Center", desc: "Ateliers CV, simulations d'entretien, matching alternance, réseau employeurs. Accessible dès la L1.", color: "#2B8FAB" },
-  { icon: <Award className="w-5 h-5" />, title: "Centre de certification", desc: "Salles dédiées au passage des certifications. Accès aux plateformes officielles Google, IBM, AWS, Cisco, etc.", color: "#2196F3" },
-  { icon: <Globe className="w-5 h-5" />, title: "Bureau international", desc: "Accompagnement visa, dossiers de candidature aux partenaires, préparation au départ à l'étranger.", color: "#E91E8C" },
-  { icon: <BookOpen className="w-5 h-5" />, title: "Bibliothèque & e-learning", desc: "Accès aux ressources numériques, manuels, cours en ligne complémentaires et bases de données.", color: "#FF9800" },
-  { icon: <Users className="w-5 h-5" />, title: "Tutorat & soutien", desc: "Séances de rattrapage, tutorat par les pairs, accompagnement individuel pour les étudiants en difficulté.", color: "#9C27B0" },
-  { icon: <Monitor className="w-5 h-5" />, title: "Espaces de coworking", desc: "Zones de travail collaboratif, salles de projet et espaces dédiés aux travaux de groupe.", color: "#00BCD4" },
+  { icon: <Award className="w-5 h-5" />, title: "Centre de Certification", desc: "Salles dédiées au passage des certifications. Accès aux plateformes officielles Google, IBM, AWS, Cisco, etc.", color: "#2196F3" },
+  { icon: <Globe className="w-5 h-5" />, title: "Bureau International", desc: "Accompagnement visa, dossiers de candidature aux partenaires, préparation au départ à l'étranger.", color: "#E91E8C" },
+  { icon: <BookOpen className="w-5 h-5" />, title: "Bibliothèque & E-Learning", desc: "Accès aux ressources numériques, manuels, cours en ligne complémentaires et bases de données.", color: "#FF9800" },
+  { icon: <Users className="w-5 h-5" />, title: "Tutorat & Soutien", desc: "Séances de rattrapage, tutorat par les pairs, accompagnement individuel pour les étudiants en difficulté.", color: "#9C27B0" },
+  { icon: <Monitor className="w-5 h-5" />, title: "Espaces de Coworking", desc: "Zones de travail collaboratif, salles de projet et espaces dédiés aux travaux de groupe.", color: "#00BCD4" },
 ];
 
 const ctaCards = [
@@ -107,7 +107,7 @@ export default function QuiSommesNousPage() {
                   <div className="absolute -inset-1 bg-gradient-to-br from-[#2B8FAB]/40 to-transparent rounded-2xl opacity-50" />
                   <div className="relative h-full rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-black/30">
                     <img
-                      src="https://ebs.tn/wp-content/uploads/2022/09/PHOTO-PRESIDENT-DE-LEBS.jpg"
+                      src="/images/ebs-tn/PHOTO-PRESIDENT-DE-LEBS.jpg"
                       alt="Abderraouf NAJAR"
                       className="w-full h-full object-cover"
                     />
@@ -254,9 +254,9 @@ export default function QuiSommesNousPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               { icon: <ShieldCheck className="w-7 h-7" />, title: "Agrément d'État", text: "Université privée agréée par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique de la République Tunisienne. Agrément N°2013/02 — Diplômes reconnus par l'État tunisien.", color: "#2B8FAB" },
-              { icon: <Globe className="w-7 h-7" />, title: "Réseau international", text: "Membre du réseau de 16 institutions universitaires partenaires : UQAT (Canada), EM Normandie, PSB Paris, IDRAC, IFAG, IGEFI, Éklore, Epitech, EPSI, Excelia, FIGS Education, Sup'de Com, RedSup (France), Link University (Italie) et GUtech (Oman).", color: "#2196F3" },
+              { icon: <Globe className="w-7 h-7" />, title: "Réseau International", text: "Membre du réseau de 16 institutions universitaires partenaires : UQAT (Canada), EM Normandie, PSB Paris, IDRAC, IFAG, IGEFI, Éklore, Epitech, EPSI, Excelia, FIGS Education, Sup'de Com, RedSup (France), Link University (Italie) et GUtech (Oman).", color: "#2196F3" },
               { icon: <Building2 className="w-7 h-7" />, title: "Partenariats Entreprises", text: "Partenariats actifs avec des entreprises nationales et multinationales pour offrir à nos étudiants des stages, des alternances et des opportunités de recrutement dans des environnements professionnels réels.", color: "#E91E8C" },
-              { icon: <Award className="w-7 h-7" />, title: "Certifications mondiales", text: "Partenariats avec Google, IBM, Harvard, Cisco, Bloomberg, Fortinet, HubSpot, DeepLearning.AI et 15+ fournisseurs mondiaux de certifications. 150+ certifications gratuites incluses dans chaque parcours.", color: "#FF9800" },
+              { icon: <Award className="w-7 h-7" />, title: "Certifications Mondiales", text: "Partenariats avec Google, IBM, Harvard, Cisco, Bloomberg, Fortinet, HubSpot, DeepLearning.AI et 15+ fournisseurs mondiaux de certifications. 150+ certifications gratuites incluses dans chaque parcours.", color: "#FF9800" },
             ].map((acc, i) => (
               <motion.div key={acc.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ delay: i * 0.1 }} className="bg-white rounded-2xl p-8 border border-penn-border hover:border-[#2B8FAB]/30 transition-all duration-300 group">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{ backgroundColor: `${acc.color}12` }}><span style={{ color: acc.color }}>{acc.icon}</span></div>

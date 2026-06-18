@@ -8,14 +8,14 @@ import { Badge } from "@/components/shared";
 import AlumniWorldMap from "@/components/alumni/AlumniWorldMap";
 
 const alumniProfiles = [
-  { name: "Mohamed Amine Hamdi", text: "a obtenu son diplôme de Master en Marketing Digital promotion 2019/2020. Actuellement il occupe un poste de Community Manager chez Tinith services Tunis", img: "https://ebs.tn/wp-content/uploads/2022/07/amin-hamdi.jpeg", initials: "MH" },
-  { name: "Dorra Ben Turkia", text: "a obtenu son diplôme de Master Ingénierie et Analyse Quantitative pour la Finance et l'Assurance promotion 2018/2019. Actuellement elle occupe un poste de Contrôleuse de Gestion chez Habitat France Paris", img: "https://ebs.tn/wp-content/uploads/2022/07/dorra-ben-turkia-1022x1024.jpeg", initials: "DB" },
-  { name: "Maroua Jeribi", text: "a obtenu son diplôme de Master Professionnel en Gestion des Ressources Humaines promotion 2018/2019. Actuellement elle occupe un poste de Consultante SIRH Oracle Paris", img: "https://ebs.tn/wp-content/uploads/2022/07/maroua-jeribi-1022x1024.jpeg", initials: "MJ" },
-  { name: "Hend Jaber", text: "a obtenu son diplôme de Master Ingénierie Financière promotion 2015/2016. Actuellement elle occupe un poste de Conceptualizer chez BOUMRANG Tunis", img: "https://ebs.tn/wp-content/uploads/2022/07/hend-jaber.jpeg", initials: "HJ" },
-  { name: "Hend Nasri", text: "a obtenu son diplôme de Master en Marketing Digital promotion 2019/2020. Actuellement elle occupe un poste de Digital Marketing Manager chez Lezarts.Digital Tunis", img: "https://ebs.tn/wp-content/uploads/2022/07/hend-nasri-1024x1024.jpeg", initials: "HN" },
-  { name: "Kais Layouni", text: "a obtenu son diplôme de Licence en Finance promotion 2017/2018. Actuellement il occupe un poste de Business Analyst chez MENINX Holding Tunis", img: "https://ebs.tn/wp-content/uploads/2022/07/kais-layouni.jpeg", initials: "KL" },
-  { name: "Hend Bedoui", text: "a obtenu son diplôme de Master Ingénierie Financière promotion 2015/2016. Actuellement elle occupe un poste de Analyste Financier LEASE TUNIS", img: "https://ebs.tn/wp-content/uploads/2022/07/hind-bedoui.jpeg", initials: "HB" },
-  { name: "Oussama Ayadi", text: "a obtenu son diplôme de Master en Marketing Bancaire promotion 2016/2017. Actuellement il occupe un poste de Expert Technique chez GIZ Tunisie Tunis", img: "https://ebs.tn/wp-content/uploads/2022/07/oussama-ayadi-1024x1024.jpeg", initials: "OA" },
+  { name: "Mohamed Amine Hamdi", text: "a obtenu son diplôme de Master en Marketing Digital promotion 2019/2020. Actuellement il occupe un poste de Community Manager chez Tinith services Tunis", img: "/images/ebs-tn/amin-hamdi.jpeg", initials: "MH" },
+  { name: "Dorra Ben Turkia", text: "a obtenu son diplôme de Master Ingénierie et Analyse Quantitative pour la Finance et l'Assurance promotion 2018/2019. Actuellement elle occupe un poste de Contrôleuse de Gestion chez Habitat France Paris", img: "/images/ebs-tn/dorra-ben-turkia-1022x1024.jpeg", initials: "DB" },
+  { name: "Maroua Jeribi", text: "a obtenu son diplôme de Master Professionnel en Gestion des Ressources Humaines promotion 2018/2019. Actuellement elle occupe un poste de Consultante SIRH Oracle Paris", img: "/images/ebs-tn/maroua-jeribi-1022x1024.jpeg", initials: "MJ" },
+  { name: "Hend Jaber", text: "a obtenu son diplôme de Master Ingénierie Financière promotion 2015/2016. Actuellement elle occupe un poste de Conceptualizer chez BOUMRANG Tunis", img: "/images/ebs-tn/hend-jaber.jpeg", initials: "HJ" },
+  { name: "Hend Nasri", text: "a obtenu son diplôme de Master en Marketing Digital promotion 2019/2020. Actuellement elle occupe un poste de Digital Marketing Manager chez Lezarts.Digital Tunis", img: "/images/ebs-tn/hend-nasri-1024x1024.jpeg", initials: "HN" },
+  { name: "Kais Layouni", text: "a obtenu son diplôme de Licence en Finance promotion 2017/2018. Actuellement il occupe un poste de Business Analyst chez MENINX Holding Tunis", img: "/images/ebs-tn/kais-layouni.jpeg", initials: "KL" },
+  { name: "Hend Bedoui", text: "a obtenu son diplôme de Master Ingénierie Financière promotion 2015/2016. Actuellement elle occupe un poste de Analyste Financier LEASE TUNIS", img: "/images/ebs-tn/hind-bedoui.jpeg", initials: "HB" },
+  { name: "Oussama Ayadi", text: "a obtenu son diplôme de Master en Marketing Bancaire promotion 2016/2017. Actuellement il occupe un poste de Expert Technique chez GIZ Tunisie Tunis", img: "/images/ebs-tn/oussama-ayadi-1024x1024.jpeg", initials: "OA" },
 ];
 
 const missions = [

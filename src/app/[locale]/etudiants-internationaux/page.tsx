@@ -25,41 +25,41 @@ const etapes = [
 const phases = [
   {
     id: "avant",
-    title: "Avant votre arrivée",
+    title: "Avant Votre Arrivée",
     icon: <Plane className="w-6 h-6" />,
     color: "#2B8FAB",
     intro: "Nous préparons votre venue : visa, logement, et toutes les démarches administratives.",
     items: [
-      { icon: <FileText className="w-4 h-4" />, title: "Assistance visa", desc: "Accompagnement dans l'obtention de votre visa étudiant" },
-      { icon: <Hotel className="w-4 h-4" />, title: "Recherche de logement", desc: "Aide à trouver un logement adapté près du campus" },
-      { icon: <Phone className="w-4 h-4" />, title: "Contact permanent", desc: "Une équipe dédiée répond à toutes vos questions avant le départ" },
+      { icon: <FileText className="w-4 h-4" />, title: "Assistance Visa", desc: "Accompagnement dans l'obtention de votre visa étudiant" },
+      { icon: <Hotel className="w-4 h-4" />, title: "Recherche de Logement", desc: "Aide à trouver un logement adapté près du campus" },
+      { icon: <Phone className="w-4 h-4" />, title: "Contact Permanent", desc: "Une équipe dédiée répond à toutes vos questions avant le départ" },
     ],
   },
   {
     id: "arrivee",
-    title: "Votre arrivée en Tunisie",
+    title: "Votre Arrivée en Tunisie",
     icon: <MapPin className="w-6 h-6" />,
     color: "#2196F3",
     intro: "Dès votre atterrissage, nous sommes là pour vous accueillir et vous installer.",
     items: [
-      { icon: <Plane className="w-4 h-4" />, title: "Accueil aéroportuaire", desc: "Prise en charge à l'aéroport et transfert vers votre résidence" },
-      { icon: <Phone className="w-4 h-4" />, title: "Carte SIM offerte", desc: "Une carte SIM tunisienne pour rester connecté dès votre arrivée" },
-      { icon: <Users className="w-4 h-4" />, title: "Session d'accueil", desc: "Réunion d'information et de sensibilisation sur la vie en Tunisie" },
+      { icon: <Plane className="w-4 h-4" />, title: "Accueil Aéroportuaire", desc: "Prise en charge à l'aéroport et transfert vers votre résidence" },
+      { icon: <Phone className="w-4 h-4" />, title: "Carte SIM Offerte", desc: "Une carte SIM tunisienne pour rester connecté dès votre arrivée" },
+      { icon: <Users className="w-4 h-4" />, title: "Session d'Accueil", desc: "Réunion d'information et de sensibilisation sur la vie en Tunisie" },
     ],
   },
   {
     id: "installation",
-    title: "Votre installation durable",
+    title: "Votre Installation Durable",
     icon: <Building className="w-6 h-6" />,
     color: "#00897B",
     intro: "Nous vous accompagnons jusqu'à votre installation complète et autonome.",
     items: [
-      { icon: <BadgeCheck className="w-4 h-4" />, title: "Carte de séjour", desc: "Assistance complète pour l'obtention de votre titre de séjour" },
-      { icon: <Banknote className="w-4 h-4" />, title: "Compte bancaire", desc: "Aide à l'ouverture d'un compte bancaire international" },
-      { icon: <BriefcaseMedical className="w-4 h-4" />, title: "Check-up médical", desc: "Bilan de santé et affiliation à l'assurance-maladie" },
+      { icon: <BadgeCheck className="w-4 h-4" />, title: "Carte de Séjour", desc: "Assistance complète pour l'obtention de votre titre de séjour" },
+      { icon: <Banknote className="w-4 h-4" />, title: "Compte Bancaire", desc: "Aide à l'ouverture d'un compte bancaire international" },
+      { icon: <BriefcaseMedical className="w-4 h-4" />, title: "Check-Up Médical", desc: "Bilan de santé et affiliation à l'assurance-maladie" },
       { icon: <Bus className="w-4 h-4" />, title: "Transports", desc: "Abonnement aux transports publics et orientation dans Tunis" },
-      { icon: <Receipt className="w-4 h-4" />, title: "Documents officiels", desc: "Attestations d'inscription et de paiement pour vos démarches" },
-      { icon: <Users className="w-4 h-4" />, title: "Vie étudiante", desc: "Intégration dans les clubs, activités et sorties organisées par EBS" },
+      { icon: <Receipt className="w-4 h-4" />, title: "Documents Officiels", desc: "Attestations d'inscription et de paiement pour vos démarches" },
+      { icon: <Users className="w-4 h-4" />, title: "Vie Étudiante", desc: "Intégration dans les clubs, activités et sorties organisées par EBS" },
     ],
   },
 ];
@@ -128,9 +128,9 @@ export default function EtudiantsInternationauxPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {[
-              { icon: <HeartHandshake className="w-6 h-6" />, title: "Accueil personnalisé", desc: "Prise en charge dès l&apos;aéroport par notre équipe dédiée, transfert vers votre logement, et accompagnement continu.", color: "#2B8FAB" },
-              { icon: <ShieldUser className="w-6 h-6" />, title: "Démarches simplifiées", desc: "Visa, carte de séjour, assurance, compte bancaire — nous vous guidons dans toutes les formalités administratives.", color: "#2196F3" },
-              { icon: <Users className="w-6 h-6" />, title: "Communauté internationale", desc: "Rejoignez des étudiants de multiples nationalités. Des activités et sorties organisées pour une intégration réussie.", color: "#E91E8C" },
+              { icon: <HeartHandshake className="w-6 h-6" />, title: "Accueil Personnalisé", desc: "Prise en charge dès l&apos;aéroport par notre équipe dédiée, transfert vers votre logement, et accompagnement continu.", color: "#2B8FAB" },
+              { icon: <ShieldUser className="w-6 h-6" />, title: "Démarches Simplifiées", desc: "Visa, carte de séjour, assurance, compte bancaire — nous vous guidons dans toutes les formalités administratives.", color: "#2196F3" },
+              { icon: <Users className="w-6 h-6" />, title: "Communauté Internationale", desc: "Rejoignez des étudiants de multiples nationalités. Des activités et sorties organisées pour une intégration réussie.", color: "#E91E8C" },
             ].map((card, i) => (
               <motion.div key={card.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group bg-white rounded-2xl border border-penn-border p-6 lg:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: `${card.color}12` }}>

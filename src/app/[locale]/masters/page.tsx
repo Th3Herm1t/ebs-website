@@ -105,7 +105,7 @@ export default async function MastersPage({
               <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
                 <Sparkles className="w-7 h-7 text-penn-green" />
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">IA générative & automatisation</h3>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">IA Générative & Automatisation</h3>
               <p className="text-[15px] text-penn-body leading-relaxed">
                 Maîtrisez les technologies qui transforment les entreprises : agents IA, automatisation no-code, CRM intelligent avec HubSpot, n8n et IBM Watsonx.
               </p>

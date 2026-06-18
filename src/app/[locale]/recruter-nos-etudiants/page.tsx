@@ -65,10 +65,10 @@ export default function RecruterNosEtudiantsPage() {
                 </h2>
                 <div className="space-y-4">
                   {[
-                    { icon: <GraduationCap className="w-5 h-5" />, title: "Formation d'excellence", desc: "Nos étudiants sont formés aux standards internationaux avec des certifications reconnues (Google, IBM, Bloomberg...)." },
-                    { icon: <Star className="w-5 h-5" />, title: "Compétences certifiées", desc: "150+ certifications incluses dans les cursus : IA, data, cybersécurité, finance, marketing digital." },
-                    { icon: <Search className="w-5 h-5" />, title: "Recrutement simplifié", desc: "Nous diffusons vos offres directement à nos étudiants et organisons des événements de recrutement." },
-                    { icon: <Users className="w-5 h-5" />, title: "Profil adapté", desc: "Licence, Master, spécialisation — nous vous aidons à trouver le profil qui correspond à vos besoins." },
+                    { icon: <GraduationCap className="w-5 h-5" />, title: "Formation d'Excellence", desc: "Nos étudiants sont formés aux standards internationaux avec des certifications reconnues (Google, IBM, Bloomberg...)." },
+                    { icon: <Star className="w-5 h-5" />, title: "Compétences Certifiées", desc: "150+ certifications incluses dans les cursus : IA, data, cybersécurité, finance, marketing digital." },
+                    { icon: <Search className="w-5 h-5" />, title: "Recrutement Simplifié", desc: "Nous diffusons vos offres directement à nos étudiants et organisons des événements de recrutement." },
+                    { icon: <Users className="w-5 h-5" />, title: "Profil Adapté", desc: "Licence, Master, spécialisation — nous vous aidons à trouver le profil qui correspond à vos besoins." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-penn-bg-light border border-penn-border/30 hover:border-[#2B8FAB]/20 transition-colors">
                       <div className="w-10 h-10 rounded-lg bg-[#2B8FAB]/10 flex items-center justify-center shrink-0">

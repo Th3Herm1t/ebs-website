@@ -45,7 +45,7 @@ const academicPartners = [
     pays: "France",
     code: "FR",
     slug: "em-normandie",
-    logo: "https://ebs.tn/wp-content/uploads/2022/08/EM_Normandie-Logo.png",
+    logo: "/images/ebs-tn/EM_Normandie-Logo.png",
     desc: "Triple accréditée EQUIS, AACSB, AMBA. 150 ans d'histoire. 5 800 apprenants sur 6 campus : Caen, Le Havre, Paris, Dubaï, Dublin et Oxford. Top 18 France (Le Figaro).",
   },
   {
@@ -157,32 +157,32 @@ const academicPartners = [
 const avantagesAcademiques = [
   {
     icon: <Users className="w-6 h-6" />,
-    title: "Vivier d'étudiants qualifiés",
+    title: "Vivier d'Étudiants Qualifiés",
     desc: "Nos étudiants sont certifiés, bilingues et préparés académiquement. Un flux régulier de talents pour vos programmes.",
     color: "#2B8FAB",
   },
   {
     icon: <BookOpen className="w-6 h-6" />,
-    title: "Programmes complémentaires",
+    title: "Programmes Complémentaires",
     desc: "Nos licences et masters s'articulent parfaitement avec vos cursus. Reconnaissance mutuelle des crédits facilitée.",
     color: "#2196F3",
   },
   {
     icon: <Globe className="w-6 h-6" />,
-    title: "Rayonnement international",
+    title: "Rayonnement International",
     desc: "Renforcez votre présence en Afrique du Nord et au Moyen-Orient via un partenaire tunisien reconnu par l'État.",
     color: "#9C27B0",
   },
   {
     icon: <Shield className="w-6 h-6" />,
-    title: "Cadre sécurisé",
+    title: "Cadre Sécurisé",
     desc: "Conventions inter-universitaires formelles. Processus d'admission transparent. Suivi académique conjoint.",
     color: "#FF9800",
   },
   {
     icon: <Award className="w-6 h-6" />,
-    title: "Excellence académique",
-    desc: "EBS est une université privée reconnue par le Ministère de l'Enseignement Supérieur tunisien, conforme au système LMD.",
+    title: "Excellence Académique",
+    desc: "EBS is une université privée reconnue par le Ministère de l'Enseignement Supérieur tunisien, conforme au système LMD.",
     color: "#E91E8C",
   },
 ];

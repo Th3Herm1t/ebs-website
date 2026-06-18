@@ -24,7 +24,7 @@ const teachers: Teacher[] = [
   {
     id: 1,
     name: "Dr. Sami BELHADJ",
-    title: "Maître de conférences",
+    title: "Maître de Conférences",
     domain: "Management",
     certifications: ["Google Project Management", "PMI PMP®", "Scrum Master"],
     bio: "15 ans d'expérience en direction de projets dans le secteur bancaire tunisien. Ancien Directeur de Programme chez Amen Bank.",
@@ -33,7 +33,7 @@ const teachers: Teacher[] = [
   {
     id: 2,
     name: "Dr. Leïla MANSOUR",
-    title: "Experte en marketing digital",
+    title: "Experte en Marketing Digital",
     domain: "Marketing",
     certifications: ["Google Digital Marketing", "HubSpot Inbound", "GA4 Certified"],
     bio: "Fondatrice d'une agence de marketing digital à Tunis. A piloté des campagnes pour des marques internationales en Afrique du Nord.",
@@ -42,7 +42,7 @@ const teachers: Teacher[] = [
   {
     id: 3,
     name: "Dr. Karim ZAGHOUANI",
-    title: "Professeur de finance",
+    title: "Professeur de Finance",
     domain: "Finance",
     certifications: ["Bloomberg BMC", "CFA Level III", "Financial Modeling"],
     bio: "Ancien trader chez Société Générale Paris. Spécialiste en marchés financiers et ingénierie des produits dérivés.",
@@ -60,7 +60,7 @@ const teachers: Teacher[] = [
   {
     id: 5,
     name: "Ing. Mohamed CHERIF",
-    title: "Expert en cybersécurité",
+    title: "Expert en Cybersécurité",
     domain: "Informatique",
     certifications: ["Cisco CyberOps", "Fortinet NSE 4", "CEH Certified"],
     bio: "Consultant en sécurité informatique pour des institutions gouvernementales. 12 ans d'expérience en sécurité offensive.",
@@ -69,7 +69,7 @@ const teachers: Teacher[] = [
   {
     id: 6,
     name: "Dr. Nadia BOUZID",
-    title: "Maître de conférences",
+    title: "Maître de Conférences",
     domain: "International",
     certifications: ["Cambridge CELTA", "TOEIC Trainer", "Cross-Cultural Management"],
     bio: "Spécialiste en commerce international et management interculturel. A enseigné en France, au Canada et en Tunisie.",
@@ -78,7 +78,7 @@ const teachers: Teacher[] = [
   {
     id: 7,
     name: "Dr. Hichem TRABELSI",
-    title: "Professeur de stratégie",
+    title: "Professeur de Stratégie",
     domain: "Management",
     certifications: ["BCG Strategy (Forage)", "McKinsey Forward", "Lean Six Sigma"],
     bio: "Consultant en stratégie auprès de PME tunisiennes. Doctorat en sciences de gestion de l'Université Paris-Dauphine.",
@@ -87,7 +87,7 @@ const teachers: Teacher[] = [
   {
     id: 8,
     name: "Mme. Salma DRIDI",
-    title: "Experte en marketing",
+    title: "Experte en Marketing",
     domain: "Marketing",
     certifications: ["SEMrush SEO", "LinkedIn Marketing", "Google Ads Certified"],
     bio: "Responsable marketing digital chez un groupe international à Tunis. Spécialiste SEO/SEA et growth hacking.",
@@ -96,7 +96,7 @@ const teachers: Teacher[] = [
   {
     id: 9,
     name: "Dr. Youssef MEKKI",
-    title: "Expert en finance quantitative",
+    title: "Expert en Finance Quantitative",
     domain: "Finance",
     certifications: ["Bloomberg ESG", "Python for Finance", "Risk Management"],
     bio: "Analyste quantitatif dans un fonds d'investissement. Doctorat en mathématiques appliquées à la finance.",

@@ -2,7 +2,7 @@
   "HomePage": {
     "header": {
       "nav": {
-        "universite": "L'université",
+        "universite": "L'Université",
         "licences": "Licences",
         "masters": "Masters",
         "international": "International",
@@ -101,11 +101,11 @@
     },
     "about": {
       "title": "EBS : l'Université Augmentée par l'IA",
-      "titleHighlight": "tournée vers le futur",
+      "titleHighlight": "Tournée vers le Futur",
       "desc": "Espima Business School évolue et fait évoluer ses programmes avec un objectif ultime : permettre à chaque étudiant de construire un profil plus compétitif, plus polyvalent et mieux préparé aux exigences du marché de l'emploi.",
-      "f1Title": "L'IA comme outil différenciateur",
+      "f1Title": "L'IA comme Outil Différenciateur",
       "f1Desc": "Chez EBS, chaque étudiant - quelle que soit sa filière - maîtrise les outils d'IA les plus demandés par les recruteurs. Des licences de management aux masters d'ingénierie financière. Ce n'est pas une option : c'est notre engagement pour votre employabilité.",
-      "f2Title": "Des compétences certifiées",
+      "f2Title": "Des Compétences Certifiées",
       "f2Desc": "En plus de votre diplôme reconnu par l'État tunisien, vous repartez avec des certifications délivrées par les organisations les plus reconnues au monde. Gratuites. Incluses dans votre formation. Valorisables partout dans le monde.",
       "btn": "Découvrir l'approche EBS"
     },
@@ -355,7 +355,7 @@
         "blog": "Blog",
         "contact": "Contactez-nous",
         "campus": "Campus",
-        "evenements": "évènements",
+        "evenements": "Évènements",
         "certifications": "Certifications",
         "ia": "IA & Certifications",
         "faq": "FAQ",
@@ -387,7 +387,7 @@
     "features": {
       "title": "EBS UNIVERSE",
       "subtitle": "Pourquoi Choisir",
-      "subtitleHighlight": "notre Université",
+      "subtitleHighlight": "Notre Université",
       "list": [
         {
           "title": "Certifications Internationales Intégrées",
