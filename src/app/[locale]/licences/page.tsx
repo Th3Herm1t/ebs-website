@@ -9,7 +9,7 @@ const allPrograms = [
   { ...licences.management, subtitle: "Formation au leadership et au pilotage d'organisations dans un monde digital." },
   { ...licences.marketing, subtitle: "La formation marketing digital la plus complète en Tunisie." },
   { ...licences.finance, subtitle: "Certifications Bloomberg pour une carrière en finance internationale." },
-  { ...licences["informatique-standard"], subtitle: "Bases solides en ingénierie logicielle et systèmes informatiques." },
+
   { ...licences["informatique-ia"], subtitle: "Machine learning, deep learning et NLP avec les certifications Harvard et DeepLearning.AI." },
   { ...licences.cybersecurite, subtitle: "Ethical hacking, forensics, SOC avec Cisco, Fortinet et Google." },
 ];

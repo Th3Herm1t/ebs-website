@@ -32,10 +32,10 @@ const allProgrammes = [
   { key: "management", name: "Licence Management", degree: "Licence", slug: "licences/management", color: "#2196F3", certs: 57, duration: "3 ans", level: "Bac", intl: "UQAT (CA) · EM Normandie (FR) · PSB (FR)", employment: "90%+", careers: "Chef de projet, Manager, Consultant", data: licences.management },
   { key: "marketing", name: "Licence Marketing", degree: "Licence", slug: "licences/marketing", color: "#E91E8C", certs: 81, duration: "3 ans", level: "Bac", intl: "EM Normandie (FR) · Sup'de Com (FR)", employment: "90%+", careers: "Digital Marketer, Social Media Mgr, SEO", data: licences.marketing },
   { key: "finance", name: "Licence Finance", degree: "Licence", slug: "licences/finance", color: "#00BCD4", certs: 64, duration: "3 ans", level: "Bac", intl: "IGEFI (FR) · PSB (FR) · EM Normandie (FR)", employment: "90%+", careers: "Analyste financier, Contrôleur, Auditeur", data: licences.finance },
-  { key: "info-std", name: "Info — Parcours Standard", degree: "Licence", slug: "licences/informatique-standard", color: "#FF5722", certs: 60, duration: "3 ans", level: "Bac", intl: "Epitech (FR) · EPSI (FR) · UQAT (CA)", employment: "90%+", careers: "Développeur, Admin réseaux, Chef de projet IT", data: licences["informatique-standard"] },
   { key: "info-ia", name: "Info — Intelligence Artificielle", degree: "Licence", slug: "licences/informatique-ia", color: "#9C27B0", certs: 87, duration: "3 ans", level: "Bac", intl: "Epitech (FR) · EPSI (FR) · GUtech (OM)", employment: "90%+", careers: "Data Scientist, ML Engineer, AI Dev", data: licences["informatique-ia"] },
   { key: "info-cyber", name: "Info — Cybersécurité", degree: "Licence", slug: "licences/cybersecurite", color: "#FF9800", certs: 63, duration: "3 ans", level: "Bac", intl: "Epitech (FR) · EPSI (FR) · GUtech (OM)", employment: "90%+", careers: "Pentester, SOC Analyst, RSSI", data: licences.cybersecurite },
   { key: "crm", name: "Master CRM & Digital", degree: "Master", slug: "masters/crm", color: "#E91E63", certs: 73, duration: "2 ans", level: "Bac+3", intl: "EM Normandie (FR) · UQAT (CA)", employment: "90%+", careers: "CRM Manager, Growth Hacker, CDO", data: masters.crm },
+  { key: "mkt-ia", name: "Master Marketing Digital & IA", degree: "Master", slug: "masters/marketing-digital-ia", color: "#E91E8C", certs: 81, duration: "2 ans", level: "Bac+3", intl: "EM Normandie (FR) · Sup'de Com (FR)", employment: "90%+", careers: "Directeur Marketing Digital, Growth Hacker", data: masters["marketing-digital-ia"] },
   { key: "startups", name: "Master Projets Innovants", degree: "Master", slug: "masters/startups", color: "#5E35B1", certs: 59, duration: "2 ans", level: "Bac+3", intl: "UQAT (CA) · EM Normandie (FR)", employment: "90%+", careers: "Chef de projet, Product Owner, Entrepreneur", data: masters.startups },
   { key: "ing-fin", name: "Master Ingénierie Financière", degree: "Master", slug: "masters/ingenierie-financiere", color: "#00897B", certs: 64, duration: "2 ans", level: "Bac+3", intl: "IGEFI (FR) · PSB (FR) · UQAT (CA)", employment: "90%+", careers: "Analyste M&A, Risk Manager, CFO", data: masters["ingenierie-financiere"] },
 ];
@@ -91,19 +91,21 @@ const questions = [
 
 function recommend(answers: string[]): (typeof allProgrammes)[number] {
   const [field, level, , work, goal] = answers;
+  const get = (k: string) => allProgrammes.find(p => p.key === k) || allProgrammes[0];
+  
   if (level === "bac3") {
-    if (field === "tech" || goal === "dev") return allProgrammes[7]; // Master Startups
-    if (field === "mkt" || goal === "marketer") return allProgrammes[6]; // Master CRM
-    if (field === "fin" || goal === "analyst") return allProgrammes[8]; // Master Ing Fin
-    return allProgrammes[7]; // Master Startups default
+    if (field === "tech" || goal === "dev") return get("startups");
+    if (field === "mkt" || goal === "marketer") return get("mkt-ia");
+    if (field === "fin" || goal === "analyst") return get("ing-fin");
+    return get("crm");
   }
   if (field === "tech" || work === "systems" || goal === "dev") {
-    if (goal === "dev") return allProgrammes[3]; // Info Standard
-    return allProgrammes[4]; // Info IA default for tech
+    if (goal === "dev") return get("info-ia");
+    return get("info-cyber");
   }
-  if (field === "mkt" || work === "creative" || goal === "marketer") return allProgrammes[1]; // Marketing
-  if (field === "fin" || work === "data" || goal === "analyst") return allProgrammes[2]; // Finance
-  return allProgrammes[0]; // Management default
+  if (field === "mkt" || work === "creative" || goal === "marketer") return get("marketing");
+  if (field === "fin" || work === "data" || goal === "analyst") return get("finance");
+  return get("management");
 }
 
 /* ── Compare rows ── */

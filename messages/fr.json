@@ -179,12 +179,7 @@
           "detail1": "6 Semestres - Présentiel",
           "detail2": "IA Intégrée - 19 Certifications"
         },
-        {
-          "cat": "Informatique",
-          "title": "Licence Nationale en Génie Logiciel - Parcours Standard",
-          "detail1": "6 Semestres - Présentiel",
-          "detail2": "IA Intégrée - 35 Certifications"
-        },
+
         {
           "cat": "Intelligence Artificielle",
           "title": "Licence Nationale en Génie Logiciel - Option IA",
@@ -216,6 +211,12 @@
           "title": "Master en Management des Projets Innovants & Startups",
           "detail1": "4 Semestres - Présentiel",
           "detail2": "IA Intégrée - 22 Certifications"
+        },
+        {
+          "cat": "Digital & Data",
+          "title": "Master Marketing Digital & IA",
+          "detail1": "4 Semestres - Présentiel",
+          "detail2": "IA Intégrée - 81 Certifications"
         }
       ]
     },

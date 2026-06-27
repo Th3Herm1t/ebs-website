@@ -113,11 +113,11 @@ const programmeBreakdown = [
     color: "#00BCD4",
   },
   {
-    programme: "Licence Info — Standard",
-    href: "/licences/informatique-standard",
-    total: "79+",
-    highlights: "Harvard CS50 · Google IT Automation · IBM DevOps",
-    color: "#FF5722",
+    programme: "Master Marketing & IA",
+    href: "/masters/marketing-digital-ia",
+    total: "81+",
+    highlights: "Google Advanced Data · HubSpot Marketing · Databricks",
+    color: "#E91E8C",
   },
   {
     programme: "Licence Info — IA",

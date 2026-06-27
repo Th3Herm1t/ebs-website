@@ -93,15 +93,15 @@ export default function CoursesSection() {
     { img: "/images/all-img/c1-stock.jpg", cat: t('licences.0.cat'), title: t('licences.0.title'), detail1: t('licences.0.detail1'), detail2: t('licences.0.detail2'), slug: "management", type: "licence" as const },
     { img: "/images/all-img/c2-stock.jpg", cat: t('licences.1.cat'), title: t('licences.1.title'), detail1: t('licences.1.detail1'), detail2: t('licences.1.detail2'), slug: "marketing", type: "licence" as const },
     { img: "/images/all-img/c3-stock.jpg", cat: t('licences.2.cat'), title: t('licences.2.title'), detail1: t('licences.2.detail1'), detail2: t('licences.2.detail2'), slug: "finance", type: "licence" as const },
-    { img: "/images/all-img/c4-stock.jpg", cat: t('licences.3.cat'), title: t('licences.3.title'), detail1: t('licences.3.detail1'), detail2: t('licences.3.detail2'), slug: "informatique-standard", type: "licence" as const },
-    { img: "/images/all-img/c5-stock.jpg", cat: t('licences.4.cat'), title: t('licences.4.title'), detail1: t('licences.4.detail1'), detail2: t('licences.4.detail2'), slug: "informatique-ia", type: "licence" as const },
-    { img: "/images/all-img/c6-stock.jpg", cat: t('licences.5.cat'), title: t('licences.5.title'), detail1: t('licences.5.detail1'), detail2: t('licences.5.detail2'), slug: "cybersecurite", type: "licence" as const },
+    { img: "/images/all-img/c5-stock.jpg", cat: t('licences.3.cat'), title: t('licences.3.title'), detail1: t('licences.3.detail1'), detail2: t('licences.3.detail2'), slug: "informatique-ia", type: "licence" as const },
+    { img: "/images/all-img/c6-stock.jpg", cat: t('licences.4.cat'), title: t('licences.4.title'), detail1: t('licences.4.detail1'), detail2: t('licences.4.detail2'), slug: "cybersecurite", type: "licence" as const },
   ];
 
   const masters = [
     { img: "/images/all-img/c1-stock.jpg", cat: t('masters.0.cat'), title: t('masters.0.title'), detail1: t('masters.0.detail1'), detail2: t('masters.0.detail2'), slug: "ingenierie-financiere", type: "master" as const },
     { img: "/images/all-img/c2-stock.jpg", cat: t('masters.1.cat'), title: t('masters.1.title'), detail1: t('masters.1.detail1'), detail2: t('masters.1.detail2'), slug: "crm", type: "master" as const },
     { img: "/images/all-img/c3-stock.jpg", cat: t('masters.2.cat'), title: t('masters.2.title'), detail1: t('masters.2.detail1'), detail2: t('masters.2.detail2'), slug: "startups", type: "master" as const },
+    { img: "/images/all-img/c4-stock.jpg", cat: t('masters.3.cat'), title: t('masters.3.title'), detail1: t('masters.3.detail1'), detail2: t('masters.3.detail2'), slug: "marketing-digital-ia", type: "master" as const },
   ];
 
   return (

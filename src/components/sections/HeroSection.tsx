@@ -25,7 +25,7 @@ export default function HeroSection() {
     { title: t('categories.Management'), count: 2, icon: Briefcase, badgeColor: "bg-[#3b82f6]", href: "/licences?program=management" },
     { title: t('categories.Marketing'), count: 2, icon: TrendingUp, badgeColor: "bg-[#ec4899]", href: "/licences?program=marketing" },
     { title: t('categories.Finance'), count: 2, icon: LineChart, badgeColor: "bg-[#14b8a6]", href: "/licences?program=finance" },
-    { title: t('categories.Informatique'), count: 3, icon: Monitor, badgeColor: "bg-[#f43f5e]", href: "/licences?program=informatique-standard" },
+    { title: t('categories.Informatique'), count: 2, icon: Monitor, badgeColor: "bg-[#f43f5e]", href: "/licences?program=informatique-ia" },
     { title: t('categories.Intelligence Artificielle'), count: 1, icon: Brain, badgeColor: "bg-[#a855f7]", href: "/licences?program=informatique-ia" },
     { title: t('categories.Cybersécurité'), count: 1, icon: Shield, badgeColor: "bg-[#eab308]", href: "/licences?program=cybersecurite" },
   ];

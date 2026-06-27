@@ -43,7 +43,7 @@ const navItems: NavItem[] = [
       { label: "Licence en Management", href: "/licences/management" },
       { label: "Licence en Marketing", href: "/licences/marketing" },
       { label: "Licence en Finance", href: "/licences/finance" },
-      { label: "Informatique — Standard", href: "/licences/informatique-standard" },
+
       { label: "Informatique — IA", href: "/licences/informatique-ia" },
       { label: "Informatique — Cybersécurité", href: "/licences/cybersecurite" },
     ],
@@ -54,6 +54,7 @@ const navItems: NavItem[] = [
     children: [
       { label: "Vue d'ensemble", href: "/masters" },
       { label: "CRM & Transformation Digitale", href: "/masters/crm" },
+      { label: "Marketing Digital & IA", href: "/masters/marketing-digital-ia" },
       { label: "Projets Innovants & Startups", href: "/masters/startups" },
       { label: "Ingénierie Financière", href: "/masters/ingenierie-financiere" },
     ],

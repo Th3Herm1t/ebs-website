@@ -7,6 +7,7 @@ import { masters } from "@/lib/programmes/masters";
 
 const overview = [
   { ...masters.crm, subtitle: "CRM, marketing automation et transformation digitale avec HubSpot et n8n.", featured: true },
+  { ...masters["marketing-digital-ia"], subtitle: "Marketing digital, data marketing et automatisation par l'IA.", featured: true },
   { ...masters.startups, subtitle: "Entrepreneuriat, innovation et gestion de projets avec PMI et Scrum.", featured: false },
   { ...masters["ingenierie-financiere"], subtitle: "M&A, finance quantitative et marchés financiers avec Bloomberg.", featured: false },
 ];
