@@ -41,7 +41,7 @@ export default function CoursePromoSection() {
                   src="/images/all-img/promo-parcours-international.png"
                   alt="EBS Students"
                   fill
-                  className="object-cover"
+                  className="object-cover object-[center_25%]"
                 />
               </div>
             </ScrollReveal>
