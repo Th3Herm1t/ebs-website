@@ -7,6 +7,7 @@ import { Award, Briefcase, Globe, GraduationCap, HeartHandshake, Mail, Phone, Se
 import { CtaSection } from "@/components/shared";
 import { Badge } from "@/components/shared";
 import AlumniWorldMap from "@/components/alumni/AlumniWorldMap";
+import { siteConfig } from "@/lib/config";
 
 const alumniProfiles = [
   { name: "Mohamed Amine Hamdi", text: "a obtenu son diplôme de Master en Marketing Digital promotion 2019/2020. Actuellement il occupe un poste de Community Manager chez Tinith services Tunis", img: "/images/ebs-tn/amin-hamdi.jpeg", initials: "MH" },
@@ -45,9 +46,9 @@ export default function AlumniPage() {
     e.preventDefault();
     setFormState("sending");
     try {
-      await fetch("https://formspree.io/f/xeojaqdr", {
+      await fetch(siteConfig.webhookUrl, {
         method: "POST",
-        body: new FormData(e.currentTarget),
+        body: (() => { const fd = new FormData(e.currentTarget); fd.append('formId', 'alumni'); return fd; })(),
         headers: { Accept: "application/json" },
       });
       setFormState("sent");

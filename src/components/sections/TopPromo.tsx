@@ -3,9 +3,10 @@
 import { motion, useInView, AnimatePresence } from "motion/react";
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { ArrowRight, Clock, Phone, Send, X, Check } from "lucide-react";
+import { Check, ArrowRight, Clock, Phone, Send, X } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/config";
 
 const timeSlots = [
   { label: "Ce matin", sub: "9h – 12h", value: "morning" },
@@ -37,9 +38,10 @@ export default function TopPromo() {
     setError("");
     setFormState("sending");
     try {
-      await fetch("https://formspree.io/f/xeojaqdr", {
+      await fetch(siteConfig.webhookUrl, {
         method: "POST",
         body: JSON.stringify({
+          formId: "toppromo_callback",
           phone,
           slot: urgent ? "immediate" : selectedSlot,
           urgent,

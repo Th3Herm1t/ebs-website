@@ -429,11 +429,11 @@ export default function InternationalPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="tel:+21653355196"
+                href="tel:+216 55 582 843"
                 className="inline-flex items-center gap-2.5 bg-white text-penn-navy font-bold text-[15px] py-3.5 px-7 rounded-full hover:bg-white/90 transition-all shadow-lg"
               >
                 <Phone className="w-4 h-4" />
-                +216 53 355 196
+                +216 55 582 843
               </a>
               <a
                 href="mailto:info@ebs.tn"

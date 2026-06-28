@@ -3,6 +3,7 @@ import { ArrowLeft, Award, BookOpen, Globe, ShieldCheck, Sparkles } from "lucide
 import { Badge, CtaSection, InfiniteLogoMarquee } from "@/components/shared";
 import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
+import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { licences } from "@/lib/programmes/licences";
 
 const allPrograms = [
@@ -62,33 +63,51 @@ export default async function LicencesPage({
 
       <InfiniteLogoMarquee />
 
-      <section className="section-padding bg-[#FAFAFA]">
-        <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
-          {isFiltered && (
-            <Link href="/licences" className="inline-flex items-center gap-2 text-penn-green hover:underline mb-8 text-[15px] font-medium transition-colors">
-              <ArrowLeft className="w-4 h-4" />
-              Voir toutes les licences
-            </Link>
-          )}
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
-            {(filteredPrograms.length > 0 ? filteredPrograms : allPrograms).map((prog) => (
-              <div key={prog.slug} className="w-full md:w-[calc(50%-12px)] lg:w-[calc((100%-64px)/3)] flex flex-col">
-                <MagneticProgramCard
-                  title={prog.title}
-                  subtitle={prog.subtitle}
-                  certifications={prog.totalCerts}
-                  color={prog.color}
-                  href={`/licences/${prog.slug}`}
-                  isFeatured={false}
-                />
+      <div className="relative">
+        {/* Floating Right Sidebar for Desktop */}
+        <div className="hidden lg:block absolute inset-y-0 right-0 w-full pointer-events-none z-40">
+          <div className="max-w-[1280px] mx-auto px-5 lg:px-12 h-full relative">
+            <div className="absolute right-5 lg:right-12 top-0 w-[380px] h-full pt-16">
+              <div className="sticky top-[120px] pointer-events-auto">
+                <AdmissionForm type="licence" programsList={allPrograms} />
               </div>
-            ))}
+            </div>
           </div>
         </div>
-      </section>
+
+        <section className="section-padding bg-[#FAFAFA] relative z-10">
+          <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8 lg:gap-16">
+              <div className="flex flex-col">
+                {isFiltered && (
+                  <Link href="/licences" className="inline-flex items-center gap-2 text-penn-green hover:underline mb-8 text-[15px] font-medium transition-colors">
+                    <ArrowLeft className="w-4 h-4" />
+                    Voir toutes les licences
+                  </Link>
+                )}
+                <div className="flex flex-wrap justify-center gap-6">
+                  {(filteredPrograms.length > 0 ? filteredPrograms : allPrograms).map((prog) => (
+                    <div key={prog.slug} className="w-full sm:w-[calc(50%-12px)] flex flex-col">
+                      <MagneticProgramCard
+                        title={prog.title}
+                        subtitle={prog.subtitle}
+                        certifications={prog.totalCerts}
+                        color={prog.color}
+                        href={`/licences/${prog.slug}`}
+                        isFeatured={false}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="hidden lg:block">{/* spacer */}</div>
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* Pourquoi choisir une Licence à EBS ? */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white relative z-10">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <h2 className="text-[28px] md:text-[36px] font-extrabold text-penn-navy text-center mb-12">
             Pourquoi choisir une Licence à EBS ?
@@ -98,18 +117,18 @@ export default async function LicencesPage({
               <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
                 <Sparkles className="w-7 h-7 text-penn-green" />
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">IA Intégrée dans Chaque Filière</h3>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">IA Intégrée</h3>
               <p className="text-[15px] text-penn-body leading-relaxed">
-                L&apos;Intelligence Artificielle est une compétence transversale obligatoire dans tous nos programmes. Chaque étudiant repart avec 26 certifications IA reconnues mondialement.
+                L&apos;Intelligence Artificielle est une compétence transversale obligatoire. Chaque étudiant repart avec 26 certifications IA.
               </p>
             </div>
             <div className="text-center">
               <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
                 <Award className="w-7 h-7 text-penn-green" />
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">150+ Certifications Gratuites</h3>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">150+ Certifications</h3>
               <p className="text-[15px] text-penn-body leading-relaxed">
-                Des certifications délivrées par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot et bien d&apos;autres — intégralement incluses dans votre formation, sans frais supplémentaires.
+                Des certifications par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot — incluses sans frais.
               </p>
             </div>
             <div className="text-center">
@@ -118,7 +137,7 @@ export default async function LicencesPage({
               </div>
               <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">Partenariats Internationaux</h3>
               <p className="text-[15px] text-penn-body leading-relaxed">
-                Poursuivez vos études en France, au Canada, en Italie ou à Oman grâce à nos 16 partenaires universitaires. Mobilité facilitée et doubles diplômes possibles.
+                Poursuivez vos études en France, au Canada, en Italie ou à Oman grâce à nos 16 partenaires universitaires. Mobilité facilitée.
               </p>
             </div>
           </div>
@@ -126,7 +145,7 @@ export default async function LicencesPage({
       </section>
 
       {/* Argument clé + Certifications logos */}
-      <section className="section-padding bg-penn-bg-light">
+      <section className="section-padding bg-penn-bg-light relative z-10">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12 text-center">
           <Badge variant="default" size="lg" className="mb-6">
             <ShieldCheck className="w-4 h-4" />

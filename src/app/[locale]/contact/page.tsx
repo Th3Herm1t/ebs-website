@@ -30,7 +30,7 @@ const contactCards = [
   {
     icon: <Smartphone className="w-7 h-7" />,
     title: "Téléphone",
-    lines: ["+216 53 355 196"],
+    lines: ["+216 55 582 843"],
     action: { label: "Appeler", href: "tel:+21629582835" },
     color: "#2196F3",
   },

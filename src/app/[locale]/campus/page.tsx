@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { ArrowDown, Bus, Building, CalendarDays, Clock, Coffee, Hotel, MapPin, Monitor, ParkingCircle, Wifi, Camera, Gamepad2, Utensils, BookOpen, Mail, Phone, Send, X, User } from "lucide-react";
 import { Badge } from "@/components/shared";
+import { siteConfig } from "@/lib/config";
 
 const campusSpaces = [
   { title: "Salle Polyvalente", icon: <Building className="w-8 h-8" />, color: "#2B8FAB" },
@@ -33,9 +34,9 @@ export default function CampusPage() {
     e.preventDefault();
     setFormState("sending");
     try {
-      await fetch("https://formspree.io/f/xeojaqdr", {
+      await fetch(siteConfig.webhookUrl, {
         method: "POST",
-        body: new FormData(e.currentTarget),
+        body: (() => { const fd = new FormData(e.currentTarget); fd.append('formId', 'campus'); return fd; })(),
         headers: { Accept: "application/json" },
       });
       setFormState("sent");

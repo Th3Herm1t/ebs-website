@@ -116,7 +116,7 @@ export function PartnerPageContent({ data }: { data: PartnerData }) {
         title="Intéressé(e) par ce partenaire ?"
         subtitle="Contactez-nous pour en savoir plus sur les modalités d'admission et les conditions d'éligibilité."
         primaryCta={{ label: "Nous contacter", href: "/contact" }}
-        whatsapp="+216 53 355 196"
+        whatsapp="+216 55 582 843"
         background="penn-green"
       />
     </>

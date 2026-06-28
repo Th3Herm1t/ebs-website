@@ -142,10 +142,10 @@ export default function Header() {
         <div className="flex items-center justify-end shrink-0">
           <div className="hidden md:flex items-center gap-4 xl:gap-6">
             <a 
-              href="tel:+21653355196" 
+              href="tel:+216 55 582 843" 
               className="text-[#2B8FAB] hover:text-[#2B8FAB]/80 transition-colors font-bold text-[14px] xl:text-[16px] whitespace-nowrap"
             >
-              <span className="font-light mr-1.5">{t('call')}</span> +216 53 355 196
+              <span className="font-light mr-1.5">{t('call')}</span> +216 55 582 843
             </a>
             {!isProgramPage && (
               <Link

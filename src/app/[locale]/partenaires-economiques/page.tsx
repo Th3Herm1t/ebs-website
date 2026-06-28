@@ -30,6 +30,7 @@ import {
   Users,
 } from "lucide-react";
 import { Badge, CtaSection } from "@/components/shared";
+import { siteConfig } from "@/lib/config";
 
 // ── Data ──────────────────────────────────────────
 
@@ -234,9 +235,9 @@ export default function PartenairesEconomiquesPage() {
     e.preventDefault();
     setFormState("sending");
     try {
-      await fetch("https://formspree.io/f/xeojaqdr", {
+      await fetch(siteConfig.webhookUrl, {
         method: "POST",
-        body: new FormData(e.currentTarget),
+        body: (() => { const fd = new FormData(e.currentTarget); fd.append('formId', 'partenaires_economiques'); return fd; })(),
         headers: { Accept: "application/json" },
       });
       setFormState("sent");
@@ -794,11 +795,11 @@ export default function PartenairesEconomiquesPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
               <a
-                href="tel:+21653355196"
+                href="tel:+216 55 582 843"
                 className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
               >
                 <Phone className="w-5 h-5 text-[#2B8FAB]" />
-                <span className="text-[15px] font-bold text-penn-navy">+216 53 355 196</span>
+                <span className="text-[15px] font-bold text-penn-navy">+216 55 582 843</span>
               </a>
               <a
                 href="mailto:info@ebs.tn"

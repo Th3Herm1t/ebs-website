@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge, CtaSection } from "@/components/shared";
 import { Briefcase, Check, GraduationCap, Mail, Phone, Search, Send, Sparkles, Star, Users } from "lucide-react";
+import { siteConfig } from "@/lib/config";
 
 export default function RecruterNosEtudiantsPage() {
   const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -14,9 +15,9 @@ export default function RecruterNosEtudiantsPage() {
     e.preventDefault();
     setFormState("sending");
     try {
-      await fetch("https://formspree.io/f/xeojaqdr", {
+      await fetch(siteConfig.webhookUrl, {
         method: "POST",
-        body: new FormData(e.currentTarget),
+        body: (() => { const fd = new FormData(e.currentTarget); fd.append('formId', 'recruter_nos_etudiants'); return fd; })(),
         headers: { Accept: "application/json" },
       });
       setFormState("sent");

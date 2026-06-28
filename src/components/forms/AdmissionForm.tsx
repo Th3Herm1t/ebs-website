@@ -3,12 +3,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Check, ChevronLeft, ChevronRight, GraduationCap, Send, X } from "lucide-react";
+import { siteConfig } from "@/lib/config";
 
 type FormType = "licence" | "master" | "parcours";
 
 interface AdmissionFormProps {
   type: FormType;
   programmeName?: string;
+  programsList?: { slug: string; title: string }[];
 }
 
 const bacSections = [
@@ -31,7 +33,7 @@ const countries = [
   "Je ne sais pas encore",
 ];
 
-export function AdmissionForm({ type, programmeName }: AdmissionFormProps) {
+export function AdmissionForm({ type, programmeName, programsList }: AdmissionFormProps) {
   const [step, setStep] = useState(0);
   const [blocked, setBlocked] = useState(false);
   const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -48,6 +50,7 @@ export function AdmissionForm({ type, programmeName }: AdmissionFormProps) {
     nom: "",
     email: "",
     phone: "",
+    programme: "",
   });
 
   const isLicence = type === "licence";
@@ -59,7 +62,7 @@ export function AdmissionForm({ type, programmeName }: AdmissionFormProps) {
   const totalSteps = isMaster ? 3 : 3;
 
   const canProceed = () => {
-    if (step === 0) return data.prenom !== "" && data.nom !== "" && data.email !== "" && data.phone !== "";
+    if (step === 0) return data.prenom !== "" && data.nom !== "" && data.email !== "" && data.phone !== "" && (!programsList || data.programme !== "");
     if (step === 1) return data.profil !== "";
     if (step === 2) {
       if (isMaster) return data.masterYear !== "" && data.masterSpecialite !== "" && data.masterEtablissement !== "";
@@ -82,10 +85,16 @@ export function AdmissionForm({ type, programmeName }: AdmissionFormProps) {
     e.preventDefault();
     setFormState("sending");
     try {
-      await fetch("https://formspree.io/f/xeojaqdr", {
+      const formId = `admission_${type}`;
+      await fetch(siteConfig.webhookUrl, {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: JSON.stringify({ ...data, _subject: `Admission ${type === "licence" ? "Licence" : type === "master" ? "Master" : "Parcours International"} — EBS`, programme: programmeName }),
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+          ...data, 
+          formId,
+          _subject: `Admission ${type === "licence" ? "Licence" : type === "master" ? "Master" : "Parcours International"} — EBS`, 
+          programme: programmeName || data.programme 
+        }),
       });
       setFormState("sent");
     } catch {
@@ -160,8 +169,8 @@ export function AdmissionForm({ type, programmeName }: AdmissionFormProps) {
               <p className="text-[13px] text-penn-body/60 leading-relaxed max-w-[300px] mx-auto">
                 Ce programme requiert un baccalauréat ou équivalent. Contactez-nous pour étudier les alternatives.
               </p>
-              <a href="tel:+21653355196" className="inline-block mt-4 text-[13px] font-bold text-penn-green hover:underline">
-                +216 53 355 196
+              <a href="tel:+216 55 582 843" className="inline-block mt-4 text-[13px] font-bold text-penn-green hover:underline">
+                +216 55 582 843
               </a>
             </motion.div>
           ) : (
@@ -175,6 +184,14 @@ export function AdmissionForm({ type, programmeName }: AdmissionFormProps) {
                   </div>
                   <input value={data.email} onChange={(e) => update("email", e.target.value)} type="email" required placeholder="Email *" className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all" />
                   <input value={data.phone} onChange={(e) => update("phone", e.target.value)} type="tel" required placeholder="Téléphone / WhatsApp *" className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all" />
+                  {programsList && (
+                    <select value={data.programme} onChange={(e) => update("programme", e.target.value)} required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy bg-white focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all appearance-none">
+                      <option value="" disabled>Sélectionnez un programme</option>
+                      {programsList.map((p) => (
+                        <option key={p.slug} value={p.title}>{p.title}</option>
+                      ))}
+                    </select>
+                  )}
                 </div>
               )}
 

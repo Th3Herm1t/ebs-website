@@ -282,7 +282,7 @@ export default function FaqPage() {
               >
                 <Phone className="w-5 h-5 text-[#2B8FAB]" />
                 <span className="text-[14px] font-bold text-penn-navy">
-                  +216 53 355 196
+                  +216 55 582 843
                 </span>
               </a>
               <a

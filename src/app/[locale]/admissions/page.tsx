@@ -578,8 +578,8 @@ export default function AdmissionsPage() {
               <Link href="/contact" className="inline-flex items-center gap-2 bg-[#2B8FAB] text-white font-bold text-[15px] py-3.5 px-8 rounded-full hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20">
                 Nous contacter <MessageSquare className="w-4 h-4" />
               </Link>
-              <a href="tel:+21653355196" className="inline-flex items-center gap-2 font-bold text-[15px] text-penn-navy hover:text-[#2B8FAB] transition-colors">
-                <Phone className="w-4 h-4" /> +216 53 355 196
+              <a href="tel:+216 55 582 843" className="inline-flex items-center gap-2 font-bold text-[15px] text-penn-navy hover:text-[#2B8FAB] transition-colors">
+                <Phone className="w-4 h-4" /> +216 55 582 843
               </a>
             </div>
           </motion.div>

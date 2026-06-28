@@ -16,6 +16,7 @@ import {
 import { Badge } from "@/components/shared";
 import { licences } from "@/lib/programmes/licences";
 import { masters } from "@/lib/programmes/masters";
+import { siteConfig } from "@/lib/config";
 
 const allProgrammes = Object.values(licences)
   .concat(Object.values(masters))
@@ -133,13 +134,13 @@ export default function PreinscriptionPage() {
     setSubmitting(true);
 
     try {
-      await fetch("https://formspree.io/f/xeojaqdr", {
+      await fetch(siteConfig.webhookUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, formId: "preinscription" }),
       });
     } catch {
       /* offline-safe */

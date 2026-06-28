@@ -22,6 +22,7 @@ import {
 import { Badge, CtaSection } from "@/components/shared";
 import { CountryFlag } from "@/components/shared/CountryFlag";
 import { partenaires, type PartnerData } from "@/lib/partenaires/partenaires";
+import { siteConfig } from "@/lib/config";
 
 const fallbackHero = "/images/heroes/hero-alumni.jpg";
 const accentMap: Record<string, string> = { CA: "#E53935", FR: "#1E88E5", IT: "#43A047", OM: "#FB8C00" };
@@ -50,7 +51,7 @@ export default function PartenaireDetailPage() {
     e.preventDefault();
     setFormState("sending");
     try {
-      await fetch("https://formspree.io/f/xeojaqdr", { method: "POST", body: new FormData(e.currentTarget), headers: { Accept: "application/json" } });
+      await fetch(siteConfig.webhookUrl, { method: "POST", body: (() => { const fd = new FormData(e.currentTarget); fd.append('formId', 'partenaires__slug_'); return fd; })(), headers: { Accept: "application/json" } });
       setFormState("sent");
     } catch {
       setFormState("error");
