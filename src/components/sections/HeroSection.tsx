@@ -132,7 +132,7 @@ export default function HeroSection() {
               className="relative inline-block w-full max-w-[500px] lg:max-w-[700px]"
             >
               <Image
-                src="/images/all-img/hero-girl-new-copy.png"
+                src="/images/all-img/hero-batch7.png"
                 alt="EBS Student"
                 width={800}
                 height={900}
