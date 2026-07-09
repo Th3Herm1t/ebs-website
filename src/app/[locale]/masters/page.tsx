@@ -5,6 +5,16 @@ import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { masters } from "@/lib/programmes/masters";
+import { pageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return pageMetadata({
+    title: "Masters professionnels en Tunisie avec IA et certifications",
+    description: "Explorez les Masters EBS en CRM, marketing digital IA, startups et ingénierie financière avec certifications internationales incluses.",
+    path: `/${locale}/masters`,
+  });
+}
 
 const overview = [
   { ...masters.crm, subtitle: "CRM, marketing automation et transformation digitale avec HubSpot et n8n.", featured: true },
@@ -50,8 +60,21 @@ export default async function MastersPage({
     ? overview.filter(p => p.slug === program)
     : overview;
   const isFiltered = filteredOverview.length < overview.length && filteredOverview.length > 0;
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Masters EBS",
+    itemListElement: overview.map((program, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `https://ebs.tn/fr/masters/${program.slug}`,
+      name: program.title,
+    })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <ShowcaseHero
         title="Nos Masters : 2 ans pour atteindre l'excellence."
         subtitle="3 Masters professionnels · IA intégrée dans chaque parcours · 59 à 73 certifications internationales incluses · Accrédité État tunisien."

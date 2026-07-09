@@ -29,7 +29,7 @@ export const partenaires: Record<string, PartnerData> = {
     country: "🇫🇷 France",
     countryCode: "FR",
     logo: "/images/partenaires-academiques/logo-audencia.png",
-    heroImage: "/images/heroes/hero-alumni.jpg",
+    heroImage: "/images/heroes/hero-alumni.webp",
     type: "Grande École de Commerce — Triple accréditée EQUIS · AACSB · AMBA",
     presentation: "Triplement accréditée (EQUIS, AACSB et AMBA), Audencia Business School est membre de la Conférence des Grandes Écoles. Classée 11ème meilleure école de commerce en France (Le Figaro Étudiant) et 6ème par l'Express-NextEdu, Audencia compte 11 campus dans le monde, 180 professeurs permanents et +900 entreprises partenaires. Fondée à Nantes, elle forme depuis plus d'un siècle des leaders responsables et audacieux.",
     programmes: [
@@ -74,7 +74,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "UQAT",
     country: "🇨🇦 Canada",
     countryCode: "CA",
-    logo: "/images/partenaires-academiques/uqat.png",
+    logo: "/images/partenaires-academiques/uqat.webp",
     heroImage: "https://www.uqat.ca/resources/medias/covers/mait-en-gestion-de-projet-profil-professionnel.jpg",
     type: "Université publique québécoise — Membre du réseau Université du Québec",
     presentation: "L'Université du Québec en Abitibi-Témiscamingue (UQAT) est une université publique canadienne affiliée au réseau de l'Université du Québec qui compte dix établissements. Elle offre plus de 100 programmes d'études couvrant les trois cycles d'études (Bachelor, Maîtrise et Doctorat) dans des domaines variés. Avec ses 14 chaires de recherche et ses 11 unités de recherche, l'UQAT est première au Canada pour le volume de recherche par étudiant de cycles supérieurs.",
@@ -211,7 +211,7 @@ export const partenaires: Record<string, PartnerData> = {
       { label: "MSc — Master of Science", amount: "~13 000", period: "€/an", note: "10 spécialisations disponibles" },
       { label: "MS — Mastère Spécialisé", amount: "~9 500", period: "€/an", note: "Bac+6, label CGE" },
     ],
-    imageSection: { src: "/images/ebs-tn/img-page-em-presentiel.png" },
+    imageSection: { src: "/images/ebs-tn/img-page-em-presentiel.webp" },
     accreditations: [
       { label: "AACSB", description: "La plus prestigieuse accréditation mondiale en management — seules 5% des écoles de commerce la détiennent" },
       { label: "EQUIS", description: "Label d'excellence académique et internationale décerné par l'EFMD" },
@@ -235,7 +235,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "PSB Paris School of Business",
     country: "🇫🇷 France",
     countryCode: "FR",
-    logo: "/images/partenaires-academiques/psb.png",
+    logo: "/images/partenaires-academiques/psb.webp",
     type: "Grande École de Commerce — Triple accréditée AACSB · EQUIS · AMBA",
     presentation: "Paris School of Business est une Grande École de commerce triplement accréditée EQUIS, AACSB et AMBA. Membre de la Conférence des Grandes Écoles, elle est classée dans le top 3 des écoles de commerce post-bac à Paris et dans le top 20 en France (Le Figaro Étudiant). Fondée en 2015, elle compte 4 000+ étudiants, 20 000+ alumni et un campus moderne au cœur du 5ème arrondissement de Paris.",
     programmes: [
@@ -281,7 +281,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "IDRAC Business School",
     country: "🇫🇷 France",
     countryCode: "FR",
-    logo: "/images/partenaires-academiques/idrac.png",
+    logo: "/images/partenaires-academiques/idrac.webp",
     type: "École supérieure de commerce et de management — 6 campus en France",
     presentation: "IDRAC Business School est une école de management présente sur 6 campus en France (Lyon, Bordeaux, Toulouse, Montpellier, Nantes, Paris). Elle propose des formations Bachelor et Master en management, marketing et commerce international, avec une forte orientation professionnalisante.",
     programmes: [
@@ -310,7 +310,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "IFAG École de Management",
     country: "🇫🇷 France",
     countryCode: "FR",
-    logo: "/images/partenaires-academiques/ifag.png",
+    logo: "/images/partenaires-academiques/ifag.webp",
     type: "École de management — Depuis 1968 — Groupe FIGS Education",
     presentation: "L'IFAG (Institut de Formation aux Affaires et à la Gestion) est une école de management fondée en 1968. Membre du Groupe FIGS Education, elle forme des managers opérationnels capables d'évoluer rapidement dans des fonctions de direction.",
     programmes: [
@@ -338,7 +338,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "IGEFI",
     country: "🇫🇷 France",
     countryCode: "FR",
-    logo: "/images/partenaires-academiques/igefi.png",
+    logo: "/images/partenaires-academiques/igefi.webp",
     type: "École des métiers de la finance d'entreprise et de l'expertise comptable",
     presentation: "IGEFI est l'École des métiers de la finance d'entreprise et de l'expertise comptable. Spécialisée dans les filières finance, comptabilité et contrôle de gestion, elle forme des experts financiers directement opérationnels.",
     programmes: [
@@ -367,7 +367,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "Éklore-ed",
     country: "🇫🇷 France",
     countryCode: "FR",
-    logo: "/images/partenaires-academiques/eklore.png",
+    logo: "/images/partenaires-academiques/eklore.webp",
     type: "Grande École de Commerce — Accréditée EFMD · Membre CGE",
     presentation: "Éklore-ed, anciennement ESC Pau BS, est une Grande École de commerce accréditée EFMD et membre de la Conférence des Grandes Écoles. Elle propose des diplômes allant du Bac au Bac+5, en formation initiale et en alternance, tous reconnus par l'État, dans les domaines du management, de la gestion d'entreprises, du commerce et du marketing sportif. Avec ses 3 campus (Pau, Grenoble, Saint-Denis), 2 600+ étudiants et 21 000+ diplômés, éklore-ed allie excellence académique et bien-être étudiant.",
     programmes: [
@@ -402,7 +402,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "Epitech",
     country: "🇫🇷 France",
     countryCode: "FR",
-    logo: "/images/partenaires-academiques/epitech.png",
+    logo: "/images/partenaires-academiques/epitech.webp",
     type: "Grande École Informatique — Expert Tech & Innovation",
     presentation: "Epitech est l'École pour l'informatique et les nouvelles technologies, fondée en 1999. Reconnue comme l'une des meilleures écoles d'informatique en France et en Europe, elle forme des experts tech capables d'innover. Epitech est présente sur 15 campus en France et 5 campus à l'international.",
     programmes: [
@@ -432,7 +432,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "EPSI",
     country: "🇫🇷 France",
     countryCode: "FR",
-    logo: "/images/partenaires-academiques/epsi.png",
+    logo: "/images/partenaires-academiques/epsi.webp",
     type: "École d'ingénierie informatique — Titre RNCP Bac+5",
     presentation: "EPSI est une école d'ingénierie informatique proposant des formations de Bac+2 à Bac+5 dans les domaines du développement, de la cybersécurité, de l'IA et de la gestion de projets IT. Forte d'une pédagogie pratique et de partenariats avec les grandes entreprises tech, EPSI garantit une insertion professionnelle rapide.",
     programmes: [
@@ -462,7 +462,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "Excelia Business School",
     country: "🇫🇷 France",
     countryCode: "FR",
-    logo: "/images/partenaires-academiques/excelia.png",
+    logo: "/images/partenaires-academiques/excelia.webp",
     type: "Grande École de Commerce — Accréditée AACSB et EPAS (EFMD)",
     presentation: "Excelia Business School est une grande école de commerce accréditée AACSB et EPAS (EFMD), implantée à La Rochelle et Tours. Reconnue pour son excellence académique et son ouverture internationale, elle propose des programmes en management, tourisme, digital et supply chain avec une forte dimension RSE.",
     programmes: [
@@ -492,7 +492,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "FIGS Education",
     country: "🇫🇷 France",
     countryCode: "FR",
-    logo: "/images/partenaires-academiques/figs (2).png",
+    logo: "/images/partenaires-academiques/figs (2).webp",
     type: "Groupe d'enseignement supérieur — Réseau d'écoles spécialisées",
     presentation: "FIGS Education est un groupe d'enseignement supérieur regroupant plusieurs écoles spécialisées en France, dont IFAG, Éklore et d'autres établissements. Fort d'une expérience de plus de 50 ans dans la formation supérieure, FIGS Education couvre un large spectre de domaines : management, informatique, communication et finance.",
     programmes: [
@@ -515,7 +515,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "Link University",
     country: "🇮🇹 Italie",
     countryCode: "IT",
-    logo: "/images/partenaires-academiques/udl.png",
+    logo: "/images/partenaires-academiques/udl.webp",
     type: "Université privée italienne reconnue par l'État italien — Campus Rome",
     presentation: "L'Università degli Studi Link (Link University) est une université privée italienne implantée à Rome. Reconnue par le Ministère de l'Enseignement Supérieur italien (MIUR), elle propose des programmes en management, sciences humaines, droit, communication et technologies. Partenaire stratégique d'EBS, Link University offre un accès à l'Europe du Sud dès la première année de Licence.",
     programmes: [
@@ -547,7 +547,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "Sup'de Com",
     country: "🇫🇷 France",
     countryCode: "FR",
-    logo: "/images/partenaires-academiques/supdecom.png",
+    logo: "/images/partenaires-academiques/supdecom.webp",
     type: "École de la communication et des médias — Bac+3 à Bac+5",
     presentation: "Sup'de Com est l'école de tous les métiers de la communication. Elle forme des professionnels de la communication, du marketing, des relations publiques et des médias digitaux. Forte d'une pédagogie pratique et de partenariats avec des agences et des marques, Sup'de Com garantit une excellente insertion dans les métiers de la communication.",
     programmes: [
@@ -577,7 +577,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "GUtech",
     country: "🇴🇲 Oman",
     countryCode: "OM",
-    logo: "/images/partenaires-academiques/gutech.png",
+    logo: "/images/partenaires-academiques/gutech.webp",
     type: "Université germanophone en partenariat avec RWTH Aachen (Allemagne) — English-taught programs",
     presentation: "GUtech (German University of Technology in Oman) est une université fondée en partenariat avec la RWTH Aachen University, l'une des meilleures universités techniques au monde. Implantée à Muscat (Oman), GUtech propose des programmes en anglais dans les domaines de l'informatique, de l'ingénierie, de l'architecture et du management.",
     programmes: [
@@ -608,7 +608,7 @@ export const partenaires: Record<string, PartnerData> = {
     name: "RedSup Education",
     country: "🇫🇷 France",
     countryCode: "FR",
-    logo: "/images/partenaires-academiques/redsup.png",
+    logo: "/images/partenaires-academiques/redsup.webp",
     type: "Réseau d'enseignement supérieur — Formation et accompagnement",
     presentation: "RedSup Education est un réseau d'enseignement supérieur proposant des formations et un accompagnement vers les grandes écoles et universités partenaires. RedSup accompagne les étudiants internationaux dans leur intégration en France et l'accès aux parcours académiques supérieurs.",
     programmes: [

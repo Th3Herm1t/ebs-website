@@ -7,7 +7,16 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant1 from "./HeroBackgroundVariant1";
 import ProgrammeFinder from "./ProgrammeFinder";
 
-function ProgramGrid({ title, subtitle, programs, type }: { title: string, subtitle: string, programs: any[], type: "licence" | "master" }) {
+interface ProgramCardData {
+  img: string;
+  cat: string;
+  title: string;
+  detail1: string;
+  detail2: string;
+  slug: string;
+}
+
+function ProgramGrid({ title, subtitle, programs, type }: { title: string, subtitle: string, programs: ProgramCardData[], type: "licence" | "master" }) {
   const getCatColor = (cat: string) => {
     switch (cat.toLowerCase()) {
       // Licences
@@ -48,8 +57,8 @@ function ProgramGrid({ title, subtitle, programs, type }: { title: string, subti
             className="bg-white rounded-[6px] border border-penn-border overflow-hidden transition-all duration-300 hover:shadow-[0px_0_30px_rgba(1,41,112,0.08)] flex flex-col h-full w-full md:w-[calc(50%-15px)] lg:w-[calc((100%-60px)/3)]"
           >
             {/* Image */}
-            <Link href={href} className="relative block overflow-hidden">
-              <Image src={course.img} alt={course.title} width={370} height={220} className="w-full h-[220px] object-cover transition-transform duration-500 hover:scale-105" />
+            <Link href={href} className="relative block overflow-hidden h-[220px]">
+              <Image src={course.img} alt={course.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-500 hover:scale-105" />
             </Link>
 
             {/* Content */}

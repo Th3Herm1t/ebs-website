@@ -17,7 +17,6 @@ import {
   Monitor,
   Landmark,
   RefreshCw,
-  Shield,
   Sparkles,
   Target,
   TrendingUp,

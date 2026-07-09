@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Check, ChevronLeft, ChevronRight, GraduationCap, Send, X } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, Send, X } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 
 type FormType = "licence" | "master" | "parcours";

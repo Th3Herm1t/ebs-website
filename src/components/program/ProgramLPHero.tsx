@@ -54,7 +54,7 @@ export function ProgramLPHero({
                 style={{ backgroundColor: color + "15", color, borderColor: color + "30" }}
                 size="lg"
               >
-                {typeLabel} · {duree} · Accrédité État Tunisien
+                {typeLabel} · {niveau} · {duree} · Accrédité État Tunisien
               </Badge>
             </div>
 

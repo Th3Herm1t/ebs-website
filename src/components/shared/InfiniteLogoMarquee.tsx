@@ -1,15 +1,16 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const LOGOS = [
-  { name: "Google", src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-  { name: "Harvard", src: "https://upload.wikimedia.org/wikipedia/commons/7/70/Harvard_University_logo.svg" },
-  { name: "IBM", src: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
-  { name: "Cisco", src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" },
-  { name: "HubSpot", src: "https://cdn.worldvectorlogo.com/logos/hubspot.svg" },
+  { name: "Google", src: "/images/icon/google.svg" },
+  { name: "Harvard", src: "/images/icon/harvard.png" },
+  { name: "IBM", src: "/images/icon/ibm.svg" },
+  { name: "Cisco", src: "/images/icon/cisco-2.svg" },
+  { name: "HubSpot", src: "/images/icon/hubspot.svg" },
 ];
 
 export function InfiniteLogoMarquee({ className }: { className?: string }) {
@@ -60,7 +61,7 @@ export function InfiniteLogoMarquee({ className }: { className?: string }) {
           <div className="flex items-center gap-16 md:gap-32 w-max pr-16 md:pr-32">
             {[...LOGOS, ...LOGOS, ...LOGOS, ...LOGOS].map((logo, index) => (
               <div key={index} className="flex-shrink-0 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                <img src={logo.src} alt={logo.name} className="h-8 md:h-12 object-contain w-auto max-w-[150px]" />
+                <Image src={logo.src} alt={logo.name} width={150} height={48} className="h-8 md:h-12 object-contain w-auto max-w-[150px]" style={{ width: "auto" }} />
               </div>
             ))}
           </div>

@@ -1,10 +1,20 @@
 import Link from "next/link";
-import { ArrowRight, Award, BookOpen, Globe, Plane, Sparkles, MapPin, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Award, Globe, Plane, Sparkles, MapPin, CheckCircle2 } from "lucide-react";
 import { Badge, CtaSection, InfiniteLogoMarquee } from "@/components/shared";
 import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { licences } from "@/lib/programmes/licences";
 import { masters } from "@/lib/programmes/masters";
+import { pageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return pageMetadata({
+    title: "Programmes EBS : Licences, Masters, IA et international",
+    description: "Comparez tous les programmes EBS : Licences, Masters, certifications gratuites, IA intégrée et parcours internationaux en France, Canada, Italie et Oman.",
+    path: `/${locale}/nos-programmes`,
+  });
+}
 
 const allLicences = [
   { ...licences.management, subtitle: "Formation au leadership et au pilotage d'organisations dans un monde digital." },
@@ -57,8 +67,21 @@ const mobilityScenarios = [
 ];
 
 export default function NosProgrammesPage() {
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Programmes EBS",
+    itemListElement: [...allLicences, ...allMasters].map((program, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `https://ebs.tn/fr/${program.type === "licence" ? "licences" : "masters"}/${program.slug}`,
+      name: program.title,
+    })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <ShowcaseHero
         title="Nos Programmes : Formez-vous aux métiers de demain."
         subtitle="Découvrez nos Licences, Masters et Parcours Internationaux. IA intégrée dans chaque filière, certifications internationales gratuites et diplômes reconnus par l'État tunisien."
@@ -78,7 +101,7 @@ export default function NosProgrammesPage() {
                 Licences (Bac+3)
               </h2>
               <p className="text-[17px] text-penn-body mt-4 max-w-[700px]">
-                4 Licences et 6 Parcours pour construire des bases solides en management, finance, marketing ou technologie.
+                5 parcours de Licence pour construire des bases solides en management, finance, marketing ou technologie.
               </p>
             </div>
             <Link href="/licences" className="inline-flex items-center gap-2 text-penn-green hover:underline text-[15px] font-bold">

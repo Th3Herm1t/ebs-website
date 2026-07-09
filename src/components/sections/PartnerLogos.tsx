@@ -1,22 +1,23 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const logos = [
-  { file: "arforghe.png", name: "Arforghe" },
-  { file: "asteelflash.png", name: "AsteelFlash" },
-  { file: "atb.png", name: "ATB" },
-  { file: "audita.png", name: "Audita" },
-  { file: "cayon.png", name: "Cayon" },
-  { file: "medianet.png", name: "Medianet" },
-  { file: "satem.png", name: "Satem" },
-  { file: "smartfuture.png", name: "Smart Future" },
-  { file: "soprahr.png", name: "Sopra HR" },
-  { file: "unifactor.png", name: "Unifactor" },
-  { file: "yperyon.png", name: "Yperyon" },
+  { file: "arforghe.webp", name: "Arforghe" },
+  { file: "asteelflash.webp", name: "AsteelFlash" },
+  { file: "atb.webp", name: "ATB" },
+  { file: "audita.webp", name: "Audita" },
+  { file: "cayon.webp", name: "Cayon" },
+  { file: "medianet.webp", name: "Medianet" },
+  { file: "satem.webp", name: "Satem" },
+  { file: "smartfuture.webp", name: "Smart Future" },
+  { file: "soprahr.webp", name: "Sopra HR" },
+  { file: "unifactor.webp", name: "Unifactor" },
+  { file: "yperyon.webp", name: "Yperyon" },
 ];
 
 export default function PartnerLogos() {
@@ -70,7 +71,7 @@ export default function PartnerLogos() {
             <div className="inline-flex items-center gap-16 w-max">
               {[...logos, ...logos, ...logos, ...logos].map((logo, i) => (
                 <a key={i} href="#" className="inline-block flex-shrink-0">
-                  <img src={`/images/partenaires/${logo.file}`} alt={logo.name} className="h-[90px] w-auto object-contain" />
+                  <Image src={`/images/partenaires/${logo.file}`} alt={logo.name} width={180} height={90} className="h-[90px] w-auto object-contain" style={{ width: "auto" }} />
                 </a>
               ))}
             </div>

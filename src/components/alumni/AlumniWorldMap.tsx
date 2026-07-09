@@ -35,7 +35,7 @@ const alumniLocations: AlumniLocation[] = [
 export default function AlumniWorldMap({ locale = "fr" }: { locale?: string }) {
   const isFr = locale === "fr";
   const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstance = useRef<any>(null);
+  const mapInstance = useRef<import("leaflet").Map | null>(null);
 
   useEffect(() => {
     if (!mapRef.current || mapRef.current.dataset.init) return;

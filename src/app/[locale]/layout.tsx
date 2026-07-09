@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import WebVitalsReporter from "@/components/analytics/WebVitalsReporter";
+import { siteJsonLd } from "@/lib/structured-data";
 import "../globals.css";
 
 const mulish = Mulish({
@@ -29,13 +31,13 @@ export const metadata: Metadata = {
     title: 'Espima Business School (EBS)',
     description: 'Votre avenir commence ici.',
     siteName: 'Espima Business School',
-    images: [{ url: '/images/all-img/hero.png', width: 1200, height: 630, alt: 'EBS Campus' }],
+    images: [{ url: '/images/all-img/hero.webp', width: 1200, height: 630, alt: 'EBS Campus' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Espima Business School (EBS)',
     description: 'Université privée d’informatique et de management en Tunisie.',
-    images: ['/images/all-img/hero.png'],
+    images: ['/images/all-img/hero.webp'],
   },
   robots: { index: true, follow: true },
 };
@@ -54,16 +56,7 @@ export default async function RootLayout({
   const { locale } = await params;
   const messages = await getMessages();
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'CollegeOrUniversity',
-    name: 'Espima Business School',
-    alternateName: 'EBS',
-    url: 'https://ebs.tn',
-    logo: 'https://ebs.tn/images/logo/logo.png',
-    description: 'ESPIMA Business School est une université privée d’informatique et de management en Tunisie fondée en 2013.',
-    address: { '@type': 'PostalAddress', addressLocality: 'Tunis', addressCountry: 'TN' }
-  };
+  const jsonLd = siteJsonLd(locale);
 
   return (
     <html lang={locale} suppressHydrationWarning className={`${mulish.variable} antialiased`}>
@@ -78,6 +71,7 @@ export default async function RootLayout({
           <Footer />
           <FloatingWhatsApp />
           <LanguageSwitcher />
+          <WebVitalsReporter />
         </NextIntlClientProvider>
       </body>
     </html>

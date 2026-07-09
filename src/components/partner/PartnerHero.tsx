@@ -22,7 +22,7 @@ export function PartnerHero({ name, country, type, className }: PartnerHeroProps
   return (
     <section className={cn("pt-36 pb-20 bg-gradient-to-b from-penn-bg-light to-white", className)}>
       <div className="max-w-[1160px] mx-auto px-5 lg:px-12 text-center">
-        <Badge variant="outline" size="lg" className="mb-4">
+        <Badge variant="outline" size="lg" className="mb-4" style={{ borderColor: `${accent}40`, color: accent }}>
           {country}
         </Badge>
         <h1 className="text-[36px] md:text-[48px] font-extrabold text-penn-navy leading-[1.15] mb-3">

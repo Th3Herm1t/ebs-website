@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
-import { ArrowRight, Building2, Check, GraduationCap, MapPin, Star } from "lucide-react";
+import { ArrowRight, Building2, Check, GraduationCap, Star } from "lucide-react";
 import { CtaSection } from "@/components/shared";
 import { CountryFlag } from "@/components/shared/CountryFlag";
 import type { PartnerData } from "@/lib/partenaires/partenaires";

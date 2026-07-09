@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -8,20 +9,20 @@ import SectionHeading from "@/components/ui/SectionHeading";
 const logos = [
   { file: "logo-audencia.png", name: "Audencia" },
   { file: "/images/ebs-tn/EM_Normandie-Logo.png", name: "EM Normandie" },
-  { file: "udl.png", name: "Link University" },
-  { file: "eklore.png", name: "Eklore" },
-  { file: "epitech.png", name: "Epitech" },
-  { file: "epsi.png", name: "EPSI" },
-  { file: "excelia.png", name: "Excelia" },
-  { file: "figs (2).png", name: "FIGS" },
-  { file: "gutech.png", name: "GUtech" },
-  { file: "idrac.png", name: "IDRAC" },
-  { file: "ifag.png", name: "IFAG" },
-  { file: "igefi.png", name: "IGEFI" },
-  { file: "psb.png", name: "PSB" },
-  { file: "redsup.png", name: "Redsup" },
-  { file: "supdecom.png", name: "Sup de Com" },
-  { file: "uqat.png", name: "UQAT" },
+  { file: "udl.webp", name: "Link University" },
+  { file: "eklore.webp", name: "Eklore" },
+  { file: "epitech.webp", name: "Epitech" },
+  { file: "epsi.webp", name: "EPSI" },
+  { file: "excelia.webp", name: "Excelia" },
+  { file: "figs (2).webp", name: "FIGS" },
+  { file: "gutech.webp", name: "GUtech" },
+  { file: "idrac.webp", name: "IDRAC" },
+  { file: "ifag.webp", name: "IFAG" },
+  { file: "igefi.webp", name: "IGEFI" },
+  { file: "psb.webp", name: "PSB" },
+  { file: "redsup.webp", name: "Redsup" },
+  { file: "supdecom.webp", name: "Sup de Com" },
+  { file: "uqat.webp", name: "UQAT" },
 ];
 
 export default function AcademicPartners() {
@@ -79,7 +80,7 @@ export default function AcademicPartners() {
             <div className="inline-flex items-center gap-16 w-max">
               {[...logos, ...logos, ...logos, ...logos].map((logo, i) => (
                 <a key={i} href="#" className="inline-block flex-shrink-0">
-                  <img src={logo.file.startsWith("http") || logo.file.startsWith("/") ? logo.file : `/images/partenaires-academiques/${logo.file}`} alt={logo.name} className="h-[90px] w-auto object-contain" />
+                  <Image src={logo.file.startsWith("http") || logo.file.startsWith("/") ? logo.file : `/images/partenaires-academiques/${logo.file}`} alt={logo.name} width={180} height={90} className="h-[90px] w-auto object-contain" style={{ width: "auto" }} />
                 </a>
               ))}
             </div>

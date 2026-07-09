@@ -1,20 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { useTranslations } from 'next-intl';
 import { Card, CardContent } from "@/components/ui/card";
 import SectionHeading from "@/components/ui/SectionHeading";
 
+interface BlogItem {
+  title: string;
+  link: string;
+  date: string;
+  category: string;
+}
+
+interface ImageBlogItem extends BlogItem {
+  img: string;
+}
+
 export default function BlogSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const t = useTranslations('HomePage.articles');
 
-  const textBlogs = t.raw('listText') as any[];
-  const imageBlogs = t.raw('listImage') as any[];
+  const textBlogs = t.raw('listText') as BlogItem[];
+  const imageBlogs = t.raw('listImage') as ImageBlogItem[];
 
   return (
     <section className="section-padding" ref={ref}>
@@ -66,13 +76,15 @@ export default function BlogSection() {
               transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
             >
               <Card className="border-penn-border rounded-[6px] overflow-hidden h-full flex flex-col">
-                <Image
-                  src={blog.img}
-                  alt={blog.title}
-                  width={370}
-                  height={250}
-                  className="w-full h-[250px] object-cover"
-                />
+                <div className="relative h-[250px]">
+                  <Image
+                    src={blog.img}
+                    alt={blog.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
                 <CardContent className="p-[25px] flex-1">
                   <span className="text-penn-body text-sm mb-2 block">
                     {blog.date} | <a href={blog.link} target="_blank" rel="noopener noreferrer" className="text-penn-green font-medium">{blog.category}</a>

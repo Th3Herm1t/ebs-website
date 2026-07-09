@@ -8,7 +8,7 @@ export default function HeroSection2() {
     <section 
       id="home" 
       className="home_bg2 bg-cover bg-center bg-no-repeat py-[150px] lg:h-[800px] flex items-center relative z-[1]" 
-      style={{ backgroundImage: "url(/images/banner/home2.png)" }}
+      style={{ backgroundImage: "url(/images/banner/home2.webp)" }}
     >
       <div className="absolute top-0 left-0 w-full h-full bg-[#111111] opacity-70 z-[-1]"></div>
       <div className="container mx-auto px-4">

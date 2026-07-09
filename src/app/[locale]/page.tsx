@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import HeroSection from "@/components/sections/HeroSection";
 import TopPromo from "@/components/sections/TopPromo";
+import { pageMetadata } from "@/lib/seo";
 
 // Lazy-loaded components below the fold
 const PillarsSection = dynamic(() => import("@/components/sections/PillarsSection"));
@@ -19,9 +20,31 @@ const EventsSection = dynamic(() => import("@/components/sections/EventsSection"
 const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"));
 const BlogSection = dynamic(() => import("@/components/sections/BlogSection"));
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return pageMetadata({
+    title: "Université privée en Tunisie tournée vers l'IA",
+    description: "Espima Business School propose des Licences, Masters, parcours internationaux et 150+ certifications en management, finance, marketing, informatique, IA et cybersécurité.",
+    path: `/${locale}`,
+  });
+}
+
 export default function Home() {
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Espima Business School",
+    url: "https://ebs.tn",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://ebs.tn/fr/nos-programmes?search={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       <HeroSection />
       <TopPromo />
       <PillarsSection />

@@ -22,7 +22,7 @@ export default function AboutSection() {
               className="relative w-full h-full"
             >
               <Image
-                src="/images/all-img/section-5.png"
+                src="/images/all-img/section-5.webp"
                 alt="EBS l'Université Augmentée par l'IA"
                 width={570}
                 height={800}

@@ -11,7 +11,7 @@ export default function CoursePromoSection() {
   return (
     <section
       className="section-padding bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/banner/section-bg-2.png')" }}
+      style={{ backgroundImage: "url('/images/banner/section-bg-2.webp')" }}
     >
       <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 xl:px-24">
         {/* Top Row: Text & Image */}
@@ -38,9 +38,10 @@ export default function CoursePromoSection() {
             <ScrollReveal initialX={40} duration={0.8}>
               <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/all-img/promo-parcours-international.png"
+                  src="/images/all-img/promo-parcours-international.webp"
                   alt="EBS Students"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-[center_25%]"
                 />
               </div>

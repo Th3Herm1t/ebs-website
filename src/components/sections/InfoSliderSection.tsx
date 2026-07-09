@@ -12,11 +12,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+import { useState } from "react";
 import { useTranslations } from 'next-intl';
 
 export default function InfoSliderSection() {
-  const plugin = useRef(
+  const [autoplayPlugin] = useState(() =>
     Autoplay({ delay: 6000, stopOnInteraction: true })
   );
   const t = useTranslations('HomePage.infoslider');
@@ -24,7 +24,7 @@ export default function InfoSliderSection() {
   const slides = [
     {
       id: 1,
-      image: "/images/all-img/infoslider-2.jpg",
+      image: "/images/all-img/infoslider-2.webp",
       subtitle: t('s1.badge'),
       title: t('s1.title'),
       text: t('s1.desc'),
@@ -55,7 +55,7 @@ export default function InfoSliderSection() {
     <section className="py-16 lg:py-[100px] bg-white overflow-hidden">
       <div className="w-full max-w-[1400px] mx-auto px-5 lg:px-24 xl:px-32 relative">
         <Carousel
-          plugins={[plugin.current]}
+          plugins={[autoplayPlugin]}
           opts={{
             loop: true,
             align: "start",
@@ -80,6 +80,7 @@ export default function InfoSliderSection() {
                         src={slide.image}
                         alt="EBS Info"
                         fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover rounded"
                       />
                     </div>

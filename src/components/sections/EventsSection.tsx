@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Clock, LayoutGrid } from "lucide-react";
@@ -10,13 +9,27 @@ import { Card, CardContent } from "@/components/ui/card";
 import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
 
+interface EventItem {
+  title: string;
+  link: string;
+  day: string;
+  month: string;
+  time: string;
+  location: string;
+  desc: string;
+}
+
+interface ImageEventItem extends EventItem {
+  img: string;
+}
+
 export default function EventsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const t = useTranslations('HomePage.events');
   
-  const imageEvents = t.raw('listImage') as any[];
-  const listEvents = t.raw('listText') as any[];
+  const imageEvents = t.raw('listImage') as ImageEventItem[];
+  const listEvents = t.raw('listText') as EventItem[];
 
   return (
     <section className="relative overflow-hidden section-padding" ref={ref}>
@@ -37,8 +50,8 @@ export default function EventsSection() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
               <Card className="border-penn-border rounded-[6px] overflow-hidden h-full">
-                <div className="relative">
-                  <Image src={event.img} alt={event.title} width={370} height={270} className="w-full h-[270px] object-cover" />
+                <div className="relative h-[270px]">
+                  <Image src={event.img} alt={event.title} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
                   <div className="absolute top-[15px] left-[15px] flex shadow-lg">
                     <span className="bg-penn-navy text-white text-lg font-bold px-3 py-1 rounded-l">{event.day}</span>
                     <span className="bg-penn-green text-white text-lg font-bold px-3 py-1 rounded-r">{event.month}</span>

@@ -45,7 +45,6 @@ const FooterLink = ({ href, children, isBold }: { href: string, children: React.
 
 export default function Footer() {
   const t = useTranslations('HomePage.footer');
-  const tN = useTranslations('HomePage.newsletter');
 
   return (
     <footer className="pt-24 pb-8 bg-penn-navy relative overflow-hidden">
@@ -66,6 +65,7 @@ export default function Footer() {
                 width={220}
                 height={66}
                 className="w-[220px] h-auto object-contain"
+                style={{ height: "auto" }}
               />
             </Link>
             <p className="text-white/70 mb-8 text-[15px] leading-relaxed max-w-[400px]">

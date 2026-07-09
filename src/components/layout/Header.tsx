@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useTranslations } from 'next-intl';
@@ -11,8 +12,10 @@ interface NavDropdown {
   href: string;
 }
 
+type NavKey = "universite" | "licences" | "masters" | "international" | "admissions" | "contact";
+
 interface NavItem {
-  key: string;
+  key: NavKey;
   href: string;
   children?: NavDropdown[];
 }
@@ -88,12 +91,14 @@ export default function Header() {
         {/* Logo */}
         <div className="flex-shrink-0 flex items-center h-full py-3">
           <Link href="/" className="shrink-0 flex items-center">
-            <img
+            <Image
               src="/images/all-img/teal-horizontal.svg"
               alt="EBS"
               width={210}
               height={61}
+              loading="eager"
               className="object-contain h-[45px] lg:h-[55px] w-auto"
+              style={{ width: "auto" }}
             />
           </Link>
         </div>
@@ -112,7 +117,7 @@ export default function Header() {
                   href={item.href}
                   className="text-[#232434] font-semibold text-[14px] xl:text-[15px] capitalize py-2 px-2 xl:px-3 block transition-colors hover:text-[#2B8FAB] whitespace-nowrap"
                 >
-                  {tNav(item.key as any)}
+                  {tNav(item.key)}
                   {item.children && (
                     <ChevronDown className="inline-block w-3 h-3 ml-1 -mt-0.5 opacity-50" />
                   )}
@@ -178,7 +183,7 @@ export default function Header() {
                   className="text-penn-navy font-semibold text-[15px] py-3 block border-b border-gray-100"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {tNav(item.key as any)}
+                  {tNav(item.key)}
                 </Link>
                 {item.children && (
                   <ul className="pl-4 pb-1">

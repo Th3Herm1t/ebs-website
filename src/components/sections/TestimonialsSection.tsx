@@ -8,11 +8,19 @@ import { useTranslations } from 'next-intl';
 import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
 
+interface TestimonialItem {
+  img: string;
+  name: string;
+  role: string;
+  bgClass: string;
+  text: string;
+}
+
 export default function TestimonialsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const t = useTranslations('HomePage.testimonials');
-  const testimonials = t.raw('list') as any[];
+  const testimonials = t.raw('list') as TestimonialItem[];
 
   return (
     <section className="relative overflow-hidden section-padding" ref={ref}>

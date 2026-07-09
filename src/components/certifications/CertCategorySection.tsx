@@ -1,5 +1,4 @@
 import { Award } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 interface CertItem {
   name: string;

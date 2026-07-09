@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { StatCounter } from "./StatCounter";
 import { motion } from "motion/react";
 
 interface StatItem {
@@ -66,7 +65,7 @@ export function StatBar({
         className
       )}
     >
-      {stats.map((stat, i) => (
+      {stats.map((stat) => (
         <div
           key={stat.label}
           className="flex flex-col items-center text-center"

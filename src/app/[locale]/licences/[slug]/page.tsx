@@ -1,11 +1,31 @@
 import { notFound } from "next/navigation";
 import { ProgramLPHero, ProgramPresentation, PublicCible, ModulesAccordion, CertificationsTable, IACompetences, InternationalPerspectives, DebouchesGrid } from "@/components/program";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
-import { CtaSection } from "@/components/shared";
+import { Breadcrumb, CtaSection } from "@/components/shared";
 import { licences } from "@/lib/programmes/licences";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 interface PageParams {
   params: Promise<{ slug: string; locale: string }>;
+}
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return ["fr", "en"].flatMap((locale) =>
+    Object.keys(licences).map((slug) => ({ locale, slug }))
+  );
+}
+
+export async function generateMetadata({ params }: PageParams) {
+  const { slug, locale } = await params;
+  const data = licences[slug];
+  if (!data) return {};
+  return pageMetadata({
+    title: `${data.title} en Tunisie`,
+    description: `${data.tagline} ${data.totalCerts}+ certifications incluses, IA intégrée et parcours international chez EBS Tunis.`,
+    path: `/${locale}/licences/${slug}`,
+  });
 }
 
 export default async function LicenceLPPage({ params }: PageParams) {
@@ -13,8 +33,29 @@ export default async function LicenceLPPage({ params }: PageParams) {
   const data = licences[slug];
   if (!data) notFound();
 
+  const courseJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: data.title,
+    description: data.pitch,
+    provider: {
+      "@type": "CollegeOrUniversity",
+      name: "Espima Business School",
+      sameAs: "https://ebs.tn",
+    },
+    educationalCredentialAwarded: data.niveau,
+    timeRequired: data.duree,
+  };
+  const breadcrumb = breadcrumbJsonLd([
+    { name: "Accueil", path: "/fr" },
+    { name: "Licences", path: "/fr/licences" },
+    { name: data.title, path: `/fr/licences/${data.slug}` },
+  ]);
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <div className="relative">
         {/* Floating Right Sidebar for Desktop */}
         <div className="hidden lg:block absolute inset-y-0 right-0 w-full pointer-events-none z-40">
@@ -38,6 +79,10 @@ export default async function LicenceLPPage({ params }: PageParams) {
           totalCerts={data.totalCerts}
           slug={data.slug}
         />
+
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-12 py-5 bg-white">
+          <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Licences", href: "/licences" }, { label: data.title }]} />
+        </div>
 
       <section className="section-padding bg-penn-bg-light relative z-10">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">

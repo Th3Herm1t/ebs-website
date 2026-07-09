@@ -12,7 +12,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - **Colours**: `#2B8FAB` (penn-green/accent), `penn-navy` (dark navy), `penn-body`, `penn-bg-light`, `penn-border`
 - **Font**: Mulish (Google Fonts), 400–800 weights
 - **Routes**: `[locale]` dynamic routing, `fr` default locale, `en` available
-- **Middleware**: `['/((?!api|_next|_vercel|.*\\..*).*)']`
+- **Proxy**: `src/proxy.ts` with matcher `['/((?!api|_next|_vercel|.*\\..*).*)']`
 - **Running port**: `3000` (dev), `npm run dev`
 
 ## How We Import From External Sources
@@ -49,7 +49,7 @@ When bringing content from v0.1 (Astro) or ebs.tn into this codebase, follow thi
 | `/certifications` | Refined | 10-provider grid |
 | `/certifications/[slug]` | Refined | 10 detail pages |
 | `/ia-et-certifications` | Refined | 31 AI certs grid |
-| `/parcours-internationaux` | Refined | Partner cards with country flags |
+| `/parcours-international` | Refined | Partner cards with country flags |
 | `/etudiants-internationaux` | Refined | Phase tabs, destinations, CountryFlag |
 | `/partenaires/[slug]` | Refined | 15 partner detail pages |
 | `/qui-sommes-nous` | Refined | 4 piliers, campus, services étudiants |
@@ -57,12 +57,12 @@ When bringing content from v0.1 (Astro) or ebs.tn into this codebase, follow thi
 | `/corps-enseignant` | Refined | Faculty grid |
 | `/alumni` | Refined | Leaflet world map + 15 countries, 8 profiles, secteurs, join form |
 | `/campus` | Refined | Facilities, gallery |
-| `/entreprises-partenaires` | Refined | B2B page |
+| `/partenaires-economiques` | Refined | B2B page |
 | `/tarifs` | Refined | Pricing cards, FAQ |
 | `/faq` | Refined | 25 Q&A, 6 categories |
 | `/blog` | Refined | Categories, coming soon |
 | `/contact` | Refined | Form, map, quick actions |
-| `/cart`, `/about`, `/shop`, etc. | **Old template** | 22 routes to delete |
+| `/cart`, `/about`, `/shop`, etc. | Removed | Old template routes deleted |
 
 ## Next SPRINT Priorities
 1. Refine `/licences` and `/licences/[slug]` — populate with real data from `@/lib/programmes/licences.ts`
@@ -72,7 +72,7 @@ When bringing content from v0.1 (Astro) or ebs.tn into this codebase, follow thi
 5. Partner logo assets for EM Normandie, Link University
 
 ## Recently Added
-- **Homepage program cards → filtered overview**: CoursesSection image, title, and category badge link to `/licences?program=slug` and `/masters?program=slug` using real slug values (management, marketing, finance, informatique-standard, etc.)
+- **Homepage program cards → filtered overview**: CoursesSection image, title, and category badge link to `/licences?program=slug` and `/masters?program=slug` using real slug values (management, marketing, finance, informatique-ia, cybersecurite, etc.)
 - **searchParams filtering**: `licences/page.tsx` and `masters/page.tsx` are async server components accepting `searchParams: Promise<{ program?: string }>` — filters the programme grid to show only the matching programme, with a "Voir toutes les licences/masters" back link when filtered
 - **Alumni world map**: new `AlumniWorldMap` component with Leaflet interactive map (CartoDB tiles, circle markers scaled by count, pulsing Tunisia highlight, popups) + 15-country grid. Replaces old country list. Testimonials section removed. Added CI/SN/GB/TR flags to CountryFlag. Installed `leaflet` + `@types/leaflet`
 - `/admissions` — full overview page with 4-step process, requirements, financing, calendar timeline, FAQ

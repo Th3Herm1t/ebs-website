@@ -5,6 +5,16 @@ import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { licences } from "@/lib/programmes/licences";
+import { pageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return pageMetadata({
+    title: "Licences en Tunisie avec IA et certifications internationales",
+    description: "Découvrez les parcours Licence EBS en management, marketing, finance, IA et cybersécurité avec IA obligatoire, certifications internationales et mobilité académique.",
+    path: `/${locale}/licences`,
+  });
+}
 
 const allPrograms = [
   { ...licences.management, subtitle: "Formation au leadership et au pilotage d'organisations dans un monde digital." },
@@ -34,7 +44,7 @@ const licencesCards = [
   },
   {
     icon: <BookOpen className="w-6 h-6" />,
-    title: "6 Parcours",
+    title: "5 Parcours",
     subtitle: "Management · Finance · Tech",
     color: "#E89745",
     offsetY: -10,
@@ -52,11 +62,24 @@ export default async function LicencesPage({
     ? allPrograms.filter(p => p.slug === program)
     : allPrograms;
   const isFiltered = filteredPrograms.length < allPrograms.length && filteredPrograms.length > 0;
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Licences EBS",
+    itemListElement: allPrograms.map((program, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `https://ebs.tn/fr/licences/${program.slug}`,
+      name: program.title,
+    })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <ShowcaseHero
         title="Nos Licences : 3 ans pour construire votre avenir."
-        subtitle="4 Licences · 6 Parcours · IA intégrée dans chaque filière · 57 à 87 certifications internationales gratuites par programme · Accrédité État tunisien."
+        subtitle="5 parcours de Licence · IA intégrée dans chaque filière · 57 à 87 certifications internationales gratuites par programme · Accrédité État tunisien."
         badge="Licences"
         cards={licencesCards}
       />
