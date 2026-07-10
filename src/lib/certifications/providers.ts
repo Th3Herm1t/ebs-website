@@ -1,18 +1,20 @@
 export interface CertProviderData {
   slug: string;
   name: string;
+  logo: string;
   tagline: string;
   presentation: string;
   pourquoi: string;
-  categories: { name: string; certs: { name: string; level?: string }[] }[];
+  categories: { name: string; certs: { name: string; level?: string; isForage?: boolean }[] }[];
 }
 
 export const providers: Record<string, CertProviderData> = {
   google: {
     slug: "google",
     name: "Google",
-    tagline: "Disponibles gratuitement chez EBS — Reconnues mondialement par les recruteurs.",
-    presentation: "Google propose via ses plateformes Google Career Certificates, Google Skillshop et Google Cloud Skills Boost un catalogue exhaustif de certifications gratuites et reconnues mondialement. Ces certifications sont activement recherchées par les recruteurs dans les domaines du marketing digital, de la data, du cloud, de la cybersécurité et de l'IA.",
+    logo: "/images/icon/google.svg",
+    tagline: "Accessible chez EBS — Reconnues mondialement par les recruteurs.",
+    presentation: "Google propose via ses plateformes Google Career Certificates, Google Skillshop et Google Cloud Skills Boost un catalogue exhaustif de certifications reconnues mondialement. Ces certifications sont activement recherchées par les recruteurs dans les domaines du marketing digital, de la data, du cloud, de la cybersécurité et de l'IA.",
     pourquoi: "Les certifications Google sont parmi les plus reconnues au monde par les équipes RH et les recruteurs. Un diplômé EBS certifié Google bénéficie d'un avantage compétitif immédiat sur le marché de l'emploi, en Tunisie comme à l'international.",
     categories: [
       {
@@ -87,8 +89,9 @@ export const providers: Record<string, CertProviderData> = {
   ibm: {
     slug: "ibm",
     name: "IBM / Cognitive Class / SkillsBuild",
-    tagline: "Disponibles gratuitement chez EBS — 45+ certifications en IA, Data Science et Cloud.",
-    presentation: "IBM propose via IBM Cognitive Class (cognitiveclass.ai), IBM SkillsBuild et IBM Training un catalogue de plus de 45 certifications gratuites dans les domaines de l'Intelligence Artificielle, du Machine Learning, du Deep Learning, de la Data Science, du DevOps, du Cloud Computing et bien plus. IBM est l'un des partenaires de certifications les plus complets disponibles pour nos étudiants.",
+    logo: "/images/icon/ibm.svg",
+    tagline: "Accessible chez EBS — 45+ certifications en IA, Data Science et Cloud.",
+    presentation: "IBM propose via IBM Cognitive Class (cognitiveclass.ai), IBM SkillsBuild et IBM Training un catalogue de plus de 45 certifications dans les domaines de l'Intelligence Artificielle, du Machine Learning, du Deep Learning, de la Data Science, du DevOps, du Cloud Computing et bien plus. IBM est l'un des partenaires de certifications les plus complets disponibles pour nos étudiants.",
     pourquoi: "Les certifications IBM sont reconnues par les grandes entreprises tech et financières mondiales. IBM est un employeur mondial et ses certifications valident des compétences directement applicables en entreprise.",
     categories: [
       {
@@ -153,9 +156,10 @@ export const providers: Record<string, CertProviderData> = {
   harvard: {
     slug: "harvard",
     name: "Harvard University",
-    tagline: "Disponibles gratuitement chez EBS — Le programme CS50, référence mondiale.",
-    presentation: "Harvard University propose via Harvard Online et son programme CS50 un ensemble de cours et certifications gratuites considérés comme les meilleurs de leur catégorie au niveau mondial. Le programme CS50 est enseigné à Harvard et au MIT et est suivi par des millions d'étudiants dans le monde.",
-    pourquoi: "Une certification Harvard sur un CV est un signal fort, partout dans le monde. Pour nos étudiants, c'est la possibilité d'obtenir un credential de la meilleure université mondiale, gratuitement et pendant leurs études chez EBS.",
+    logo: "/images/icon/harvard.png",
+    tagline: "Accessible chez EBS — Le programme CS50, référence mondiale.",
+    presentation: "Harvard University propose via Harvard Online et son programme CS50 un ensemble de cours et certifications considérés comme les meilleurs de leur catégorie au niveau mondial. Le programme CS50 est enseigné à Harvard et au MIT et est suivi par des millions d'étudiants dans le monde.",
+    pourquoi: "Une certification Harvard sur un CV est un signal fort, partout dans le monde. Pour nos étudiants, c'est la possibilité d'obtenir un credential de la meilleure université mondiale, accessible pendant leurs études chez EBS.",
     categories: [
       {
         name: "▶ Série CS50 (Computer Science)",
@@ -194,8 +198,9 @@ export const providers: Record<string, CertProviderData> = {
   cisco: {
     slug: "cisco",
     name: "Cisco NetAcad",
-    tagline: "Disponibles gratuitement chez EBS — Réseaux, cybersécurité et programmation.",
-    presentation: "Cisco Networking Academy (NetAcad) propose des cours et certifications gratuites mondialement reconnues dans les domaines des réseaux, de la cybersécurité, de la programmation et de l'entrepreneuriat.",
+    logo: "/images/icon/cisco-2.svg",
+    tagline: "Accessible chez EBS — Réseaux, cybersécurité et programmation.",
+    presentation: "Cisco Networking Academy (NetAcad) propose des cours et certifications mondialement reconnus dans les domaines des réseaux, de la cybersécurité, de la programmation et de l'entrepreneuriat.",
     pourquoi: "Cisco est le leader mondial des infrastructures réseau. Une certification Cisco NetAcad prépare directement aux certifications professionnelles reconnues (CCNA, CyberOps Associate) et est valorisée par tous les employeurs IT.",
     categories: [
       {
@@ -233,7 +238,8 @@ export const providers: Record<string, CertProviderData> = {
   bloomberg: {
     slug: "bloomberg",
     name: "Bloomberg",
-    tagline: "Disponibles gratuitement chez EBS — L'outil N°1 de la finance mondiale.",
+    logo: "/images/icon/Bloomberg.svg",
+    tagline: "Accessible chez EBS — L'outil N°1 de la finance mondiale.",
     presentation: "Bloomberg For Education propose quatre certifications officielles spécialement conçues pour les étudiants en finance et en gestion. Ces certifications utilisent les outils et données du terminal Bloomberg, l'outil de référence absolu dans l'industrie financière mondiale.",
     pourquoi: "Bloomberg est l'outil N°1 de la finance mondiale. 325 000+ terminaux dans les banques, fonds et institutions. Une certification Bloomberg est immédiatement reconnue par tous les recruteurs en finance, banque et gestion de patrimoine.",
     categories: [
@@ -252,8 +258,9 @@ export const providers: Record<string, CertProviderData> = {
   fortinet: {
     slug: "fortinet",
     name: "Fortinet",
-    tagline: "Disponibles gratuitement chez EBS — Leader mondial de la cybersécurité.",
-    presentation: "Fortinet propose via son programme NSE Training Institute des certifications gratuites en cybersécurité, reconnues mondialement dans l'industrie de la sécurité informatique. Fortinet est le fournisseur N°1 mondial de solutions de sécurité réseau.",
+    logo: "/images/icon/fortinet.png",
+    tagline: "Accessible chez EBS — Leader mondial de la cybersécurité.",
+    presentation: "Fortinet propose via son programme NSE Training Institute des certifications en cybersécurité, reconnues mondialement dans l'industrie de la sécurité informatique. Fortinet est le fournisseur N°1 mondial de solutions de sécurité réseau.",
     pourquoi: "Les certifications Fortinet sont parmi les plus valorisées dans la cybersécurité. Fortinet est présent dans 90+ pays et ses certifications sont reconnues par tous les employeurs spécialisés en sécurité.",
     categories: [
       {
@@ -274,7 +281,8 @@ export const providers: Record<string, CertProviderData> = {
   "deeplearning-ai": {
     slug: "deeplearning-ai",
     name: "DeepLearning.AI",
-    tagline: "Disponibles gratuitement chez EBS — La référence en IA par Andrew Ng.",
+    logo: "/images/icon/deeplearning.ai.svg",
+    tagline: "Accessible chez EBS — La référence en IA par Andrew Ng.",
     presentation: "DeepLearning.AI est l'organisation fondée par Andrew Ng, l'un des pionniers mondiaux de l'IA. Ses spécialisations et certifications sont considérées comme les références absolues en Machine Learning et Deep Learning.",
     pourquoi: "Andrew Ng est co-fondateur de Google Brain et ancien VP chez Baidu. Ses certifications sont citées dans les offres d'emploi data science du monde entier.",
     categories: [
@@ -309,9 +317,10 @@ export const providers: Record<string, CertProviderData> = {
   hubspot: {
     slug: "hubspot",
     name: "HubSpot Academy",
-    tagline: "Disponibles gratuitement chez EBS — CRM, marketing et ventes.",
+    logo: "/images/icon/hubspot.svg",
+    tagline: "Accessible chez EBS — CRM, marketing et ventes.",
     presentation: "HubSpot Academy propose le catalogue de certifications marketing, CRM et ventes le plus complet et le plus reconnu au monde. Plus d'un million de professionnels sont certifiés HubSpot.",
-    pourquoi: "HubSpot est le CRM leader du marché des PME mondiales. Une certification HubSpot sur un CV en marketing, vente ou CRM est une preuve immédiate de compétence opérationnelle reconnu par tous les recruteurs du secteur.",
+    pourquoi: "HubSpot est le CRM leader du marché des PME mondiales. Une certification HubSpot sur un CV en marketing, vente ou CRM est une preuve immédiate de compétence opérationnelle reconnue par tous les recruteurs du secteur.",
     categories: [
       {
         name: "▶ CRM & Plateforme HubSpot",
@@ -328,7 +337,7 @@ export const providers: Record<string, CertProviderData> = {
           { name: "HubSpot Digital Marketing Certification" },
           { name: "HubSpot Inbound Marketing Certification" },
           { name: "HubSpot Content Marketing Certification" },
-          { name: "HubSpot SEO Certification" },
+          { name: "HubSpot AEO Fundamentals" },
           { name: "HubSpot Email Marketing Certification" },
           { name: "HubSpot Social Media Marketing" },
           { name: "HubSpot Digital Advertising Certification" },
@@ -354,8 +363,9 @@ export const providers: Record<string, CertProviderData> = {
   semrush: {
     slug: "semrush",
     name: "SEMrush Academy",
-    tagline: "Disponibles gratuitement chez EBS — SEO, content marketing et analytics.",
-    presentation: "SEMrush Academy propose des certifications gratuites en SEO, content marketing, publicité digitale et analytics. SEMrush est l'outil SEO et marketing de référence utilisé par 10 millions de professionnels dans le monde.",
+    logo: "/images/icon/semrush.svg",
+    tagline: "Accessible chez EBS — SEO, content marketing et analytics.",
+    presentation: "SEMrush Academy propose des certifications en SEO, content marketing, publicité digitale et analytics. SEMrush est l'outil SEO et marketing de référence utilisé par 10 millions de professionnels dans le monde.",
     pourquoi: "SEMrush est l'outil SEO N°1 mondial. Une certification SEMrush est immédiatement crédible aux yeux des agences digitales, des équipes marketing in-house et des freelances.",
     categories: [
       {
@@ -386,10 +396,37 @@ export const providers: Record<string, CertProviderData> = {
     ],
   },
 
+  aws: {
+    slug: "aws",
+    name: "Amazon Web Services",
+    logo: "/images/icon/aws-2.svg",
+    tagline: "Accessible chez EBS — Cloud, IA/ML et certifications AWS.",
+    presentation: "AWS propose via AWS Skill Builder, AWS Educate et AWS Academy un ensemble de formations et certifications gratuites en cloud computing, intelligence artificielle et machine learning. L'AWS AI Practitioner (AIF-C01) est la certification de référence pour valider les compétences en IA de niveau fondamental.",
+    pourquoi: "AWS est le leader mondial du cloud computing. Une certification AWS est reconnue par tous les employeurs IT et tech. L'AWS AI Practitioner est particulièrement pertinente pour les étudiants en business et management qui souhaitent comprendre l'IA appliquée au cloud.",
+    categories: [
+      {
+        name: "▶ IA & Machine Learning",
+        certs: [
+          { name: "AWS AI Practitioner (AIF-C01)" },
+          { name: "Amazon Machine Learning University" },
+        ],
+      },
+      {
+        name: "▶ Cloud Foundations",
+        certs: [
+          { name: "AWS Cloud Practitioner (CLF-C02)" },
+          { name: "AWS Educate — Cloud Career Pathways" },
+          { name: "AWS Skill Builder — Free Courses" },
+        ],
+      },
+    ],
+  },
+
   "autres-fournisseurs": {
     slug: "autres-fournisseurs",
     name: "PMI · ScrumStudy · Forage · LinkedIn · Databricks · Microsoft · n8n",
-    tagline: "Disponibles gratuitement chez EBS — Gestion de projet, simulations pro et IA.",
+    logo: "/images/icon/pwc.png",
+    tagline: "Accessible chez EBS — Gestion de projet, simulations pro et IA.",
     presentation: "EBS donne accès à des certifications de plusieurs autres fournisseurs de premier rang mondial : PMI (Project Management Institute), ScrumStudy, Forage (simulations professionnelles), LinkedIn Learning, Databricks, Microsoft et n8n Automation.",
     pourquoi: "Ces certifications couvrent des domaines spécifiques : gestion de projets (PMI, Scrum), expérience professionnelle réelle (Forage), marketing B2B (LinkedIn), IA et Data Engineering (Databricks), productivité IA (Microsoft) et automatisation (n8n).",
     categories: [
@@ -410,16 +447,16 @@ export const providers: Record<string, CertProviderData> = {
         ],
       },
       {
-        name: "▶ Forage — Simulations Professionnelles",
+        name: "▶ Simulations Professionnelles",
         certs: [
-          { name: "BCG : Strategy Consulting · Ventures" },
-          { name: "Goldman Sachs : Operations · Risk · Internal Audit" },
-          { name: "JP Morgan : Investment Banking · Quantitative Research" },
-          { name: "Citi : IB · Markets Sales & Trading" },
-          { name: "Mastercard : Cybersecurity · Advisors & Consulting" },
-          { name: "PwC : Cyber Security · Management Consulting" },
-          { name: "KPMG : Audit · Advisory" },
-          { name: "EY : Technology Risk" },
+          { name: "BCG : Strategy Consulting · Ventures", isForage: true },
+          { name: "Goldman Sachs : Operations · Risk · Internal Audit", isForage: true },
+          { name: "JP Morgan : Investment Banking · Quantitative Research", isForage: true },
+          { name: "Citi : IB · Markets Sales & Trading", isForage: true },
+          { name: "Mastercard : Cybersecurity · Advisors & Consulting", isForage: true },
+          { name: "PwC : Cyber Security · Management Consulting", isForage: true },
+          { name: "KPMG : Audit · Advisory", isForage: true },
+          { name: "EY : Technology Risk", isForage: true },
         ],
       },
       {
@@ -427,8 +464,6 @@ export const providers: Record<string, CertProviderData> = {
         certs: [
           { name: "Generative AI Fundamentals (Databricks)" },
           { name: "AI Agents in your Workflows (Databricks)" },
-          { name: "AWS Platform Architect Badge" },
-          { name: "Azure Platform Architect Badge" },
         ],
       },
       {
@@ -458,3 +493,49 @@ export const providers: Record<string, CertProviderData> = {
     ],
   },
 };
+
+export const providerLogos: Record<string, string> = Object.fromEntries(
+  Object.values(providers).map((p) => [p.name, p.logo])
+);
+
+const PROVIDER_ALIASES: Record<string, string> = {
+  google: "google",
+  ibm: "ibm",
+  "ibm cognitive class": "ibm",
+  "ibm cognitive": "ibm",
+  "ibm skillsbuild": "ibm",
+  harvard: "harvard",
+  "harvard university": "harvard",
+  cisco: "cisco",
+  "cisco netacad": "cisco",
+  bloomberg: "bloomberg",
+  fortinet: "fortinet",
+  hubspot: "hubspot",
+  "hubspot academy": "hubspot",
+  semrush: "semrush",
+  "semrush academy": "semrush",
+  aws: "aws",
+  "amazon web services": "aws",
+  deeplearning: "deeplearning-ai",
+  "deeplearning.ai": "deeplearning-ai",
+  pmi: "autres-fournisseurs",
+  scrumstudy: "autres-fournisseurs",
+  forage: "autres-fournisseurs",
+  linkedin: "autres-fournisseurs",
+  databricks: "autres-fournisseurs",
+  microsoft: "autres-fournisseurs",
+  n8n: "autres-fournisseurs",
+  "n8n automation": "autres-fournisseurs",
+};
+
+export function getProviderLogo(providerName: string): string | undefined {
+  const key = providerName.toLowerCase().trim();
+  const slug = PROVIDER_ALIASES[key];
+  if (slug && providers[slug]) return providers[slug].logo;
+  const direct = providerLogos[providerName];
+  if (direct) return direct;
+  const slugByExact = Object.values(providers).find(
+    (p) => p.name.toLowerCase() === key
+  );
+  return slugByExact?.logo;
+}

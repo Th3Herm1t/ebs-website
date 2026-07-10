@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import {
@@ -27,19 +28,6 @@ const totalCategories = providerList.reduce(
   (sum, p) => sum + p.categories.length,
   0
 );
-
-const accentColors = [
-  "#2B8FAB",
-  "#2196F3",
-  "#E91E8C",
-  "#FF9800",
-  "#9C27B0",
-  "#00BCD4",
-  "#E91E63",
-  "#5E35B1",
-  "#00897B",
-  "#FF5722",
-];
 
 export default function CertificationsPage() {
   return (
@@ -75,7 +63,7 @@ export default function CertificationsPage() {
               className="mb-6 border-white/20 text-white/80"
             >
               Google · IBM · Harvard · Cisco · Bloomberg · Fortinet · HubSpot ·
-              DeepLearning.AI · SEMrush · PMI · ScrumStudy · Databricks ·
+              DeepLearning.AI · SEMrush · AWS · PMI · ScrumStudy · Databricks ·
               Microsoft
             </Badge>
           </motion.div>
@@ -87,9 +75,9 @@ export default function CertificationsPage() {
             className="text-[42px] md:text-[58px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
           >
             {totalCerts}+ certifications{" "}
-            <span className="text-[#2B8FAB]">gratuites</span>.
+            <span className="text-[#2B8FAB]">incluses</span>.
             <br />
-            Incluses dans votre formation.
+            Intégrées à votre formation.
           </motion.h1>
 
           <motion.p
@@ -100,7 +88,7 @@ export default function CertificationsPage() {
           >
             Chez EBS, votre diplôme n&apos;est que le début. Vous repartez
             certifié par les plus grands noms mondiaux — Google, IBM, Harvard,
-            Bloomberg, et 15+ fournisseurs — sans aucun frais supplémentaire.
+            Bloomberg, et 15+ fournisseurs — inclus dans votre formation.
           </motion.p>
 
           <motion.div
@@ -137,7 +125,7 @@ export default function CertificationsPage() {
               <p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">
                 100%
               </p>
-              <p className="text-[12px] text-white/50 font-medium">Gratuit</p>
+              <p className="text-[12px] text-white/50 font-medium">Incluses</p>
             </div>
           </motion.div>
         </div>
@@ -168,7 +156,7 @@ export default function CertificationsPage() {
             </h2>
             <p className="text-[16px] text-penn-body mt-3 max-w-[650px] mx-auto">
               Chaque fournisseur propose un catalogue de certifications
-              gratuites, reconnues mondialement par les recruteurs, et incluses
+              reconnues mondialement par les recruteurs, incluses
               dans votre formation.
             </p>
           </motion.div>
@@ -179,8 +167,6 @@ export default function CertificationsPage() {
                 (s, cat) => s + cat.certs.length,
                 0
               );
-              const accent =
-                accentColors[i % accentColors.length];
 
               return (
                 <motion.div
@@ -195,14 +181,16 @@ export default function CertificationsPage() {
                     href={`/certifications/${p.slug}`}
                     className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#2B8FAB]/30"
                   >
-                    {/* Accent bar */}
-                    <div
-                      className="h-1 rounded-full mb-4 transition-all duration-300 group-hover:w-full"
-                      style={{
-                        backgroundColor: accent,
-                        width: "48px",
-                      }}
-                    />
+                    <div className="h-12 w-full mb-4 flex items-center">
+                      <Image
+                        src={p.logo}
+                        alt={p.name}
+                        width={140}
+                        height={48}
+                        className="object-contain h-10 w-auto max-w-[140px] opacity-70 group-hover:opacity-100 transition-opacity"
+                        unoptimized
+                      />
+                    </div>
 
                     <h3 className="text-[18px] font-extrabold text-penn-navy group-hover:text-[#2B8FAB] transition-colors mb-2">
                       {p.name}
@@ -263,10 +251,10 @@ export default function CertificationsPage() {
                 Pourquoi EBS ?
               </Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-white leading-[1.1]">
-              La seule université qui vous certifie
+              Des certifications reconnues
               <br />
-              <span className="text-[#2B8FAB]">gratuitement</span> par les
-              leaders mondiaux
+              <span className="text-[#2B8FAB]">incluses</span> dans votre
+              formation
             </h2>
           </motion.div>
 
@@ -284,16 +272,16 @@ export default function CertificationsPage() {
                 icon: (
                   <Zap className="w-6 h-6 lg:w-7 lg:h-7" />
                 ),
-                title: "100% gratuit",
-                text: "Aucun frais supplémentaire. Tout est inclus dans vos frais de scolarité.",
+                title: "Incluses dans votre formation",
+                text: "Aucun frais supplémentaire. Les certifications sont intégrées à votre parcours.",
                 featured: true,
               },
               {
                 icon: (
                   <Globe className="w-6 h-6 lg:w-7 lg:h-7" />
                 ),
-                title: "15+ fournisseurs",
-                text: "Google, IBM, Harvard, Bloomberg, Cisco, Fortinet, HubSpot, et bien d'autres.",
+                title: `${providerList.length} fournisseurs`,
+                text: "Google, IBM, Harvard, Bloomberg, Cisco, Fortinet, HubSpot, AWS, et bien d'autres.",
                 featured: false,
               },
               {
@@ -460,7 +448,7 @@ export default function CertificationsPage() {
       </section>
 
       <CtaSection
-        title="Rejoignez la seule université tunisienne qui vous certifie gratuitement par les leaders mondiaux."
+        title="Rejoignez une formation qui vous certifie par les leaders mondiaux."
         subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant."
         primaryCta={{
           label: "Voir nos programmes", href: "/nos-programmes",

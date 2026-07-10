@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import { Award, BookOpen, ChevronDown, Target } from "lucide-react";
 import { Badge } from "@/components/shared";
@@ -61,6 +62,22 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
             </Badge>
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-6"
+          >
+            <Image
+              src={data.logo}
+              alt={data.name}
+              width={160}
+              height={56}
+              className="object-contain h-12 w-auto max-w-[160px]"
+              unoptimized
+            />
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -103,7 +120,7 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-48px)/3)]">
               <Award className="w-6 h-6 text-[#2B8FAB] mx-auto mb-1" />
               <p className="text-[12px] text-white/50 font-medium">
-                100% gratuit pour nos étudiants
+                100% incluses dans votre formation
               </p>
             </div>
           </motion.div>
@@ -195,6 +212,7 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
                   category={cat}
                   index={i}
                   color={categoryColors[i % categoryColors.length]}
+                  providerLogo={data.logo}
                 />
               </motion.div>
             ))}

@@ -438,7 +438,7 @@ export default function IAEtCertificationsPage() {
               {iaCertList.length}+ certifications IA disponibles
             </h2>
             <p className="text-[16px] text-penn-body mt-3 max-w-[700px] mx-auto">
-              Toutes gratuites. Toutes incluses dans votre formation.
+              Toutes incluses dans votre formation.
               Toutes reconnues par les recruteurs mondiaux.
             </p>
           </motion.div>
@@ -574,7 +574,7 @@ export default function IAEtCertificationsPage() {
               {
                 icon: <Award className="w-6 h-6" />,
                 title: "Certifications",
-                desc: "150+ certifications gratuites.",
+                desc: "150+ certifications incluses.",
                 href: "/certifications",
                 label: "Découvrir",
               },

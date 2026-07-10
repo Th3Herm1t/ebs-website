@@ -2,6 +2,7 @@ export interface CertItem {
   name: string;
   provider: string;
   level: string;
+  isForage?: boolean;
 }
 
 export interface ModuleItem {
@@ -42,8 +43,8 @@ export const STATS_HERO = [
 export const IA_CERTS_SHARED: { name: string; provider: string }[] = [
   { name: "Google AI Essentials", provider: "Google" },
   { name: "Google Prompting Essentials", provider: "Google" },
-  { name: "Fondements de l'IA", provider: "IBM" },
+  { name: "Fondements de l'IA (IBM)", provider: "IBM" },
   { name: "CS50's Introduction to AI with Python", provider: "Harvard" },
-  { name: "Generative AI Fundamentals", provider: "Databricks" },
-  { name: "n8n Automation Level 1 & 2", provider: "n8n" },
+  { name: "Generative AI Fundamentals (Databricks)", provider: "Databricks" },
+  { name: "n8n Automation Level 1", provider: "n8n" },
 ];

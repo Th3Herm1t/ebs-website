@@ -50,7 +50,7 @@ export default async function CertProviderPage({ params }: PageParams) {
       <CertProviderContent data={data} />
       <CtaSection
         title="Prêt(e) à décrocher ces certifications ?"
-        subtitle="Toutes ces certifications sont incluses gratuitement dans votre formation chez EBS."
+        subtitle="Toutes ces certifications sont incluses dans votre formation chez EBS."
         primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         secondaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"
