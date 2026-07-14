@@ -3,6 +3,10 @@ import { ProgramLPHero, ProgramPresentation, PublicCible, ModulesAccordion, Cert
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { Breadcrumb, CtaSection } from "@/components/shared";
 import { licences } from "@/lib/programmes/licences";
+import {
+  getCertificationsByProgramme,
+  type CertificationProgrammeSlug,
+} from "@/lib/certifications/final-catalogue";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 interface PageParams {
@@ -21,9 +25,10 @@ export async function generateMetadata({ params }: PageParams) {
   const { slug, locale } = await params;
   const data = licences[slug];
   if (!data) return {};
+  const certifications = getCertificationsByProgramme(slug as CertificationProgrammeSlug);
   return pageMetadata({
     title: `${data.title} en Tunisie`,
-    description: `${data.tagline} ${data.totalCerts}+ certifications incluses, IA intégrée et parcours international chez EBS Tunis.`,
+    description: `${data.tagline} ${certifications.length} certifications intégrées, IA intégrée et parcours international chez EBS Tunis.`,
     path: `/${locale}/licences/${slug}`,
   });
 }
@@ -32,6 +37,12 @@ export default async function LicenceLPPage({ params }: PageParams) {
   const { slug } = await params;
   const data = licences[slug];
   if (!data) notFound();
+  const certifications = getCertificationsByProgramme(slug as CertificationProgrammeSlug);
+  const mandatoryCount = certifications.filter((certification) => certification.requirement === "mandatory").length;
+  const optionalCount = certifications.filter((certification) => certification.requirement === "optional").length;
+  const aiLiteracyCount = certifications.filter((certification) => certification.classification === "ai-literacy").length;
+  const appliedAiCount = certifications.filter((certification) => certification.classification === "applied-ai").length;
+  const nonAiCount = certifications.filter((certification) => certification.classification === "non-ai").length;
 
   const courseJsonLd = {
     "@context": "https://schema.org",
@@ -76,7 +87,7 @@ export default async function LicenceLPPage({ params }: PageParams) {
           color={data.color}
           niveau={data.niveau}
           duree={data.duree}
-          totalCerts={data.totalCerts}
+          totalCerts={certifications.length}
           slug={data.slug}
         />
 
@@ -109,11 +120,11 @@ export default async function LicenceLPPage({ params }: PageParams) {
 
           <div id="certifications">
             <h3 className="text-[22px] font-extrabold text-penn-navy mb-5">
-              ★ {data.totalCerts}+ certifications incluses
+              ★ {certifications.length} certifications intégrées
             </h3>
-            <CertificationsTable certs={data.certifications} color={data.color} limit={10} />
+            <CertificationsTable certs={certifications} color={data.color} />
             <p className="text-[13px] text-penn-body mt-4">
-              + 16 autres certifications spécifiques au programme + 26 certifications IA transversales incluses.
+              {mandatoryCount} obligatoires · {optionalCount} optionnelles · {aiLiteracyCount} culture IA · {appliedAiCount} IA appliquée · {nonAiCount} métier.
             </p>
           </div>
 

@@ -11,7 +11,7 @@ export const licences: Record<string, ProgramLPData> = {
     niveau: "Bac+3",
     duree: "3 ans",
     semestres: 6,
-    totalCerts: 57,
+    totalCerts: 25,
     publicCible: [
       "Bacheliers toutes séries · 18–22 ans",
       "Étudiants souhaitant se réorienter vers le management",
@@ -70,7 +70,7 @@ export const licences: Record<string, ProgramLPData> = {
     niveau: "Bac+3",
     duree: "3 ans",
     semestres: 6,
-    totalCerts: 81,
+    totalCerts: 28,
     publicCible: [
       "Bacheliers créatifs et analytiques · 18–22 ans",
       "Passionnés du digital, des réseaux sociaux et de la communication",
@@ -131,7 +131,7 @@ export const licences: Record<string, ProgramLPData> = {
     niveau: "Bac+3",
     duree: "3 ans",
     semestres: 6,
-    totalCerts: 64,
+    totalCerts: 24,
     publicCible: [
       "Bacheliers scientifiques ou économiques · 18–22 ans",
       "Futurs analystes financiers, banquiers, contrôleurs de gestion",
@@ -191,7 +191,7 @@ export const licences: Record<string, ProgramLPData> = {
     niveau: "Bac+3",
     duree: "3 ans",
     semestres: 6,
-    totalCerts: 87,
+    totalCerts: 26,
     publicCible: [
       "Bacheliers scientifiques (Math, Info, Sciences) · 18–22 ans",
       "Passionnés de programmation, data et intelligence artificielle",
@@ -250,7 +250,7 @@ export const licences: Record<string, ProgramLPData> = {
     niveau: "Bac+3",
     duree: "3 ans",
     semestres: 6,
-    totalCerts: 63,
+    totalCerts: 26,
     publicCible: [
       "Bacheliers scientifiques (Math, Info) · 18–22 ans",
       "Passionnés de sécurité informatique, hacking éthique, réseaux",

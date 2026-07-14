@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -17,19 +18,59 @@ import {
 } from "lucide-react";
 import { Badge, CtaSection } from "@/components/shared";
 import { providers } from "@/lib/certifications/providers";
+import {
+  finalCertificationCatalogue,
+  getCertificationLogo,
+  getPublicCertificationCount,
+  type CertificationClassification,
+  type CertificationRequirement,
+} from "@/lib/certifications/final-catalogue";
 
 const providerList = Object.values(providers);
-const totalCerts = providerList.reduce(
-  (sum, p) =>
-    sum + p.categories.reduce((s, cat) => s + cat.certs.length, 0),
-  0
-);
+const publicCertifications = finalCertificationCatalogue.filter((certification) => certification.publicVisible);
+const totalCerts = getPublicCertificationCount();
 const totalCategories = providerList.reduce(
   (sum, p) => sum + p.categories.length,
   0
 );
 
+const classificationLabels: Record<CertificationClassification, string> = {
+  "ai-literacy": "Culture IA",
+  "applied-ai": "IA appliquée",
+  "non-ai": "Métier & outils",
+};
+
+const requirementLabels: Record<CertificationRequirement, string> = {
+  mandatory: "Obligatoire",
+  optional: "Optionnel",
+};
+
+const classificationOptions: Array<{ value: "all" | CertificationClassification; label: string }> = [
+  { value: "all", label: "Toutes" },
+  { value: "ai-literacy", label: "Culture IA" },
+  { value: "applied-ai", label: "IA appliquée" },
+  { value: "non-ai", label: "Métier & outils" },
+];
+
+const requirementOptions: Array<{ value: "all" | CertificationRequirement; label: string }> = [
+  { value: "all", label: "Tous" },
+  { value: "mandatory", label: "Obligatoires" },
+  { value: "optional", label: "Optionnels" },
+];
+
 export default function CertificationsPage() {
+  const [classificationFilter, setClassificationFilter] = useState<"all" | CertificationClassification>("all");
+  const [requirementFilter, setRequirementFilter] = useState<"all" | CertificationRequirement>("all");
+
+  const filteredCertifications = publicCertifications.filter((certification) => {
+    const matchesClassification =
+      classificationFilter === "all" || certification.classification === classificationFilter;
+    const matchesRequirement =
+      requirementFilter === "all" || certification.requirement === requirementFilter;
+
+    return matchesClassification && matchesRequirement;
+  });
+
   return (
     <>
       {/* ═══════════ IMMERSIVE HERO ═══════════ */}
@@ -88,7 +129,7 @@ export default function CertificationsPage() {
           >
             Chez EBS, votre diplôme n&apos;est que le début. Vous repartez
             certifié par les plus grands noms mondiaux — Google, IBM, Harvard,
-            Bloomberg, et 15+ fournisseurs — inclus dans votre formation.
+            Bloomberg, et des fournisseurs internationaux — inclus dans votre formation.
           </motion.p>
 
           <motion.div
@@ -139,8 +180,132 @@ export default function CertificationsPage() {
         </motion.div>
       </section>
 
-      {/* ═══════════ PROVIDER GRID ═══════════ */}
+      {/* ═══════════ MANAGED CATALOGUE ═══════════ */}
       <section className="section-padding bg-white">
+        <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            className="text-center mb-16"
+          >
+            <Badge variant="default" size="lg" className="mb-4">
+              Catalogue géré
+            </Badge>
+            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
+              Catalogue certifiant EBS
+            </h2>
+            <p className="text-[16px] text-penn-body mt-3 max-w-[680px] mx-auto">
+              Une sélection structurée de certifications obligatoires et
+              optionnelles, classées par culture IA, IA appliquée et compétences
+              métier. Les liens externes sont réservés à l&apos;espace étudiant.
+            </p>
+          </motion.div>
+
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 mb-10">
+            <div className="grid grid-cols-3 gap-3 w-full lg:max-w-[520px]">
+              {[
+                { label: "Culture IA", count: publicCertifications.filter((certification) => certification.classification === "ai-literacy").length },
+                { label: "IA appliquée", count: publicCertifications.filter((certification) => certification.classification === "applied-ai").length },
+                { label: "Métier", count: publicCertifications.filter((certification) => certification.classification === "non-ai").length },
+              ].map((stat) => (
+                <div key={stat.label} className="rounded-2xl border border-penn-border bg-penn-bg-light p-4 text-center">
+                  <p className="text-[28px] font-extrabold text-penn-navy leading-none">{stat.count}</p>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-penn-body/60 mt-2">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <select
+                value={classificationFilter}
+                onChange={(event) => setClassificationFilter(event.target.value as "all" | CertificationClassification)}
+                className="h-12 rounded-xl border border-penn-border bg-white px-4 text-[14px] font-bold text-penn-navy outline-none focus:border-[#2B8FAB]"
+                aria-label="Filtrer par classification"
+              >
+                {classificationOptions.map((option) => (
+                  <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
+              </select>
+              <select
+                value={requirementFilter}
+                onChange={(event) => setRequirementFilter(event.target.value as "all" | CertificationRequirement)}
+                className="h-12 rounded-xl border border-penn-border bg-white px-4 text-[14px] font-bold text-penn-navy outline-none focus:border-[#2B8FAB]"
+                aria-label="Filtrer par obligation"
+              >
+                {requirementOptions.map((option) => (
+                  <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            {filteredCertifications.map((certification, i) => {
+              const logo = getCertificationLogo(certification);
+
+              return (
+                <motion.article
+                  key={certification.id}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.45, delay: Math.min(i * 0.025, 0.25) }}
+                  className="rounded-2xl border border-penn-border bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#2B8FAB]/30 hover:shadow-xl"
+                >
+                  <div className="flex items-start justify-between gap-4 mb-5">
+                    <div className="h-11 min-w-0 flex items-center">
+                      {logo ? (
+                        <Image
+                          src={logo}
+                          alt={certification.displayProvider}
+                          width={132}
+                          height={44}
+                          className="h-9 w-auto max-w-[132px] object-contain opacity-80"
+                          unoptimized
+                        />
+                      ) : (
+                        <span className="text-[13px] font-extrabold text-penn-navy">
+                          {certification.displayProvider}
+                        </span>
+                      )}
+                    </div>
+                    <span className={`rounded-full px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.08em] ${certification.requirement === "mandatory" ? "bg-[#2B8FAB]/10 text-[#2B8FAB]" : "bg-penn-bg-light text-penn-body"}`}>
+                      {requirementLabels[certification.requirement]}
+                    </span>
+                  </div>
+
+                  <h3 className="text-[17px] font-extrabold text-penn-navy leading-snug mb-3">
+                    {certification.name}
+                  </h3>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[12px] font-bold text-penn-body">
+                      {classificationLabels[certification.classification]}
+                    </span>
+                    <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[12px] font-bold text-penn-body">
+                      {certification.recommendedYear}
+                    </span>
+                    {certification.publicNote && (
+                      <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[12px] font-bold text-penn-body">
+                        {certification.publicNote}
+                      </span>
+                    )}
+                  </div>
+
+                  <p className="text-[13px] text-penn-body/70 leading-relaxed">
+                    Intégrée aux parcours EBS concernés. Accès et suivi détaillé
+                    disponibles dans l&apos;espace étudiant.
+                  </p>
+                </motion.article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ PROVIDER GRID ═══════════ */}
+      <section className="section-padding bg-penn-bg-light">
         <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -288,7 +453,7 @@ export default function CertificationsPage() {
                 icon: (
                   <BookOpen className="w-6 h-6 lg:w-7 lg:h-7" />
                 ),
-                title: "7 programmes couverts",
+                title: "9 programmes couverts",
                 text: "Chaque Licence et Master a son propre parcours de certifications dédié.",
                 featured: false,
               },
@@ -391,7 +556,7 @@ export default function CertificationsPage() {
                   <Trophy className="w-6 h-6" />
                 ),
                 title: "Nos Masters",
-                desc: "3 Masters professionnels avec certifications avancées.",
+                desc: "4 Masters professionnels avec certifications avancées.",
                 href: "/masters",
                 label: "Explorer",
               },

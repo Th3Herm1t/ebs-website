@@ -18,6 +18,12 @@ import {
   Zap,
 } from "lucide-react";
 import { Badge, CtaSection } from "@/components/shared";
+import {
+  finalCertificationCatalogue,
+  getCertificationsByProgramme,
+  getPublicCertificationCount,
+  type CertificationProgrammeSlug,
+} from "@/lib/certifications/final-catalogue";
 
 const iaCompetences = [
   {
@@ -57,105 +63,90 @@ const iaCompetences = [
   },
 ];
 
-const iaCertList = [
-  { name: "Google AI Essentials", provider: "Google" },
-  { name: "Google AI Professional Certificate", provider: "Google" },
-  { name: "Google Prompting Essentials", provider: "Google" },
-  { name: "AI-Powered Performance Ads", provider: "Google" },
-  { name: "Fondements de l'IA", provider: "IBM" },
-  { name: "IA Générative : Transformation des Entreprises", provider: "IBM" },
-  { name: "Foundations of GenAI", provider: "IBM" },
-  { name: "Agentic AI in Practice", provider: "IBM" },
-  { name: "Ingénierie des Prompts pour Tous", provider: "IBM" },
-  { name: "Watsonx Orchestrate : Automatisation IA", provider: "IBM" },
-  { name: "CS50's Introduction to AI with Python", provider: "Harvard" },
-  { name: "Machine Learning and AI with Python", provider: "Harvard" },
-  { name: "TensorFlow Developer Certificate", provider: "DeepLearning.AI" },
-  { name: "PyTorch for Deep Learning", provider: "DeepLearning.AI" },
-  { name: "ML Specialization (Andrew Ng)", provider: "DeepLearning.AI" },
-  { name: "Deep Learning Specialization", provider: "DeepLearning.AI" },
-  { name: "Generative AI for Software Dev", provider: "DeepLearning.AI" },
-  { name: "Generative AI Fundamentals", provider: "Databricks" },
-  { name: "AI Agents in Workflows", provider: "Databricks" },
-  { name: "n8n Automation Level 1", provider: "n8n" },
-  { name: "n8n Automation Level 2", provider: "n8n" },
-  { name: "SEO Essentials with AI", provider: "SEMrush" },
-  { name: "Technical SEO and AI Search", provider: "SEMrush" },
-  { name: "AI-Powered Marketer", provider: "SEMrush" },
-  { name: "AI for Marketing, Sales & Service", provider: "HubSpot" },
-  { name: "Introduction to Modern AI", provider: "Cisco" },
-  { name: "AI Fundamentals", provider: "Cisco" },
-  { name: "Introduction IA et agents génératifs", provider: "Microsoft" },
-  { name: "Transformer votre entreprise avec l'IA", provider: "Microsoft" },
-  { name: "Productivité avec les outils d'IA", provider: "Microsoft" },
-  { name: "Scrum with AI Certified SAC™", provider: "ScrumStudy" },
-];
+const iaCertList = finalCertificationCatalogue.filter(
+  (certification) =>
+    certification.publicVisible &&
+    (certification.classification === "ai-literacy" || certification.classification === "applied-ai")
+);
 
-const programmeBreakdown = [
+const totalCertifications = getPublicCertificationCount();
+
+const programmeMeta: Array<{
+  slug: CertificationProgrammeSlug;
+  programme: string;
+  href: string;
+  highlights: string;
+  color: string;
+}> = [
   {
+    slug: "management",
     programme: "Licence Management",
     href: "/licences/management",
-    total: "57+",
     highlights: "Google PM · Scrum SFC™ · IBM Business Analyst",
     color: "#2196F3",
   },
   {
+    slug: "marketing",
     programme: "Licence Marketing",
     href: "/licences/marketing",
-    total: "81+",
     highlights: "Google Digital Mktg · HubSpot Digital · SEMrush SEO AI",
     color: "#E91E8C",
   },
   {
+    slug: "finance",
     programme: "Licence Finance",
     href: "/licences/finance",
-    total: "64+",
     highlights: "Bloomberg BMC · Bloomberg ESG · Goldman Sachs Forage",
     color: "#00BCD4",
   },
   {
+    slug: "marketing-digital-ia",
     programme: "Master Marketing & IA",
     href: "/masters/marketing-digital-ia",
-    total: "81+",
     highlights: "Google Advanced Data · HubSpot Marketing · Databricks",
     color: "#E91E8C",
   },
   {
+    slug: "informatique-ia",
     programme: "Licence Info — IA",
     href: "/licences/informatique-ia",
-    total: "87+",
     highlights: "Harvard CS50 AI · DeepLearning.AI ML/DL · Databricks GenAI",
     color: "#9C27B0",
   },
   {
+    slug: "cybersecurite",
     programme: "Licence Info — Cybersécurité",
     href: "/licences/cybersecurite",
-    total: "63+",
     highlights: "Google Cyber · Cisco Ethical Hacker · Fortinet FCF/FCA",
     color: "#FF9800",
   },
   {
+    slug: "crm",
     programme: "Master CRM Digital",
     href: "/masters/crm",
-    total: "73+",
     highlights: "HubSpot CRM · n8n Automation · IBM Watsonx",
     color: "#E91E63",
   },
   {
+    slug: "startups",
     programme: "Master Startups",
     href: "/masters/startups",
-    total: "59+",
     highlights: "PMI · Google PM · Scrum SAC™ · IBM DevOps",
     color: "#5E35B1",
   },
   {
+    slug: "ingenierie-financiere",
     programme: "Master Ingénierie Fin.",
     href: "/masters/ingenierie-financiere",
-    total: "64+",
     highlights: "Bloomberg BMC/ESG · JP Morgan Quant · Goldman Sachs IB",
     color: "#00897B",
   },
 ];
+
+const programmeBreakdown = programmeMeta.map((programme) => ({
+  ...programme,
+  total: getCertificationsByProgramme(programme.slug).length,
+}));
 
 const getProviderLogo = (provider: string) => {
   switch (provider.toLowerCase()) {
@@ -270,7 +261,7 @@ export default function IAEtCertificationsPage() {
           >
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
               <p className="text-[32px] md:text-[44px] font-extrabold text-[#9C27B0] leading-none mb-1">
-                30+
+                {iaCertList.length}
               </p>
               <p className="text-[12px] text-white/50 font-medium">
                 Certifications IA
@@ -446,7 +437,7 @@ export default function IAEtCertificationsPage() {
           <div className="flex flex-wrap justify-center gap-3">
             {iaCertList.map((cert, i) => (
               <motion.div
-                key={cert.name}
+                key={cert.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-20px" }}
@@ -454,14 +445,14 @@ export default function IAEtCertificationsPage() {
                 className="flex items-center gap-4 px-5 py-4 bg-penn-bg-light rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300 group w-full sm:w-[calc(50%-6px)] lg:w-[calc((100%-24px)/3)]"
               >
                 <div className="w-10 h-10 rounded-lg bg-white border border-penn-border/40 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform overflow-hidden p-1.5 bg-gradient-to-br from-white to-penn-bg-light shadow-sm">
-                  {getProviderLogo(cert.provider)}
+                  {getProviderLogo(cert.displayProvider)}
                 </div>
                 <div className="min-w-0">
                   <p className="text-[13px] font-semibold text-penn-navy leading-snug">
                     {cert.name}
                   </p>
                   <p className="text-[11px] text-penn-body/60 font-medium">
-                    {cert.provider}
+                    {cert.displayProvider}
                   </p>
                 </div>
               </motion.div>
@@ -478,7 +469,7 @@ export default function IAEtCertificationsPage() {
               href="/certifications"
               className="inline-flex items-center gap-2 text-[15px] font-bold text-[#2B8FAB] hover:underline"
             >
-              Voir toutes les certifications (150+)
+              Voir toutes les certifications ({totalCertifications}+)
               <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
@@ -567,14 +558,14 @@ export default function IAEtCertificationsPage() {
               {
                 icon: <GraduationCap className="w-6 h-6" />,
                 title: "Nos Licences",
-                desc: "6 Licences avec IA intégrée.",
+                desc: "5 parcours Licence avec IA intégrée.",
                 href: "/licences",
                 label: "Explorer",
               },
               {
                 icon: <Award className="w-6 h-6" />,
                 title: "Certifications",
-                desc: "150+ certifications incluses.",
+                desc: `${totalCertifications}+ certifications incluses.`,
                 href: "/certifications",
                 label: "Découvrir",
               },

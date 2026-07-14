@@ -11,7 +11,7 @@ export const masters: Record<string, ProgramLPData> = {
     niveau: "Bac+5",
     duree: "2 ans",
     semestres: 4,
-    totalCerts: 73,
+    totalCerts: 24,
     publicCible: [
       "Licenciés en Marketing, Management, Informatique",
       "Professionnels souhaitant évoluer vers le CRM ou le digital",
@@ -70,7 +70,7 @@ export const masters: Record<string, ProgramLPData> = {
     niveau: "Bac+5",
     duree: "2 ans",
     semestres: 4,
-    totalCerts: 59,
+    totalCerts: 22,
     publicCible: [
       "Licenciés en Management, Informatique, Finance",
       "Entrepreneurs en herbe et porteurs de projets",
@@ -129,7 +129,7 @@ export const masters: Record<string, ProgramLPData> = {
     niveau: "Bac+5",
     duree: "2 ans",
     semestres: 4,
-    totalCerts: 64,
+    totalCerts: 20,
     publicCible: [
       "Licenciés en Finance, Management, Mathématiques appliquées",
       "Professionnels de la finance souhaitant se spécialiser",
@@ -187,7 +187,7 @@ export const masters: Record<string, ProgramLPData> = {
     niveau: "Bac+5",
     duree: "2 ans",
     semestres: 4,
-    totalCerts: 81,
+    totalCerts: 23,
     publicCible: [
       "Licenciés en Marketing, Management, Informatique",
       "Professionnels souhaitant évoluer vers le marketing digital avancé",
