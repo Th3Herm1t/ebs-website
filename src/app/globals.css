@@ -144,18 +144,6 @@
   display: flex;
   width: max-content;
   animation: marquee-scroll 40s linear infinite;
-  will-change: transform;
-}
-
-.group\/marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track,
-  .alumni-pulse {
-    animation: none !important;
-  }
 }
 
 /* Penn CTA button animation */
