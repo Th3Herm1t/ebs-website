@@ -38,11 +38,6 @@ export default async function MasterLPPage({ params }: PageParams) {
   const data = masters[slug];
   if (!data) notFound();
   const certifications = getCertificationsByProgramme(slug as CertificationProgrammeSlug);
-  const mandatoryCount = certifications.filter((certification) => certification.requirement === "mandatory").length;
-  const optionalCount = certifications.filter((certification) => certification.requirement === "optional").length;
-  const aiLiteracyCount = certifications.filter((certification) => certification.classification === "ai-literacy").length;
-  const appliedAiCount = certifications.filter((certification) => certification.classification === "applied-ai").length;
-  const nonAiCount = certifications.filter((certification) => certification.classification === "non-ai").length;
 
   const courseJsonLd = {
     "@context": "https://schema.org",
@@ -119,13 +114,7 @@ export default async function MasterLPPage({ params }: PageParams) {
           </div>
 
           <div id="certifications">
-            <h3 className="text-[22px] font-extrabold text-penn-navy mb-5">
-              ★ {certifications.length} certifications intégrées
-            </h3>
             <CertificationsTable certs={certifications} color={data.color} />
-            <p className="text-[13px] text-penn-body mt-4">
-              {mandatoryCount} obligatoires · {optionalCount} optionnelles · {aiLiteracyCount} culture IA · {appliedAiCount} IA appliquée · {nonAiCount} métier.
-            </p>
           </div>
 
           <IACompetences color={data.color} />

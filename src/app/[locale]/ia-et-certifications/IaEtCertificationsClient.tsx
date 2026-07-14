@@ -21,7 +21,9 @@ import { Badge, CtaSection } from "@/components/shared";
 import {
   finalCertificationCatalogue,
   getCertificationsByProgramme,
+  getCertificationLogo,
   getPublicCertificationCount,
+  type CertificationClassification,
   type CertificationProgrammeSlug,
 } from "@/lib/certifications/final-catalogue";
 
@@ -70,6 +72,28 @@ const iaCertList = finalCertificationCatalogue.filter(
 );
 
 const totalCertifications = getPublicCertificationCount();
+const aiStats = {
+  literacy: iaCertList.filter((certification) => certification.classification === "ai-literacy").length,
+  applied: iaCertList.filter((certification) => certification.classification === "applied-ai").length,
+  mandatory: iaCertList.filter((certification) => certification.requirement === "mandatory").length,
+  optional: iaCertList.filter((certification) => certification.requirement === "optional").length,
+};
+
+const aiClassificationLabels: Record<CertificationClassification, string> = {
+  "ai-literacy": "Culture IA",
+  "applied-ai": "IA appliquée",
+  "non-ai": "Métier & outils",
+};
+
+const aiClassificationText: Record<"ai-literacy" | "applied-ai", string> = {
+  "ai-literacy": "Le socle transversal : comprendre, prompter, utiliser et encadrer l'IA dans le travail quotidien.",
+  "applied-ai": "Les usages métiers : marketing, finance, data, cyber, CRM, automatisation et productivité avancée.",
+};
+
+const groupedAiCertifications = (["ai-literacy", "applied-ai"] as const).map((classification) => ({
+  classification,
+  certifications: iaCertList.filter((certification) => certification.classification === classification),
+}));
 
 const programmeMeta: Array<{
   slug: CertificationProgrammeSlug;
@@ -261,32 +285,34 @@ export default function IAEtCertificationsPage() {
           >
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
               <p className="text-[32px] md:text-[44px] font-extrabold text-[#9C27B0] leading-none mb-1">
-                {iaCertList.length}
+                {aiStats.literacy}
               </p>
               <p className="text-[12px] text-white/50 font-medium">
-                Certifications IA
+                Culture IA
               </p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
               <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">
-                5
+                {aiStats.applied}
               </p>
               <p className="text-[12px] text-white/50 font-medium">
-                Compétences IA fondamentales
+                IA appliquée
               </p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
               <p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">
-                9
+                {aiStats.mandatory}
               </p>
               <p className="text-[12px] text-white/50 font-medium">
-                Programmes concernés
+                Obligatoires IA
               </p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center flex flex-col justify-center items-center">
-              <Sparkles className="w-10 h-10 md:w-[44px] md:h-[44px] text-[#9C27B0] mx-auto mb-1" />
+              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">
+                {aiStats.optional}
+              </p>
               <p className="text-[12px] text-white/50 font-medium mt-1">
-                Nouveauté 2026
+                Options IA
               </p>
             </div>
           </motion.div>
@@ -434,28 +460,63 @@ export default function IAEtCertificationsPage() {
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-3">
-            {iaCertList.map((cert, i) => (
-              <motion.div
-                key={cert.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-20px" }}
-                transition={{ duration: 0.4, delay: i * 0.03 }}
-                className="flex items-center gap-4 px-5 py-4 bg-penn-bg-light rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300 group w-full sm:w-[calc(50%-6px)] lg:w-[calc((100%-24px)/3)]"
-              >
-                <div className="w-10 h-10 rounded-lg bg-white border border-penn-border/40 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform overflow-hidden p-1.5 bg-gradient-to-br from-white to-penn-bg-light shadow-sm">
-                  {getProviderLogo(cert.displayProvider)}
+          <div className="space-y-8">
+            {groupedAiCertifications.map((group) => (
+              <div key={group.classification} className="rounded-[28px] border border-penn-border bg-penn-bg-light p-5 lg:p-6">
+                <div className="mb-5 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <p className="text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#9C27B0]">
+                      {group.certifications.length} certification{group.certifications.length > 1 ? "s" : ""}
+                    </p>
+                    <h3 className="mt-1 text-[24px] font-extrabold text-penn-navy">
+                      {aiClassificationLabels[group.classification]}
+                    </h3>
+                    <p className="mt-2 max-w-[720px] text-[14px] leading-relaxed text-penn-body/70">
+                      {aiClassificationText[group.classification]}
+                    </p>
+                  </div>
+                  <div className="flex gap-2">
+                    <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold text-penn-navy">
+                      {group.certifications.filter((cert) => cert.requirement === "mandatory").length} obligatoires
+                    </span>
+                    <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold text-penn-body">
+                      {group.certifications.filter((cert) => cert.requirement === "optional").length} options
+                    </span>
+                  </div>
                 </div>
-                <div className="min-w-0">
-                  <p className="text-[13px] font-semibold text-penn-navy leading-snug">
-                    {cert.name}
-                  </p>
-                  <p className="text-[11px] text-penn-body/60 font-medium">
-                    {cert.displayProvider}
-                  </p>
+
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {group.certifications.map((cert, i) => {
+                    const logo = getCertificationLogo(cert);
+                    return (
+                      <motion.div
+                        key={cert.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-20px" }}
+                        transition={{ duration: 0.35, delay: Math.min(i * 0.025, 0.18) }}
+                        className="group flex items-center gap-4 rounded-2xl border border-penn-border bg-white px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#2B8FAB]/30 hover:shadow-md"
+                      >
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-penn-border/50 bg-white p-1.5 shadow-sm">
+                          {logo ? (
+                            <Image src={logo} alt={cert.displayProvider} width={72} height={32} className="max-h-8 w-auto object-contain" unoptimized />
+                          ) : (
+                            getProviderLogo(cert.displayProvider)
+                          )}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-[13px] font-extrabold leading-snug text-penn-navy group-hover:text-[#2B8FAB]">
+                            {cert.name}
+                          </p>
+                          <p className="mt-1 text-[11px] font-medium text-penn-body/60">
+                            {cert.displayProvider} · {cert.recommendedYear} · {cert.requirement === "mandatory" ? "Obligatoire" : "Optionnel"}
+                          </p>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
