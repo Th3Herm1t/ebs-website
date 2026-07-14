@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useDeferredValue, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -8,9 +8,10 @@ import {
   ArrowRight,
   Award,
   BookOpen,
+  CheckCircle2,
   ChevronDown,
-  Globe,
   GraduationCap,
+  Search,
   ShieldCheck,
   Sparkles,
   Trophy,
@@ -29,10 +30,7 @@ import {
 const providerList = Object.values(providers);
 const publicCertifications = finalCertificationCatalogue.filter((certification) => certification.publicVisible);
 const totalCerts = getPublicCertificationCount();
-const totalCategories = providerList.reduce(
-  (sum, p) => sum + p.categories.length,
-  0
-);
+const initialVisibleCount = 36;
 
 const classificationLabels: Record<CertificationClassification, string> = {
   "ai-literacy": "Culture IA",
@@ -45,11 +43,11 @@ const requirementLabels: Record<CertificationRequirement, string> = {
   optional: "Optionnel",
 };
 
-const classificationOptions: Array<{ value: "all" | CertificationClassification; label: string }> = [
-  { value: "all", label: "Toutes" },
-  { value: "ai-literacy", label: "Culture IA" },
-  { value: "applied-ai", label: "IA appliquée" },
-  { value: "non-ai", label: "Métier & outils" },
+const classificationOptions: Array<{ value: "all" | CertificationClassification; label: string; help: string }> = [
+  { value: "all", label: "Toutes", help: "Catalogue complet" },
+  { value: "ai-literacy", label: "Culture IA", help: "Socle transversal" },
+  { value: "applied-ai", label: "IA appliquée", help: "IA par métier" },
+  { value: "non-ai", label: "Métier", help: "Compétences pro" },
 ];
 
 const requirementOptions: Array<{ value: "all" | CertificationRequirement; label: string }> = [
@@ -58,552 +56,423 @@ const requirementOptions: Array<{ value: "all" | CertificationRequirement; label
   { value: "optional", label: "Optionnels" },
 ];
 
+const programmeLabels: Record<string, string> = {
+  management: "Management",
+  marketing: "Marketing",
+  finance: "Finance",
+  "informatique-ia": "Info IA",
+  cybersecurite: "Cyber",
+  "marketing-digital-ia": "Mktg IA",
+  crm: "CRM",
+  startups: "Projets",
+  "ingenierie-financiere": "Ing. Fin.",
+};
+
+const classStats = [
+  {
+    key: "ai-literacy" as const,
+    label: "Culture IA",
+    count: publicCertifications.filter((certification) => certification.classification === "ai-literacy").length,
+    description: "Fondamentaux, prompting, agents et productivité IA.",
+  },
+  {
+    key: "applied-ai" as const,
+    label: "IA appliquée",
+    count: publicCertifications.filter((certification) => certification.classification === "applied-ai").length,
+    description: "Marketing, finance, CRM, data, cyber et automatisation.",
+  },
+  {
+    key: "non-ai" as const,
+    label: "Métier & outils",
+    count: publicCertifications.filter((certification) => certification.classification === "non-ai").length,
+    description: "Certifications métier qui renforcent l'employabilité.",
+  },
+];
+
 export default function CertificationsPage() {
   const [classificationFilter, setClassificationFilter] = useState<"all" | CertificationClassification>("all");
   const [requirementFilter, setRequirementFilter] = useState<"all" | CertificationRequirement>("all");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
+  const deferredSearchTerm = useDeferredValue(searchTerm.trim().toLowerCase());
 
   const filteredCertifications = publicCertifications.filter((certification) => {
     const matchesClassification =
       classificationFilter === "all" || certification.classification === classificationFilter;
     const matchesRequirement =
       requirementFilter === "all" || certification.requirement === requirementFilter;
+    const searchable = [
+      certification.name,
+      certification.displayProvider,
+      certification.provider,
+      certification.recommendedYear,
+      classificationLabels[certification.classification],
+      requirementLabels[certification.requirement],
+      ...certification.programmes.map((programme) => programmeLabels[programme] ?? programme),
+    ]
+      .join(" ")
+      .toLowerCase();
+    const matchesSearch = !deferredSearchTerm || searchable.includes(deferredSearchTerm);
 
-    return matchesClassification && matchesRequirement;
+    return matchesClassification && matchesRequirement && matchesSearch;
   });
+
+  const displayedCertifications = filteredCertifications.slice(0, visibleCount);
+  const mandatoryCount = publicCertifications.filter((certification) => certification.requirement === "mandatory").length;
+  const optionalCount = publicCertifications.filter((certification) => certification.requirement === "optional").length;
+
+  function resetVisibleCount() {
+    setVisibleCount(initialVisibleCount);
+  }
 
   return (
     <>
-      {/* ═══════════ IMMERSIVE HERO ═══════════ */}
-      <section className="relative pt-40 pb-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-penn-navy via-[#1a2035] to-penn-navy" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 30% 50%, #2B8FAB 0%, transparent 60%), radial-gradient(circle at 70% 20%, #2B8FAB 0%, transparent 50%)",
-          }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, rgba(43,143,171,0.3) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
+      <section className="relative overflow-hidden pt-40 pb-24 lg:pb-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-penn-navy via-[#141b31] to-[#07111f]" />
+        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, #2B8FAB 0%, transparent 36%), radial-gradient(circle at 78% 18%, #8b5cf6 0%, transparent 32%), radial-gradient(circle at 52% 86%, #2B8FAB 0%, transparent 34%)" }} />
+        <div className="absolute inset-0 opacity-[0.035]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Badge
-              variant="outline"
-              size="lg"
-              className="mb-6 border-white/20 text-white/80"
-            >
-              Google · IBM · Harvard · Cisco · Bloomberg · Fortinet · HubSpot ·
-              DeepLearning.AI · SEMrush · AWS · PMI · ScrumStudy · Databricks ·
-              Microsoft
-            </Badge>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 lg:gap-16 items-center">
+            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }}>
+              <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
+                AI Passport EBS · Catalogue international géré
+              </Badge>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-[42px] md:text-[58px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
-          >
-            {totalCerts}+ certifications{" "}
-            <span className="text-[#2B8FAB]">incluses</span>.
-            <br />
-            Intégrées à votre formation.
-          </motion.h1>
+              <h1 className="text-[42px] md:text-[60px] lg:text-[76px] font-extrabold text-white leading-[1.02] tracking-[-1.5px] mb-6">
+                {totalCerts}+ preuves de compétence.
+                <br />
+                <span className="text-[#2B8FAB]">Un parcours clair.</span>
+              </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[700px] mb-12"
-          >
-            Chez EBS, votre diplôme n&apos;est que le début. Vous repartez
-            certifié par les plus grands noms mondiaux — Google, IBM, Harvard,
-            Bloomberg, et des fournisseurs internationaux — inclus dans votre formation.
-          </motion.p>
+              <p className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[720px] mb-10">
+                Un catalogue structuré par programme, avec des certifications obligatoires pour le socle EBS et des options pour construire un profil différenciant.
+              </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
-          >
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">
-                {totalCerts}+
-              </p>
-              <p className="text-[12px] text-white/50 font-medium">
-                Certifications disponibles
-              </p>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">
-                {providerList.length}
-              </p>
-              <p className="text-[12px] text-white/50 font-medium">
-                Fournisseurs premium
-              </p>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">
-                {totalCategories}
-              </p>
-              <p className="text-[12px] text-white/50 font-medium">
-                Domaines couverts
-              </p>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">
-                100%
-              </p>
-              <p className="text-[12px] text-white/50 font-medium">Incluses</p>
-            </div>
-          </motion.div>
+              <div className="flex flex-wrap gap-3 mb-10">
+                <Link href="#catalogue" className="inline-flex h-12 items-center gap-2 rounded-full bg-[#2B8FAB] px-7 text-[14px] font-extrabold uppercase tracking-wide text-white transition-transform hover:-translate-y-0.5">
+                  Explorer le catalogue
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link href="/ia-et-certifications" className="inline-flex h-12 items-center gap-2 rounded-full border border-white/15 px-7 text-[14px] font-extrabold uppercase tracking-wide text-white/85 hover:border-white/30 hover:bg-white/5">
+                  Voir l'approche IA
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 max-w-[720px]">
+                {classStats.map((stat) => (
+                  <div key={stat.key} className="rounded-2xl border border-white/10 bg-white/[0.045] p-4 backdrop-blur-sm">
+                    <p className="text-[30px] md:text-[38px] font-extrabold text-white leading-none">{stat.count}</p>
+                    <p className="mt-2 text-[11px] md:text-[12px] font-bold uppercase tracking-[0.08em] text-white/50">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="relative">
+              <div className="absolute -inset-4 rounded-[34px] bg-[#2B8FAB]/20 blur-3xl" />
+              <div className="relative overflow-hidden rounded-[30px] border border-white/12 bg-white/[0.07] p-6 shadow-2xl backdrop-blur-xl">
+                <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
+                  <div>
+                    <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-white/45">Catalogue actif</p>
+                    <p className="mt-1 text-[44px] font-extrabold leading-none text-white">{totalCerts}</p>
+                  </div>
+                  <div className="h-14 w-14 rounded-2xl bg-[#2B8FAB]/15 flex items-center justify-center text-[#2B8FAB]">
+                    <Award className="w-7 h-7" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 py-5">
+                  <div className="rounded-2xl bg-white/[0.055] p-4">
+                    <p className="text-[28px] font-extrabold text-white leading-none">{mandatoryCount}</p>
+                    <p className="mt-2 text-[12px] font-bold text-white/50">Obligatoires</p>
+                  </div>
+                  <div className="rounded-2xl bg-white/[0.055] p-4">
+                    <p className="text-[28px] font-extrabold text-[#2B8FAB] leading-none">{optionalCount}</p>
+                    <p className="mt-2 text-[12px] font-bold text-white/50">Optionnelles</p>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  {[
+                    "9 programmes couverts",
+                    "Cartes publiques sans liens externes",
+                    "Simulations Forage affichées par organisation",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-3 text-[14px] font-bold text-white/75">
+                      <CheckCircle2 className="w-4 h-4 text-[#2B8FAB]" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
+        <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2" animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
           <ChevronDown className="w-6 h-6 text-white/30" />
         </motion.div>
       </section>
 
-      {/* ═══════════ MANAGED CATALOGUE ═══════════ */}
+      <section id="catalogue" className="section-padding bg-[#F7FAFC]">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="mb-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+            <div>
+              <Badge variant="default" size="lg" className="mb-4">Catalogue géré</Badge>
+              <h2 className="text-[34px] md:text-[48px] font-extrabold text-penn-navy leading-[1.08] tracking-[-0.5px]">
+                Pas une liste de liens.
+                <br />
+                Un vrai système de parcours.
+              </h2>
+              <p className="text-[16px] text-penn-body mt-4 max-w-[690px] leading-relaxed">
+                Filtrez les certifications par rôle pédagogique et par niveau d'obligation. Les liens externes restent réservés à l'espace étudiant.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-penn-border bg-white px-5 py-4 shadow-sm">
+              <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-penn-body/50">Résultats affichés</p>
+              <p className="mt-1 text-[28px] font-extrabold text-penn-navy leading-none">{filteredCertifications.length}</p>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-8 items-start">
+            <aside className="lg:sticky lg:top-24 rounded-[28px] border border-penn-border bg-white p-5 shadow-sm">
+              <label className="relative block mb-5">
+                <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-penn-body/45" />
+                <input
+                  value={searchTerm}
+                  onChange={(event) => {
+                    setSearchTerm(event.target.value);
+                    resetVisibleCount();
+                  }}
+                  placeholder="Rechercher Google, finance, M1..."
+                  className="h-12 w-full rounded-2xl border border-penn-border bg-penn-bg-light pl-11 pr-4 text-[14px] font-semibold text-penn-navy outline-none transition-colors focus:border-[#2B8FAB] focus:bg-white"
+                />
+              </label>
+
+              <div className="space-y-5">
+                <div>
+                  <p className="mb-3 text-[12px] font-extrabold uppercase tracking-[0.12em] text-penn-body/55">Classification</p>
+                  <div className="space-y-2">
+                    {classificationOptions.map((option) => {
+                      const active = classificationFilter === option.value;
+                      return (
+                        <button
+                          key={option.value}
+                          type="button"
+                          onClick={() => {
+                            setClassificationFilter(option.value);
+                            resetVisibleCount();
+                          }}
+                          className={`w-full rounded-2xl border px-4 py-3 text-left transition-all ${active ? "border-[#2B8FAB] bg-[#2B8FAB]/10 text-penn-navy" : "border-penn-border bg-white text-penn-body hover:border-[#2B8FAB]/35"}`}
+                        >
+                          <span className="block text-[14px] font-extrabold">{option.label}</span>
+                          <span className="block text-[12px] text-penn-body/60">{option.help}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="mb-3 text-[12px] font-extrabold uppercase tracking-[0.12em] text-penn-body/55">Statut</p>
+                  <div className="grid grid-cols-1 gap-2">
+                    {requirementOptions.map((option) => {
+                      const active = requirementFilter === option.value;
+                      return (
+                        <button
+                          key={option.value}
+                          type="button"
+                          onClick={() => {
+                            setRequirementFilter(option.value);
+                            resetVisibleCount();
+                          }}
+                          className={`h-11 rounded-2xl border px-4 text-[13px] font-extrabold transition-all ${active ? "border-penn-navy bg-penn-navy text-white" : "border-penn-border bg-white text-penn-body hover:border-penn-navy/25"}`}
+                        >
+                          {option.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+            <div>
+              <div className="mb-5 grid grid-cols-1 md:grid-cols-3 gap-3">
+                {classStats.map((stat) => (
+                  <button
+                    key={stat.key}
+                    type="button"
+                    onClick={() => {
+                      setClassificationFilter(stat.key);
+                      resetVisibleCount();
+                    }}
+                    className="group rounded-2xl border border-penn-border bg-white p-5 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#2B8FAB]/35 hover:shadow-md"
+                  >
+                    <p className="text-[30px] font-extrabold text-penn-navy leading-none">{stat.count}</p>
+                    <p className="mt-2 text-[14px] font-extrabold text-penn-navy group-hover:text-[#2B8FAB]">{stat.label}</p>
+                    <p className="mt-1 text-[12px] text-penn-body/65 leading-relaxed">{stat.description}</p>
+                  </button>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                {displayedCertifications.map((certification, i) => {
+                  const logo = getCertificationLogo(certification);
+                  const programmePreview = certification.programmes.slice(0, 2).map((programme) => programmeLabels[programme] ?? programme).join(" · ");
+                  const remainingProgrammes = certification.programmes.length - 2;
+
+                  return (
+                    <motion.article
+                      key={certification.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-40px" }}
+                      transition={{ duration: 0.35, delay: Math.min(i * 0.015, 0.18) }}
+                      className="group relative overflow-hidden rounded-[22px] border border-penn-border bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#2B8FAB]/35 hover:shadow-xl"
+                    >
+                      <div className={`absolute inset-x-0 top-0 h-1 ${certification.requirement === "mandatory" ? "bg-[#2B8FAB]" : "bg-penn-navy/18"}`} />
+                      <div className="flex items-start justify-between gap-4 mb-5">
+                        <div className="h-11 min-w-0 flex items-center">
+                          {logo ? (
+                            <Image src={logo} alt={certification.displayProvider} width={126} height={40} className="h-9 w-auto max-w-[126px] object-contain opacity-80 transition-opacity group-hover:opacity-100" unoptimized />
+                          ) : (
+                            <span className="text-[13px] font-extrabold text-penn-navy">{certification.displayProvider}</span>
+                          )}
+                        </div>
+                        <span className={`rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.08em] ${certification.requirement === "mandatory" ? "bg-[#2B8FAB]/10 text-[#2B8FAB]" : "bg-penn-bg-light text-penn-body"}`}>
+                          {requirementLabels[certification.requirement]}
+                        </span>
+                      </div>
+
+                      <h3 className="min-h-[54px] text-[16px] font-extrabold text-penn-navy leading-snug group-hover:text-[#2B8FAB] transition-colors">
+                        {certification.name}
+                      </h3>
+
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[11px] font-bold text-penn-body">{classificationLabels[certification.classification]}</span>
+                        <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[11px] font-bold text-penn-body">{certification.recommendedYear}</span>
+                        {certification.publicNote && <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[11px] font-bold text-penn-body">{certification.publicNote}</span>}
+                      </div>
+
+                      <div className="mt-5 border-t border-penn-border pt-4">
+                        <p className="text-[12px] font-bold text-penn-body/65">
+                          {programmePreview}{remainingProgrammes > 0 ? ` · +${remainingProgrammes}` : ""}
+                        </p>
+                      </div>
+                    </motion.article>
+                  );
+                })}
+              </div>
+
+              {visibleCount < filteredCertifications.length && (
+                <div className="mt-9 text-center">
+                  <button
+                    type="button"
+                    onClick={() => setVisibleCount((count) => count + 36)}
+                    className="inline-flex h-12 items-center gap-2 rounded-full bg-penn-navy px-7 text-[14px] font-extrabold uppercase tracking-wide text-white transition-transform hover:-translate-y-0.5"
+                  >
+                    Afficher plus
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding bg-white">
         <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            className="text-center mb-16"
-          >
-            <Badge variant="default" size="lg" className="mb-4">
-              Catalogue géré
-            </Badge>
-            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
-              Catalogue certifiant EBS
-            </h2>
-            <p className="text-[16px] text-penn-body mt-3 max-w-[680px] mx-auto">
-              Une sélection structurée de certifications obligatoires et
-              optionnelles, classées par culture IA, IA appliquée et compétences
-              métier. Les liens externes sont réservés à l&apos;espace étudiant.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}>
+              <Badge variant="default" size="lg" className="mb-4">Fournisseurs</Badge>
+              <h2 className="text-[34px] md:text-[46px] font-extrabold text-penn-navy leading-[1.1]">
+                Les meilleurs noms, sans transformer la page en annuaire.
+              </h2>
+              <p className="mt-4 text-[16px] text-penn-body leading-relaxed">
+                Le catalogue public montre la crédibilité. Les détails d'accès, les liens externes et le suivi restent réservés à l'espace étudiant.
+              </p>
+            </motion.div>
 
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 mb-10">
-            <div className="grid grid-cols-3 gap-3 w-full lg:max-w-[520px]">
-              {[
-                { label: "Culture IA", count: publicCertifications.filter((certification) => certification.classification === "ai-literacy").length },
-                { label: "IA appliquée", count: publicCertifications.filter((certification) => certification.classification === "applied-ai").length },
-                { label: "Métier", count: publicCertifications.filter((certification) => certification.classification === "non-ai").length },
-              ].map((stat) => (
-                <div key={stat.label} className="rounded-2xl border border-penn-border bg-penn-bg-light p-4 text-center">
-                  <p className="text-[28px] font-extrabold text-penn-navy leading-none">{stat.count}</p>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-penn-body/60 mt-2">{stat.label}</p>
-                </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {providerList.slice(0, 12).map((provider, i) => (
+                <motion.div
+                  key={provider.slug}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.35, delay: i * 0.03 }}
+                  className="flex h-24 items-center justify-center rounded-2xl border border-penn-border bg-penn-bg-light p-4"
+                >
+                  <Image src={provider.logo} alt={provider.name} width={132} height={42} className="max-h-10 w-auto object-contain opacity-75" unoptimized />
+                </motion.div>
               ))}
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <select
-                value={classificationFilter}
-                onChange={(event) => setClassificationFilter(event.target.value as "all" | CertificationClassification)}
-                className="h-12 rounded-xl border border-penn-border bg-white px-4 text-[14px] font-bold text-penn-navy outline-none focus:border-[#2B8FAB]"
-                aria-label="Filtrer par classification"
-              >
-                {classificationOptions.map((option) => (
-                  <option key={option.value} value={option.value}>{option.label}</option>
-                ))}
-              </select>
-              <select
-                value={requirementFilter}
-                onChange={(event) => setRequirementFilter(event.target.value as "all" | CertificationRequirement)}
-                className="h-12 rounded-xl border border-penn-border bg-white px-4 text-[14px] font-bold text-penn-navy outline-none focus:border-[#2B8FAB]"
-                aria-label="Filtrer par obligation"
-              >
-                {requirementOptions.map((option) => (
-                  <option key={option.value} value={option.value}>{option.label}</option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-            {filteredCertifications.map((certification, i) => {
-              const logo = getCertificationLogo(certification);
-
-              return (
-                <motion.article
-                  key={certification.id}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.45, delay: Math.min(i * 0.025, 0.25) }}
-                  className="rounded-2xl border border-penn-border bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#2B8FAB]/30 hover:shadow-xl"
-                >
-                  <div className="flex items-start justify-between gap-4 mb-5">
-                    <div className="h-11 min-w-0 flex items-center">
-                      {logo ? (
-                        <Image
-                          src={logo}
-                          alt={certification.displayProvider}
-                          width={132}
-                          height={44}
-                          className="h-9 w-auto max-w-[132px] object-contain opacity-80"
-                          unoptimized
-                        />
-                      ) : (
-                        <span className="text-[13px] font-extrabold text-penn-navy">
-                          {certification.displayProvider}
-                        </span>
-                      )}
-                    </div>
-                    <span className={`rounded-full px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.08em] ${certification.requirement === "mandatory" ? "bg-[#2B8FAB]/10 text-[#2B8FAB]" : "bg-penn-bg-light text-penn-body"}`}>
-                      {requirementLabels[certification.requirement]}
-                    </span>
-                  </div>
-
-                  <h3 className="text-[17px] font-extrabold text-penn-navy leading-snug mb-3">
-                    {certification.name}
-                  </h3>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[12px] font-bold text-penn-body">
-                      {classificationLabels[certification.classification]}
-                    </span>
-                    <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[12px] font-bold text-penn-body">
-                      {certification.recommendedYear}
-                    </span>
-                    {certification.publicNote && (
-                      <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[12px] font-bold text-penn-body">
-                        {certification.publicNote}
-                      </span>
-                    )}
-                  </div>
-
-                  <p className="text-[13px] text-penn-body/70 leading-relaxed">
-                    Intégrée aux parcours EBS concernés. Accès et suivi détaillé
-                    disponibles dans l&apos;espace étudiant.
-                  </p>
-                </motion.article>
-              );
-            })}
           </div>
         </div>
       </section>
 
-      {/* ═══════════ PROVIDER GRID ═══════════ */}
-      <section className="section-padding bg-penn-bg-light">
-        <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            className="text-center mb-16"
-          >
-            <Badge variant="default" size="lg" className="mb-4">
-              Nos fournisseurs
-            </Badge>
-            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
-              {providerList.length} fournisseurs de certifications premium
-            </h2>
-            <p className="text-[16px] text-penn-body mt-3 max-w-[650px] mx-auto">
-              Chaque fournisseur propose un catalogue de certifications
-              reconnues mondialement par les recruteurs, incluses
-              dans votre formation.
-            </p>
-          </motion.div>
-
-          <div className="flex flex-wrap justify-center gap-6">
-            {providerList.map((p, i) => {
-              const certCount = p.categories.reduce(
-                (s, cat) => s + cat.certs.length,
-                0
-              );
-
-              return (
-                <motion.div
-                  key={p.slug}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: i * 0.06 }}
-                  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]"
-                >
-                  <Link
-                    href={`/certifications/${p.slug}`}
-                    className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#2B8FAB]/30"
-                  >
-                    <div className="h-12 w-full mb-4 flex items-center">
-                      <Image
-                        src={p.logo}
-                        alt={p.name}
-                        width={140}
-                        height={48}
-                        className="object-contain h-10 w-auto max-w-[140px] opacity-70 group-hover:opacity-100 transition-opacity"
-                        unoptimized
-                      />
-                    </div>
-
-                    <h3 className="text-[18px] font-extrabold text-penn-navy group-hover:text-[#2B8FAB] transition-colors mb-2">
-                      {p.name}
-                    </h3>
-
-                    <p className="text-[14px] text-penn-body leading-relaxed mb-4 flex-1 line-clamp-2">
-                      {p.tagline}
-                    </p>
-
-                    <div className="flex items-center justify-between pt-4 border-t border-penn-border">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[24px] font-extrabold text-penn-navy leading-none">
-                          {certCount}+
-                        </span>
-                        <span className="text-[11px] text-penn-body/60 font-medium leading-tight">
-                          certifications
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1.5 text-[13px] font-bold text-[#2B8FAB]">
-                        Explorer
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════ WHY EBS CERTS ═══════════ */}
       <section className="section-padding bg-penn-navy relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 50% 50%, #2B8FAB 0%, transparent 70%)",
-          }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, rgba(43,143,171,0.3) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
-
+        <div className="absolute inset-0 opacity-[0.035]" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, #2B8FAB 0%, transparent 70%)" }} />
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            className="text-center mb-16"
-          >
-              <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80">
-                Pourquoi EBS ?
-              </Badge>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-14">
+            <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80">Pourquoi EBS ?</Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-white leading-[1.1]">
-              Des certifications reconnues
+              Un système de preuve,
               <br />
-              <span className="text-[#2B8FAB]">incluses</span> dans votre
-              formation
+              pas une collection de badges.
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {[
-              {
-                icon: (
-                  <Trophy className="w-6 h-6 lg:w-7 lg:h-7" />
-                ),
-                title: "Reconnaissance mondiale",
-                text: "Des certifications immédiatement reconnues par les recruteurs dans 190+ pays.",
-                featured: true,
-              },
-              {
-                icon: (
-                  <Zap className="w-6 h-6 lg:w-7 lg:h-7" />
-                ),
-                title: "Incluses dans votre formation",
-                text: "Aucun frais supplémentaire. Les certifications sont intégrées à votre parcours.",
-                featured: true,
-              },
-              {
-                icon: (
-                  <Globe className="w-6 h-6 lg:w-7 lg:h-7" />
-                ),
-                title: `${providerList.length} fournisseurs`,
-                text: "Google, IBM, Harvard, Bloomberg, Cisco, Fortinet, HubSpot, AWS, et bien d'autres.",
-                featured: false,
-              },
-              {
-                icon: (
-                  <BookOpen className="w-6 h-6 lg:w-7 lg:h-7" />
-                ),
-                title: "9 programmes couverts",
-                text: "Chaque Licence et Master a son propre parcours de certifications dédié.",
-                featured: false,
-              },
-              {
-                icon: (
-                  <ShieldCheck className="w-6 h-6 lg:w-7 lg:h-7" />
-                ),
-                title: "Différenciation garantie",
-                text: "Un CV EBS se distingue immédiatement sur le marché de l'emploi.",
-                featured: false,
-              },
-              {
-                icon: (
-                  <GraduationCap className="w-6 h-6 lg:w-7 lg:h-7" />
-                ),
-                title: "Intégré à votre cursus",
-                text: "Les certifications sont intégrées à votre emploi du temps, pas en plus de vos études.",
-                featured: false,
-              },
+              { icon: <Trophy className="w-6 h-6" />, title: "Reconnaissance mondiale", text: "Des fournisseurs connus par les recruteurs et les grandes entreprises." },
+              { icon: <Zap className="w-6 h-6" />, title: "Inclus dans la formation", text: "Le parcours est intégré à l'expérience EBS, pas ajouté au hasard." },
+              { icon: <BookOpen className="w-6 h-6" />, title: "9 programmes couverts", text: "Chaque licence et master dispose d'un parcours contextualisé." },
+              { icon: <ShieldCheck className="w-6 h-6" />, title: "Charge maîtrisée", text: "Maximum 14 certifications obligatoires par programme." },
+              { icon: <GraduationCap className="w-6 h-6" />, title: "Portfolio futur", text: "Les badges peuvent alimenter l'espace étudiant et la Wall of Badges." },
+              { icon: <Sparkles className="w-6 h-6" />, title: "IA dans chaque filière", text: "Culture IA, IA appliquée et compétences métier sont combinées." },
             ].map((item, i) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{
-                  duration: 0.5,
-                  delay: i * 0.08,
-                }}
-                whileHover={{ y: -4, scale: 1.02 }}
-                className={`relative group bg-white/[0.03] backdrop-blur-sm border rounded-2xl p-6 lg:p-8 flex items-start gap-5 transition-all duration-300 ${
-                  item.featured
-                    ? "border-[#2B8FAB]/20 shadow-[0_0_60px_rgba(43,143,171,0.08)]"
-                    : "border-white/[0.06] hover:border-white/[0.12] hover:bg-white/[0.05]"
-                }`}
+                transition={{ duration: 0.45, delay: i * 0.06 }}
+                className="rounded-2xl border border-white/[0.07] bg-white/[0.035] p-6 transition-all hover:bg-white/[0.055]"
               >
-                {item.featured && (
-                  <div
-                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{
-                      boxShadow:
-                        "inset 0 0 80px rgba(43,143,171,0.08)",
-                    }}
-                  />
-                )}
-
-                <div
-                  className={`shrink-0 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${
-                    item.featured
-                      ? "w-14 h-14 lg:w-16 lg:h-16 bg-[#2B8FAB]/10 text-[#2B8FAB]"
-                      : "w-14 h-14 lg:w-16 lg:h-16 bg-white/5 text-white/60"
-                  }`}
-                >
-                  {item.icon}
-                </div>
-
-                <div className="min-w-0">
-                  <h3 className="text-[16px] lg:text-[18px] font-extrabold text-white/90 mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-[13px] lg:text-[14px] text-white/50 leading-relaxed">
-                    {item.text}
-                  </p>
-                </div>
-
-                {item.featured && (
-                  <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-[#2B8FAB] animate-pulse" />
-                )}
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2B8FAB]/10 text-[#2B8FAB]">{item.icon}</div>
+                <h3 className="text-[17px] font-extrabold text-white mb-2">{item.title}</h3>
+                <p className="text-[14px] text-white/50 leading-relaxed">{item.text}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════ QUICK CTAs ═══════════ */}
       <section className="section-padding bg-white">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            className="text-[34px] md:text-[44px] font-extrabold text-penn-navy text-center mb-16"
-          >
-            Prêt à construire votre avenir certifié ?
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="text-[34px] md:text-[44px] font-extrabold text-penn-navy text-center mb-14">
+            Construire un profil certifié EBS.
           </motion.h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {
-                icon: (
-                  <GraduationCap className="w-6 h-6" />
-                ),
-                title: "Nos Licences",
-                desc: "5 parcours de Licence avec certifications dédiées.",
-                href: "/licences",
-                label: "Explorer",
-              },
-              {
-                icon: (
-                  <Trophy className="w-6 h-6" />
-                ),
-                title: "Nos Masters",
-                desc: "4 Masters professionnels avec certifications avancées.",
-                href: "/masters",
-                label: "Explorer",
-              },
-              {
-                icon: (
-                  <Sparkles className="w-6 h-6" />
-                ),
-                title: "IA & Certifications",
-                desc: "Découvrez comment l'IA transforme l'employabilité.",
-                href: "/ia-et-certifications",
-                label: "Découvrir",
-              },
-              {
-                icon: (
-                  <Award className="w-6 h-6" />
-                ),
-                title: "Pré-inscription",
-                desc: "Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin.",
-                href: "/preinscription",
-                label: "Postuler",
-              },
+              { icon: <GraduationCap className="w-6 h-6" />, title: "Nos Licences", desc: "5 parcours de Licence avec certifications dédiées.", href: "/licences", label: "Explorer" },
+              { icon: <Trophy className="w-6 h-6" />, title: "Nos Masters", desc: "4 Masters professionnels avec certifications avancées.", href: "/masters", label: "Explorer" },
+              { icon: <Sparkles className="w-6 h-6" />, title: "IA & Certifications", desc: "Découvrez comment l'IA transforme l'employabilité.", href: "/ia-et-certifications", label: "Découvrir" },
+              { icon: <Award className="w-6 h-6" />, title: "Pré-inscription", desc: "Candidatures 2026-2027 ouvertes. Early Bird jusqu'au 30 Juin.", href: "/preinscription", label: "Postuler" },
             ].map((card, i) => (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Link
-                  href={card.href}
-                  className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#2B8FAB]/30"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-4 text-[#2B8FAB] group-hover:scale-110 transition-transform">
-                    {card.icon}
-                  </div>
-                  <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-[#2B8FAB] transition-colors">
-                    {card.title}
-                  </h3>
-                  <p className="text-[14px] text-penn-body leading-relaxed mb-4 flex-1">
-                    {card.desc}
-                  </p>
+              <motion.div key={card.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.08 }}>
+                <Link href={card.href} className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#2B8FAB]/30">
+                  <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-4 text-[#2B8FAB] group-hover:scale-110 transition-transform">{card.icon}</div>
+                  <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-[#2B8FAB] transition-colors">{card.title}</h3>
+                  <p className="text-[14px] text-penn-body leading-relaxed mb-4 flex-1">{card.desc}</p>
                   <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-[#2B8FAB]">
                     {card.label}
-                    <span className="group-hover:translate-x-1 transition-transform">
-                      →
-                    </span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Link>
               </motion.div>
@@ -613,15 +482,10 @@ export default function CertificationsPage() {
       </section>
 
       <CtaSection
-        title="Rejoignez une formation qui vous certifie par les leaders mondiaux."
-        subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant."
-        primaryCta={{
-          label: "Voir nos programmes", href: "/nos-programmes",
-        }}
-        secondaryCta={{
-          label: "Nous contacter",
-          href: "/contact",
-        }}
+        title="Rejoignez une formation qui transforme les certifications en avantage réel."
+        subtitle="Candidatures 2026-2027 ouvertes. Déposez votre dossier dès maintenant."
+        primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
+        secondaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"
       />
     </>
