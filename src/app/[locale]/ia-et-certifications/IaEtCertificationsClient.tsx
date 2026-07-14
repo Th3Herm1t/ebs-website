@@ -216,23 +216,10 @@ export default function IAEtCertificationsPage() {
     <>
       {/* ═══════════ IMMERSIVE HERO ═══════════ */}
       <section className="relative pt-40 pb-28 overflow-hidden bg-[#070B18]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(43,143,171,0.34),transparent_34%),radial-gradient(circle_at_78%_16%,rgba(156,39,176,0.28),transparent_32%),linear-gradient(135deg,#070B18_0%,#111A31_46%,#061521_100%)]" />
-        <div className="absolute inset-0 opacity-[0.11] bg-[linear-gradient(rgba(255,255,255,0.16)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.16)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_76%,transparent)]" />
-        <div className="absolute inset-0 opacity-[0.2] bg-[radial-gradient(circle,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:22px_22px] [mask-image:radial-gradient(circle_at_74%_42%,black,transparent_44%)]" />
-        <div className="absolute left-[-14%] top-[12%] h-[440px] w-[440px] rounded-full border border-[#2B8FAB]/20 bg-[#2B8FAB]/10 blur-[2px]" />
-        <div className="absolute right-[-10%] top-[8%] h-[620px] w-[620px] rounded-full border border-[#9C27B0]/20" />
-        <div className="absolute right-[-4%] top-[18%] h-[430px] w-[430px] rounded-full border border-[#2B8FAB]/20" />
-        <div className="absolute right-[8%] top-[31%] hidden h-48 w-48 rounded-full border border-white/10 lg:block" />
-        <div className="absolute right-[12%] top-[25%] hidden h-3 w-3 rounded-full bg-[#2B8FAB] shadow-[0_0_30px_rgba(43,143,171,0.9)] lg:block" />
-        <div className="absolute right-[28%] top-[58%] hidden h-2.5 w-2.5 rounded-full bg-[#9C27B0] shadow-[0_0_28px_rgba(156,39,176,0.9)] lg:block" />
-        <div className="absolute right-[5%] top-[68%] hidden h-2 w-2 rounded-full bg-white/80 shadow-[0_0_24px_rgba(255,255,255,0.7)] lg:block" />
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#070B18] to-transparent" />
-        <div className="absolute inset-y-0 right-0 hidden w-[48%] lg:block">
-          <div className="absolute right-12 top-44 h-[430px] w-[430px] rotate-12 rounded-[48px] border border-white/10 bg-white/[0.035] shadow-2xl backdrop-blur-xl" />
-          <div className="absolute right-28 top-52 h-[300px] w-[300px] -rotate-6 rounded-[38px] border border-[#2B8FAB]/20 bg-[#2B8FAB]/[0.045]" />
-          <div className="absolute right-24 top-64 h-px w-64 rotate-[-24deg] bg-gradient-to-r from-transparent via-[#2B8FAB]/60 to-transparent" />
-          <div className="absolute right-44 top-80 h-px w-72 rotate-[18deg] bg-gradient-to-r from-transparent via-[#9C27B0]/50 to-transparent" />
-        </div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(43,143,171,0.28),transparent_34%),radial-gradient(circle_at_82%_12%,rgba(156,39,176,0.18),transparent_30%),linear-gradient(135deg,#070B18_0%,#111A31_52%,#071521_100%)]" />
+        <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(rgba(255,255,255,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.14)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_72%,transparent)]" />
+        <div className="absolute -right-32 top-20 hidden h-[420px] w-[420px] rounded-full border border-[#2B8FAB]/15 lg:block" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#070B18] to-transparent" />
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div
@@ -282,9 +269,9 @@ export default function IAEtCertificationsPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="grid grid-cols-2 gap-4 rounded-[28px] border border-white/10 bg-white/[0.045] p-3 shadow-2xl backdrop-blur-xl md:grid-cols-4 md:gap-3 md:p-4 lg:max-w-[860px]"
+            className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5 lg:max-w-[860px]"
           >
-            <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
               <p className="text-[32px] md:text-[44px] font-extrabold text-[#9C27B0] leading-none mb-1">
                 {aiStats.literacy}
               </p>
@@ -292,7 +279,7 @@ export default function IAEtCertificationsPage() {
                 Culture IA
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
               <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">
                 {aiStats.applied}
               </p>
@@ -300,7 +287,7 @@ export default function IAEtCertificationsPage() {
                 IA appliquée
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
               <p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">
                 {aiStats.mandatory}
               </p>
@@ -308,7 +295,7 @@ export default function IAEtCertificationsPage() {
                 Obligatoires IA
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+            <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
               <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">
                 {aiStats.optional}
               </p>
