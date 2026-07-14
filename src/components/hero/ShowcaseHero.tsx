@@ -34,20 +34,20 @@ export function ShowcaseHero({ badge, title, subtitle, cards }: ShowcaseHeroProp
         <motion.div 
           className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] rounded-full blur-[140px]"
           style={{ background: 'radial-gradient(circle, rgba(43,143,171,0.15) 0%, rgba(43,143,171,0) 70%)' }}
-          animate={{ x: [0, 50, 0], y: [0, 30, 0], scale: [1, 1.1, 1] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ x: [0, 24, 0], y: [0, 16, 0] }}
+          transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
           className="absolute top-[10%] -right-[10%] w-[50%] h-[70%] rounded-full blur-[140px]"
           style={{ background: 'radial-gradient(circle, rgba(156,39,176,0.1) 0%, rgba(156,39,176,0) 70%)' }}
-          animate={{ x: [0, -40, 0], y: [0, -50, 0], scale: [1, 1.2, 1] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          animate={{ x: [0, -20, 0], y: [0, -24, 0] }}
+          transition={{ duration: 28, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
         <motion.div 
           className="absolute -bottom-[20%] left-[20%] w-[60%] h-[50%] rounded-full blur-[140px]"
           style={{ background: 'radial-gradient(circle, rgba(232,151,69,0.12) 0%, rgba(232,151,69,0) 70%)' }}
-          animate={{ x: [0, 30, 0], y: [0, -40, 0], scale: [1, 1.1, 1] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+          animate={{ x: [0, 18, 0], y: [0, -22, 0] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut", delay: 4 }}
         />
       </div>
 
@@ -78,13 +78,14 @@ export function ShowcaseHero({ badge, title, subtitle, cards }: ShowcaseHeroProp
                   <span key={i} className="overflow-hidden inline-block">
                     <motion.span
                       className="inline-block"
-                      initial={{ opacity: 0, y: "100%" }}
+                      initial={{ opacity: 0, y: "70%" }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{
                         type: "spring",
-                        damping: 18,
-                        stiffness: 120,
-                        delay: 0.1 + i * 0.05,
+                        damping: 24,
+                        stiffness: 150,
+                        mass: 0.65,
+                        delay: 0.08 + i * 0.035,
                       }}
                     >
                       {displayWord}
@@ -99,9 +100,9 @@ export function ShowcaseHero({ badge, title, subtitle, cards }: ShowcaseHeroProp
 
             <motion.p 
               className="text-[17px] md:text-[19px] text-penn-body leading-relaxed max-w-[560px]"
-              initial={{ opacity: 0, filter: "blur(4px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.35 }}
             >
               {subtitle}
             </motion.p>
@@ -134,15 +135,16 @@ function BentoStatCard({ card, index }: { card: FloatingCard, index: number }) {
         "relative group bg-white/70 backdrop-blur-xl border border-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-2xl md:rounded-3xl p-5 md:p-6 lg:p-8 overflow-hidden",
         isLarge ? "col-span-2" : "col-span-1"
       )}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
         type: "spring",
-        damping: 20,
-        stiffness: 100,
-        delay: 0.6 + index * 0.15,
+        damping: 24,
+        stiffness: 150,
+        mass: 0.75,
+        delay: 0.35 + index * 0.08,
       }}
-      whileHover={{ scale: 1.02 }}
+      whileHover={{ y: -4 }}
     >
       {/* Background Glow Effect on Hover */}
       <div 

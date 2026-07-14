@@ -1,9 +1,8 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import { ArrowRight, Award, Sparkles } from "lucide-react";
-import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 interface MagneticProgramCardProps {
@@ -26,41 +25,45 @@ export function MagneticProgramCard({
   className,
 }: MagneticProgramCardProps) {
   const ref = useRef<HTMLAnchorElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left - rect.width / 2) * 0.15;
-    const y = (e.clientY - rect.top - rect.height / 2) * 0.15;
-    setPosition({ x, y });
+    const x = (e.clientX - rect.left - rect.width / 2) * 0.035;
+    const y = (e.clientY - rect.top - rect.height / 2) * 0.035;
+
+    ref.current.style.setProperty("--card-x", `${x}px`);
+    ref.current.style.setProperty("--card-y", `${y}px`);
+    ref.current.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+    ref.current.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
   };
 
   const handleMouseLeave = () => {
-    setPosition({ x: 0, y: 0 });
+    if (!ref.current) return;
+    ref.current.style.setProperty("--card-x", "0px");
+    ref.current.style.setProperty("--card-y", "0px");
   };
 
   return (
-    <motion.div
-      className={cn("h-full", className)}
-      animate={{ x: position.x, y: position.y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-    >
+    <div className={cn("h-full", className)}>
       <Link
         ref={ref}
         href={href}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         className={cn(
-          "group relative flex flex-col h-full bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 transition-all duration-300 overflow-hidden",
-          "hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]",
+          "group relative flex flex-col h-full bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 overflow-hidden will-change-transform",
+          "transition-[transform,box-shadow,border-color] duration-300 ease-out hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]",
           isFeatured && "lg:col-span-2 lg:flex-row lg:items-center lg:gap-8"
         )}
-        style={{ borderBottom: `3px solid ${color}20` }}
+        style={{
+          borderBottom: `3px solid ${color}20`,
+          transform: "translate3d(var(--card-x, 0px), var(--card-y, 0px), 0)",
+        }}
       >
         <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500 pointer-events-none"
-          style={{ background: `radial-gradient(circle at var(--mouse-x,50%) var(--mouse-y,50%), ${color}, transparent 70%)` }}
+          className="absolute inset-0 opacity-0 group-hover:opacity-[0.045] transition-opacity duration-300 pointer-events-none"
+          style={{ background: `radial-gradient(circle at var(--mouse-x,50%) var(--mouse-y,50%), ${color}, transparent 62%)` }}
         />
 
         <div className={cn("relative z-10 flex flex-col flex-1", isFeatured && "lg:flex-1")}>
@@ -100,6 +103,6 @@ export function MagneticProgramCard({
           </div>
         )}
       </Link>
-    </motion.div>
+    </div>
   );
 }
