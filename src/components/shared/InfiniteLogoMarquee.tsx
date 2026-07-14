@@ -16,18 +16,11 @@ export function InfiniteLogoMarquee({ className }: { className?: string }) {
 
   return (
     <div className={cn("w-full bg-white/40 backdrop-blur-md py-12 border-y border-gray-100 flex items-center relative overflow-hidden", className)}>
-      <style>{`
-        @keyframes ebs-logo-marquee {
-          from { transform: translate3d(0, 0, 0); }
-          to { transform: translate3d(-50%, 0, 0); }
-        }
-      `}</style>
       <div className="absolute left-0 top-0 w-16 md:w-40 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 w-16 md:w-40 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
       <div className="relative group/marquee w-full overflow-hidden">
         <div
-          className="flex w-max items-center gap-16 md:gap-32 pr-16 md:pr-32 will-change-transform group-hover/marquee:[animation-play-state:paused]"
-          style={{ animation: "ebs-logo-marquee 28s linear infinite" }}
+          className="marquee-track items-center gap-16 md:gap-32 pr-16 md:pr-32 [animation-duration:28s]"
         >
           {logos.map((logo, index) => (
             <div key={`${logo.name}-${index}`} className="flex-shrink-0 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300">

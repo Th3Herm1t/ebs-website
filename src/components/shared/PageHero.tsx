@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { Badge } from "./Badge";
 import { Breadcrumb } from "./Breadcrumb";
 import { motion } from "motion/react";
+import { fadeUp, transitions } from "@/lib/animation";
 
 interface BreadcrumbItem {
   label: string;
@@ -73,9 +74,10 @@ export function PageHero({
       >
         {breadcrumbs && breadcrumbs.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={transitions.quick}
             className={cn("mb-5", align === "center" && "flex justify-center")}
           >
             <Breadcrumb items={breadcrumbs} className={isDark ? "[&_a]:text-white/70 [&_span]:text-white/60" : ""} />
@@ -84,9 +86,10 @@ export function PageHero({
 
         {badge && (
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ ...transitions.quick, delay: 0.06 }}
             className="mb-4"
           >
             <Badge variant={isDark ? "outline" : "default"} size="lg">
@@ -96,9 +99,10 @@ export function PageHero({
         )}
 
         <motion.h1
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          transition={{ ...transitions.hero, delay: 0.12 }}
           className={cn(
             "font-extrabold tracking-[-0.5px] mb-5",
             titleSizes[size],
@@ -110,9 +114,10 @@ export function PageHero({
 
         {subtitle && (
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ ...transitions.reveal, delay: 0.18 }}
             className={cn(
               "text-[16px] md:text-[18px] leading-relaxed max-w-[680px]",
               align === "center" && "mx-auto",
@@ -125,9 +130,10 @@ export function PageHero({
 
         {children && (
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ ...transitions.reveal, delay: 0.24 }}
             className="mt-8"
           >
             {children}

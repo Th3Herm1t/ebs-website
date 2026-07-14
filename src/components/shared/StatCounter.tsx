@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useInView } from "motion/react";
+import { useInView, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 interface StatCounterProps {
@@ -26,25 +26,30 @@ export function StatCounter({
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     if (!isInView) return;
-    let start = 0;
-    const duration = 2000;
-    const increment = end / (duration / 16);
 
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 16);
+    if (prefersReducedMotion) {
+      return;
+    }
 
-    return () => clearInterval(timer);
-  }, [isInView, end]);
+    let frame = 0;
+    const duration = 1200;
+    const startTime = performance.now();
+    const easeOut = (value: number) => 1 - Math.pow(1 - value, 3);
+
+    const tick = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      setCount(Math.round(end * easeOut(progress)));
+      if (progress < 1) frame = requestAnimationFrame(tick);
+    };
+
+    frame = requestAnimationFrame(tick);
+
+    return () => cancelAnimationFrame(frame);
+  }, [isInView, end, prefersReducedMotion]);
 
   const sizeClasses = {
     sm: "text-[28px]",
@@ -61,7 +66,7 @@ export function StatCounter({
         )}
         style={color ? { color } : undefined}
       >
-        {prefix}{count}{suffix}
+        {prefix}{prefersReducedMotion && isInView ? end : count}{suffix}
       </span>
       <span className="text-[14px] md:text-[15px] font-medium text-penn-body leading-snug max-w-[200px]">
         {label}

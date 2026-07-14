@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import { useReducedMotion } from "motion/react";
 import { ArrowRight, Award, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -25,9 +26,10 @@ export function MagneticProgramCard({
   className,
 }: MagneticProgramCardProps) {
   const ref = useRef<HTMLAnchorElement>(null);
+  const prefersReducedMotion = useReducedMotion();
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!ref.current) return;
+    if (!ref.current || prefersReducedMotion) return;
     const rect = ref.current.getBoundingClientRect();
     const x = (e.clientX - rect.left - rect.width / 2) * 0.035;
     const y = (e.clientY - rect.top - rect.height / 2) * 0.035;
@@ -53,7 +55,7 @@ export function MagneticProgramCard({
         onMouseLeave={handleMouseLeave}
         className={cn(
           "group relative flex flex-col h-full bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 overflow-hidden will-change-transform",
-          "transition-[transform,box-shadow,border-color] duration-300 ease-out hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]",
+          "transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] motion-reduce:hover:translate-y-0",
           isFeatured && "lg:col-span-2 lg:flex-row lg:items-center lg:gap-8"
         )}
         style={{

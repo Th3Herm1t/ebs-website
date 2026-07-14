@@ -1,9 +1,10 @@
 "use client";
 
 import { useRef } from "react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { Badge } from "@/components/shared/Badge";
 import { cn } from "@/lib/utils";
+import { fadeUp, staggerDelay, transitions } from "@/lib/animation";
 
 export interface FloatingCard {
   icon: React.ReactNode;
@@ -23,6 +24,7 @@ interface ShowcaseHeroProps {
 
 export function ShowcaseHero({ badge, title, subtitle, cards }: ShowcaseHeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
 
   // Title words for staggered reveal
   const titleWords = title.split(" ");
@@ -34,19 +36,19 @@ export function ShowcaseHero({ badge, title, subtitle, cards }: ShowcaseHeroProp
         <motion.div 
           className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] rounded-full blur-[140px]"
           style={{ background: 'radial-gradient(circle, rgba(43,143,171,0.15) 0%, rgba(43,143,171,0) 70%)' }}
-          animate={{ x: [0, 24, 0], y: [0, 16, 0] }}
+          animate={prefersReducedMotion ? undefined : { x: [0, 24, 0], y: [0, 16, 0] }}
           transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
           className="absolute top-[10%] -right-[10%] w-[50%] h-[70%] rounded-full blur-[140px]"
           style={{ background: 'radial-gradient(circle, rgba(156,39,176,0.1) 0%, rgba(156,39,176,0) 70%)' }}
-          animate={{ x: [0, -20, 0], y: [0, -24, 0] }}
+          animate={prefersReducedMotion ? undefined : { x: [0, -20, 0], y: [0, -24, 0] }}
           transition={{ duration: 28, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
         <motion.div 
           className="absolute -bottom-[20%] left-[20%] w-[60%] h-[50%] rounded-full blur-[140px]"
           style={{ background: 'radial-gradient(circle, rgba(232,151,69,0.12) 0%, rgba(232,151,69,0) 70%)' }}
-          animate={{ x: [0, 18, 0], y: [0, -22, 0] }}
+          animate={prefersReducedMotion ? undefined : { x: [0, 18, 0], y: [0, -22, 0] }}
           transition={{ duration: 30, repeat: Infinity, ease: "easeInOut", delay: 4 }}
         />
       </div>
@@ -61,9 +63,10 @@ export function ShowcaseHero({ badge, title, subtitle, cards }: ShowcaseHeroProp
             className="lg:col-span-7 flex flex-col items-start"
           >
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ ...transitions.reveal, delay: 0.08 }}
             >
               <Badge variant="default" size="lg" className="mb-6">{badge}</Badge>
             </motion.div>
@@ -81,11 +84,8 @@ export function ShowcaseHero({ badge, title, subtitle, cards }: ShowcaseHeroProp
                       initial={{ opacity: 0, y: "70%" }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{
-                        type: "spring",
-                        damping: 24,
-                        stiffness: 150,
-                        mass: 0.65,
-                        delay: 0.08 + i * 0.035,
+                        ...transitions.spring,
+                        delay: prefersReducedMotion ? 0 : 0.08 + staggerDelay(i, 0.18),
                       }}
                     >
                       {displayWord}
@@ -100,9 +100,10 @@ export function ShowcaseHero({ badge, title, subtitle, cards }: ShowcaseHeroProp
 
             <motion.p 
               className="text-[17px] md:text-[19px] text-penn-body leading-relaxed max-w-[560px]"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.35 }}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ ...transitions.reveal, delay: prefersReducedMotion ? 0 : 0.28 }}
             >
               {subtitle}
             </motion.p>
@@ -138,11 +139,8 @@ function BentoStatCard({ card, index }: { card: FloatingCard, index: number }) {
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        type: "spring",
-        damping: 24,
-        stiffness: 150,
-        mass: 0.75,
-        delay: 0.35 + index * 0.08,
+        ...transitions.spring,
+        delay: 0.32 + staggerDelay(index, 0.16),
       }}
       whileHover={{ y: -4 }}
     >

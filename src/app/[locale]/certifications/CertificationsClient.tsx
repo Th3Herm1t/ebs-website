@@ -3,7 +3,7 @@
 import { useDeferredValue, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import {
   ArrowRight,
   Award,
@@ -26,6 +26,7 @@ import {
   type CertificationClassification,
   type CertificationRequirement,
 } from "@/lib/certifications/final-catalogue";
+import { fadeUp, staggerDelay, transitions, viewportOnce } from "@/lib/animation";
 
 const providerList = Object.values(providers);
 const publicCertifications = finalCertificationCatalogue.filter((certification) => certification.publicVisible);
@@ -95,6 +96,7 @@ export default function CertificationsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
   const deferredSearchTerm = useDeferredValue(searchTerm.trim().toLowerCase());
+  const prefersReducedMotion = useReducedMotion();
 
   const filteredCertifications = publicCertifications.filter((certification) => {
     const matchesClassification =
@@ -134,7 +136,7 @@ export default function CertificationsPage() {
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 lg:gap-16 items-center">
-            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }}>
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" transition={transitions.hero}>
               <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
                 AI Passport EBS · Catalogue international géré
               </Badge>
@@ -169,7 +171,7 @@ export default function CertificationsPage() {
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="relative">
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" transition={{ ...transitions.hero, delay: prefersReducedMotion ? 0 : 0.12 }} className="relative">
               <div className="absolute -inset-4 rounded-[34px] bg-[#2B8FAB]/20 blur-3xl" />
               <div className="relative overflow-hidden rounded-[30px] border border-white/12 bg-white/[0.07] p-6 shadow-2xl backdrop-blur-xl">
                 <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
@@ -210,14 +212,14 @@ export default function CertificationsPage() {
           </div>
         </div>
 
-        <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2" animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
+        <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2" animate={prefersReducedMotion ? undefined : { y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
           <ChevronDown className="w-6 h-6 text-white/30" />
         </motion.div>
       </section>
 
       <section id="catalogue" className="section-padding bg-[#F7FAFC]">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="mb-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} className="mb-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
               <Badge variant="default" size="lg" className="mb-4">Catalogue géré</Badge>
               <h2 className="text-[34px] md:text-[48px] font-extrabold text-penn-navy leading-[1.08] tracking-[-0.5px]">
@@ -326,11 +328,11 @@ export default function CertificationsPage() {
                   return (
                     <motion.article
                       key={certification.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
+                      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-40px" }}
-                      transition={{ duration: 0.35, delay: Math.min(i * 0.015, 0.18) }}
-                      className="group relative overflow-hidden rounded-[22px] border border-penn-border bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#2B8FAB]/35 hover:shadow-xl"
+                      transition={{ ...transitions.quick, delay: prefersReducedMotion ? 0 : staggerDelay(i, 0.16) }}
+                      className="group relative overflow-hidden rounded-[22px] border border-penn-border bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#2B8FAB]/35 hover:shadow-xl motion-reduce:hover:translate-y-0"
                     >
                       <div className={`absolute inset-x-0 top-0 h-1 ${certification.requirement === "mandatory" ? "bg-[#2B8FAB]" : "bg-penn-navy/18"}`} />
                       <div className="flex items-start justify-between gap-4 mb-5">
@@ -386,7 +388,7 @@ export default function CertificationsPage() {
       <section className="section-padding bg-white">
         <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}>
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>
               <Badge variant="default" size="lg" className="mb-4">Fournisseurs</Badge>
               <h2 className="text-[34px] md:text-[46px] font-extrabold text-penn-navy leading-[1.1]">
                 Les meilleurs noms, sans transformer la page en annuaire.
@@ -400,10 +402,10 @@ export default function CertificationsPage() {
               {providerList.slice(0, 12).map((provider, i) => (
                 <motion.div
                   key={provider.slug}
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.98 }}
+                  whileInView={prefersReducedMotion ? undefined : { opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.35, delay: i * 0.03 }}
+                  transition={{ ...transitions.quick, delay: prefersReducedMotion ? 0 : staggerDelay(i, 0.16) }}
                   className="flex h-24 items-center justify-center rounded-2xl border border-penn-border bg-penn-bg-light p-4"
                 >
                   <Image src={provider.logo} alt={provider.name} width={132} height={42} className="max-h-10 w-auto object-contain opacity-75" unoptimized />
@@ -417,7 +419,7 @@ export default function CertificationsPage() {
       <section className="section-padding bg-penn-navy relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.035]" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, #2B8FAB 0%, transparent 70%)" }} />
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-14">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} className="text-center mb-14">
             <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80">Pourquoi EBS ?</Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-white leading-[1.1]">
               Un système de preuve,
@@ -437,10 +439,10 @@ export default function CertificationsPage() {
             ].map((item, i) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
+                whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.45, delay: i * 0.06 }}
+                transition={{ ...transitions.reveal, delay: prefersReducedMotion ? 0 : staggerDelay(i, 0.2) }}
                 className="rounded-2xl border border-white/[0.07] bg-white/[0.035] p-6 transition-all hover:bg-white/[0.055]"
               >
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2B8FAB]/10 text-[#2B8FAB]">{item.icon}</div>
@@ -454,7 +456,7 @@ export default function CertificationsPage() {
 
       <section className="section-padding bg-white">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="text-[34px] md:text-[44px] font-extrabold text-penn-navy text-center mb-14">
+          <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} className="text-[34px] md:text-[44px] font-extrabold text-penn-navy text-center mb-14">
             Construire un profil certifié EBS.
           </motion.h2>
 
@@ -465,7 +467,7 @@ export default function CertificationsPage() {
               { icon: <Sparkles className="w-6 h-6" />, title: "IA & Certifications", desc: "Découvrez comment l'IA transforme l'employabilité.", href: "/ia-et-certifications", label: "Découvrir" },
               { icon: <Award className="w-6 h-6" />, title: "Pré-inscription", desc: "Candidatures 2026-2027 ouvertes. Early Bird jusqu'au 30 Juin.", href: "/preinscription", label: "Postuler" },
             ].map((card, i) => (
-              <motion.div key={card.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.08 }}>
+              <motion.div key={card.title} initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }} whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ ...transitions.quick, delay: prefersReducedMotion ? 0 : staggerDelay(i, 0.16) }}>
                 <Link href={card.href} className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#2B8FAB]/30">
                   <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-4 text-[#2B8FAB] group-hover:scale-110 transition-transform">{card.icon}</div>
                   <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-[#2B8FAB] transition-colors">{card.title}</h3>
