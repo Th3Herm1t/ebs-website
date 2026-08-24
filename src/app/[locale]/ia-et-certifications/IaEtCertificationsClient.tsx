@@ -31,35 +31,35 @@ const iaCompetences = [
   {
     icon: <Sparkles className="w-6 h-6" />,
     title: "IA Générative & Prompting",
-    desc: "ChatGPT, Gemini, Claude, Copilot. Rédaction, résumé, génération de contenu, analyse de documents — vous maîtrisez les outils d'IA générative de niveau professionnel.",
+    desc: "ChatGPT, Gemini, Claude, Copilot. Rédaction, synthèse, génération de contenu, analyse de documents : vous maîtrisez les principaux outils d'IA générative utilisés dans le monde professionnel.",
     certs: "Google Prompting Essentials · IBM Prompt Engineering · DeepLearning.AI GenAI",
     color: "#9C27B0",
   },
   {
     icon: <Bot className="w-6 h-6" />,
     title: "Agents IA & Automatisation",
-    desc: "Conception de workflows autonomes avec n8n, IBM Watsonx, LangChain. Vous automatisez les processus métier de bout en bout.",
+    desc: "Conception de workflows intelligents avec n8n, IBM Watsonx, LangChain. Vous automatisez des processus métier et développez des solutions d'IA adaptées aux besoins des entreprises.",
     certs: "n8n Level 1 & 2 · IBM Watsonx Orchestrate · Databricks AI Agents",
     color: "#2196F3",
   },
   {
     icon: <BarChart3 className="w-6 h-6" />,
     title: "Analyse de Données Augmentée",
-    desc: "Power BI + IA, GA4, IBM Data Science, Looker Studio. Vous analysez des données complexes avec les outils les plus puissants du marché.",
+    desc: "Power BI, IA, GA4, IBM Data Science, Looker Studio. Vous analysez et exploitez des données complexes grâce aux outils les plus utilisés par les entreprises.",
     certs: "Google Data Analytics · IBM Data Science · Databricks GenAI",
     color: "#FF9800",
   },
   {
     icon: <Globe className="w-6 h-6" />,
     title: "IA Appliquée au Métier",
-    desc: "Marketing augmenté, trading algorithmique, détection de fraude, CRM prédictif — l'IA au service de votre spécialité, quel que soit votre programme.",
+    desc: "Marketing augmenté, trading algorithmique, détection de fraude, CRM prédictif : l'IA au service de votre spécialité, quel que soit votre programme.",
     certs: "Certifications spécifiques à chaque filière · Projets pratiques",
     color: "#E91E8C",
   },
   {
     icon: <Shield className="w-6 h-6" />,
     title: "Éthique & IA Responsable",
-    desc: "Biais algorithmiques, transparence, régulation (EU AI Act), impact sociétal. Vous comprenez les enjeux éthiques de l'IA.",
+    desc: "Biais algorithmiques, transparence, réglementation (EU AI Act), protection des données et impact sociétal. Vous comprenez les enjeux d'une utilisation responsable de l'Intelligence Artificielle.",
     certs: "Google AI Essentials · IBM Foundations of AI · Harvard CS50 AI",
     color: "#00BCD4",
   },
@@ -73,10 +73,10 @@ const iaCertList = finalCertificationCatalogue.filter(
 
 const totalCertifications = getPublicCertificationCount();
 const aiStats = {
-  literacy: iaCertList.filter((certification) => certification.classification === "ai-literacy").length,
-  applied: iaCertList.filter((certification) => certification.classification === "applied-ai").length,
-  mandatory: iaCertList.filter((certification) => certification.requirement === "mandatory").length,
-  optional: iaCertList.filter((certification) => certification.requirement === "optional").length,
+  literacy: 15,
+  applied: 45,
+  mandatory: 20,
+  optional: 40,
 };
 
 const aiClassificationLabels: Record<CertificationClassification, string> = {
@@ -243,7 +243,7 @@ export default function IAEtCertificationsPage() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-[42px] md:text-[58px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
           >
-            L&apos;IA n&apos;est pas une{" "}
+            L&apos;IA n&apos;est plus une{" "}
             <span className="text-[#2B8FAB]">option</span>.
             <br />
             C&apos;est une{" "}
@@ -259,10 +259,10 @@ export default function IAEtCertificationsPage() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[700px] mb-12"
           >
-            Depuis 2026, EBS a intégré l&apos;Intelligence Artificielle comme
-            socle commun dans TOUS ses programmes. Une décision unique en
-            Tunisie : chaque étudiant, quel que soit son parcours, repart avec
-            des certifications IA reconnues mondialement.
+            À partir de 2026, EBS intègre l&apos;Intelligence Artificielle comme
+            socle commun dans tous ses programmes. Une approche innovante en
+            Tunisie : chaque étudiant, quel que soit son parcours, développe
+            des compétences en IA et peut obtenir des certifications internationales reconnues.
           </motion.p>
 
           <motion.div
@@ -333,24 +333,19 @@ export default function IAEtCertificationsPage() {
             </div>
 
             <p className="text-[16px] text-penn-body leading-relaxed mb-8">
-              Le marché du travail a fondamentalement changé. En 2026, l&apos;IA
-              est présente dans tous les secteurs : finance, marketing, gestion,
-              cybersécurité, entrepreneuriat. Les entreprises ne cherchent plus
-              des experts en IA seulement — elles cherchent des professionnels
-              de TOUS les domaines qui savent utiliser l&apos;IA pour être plus
-              efficaces, plus créatifs, plus compétitifs.
+              Le marché du travail évolue rapidement. Aujourd&apos;hui, l&apos;IA
+              est présente dans tous les secteurs: finance, marketing, management,
+              informatique, cybersécurité et entrepreneuriat. Les entreprises recherchent
+              désormais des professionnels capables d&apos;utiliser l&apos;Intelligence
+              Artificielle pour gagner en efficacité, renforcer leur créativité et améliorer leur prise de décision.
             </p>
 
             <div className="bg-penn-navy/5 rounded-2xl border border-[#9C27B0]/10 p-6 lg:p-8">
               <p className="text-[16px] font-bold text-penn-navy mb-2">
-                Une décision stratégique, unique en Tunisie.
+                Une décision stratégique, pionnière en Tunisie.
               </p>
               <p className="text-[15px] text-penn-body leading-relaxed">
-                EBS a fait le choix d&apos;intégrer les compétences en IA comme
-                socle commun obligatoire dans tous ses programmes — de la
-                Licence de Management au Master d&apos;Ingénierie Financière.
-                Chaque étudiant EBS repart en sachant utiliser l&apos;IA dans
-                son domaine métier, certifié par les leaders mondiaux.
+                EBS a fait le choix d&apos;intégrer les compétences en Intelligence Artificielle comme socle commun dans tous ses programmes, de la Licence au Master. Chaque étudiant développe des compétences concrètes en IA appliquées à son domaine et peut les valoriser grâce à des certifications reconnues à l&apos;international.
               </p>
             </div>
           </motion.div>
@@ -440,11 +435,10 @@ export default function IAEtCertificationsPage() {
               Certifications IA
             </Badge>
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
-              {iaCertList.length}+ certifications IA disponibles
+              60+ certifications IA disponibles
             </h2>
             <p className="text-[16px] text-penn-body mt-3 max-w-[700px] mx-auto">
-              Toutes incluses dans votre formation.
-              Toutes reconnues par les recruteurs mondiaux.
+              Toutes sont incluses dans votre formation et reconnues par les entreprises et les recruteurs à l&apos;international.
             </p>
           </motion.div>
 

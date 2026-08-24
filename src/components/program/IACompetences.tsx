@@ -4,10 +4,11 @@ import { IA_CERTS_SHARED } from "./data";
 
 interface IACompetencesProps {
   color?: string;
+  description?: React.ReactNode;
   className?: string;
 }
 
-export function IACompetences({ color, className }: IACompetencesProps) {
+export function IACompetences({ color, description, className }: IACompetencesProps) {
   const accentColor = color ?? "#2B8FAB";
 
   return (
@@ -23,11 +24,15 @@ export function IACompetences({ color, className }: IACompetencesProps) {
             </h3>
           </div>
 
-          <p className="text-white/70 text-[15px] mb-6 max-w-[600px]">
-            Les compétences en Intelligence Artificielle sont intégrées comme socle
-            commun obligatoire dans tous les parcours EBS. Voici les 6 certifications
-            IA fondamentales que vous obtiendrez, parmi les 26 disponibles.
-          </p>
+          <div className="text-white/70 text-[15px] mb-6 max-w-[600px] space-y-4">
+            {description || (
+              <p>
+                Les compétences en Intelligence Artificielle sont intégrées comme socle
+                commun obligatoire dans tous les parcours EBS. Voici les 6 certifications
+                IA fondamentales que vous obtiendrez, parmi les 26 disponibles.
+              </p>
+            )}
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
             {IA_CERTS_SHARED.map((cert) => (

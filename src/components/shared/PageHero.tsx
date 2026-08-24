@@ -5,6 +5,7 @@ import { Badge } from "./Badge";
 import { Breadcrumb } from "./Breadcrumb";
 import { motion } from "motion/react";
 import { fadeUp, transitions } from "@/lib/animation";
+import { FormattedTitle } from "./FormattedTitle";
 
 interface BreadcrumbItem {
   label: string;
@@ -109,7 +110,7 @@ export function PageHero({
             titleColor
           )}
         >
-          {title}
+          <FormattedTitle text={title} />
         </motion.h1>
 
         {subtitle && (

@@ -10,16 +10,16 @@ const valeurs = [
     number: "01",
     icon: <Award className="w-5 h-5" />,
     nom: "Excellence académique",
-    description: "Des programmes conçus selon les standards internationaux, mis à jour en continu.",
-    concret: "Corps enseignant qualifié · Programmes revus chaque année · Benchmarking international",
+    description: "Des programmes conçus selon les standards internationaux et régulièrement actualisés.",
+    concret: "Corps enseignant qualifié · Programmes régulièrement mis à jour · Benchmarking international",
     color: "#2B8FAB",
   },
   {
     number: "02",
     icon: <Lightbulb className="w-5 h-5" />,
     nom: "Innovation pédagogique",
-    description: "L'IA et les certifications internationales sont au cœur de chaque parcours.",
-    concret: "IA obligatoire dans tous les programmes · 150+ certifications gratuites · Nouvelles méthodes d'enseignement",
+    description: "L'Intelligence Artificielle, les certifications internationales et la pédagogie par projets sont au cœur de chaque parcours.",
+    concret: "IA intégrée dans tous les programmes · 150+ certifications internationales · Pédagogie innovante",
     color: "#9C27B0",
   },
   {
@@ -27,23 +27,23 @@ const valeurs = [
     icon: <Globe className="w-5 h-5" />,
     nom: "Ouverture internationale",
     description: "Nos partenariats ouvrent des horizons sans frontières.",
-    concret: "16 partenaires en France, Canada, Italie et Oman · Mobilité étudiante facilitée · Double diplôme possible",
+    concret: "14 partenaires en France, au Canada, en Italie et à Oman • Mobilité étudiante • Reconnaissance automatique des années d'études effectuées à EBS pour la poursuite des études à l'international",
     color: "#E89745",
   },
   {
     number: "04",
     icon: <Target className="w-5 h-5" />,
     nom: "Employabilité réelle",
-    description: "Tout est conçu pour votre insertion professionnelle rapide.",
-    concret: "Simulations Forage · Certifications reconnues par les RH mondiaux · Stages professionnels",
+    description: "Tout est conçu pour faciliter votre insertion professionnelle.",
+    concret: "Simulations Forage · Certifications reconnues à l'international · Stages et projets en entreprise",
     color: "#00BCD4",
   },
   {
     number: "05",
     icon: <Heart className="w-5 h-5" />,
     nom: "Proximité & Accompagnement",
-    description: "Vous n'êtes jamais un numéro à EBS.",
-    concret: "Suivi personnalisé · Administration réactive · Encadrement individuel",
+    description: "À EBS, chaque étudiant bénéficie d'un accompagnement personnalisé.",
+    concret: "Accompagnement personnalisé • Administration à l'écoute et réactive • Encadrement individuel",
     color: "#E91E8C",
   },
 ];
@@ -55,15 +55,15 @@ const missions = [
   },
   {
     number: "02",
-    text: "Former des managers, des entrepreneurs et des cadres supérieurs dotés d'un solide socle de connaissances fondamentales et pratiques.",
+    text: "Former des managers, des entrepreneurs et des cadres supérieurs dotés d'un solide socle de connaissances théoriques et pratiques.",
   },
   {
     number: "03",
-    text: "Intégrer les compétences en Intelligence Artificielle dans tous les parcours, faisant d'EBS la première université tunisienne à adopter l'IA comme compétence transversale universelle.",
+    text: "Intégrer les compétences en Intelligence Artificielle dans tous les parcours afin de préparer les étudiants aux métiers d'aujourd'hui et de demain.",
   },
   {
     number: "04",
-    text: "Permettre à chaque étudiant de décrocher des certifications internationales reconnues par les recruteurs du monde entier.",
+    text: "Permettre à chaque étudiant d'obtenir des certifications internationales reconnues par les entreprises et les recruteurs du monde entier.",
   },
   {
     number: "05",
@@ -119,7 +119,7 @@ export default function VisionPage() {
               transition={{ duration: 0.6, delay: 0.35 }}
               className="text-[17px] md:text-[19px] text-white/60 leading-relaxed max-w-[550px]"
             >
-              Ce qui nous guide au quotidien pour former les leaders de demain.
+              Ce qui nous guide au quotidien pour former les talents de demain.
             </motion.p>
           </div>
 

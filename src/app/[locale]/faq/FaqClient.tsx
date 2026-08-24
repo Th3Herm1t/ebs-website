@@ -25,130 +25,64 @@ import { Badge, CtaSection } from "@/components/shared";
 
 const categories = [
   {
-    title: "Admissions & Inscription",
+    title: "FAQ Admissions",
     icon: ClipboardList,
     questions: [
       {
-        q: "Quelles sont les conditions d'admission en Licence ?",
-        a: "Pour intégrer une Licence chez EBS, vous devez être titulaire du Baccalauréat (toutes sections confondues). L'admission se fait sur étude de dossier, suivie d'un entretien de motivation. Aucun concours d'entrée n'est requis.",
+        q: "Y a-t-il un concours d'entrée ?",
+        a: "Non. L'admission à EBS se fait sur étude du dossier académique et de la motivation du candidat.",
       },
       {
-        q: "Quand ouvrent les inscriptions pour 2026-2027 ?",
-        a: "Les candidatures pour l'année universitaire 2026-2027 sont ouvertes depuis Janvier 2026. Nous recommandons de postuler avant le 30 Juin pour bénéficier du tarif Early Bird et garantir votre place dans la filière de votre choix.",
+        q: "Quand ouvrent les inscriptions ?",
+        a: "Les inscriptions sont ouvertes chaque année pour la prochaine rentrée universitaire, dans la limite des places disponibles.",
       },
       {
-        q: "Puis-je m'inscrire sans le Bac ?",
-        a: "Le Baccalauréat (ou un diplôme équivalent reconnu) est obligatoire pour intégrer une Licence. Pour les admissions en Master, une Licence (Bac+3) ou équivalent est requise. Contactez-nous pour étudier votre situation spécifique.",
+        q: "Peut-on s'inscrire en cours d'année ?",
+        a: "En principe, les inscriptions ne sont pas possibles en cours d'année. Des admissions exceptionnelles peuvent toutefois être envisagées au cas par cas et sous réserve de l'autorisation du Ministère de l'Enseignement Supérieur et de la Recherche Scientifique.",
       },
       {
-        q: "Comment se déroule l'entretien de motivation ?",
-        a: "L'entretien dure environ 30 minutes avec un membre de notre équipe pédagogique. Il permet d'évaluer votre projet professionnel, votre motivation et votre adéquation avec le programme choisi. Aucune connaissance technique préalable n'est exigée.",
+        q: "EBS est-elle agréée par l'État tunisien ?",
+        a: "Oui. ESPIMA Business School est une université privée agréée par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique sous le n° 02-2013.",
       },
       {
-        q: "Y a-t-il une limite de places par filière ?",
-        a: "Oui, chaque filière a une capacité limitée pour garantir un encadrement de qualité. Nous acceptons environ 30 à 40 étudiants par promotion et par programme. Les places sont attribuées par ordre d'arrivée des dossiers complets.",
-      },
-    ],
-  },
-  {
-    title: "Programmes & Pédagogie",
-    icon: BookOpen,
-    questions: [
-      {
-        q: "Quelle est la différence entre la Licence Informatique IA et Cybersécurité ?",
-        a: "La Licence Informatique IA forme aux métiers de la data, du machine learning, du deep learning et des agents IA. La Licence Cybersécurité prépare aux métiers de la sécurité offensive et défensive : SOC, pentest, cloud security, incident response et conformité.",
+        q: "Des facilités de paiement ou des réductions sont-elles proposées ?",
+        a: "Oui. EBS propose des facilités de paiement ainsi que des réductions selon les conditions et offres en vigueur. Pour connaître les modalités applicables, contactez le service Scolarité.",
       },
       {
-        q: "Les cours sont-ils en français ou en anglais ?",
-        a: "Les cours sont principalement en français, mais une part croissante est dispensée en anglais (notamment les certifications internationales, les modules techniques et les interventions de professeurs invités). Un niveau d'anglais professionnel est exigé en fin de parcours.",
+        q: "Quels Baccalauréats permettent de s'inscrire en Licence ?",
+        a: "L'admission en Licence est ouverte aux titulaires du Baccalauréat, toutes sections sauf Lettres et Sport.",
       },
       {
-        q: "Comment sont organisés les stages ?",
-        a: "Les stages sont obligatoires en fin de chaque année. EBS vous accompagne dans la recherche via son réseau d'entreprises partenaires. Les stages durent de 1 à 3 mois selon l'année d'étude. De nombreux étudiants décrochent leur premier emploi à l'issue de leur stage de fin d'études.",
+        q: "Puis-je intégrer EBS après avoir commencé mes études dans une autre université ?",
+        a: "Oui. Une admission peut être étudiée en fonction de votre niveau, de votre filière et des études déjà validées. L'équivalence et le niveau d'intégration sont examinés sur dossier.",
       },
       {
-        q: "Puis-je changer de filière en cours d'année ?",
-        a: "Un changement de filière est possible durant le premier mois de cours. Au-delà, cela devient plus difficile en raison des spécificités de chaque programme. Nous vous conseillons de bien réfléchir à votre orientation avant l'inscription.",
+        q: "Puis-je poursuivre mes études à l'étranger après EBS ?",
+        a: "Oui. EBS dispose de partenaires académiques internationaux en France, au Canada, en Italie et à Oman, offrant différentes possibilités de poursuite d'études selon votre filière, votre niveau et les conditions du partenaire.",
       },
       {
-        q: "Quels débouchés après une Licence EBS ?",
-        a: "Les débouchés sont excellents : 90%+ de nos diplômés trouvent un emploi dans les 6 mois. Selon la filière : chef de produit, analyste financier, développeur, community manager, consultant en cybersécurité... Vous pouvez également poursuivre en Master chez EBS ou à l'international.",
-      },
-    ],
-  },
-  {
-    title: "Certifications",
-    icon: Award,
-    questions: [
-      {
-        q: "Les certifications sont-elles vraiment gratuites ?",
-        a: "Oui, absolument. Toutes les certifications (Google, IBM, Harvard, Bloomberg, Cisco, Fortinet, HubSpot, etc.) sont entièrement gratuites pour nos étudiants. Elles sont incluses dans vos frais de scolarité, sans aucun coût supplémentaire.",
+        q: "Dois-je choisir le Parcours International dès ma première année ?",
+        a: "Oui. Le Parcours International est une classe spécifique à choisir dès la première année. L'admission chez un partenaire reste soumise à l'étude du dossier et à ses conditions d'admission.",
       },
       {
-        q: "Combien de certifications puis-je obtenir ?",
-        a: "Le nombre dépend de votre programme et de votre motivation. En moyenne, un étudiant EBS obtient entre 15 et 25 certifications pendant son cursus. Les plus motivés peuvent en décrocher 50+. Toutes les formations sont en ligne, à votre rythme.",
+        q: "Peut-on intégrer un Master EBS avec une Licence obtenue dans une autre université ?",
+        a: "Oui, sous réserve que votre Licence ou diplôme Bac+3 soit compatible avec le Master choisi et après étude de votre dossier.",
       },
       {
-        q: "Les certifications sont-elles reconnues par les recruteurs ?",
-        a: "Oui, absolument. Les certifications Google, IBM, Harvard, Bloomberg, Cisco sont mondialement reconnues et activement recherchées par les recruteurs. Elles apparaissent directement sur votre CV et votre profil LinkedIn. C'est un avantage compétitif immédiat sur le marché de l'emploi.",
+        q: "Les étudiants internationaux peuvent-ils s'inscrire à EBS ?",
+        a: "Oui. EBS accueille des étudiants internationaux et les accompagne dans leur candidature ainsi que dans la préparation de leur arrivée et de leur installation en Tunisie.",
       },
       {
-        q: "Dois-je passer les certifications en dehors des cours ?",
-        a: "Non. Les certifications sont intégrées à votre emploi du temps. Des créneaux dédiés sont prévus chaque semaine, et nos enseignants vous accompagnent dans la préparation des examens de certification.",
-      },
-    ],
-  },
-  {
-    title: "International",
-    icon: Globe,
-    questions: [
-      {
-        q: "Puis-je étudier à l'étranger pendant mon cursus ?",
-        a: "Oui. EBS dispose d'un réseau de 16 universités partenaires dans 8 pays (France, Canada, Italie, Oman...). Vous pouvez effectuer un semestre ou une année à l'étranger, ou obtenir un double diplôme avec certaines universités partenaires.",
+        q: "EBS accompagne-t-elle les étudiants pour le visa ?",
+        a: "Oui. Pour les étudiants internationaux, EBS apporte un accompagnement dans la préparation des démarches administratives liées à leur venue en Tunisie. Pour les mobilités à l'étranger, l'accompagnement dépend de la destination et du partenariat.",
       },
       {
-        q: "Les diplômes EBS sont-ils reconnus à l'international ?",
-        a: "Le diplôme EBS est reconnu par l'État tunisien (Agrément N°2013/02). Grâce à nos partenariats internationaux et aux certifications mondiales incluses (Google, Harvard, IBM, Bloomberg...), nos diplômés sont compétitifs sur le marché international. Nos doubles diplômes avec des universités françaises sont également reconnus en Europe.",
+        q: "La pré-inscription est-elle définitive ?",
+        a: "Non. La pré-inscription permet de déposer votre candidature et de démarrer l'étude de votre dossier. L'inscription définitive intervient après validation de l'admission et accomplissement des formalités demandées.",
       },
       {
-        q: "Quels sont les frais pour un semestre à l'étranger ?",
-        a: "Les frais varient selon l'université partenaire et le pays. Dans le cadre des accords d'échange, vous payez généralement les frais de scolarité EBS (pas de surcoût), mais vous devez prévoir les frais de vie sur place (logement, nourriture, transport). Contactez notre service international pour un devis personnalisé.",
-      },
-    ],
-  },
-  {
-    title: "Vie Étudiante & Campus",
-    icon: GraduationCap,
-    questions: [
-      {
-        q: "Où se situe le campus EBS ?",
-        a: "Le campus EBS est situé au cœur de Tunis, facilement accessible en transport en commun. Nos locaux modernes comprennent des salles de cours équipées, un laboratoire informatique, une bibliothèque, un espace de coworking et une cafétéria.",
-      },
-      {
-        q: "Y a-t-il des activités extrascolaires ?",
-        a: "Oui. EBS dispose de clubs étudiants (Entrepreneuriat, Tech, Débat, Sport...), organise des conférences avec des professionnels, des hackathons, des visites d'entreprises et des événements de networking avec les alumni. La vie associative est encouragée.",
-      },
-      {
-        q: "Proposez-vous un accompagnement personnalisé ?",
-        a: "Chaque étudiant bénéficie d'un suivi personnalisé par un tuteur académique. Nous proposons également un accompagnement à l'insertion professionnelle (rédaction de CV, préparation aux entretiens, simulations d'entretien) et un soutien psychologique si nécessaire.",
-      },
-    ],
-  },
-  {
-    title: "Financement & Tarifs",
-    icon: Banknote,
-    questions: [
-      {
-        q: "Quels sont les frais de scolarité ?",
-        a: "Les frais de scolarité varient selon le programme (Licence ou Master) et la filière. Consultez notre page Tarifs pour le détail. Les certifications internationales (150+) sont incluses sans frais supplémentaire. Des facilités de paiement sont disponibles.",
-      },
-      {
-        q: "Proposez-vous des facilités de paiement ?",
-        a: "Oui, nous proposons des plans de paiement échelonné sur l'année universitaire. Contactez notre service administratif pour étudier les options disponibles en fonction de votre situation.",
-      },
-      {
-        q: "Y a-t-il des bourses ou des réductions ?",
-        a: "Nous proposons un tarif Early Bird (réduction pour inscription anticipée avant le 30 Juin), des réductions pour les fratries, et des bourses au mérite pour les excellents dossiers académiques. Contactez-nous pour connaître votre éligibilité.",
+        q: "Puis-je être conseillé avant de choisir ma filière ?",
+        a: "Oui. L'équipe EBS peut vous accompagner pour identifier le programme le plus adapté à votre profil, vos objectifs et votre projet professionnel.",
       },
     ],
   },
@@ -307,8 +241,8 @@ export default function FaqPage() {
       </section>
 
       <CtaSection
-        title="Prêt à rejoindre EBS ?"
-        subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant."
+        title="Prêt(e) à rejoindre EBS ?"
+        subtitle="Pré-inscription en ligne en quelques minutes. Notre équipe vous recontacte dans les meilleurs délais."
         primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         secondaryCta={{ label: "Pré-inscription", href: "/preinscription" }}
         background="penn-green"

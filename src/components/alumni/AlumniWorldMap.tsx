@@ -130,8 +130,8 @@ export default function AlumniWorldMap({ locale = "fr" }: { locale?: string }) {
           </h2>
           <p className="text-[16px] text-penn-body mt-3 max-w-[600px] mx-auto">
             {isFr
-              ? `${alumniLocations.length}+ pays, 500+ diplômés — un réseau qui s'étend chaque année.`
-              : `${alumniLocations.length}+ countries, 500+ graduates — a network growing every year.`}
+              ? "Présents dans plus de 15 pays, nos diplômés développent leur carrière au sein d'entreprises, d'organisations internationales et de leurs propres projets entrepreneuriaux."
+              : "Present in over 15 countries, our graduates build their careers in corporations, international organizations, and their own entrepreneurial ventures."}
           </p>
         </motion.div>
 

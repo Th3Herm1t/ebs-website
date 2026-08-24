@@ -53,6 +53,7 @@ export default function Home() {
       <CounterSection />
       <CoursePromoSection />
       <AcademicPartners />
+
       <CareerSection />
       <PartnerLogos />
       <CoursesSection />
@@ -60,7 +61,6 @@ export default function Home() {
       <TopicsSection />
       <EventsSection />
       <TestimonialsSection />
-      <BlogSection />
       <NewsletterSection />
     </>
   );

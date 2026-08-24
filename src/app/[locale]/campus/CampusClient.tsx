@@ -18,12 +18,12 @@ const campusSpaces = [
 ];
 
 const equipements = [
-  { icon: <Monitor className="w-5 h-5" />, label: "Salles de Cours Équipées", desc: "Projecteurs, tableaux interactifs, prises connectées" },
-  { icon: <Monitor className="w-5 h-5" />, label: "Laboratoire Informatique", desc: "PC dernière génération, logiciels professionnels" },
-  { icon: <Wifi className="w-5 h-5" />, label: "WiFi Haut Débit", desc: "Connexion fibre optique sur tout le campus" },
-  { icon: <Coffee className="w-5 h-5" />, label: "Espace de Détente", desc: "Cafétéria, terrasse, salle de pause" },
-  { icon: <Bus className="w-5 h-5" />, label: "Transports & Accès", desc: "Bus, métro léger, parking étudiants" },
-  { icon: <Hotel className="w-5 h-5" />, label: "Logement à Proximité", desc: "Résidences étudiantes et appartements" },
+  { icon: <Monitor className="w-5 h-5" />, label: "Salles de cours équipées", desc: "Vidéoprojecteurs, tableaux interactifs et équipements pédagogiques modernes." },
+  { icon: <Monitor className="w-5 h-5" />, label: "Laboratoire informatique", desc: "Ordinateurs de dernière génération et logiciels professionnels." },
+  { icon: <Wifi className="w-5 h-5" />, label: "Wi-Fi haut débit", desc: "Connexion fibre optique disponible sur l'ensemble du campus." },
+  { icon: <Coffee className="w-5 h-5" />, label: "Espaces de détente", desc: "Cafétéria, salle de jeux et espaces de convivialité." },
+  { icon: <Bus className="w-5 h-5" />, label: "Transports & Accès", desc: "Accès facile en bus, métro léger et parking à proximité." },
+  { icon: <Hotel className="w-5 h-5" />, label: "Logement à proximité", desc: "Résidences étudiantes et appartements situés à proximité du campus." },
 ];
 
 export default function CampusPage() {
@@ -67,7 +67,7 @@ export default function CampusPage() {
             >
               <Badge variant="outline" size="lg" className="mb-8 border-white/20 text-white/80">
                 <MapPin className="w-3.5 h-3.5" />
-                10 Rue Socrate, Z.I Kheireddine — Le Kram, Tunis
+                10 Rue Socrate, Z.I. Kheireddine — Le Kram, Tunis
               </Badge>
             </motion.div>
 
@@ -88,7 +88,7 @@ export default function CampusPage() {
               transition={{ duration: 0.6, delay: 0.35 }}
               className="text-[17px] md:text-[19px] text-white/60 leading-relaxed max-w-[550px]"
             >
-              Bienvenue sur le campus d&apos;Espima Business School, un environnement moderne conçu pour favoriser l&apos;apprentissage, la collaboration et l&apos;épanouissement.
+              Bienvenue sur le campus d&apos;ESPIMA Business School, un environnement moderne conçu pour favoriser l&apos;apprentissage, l&apos;innovation, la collaboration et l&apos;épanouissement de nos étudiants.
             </motion.p>
           </div>
 
@@ -100,8 +100,8 @@ export default function CampusPage() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16"
           >
             {[
-              { value: "08h–17h", label: "Lun–Ven", icon: <Clock className="w-4 h-4" /> },
-              { value: "08h–13h", label: "Samedi", icon: <Clock className="w-4 h-4" /> },
+              { value: "08h00 – 17h00", label: "Lundi – Vendredi", icon: <Clock className="w-4 h-4" /> },
+              { value: "08h00 – 13h00", label: "Samedi", icon: <Clock className="w-4 h-4" /> },
               { value: "Parking", label: "Disponible", icon: <ParkingCircle className="w-4 h-4" /> },
               { value: "Bus + Métro", label: "À proximité", icon: <Bus className="w-4 h-4" /> },
             ].map((s) => (
@@ -186,7 +186,7 @@ export default function CampusPage() {
               Visite Virtuelle 360°
             </h2>
             <p className="text-[17px] text-white/60 mb-8 max-w-[600px] mx-auto">
-              Explorez le campus depuis chez vous avec notre visite virtuelle immersive. Une expérience à 360° pour découvrir chaque espace avant votre arrivée.
+              Explorez notre campus à distance grâce à une visite virtuelle immersive à 360° et découvrez nos espaces avant votre arrivée.
             </p>
             <div className="inline-flex px-6 py-3 rounded-full border border-white/[0.12] text-[14px] font-bold text-white/40">
               Bientôt disponible
@@ -216,7 +216,7 @@ export default function CampusPage() {
                   <div>
                     <p className="text-[15px] font-extrabold text-penn-navy mb-1">Adresse</p>
                     <p className="text-[14px] text-penn-body leading-relaxed">
-                      10 Rue Socrate, Z.I Kheireddine<br />Le Kram (2015) — Tunis, Tunisie
+                      10 Rue Socrate, Z.I. Kheireddine<br />Le Kram (2015) — Tunis, Tunisie
                     </p>
                   </div>
                 </div>
@@ -228,8 +228,8 @@ export default function CampusPage() {
                   </div>
                   <div>
                     <p className="text-[15px] font-extrabold text-penn-navy mb-1">Horaires d&apos;ouverture</p>
-                    <p className="text-[14px] text-penn-body">08h00 – 17h00, Lundi – Vendredi</p>
-                    <p className="text-[14px] text-penn-body">08h00 – 13h00, Samedi</p>
+                    <p className="text-[14px] text-penn-body">08h00 – 17h00, du lundi au vendredi</p>
+                    <p className="text-[14px] text-penn-body">08h00 – 13h00, le samedi</p>
                   </div>
                 </div>
 
@@ -298,10 +298,10 @@ export default function CampusPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
             <Badge variant="outline" size="lg" className="mb-6 border-white/30 text-white/90">Visite du Campus</Badge>
             <h2 className="text-[28px] md:text-[36px] font-extrabold text-white mb-4">
-              Venez visiter notre campus <span className="text-white">!</span>
+              Venez découvrir notre campus <span className="text-white">!</span>
             </h2>
             <p className="text-[16px] text-white/70 max-w-[550px] mx-auto mb-8 leading-relaxed">
-              Prenez rendez-vous pour une visite personnalisée et découvrez l'environnement EBS.
+              Prenez rendez-vous pour une visite personnalisée et découvrez l'environnement d'ESPIMA Business School.
             </p>
             <button onClick={() => setModalOpen(true)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-[#2B8FAB] font-bold text-[14px] hover:bg-white/90 transition-all shadow-lg shadow-white/20">
               <CalendarDays className="w-5 h-5" /> Prendre rendez-vous

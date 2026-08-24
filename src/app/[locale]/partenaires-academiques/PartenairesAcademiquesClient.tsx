@@ -27,31 +27,31 @@ const avantagesAcademiques = [
   {
     icon: <Users className="w-6 h-6" />,
     title: "Vivier d'Étudiants Qualifiés",
-    desc: "Nos étudiants sont certifiés, bilingues et préparés académiquement. Un flux régulier de talents pour vos programmes.",
+    desc: "Nos étudiants bénéficient d'une formation de qualité, de certifications internationales et d'une préparation académique répondant aux standards internationaux.",
     color: "#2B8FAB",
   },
   {
     icon: <BookOpen className="w-6 h-6" />,
     title: "Programmes Complémentaires",
-    desc: "Nos licences et masters s'articulent parfaitement avec vos cursus. Reconnaissance mutuelle des crédits facilitée.",
+    desc: "Nos licences et nos masters s'articulent parfaitement avec vos cursus. La reconnaissance mutuelle des crédits facilite la mobilité des étudiants.",
     color: "#2196F3",
   },
   {
     icon: <Globe className="w-6 h-6" />,
     title: "Rayonnement International",
-    desc: "Renforcez votre présence en Afrique du Nord et au Moyen-Orient via un partenaire tunisien reconnu par l'État.",
+    desc: "Développez votre présence en Afrique du Nord grâce à un partenaire universitaire tunisien agréé par l'État.",
     color: "#9C27B0",
   },
   {
     icon: <Shield className="w-6 h-6" />,
     title: "Cadre Sécurisé",
-    desc: "Conventions inter-universitaires formelles. Processus d'admission transparent. Suivi académique conjoint.",
+    desc: "Conventions interuniversitaires, procédures transparentes et suivi académique conjoint garantissent une collaboration durable.",
     color: "#FF9800",
   },
   {
     icon: <Award className="w-6 h-6" />,
     title: "Excellence Académique",
-    desc: "EBS is une université privée reconnue par le Ministère de l'Enseignement Supérieur tunisien, conforme au système LMD.",
+    desc: "EBS est une université privée agréée par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique de Tunisie et conforme au système LMD.",
     color: "#E91E8C",
   },
 ];
@@ -142,7 +142,7 @@ export default function PartenairesAcademiquesPage() {
           >
             Notre réseau
             <br />
-            <span className="text-[#2B8FAB]">universitaire</span> mondial<span className="text-[#2B8FAB]">.</span>
+            <span className="text-[#2B8FAB]">universitaire</span> international<span className="text-[#2B8FAB]">.</span>
           </motion.h1>
 
           <motion.p
@@ -151,9 +151,7 @@ export default function PartenairesAcademiquesPage() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[650px] mb-12"
           >
-            16 partenaires académiques en France, au Canada, en Italie et à Oman.
-            Des institutions d&apos;excellence qui ouvrent des perspectives
-            internationales à nos étudiants.
+            14 partenaires académiques en France, au Canada, en Italie, et à Oman. Des institutions d'excellence qui offrent à nos étudiants des opportunités d'études, de mobilité et de doubles diplômes à l'international.
           </motion.p>
 
           <motion.div
@@ -163,7 +161,7 @@ export default function PartenairesAcademiquesPage() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
           >
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">16</p>
+              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">14</p>
               <p className="text-[12px] text-white/50 font-medium">Universités partenaires</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
@@ -171,7 +169,7 @@ export default function PartenairesAcademiquesPage() {
               <p className="text-[12px] text-white/50 font-medium">Pays</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">12</p>
+              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">11</p>
               <p className="text-[12px] text-white/50 font-medium">En France</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center flex flex-col justify-center h-full">
@@ -196,9 +194,9 @@ export default function PartenairesAcademiquesPage() {
           <div className="bg-white rounded-2xl border border-penn-border shadow-xl overflow-hidden">
             <div className="grid grid-cols-3 divide-x divide-penn-border/40">
               {[
-                { value: "16", label: "Partenaires académiques", icon: <Building2 className="w-5 h-5" />, color: "#2B8FAB" },
+                { value: "14", label: "Partenaires académiques", icon: <Building2 className="w-5 h-5" />, color: "#2B8FAB" },
                 { value: "4", label: "Pays représentés", icon: <Globe className="w-5 h-5" />, color: "#2196F3" },
-                { value: "100+", label: "Programmes accessibles", icon: <BookOpen className="w-5 h-5" />, color: "#FF9800" },
+                { value: "80+", label: "Programmes accessibles", icon: <BookOpen className="w-5 h-5" />, color: "#FF9800" },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}
@@ -234,8 +232,7 @@ export default function PartenairesAcademiquesPage() {
               Nos partenaires académiques
             </h2>
             <p className="text-[16px] text-penn-body/60 max-w-[620px] mx-auto">
-              Des institutions d&apos;excellence qui partagent notre vision : offrir
-              aux étudiants tunisiens une formation de classe mondiale, sans frontières.
+              Des institutions d&apos;excellence qui partagent notre vision : offrir aux étudiants tunisiens une formation de qualité et des opportunités académiques à l'international.
             </p>
           </motion.div>
 
@@ -503,8 +500,8 @@ export default function PartenairesAcademiquesPage() {
       </section>
 
       <CtaSection
-        title="Rejoignez notre réseau universitaire mondial."
-        subtitle="16 partenaires nous font déjà confiance. Et si la vôtre était la prochaine ?"
+        title="Rejoignez notre réseau universitaire international."
+        subtitle="14 partenaires nous font déjà confiance. Et si votre établissement était le prochain ?"
         primaryCta={{ label: "Devenir partenaire", href: "#devenir-partenaire" }}
         secondaryCta={{ label: "Voir nos formations", href: "/nos-programmes" }}
         background="penn-green"

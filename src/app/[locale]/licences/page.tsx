@@ -17,26 +17,26 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const allPrograms = [
-  { ...licences.management, subtitle: "Formation au leadership et au pilotage d'organisations dans un monde digital." },
-  { ...licences.marketing, subtitle: "La formation marketing digital la plus complète en Tunisie." },
-  { ...licences.finance, subtitle: "Certifications Bloomberg pour une carrière en finance internationale." },
+  { ...licences.management, subtitle: "Développez vos compétences en management, leadership, gestion de projets et pilotage des organisations dans un environnement en constante évolution." },
+  { ...licences.marketing, subtitle: "Maîtrisez les fondamentaux du marketing, de la communication, du marketing digital et de la relation client pour répondre aux nouveaux enjeux des entreprises." },
+  { ...licences.finance, subtitle: "Préparez une carrière en finance, banque et contrôle de gestion grâce à des certifications internationales, dont Bloomberg." },
 
-  { ...licences["informatique-ia"], subtitle: "Machine learning, deep learning et NLP avec les certifications Harvard et DeepLearning.AI." },
-  { ...licences.cybersecurite, subtitle: "Ethical hacking, forensics, SOC avec Cisco, Fortinet et Google." },
+  { ...licences["informatique-ia"], subtitle: "Développez des compétences en génie logiciel, intelligence artificielle, data science et développement d'applications intelligentes." },
+  { ...licences.cybersecurite, subtitle: "Développez des compétences en génie logiciel, cybersécurité, sécurité des réseaux et protection des systèmes d'information." },
 ];
 
 const licencesCards = [
   {
     icon: <Award className="w-6 h-6" />,
-    title: "150+ Certs",
-    subtitle: "Incluses gratuitement",
+    title: "150+",
+    subtitle: "Certifications offertes",
     color: "#2B8FAB",
     offsetY: -80,
     parallaxSpeed: 1,
   },
   {
     icon: <Sparkles className="w-6 h-6" />,
-    title: "IA Obligatoire",
+    title: "IA obligatoire",
     subtitle: "Dans tous les parcours",
     color: "#9C27B0",
     offsetY: 40,
@@ -44,8 +44,8 @@ const licencesCards = [
   },
   {
     icon: <BookOpen className="w-6 h-6" />,
-    title: "5 Parcours",
-    subtitle: "Management · Finance · Tech",
+    title: "4 Licences",
+    subtitle: "En 5 parcours",
     color: "#E89745",
     offsetY: -10,
     parallaxSpeed: 0.6,
@@ -79,7 +79,7 @@ export default async function LicencesPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <ShowcaseHero
         title="Nos Licences : 3 ans pour construire votre avenir."
-        subtitle="5 parcours de Licence · IA intégrée dans chaque filière · 57 à 87 certifications internationales gratuites par programme · Accrédité État tunisien."
+        subtitle="4 Licences déclinées en 5 parcours · Intelligence Artificielle intégrée dans chaque filière · Plus de 25 certifications internationales offertes selon le programme · Diplôme agréé par l'État tunisien."
         badge="Licences"
         cards={licencesCards}
       />
@@ -140,27 +140,27 @@ export default async function LicencesPage({
               <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
                 <Sparkles className="w-7 h-7 text-penn-green" />
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">IA Intégrée</h3>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">IA intégrée</h3>
               <p className="text-[15px] text-penn-body leading-relaxed">
-                L&apos;Intelligence Artificielle est une compétence transversale obligatoire. Chaque étudiant repart avec 26 certifications IA.
+                L'Intelligence Artificielle est intégrée à tous les parcours. Chaque étudiant développe des compétences en IA grâce à un ensemble de certifications adaptées à sa formation.
               </p>
             </div>
             <div className="text-center">
               <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
                 <Award className="w-7 h-7 text-penn-green" />
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">150+ Certifications</h3>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">150+ certifications</h3>
               <p className="text-[15px] text-penn-body leading-relaxed">
-                Des certifications par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot — incluses sans frais.
+                Des certifications délivrées par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot et d'autres partenaires internationaux, offertes sans frais supplémentaires.
               </p>
             </div>
             <div className="text-center">
               <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
                 <Globe className="w-7 h-7 text-penn-green" />
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">Partenariats Internationaux</h3>
+              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">Partenariats internationaux</h3>
               <p className="text-[15px] text-penn-body leading-relaxed">
-                Poursuivez vos études en France, au Canada, en Italie ou à Oman grâce à nos 16 partenaires universitaires. Mobilité facilitée.
+                Poursuivez vos études en France, au Canada, en Italie ou à Oman grâce à nos 14 partenaires académiques.
               </p>
             </div>
           </div>
@@ -175,14 +175,14 @@ export default async function LicencesPage({
             Certifications incluses
           </Badge>
           <p className="text-[19px] md:text-[22px] font-bold text-penn-navy leading-relaxed max-w-[800px] mx-auto">
-            En plus de votre diplôme reconnu par l&apos;État tunisien, vous repartez avec des certifications délivrées par Google, IBM, Harvard, Cisco, Bloomberg et Fortinet — sans aucun frais supplémentaire.
+            En complément de votre diplôme agréé par l'État tunisien, obtenez des certifications internationales délivrées par Google, IBM, Harvard, Cisco, Bloomberg, Fortinet et d'autres organismes reconnus, sans frais supplémentaires.
           </p>
         </div>
       </section>
 
       <CtaSection
         title="Prêt(e) à choisir votre Licence ?"
-        subtitle="Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin."
+        subtitle="Les candidatures 2026/2027 sont ouvertes. Bénéficiez de nos avantages en cours en déposant votre candidature dès aujourd'hui."
         primaryCta={{ label: "Commencer ma pré-inscription", href: "/preinscription" }}
         background="penn-green"
       />

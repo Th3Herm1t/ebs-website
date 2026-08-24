@@ -50,21 +50,21 @@ const alumniProfiles = [
 ];
 
 const missions = [
-  "Développer un sentiment d'appartenance à l'ESPIMA BUSINESS SCHOOL",
-  "Faciliter les contacts et développer des liens entre les anciens diplômés",
-  "Permettre aux étudiants de connaître les anciens qui peuvent les aider",
-  "Offrir soutien et conseil dans l'évolution professionnelle",
-  "Organiser des événements, conférences, ateliers et rencontres",
-  "Encourager les Alumni à participer aux programmes de développement",
+  "Développer le sentiment d'appartenance à ESPIMA Business School.",
+  "Favoriser les échanges et renforcer les liens entre les diplômés.",
+  "Mettre en relation les étudiants avec les Alumni afin de partager leurs expériences et leurs conseils.",
+  "Accompagner les diplômés dans leur évolution professionnelle grâce au partage d'expériences et au mentorat.",
+  "Organiser des événements, conférences, ateliers et rencontres du réseau Alumni.",
+  "Encourager les Alumni à contribuer au développement et au rayonnement d'ESPIMA Business School.",
 ];
 
 const secteurs = [
-  { icon: <Briefcase className="w-6 h-6" />, nom: "Banque & Finance", desc: "Analystes, gestionnaires de portefeuille, auditeurs dans les plus grandes institutions." },
-  { icon: <Star className="w-6 h-6" />, nom: "Digital & Marketing", desc: "Digital marketing managers, growth hackers, SEO specialists en agence et en entreprise." },
-  { icon: <Award className="w-6 h-6" />, nom: "Tech & IA", desc: "Data scientists, ML engineers, experts cybersécurité dans les entreprises technologiques." },
-  { icon: <Globe className="w-6 h-6" />, nom: "Conseil", desc: "Consultants en stratégie, management et transformation digitale chez les Big Four." },
-  { icon: <Star className="w-6 h-6" />, nom: "Entrepreneuriat", desc: "Fondateurs de startups, incubés et accélérés par le réseau EBS et ses partenaires." },
-  { icon: <Award className="w-6 h-6" />, nom: "Industrie 4.0", desc: "Spécialistes en automatisation, IoT, maintenance prédictive et transformation industrielle." },
+  { icon: <Briefcase className="w-6 h-6" />, nom: "Banque & Finance", desc: "Analystes financiers, auditeurs, contrôleurs de gestion, gestionnaires de portefeuille et spécialistes des marchés financiers." },
+  { icon: <Star className="w-6 h-6" />, nom: "Digital & Marketing", desc: "Responsables marketing digital, spécialistes SEO/SEA, growth marketers, CRM managers et experts en communication digitale." },
+  { icon: <Award className="w-6 h-6" />, nom: "Tech & IA", desc: "Développeurs, data analysts, data scientists, ingénieurs en Intelligence Artificielle et experts en cybersécurité." },
+  { icon: <Globe className="w-6 h-6" />, nom: "Conseil", desc: "Consultants en stratégie, management, finance et transformation digitale au sein de cabinets de conseil." },
+  { icon: <Star className="w-6 h-6" />, nom: "Entrepreneuriat", desc: "Créateurs d'entreprise, fondateurs de startups et porteurs de projets innovants accompagnés par l'écosystème EBS." },
+  { icon: <Award className="w-6 h-6" />, nom: "Industrie 4.0", desc: "Professionnels contribuant à la transformation digitale, à l'innovation et à l'amélioration de la performance des entreprises industrielles." },
 ];
 
 export default function AlumniPage() {
@@ -107,18 +107,18 @@ export default function AlumniPage() {
               Des diplômés qui réussissent<br /><span className="text-[#2B8FAB]">partout dans le monde</span>.
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[17px] md:text-[19px] text-white/60 leading-relaxed max-w-[550px]">
-              EBS Alumni vous aide à développer votre carrière en mettant à votre disposition de nombreuses offres de stages et d&apos;emplois.
+              Le réseau EBS Alumni accompagne le développement professionnel de nos diplômés et favorise les échanges, le mentorat ainsi que les opportunités de stages, d'emploi et de carrière.
             </motion.p>
           </div>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
             {[
-              { value: "90%", label: "Embauchés en 3 mois" },
+              { value: "80 %", label: "Embauchés en 6 mois" },
+              { value: "14", label: "Pays représentés" },
+              { value: "800+", label: "Diplômés" },
               { value: "15", label: "Secteurs d'activité" },
-              { value: "500+", label: "Diplômés" },
-              { value: "5", label: "Secteurs d'activité" },
             ].map((s) => (
               <div key={s.value + s.label} className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-5 text-center">
-                <p className={`text-[28px] md:text-[36px] font-extrabold leading-none mb-1 ${s.value === "500+" ? "text-[#2B8FAB]" : "text-white"}`}>{s.value}</p>
+                <p className={`text-[28px] md:text-[36px] font-extrabold leading-none mb-1 ${s.value === "800+" ? "text-[#2B8FAB]" : "text-white"}`}>{s.value}</p>
                 <p className="text-[13px] text-white/40 font-medium">{s.label}</p>
               </div>
             ))}

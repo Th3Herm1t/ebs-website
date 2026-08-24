@@ -6,10 +6,10 @@ import { motion } from "motion/react";
 import { Badge, CtaSection } from "@/components/shared";
 
 const timeline = [
-  { year: "2013", title: "Fondation d'EBS", text: "Création d'Espima Business School à Tunis. Agrément N°2013/02 du Ministère de l'Enseignement Supérieur. Une conviction : la Tunisie mérite des formations aux standards internationaux.", highlight: false },
-  { year: "2016", title: "Premiers Partenariats", text: "Signature des premières conventions avec des universités françaises. Déploiement des programmes de Licence en Management, Marketing, Finance et Informatique.", highlight: false },
-  { year: "2020", title: "Expansion Internationale", text: "Le réseau s'étend : UQAT Canada, EM Normandie, PSB Paris. Ouverture des parcours internationaux. Lancement des Masters professionnels.", highlight: false },
-  { year: "2026", title: "Le Virage IA", text: "EBS devient la première université tunisienne à intégrer l'IA comme compétence transversale obligatoire. 150+ certifications internationales gratuites. Partenariats avec Google, IBM, Harvard, Bloomberg et 15+ fournisseurs mondiaux.", highlight: true },
+  { year: "2013", title: "Fondation d'EBS", text: "Création d'Espima Business School à Tunis. Agrément n° 2013/02 délivré par Ministère de l'Enseignement Supérieur et de la Recherche Scientifique. Dès sa création, une conviction forte : offrir en Tunisie des formations universitaires répondant aux standards internationaux.", highlight: false },
+  { year: "2016", title: "Premiers partenariats", text: "Signature des premières conventions avec des universités françaises. Lancement des Licences en Management, Marketing, Finance et Informatique.", highlight: false },
+  { year: "2020", title: "Expansion internationale", text: "Le réseau de partenaires s'élargit avec l'UQAT (Canada), EM Normandie, Excelia et Paris School of Business (PSB). Développement des parcours internationaux et lancement des Masters professionnels.", highlight: false },
+  { year: "2026", title: "Le virage de l'IA", text: "EBS devient la première université tunisienne à intégrer l'intelligence artificielle comme compétence transversale obligatoire dans tous ses cursus. Plus de 150 certifications internationales offertes, en partenariat avec Google, IBM, Harvard, Bloomberg et plus de 15 partenaires technologiques internationaux.", highlight: true },
 ];
 
 const piliers = [
@@ -69,10 +69,10 @@ export default function QuiSommesNousPage() {
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="text-[42px] md:text-[58px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6">
               L'université qui prépare<br />
-              <span className="text-[#2B8FAB]">à la vraie vie</span>.
+              <span className="text-[#2B8FAB]">votre avenir</span>.
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[650px] mb-12">
-              EBS Tunis — Espima Business School — est une université privée reconnue par l'État tunisien. Notre mission : former des professionnels immédiatement opérationnels grâce à un modèle unique alliant diplôme, certifications internationales et expérience terrain.
+              EBS Tunisie – ESPIMA Business School est une université privée agréée par l'État tunisien. Notre mission est de former des diplômés compétents et ouverts sur le monde grâce à une pédagogie innovante associant diplôme agréé, certifications internationales, expérience en entreprise et parcours d'études à l'étranger. Grâce à son réseau d'universités partenaires de renom en France, au Canada, en Italie et à Oman, EBS ouvre à ses étudiants de nouvelles perspectives d'études et les prépare à construire une carrière ambitieuse.
             </motion.p>
           </div>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex flex-wrap justify-center gap-4 md:gap-6">
@@ -118,9 +118,9 @@ export default function QuiSommesNousPage() {
                   <span className="text-[#2B8FAB]">Président Fondateur</span>
                 </h2>
                 <div className="space-y-4 text-[15px] md:text-[16px] text-white/70 leading-relaxed">
-                  <p>Espima Business School cultive, depuis sa création en 2013, un modèle spécifique fondé sur une identité et des valeurs fortes : l&apos;innovation, l&apos;ouverture, la responsabilité et l&apos;excellence. Notre pédagogie cible essentiellement l&apos;acquisition d&apos;une expérience par l&apos;étudiant, la promotion de sa créativité et de son esprit critique.</p>
-                  <p>La remarquable réussite d&apos;EBS est due principalement aux objectifs que nous avons fixés dès le départ et aux moyens humains et matériels que nous avons mis en place pour former des étudiants dotés de véritables compétences transversales, capables de s&apos;adapter aux changements inéluctables qui transforment le monde d&apos;aujourd&apos;hui.</p>
-                  <p>La taille de notre université, l&apos;animation de la vie étudiante et la dynamique scientifique font aujourd&apos;hui de l&apos;EBS un lieu de savoir, de vie, d&apos;échanges, d&apos;animation, d&apos;intégration et d&apos;engagement.</p>
+                  <p>Espima Business School cultive, depuis sa création en 2013, un modèle spécifique fondé sur une identité et des valeurs fortes : l&apos;innovation, l&apos;ouverture, la responsabilité et l&apos;excellence. Notre pédagogie privilégie la mise en pratique des connaissances, le développement de la créativité, de l&apos;esprit critique et des compétences recherchées par les entreprises.</p>
+                  <p>Le développement d&apos;EBS repose sur une vision claire, des équipes engagées et des moyens adaptés pour former des diplômés compétents, innovants, maîtrisant les outils de l&apos;Intelligence Artificielle et capables de répondre aux évolutions rapides du monde professionnel.</p>
+                  <p>À taille humaine, EBS offre un environnement dynamique où se conjuguent excellence académique, vie étudiante, innovation, ouverture internationale et proximité avec les entreprises.</p>
                 </div>
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function QuiSommesNousPage() {
               EBS dispose de toutes les commodités nécessaires à l'épanouissement de ses étudiants : une superficie de 3000 m² avec un bâtiment moderne entièrement climatisé et équipé de WIFI haut débit, une salle polyvalente, un espace de détente, une salle des jeux et une buvette, offrant un cadre convivial permettant aux étudiants de se rencontrer et d'échanger leurs expériences, avec une vie associative active et des compétitions sportives.
             </p>
             <p className="text-[16px] text-penn-body leading-relaxed">
-              La réussite personnelle et professionnelle des étudiants d'Espima Business School est la conséquence directe du bon choix qu'ils ont fait de l'université privée, qui garantit la qualité de l'enseignement dispensé.
+              La réussite personnelle et professionnelle de nos étudiants repose sur une formation universitaire de qualité, un accompagnement personnalisé et un environnement propice à leur épanouissement et à leur insertion professionnelle.
             </p>
           </motion.div>
         </div>
@@ -160,7 +160,7 @@ export default function QuiSommesNousPage() {
         <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-16">
             <Badge variant="default" size="lg" className="mb-4">Notre Histoire</Badge>
-            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">Plus de 10 ans d'excellence</h2>
+            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">Plus de 12 ans d'excellence</h2>
           </motion.div>
           <div className="relative">
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-penn-border -translate-x-1/2" />

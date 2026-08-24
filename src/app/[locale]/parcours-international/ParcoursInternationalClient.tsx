@@ -11,39 +11,39 @@ import { academicPartners } from "@/lib/partenaires/academic-partners";
 
 const scenarios = [
   {
-    step: "1 an à EBS",
+    step: "1 année à EBS",
     arrow: "→",
     dest: "Bachelor 2 en Italie",
     pays: "Link University — Rome",
     code: "IT",
-    details: "Accès direct dès la 1ère année de Licence validée. Intégration en Bachelor 2.",
+    details: "Après validation de la première année de Licence à EBS, possibilité de poursuivre en 2ᵉ année de Bachelor à Link University, selon le programme choisi et les conditions d’admission.",
     color: "#43A047",
   },
   {
-    step: "2 ans à EBS",
+    step: "2 années à EBS",
     arrow: "→",
     dest: "Bachelor 3 en France",
-    pays: "12 partenaires — France",
+    pays: "Écoles supérieures et Grandes Écoles",
     code: "FR",
-    details: "Accès direct après validation de 2 années de Licence. Intégration en 3ème année.",
+    details: "Après deux années de Licence validées à EBS, possibilité d’intégrer la 3ᵉ année de certains Bachelors proposés par les établissements partenaires, selon la filière et les conditions d’admission.",
     color: "#1E88E5",
   },
   {
-    step: "3 ans à EBS",
+    step: "Licence à EBS",
     arrow: "→",
-    dest: "Master Grande École",
-    pays: "France & Canada",
-    codes: ["FR", "CA"],
-    details: "Après la Licence complète. Admission en Master ou Maîtrise chez nos partenaires.",
+    dest: "Master à l'international",
+    pays: "France • Canada • Italie • Oman",
+    codes: ["FR", "CA", "IT", "OM"],
+    details: "Après l’obtention de la Licence EBS, possibilité de poursuivre en Master, MSc, Mastère, Programme Grande École, Maîtrise ou autre cursus Bac+5, selon l’établissement partenaire.",
     color: "#E53935",
   },
   {
-    step: "M1 à EBS",
+    step: "Master 1 à EBS",
     arrow: "→",
-    dest: "Maîtrise au Canada",
-    pays: "UQAT — Québec",
-    code: "CA",
-    details: "Après une année de Master à EBS. Maîtrise à l'UQAT. Résidence permanente possible.",
+    dest: "Poursuite d'études",
+    pays: "Établissements partenaires",
+    codes: ["FR", "CA"],
+    details: "Après validation d’un Master 1 à EBS, une poursuite d’études peut être envisagée dans certains programmes de niveau Bac+5 ou en Maîtrise au Canada, selon le parcours académique.",
     color: "#2B8FAB",
   },
 ];
@@ -106,9 +106,7 @@ export default function InternationalPage() {
                 transition={{ duration: 0.6, delay: 0.35 }}
                 className="text-[17px] md:text-[18px] text-white/60 leading-relaxed mb-6"
               >
-                Étudiez à EBS. Continuez dans le monde. Nos partenariats avec 16
-                universités vous ouvrent des perspectives académiques et
-                professionnelles sans frontières.
+                Étudiez à EBS, poursuivez vos études à l&apos;international. Grâce à nos partenariats avec 14 universités, développez un parcours académique et professionnel ouvert sur le monde.
               </motion.p>
             </div>
 
@@ -147,13 +145,7 @@ export default function InternationalPage() {
                   Le Parcours International de l&apos;EBS
                 </h3>
                 <p className="text-[16px] md:text-[17px] text-penn-navy/70 leading-relaxed">
-                  Permet aux étudiants de poursuivre leurs études en France, au Canada,
-                  en Italie ou à Oman dans l&apos;une de nos 16 universités partenaires.
-                  Plusieurs formules de partenariats offrent la possibilité de continuer
-                  à l&apos;étranger à partir d&apos;un Bac+1, Bac+2 ou Bac+3 validé à
-                  l&apos;EBS, et d&apos;obtenir une Licence ou un Master en 1 ou 2 ans.
-                  Une ouverture sur des institutions de renommée mondiale et une expérience
-                  interculturelle unique pour réussir ses études et sa carrière.
+                  Le Parcours International d&apos;EBS permet aux étudiants de construire une partie de leur cursus à l&apos;étranger grâce à un réseau de 14 partenaires académiques internationaux en France, au Canada, en Italie et à Oman. Selon leur niveau d&apos;études, leur filière et le partenariat choisi, les étudiants peuvent rejoindre une école ou une université partenaire après une, deux ou trois années d&apos;études à EBS, et dans certains cas après un Master 1. Ces parcours ouvrent l&apos;accès, selon les établissements et les conditions d&apos;admission, à des Bachelors, Programmes Grande École, Masters, MSc, Mastères, Maîtrises et autres diplômes reconnus. Au-delà du diplôme, le Parcours International EBS permet de développer une expérience académique internationale, de renforcer ses compétences linguistiques et interculturelles et de préparer sa carrière dans un environnement international.
                 </p>
               </div>
             </div>
@@ -174,7 +166,7 @@ export default function InternationalPage() {
               Notre réseau
             </Badge>
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">
-              16 universités partenaires
+              14 universités partenaires
             </h2>
             <p className="text-[16px] text-penn-body max-w-[600px] mx-auto">
               Des institutions reconnues en France, au Canada, en Italie et à Oman.
@@ -292,13 +284,10 @@ export default function InternationalPage() {
 
           <div className="flex flex-wrap justify-center gap-4 max-w-[900px] mx-auto">
             {[
-              { text: "Des programmes de Licences et de Masters de haut niveau dans des universités partenaires reconnues.", color: "#2B8FAB" },
-              { text: "Un enseignement complémentaire pour enrichir le parcours et préparer à la mobilité internationale et à la double diplômation.", color: "#2196F3" },
-              { text: "Des formations en Soft Skills : communication, management interculturel, culture générale, anglais.", color: "#9C27B0" },
-              { text: "Des activités internationales : conférences thématiques, séminaires en France, préparation TOEIC, voyages d'études.", color: "#FF9800" },
-              { text: "Des co-diplômations en Licences et Masters avec les universités partenaires.", color: "#E91E8C" },
-              { text: "Des stages rémunérés en France dans le cadre du parcours international.", color: "#43A047" },
-              { text: "La possibilité de suivre des cursus 100% en anglais pour une carrière globale.", color: "#2B8FAB" },
+              { text: "Un réseau de 14 partenaires académiques internationaux dans 4 pays.", color: "#2B8FAB" },
+              { text: "Des possibilités de poursuite d'études après 1 an, 2 ans, la Licence ou le Master 1 à EBS, selon les partenariats.", color: "#2196F3" },
+              { text: "L'accès à des Bachelors, Programmes Grande École, Masters, MSc, Mastères et Maîtrises.", color: "#9C27B0" },
+              { text: "Un accompagnement EBS pour préparer le choix du parcours, la candidature et la mobilité internationale.", color: "#FF9800" },
             ].map((item, i) => (
               <motion.div
                 key={i}

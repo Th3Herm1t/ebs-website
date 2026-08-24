@@ -142,13 +142,13 @@ export default function CertificationsPage() {
               </Badge>
 
               <h1 className="text-[42px] md:text-[60px] lg:text-[76px] font-extrabold text-white leading-[1.02] tracking-[-1.5px] mb-6">
-                {totalCerts}+ preuves de compétence.
+                Plus de {totalCerts} certifications.
                 <br />
-                <span className="text-[#2B8FAB]">Un parcours clair.</span>
+                <span className="text-[#2B8FAB]">Un parcours structuré.</span>
               </h1>
 
               <p className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[720px] mb-10">
-                Un catalogue structuré par programme, avec des certifications obligatoires pour le socle EBS et des options pour construire un profil différenciant.
+                Un catalogue organisé par programme, associant des certifications obligatoires constituant le socle EBS et des certifications optionnelles permettant à chaque étudiant de construire un profil différenciant.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
@@ -221,14 +221,14 @@ export default function CertificationsPage() {
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} className="mb-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
-              <Badge variant="default" size="lg" className="mb-4">Catalogue géré</Badge>
+              <Badge variant="default" size="lg" className="mb-4">Notre catalogue de certifications</Badge>
               <h2 className="text-[34px] md:text-[48px] font-extrabold text-penn-navy leading-[1.08] tracking-[-0.5px]">
-                Pas une liste de liens.
+                Plus qu'une liste de certifications.
                 <br />
-                Un vrai système de parcours.
+                Un véritable parcours de compétences.
               </h2>
               <p className="text-[16px] text-penn-body mt-4 max-w-[690px] leading-relaxed">
-                Filtrez les certifications par rôle pédagogique et par niveau d'obligation. Les liens externes restent réservés à l'espace étudiant.
+                Filtrez les certifications par catégorie, niveau d'études et caractère obligatoire. L'accès aux plateformes de certification est réservé aux étudiants EBS.
               </p>
             </div>
             <div className="rounded-2xl border border-penn-border bg-white px-5 py-4 shadow-sm">
@@ -389,12 +389,12 @@ export default function CertificationsPage() {
         <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-center">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>
-              <Badge variant="default" size="lg" className="mb-4">Fournisseurs</Badge>
+              <Badge variant="default" size="lg" className="mb-4">Organismes de certification</Badge>
               <h2 className="text-[34px] md:text-[46px] font-extrabold text-penn-navy leading-[1.1]">
-                Les meilleurs noms, sans transformer la page en annuaire.
+                Les plus grandes références internationales.
               </h2>
               <p className="mt-4 text-[16px] text-penn-body leading-relaxed">
-                Le catalogue public montre la crédibilité. Les détails d'accès, les liens externes et le suivi restent réservés à l'espace étudiant.
+                Les plus grands organismes de certification réunis dans un seul catalogue. Les informations détaillées, les liens d'accès et le suivi des certifications sont réservés aux étudiants EBS.
               </p>
             </motion.div>
 
@@ -430,12 +430,11 @@ export default function CertificationsPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {[
-              { icon: <Trophy className="w-6 h-6" />, title: "Reconnaissance mondiale", text: "Des fournisseurs connus par les recruteurs et les grandes entreprises." },
-              { icon: <Zap className="w-6 h-6" />, title: "Inclus dans la formation", text: "Le parcours est intégré à l'expérience EBS, pas ajouté au hasard." },
-              { icon: <BookOpen className="w-6 h-6" />, title: "9 programmes couverts", text: "Chaque licence et master dispose d'un parcours contextualisé." },
-              { icon: <ShieldCheck className="w-6 h-6" />, title: "Charge maîtrisée", text: "Maximum 14 certifications obligatoires par programme." },
-              { icon: <GraduationCap className="w-6 h-6" />, title: "Portfolio futur", text: "Les badges peuvent alimenter l'espace étudiant et la Wall of Badges." },
-              { icon: <Sparkles className="w-6 h-6" />, title: "IA dans chaque filière", text: "Culture IA, IA appliquée et compétences métier sont combinées." },
+              { icon: <Trophy className="w-6 h-6" />, title: "Reconnaissance mondiale", text: "Des certifications délivrées par des organismes reconnus par les recruteurs et les grandes entreprises." },
+              { icon: <Zap className="w-6 h-6" />, title: "Inclus dans la formation", text: "Le parcours de certifications est intégré à la formation et accompagne la progression de chaque étudiant." },
+              { icon: <BookOpen className="w-6 h-6" />, title: "9 programmes couverts", text: "Chaque licence et chaque master disposent d'un parcours de certifications adapté." },
+              { icon: <ShieldCheck className="w-6 h-6" />, title: "Charge maîtrisée", text: "Jusqu'à 12 certifications obligatoires par programme afin de garantir un apprentissage progressif et cohérent." },
+              { icon: <Sparkles className="w-6 h-6" />, title: "IA dans chaque filière", text: "Culture IA, IA appliquée et compétences métier sont intégrées dans tous les parcours." },
             ].map((item, i) => (
               <motion.div
                 key={item.title}
@@ -457,15 +456,15 @@ export default function CertificationsPage() {
       <section className="section-padding bg-white">
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} className="text-[34px] md:text-[44px] font-extrabold text-penn-navy text-center mb-14">
-            Construire un profil certifié EBS.
+            Construisez votre profil certifié EBS.
           </motion.h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <GraduationCap className="w-6 h-6" />, title: "Nos Licences", desc: "5 parcours de Licence avec certifications dédiées.", href: "/licences", label: "Explorer" },
-              { icon: <Trophy className="w-6 h-6" />, title: "Nos Masters", desc: "4 Masters professionnels avec certifications avancées.", href: "/masters", label: "Explorer" },
-              { icon: <Sparkles className="w-6 h-6" />, title: "IA & Certifications", desc: "Découvrez comment l'IA transforme l'employabilité.", href: "/ia-et-certifications", label: "Découvrir" },
-              { icon: <Award className="w-6 h-6" />, title: "Pré-inscription", desc: "Candidatures 2026-2027 ouvertes. Early Bird jusqu'au 30 Juin.", href: "/preinscription", label: "Postuler" },
+              { icon: <GraduationCap className="w-6 h-6" />, title: "Nos Licences", desc: "4 Licences avec des parcours de certifications dédiés.", href: "/licences", label: "Explorer" },
+              { icon: <Trophy className="w-6 h-6" />, title: "Nos Masters", desc: "4 Masters professionnels avec des certifications avancées.", href: "/masters", label: "Explorer" },
+              { icon: <Sparkles className="w-6 h-6" />, title: "IA & Certifications", desc: "Découvrez comment l'Intelligence Artificielle transforme l'employabilité.", href: "/ia-et-certifications", label: "Découvrir" },
+              { icon: <Award className="w-6 h-6" />, title: "Pré-inscription", desc: "Les candidatures 2026/2027 sont ouvertes. Bénéficiez de nos avantages en cours en déposant votre candidature dès aujourd'hui.", href: "/preinscription", label: "Postuler" },
             ].map((card, i) => (
               <motion.div key={card.title} initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }} whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ ...transitions.quick, delay: prefersReducedMotion ? 0 : staggerDelay(i, 0.16) }}>
                 <Link href={card.href} className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#2B8FAB]/30">
@@ -484,8 +483,8 @@ export default function CertificationsPage() {
       </section>
 
       <CtaSection
-        title="Rejoignez une formation qui transforme les certifications en avantage réel."
-        subtitle="Candidatures 2026-2027 ouvertes. Déposez votre dossier dès maintenant."
+        title="Rejoignez une formation qui transforme les certifications en véritable avantage professionnel."
+        subtitle="Candidatures 2026/2027 ouvertes. Déposez votre dossier dès maintenant."
         primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         secondaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"

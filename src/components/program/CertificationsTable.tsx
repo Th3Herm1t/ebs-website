@@ -12,6 +12,7 @@ import {
   type FinalCertification,
 } from "@/lib/certifications/final-catalogue";
 import type { CertItem } from "./data";
+import { FormattedTitle } from "@/components/shared/FormattedTitle";
 
 interface CertificationsTableProps {
   certs: Array<CertItem | FinalCertification>;
@@ -102,10 +103,10 @@ export function CertificationsTable({ certs, color, limit, className }: Certific
               Parcours certifiant EBS
             </div>
             <h4 className="text-[28px] font-extrabold leading-tight text-white md:text-[36px]">
-              Un chemin clair entre socle obligatoire et différenciation.
+              <FormattedTitle text="Un parcours structuré entre socle commun et spécialisation." />
             </h4>
             <p className="mt-4 max-w-[720px] text-[15px] leading-relaxed text-white/60">
-              Les certifications obligatoires structurent le niveau attendu par EBS. Les options permettent de renforcer un profil selon son projet professionnel, sans afficher de liens externes publics.
+              Les certifications obligatoires constituent le socle de compétences attendu par EBS. Les certifications optionnelles permettent à chaque étudiant de renforcer son profil en fonction de son projet professionnel.
             </p>
           </div>
 

@@ -150,7 +150,7 @@ export default function CorpsEnseignantPage() {
             >
               Un corps enseignant d&apos;excellence,
               <br />
-              <span className="text-[#2B8FAB]">entre académie et entreprise</span>.
+              <span className="text-[#2B8FAB]">au croisement de l&apos;académie et de l&apos;entreprise</span>.
             </motion.h1>
 
             <motion.p
@@ -159,7 +159,7 @@ export default function CorpsEnseignantPage() {
               transition={{ duration: 0.6, delay: 0.35 }}
               className="text-[17px] md:text-[19px] text-white/60 leading-relaxed max-w-[550px]"
             >
-              Nos enseignants allient rigueur académique et expérience professionnelle concrète. Ils connaissent les réalités du marché parce qu&apos;ils en font partie.
+              Nos enseignants allient excellence académique et expérience professionnelle. Enseignants-chercheurs, experts et dirigeants d&apos;entreprise partagent leur expertise et transmettent des compétences en phase avec les réalités du marché.
             </motion.p>
           </div>
 
@@ -171,9 +171,9 @@ export default function CorpsEnseignantPage() {
             className="flex flex-wrap justify-center gap-4 mt-16"
           >
             {[
-              { value: "50+", label: "Enseignants" },
-              { value: "60+", label: "Domaines d'expertise" },
-              { value: "80%", label: "Issus du monde professionnel" },
+              { value: "55+", label: "Enseignants" },
+              { value: "70+", label: "Domaines d'expertise" },
+              { value: "40 %", label: "Issus du monde professionnel" },
             ].map((s) => (
               <div key={s.label} className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-32px)/3)]">
                 <p className="text-[28px] md:text-[36px] font-extrabold text-white leading-none mb-1">{s.value}</p>
@@ -310,7 +310,7 @@ export default function CorpsEnseignantPage() {
 
       <CtaSection
         title="Vous souhaitez rejoindre notre équipe enseignante ?"
-        subtitle="EBS recrute des professionnels passionnés pour transmettre leur expertise aux leaders de demain."
+        subtitle="EBS recrute des enseignants, des experts et des professionnels passionnés souhaitant transmettre leur savoir et contribuer à la formation des leaders de demain."
         primaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"
       />

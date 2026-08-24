@@ -5,6 +5,7 @@ import { ArrowRight, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { motion } from "motion/react";
+import { FormattedTitle } from "./FormattedTitle";
 
 interface CtaSectionProps {
   title: string;
@@ -56,7 +57,7 @@ export function CtaSection({
             textColor
           )}
         >
-          {title}
+          <FormattedTitle text={title} />
         </motion.h2>
 
         {subtitle && (

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Badge } from "@/components/shared/Badge";
 import { StatBar } from "@/components/shared/StatBar";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
+import { FormattedTitle } from "@/components/shared/FormattedTitle";
 import { cn } from "@/lib/utils";
 
 interface ProgramLPHeroProps {
@@ -59,7 +60,7 @@ export function ProgramLPHero({
             </div>
 
             <h1 className="text-[38px] md:text-[48px] lg:text-[56px] font-extrabold text-penn-navy leading-tight tracking-[-0.5px] mb-5">
-              {title}
+              <FormattedTitle text={title} />
             </h1>
 
             <p

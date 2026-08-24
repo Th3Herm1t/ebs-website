@@ -10,58 +10,55 @@ import { CountryFlag } from "@/components/shared/CountryFlag";
 import AcademicPartners from "@/components/sections/AcademicPartners";
 
 const destinations = [
-  { pays: "Canada", code: "CA", partenaire: "UQAT", color: "#E53935", avantages: ["Immigration facilitée via le PEQ", "Maîtrise en Gestion de Projets, MBA", "Résidence permanente possible", "Qualité de vie exceptionnelle"] },
-  { pays: "France", code: "FR", partenaire: "12 partenaires", color: "#1E88E5", avantages: ["Visa étudiant facilité", "Grandes Écoles accréditées", "Multi-campus dans toute la France", "Accès au marché européen"] },
-  { pays: "Italie", code: "IT", partenaire: "Link University", color: "#43A047", avantages: ["Accès dès la 1ère année à EBS", "Bachelor et Masters à Rome", "Reconnue par l'État italien", "Visa Schengen — toute l'Europe"] },
-  { pays: "Oman", code: "OM", partenaire: "GUtech", color: "#FB8C00", avantages: ["Partenariat RWTH Aachen", "Cours en anglais", "Marché du Golfe", "Cadre moderne et sécurisé"] },
+  { pays: "Canada", code: "CA", partenaire: "UQAT", color: "#E53935", avantages: ["Poursuite d’études possible après un cursus à EBS", "Maîtrises (Bac+5) accessibles selon le parcours académique", "Expérience universitaire au Québec", "Accompagnement dans le projet de mobilité"] },
+  { pays: "France", code: "FR", partenaire: "11 partenaires académiques", color: "#1E88E5", avantages: ["Écoles et Grandes Écoles partenaires", "Bachelors, Masters, MSc et programmes Bac+5", "Nombreux campus et spécialisations", "Accompagnement dans les démarches de mobilité"] },
+  { pays: "Italie", code: "IT", partenaire: "Link University — Rome", color: "#43A047", avantages: ["Mobilité possible dès les premières années à EBS", "Bachelors et Masters accessibles selon le parcours", "Programmes internationaux à Rome", "Études en anglais selon le programme choisi"] },
+  { pays: "Oman", code: "OM", partenaire: "GUtech", color: "#FB8C00", avantages: ["Université technologique internationale anglophone", "Collaboration académique avec RWTH Aachen University", "Informatique, Intelligence Artificielle et Cybersécurité", "Projets, Summer Schools et mobilité académique"] },
 ];
 
 const etapes = [
-  { number: "01", title: "Études à EBS", desc: "Validez 1, 2 ou 3 années selon votre destination" },
-  { number: "02", title: "Candidature", desc: "Notre équipe constitue votre dossier partenaire" },
-  { number: "03", title: "Admission", desc: "Convention facilitant la reconnaissance des crédits" },
-  { number: "04", title: "Visa & Départ", desc: "Guidance pour visa et installation sur place" },
-  { number: "05", title: "Emploi", desc: "Accès au marché du travail local et international" },
+  { number: "01", title: "Choisissez votre programme", desc: "Découvrez les Licences et Masters d’EBS et choisissez la formation." },
+  { number: "02", title: "Déposez votre candidature", desc: "Transmettez votre dossier d’admission. Notre équipe vous accompagne." },
+  { number: "03", title: "Recevez votre admission", desc: "Après validation, recevez les documents pour préparer votre arrivée." },
+  { number: "04", title: "Préparez votre arrivée", desc: "Accompagnement pour visa, logement et démarches administratives." },
+  { number: "05", title: "Commencez votre vie à EBS", desc: "Rejoignez le campus, découvrez votre nouvel environnement." },
 ];
 
 const phases = [
   {
     id: "avant",
-    title: "Avant Votre Arrivée",
+    title: "Avant votre arrivée",
     icon: <Plane className="w-6 h-6" />,
     color: "#2B8FAB",
-    intro: "Nous préparons votre venue : visa, logement, et toutes les démarches administratives.",
+    intro: "Préparez votre projet d’études avec EBS : choix du programme, candidature, admission et préparation des documents nécessaires à votre venue en Tunisie.",
     items: [
-      { icon: <FileText className="w-4 h-4" />, title: "Assistance Visa", desc: "Accompagnement dans l'obtention de votre visa étudiant" },
-      { icon: <Hotel className="w-4 h-4" />, title: "Recherche de Logement", desc: "Aide à trouver un logement adapté près du campus" },
-      { icon: <Phone className="w-4 h-4" />, title: "Contact Permanent", desc: "Une équipe dédiée répond à toutes vos questions avant le départ" },
+      { icon: <FileText className="w-4 h-4" />, title: "Projet d'études", desc: "Choix du programme et candidature" },
+      { icon: <BadgeCheck className="w-4 h-4" />, title: "Admission", desc: "Validation de votre candidature" },
+      { icon: <Plane className="w-4 h-4" />, title: "Préparation", desc: "Documents nécessaires à votre venue" },
     ],
   },
   {
     id: "arrivee",
-    title: "Votre Arrivée en Tunisie",
+    title: "Votre arrivée en Tunisie",
     icon: <MapPin className="w-6 h-6" />,
     color: "#2196F3",
-    intro: "Dès votre atterrissage, nous sommes là pour vous accueillir et vous installer.",
+    intro: "À votre arrivée, notre équipe vous accompagne pour faciliter vos premiers repères à Tunis, rejoindre votre logement et préparer votre rentrée à EBS.",
     items: [
-      { icon: <Plane className="w-4 h-4" />, title: "Accueil Aéroportuaire", desc: "Prise en charge à l'aéroport et transfert vers votre résidence" },
-      { icon: <Phone className="w-4 h-4" />, title: "Carte SIM Offerte", desc: "Une carte SIM tunisienne pour rester connecté dès votre arrivée" },
-      { icon: <Users className="w-4 h-4" />, title: "Session d'Accueil", desc: "Réunion d'information et de sensibilisation sur la vie en Tunisie" },
+      { icon: <Plane className="w-4 h-4" />, title: "Premiers repères", desc: "Accompagnement dès votre arrivée" },
+      { icon: <Hotel className="w-4 h-4" />, title: "Logement", desc: "Rejoindre votre logement en toute sécurité" },
+      { icon: <GraduationCap className="w-4 h-4" />, title: "Rentrée à EBS", desc: "Préparation de votre intégration" },
     ],
   },
   {
     id: "installation",
-    title: "Votre Installation Durable",
+    title: "Votre installation",
     icon: <Building className="w-6 h-6" />,
     color: "#00897B",
-    intro: "Nous vous accompagnons jusqu'à votre installation complète et autonome.",
+    intro: "Nous vous aidons à organiser les principales étapes nécessaires pour commencer sereinement votre nouvelle vie étudiante.",
     items: [
-      { icon: <BadgeCheck className="w-4 h-4" />, title: "Carte de Séjour", desc: "Assistance complète pour l'obtention de votre titre de séjour" },
-      { icon: <Banknote className="w-4 h-4" />, title: "Compte Bancaire", desc: "Aide à l'ouverture d'un compte bancaire international" },
-      { icon: <BriefcaseMedical className="w-4 h-4" />, title: "Check-Up Médical", desc: "Bilan de santé et affiliation à l'assurance-maladie" },
-      { icon: <Bus className="w-4 h-4" />, title: "Transports", desc: "Abonnement aux transports publics et orientation dans Tunis" },
-      { icon: <Receipt className="w-4 h-4" />, title: "Documents Officiels", desc: "Attestations d'inscription et de paiement pour vos démarches" },
-      { icon: <Users className="w-4 h-4" />, title: "Vie Étudiante", desc: "Intégration dans les clubs, activités et sorties organisées par EBS" },
+      { icon: <BadgeCheck className="w-4 h-4" />, title: "Assistance séjour", desc: "Accompagnement pour vos démarches administratives" },
+      { icon: <Hotel className="w-4 h-4" />, title: "Recherche de logement", desc: "Orientation et assistance pour un logement adapté" },
+      { icon: <HeartHandshake className="w-4 h-4" />, title: "Accompagnement personnalisé", desc: "Une équipe dédiée pour faciliter votre intégration" },
     ],
   },
 ];
@@ -92,13 +89,13 @@ export default function EtudiantsInternationauxPage() {
               <span className="text-[#2B8FAB]">en Tunisie</span> avec EBS<span className="text-[#2B8FAB]">.</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[16px] md:text-[18px] text-white/60 leading-relaxed max-w-[550px] mb-8">
-              De l&apos;aéroport à votre diplôme, une équipe dédiée vous accompagne à chaque étape. Visa, logement, installation — on s&apos;occupe de tout.
+              Rejoindre ESPIMA Business School à Tunis, c’est choisir une université privée agréée offrant un environnement académique ouvert sur l’international et des formations adaptées aux évolutions du monde professionnel. De votre première candidature jusqu’à votre installation, notre équipe vous accompagne.
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="flex flex-wrap gap-4">
               {[
-                { icon: <Check className="w-4 h-4" />, text: "Conventions signées" },
-                { icon: <ShieldUser className="w-4 h-4" />, text: "Visa accompagné" },
-                { icon: <GraduationCap className="w-4 h-4" />, text: "Diplômes reconnus" },
+                { icon: <Check className="w-4 h-4" />, text: "Université privée agréée en Tunisie" },
+                { icon: <ShieldUser className="w-4 h-4" />, text: "Accompagnement visa, séjour et installation" },
+                { icon: <Globe className="w-4 h-4" />, text: "Parcours et partenaires à l'étranger" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2 text-[13px] font-semibold text-white/50">
                   <span className="text-[#2B8FAB]">{item.icon}</span> {item.text}
@@ -119,20 +116,20 @@ export default function EtudiantsInternationauxPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-16">
             <Badge variant="default" size="lg" className="mb-4">Notre engagement</Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-penn-navy leading-[1.15] mb-4">
-              On s&apos;occupe de tout.
+              Nous vous accompagnons à chaque
               <br />
-              <span className="text-[#2B8FAB]">Vous, vous étudiez.</span>
+              <span className="text-[#2B8FAB]">étape de votre parcours.</span>
             </h2>
             <p className="text-[16px] text-penn-body max-w-[650px] mx-auto mt-4">
-              Notre service d&apos;accompagnement est dédié aux étudiants internationaux. De votre premier contact jusqu&apos;à votre installation complète, une équipe professionnelle et conviviale est à vos côtés.
+              Étudier dans un nouveau pays représente un véritable projet de vie. Le service d’accompagnement international d’EBS facilite vos démarches et vous aide à préparer votre arrivée dans les meilleures conditions.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {[
-              { icon: <HeartHandshake className="w-6 h-6" />, title: "Accueil Personnalisé", desc: "Prise en charge dès l&apos;aéroport par notre équipe dédiée, transfert vers votre logement, et accompagnement continu.", color: "#2B8FAB" },
-              { icon: <ShieldUser className="w-6 h-6" />, title: "Démarches Simplifiées", desc: "Visa, carte de séjour, assurance, compte bancaire — nous vous guidons dans toutes les formalités administratives.", color: "#2196F3" },
-              { icon: <Users className="w-6 h-6" />, title: "Communauté Internationale", desc: "Rejoignez des étudiants de multiples nationalités. Des activités et sorties organisées pour une intégration réussie.", color: "#E91E8C" },
+              { icon: <HeartHandshake className="w-6 h-6" />, title: "Accueil personnalisé", desc: "Une équipe disponible pour vous accompagner avant votre départ, à votre arrivée à Tunis et pendant votre installation, et répondre à vos principales questions pratiques.", color: "#2B8FAB" },
+              { icon: <ShieldUser className="w-6 h-6" />, title: "Démarches simplifiées", desc: "Accompagnement pour préparer les principales formalités liées au visa, au séjour en Tunisie, à l’assurance et aux documents administratifs nécessaires.", color: "#2196F3" },
+              { icon: <Users className="w-6 h-6" />, title: "Communauté internationale", desc: "Intégrez la communauté EBS, rencontrez des étudiants de différents horizons et participez à des activités favorisant les échanges et l’intégration.", color: "#E91E8C" },
             ].map((card, i) => (
               <motion.div key={card.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group bg-white rounded-2xl border border-penn-border p-6 lg:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: `${card.color}12` }}>
@@ -256,7 +253,7 @@ export default function EtudiantsInternationauxPage() {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
             <Quote className="w-8 h-8 text-[#2B8FAB]/20 mx-auto mb-6" />
             <blockquote className="text-[20px] md:text-[26px] font-bold text-white/80 leading-relaxed italic mb-8">
-              &ldquo;Grâce à EBS et à leur partenariat avec l&apos;UQAT, j&apos;ai pu partir au Canada avec ma Licence en Management. Aujourd&apos;hui je travaille à Montréal et j&apos;ai ma résidence permanente. EBS a tout facilité.&rdquo;
+              &ldquo;Grâce à EBS et à son partenariat avec l'UQAT, j'ai pu poursuivre mes études au Canada après ma Licence en Management. Aujourd'hui, je travaille à Montréal. L'accompagnement d'EBS a été un véritable atout dans mon parcours.&rdquo;
             </blockquote>
             <div className="flex items-center justify-center gap-4">
               <div className="w-11 h-11 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center text-[#2B8FAB] font-extrabold text-[15px] border border-[#2B8FAB]/10">SG</div>
@@ -296,9 +293,9 @@ export default function EtudiantsInternationauxPage() {
             <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6">
               <GraduationCap className="w-8 h-8 text-[#2B8FAB]" />
             </div>
-            <h2 className="text-[34px] md:text-[48px] font-extrabold text-penn-navy leading-[1.15] mb-4">Rejoignez-nous !</h2>
+            <h2 className="text-[34px] md:text-[48px] font-extrabold text-penn-navy leading-[1.15] mb-4">Rejoignez-nous !<br/>Votre parcours à EBS commence ici.</h2>
             <p className="text-[16px] text-penn-body leading-relaxed mb-10 max-w-[500px] mx-auto">
-              Déposez votre candidature et notre équipe vous accompagne dans toutes les démarches.
+              Vous souhaitez venir étudier à Tunis ? Déposez votre candidature et notre équipe vous accompagne dans la préparation de votre projet, de l’admission jusqu’à votre installation en Tunisie.
             </p>
             <Link href="/contact" className="inline-flex items-center gap-2 bg-[#2B8FAB] text-white font-bold text-[16px] py-4 px-10 rounded-full hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20 hover:shadow-xl hover:-translate-y-0.5">
               Préinscription <ArrowRight className="w-5 h-5" />
@@ -307,7 +304,7 @@ export default function EtudiantsInternationauxPage() {
         </div>
       </section>
 
-      <CtaSection title="Une question sur votre venue en Tunisie ?" subtitle="Notre équipe internationale vous répond sous 24h." primaryCta={{ label: "Pré-inscription", href: "/preinscription" }} whatsapp="+216 55 582 843" background="penn-green" />
+      <CtaSection title="Une question sur votre venue en Tunisie ?" subtitle="Notre équipe internationale vous accompagne pour toute question concernant l’admission, les programmes, le visa, le logement ou votre installation à Tunis. Réponse sous 24 h." primaryCta={{ label: "PRÉ-INSCRIPTION", href: "/preinscription" }} whatsapp="+216 55 582 843" background="penn-green" />
     </>
   );
 }

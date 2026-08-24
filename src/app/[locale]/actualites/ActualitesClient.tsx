@@ -14,8 +14,13 @@ import {
   Timer,
   TrendingUp,
   X,
+  Phone,
+  Mail,
+  Users,
+  Handshake,
+  GraduationCap,
 } from "lucide-react";
-import { Badge } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 
 type Tab = "alaune" | "actualites" | "evenements";
 
@@ -327,10 +332,10 @@ const tabs: { key: Tab; label: string; icon: React.ReactNode; desc: string }[] =
 ];
 
 const stats = [
-  { icon: <Newspaper className="w-5 h-5" />, label: "Articles", value: "27", accent: "#2B8FAB" },
-  { icon: <Calendar className="w-5 h-5" />, label: "Événements", value: "21", accent: "#FF9800" },
-  { icon: <TrendingUp className="w-5 h-5" />, label: "Thématiques", value: "17", accent: "#9C27B0" },
-  { icon: <Timer className="w-5 h-5" />, label: "Années couvertes", value: "4+", accent: "#2196F3" },
+  { icon: <Users className="w-5 h-5" />, label: "", value: "Vie Étudiante", accent: "#2B8FAB" },
+  { icon: <Megaphone className="w-5 h-5" />, label: "", value: "Conférences", accent: "#FF9800" },
+  { icon: <Handshake className="w-5 h-5" />, label: "", value: "Partenariats", accent: "#9C27B0" },
+  { icon: <GraduationCap className="w-5 h-5" />, label: "", value: "Alumni", accent: "#2196F3" },
 ];
 
 export default function ActualitesPage() {
@@ -378,7 +383,7 @@ export default function ActualitesPage() {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
                 <div className="w-1 h-1 rounded-full bg-[#2B8FAB]" />
-                Restez Informés
+                Restez connecté à la vie de notre campus et à notre communauté.
               </Badge>
             </motion.div>
             <motion.h1
@@ -387,8 +392,8 @@ export default function ActualitesPage() {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="text-[44px] md:text-[56px] lg:text-[68px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
             >
-              Actualités<br />
-              <span className="text-[#2B8FAB]">EBS</span>
+              Actualités &<br />
+              <span className="text-[#2B8FAB]">Événements</span>.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -396,8 +401,7 @@ export default function ActualitesPage() {
               transition={{ duration: 0.6, delay: 0.35 }}
               className="text-[17px] md:text-[19px] text-white/60 leading-relaxed max-w-[550px]"
             >
-              Partenariats, événements, conférences et vie étudiante.
-              Tout ce qui fait vibrer Espima Business School au quotidien.
+              Découvrez les dernières actualités d&apos;EBS, les événements à venir, les témoignages de nos étudiants et les succès de nos diplômés.
             </motion.p>
           </div>
         </div>
@@ -420,8 +424,7 @@ export default function ActualitesPage() {
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ backgroundColor: `${stat.accent}15` }}>
                     <div style={{ color: stat.accent }}>{stat.icon}</div>
                   </div>
-                  <p className="text-[28px] md:text-[32px] font-extrabold text-penn-navy leading-none mb-1">{stat.value}</p>
-                  <p className="text-[13px] font-semibold text-penn-body/60 uppercase tracking-wide">{stat.label}</p>
+                  <p className="text-[16px] md:text-[20px] font-extrabold text-penn-navy leading-none mb-1 text-center">{stat.value}</p>
                 </motion.div>
               ))}
             </div>
@@ -652,43 +655,50 @@ export default function ActualitesPage() {
         </div>
       </section>
 
-      {/* ─────────── NEWSLETTER / STAY CONNECTED ─────────── */}
-      <section className="section-padding bg-[#2B8FAB] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_50%_50%,_white_0%,_transparent_70%)]" />
-        <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-        <div className="relative z-10 max-w-[900px] mx-auto px-5 lg:px-12 text-center">
+      {/* ─────────── CONTACT ─────────── */}
+      <section className="section-padding bg-penn-bg-light">
+        <div className="max-w-[800px] mx-auto px-5 lg:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
+            viewport={{ once: true, margin: "-80px" }}
           >
-            <Badge variant="outline" size="lg" className="mb-6 border-white/30 text-white/90">
-              <div className="w-1 h-1 rounded-full bg-white" />
-              Newsletter EBS
-            </Badge>
-            <h2 className="text-[28px] md:text-[36px] font-extrabold text-white mb-4">
-              Restez connecté à <span className="text-white">l&apos;actualité</span>
+            <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6">
+              <Megaphone className="w-8 h-8 text-[#2B8FAB]" />
+            </div>
+            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">
+              Une question ?
             </h2>
-            <p className="text-[16px] text-white/70 max-w-[500px] mx-auto mb-10 leading-relaxed">
-              Recevez les dernières nouvelles, événements et opportunités directement dans votre boîte mail.
+            <p className="text-[16px] text-penn-body leading-relaxed mb-10 max-w-[600px] mx-auto">
+              Contactez notre équipe pour toute demande d&apos;information concernant nos événements et notre actualité.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 max-w-[480px] mx-auto">
-              <input
-                type="email"
-                placeholder="Votre adresse email"
-                className="flex-1 w-full px-5 py-3.5 rounded-full bg-white/15 border border-white/30 text-white placeholder:text-white/50 text-[14px] focus:outline-none focus:border-white/60 focus:ring-2 focus:ring-white/20 transition-all"
-              />
-              <button className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-[#2B8FAB] font-bold text-[14px] hover:bg-white/90 transition-all shadow-lg shadow-white/20 hover:shadow-white/30">
-                S&apos;abonner
-              </button>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[500px] mx-auto mb-10">
+              <a
+                href="tel:+216 55 582 843"
+                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
+              >
+                <Phone className="w-5 h-5 text-[#2B8FAB]" />
+                <span className="text-[15px] font-bold text-penn-navy">+216 55 582 843</span>
+              </a>
+              <a
+                href="mailto:info@ebs.tn"
+                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
+              >
+                <Mail className="w-5 h-5 text-[#2B8FAB]" />
+                <span className="text-[15px] font-bold text-penn-navy">info@ebs.tn</span>
+              </a>
             </div>
-            <p className="text-[12px] text-white/40 mt-4">
-              Aucun spam. Désabonnement possible à tout moment.
-            </p>
           </motion.div>
         </div>
       </section>
+
+      <CtaSection
+        title="Découvrez toutes les actualités d'EBS."
+        subtitle=""
+        primaryCta={{ label: "Nous contacter", href: "/contact" }}
+        background="penn-green"
+      />
 
       {/* ─────────── MODAL ─────────── */}
       <AnimatePresence>

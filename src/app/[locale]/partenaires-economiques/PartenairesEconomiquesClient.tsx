@@ -36,31 +36,31 @@ const avantagesEntreprise = [
   {
     icon: <Award className="w-6 h-6" />,
     title: "Talents Certifiés",
-    desc: "Vos futurs collaborateurs sont certifiés par Google, IBM, Harvard, Bloomberg, Cisco — avant même d'avoir leur diplôme.",
+    desc: "Vos futurs collaborateurs sont certifiés par Google, IBM, Harvard, Bloomberg, Cisco et d'autres leaders internationaux avant même l'obtention de leur diplôme.",
     color: "#2B8FAB",
   },
   {
     icon: <Rocket className="w-6 h-6" />,
-    title: "Opérationnels Immédiatement",
-    desc: "Pédagogie pratique, simulations pro Forage, projets réels. Un stagiaire EBS est productif dès la première semaine.",
+    title: "Opérationnels Rapidement",
+    desc: "Pédagogie par projets, simulations professionnelles Forage et études de cas réels permettent à nos étudiants de s'intégrer rapidement en entreprise.",
     color: "#2196F3",
   },
   {
     icon: <Brain className="w-6 h-6" />,
     title: "IA-Native",
-    desc: "Tous nos étudiants maîtrisent l'IA générative, le prompting et l'automatisation. Une compétence que vos équipes n'ont pas encore.",
+    desc: "Tous nos étudiants développent des compétences en IA générative, prompting et automatisation, désormais essentielles dans tous les métiers.",
     color: "#9C27B0",
   },
   {
     icon: <Globe className="w-6 h-6" />,
     title: "Bilingues & Internationaux",
-    desc: "Anglais professionnel, partenariats internationaux, expérience multiculturelle. Prêts pour vos équipes globales.",
+    desc: "Anglais professionnel, partenariats internationaux et ouverture multiculturelle les préparent à évoluer dans des environnements internationaux.",
     color: "#FF9800",
   },
   {
     icon: <Target className="w-6 h-6" />,
     title: "Recrutement Sans Risque",
-    desc: "Testez nos talents en stage ou en alternance avant de les recruter. Zéro risque, 100% de valeur ajoutée.",
+    desc: "Accueillez nos étudiants en stage de longue durée pour évaluer leurs compétences et préparer leur future intégration dans votre entreprise.",
     color: "#E91E8C",
   },
 ];
@@ -69,26 +69,26 @@ const typesCollaboration = [
   {
     icon: <Calendar className="w-7 h-7" />,
     title: "Stage",
-    desc: "Des stagiaires opérationnels pour vos projets ponctuels. Durée flexible, tous les programmes.",
+    desc: "Des stagiaires motivés et opérationnels pour accompagner vos projets, quelle que soit votre activité.",
     badge: "Le plus demandé",
     color: "#2B8FAB",
   },
   {
     icon: <Clock className="w-7 h-7" />,
-    title: "Alternance",
-    desc: "Un étudiant 2-3 jours/semaine dans votre entreprise. Formation prise en charge par EBS.",
+    title: "Immersion en entreprise",
+    desc: "Accueillez un étudiant en stage de longue durée, 3 à 4 jours par semaine dans votre entreprise, tout en poursuivant sa formation à EBS.",
     color: "#2196F3",
   },
   {
     icon: <Search className="w-7 h-7" />,
     title: "Recrutement",
-    desc: "Accès prioritaire à notre vivier de diplômés certifiés. Matching personnalisé selon vos besoins.",
+    desc: "Accès privilégié à notre réseau de diplômés certifiés, avec un accompagnement personnalisé selon vos besoins.",
     color: "#9C27B0",
   },
   {
     icon: <Lightbulb className="w-7 h-7" />,
     title: "Projet Réel",
-    desc: "Confiez un projet à une équipe d'étudiants encadrée par nos professeurs. Résultats concrets garantis.",
+    desc: "Confiez un projet à une équipe d'étudiants encadrée par nos enseignants et bénéficiez de solutions concrètes.",
     color: "#FF9800",
   },
 ];
@@ -96,27 +96,27 @@ const typesCollaboration = [
 const profilDiplomes = [
   {
     icon: <Award className="w-5 h-5" />,
-    text: "Multi-certifiés : Google, IBM, Harvard, Bloomberg, Cisco, HubSpot, PMI, ScrumStudy et 15+ autres fournisseurs mondiaux.",
+    text: "Multi-certifié : Google, IBM, Harvard, Bloomberg, Cisco, HubSpot, PMI, ScrumStudy et plus de 15 autres organismes internationaux.",
     color: "#2B8FAB",
   },
   {
     icon: <Sparkles className="w-5 h-5" />,
-    text: "IA-native : prompting, agents, automatisation, analyse de données augmentée — l'IA comme réflexe professionnel.",
+    text: "Maîtrise de l'IA : prompting, agents IA, automatisation et analyse de données augmentée appliqués à son métier.",
     color: "#9C27B0",
   },
   {
     icon: <Rocket className="w-5 h-5" />,
-    text: "Expérience pratique réelle : simulations Forage (BCG, Goldman Sachs, JP Morgan, Mastercard, PwC, KPMG, EY).",
+    text: "Expérience pratique : simulations Forage (BCG, Goldman Sachs, JP Morgan, Mastercard, PwC, KPMG, EY) et projets concrets.",
     color: "#E91E8C",
   },
   {
     icon: <Check className="w-5 h-5" />,
-    text: "Opérationnels dès J1 : pédagogie par projet, études de cas réels, outils professionnels maîtrisés.",
+    text: "Rapidement opérationnel grâce à une pédagogie par projets, des études de cas et la maîtrise des outils professionnels.",
     color: "#2196F3",
   },
   {
     icon: <Globe className="w-5 h-5" />,
-    text: "Profil international : anglais professionnel, expérience multiculturelle, partenariats dans 8 pays.",
+    text: "Profil international : anglais professionnel, expérience multiculturelle et partenariats académiques internationaux.",
     color: "#FF9800",
   },
 ];
@@ -303,9 +303,7 @@ export default function PartenairesEconomiquesPage() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[700px] mb-12"
           >
-            EBS forme les profils les plus recherchés du marché : certifiés,
-            bilingues, IA-natives, et opérationnels dès leur premier jour. Vos
-            futurs collaborateurs sont chez nous.
+            EBS forme des diplômés répondant aux attentes des entreprises : certifiés, bilingues, maîtrisant l'Intelligence Artificielle et rapidement opérationnels. Vos futurs collaborateurs sont chez nous.
           </motion.p>
 
           <motion.div
@@ -315,20 +313,20 @@ export default function PartenairesEconomiquesPage() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
           >
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">90%+</p>
+              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">90 %+</p>
               <p className="text-[12px] text-white/50 font-medium">Taux d&apos;insertion</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
               <p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">150+</p>
-              <p className="text-[12px] text-white/50 font-medium">Certifications par diplômé</p>
+              <p className="text-[12px] text-white/50 font-medium">Certifications internationales proposées</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">7</p>
-              <p className="text-[12px] text-white/50 font-medium">Filières de recrutement</p>
+              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">8</p>
+              <p className="text-[12px] text-white/50 font-medium">Filières ouvertes</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
               <GraduationCap className="w-10 h-10 md:w-14 md:h-14 text-[#2B8FAB] mx-auto mb-1" />
-              <p className="text-[12px] text-white/50 font-medium">Promotions 2026-2027</p>
+              <p className="text-[12px] text-white/50 font-medium">Rentrée 2026-2027</p>
             </div>
           </motion.div>
         </div>
@@ -348,8 +346,8 @@ export default function PartenairesEconomiquesPage() {
           <div className="bg-white rounded-2xl border border-penn-border shadow-xl overflow-hidden">
             <div className="grid grid-cols-3 divide-x divide-penn-border/40">
               {[
-                { value: "11", label: "Partenaires stratégiques", icon: <Building2 className="w-5 h-5" />, color: "#2B8FAB" },
-                { value: "90%+", label: "Insertion professionnelle", icon: <TrendingUp className="w-5 h-5" />, color: "#2196F3" },
+                { value: "12", label: "Partenaires stratégiques", icon: <Building2 className="w-5 h-5" />, color: "#2B8FAB" },
+                { value: "90% +", label: "Insertion professionnelle", icon: <TrendingUp className="w-5 h-5" />, color: "#2196F3" },
                 { value: "10+", label: "Secteurs représentés", icon: <Briefcase className="w-5 h-5" />, color: "#FF9800" },
               ].map((stat, i) => (
                 <motion.div
@@ -789,8 +787,7 @@ export default function PartenairesEconomiquesPage() {
               Prêt à collaborer ?
             </h2>
             <p className="text-[16px] text-penn-body leading-relaxed mb-10 max-w-[600px] mx-auto">
-              Contactez directement notre équipe pour discuter des opportunités de
-              partenariat, de stage ou de recrutement.
+              Contactez directement notre équipe pour échanger sur vos besoins en recrutement, en stages, en immersion en entreprise ou en partenariats.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
@@ -822,7 +819,7 @@ export default function PartenairesEconomiquesPage() {
 
       <CtaSection
         title="Rejoignez notre réseau de partenaires économiques."
-        subtitle="Accédez à nos talents certifiés, IA-natives et opérationnels. Construisons ensemble l'avenir."
+        subtitle="Accédez à des talents certifiés, formés à l'Intelligence Artificielle et préparés aux exigences du monde professionnel. Construisons ensemble l'avenir."
         primaryCta={{ label: "Nous contacter", href: "/contact" }}
         secondaryCta={{ label: "Voir nos formations", href: "/nos-programmes" }}
         background="penn-green"
