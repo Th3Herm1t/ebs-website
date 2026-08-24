@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Award, BookOpen, Globe, ShieldCheck, Sparkles } from "lucide-react";
 import { Badge, CtaSection, InfiniteLogoMarquee } from "@/components/shared";
 import { MagneticProgramCard } from "@/components/program";
@@ -17,10 +18,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const overview = [
-  { ...masters.crm, subtitle: "CRM, marketing automation, Intelligence Artificielle et transformation digitale avec HubSpot, n8n et des outils professionnels reconnus.", featured: true },
-  { ...masters["marketing-digital-ia"], subtitle: "Marketing digital, analyse des données, Intelligence Artificielle et automatisation des campagnes marketing.", featured: true },
-  { ...masters.startups, subtitle: "Management de projet, innovation, entrepreneuriat, méthodes Agile, PMI® et Scrum.", featured: false },
-  { ...masters["ingenierie-financiere"], subtitle: "Finance d'entreprise, marchés financiers, analyse des données et certifications Bloomberg.", featured: false },
+  { ...masters.crm, subtitle: "CRM, marketing automation, Intelligence Artificielle et transformation digitale avec HubSpot, n8n et des outils professionnels reconnus.", featured: true, image: "/images/sections/pro-student.jpg" },
+  { ...masters["marketing-digital-ia"], subtitle: "Marketing digital, analyse des données, Intelligence Artificielle et automatisation des campagnes marketing.", featured: true, image: "/images/sections/pillar-tech.jpg" },
+  { ...masters.startups, subtitle: "Management de projet, innovation, entrepreneuriat, méthodes Agile, PMI® et Scrum.", featured: false, image: "/images/programs/management.jpg" },
+  { ...masters["ingenierie-financiere"], subtitle: "Finance d'entreprise, marchés financiers, analyse des données et certifications Bloomberg.", featured: false, image: "/images/programs/finance.jpg" },
 ];
 
 const mastersCards = [
@@ -125,6 +126,7 @@ export default async function MastersPage({
                         certifications={prog.totalCerts}
                         color={prog.color}
                         href={`/masters/${prog.slug}`}
+                        image={prog.image}
                         isFeatured={false}
                       />
                     </div>
@@ -143,33 +145,46 @@ export default async function MastersPage({
           <h2 className="text-[28px] md:text-[36px] font-extrabold text-penn-navy text-center mb-12">
             Pourquoi choisir un Master à EBS ?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
-                <Sparkles className="w-7 h-7 text-penn-green" />
-              </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">IA générative</h3>
-              <p className="text-[15px] text-penn-body leading-relaxed">
-                Développez une maîtrise des technologies qui transforment les entreprises : agents IA, automatisation, analyse des données et outils no-code.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative aspect-video lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
+              <Image src="/images/programs/program-hero.jpg" alt="Étudiants EBS Master" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <div className="absolute inset-0 bg-penn-navy/10 mix-blend-multiply" />
             </div>
-            <div className="text-center">
-              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
-                <Award className="w-7 h-7 text-penn-green" />
+
+            <div className="flex flex-col gap-8">
+              <div className="flex items-start gap-5">
+                <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center shrink-0">
+                  <Sparkles className="w-7 h-7 text-penn-green" />
+                </div>
+                <div>
+                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">IA générative</h3>
+                  <p className="text-[15px] text-penn-body leading-relaxed">
+                    Développez une maîtrise des technologies qui transforment les entreprises : agents IA, automatisation, analyse des données et outils no-code.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">Certifications internationales</h3>
-              <p className="text-[15px] text-penn-body leading-relaxed">
-                Des certifications délivrées par PMI, Scrum, Bloomberg, HubSpot, IBM, Google et d'autres organismes reconnus sont intégrées à votre parcours.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
-                <Globe className="w-7 h-7 text-penn-green" />
+              <div className="flex items-start gap-5">
+                <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center shrink-0">
+                  <Award className="w-7 h-7 text-penn-green" />
+                </div>
+                <div>
+                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">Certifications internationales</h3>
+                  <p className="text-[15px] text-penn-body leading-relaxed">
+                    Des certifications délivrées par PMI, Scrum, Bloomberg, HubSpot, IBM, Google et d'autres organismes reconnus sont intégrées à votre parcours.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">Ouverture internationale</h3>
-              <p className="text-[15px] text-penn-body leading-relaxed">
-                Poursuivez vos études ou développez votre carrière en France, au Canada et dans d'autres pays grâce à nos partenariats internationaux.
-              </p>
+              <div className="flex items-start gap-5">
+                <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center shrink-0">
+                  <Globe className="w-7 h-7 text-penn-green" />
+                </div>
+                <div>
+                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">Ouverture internationale</h3>
+                  <p className="text-[15px] text-penn-body leading-relaxed">
+                    Poursuivez vos études ou développez votre carrière en France, au Canada et dans d'autres pays grâce à nos partenariats internationaux.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

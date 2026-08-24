@@ -6,10 +6,10 @@ import { motion } from "motion/react";
 import { Badge, CtaSection } from "@/components/shared";
 
 const timeline = [
-  { year: "2013", title: "Fondation d'EBS", text: "Création d'Espima Business School à Tunis. Agrément n° 2013/02 délivré par Ministère de l'Enseignement Supérieur et de la Recherche Scientifique. Dès sa création, une conviction forte : offrir en Tunisie des formations universitaires répondant aux standards internationaux.", highlight: false },
-  { year: "2016", title: "Premiers partenariats", text: "Signature des premières conventions avec des universités françaises. Lancement des Licences en Management, Marketing, Finance et Informatique.", highlight: false },
-  { year: "2020", title: "Expansion internationale", text: "Le réseau de partenaires s'élargit avec l'UQAT (Canada), EM Normandie, Excelia et Paris School of Business (PSB). Développement des parcours internationaux et lancement des Masters professionnels.", highlight: false },
-  { year: "2026", title: "Le virage de l'IA", text: "EBS devient la première université tunisienne à intégrer l'intelligence artificielle comme compétence transversale obligatoire dans tous ses cursus. Plus de 150 certifications internationales offertes, en partenariat avec Google, IBM, Harvard, Bloomberg et plus de 15 partenaires technologiques internationaux.", highlight: true },
+  { year: "2013", title: "Fondation d'EBS", text: "Création d'Espima Business School à Tunis. Agrément n° 2013/02 délivré par Ministère de l'Enseignement Supérieur et de la Recherche Scientifique. Dès sa création, une conviction forte : offrir en Tunisie des formations universitaires répondant aux standards internationaux.", highlight: false, image: "/images/campus/campus-1.jpg" },
+  { year: "2016", title: "Premiers partenariats", text: "Signature des premières conventions avec des universités françaises. Lancement des Licences en Management, Marketing, Finance et Informatique.", highlight: false, image: "/images/campus/campus-2.jpg" },
+  { year: "2020", title: "Expansion internationale", text: "Le réseau de partenaires s'élargit avec l'UQAT (Canada), EM Normandie, Excelia et Paris School of Business (PSB). Développement des parcours internationaux et lancement des Masters professionnels.", highlight: false, image: "/images/sections/pillar-mobilite.jpg" },
+  { year: "2026", title: "Le virage de l'IA", text: "EBS devient la première université tunisienne à intégrer l'intelligence artificielle comme compétence transversale obligatoire dans tous ses cursus. Plus de 150 certifications internationales offertes, en partenariat avec Google, IBM, Harvard, Bloomberg et plus de 15 partenaires technologiques internationaux.", highlight: true, image: "/images/sections/pillar-tech.jpg" },
 ];
 
 const piliers = [
@@ -18,24 +18,28 @@ const piliers = [
     title: "Qualité de l'Enseignement",
     desc: "EBS est une business school moderne et dynamique, qui propose des parcours et des diplômes de qualité, en Licence et en Master, répondant aux standards internationaux. Les partenariats internationaux, les codiplômations et les certifications attestent de la qualité des études universitaires à EBS.",
     color: "#2B8FAB",
+    image: "/images/campus/campus-2.jpg",
   },
   {
     icon: <Lightbulb className="w-7 h-7" />,
     title: "Pédagogie Innovante",
     desc: "Notre université a mis en place un système d'enseignement utilisant les nouvelles technologies, avec une plateforme de E-Learning favorisant l'autonomie et l'interaction. EBS a mis l'accent sur le « learning by doing » dont les objectifs sont de développer la créativité, le travail en équipe, l'esprit d'analyse et le leadership.",
     color: "#2196F3",
+    image: "/images/sections/pillar-tech.jpg",
   },
   {
     icon: <Heart className="w-7 h-7" />,
     title: "Développement Personnel et Professionnel",
     desc: "Le développement personnel occupe une place très importante dans notre université. Notre objectif : développer la confiance en soi, l'ouverture d'esprit et la culture générale pour former des entrepreneurs, des managers et des hauts cadres ambitieux, efficaces et responsables.",
     color: "#E91E8C",
+    image: "/images/sections/features-group.jpg",
   },
   {
     icon: <Globe className="w-7 h-7" />,
     title: "Ouverture sur l'Environnement",
     desc: "EBS est un pont d'échange entre le monde professionnel et le monde académique. Plusieurs conventions ont été signées avec des grands groupes pour offrir les meilleures opportunités de stages et d'emplois. Des accords de collaboration avec des universités étrangères favorisent la mobilité des étudiants et des enseignants.",
     color: "#FF9800",
+    image: "/images/sections/pillar-partenaires.jpg",
   },
 ];
 
@@ -139,19 +143,46 @@ export default function QuiSommesNousPage() {
 
       {/* ═══════════ CAMPUS & INFRASTRUCTURE ═══════════ */}
       <section className="section-padding bg-white">
-        <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center"><Building2 className="w-7 h-7 text-[#2B8FAB]" /></div>
-              <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy">Un campus pensé pour votre réussite</h2>
-            </div>
-            <p className="text-[16px] text-penn-body leading-relaxed mb-6">
-              EBS dispose de toutes les commodités nécessaires à l'épanouissement de ses étudiants : une superficie de 3000 m² avec un bâtiment moderne entièrement climatisé et équipé de WIFI haut débit, une salle polyvalente, un espace de détente, une salle des jeux et une buvette, offrant un cadre convivial permettant aux étudiants de se rencontrer et d'échanger leurs expériences, avec une vie associative active et des compétitions sportives.
-            </p>
-            <p className="text-[16px] text-penn-body leading-relaxed">
-              La réussite personnelle et professionnelle de nos étudiants repose sur une formation universitaire de qualité, un accompagnement personnalisé et un environnement propice à leur épanouissement et à leur insertion professionnelle.
-            </p>
-          </motion.div>
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+            {/* Text content */}
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }} className="w-full lg:w-1/2">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center shrink-0">
+                  <Building2 className="w-7 h-7 text-[#2B8FAB]" />
+                </div>
+                <h2 className="text-[28px] md:text-[36px] font-extrabold text-penn-navy leading-tight">Un campus pensé pour votre réussite</h2>
+              </div>
+              <p className="text-[16px] text-penn-body leading-relaxed mb-6">
+                EBS dispose de toutes les commodités nécessaires à l'épanouissement de ses étudiants : une superficie de 3000 m² avec un bâtiment moderne entièrement climatisé et équipé de WIFI haut débit, une salle polyvalente, un espace de détente, une salle des jeux et une buvette, offrant un cadre convivial permettant aux étudiants de se rencontrer et d'échanger leurs expériences, avec une vie associative active et des compétitions sportives.
+              </p>
+              <p className="text-[16px] text-penn-body leading-relaxed">
+                La réussite personnelle et professionnelle de nos étudiants repose sur une formation universitaire de qualité, un accompagnement personnalisé et un environnement propice à leur épanouissement et à leur insertion professionnelle.
+              </p>
+            </motion.div>
+            
+            {/* Masonry Image Gallery */}
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }} className="w-full lg:w-1/2">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4">
+                  <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-[4/5]">
+                    <img src="/images/campus/campus-1.jpg" alt="Campus EBS" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  </div>
+                  <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-square">
+                    <img src="/images/sections/features-group.jpg" alt="Étudiants" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  </div>
+                </div>
+                <div className="space-y-4 pt-12">
+                  <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-square">
+                    <img src="/images/campus/campus-2.jpg" alt="Salle de classe" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  </div>
+                  <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-[4/5]">
+                    <img src="/images/campus/campus-3.jpg" alt="Cafétéria" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -164,12 +195,12 @@ export default function QuiSommesNousPage() {
           </motion.div>
           <div className="relative">
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-penn-border -translate-x-1/2" />
-            <div className="space-y-12 lg:space-y-0">
+            <div className="space-y-16 lg:space-y-12">
               {timeline.map((item, i) => {
                 const isLeft = i % 2 === 0;
                 return (
                   <motion.div key={item.year} initial={{ opacity: 0, x: isLeft ? -40 : 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.6, delay: i * 0.1 }} className={`lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center ${isLeft ? "" : "lg:[direction:rtl]"} relative`}>
-                    <div className={`hidden lg:flex absolute left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full border-[3px] z-10 ${item.highlight ? "border-[#2B8FAB] bg-[#2B8FAB]" : "border-penn-border bg-white"}`} />
+                    <div className={`hidden lg:flex absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-[4px] z-10 ${item.highlight ? "border-[#2B8FAB] bg-white shadow-[0_0_15px_rgba(43,143,171,0.5)]" : "border-penn-border bg-white"}`} />
                     <div className={isLeft ? "lg:[direction:ltr]" : "lg:[direction:ltr]"}>
                       <div className={`bg-white rounded-2xl border p-6 lg:p-8 transition-all duration-300 ${item.highlight ? "border-[#2B8FAB]/30 shadow-[0_0_40px_rgba(43,143,171,0.1)]" : "border-penn-border hover:shadow-md"}`}>
                         <span className={`inline-block text-[13px] font-extrabold uppercase tracking-widest mb-2 ${item.highlight ? "text-[#2B8FAB]" : "text-penn-body/60"}`}>{item.year}</span>
@@ -177,7 +208,9 @@ export default function QuiSommesNousPage() {
                         <p className="text-[15px] text-penn-body leading-relaxed">{item.text}</p>
                       </div>
                     </div>
-                    <div className="hidden lg:block" />
+                    <div className={`hidden lg:block relative rounded-2xl overflow-hidden shadow-lg h-[240px] ${isLeft ? "lg:[direction:ltr]" : "lg:[direction:ltr]"}`}>
+                      <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                    </div>
                   </motion.div>
                 );
               })}
@@ -188,19 +221,25 @@ export default function QuiSommesNousPage() {
 
       {/* ═══════════ 4 PILIERS EBS ═══════════ */}
       <section className="section-padding bg-white">
-        <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-16">
             <Badge variant="default" size="lg" className="mb-4">Ce qui nous définit</Badge>
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">Les 4 piliers d'EBS</h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {piliers.map((p, i) => (
-              <motion.div key={p.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group bg-white rounded-2xl border border-penn-border p-6 lg:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: `${p.color}12` }}>
-                  <span style={{ color: p.color }}>{p.icon}</span>
+              <motion.div key={p.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group relative overflow-hidden rounded-3xl min-h-[380px] lg:min-h-[420px] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className="absolute inset-0 z-0">
+                  <img src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
-                <h3 className="text-[20px] font-extrabold text-penn-navy mb-3">{p.title}</h3>
-                <p className="text-[15px] text-penn-body leading-relaxed">{p.desc}</p>
+                <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                <div className="relative z-10 flex flex-col h-full p-8 lg:p-10 justify-end">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 shadow-lg" style={{ backgroundColor: p.color, color: 'white' }}>
+                    {p.icon}
+                  </div>
+                  <h3 className="text-[24px] font-extrabold text-white mb-3">{p.title}</h3>
+                  <p className="text-[15px] text-white/80 leading-relaxed drop-shadow-sm">{p.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -264,9 +303,13 @@ export default function QuiSommesNousPage() {
       </section>
 
       {/* ═══════════ SERVICES ÉTUDIANTS ═══════════ */}
-      <section className="section-padding bg-penn-navy relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_50%_50%,_#2B8FAB_0%,_transparent_70%)]" />
-        <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(43,143,171,0.06) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src="/images/campus/campus-3.jpg" alt="" className="w-full h-full object-cover opacity-60" />
+        </div>
+        <div className="absolute inset-0 z-[1] bg-penn-navy/90" />
+        <div className="absolute inset-0 z-[2] opacity-[0.03] bg-[radial-gradient(circle_at_50%_50%,_#2B8FAB_0%,_transparent_70%)]" />
+        
         <div className="relative z-10 max-w-[1160px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-16">
             <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80">Services étudiants</Badge>
@@ -274,10 +317,10 @@ export default function QuiSommesNousPage() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {services.map((s, i) => (
-              <motion.div key={s.title} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.06 }} className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.05] transition-all duration-300 group">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: `${s.color}1A` }}><span style={{ color: s.color }}>{s.icon}</span></div>
+              <motion.div key={s.title} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.06 }} className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-6 hover:border-white/[0.15] hover:bg-white/[0.08] transition-all duration-300 group shadow-xl">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: `${s.color}2A` }}><span style={{ color: s.color }}>{s.icon}</span></div>
                 <h3 className="text-[16px] font-extrabold text-white mb-2">{s.title}</h3>
-                <p className="text-[13px] text-white/50 leading-relaxed">{s.desc}</p>
+                <p className="text-[13px] text-white/60 leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
           </div>

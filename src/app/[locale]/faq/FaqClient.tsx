@@ -151,42 +151,70 @@ export default function FaqPage() {
 
       {/* ═══════════ FAQ ACCORDION SECTIONS ═══════════ */}
       <section className="section-padding bg-white">
-        <div className="max-w-[900px] mx-auto px-5 lg:px-12 space-y-16">
-          {categories.map((category, catIndex) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+            {/* ── LEFT: ILLUSTRATIVE IMAGERY ── */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
+              transition={{ duration: 0.6 }}
+              className="w-full lg:w-5/12 lg:sticky lg:top-32 self-start hidden lg:block"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center">
-                  <category.icon className="w-5 h-5 text-[#2B8FAB]" />
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[600px]">
+                <img src="/images/sections/features-group.jpg" alt="Étudiants EBS" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2B8FAB]/90 via-[#2B8FAB]/20 to-transparent" />
+                <div className="absolute bottom-10 left-10 right-10 text-white">
+                  <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center mb-6">
+                    <ClipboardList className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-[32px] font-extrabold leading-[1.1] mb-3">Votre avenir commence ici.</h3>
+                  <p className="text-white/90 text-[16px] leading-relaxed">
+                    Notre équipe admission vous accompagne à chaque étape pour préparer votre rentrée dans les meilleures conditions.
+                  </p>
                 </div>
-                <h2 className="text-[24px] md:text-[28px] font-extrabold text-penn-navy">
-                  {category.title}
-                </h2>
               </div>
-
-              <Accordion className="space-y-3">
-                {category.questions.map((faq, i) => (
-                  <AccordionItem
-                    key={i}
-                    value={`${catIndex}-${i}`}
-                    className="bg-white border border-penn-border rounded-xl px-5 lg:px-6 hover:border-[#2B8FAB]/20 transition-all duration-200"
-                  >
-                    <AccordionTrigger className="text-left text-[15px] lg:text-[16px] font-bold text-penn-navy hover:text-[#2B8FAB] hover:no-underline transition-colors py-5">
-                      {faq.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-[14px] lg:text-[15px] text-penn-body leading-relaxed pb-5">
-                      {faq.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
             </motion.div>
-          ))}
+
+            {/* ── RIGHT: ACCORDIONS ── */}
+            <div className="w-full lg:w-7/12 space-y-16">
+              {categories.map((category, catIndex) => (
+                <motion.div
+                  key={category.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.5, delay: catIndex * 0.1 }}
+                >
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-12 h-12 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center">
+                      <category.icon className="w-6 h-6 text-[#2B8FAB]" />
+                    </div>
+                    <h2 className="text-[28px] md:text-[32px] font-extrabold text-penn-navy">
+                      {category.title}
+                    </h2>
+                  </div>
+
+                  <Accordion className="space-y-4">
+                    {category.questions.map((faq, i) => (
+                      <AccordionItem
+                        key={i}
+                        value={`${catIndex}-${i}`}
+                        className="bg-white border border-penn-border rounded-2xl px-6 hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
+                      >
+                        <AccordionTrigger className="text-left text-[16px] font-bold text-penn-navy hover:text-[#2B8FAB] hover:no-underline transition-colors py-6 leading-tight">
+                          {faq.q}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-[15px] text-penn-body leading-relaxed pb-6 pr-4">
+                          {faq.a}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

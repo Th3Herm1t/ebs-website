@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, FileText } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Badge } from "@/components/shared/Badge";
 import { StatBar } from "@/components/shared/StatBar";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
@@ -19,6 +20,7 @@ interface ProgramLPHeroProps {
   duree: string;
   totalCerts: number;
   slug: string;
+  heroImage?: string;
 }
 
 export function ProgramLPHero({
@@ -31,6 +33,7 @@ export function ProgramLPHero({
   duree,
   totalCerts,
   slug,
+  heroImage = "/images/programs/program-hero.jpg",
 }: ProgramLPHeroProps) {
   const typeLabel = type === "licence" ? "Licence" : "Master";
 
@@ -41,8 +44,15 @@ export function ProgramLPHero({
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-white via-white to-penn-green/5">
-      <div className="max-w-[1280px] mx-auto px-5 lg:px-12 pt-36 pb-20">
+    <section className="relative overflow-hidden bg-penn-bg-light">
+      {/* Split Image Background for Desktop */}
+      <div className="absolute top-0 right-0 w-[45%] h-full hidden lg:block">
+        <Image src={heroImage} alt={title} fill className="object-cover" priority sizes="50vw" />
+        <div className="absolute inset-0 bg-gradient-to-r from-penn-bg-light via-penn-bg-light/90 to-transparent" />
+        <div className="absolute inset-0 bg-penn-navy/20 mix-blend-multiply" />
+      </div>
+
+      <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12 pt-36 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16">
           {/* LEFT — Content */}
           <motion.div

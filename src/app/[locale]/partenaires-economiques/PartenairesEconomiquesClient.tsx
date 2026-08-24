@@ -444,26 +444,49 @@ export default function PartenairesEconomiquesPage() {
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-6">
-            {avantagesEntreprise.map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group bg-white rounded-2xl border border-penn-border p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full md:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]"
-              >
-                <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
-                  style={{ backgroundColor: `${item.color}12` }}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Image Collage */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              className="relative hidden md:block aspect-square lg:aspect-auto lg:h-[650px]"
+            >
+              <div className="absolute top-0 left-0 w-[60%] h-[55%] rounded-2xl overflow-hidden border-4 border-white shadow-xl z-20">
+                <Image src="/images/partenaires/corporate-1.jpg" alt="Recrutement stagiaires EBS" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
+              </div>
+              <div className="absolute bottom-5 right-0 w-[65%] h-[50%] rounded-2xl overflow-hidden border-4 border-white shadow-xl z-30">
+                <Image src="/images/partenaires/corporate-2.jpg" alt="Étudiants EBS en entreprise" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
+              </div>
+              <div className="absolute top-[20%] right-[10%] w-[50%] h-[40%] rounded-2xl overflow-hidden border-4 border-white shadow-lg z-10 opacity-70">
+                <Image src="/images/partenaires/corporate-3.jpg" alt="Collaboration d'équipe" fill className="object-cover" sizes="(max-width: 1024px) 33vw, 20vw" />
+              </div>
+            </motion.div>
+
+            {/* Features List */}
+            <div className="flex flex-col gap-4">
+              {avantagesEntreprise.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-20px" }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="group flex gap-4 bg-white rounded-2xl border border-penn-border p-5 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <span style={{ color: item.color }}>{item.icon}</span>
-                </div>
-                <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">{item.title}</h3>
-                <p className="text-[14px] text-penn-body leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110"
+                    style={{ backgroundColor: `${item.color}15` }}
+                  >
+                    <span style={{ color: item.color }}>{item.icon}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-[16px] font-extrabold text-penn-navy mb-1">{item.title}</h3>
+                    <p className="text-[13px] text-penn-body leading-relaxed">{item.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

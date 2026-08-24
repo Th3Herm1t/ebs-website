@@ -112,33 +112,55 @@ export default function EtudiantsInternationauxPage() {
 
       {/* ═══════════ PROMESSE — ACCOMPAGNEMENT ═══════════ */}
       <section className="section-padding bg-white">
-        <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-16">
-            <Badge variant="default" size="lg" className="mb-4">Notre engagement</Badge>
-            <h2 className="text-[34px] md:text-[48px] font-extrabold text-penn-navy leading-[1.15] mb-4">
-              Nous vous accompagnons à chaque
-              <br />
-              <span className="text-[#2B8FAB]">étape de votre parcours.</span>
-            </h2>
-            <p className="text-[16px] text-penn-body max-w-[650px] mx-auto mt-4">
-              Étudier dans un nouveau pays représente un véritable projet de vie. Le service d’accompagnement international d’EBS facilite vos démarches et vous aide à préparer votre arrivée dans les meilleures conditions.
-            </p>
-          </motion.div>
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Image Section */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              className="relative aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl hidden md:block"
+            >
+              <Image src="/images/campus/sidi-bou-said.jpg" alt="Vivre et étudier en Tunisie, Sidi Bou Said" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-penn-navy/60 to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8">
+                <Badge variant="default" className="mb-3 bg-white/20 backdrop-blur-md text-white border-white/30">Destination Tunisie</Badge>
+                <h3 className="text-2xl font-extrabold text-white">Un cadre de vie exceptionnel</h3>
+              </div>
+            </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {[
-              { icon: <HeartHandshake className="w-6 h-6" />, title: "Accueil personnalisé", desc: "Une équipe disponible pour vous accompagner avant votre départ, à votre arrivée à Tunis et pendant votre installation, et répondre à vos principales questions pratiques.", color: "#2B8FAB" },
-              { icon: <ShieldUser className="w-6 h-6" />, title: "Démarches simplifiées", desc: "Accompagnement pour préparer les principales formalités liées au visa, au séjour en Tunisie, à l’assurance et aux documents administratifs nécessaires.", color: "#2196F3" },
-              { icon: <Users className="w-6 h-6" />, title: "Communauté internationale", desc: "Intégrez la communauté EBS, rencontrez des étudiants de différents horizons et participez à des activités favorisant les échanges et l’intégration.", color: "#E91E8C" },
-            ].map((card, i) => (
-              <motion.div key={card.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group bg-white rounded-2xl border border-penn-border p-6 lg:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: `${card.color}12` }}>
-                  <span style={{ color: card.color }}>{card.icon}</span>
-                </div>
-                <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">{card.title}</h3>
-                <p className="text-[14px] text-penn-body leading-relaxed">{card.desc}</p>
+            {/* Content Section */}
+            <div>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="mb-10">
+                <Badge variant="default" size="lg" className="mb-4">Notre engagement</Badge>
+                <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">
+                  Nous vous accompagnons à chaque
+                  <br />
+                  <span className="text-[#2B8FAB]">étape de votre parcours.</span>
+                </h2>
+                <p className="text-[16px] text-penn-body mt-4">
+                  Étudier dans un nouveau pays représente un véritable projet de vie. Le service d’accompagnement international d’EBS facilite vos démarches et vous aide à préparer votre arrivée dans les meilleures conditions.
+                </p>
               </motion.div>
-            ))}
+
+              <div className="grid grid-cols-1 gap-4">
+                {[
+                  { icon: <HeartHandshake className="w-6 h-6" />, title: "Accueil personnalisé", desc: "Une équipe disponible pour vous accompagner avant votre départ, à votre arrivée à Tunis et pendant votre installation.", color: "#2B8FAB" },
+                  { icon: <ShieldUser className="w-6 h-6" />, title: "Démarches simplifiées", desc: "Accompagnement pour préparer les formalités liées au visa, séjour et documents administratifs.", color: "#2196F3" },
+                  { icon: <Users className="w-6 h-6" />, title: "Communauté internationale", desc: "Intégrez EBS, rencontrez des étudiants de différents horizons et participez à nos activités d'intégration.", color: "#E91E8C" },
+                ].map((card, i) => (
+                  <motion.div key={card.title} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group flex items-start gap-5 bg-white rounded-2xl border border-penn-border p-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: `${card.color}12` }}>
+                      <span style={{ color: card.color }}>{card.icon}</span>
+                    </div>
+                    <div>
+                      <h3 className="text-[17px] font-extrabold text-penn-navy mb-1.5">{card.title}</h3>
+                      <p className="text-[14px] text-penn-body leading-relaxed">{card.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

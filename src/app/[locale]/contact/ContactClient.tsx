@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Building2,
@@ -196,7 +197,7 @@ export default function ContactPage() {
 
       {/* ═══════════ CONTACT FORM ═══════════ */}
       <section className="section-padding bg-penn-bg-light">
-        <div className="max-w-[900px] mx-auto px-5 lg:px-12">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -215,13 +216,30 @@ export default function ContactPage() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl border border-penn-border p-6 lg:p-10 shadow-sm"
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            {/* Image Section */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              className="relative hidden lg:block h-[100%] min-h-[700px] rounded-3xl overflow-hidden shadow-xl"
+            >
+              <Image src="/images/campus/reception.jpg" alt="Accueil EBS Tunis" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-penn-navy/60 to-transparent" />
+              <div className="absolute bottom-10 left-10 right-10">
+                <h3 className="text-3xl font-extrabold text-white mb-3">Rencontrons-nous</h3>
+                <p className="text-white/80 text-base leading-relaxed">Notre équipe d'admission est disponible pour répondre à toutes vos questions, vous accompagner dans vos démarches et vous faire visiter notre campus.</p>
+              </div>
+            </motion.div>
+
+            {/* Form Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-3xl border border-penn-border p-6 lg:p-10 shadow-lg"
+            >
             {submitted ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -346,7 +364,8 @@ export default function ContactPage() {
                 </div>
               </form>
             )}
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

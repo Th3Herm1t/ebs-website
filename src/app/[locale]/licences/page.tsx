@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Award, BookOpen, Globe, ShieldCheck, Sparkles } from "lucide-react";
 import { Badge, CtaSection, InfiniteLogoMarquee } from "@/components/shared";
 import { MagneticProgramCard } from "@/components/program";
@@ -17,12 +18,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const allPrograms = [
-  { ...licences.management, subtitle: "Développez vos compétences en management, leadership, gestion de projets et pilotage des organisations dans un environnement en constante évolution." },
-  { ...licences.marketing, subtitle: "Maîtrisez les fondamentaux du marketing, de la communication, du marketing digital et de la relation client pour répondre aux nouveaux enjeux des entreprises." },
-  { ...licences.finance, subtitle: "Préparez une carrière en finance, banque et contrôle de gestion grâce à des certifications internationales, dont Bloomberg." },
+  { ...licences.management, subtitle: "Développez vos compétences en management, leadership, gestion de projets et pilotage des organisations dans un environnement en constante évolution.", image: "/images/programs/management.jpg" },
+  { ...licences.marketing, subtitle: "Maîtrisez les fondamentaux du marketing, de la communication, du marketing digital et de la relation client pour répondre aux nouveaux enjeux des entreprises.", image: "/images/sections/pro-student.jpg" },
+  { ...licences.finance, subtitle: "Préparez une carrière en finance, banque et contrôle de gestion grâce à des certifications internationales, dont Bloomberg.", image: "/images/programs/finance.jpg" },
 
-  { ...licences["informatique-ia"], subtitle: "Développez des compétences en génie logiciel, intelligence artificielle, data science et développement d'applications intelligentes." },
-  { ...licences.cybersecurite, subtitle: "Développez des compétences en génie logiciel, cybersécurité, sécurité des réseaux et protection des systèmes d'information." },
+  { ...licences["informatique-ia"], subtitle: "Développez des compétences en génie logiciel, intelligence artificielle, data science et développement d'applications intelligentes.", image: "/images/programs/informatique.jpg" },
+  { ...licences.cybersecurite, subtitle: "Développez des compétences en génie logiciel, cybersécurité, sécurité des réseaux et protection des systèmes d'information.", image: "/images/sections/pillar-tech.jpg" },
 ];
 
 const licencesCards = [
@@ -117,6 +118,7 @@ export default async function LicencesPage({
                         certifications={prog.totalCerts}
                         color={prog.color}
                         href={`/licences/${prog.slug}`}
+                        image={prog.image}
                         isFeatured={false}
                       />
                     </div>
@@ -135,33 +137,46 @@ export default async function LicencesPage({
           <h2 className="text-[28px] md:text-[36px] font-extrabold text-penn-navy text-center mb-12">
             Pourquoi choisir une Licence à EBS ?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
-                <Sparkles className="w-7 h-7 text-penn-green" />
-              </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">IA intégrée</h3>
-              <p className="text-[15px] text-penn-body leading-relaxed">
-                L'Intelligence Artificielle est intégrée à tous les parcours. Chaque étudiant développe des compétences en IA grâce à un ensemble de certifications adaptées à sa formation.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative aspect-video lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
+              <Image src="/images/programs/program-hero.jpg" alt="Étudiants EBS Licence" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <div className="absolute inset-0 bg-penn-navy/10 mix-blend-multiply" />
             </div>
-            <div className="text-center">
-              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
-                <Award className="w-7 h-7 text-penn-green" />
+
+            <div className="flex flex-col gap-8">
+              <div className="flex items-start gap-5">
+                <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center shrink-0">
+                  <Sparkles className="w-7 h-7 text-penn-green" />
+                </div>
+                <div>
+                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">IA intégrée</h3>
+                  <p className="text-[15px] text-penn-body leading-relaxed">
+                    L'Intelligence Artificielle est intégrée à tous les parcours. Chaque étudiant développe des compétences en IA grâce à un ensemble de certifications adaptées à sa formation.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">150+ certifications</h3>
-              <p className="text-[15px] text-penn-body leading-relaxed">
-                Des certifications délivrées par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot et d'autres partenaires internationaux, offertes sans frais supplémentaires.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
-                <Globe className="w-7 h-7 text-penn-green" />
+              <div className="flex items-start gap-5">
+                <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center shrink-0">
+                  <Award className="w-7 h-7 text-penn-green" />
+                </div>
+                <div>
+                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">150+ certifications</h3>
+                  <p className="text-[15px] text-penn-body leading-relaxed">
+                    Des certifications délivrées par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot et d'autres partenaires internationaux, offertes sans frais supplémentaires.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-[18px] font-extrabold text-penn-navy mb-3">Partenariats internationaux</h3>
-              <p className="text-[15px] text-penn-body leading-relaxed">
-                Poursuivez vos études en France, au Canada, en Italie ou à Oman grâce à nos 14 partenaires académiques.
-              </p>
+              <div className="flex items-start gap-5">
+                <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center shrink-0">
+                  <Globe className="w-7 h-7 text-penn-green" />
+                </div>
+                <div>
+                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">Partenariats internationaux</h3>
+                  <p className="text-[15px] text-penn-body leading-relaxed">
+                    Poursuivez vos études en France, au Canada, en Italie ou à Oman grâce à nos 14 partenaires académiques.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

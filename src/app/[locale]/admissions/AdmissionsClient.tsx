@@ -19,27 +19,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/shared";
 import {
-"use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import { motion } from "motion/react";
-import {
-  ChevronDown,
-  FileText,
-  FolderOpen,
-  MessageSquare,
-  CheckCircle,
-  Check,
-  Phone,
-  GraduationCap,
-  HeartHandshake,
-  ArrowRight,
-  Clock,
-  Globe,
-} from "lucide-react";
-import { Badge } from "@/components/shared";
-import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -276,18 +256,8 @@ export default function AdmissionsPage() {
                 sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
-                Commencer ma préinscription
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/nos-programmes"
-                className="inline-flex items-center gap-2 font-bold text-[15px] text-white/70 hover:text-white transition-colors py-3.5 px-8"
-              >
-                Explorer les programmes
-                <span>→</span>
-              </Link>
             </div>
-          </motion.div>
+          ))}
         </div>
       </section>
 

@@ -180,6 +180,39 @@ export default function AlumniPage() {
 
       <DeferredAlumniWorldMap />
 
+      {/* ═══════════ ALUMNI GALLERY ═══════════ */}
+      <section className="section-padding bg-penn-navy relative overflow-hidden">
+        <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="text-center mb-12">
+            <h2 className="text-[30px] md:text-[40px] font-extrabold text-white leading-[1.15]">Le réseau en action</h2>
+            <p className="text-[15px] text-white/60 mt-3 max-w-[600px] mx-auto">
+              Événements, rencontres et networking entre diplômés à travers le monde.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              "/images/alumni/alumni-1.jpg",
+              "/images/alumni/alumni-2.jpg",
+              "/images/alumni/alumni-3.jpg",
+              "/images/alumni/alumni-4.jpg"
+            ].map((img, i) => (
+              <motion.div
+                key={img}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="relative aspect-square md:aspect-[4/5] rounded-2xl overflow-hidden group border border-white/10"
+              >
+                <Image src={img} alt="EBS Alumni Networking" fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-penn-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════ SECTEURS ═══════════ */}
       <section className="section-padding bg-white">
         <div className="max-w-[1160px] mx-auto px-5 lg:px-12">

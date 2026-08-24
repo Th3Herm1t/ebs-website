@@ -18,7 +18,6 @@ const NewsletterSection = dynamic(() => import("@/components/sections/Newsletter
 const TopicsSection = dynamic(() => import("@/components/sections/TopicsSection"));
 const EventsSection = dynamic(() => import("@/components/sections/EventsSection"));
 const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"));
-const BlogSection = dynamic(() => import("@/components/sections/BlogSection"));
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

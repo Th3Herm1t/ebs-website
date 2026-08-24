@@ -8,13 +8,11 @@ import { Badge } from "@/components/shared";
 import { siteConfig } from "@/lib/config";
 
 const campusSpaces = [
-  { title: "Salle Polyvalente", icon: <Building className="w-8 h-8" />, color: "#2B8FAB" },
-  { title: "Salle Informatique", icon: <Monitor className="w-8 h-8" />, color: "#9C27B0" },
-  { title: "Espaces de Détente", icon: <Coffee className="w-8 h-8" />, color: "#E89745" },
-  { title: "Salle des Jeux", icon: <Gamepad2 className="w-8 h-8" />, color: "#4CAF50" },
-  { title: "Buvette", icon: <Utensils className="w-8 h-8" />, color: "#FF9800" },
-  { title: "Bibliothèque", icon: <BookOpen className="w-8 h-8" />, color: "#00BCD4" },
-  { title: "Espaces Communs", icon: <Camera className="w-8 h-8" />, color: "#E91E8C" },
+  { title: "Bibliothèque", icon: <BookOpen className="w-6 h-6" />, color: "#00BCD4", image: "/images/campus/library.jpg" },
+  { title: "Laboratoire Informatique", icon: <Monitor className="w-6 h-6" />, color: "#9C27B0", image: "/images/campus/labo.jpg" },
+  { title: "Espaces de Détente", icon: <Coffee className="w-6 h-6" />, color: "#E89745", image: "/images/campus/detente.jpg" },
+  { title: "Salle Polyvalente", icon: <Building className="w-6 h-6" />, color: "#2B8FAB", image: "/images/campus/polyvalente.jpg" },
+  { title: "Cafétéria & Buvette", icon: <Utensils className="w-6 h-6" />, color: "#FF9800", image: "/images/campus/buvette.jpg" },
 ];
 
 const equipements = [
@@ -148,19 +146,30 @@ export default function CampusPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group relative aspect-[4/5] w-[calc(50%-8px)] md:w-[calc(33.33%-11px)] lg:w-[calc(20%-13px)] rounded-2xl overflow-hidden border border-penn-border hover:shadow-xl transition-all duration-300"
+                className="group relative aspect-[4/5] w-[calc(50%-8px)] md:w-[calc(33.33%-11px)] lg:w-[calc(20%-13px)] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-penn-bg-light to-white flex flex-col items-center justify-center p-4 text-center group-hover:scale-105 transition-transform duration-500">
+                <Image
+                  src={space.image}
+                  alt={space.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-penn-navy/90 via-penn-navy/20 to-transparent transition-opacity duration-500 group-hover:from-penn-navy/95" />
+                
+                <div className="absolute inset-0 p-5 flex flex-col justify-end">
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4"
-                    style={{ backgroundColor: space.color + "15", color: space.color }}
+                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-3 bg-white/10 backdrop-blur-md border border-white/20"
+                    style={{ color: space.color }}
                   >
                     {space.icon}
                   </div>
-                  <h3 className="text-[15px] font-extrabold text-penn-navy">{space.title}</h3>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-penn-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-[13px] text-white font-bold">Galerie photos →</span>
+                  <h3 className="text-[16px] md:text-[18px] font-extrabold text-white leading-tight mb-1">{space.title}</h3>
+                  <div className="overflow-hidden">
+                    <p className="text-[13px] text-white/70 font-medium translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                      Explorer cet espace →
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -169,9 +178,14 @@ export default function CampusPage() {
       </section>
 
       {/* ═══════════ VISITE VIRTUELLE ═══════════ */}
-      <section className="section-padding bg-penn-navy relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_50%_50%,_#2B8FAB_0%,_transparent_60%)]" />
-        <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(43,143,171,0.06) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
+      <section className="relative pt-24 pb-32 overflow-hidden bg-penn-navy">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/campus/visite-360.jpg" alt="Visite Virtuelle EBS" fill className="object-cover" sizes="100vw" />
+        </div>
+        {/* Overlays */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-penn-navy/95 via-penn-navy/80 to-penn-navy/40" />
+        <div className="absolute inset-0 z-[1] opacity-[0.02] bg-[radial-gradient(circle_at_50%_50%,_#2B8FAB_0%,_transparent_60%)]" />
 
         <div className="relative z-10 max-w-[900px] mx-auto px-5 lg:px-12 text-center">
           <motion.div

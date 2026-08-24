@@ -25,30 +25,44 @@ export default function TopicsSection() {
   ];
 
   return (
-    <section className="section-padding">
-      <div className="max-w-[1140px] mx-auto px-4">
-        <SectionHeading 
-          title={t('title')}
-          subtitle={
-            <>{t('subtitle')} <span className="text-penn-green underline decoration-penn-green">{t('subtitleHighlight')}</span></>
-          }
+    <section className="section-padding relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/images/sections/certifications-bg.jpg" 
+          alt="" 
+          className="w-full h-full object-cover opacity-60"
         />
+      </div>
+      <div className="absolute inset-0 z-0 bg-penn-navy/85" />
+      <div className="absolute inset-0 z-[1] opacity-[0.03] bg-[radial-gradient(circle_at_30%_50%,_#2B8FAB_0%,_transparent_60%)]" />
+
+      <div className="max-w-[1280px] mx-auto px-5 lg:px-12 relative z-10">
+        <div className="mb-12 text-center max-w-[800px] mx-auto">
+          <h2 className="text-[34px] md:text-[42px] font-extrabold text-white mb-4 leading-tight">
+            {t('title')}
+          </h2>
+          <p className="text-[16px] text-white/70">
+            {t('subtitle')} <span className="text-penn-green">{t('subtitleHighlight')}</span>
+          </p>
+        </div>
+        
         <div className="flex flex-wrap justify-center gap-[30px]">
           {certifications.map((cert, i) => (
             <ScrollReveal
               key={i}
               initialY={30}
               duration={0.6}
-              delay={i * 0.1}
-              className="w-full sm:w-[calc(50%-15px)] lg:w-[calc((100%-60px)/3)]"
+              delay={i * 0.05}
+              className="w-full sm:w-[calc(50%-15px)] md:w-[calc((100%-60px)/3)] lg:w-[calc((100%-120px)/5)]"
             >
-              <div className="flex items-center gap-[20px] p-[25px] bg-white border border-penn-border rounded-[8px] transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(1,41,112,0.1)] hover:border-t-2 hover:border-t-penn-green h-full">
-                <Image src={cert.icon} alt={cert.title} width={60} height={60} className="flex-shrink-0 object-contain" style={{ width: 60, height: 60 }} />
-                <div className="flex flex-col justify-center">
-                  <h2 className="text-penn-navy font-extrabold text-lg">
-                    <span className="transition-colors hover:text-penn-green cursor-pointer">{cert.title}</span>
-                  </h2>
+              <div className="flex flex-col items-center justify-center gap-[15px] p-[20px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-[16px] transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-white/10 hover:border-[#2B8FAB]/50 hover:shadow-[0_20px_40px_rgba(43,143,171,0.15)] h-full group">
+                <div className="w-[60px] h-[60px] bg-white rounded-xl flex items-center justify-center p-2 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                  <Image src={cert.icon} alt={cert.title} width={45} height={45} className="object-contain" style={{ width: 45, height: 45 }} />
                 </div>
+                <h3 className="text-white font-bold text-[15px] text-center">
+                  {cert.title}
+                </h3>
               </div>
             </ScrollReveal>
           ))}

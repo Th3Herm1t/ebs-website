@@ -21,11 +21,11 @@ export default function InfoSliderSection() {
   );
   const t = useTranslations('HomePage.infoslider');
 
-  const slides = [
-    {
-      id: 1,
-      image: "/images/all-img/infoslider-2.webp",
-      subtitle: t('s1.badge'),
+    const slides = [
+      {
+        id: 1,
+        image: "/images/heroes/ia-abstract.jpg",
+        subtitle: t('s1.badge'),
       title: t('s1.title'),
       text: t('s1.desc'),
       button: t('s1.btn'),

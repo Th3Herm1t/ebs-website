@@ -79,10 +79,16 @@ export default function TarifsClient() {
               transition={{ duration: 0.5, delay: 0 }}
             >
               <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
+                <div className="relative w-full h-[180px] lg:h-[220px] overflow-hidden">
+                  <img src="/images/campus/campus-2.jpg" alt="Parcours Général" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-6 lg:left-7">
+                    <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-[#2B8FAB] px-3 py-1 rounded-full shadow-md">
+                      Parcours Général
+                    </span>
+                  </div>
+                </div>
                 <div className="px-6 lg:px-7 pt-6 lg:pt-7 pb-4 border-b border-penn-border/50">
-                  <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-[#2B8FAB] bg-[#2B8FAB]/8 px-3 py-1 rounded-full mb-3">
-                    Parcours Général
-                  </span>
                   <h3 className="text-[24px] font-extrabold text-penn-navy mb-1">Licence</h3>
                   <p className="text-[28px] font-extrabold text-[#2B8FAB] leading-none">
                     7 500 <span className="text-[15px] font-bold text-penn-body/50">DT / An</span>
@@ -134,10 +140,16 @@ export default function TarifsClient() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
+                <div className="relative w-full h-[180px] lg:h-[220px] overflow-hidden">
+                  <img src="/images/sections/pillar-mobilite.jpg" alt="Parcours International" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-6 lg:left-7">
+                    <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-[#FF9800] px-3 py-1 rounded-full shadow-md">
+                      Parcours International
+                    </span>
+                  </div>
+                </div>
                 <div className="px-6 lg:px-7 pt-6 lg:pt-7 pb-4 border-b border-penn-border/50">
-                  <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-[#FF9800] bg-[#FF9800]/8 px-3 py-1 rounded-full mb-3">
-                    Parcours International
-                  </span>
                   <h3 className="text-[24px] font-extrabold text-penn-navy mb-1">Licence (toutes spécialités)</h3>
                   <p className="text-[28px] font-extrabold text-[#FF9800] leading-none">
                     9 500 <span className="text-[15px] font-bold text-penn-body/50">DT / An</span>
@@ -194,10 +206,16 @@ export default function TarifsClient() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
+                <div className="relative w-full h-[180px] lg:h-[220px] overflow-hidden">
+                  <img src="/images/sections/pillar-tech.jpg" alt="Masters" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-6 lg:left-7">
+                    <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-[#9C27B0] px-3 py-1 rounded-full shadow-md">
+                      Masters
+                    </span>
+                  </div>
+                </div>
                 <div className="px-6 lg:px-7 pt-6 lg:pt-7 pb-4 border-b border-penn-border/50">
-                  <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-[#9C27B0] bg-[#9C27B0]/8 px-3 py-1 rounded-full mb-3">
-                    Masters
-                  </span>
                   <h3 className="text-[24px] font-extrabold text-penn-navy mb-1">Master</h3>
                    <p className="text-[28px] font-extrabold text-[#9C27B0] leading-none">8 500 <span className="text-[15px] font-bold text-penn-body/50">DT / An</span></p>
                 </div>
@@ -258,10 +276,16 @@ export default function TarifsClient() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
+                <div className="relative w-full h-[180px] lg:h-[220px] overflow-hidden">
+                  <img src="/images/sections/pro-student.jpg" alt="Master pour les professionnels" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-6 lg:left-7">
+                    <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-[#1E88E5] px-3 py-1 rounded-full shadow-md">
+                      Master pour les professionnels
+                    </span>
+                  </div>
+                </div>
                 <div className="px-6 lg:px-7 pt-6 lg:pt-7 pb-4 border-b border-penn-border/50">
-                  <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-[#1E88E5] bg-[#1E88E5]/8 px-3 py-1 rounded-full mb-3">
-                    Master pour les professionnels
-                  </span>
                   <h3 className="text-[24px] font-extrabold text-penn-navy mb-1">Master</h3>
                    <p className="text-[28px] font-extrabold text-[#1E88E5] leading-none">6 900 <span className="text-[15px] font-bold text-penn-body/50">DT / An</span></p>
                 </div>
