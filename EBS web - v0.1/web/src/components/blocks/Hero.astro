@@ -1,0 +1,178 @@
+---
+import Button from '../ui/Button.astro';
+import Marker from '../ui/Marker.astro';
+import { getLocaleFromPath } from '@/lib/i18n';
+const isFr = getLocaleFromPath(Astro.url.pathname) === 'fr';
+---
+
+<section id="hero" class="relative bg-surface w-full overflow-hidden min-h-screen" aria-labelledby="hero-heading">
+  {/* Grid motif at 15% opacity with 8s breathing cycle */}
+  <div class="absolute inset-0 z-0 hero-grid-bg" aria-hidden="true"></div>
+
+  {/* Accent Bar — vertical left edge */}
+  <div class="absolute left-0 top-0 bottom-0 w-1 bg-accent hidden lg:block hero-accent-line" aria-hidden="true"></div>
+
+  <div class="hero-content max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-28 pb-20 md:pt-36 md:pb-24 lg:pt-44 lg:pb-28 relative z-10 w-full min-h-screen flex flex-col">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start flex-1">
+      {/* Left column — copy */}
+      <div class="lg:col-span-7 flex flex-col items-start justify-between h-full">
+        {/* Accreditation badge */}
+        <div class="flex items-center gap-2 mb-5 hero-fade-up" style="--delay: 0ms">
+          <img src="/images/partners/ministere.gif" alt="" width="28" height="28" class="h-7 w-auto object-contain" />
+          <span class="text-xs font-semibold text-ink-muted uppercase tracking-wider">{isFr ? "Agréée par le Ministère de l'Enseignement Supérieur" : 'Accredited by the Ministry of Higher Education'}</span>
+        </div>
+
+        <h1 id="hero-heading" class="font-heading font-bold text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.05] text-ink tracking-tight max-w-2xl mb-6 hero-fade-up" style="--delay: 100ms">
+          {isFr ? 'Diplômé, certifié,' : 'Graduate, certified,'}{" "}
+          <br class="hidden md:block" />
+          <span class="text-accent">{isFr ? 'employé' : 'employed'}</span><Marker size="lg" class="inline-block ml-2 align-middle" />
+        </h1>
+
+        <p class="font-body text-ink-body text-lg md:text-xl max-w-xl mb-10 leading-relaxed hero-fade-up" style="--delay: 200ms">
+          {isFr
+            ? <Fragment>EBS intègre <strong class="text-ink">36+ certifications AWS, Google et IBM</strong> directement dans ton cursus. Tu sors prêt pour le marché.</Fragment>
+            : <Fragment>EBS integrates <strong class="text-ink">36+ AWS, Google & IBM certifications</strong> directly into your curriculum. You graduate market-ready.</Fragment>}
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 w-full hero-fade-up" style="--delay: 300ms">
+          <Button href={isFr ? '/preinscription' : '/en/pre-registration'} variant="primary" size="lg">
+            {isFr ? 'Commencer ma préinscription' : 'Start my pre-registration'} <span class="ml-2" aria-hidden="true">→</span>
+          </Button>
+          <a href={isFr ? '/brochures' : '/en/brochures'} class="inline-flex items-center justify-center px-6 py-3.5 border-2 border-navy/30 text-navy font-heading font-semibold hover:bg-navy/5 hover:border-navy/50 transition-all text-base">
+            {isFr ? 'Télécharger la brochure' : 'Download brochure'}
+          </a>
+        </div>
+
+        {/* Soft conversion options */}
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-6 hero-fade-up" style="--delay: 350ms">
+          <a href="https://wa.me/21629582835" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm text-ink-muted hover:text-accent transition-colors gap-1.5">
+            <svg class="w-4 h-4 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            {isFr ? 'Parler à un conseiller' : 'Talk to an advisor'}
+          </a>
+          <a href="tel:+21629582835" class="inline-flex items-center text-sm text-ink-muted hover:text-accent transition-colors gap-1.5">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +216 29 58 28 35
+          </a>
+          <a href="#programmes" class="inline-flex items-center text-sm text-ink-muted hover:text-accent transition-colors gap-1.5">
+            {isFr ? 'Découvrir les programmes ↓' : 'Explore programs ↓'}
+          </a>
+        </div>
+
+        {/* Stats strip */}
+        <div class="flex flex-wrap items-center gap-x-8 gap-y-4 mt-auto pt-10 border-t border-ink/10 w-full hero-fade-up" style="--delay: 400ms">
+          <div class="flex items-baseline gap-2">
+            <span class="font-heading font-bold text-3xl text-accent" data-countup="36" data-suffix="+">0</span>
+            <span class="text-sm text-ink-muted font-medium">certifications</span>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span class="font-heading font-bold text-3xl text-navy" data-countup="450" data-suffix="+">0</span>
+            <span class="text-sm text-ink-muted font-medium">{isFr ? 'diplômés' : 'graduates'}</span>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span class="font-heading font-bold text-3xl text-navy" data-countup="92" data-suffix="%">0</span>
+            <span class="text-sm text-ink-muted font-medium">{isFr ? '% réussite' : '% success rate'}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Right column — photo mosaic (desktop) */}
+      <div class="hidden lg:flex lg:col-span-5 relative hero-fade-up items-start" style="--delay: 200ms">
+        <div class="relative w-full max-w-lg ml-auto">
+          {/* Main image with Frame/broken-corner motif */}
+          <div class="relative z-10 overflow-hidden shadow-2xl shadow-black/10 hero-img-reveal hero-frame" style="--img-delay: 0ms">
+            <img
+              src="/images/hero-image-ver-1.jpg"
+              alt="Étudiante EBS lors de la remise de diplômes"
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
+              class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          {/* Accent decoration */}
+          <div class="absolute -right-4 -bottom-4 w-24 h-24 border-2 border-accent/30 z-0" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Bottom scroll indicator */}
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 hero-fade-up" style="--delay: 600ms">
+    <span class="text-xs text-ink-muted font-medium tracking-wider uppercase">{isFr ? 'Découvrir' : 'Discover'}</span>
+    <div class="w-px h-8 bg-ink/15 relative overflow-hidden">
+      <div class="w-full h-3 bg-accent scroll-pulse"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Grid motif with 8s breathing cycle */
+  .hero-grid-bg {
+    background-image:
+      linear-gradient(to right, var(--color-accent) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-accent) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.08;
+    animation: grid-breathe 8s ease-in-out infinite;
+  }
+
+  @keyframes grid-breathe {
+    0%, 100% { opacity: 0.08; }
+    50% { opacity: 0.15; }
+  }
+
+  /* Frame / broken-corner motif on main photo */
+  .hero-frame {
+    border: 3px solid var(--color-accent);
+    border-top-right-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%);
+  }
+
+  .hero-fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: hero-fade-in 0.7s var(--ease-out-expo) forwards;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  @keyframes hero-fade-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-img-reveal {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: img-pop 0.6s var(--ease-spring) forwards;
+    animation-delay: calc(400ms + var(--img-delay, 0ms));
+  }
+
+  @keyframes img-pop {
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .hero-accent-line {
+    animation: accent-slide 1.2s var(--ease-out-expo) forwards;
+  }
+
+  @keyframes accent-slide {
+    from { transform: scaleY(0); transform-origin: top; }
+    to { transform: scaleY(1); transform-origin: top; }
+  }
+
+  .scroll-pulse {
+    animation: scroll-down 2s ease-in-out infinite;
+  }
+
+  @keyframes scroll-down {
+    0% { transform: translateY(-12px); }
+    50% { transform: translateY(20px); }
+    100% { transform: translateY(-12px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-fade-up, .hero-img-reveal, .hero-accent-line { animation: none; opacity: 1; transform: none; }
+    .scroll-pulse { animation: none; }
+  }
+</style>
+
+

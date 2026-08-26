@@ -1,0 +1,332 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Marker from '../components/ui/Marker.astro';
+import { allProgrammes } from '../data/programmes';
+
+const title = "Préinscription — EBS Tunis";
+const description = "Commencez votre préinscription en ligne à l'EBS Tunis. 4 étapes, 3 minutes. Réponse sous 48h.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* ───────────────── HERO ───────────────── */}
+    <section class="relative bg-navy overflow-hidden py-16 md:py-20" aria-labelledby="preinscription-hero">
+      <img src="/images/hero/admis.png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" aria-hidden="true" />
+      <div class="absolute inset-0 bg-navy/80"></div>
+      <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20 text-center relative z-10">
+        <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-4">3 minutes · 4 étapes</p>
+        <h1 id="preinscription-hero" class="font-heading font-bold text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.1] text-white mb-4">
+          Préinscription en ligne<Marker size="lg" class="inline-block ml-3 align-middle" />
+        </h1>
+        <p class="font-body text-base-300 text-lg leading-relaxed max-w-lg mx-auto">
+          Remplis le formulaire ci-dessous. Notre équipe te contactera sous 48h pour finaliser ton inscription.
+        </p>
+      </div>
+    </section>
+
+
+    {/* ───────────────── FORM ───────────────── */}
+    <section class="py-16 lg:py-20 bg-surface" aria-label="Formulaire de préinscription">
+      <div class="max-w-2xl mx-auto px-6 md:px-12">
+
+        {/* Progress bar */}
+        <div class="mb-10">
+          <div class="flex items-center justify-between mb-3">
+            {[{full: 'Informations', short: 'Infos'}, {full: 'Programme', short: 'Prog.'}, {full: 'Documents', short: 'Docs'}, {full: 'Confirmation', short: 'Confirm.'}].map((label, i) => (
+              <div class="flex items-center gap-1.5 sm:gap-2">
+                <span class={`w-7 h-7 flex items-center justify-center text-xs font-bold step-indicator ${i === 0 ? 'bg-accent text-base-950' : 'bg-navy/10 text-ink-muted'}`} data-step={i}>
+                  {i + 1}
+                </span>
+                <span class="text-xs font-medium text-ink-muted sm:hidden">{label.short}</span>
+                <span class="text-xs font-medium text-ink-muted hidden sm:block">{label.full}</span>
+              </div>
+            ))}
+          </div>
+          <div class="h-1 bg-navy/10 overflow-hidden">
+            <div class="h-full bg-accent transition-all duration-300 progress-fill" style="width: 25%"></div>
+          </div>
+        </div>
+
+        {/* Form container */}
+        <form id="preinscription-form" novalidate>
+
+          {/* Step 1: Personal Info */}
+          <div class="form-step" data-step="0">
+            <h2 class="font-heading font-bold text-h3 text-ink mb-6">Tes informations</h2>
+            <div class="space-y-5">
+              <div>
+                <label for="nom" class="block text-sm font-semibold text-ink mb-1.5">Nom <span class="text-accent">*</span></label>
+                <input type="text" id="nom" name="nom" required autocomplete="family-name" placeholder="Ex : Ben Ali"
+                  class="w-full h-12 px-4 border border-border/60 bg-surface text-ink text-sm font-body focus:border-accent focus:outline-none transition-colors" />
+                <p class="field-error hidden text-xs text-red-500 mt-1">Ce champ est requis</p>
+              </div>
+              <div>
+                <label for="prenom" class="block text-sm font-semibold text-ink mb-1.5">Prénom <span class="text-accent">*</span></label>
+                <input type="text" id="prenom" name="prenom" required autocomplete="given-name" placeholder="Ex : Amine"
+                  class="w-full h-12 px-4 border border-border/60 bg-surface text-ink text-sm font-body focus:border-accent focus:outline-none transition-colors" />
+                <p class="field-error hidden text-xs text-red-500 mt-1">Ce champ est requis</p>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-semibold text-ink mb-1.5">Email <span class="text-accent">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="amine@email.com"
+                  class="w-full h-12 px-4 border border-border/60 bg-surface text-ink text-sm font-body focus:border-accent focus:outline-none transition-colors" />
+                <p class="field-error hidden text-xs text-red-500 mt-1">Adresse email invalide</p>
+              </div>
+              <div>
+                <label for="telephone" class="block text-sm font-semibold text-ink mb-1.5">Téléphone <span class="text-accent">*</span></label>
+                <input type="tel" id="telephone" name="telephone" required autocomplete="tel" placeholder="+216 XX XXX XXX"
+                  class="w-full h-12 px-4 border border-border/60 bg-surface text-ink text-sm font-body focus:border-accent focus:outline-none transition-colors" />
+                <p class="field-error hidden text-xs text-red-500 mt-1">Numéro de téléphone requis</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 2: Programme Selection */}
+          <div class="form-step hidden" data-step="1">
+            <h2 class="font-heading font-bold text-h3 text-ink mb-6">Choisis ton programme</h2>
+            <div class="space-y-3">
+              {allProgrammes.map(prog => (
+                <label class="flex items-start gap-3 p-4 border border-border/40 cursor-pointer hover:border-accent/30 transition-colors has-[:checked]:border-accent has-[:checked]:bg-accent/5">
+                  <input type="radio" name="programme" value={prog.slug} required class="mt-1 accent-[#FF6D00]" />
+                  <div>
+                    <span class="font-semibold text-sm text-ink">{prog.degree} {prog.title}</span>
+                    <span class="block text-xs text-ink-muted mt-0.5">{prog.duration} · {prog.certs} certifications · {prog.price} DT/an</span>
+                  </div>
+                </label>
+              ))}
+              <p id="programme-error" class="hidden text-xs text-red-500 mt-1">Veuillez sélectionner un programme</p>
+            </div>
+          </div>
+
+          {/* Step 3: Documents */}
+          <div class="form-step hidden" data-step="2">
+            <h2 class="font-heading font-bold text-h3 text-ink mb-2">Documents</h2>
+            <p class="text-sm text-ink-muted mb-6">Optionnel à ce stade. Tu pourras les envoyer plus tard.</p>
+            <div class="space-y-5">
+              <div>
+                <label for="bac" class="block text-sm font-semibold text-ink mb-1.5">Relevé de notes du bac</label>
+                <input type="file" id="bac" name="bac" accept=".pdf,.jpg,.jpeg,.png"
+                  class="w-full text-sm text-ink-muted file:mr-4 file:px-4 file:py-2 file:border-0 file:bg-navy/5 file:text-ink file:font-semibold file:text-xs file:cursor-pointer hover:file:bg-accent/10 transition-colors" />
+              </div>
+              <div>
+                <label for="cv" class="block text-sm font-semibold text-ink mb-1.5">CV (optionnel)</label>
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx"
+                  class="w-full text-sm text-ink-muted file:mr-4 file:px-4 file:py-2 file:border-0 file:bg-navy/5 file:text-ink file:font-semibold file:text-xs file:cursor-pointer hover:file:bg-accent/10 transition-colors" />
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-semibold text-ink mb-1.5">Message (optionnel)</label>
+                <textarea id="message" name="message" rows={4}
+                  class="w-full px-4 py-3 border border-border/60 bg-surface text-ink text-sm font-body focus:border-accent focus:outline-none transition-colors resize-none"></textarea>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 4: Confirmation */}
+          <div class="form-step hidden" data-step="3">
+            <div class="text-center py-8">
+              <span class="w-16 h-16 bg-accent/10 flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <h2 class="font-heading font-bold text-h3 text-ink mb-3">Récapitulatif</h2>
+              <p class="text-sm text-ink-muted mb-8">Vérifie tes informations avant d'envoyer.</p>
+              <div id="recap" class="text-left bg-surface-alt border border-border/40 p-6 mb-8 space-y-3">
+                {/* Filled dynamically */}
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation buttons */}
+          <div class="flex items-center justify-between mt-10 pt-6 border-t border-border/30">
+            <button type="button" id="prev-btn" class="hidden px-6 h-12 text-sm font-semibold text-ink-muted hover:text-ink transition-colors cursor-pointer">
+              ← Retour
+            </button>
+            <div class="ml-auto flex gap-3">
+              <button type="button" id="next-btn" class="px-8 h-12 bg-accent text-base-950 font-heading font-semibold text-sm hover:bg-accent-hover transition-colors cursor-pointer">
+                Suivant →
+              </button>
+              <button type="submit" id="submit-btn" class="hidden px-8 h-12 bg-accent text-base-950 font-heading font-semibold text-sm hover:bg-accent-hover transition-colors cursor-pointer">
+                Envoyer ma préinscription
+              </button>
+            </div>
+          </div>
+        </form>
+
+        {/* Success message (hidden by default) */}
+        <div id="success-message" class="hidden text-center py-16">
+          <span class="w-20 h-20 bg-accent/10 flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <h2 class="font-heading font-bold text-h2 text-ink mb-4">Préinscription envoyée !</h2>
+          <p class="font-body text-ink-body text-lg mb-6 max-w-md mx-auto">
+            Merci ! Notre équipe te contactera sous 48h pour finaliser ton inscription.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://wa.me/21629582835" class="inline-flex items-center text-sm font-semibold text-accent hover:text-navy transition-colors gap-1.5">
+              Nous contacter sur WhatsApp <span aria-hidden="true">→</span>
+            </a>
+            <a href="/programmes" class="inline-flex items-center text-sm font-semibold text-navy hover:text-accent transition-colors gap-1.5">
+              Retour aux programmes <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const form = document.getElementById('preinscription-form') as HTMLFormElement | null;
+    if (!form) return;
+
+    const steps = form.querySelectorAll<HTMLElement>('.form-step');
+    const indicators = document.querySelectorAll<HTMLElement>('.step-indicator');
+    const progressFill = document.querySelector<HTMLElement>('.progress-fill');
+    const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
+    const nextBtn = document.getElementById('next-btn') as HTMLButtonElement;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const successMsg = document.getElementById('success-message') as HTMLElement;
+
+    let currentStep = 0;
+    const totalSteps = steps.length;
+
+    /* Restore from localStorage */
+    const saved = localStorage.getItem('ebs-preinscription');
+    if (saved) {
+      try {
+        const data = JSON.parse(saved);
+        Object.entries(data).forEach(([key, value]) => {
+          const el = form.elements.namedItem(key) as HTMLInputElement | HTMLTextAreaElement | null;
+          if (el && typeof value === 'string') el.value = value;
+        });
+      } catch { /* ignore */ }
+    }
+
+    function showStep(index: number) {
+      steps.forEach((s, i) => {
+        s.classList.toggle('hidden', i !== index);
+      });
+      indicators.forEach((ind, i) => {
+        if (i <= index) {
+          ind.classList.remove('bg-navy/10', 'text-ink-muted');
+          ind.classList.add('bg-accent', 'text-base-950');
+        } else {
+          ind.classList.remove('bg-accent', 'text-base-950');
+          ind.classList.add('bg-navy/10', 'text-ink-muted');
+        }
+      });
+      if (progressFill) {
+        progressFill.style.width = `${((index + 1) / totalSteps) * 100}%`;
+      }
+      prevBtn.classList.toggle('hidden', index === 0);
+      nextBtn.classList.toggle('hidden', index === totalSteps - 1);
+      submitBtn.classList.toggle('hidden', index !== totalSteps - 1);
+
+      /* Build recap on last step */
+      if (index === totalSteps - 1) {
+        buildRecap();
+      }
+    }
+
+    function validateStep(index: number): boolean {
+      const stepEl = steps[index];
+      const inputs = stepEl.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[required]');
+      let valid = true;
+      inputs.forEach(input => {
+        const errorEl = input.closest('div')?.querySelector('.field-error') as HTMLElement | null;
+        if (!input.value.trim()) {
+          input.classList.add('border-red-400');
+          if (errorEl) errorEl.classList.remove('hidden');
+          valid = false;
+        } else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+          input.classList.add('border-red-400');
+          if (errorEl) errorEl.classList.remove('hidden');
+          valid = false;
+        } else {
+          input.classList.remove('border-red-400');
+          if (errorEl) errorEl.classList.add('hidden');
+        }
+      });
+      /* Radio validation for step 1 (programme selection) */
+      if (index === 1) {
+        const radios = stepEl.querySelectorAll<HTMLInputElement>('input[type="radio"]');
+        const anyChecked = Array.from(radios).some(r => r.checked);
+        const radioError = document.getElementById('programme-error');
+        if (!anyChecked) {
+          valid = false;
+          if (radioError) radioError.classList.remove('hidden');
+        } else {
+          if (radioError) radioError.classList.add('hidden');
+        }
+      }
+      return valid;
+    }
+
+    function saveToStorage() {
+      const data: Record<string, string> = {};
+      const formData = new FormData(form!);
+      formData.forEach((val, key) => {
+        if (typeof val === 'string') data[key] = val;
+      });
+      localStorage.setItem('ebs-preinscription', JSON.stringify(data));
+    }
+
+    function buildRecap() {
+      const recap = document.getElementById('recap');
+      if (!recap) return;
+      const formData = new FormData(form!);
+      const fields = [
+        { key: 'nom', label: 'Nom' },
+        { key: 'prenom', label: 'Prénom' },
+        { key: 'email', label: 'Email' },
+        { key: 'telephone', label: 'Téléphone' },
+        { key: 'programme', label: 'Programme' },
+      ];
+      recap.innerHTML = fields.map(f => {
+        const val = formData.get(f.key) || '—';
+        const displayVal = typeof val === 'string' ? val.replace(/</g, '&lt;').replace(/>/g, '&gt;') : '—';
+        return `<div class="flex justify-between text-sm"><span class="text-ink-muted">${f.label}</span><span class="font-medium text-ink">${displayVal}</span></div>`;
+      }).join('');
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (!validateStep(currentStep)) return;
+      saveToStorage();
+      if (currentStep < totalSteps - 1) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form!).entries());
+
+      /* Persist lead: POST to webhook (Formspree / n8n / Make). Replace URL with your endpoint. */
+      try {
+        const endpoint = form!.dataset.endpoint || 'https://formspree.io/f/YOUR_FORM_ID';
+        await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data),
+        });
+      } catch { /* offline-safe: lead already in localStorage */ }
+
+      localStorage.removeItem('ebs-preinscription');
+      form!.classList.add('hidden');
+      successMsg.classList.remove('hidden');
+    });
+
+    showStep(0);
+  });
+</script>

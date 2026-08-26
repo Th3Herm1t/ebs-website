@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Marker from '../../components/ui/Marker.astro';
+
+const title = "Work-Study — EBS Tunis";
+const description = "Work-study from Year 2 at EBS Tunis: 3 days classes, 2 days company. Discover our unique professional immersion model.";
+---
+
+<BaseLayout title={title} description={description} lang="en">
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* ───────────────── HERO ───────────────── */}
+    <section class="relative bg-navy overflow-hidden min-h-[55vh] flex items-center" aria-labelledby="alt-hero">
+      <img src="/images/events/visite-dot.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" aria-hidden="true" />
+      <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-20 pb-16 md:pt-28 md:pb-20 lg:pt-36 lg:pb-24 relative z-10">
+        <nav class="mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-xs text-white/40 font-medium">
+            <li><a href="/en" class="hover:text-accent transition-colors">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-white/70">Work-Study</li>
+          </ol>
+        </nav>
+
+        <div class="max-w-3xl">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-5">From Year 2 · 3 days EBS / 2 days company</p>
+          <h1 id="alt-hero" class="font-heading font-bold text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.08] text-white tracking-tight mb-5">
+            The work-study model<br/>that changes everything<Marker size="lg" class="inline-block ml-3 align-middle" />
+          </h1>
+          <p class="font-body text-base-300 text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
+            While others are accumulating theory, our students are accumulating experience. Work-study at EBS starts from the second year of the Bachelor's program.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <Button href="/en/pre-registration" variant="primary" size="lg">
+              Start my pre-registration <span class="ml-2" aria-hidden="true">→</span>
+            </Button>
+            <Button href="/en/programs" variant="ghost" size="lg" class="text-white/70 hover:text-accent">
+              View programs
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── SCHEDULE ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="schedule-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Weekly schedule</p>
+          <h2 id="schedule-heading" class="font-heading font-bold text-h2 text-ink">
+            Your typical week
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <div class="grid grid-cols-5 gap-2 mb-6">
+            {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day, i) => (
+              <div class={`p-4 text-center ${i < 3 ? 'bg-navy text-white' : 'bg-accent text-base-950'}`}>
+                <span class="font-heading font-bold text-sm block mb-1">{day}</span>
+                <span class={`text-xs font-medium ${i < 3 ? 'text-white/60' : 'text-base-950/60'}`}>
+                  {i < 3 ? 'EBS' : 'Company'}
+                </span>
+              </div>
+            ))}
+          </div>
+          <div class="flex items-center justify-center gap-6 text-sm">
+            <div class="flex items-center gap-2">
+              <span class="w-4 h-3 bg-navy" aria-hidden="true"></span>
+              <span class="text-ink-muted">Classes at EBS</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-4 h-3 bg-accent" aria-hidden="true"></span>
+              <span class="text-ink-muted">At the company</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── BENEFITS ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface reveal" aria-labelledby="benefits-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14">
+          <div class="lg:col-span-7">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Why work-study?</p>
+            <h2 id="benefits-heading" class="font-heading font-bold text-h2 text-ink leading-tight">
+              Concrete advantages<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+          <div class="lg:col-span-5">
+            <p class="font-body text-ink-body text-base leading-relaxed">
+              Work-study isn't a bonus. It's the core of the EBS teaching approach.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { title: 'Experience from Year 2', desc: 'No need to wait for your degree to start working. Professional immersion begins in the second year.' },
+              { title: 'Strengthened CV', desc: 'By graduation, you already have 2 to 3 years of professional experience on top of your degree and certifications.' },
+              { title: 'Professional network', desc: 'You build your network within the host company, making employment after graduation much easier.' },
+              { title: 'Applied skills', desc: 'Theory covered in class on Monday is put into practice at the company on Thursday. Accelerated learning.' },
+              { title: 'Compensation', desc: 'As a work-study student, you receive a salary or stipend from the host company.' },
+              { title: 'High employment rate', desc: '68% of our work-study students are hired by their host company before even graduating.' },
+            ].map((benefit, i) => (
+              <div class="bg-surface-alt border border-border/40 p-7 reveal" style={`--delay: ${i * 60}ms`}>
+                <span class="w-2 h-2 bg-accent block mb-5" aria-hidden="true"></span>
+                <h3 class="font-heading font-semibold text-base text-ink mb-3">{benefit.title}</h3>
+                <p class="text-sm text-ink-body leading-relaxed">{benefit.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div class="hidden lg:grid grid-rows-2 gap-6">
+            <div class="relative overflow-hidden group">
+              <img src="/images/events/partenariat-asteelflash.jpg" alt="Company partnership" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent"></div>
+            </div>
+            <div class="relative overflow-hidden group">
+              <img src="/images/events/visite-dabchy.jpg" alt="Company visit" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── TIMELINE ───────────────── */}
+    <section class="py-20 lg:py-28 bg-navy reveal" aria-labelledby="timeline-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Pathway</p>
+          <h2 id="timeline-heading" class="font-heading font-bold text-h2 text-white">
+            When does work-study begin?
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { year: 'Y1', title: 'Fundamentals', desc: 'First year dedicated to theoretical and methodological foundations. No work-study yet.', active: false },
+            { year: 'Y2-Y3', title: 'Active work-study', desc: 'Work-study begins: 3 days at EBS, 2 days at the company. Extended continuous internship.', active: true },
+            { year: 'M1-M2', title: 'Expertise + work-study', desc: 'Work-study continues into the Master\'s with increasingly strategic assignments.', active: true },
+          ].map((step, i) => (
+            <div class={`p-7 border ${step.active ? 'bg-accent/10 border-accent/30' : 'bg-white/[0.03] border-white/10'} reveal`} style={`--delay: ${i * 80}ms`}>
+              <span class={`font-heading font-bold text-2xl block mb-3 ${step.active ? 'text-accent' : 'text-white/40'}`}>{step.year}</span>
+              <h3 class="font-heading font-semibold text-base text-white mb-2">{step.title}</h3>
+              <p class="text-sm text-white/50 leading-relaxed">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── PLACEMENT & SUPPORT ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface reveal" aria-labelledby="placement-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14">
+          <div class="lg:col-span-7">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Placement support</p>
+            <h2 id="placement-heading" class="font-heading font-bold text-h2 text-ink leading-tight">
+              How we find your work-study<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+          <div class="lg:col-span-5">
+            <p class="font-body text-ink-body text-base leading-relaxed">
+              You're not alone in your search. The EBS Career Center mobilizes its network for every student.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+          {[
+            { svg: '<svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>', title: 'Company network', desc: 'EBS maintains agreements with 50+ partner companies that welcome our work-study students every year.' },
+            { svg: '<svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"/></svg>', title: 'CV & interview coaching', desc: 'Preparation workshops: CV writing, mock interviews, personal branding. From year 1.' },
+            { svg: '<svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>', title: 'Personalized matching', desc: 'The Career Center matches your profile, field, and aspirations with partner offers.' },
+            { svg: '<svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>', title: 'Ongoing follow-up', desc: 'An EBS tutor monitors your progress. Quarterly review with your professional supervisor.' },
+          ].map((item, i) => (
+            <div class="bg-surface-alt border border-border/40 p-7 reveal" style={`--delay: ${i * 60}ms`}>
+              <span class="w-10 h-10 bg-accent/10 flex items-center justify-center mb-4" aria-hidden="true"><Fragment set:html={item.svg} /></span>
+              <h3 class="font-heading font-semibold text-base text-ink mb-3">{item.title}</h3>
+              <p class="text-sm text-ink-body leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Recruiting companies strip */}
+        <div class="bg-surface-alt border border-border/40 p-8">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-5">They recruit our work-study students</p>
+          <div class="flex flex-wrap gap-3">
+            {[
+              'Vermeg', 'Sofrecom', 'Telnet', 'Orange Tunisie', 'Think IT', 'Linedata',
+              'Biat', 'Amen Bank', 'BH Bank', 'Tunisair', 'Poulina Group',
+              'MG Tunisie', 'Jumia', 'Carrefour Tunisie', 'Capgemini', 'Berexia',
+              'Talan', 'CGI', 'Salesforce EMEA', 'Deloitte Tunisie',
+            ].map(company => (
+              <span class="inline-block px-3 py-1.5 bg-surface text-ink-body text-sm font-medium border border-border/30">{company}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── SAFETY NET ───────────────── */}
+    <section class="bg-accent/5 border-y border-accent/10 reveal" aria-label="What if I can't find a work-study placement">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-8">
+            <h3 class="font-heading font-semibold text-lg text-ink mb-3">What if I can't find a work-study placement?</h3>
+            <p class="text-sm text-ink-body leading-relaxed mb-4">
+              Don't panic. The Career Center intensifies support: individual meetings, new offers from our network, and if needed, a conventional internship as a replacement. <strong class="text-ink">No student is left without a solution.</strong>
+            </p>
+            <p class="text-sm text-ink-body leading-relaxed">
+              As a last resort, the format switches to a long internship (2 to 4 months) integrated into the semester, validating the same professional skills.
+            </p>
+          </div>
+          <div class="md:col-span-4 text-center md:text-right">
+            <span class="font-heading font-bold text-4xl text-accent block mb-1" data-countup="96" data-suffix="%">0</span>
+            <span class="text-sm text-ink-muted">of our students find their<br/>work-study through EBS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── CTA ───────────────── */}
+    <section class="relative py-20 lg:py-28 overflow-hidden" aria-label="Registration">
+      <img src="/images/campus/students-7.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" aria-hidden="true" />
+      <div class="absolute inset-0 bg-accent/90"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center relative z-10">
+        <p class="text-xs font-semibold text-base-950/50 uppercase tracking-wider mb-4">Work-study from Year 2</p>
+        <h2 class="font-heading font-bold text-[clamp(1.75rem,4vw,3rem)] leading-[1.1] text-base-950 mb-5">
+          Learn by working<Marker size="lg" class="inline-block ml-3 align-middle bg-base-950" />
+        </h2>
+        <p class="font-body text-base-950/60 text-lg mb-10 max-w-md mx-auto">
+          Explore our work-study programs and start your pre-registration.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button href="/en/pre-registration" variant="inverted" size="lg">
+            Start my pre-registration <span class="ml-2" aria-hidden="true">→</span>
+          </Button>
+          <Button href="/en/programs" variant="ghost" size="lg" class="text-base-950/70 hover:text-base-950">
+            View programs
+          </Button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const reveals = document.querySelectorAll<HTMLElement>('.reveal');
+    if (reveals.length) {
+      const obs = new IntersectionObserver(
+        (entries) => entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        }),
+        { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+      );
+      reveals.forEach((el) => obs.observe(el));
+    }
+  });
+</script>

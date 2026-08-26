@@ -1,0 +1,732 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Button from '../../../components/ui/Button.astro';
+import Marker from '../../../components/ui/Marker.astro';
+import { allProgrammes, flags, partnerFlag, programmeImages, type Programme } from '../../../data/programmes';
+
+export function getStaticPaths() {
+  return allProgrammes.map((prog) => ({
+    params: { slug: prog.slug },
+    props: { programme: prog },
+  }));
+}
+
+interface Props {
+  programme: Programme;
+}
+
+const { programme: prog } = Astro.props;
+
+const title = `${prog.degree} ${prog.title} — EBS Tunis`;
+const description = prog.description;
+const heroImage = programmeImages[prog.slug] || '/images/campus/students-3.jpg';
+
+/* Sibling programmes for "other programmes" section */
+const siblings = allProgrammes
+  .filter((p) => p.slug !== prog.slug && p.degree === prog.degree)
+  .slice(0, 3);
+
+/* Certification provider to logo path mapping */
+const certLogoMap: Record<string, string> = {
+  'AWS': '/images/certifications/aws.svg',
+  'Google': '/images/certifications/google.svg',
+  'Salesforce': '/images/certifications/salesforce.svg',
+  'IBM': '/images/certifications/ibm.svg',
+  'HubSpot': '/images/certifications/hubspot.svg',
+  'Cisco': '/images/certifications/cisco.svg',
+  'Oracle': '/images/certifications/oracle.svg',
+  'Microsoft': '/images/certifications/microsoft.svg',
+};
+
+/* Partner images mapping */
+const partnerImages: Record<string, string> = {
+  'UQAT': '/images/programmes/banner-canada.jpg',
+  'EM Normandie': '/images/events/em-normandie-visit.jpg',
+  'Collège de Paris': '/images/international/paris-student.png',
+  'Keyce Academy': '/images/international/em-strasbourg.jpg',
+};
+
+/* Partner logos mapping */
+const partnerLogos: Record<string, string> = {
+  'UQAT': '/images/partners/uqat.svg',
+  'EM Normandie': '/images/partners/em-normandie-logo.png',
+  'Collège de Paris': '/images/partners/college-de-paris.png',
+  'Keyce Academy': '/images/partners/keyce-academy.png',
+};
+---
+
+<BaseLayout title={title} description={description} lang="en">
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* ───────────────── HERO ───────────────── */}
+    <section class="relative bg-navy overflow-hidden" aria-labelledby="prog-hero-heading">
+      {/* Full-bleed background image */}
+      <div class="absolute inset-0 z-0">
+        <img src={heroImage} alt="" class="w-full h-full object-cover" loading="eager" fetchpriority="high" />
+        <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/60"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-20 pb-16 md:pt-28 md:pb-20 lg:pt-36 lg:pb-24 relative z-10">
+        {/* Breadcrumb */}
+        <nav class="mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-xs text-white/40 font-medium">
+            <li><a href="/en" class="hover:text-accent transition-colors">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a href="/en/programs" class="hover:text-accent transition-colors">Programs</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-white/70">{prog.degree} {prog.title}</li>
+          </ol>
+        </nav>
+
+        <div class="max-w-3xl">
+          <div class="flex flex-wrap items-center gap-3 mb-5">
+            <span class={`inline-block px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider ${prog.degree === 'Licence' ? 'bg-white/15 text-white' : 'bg-accent text-base-950'}`}>
+              {prog.degree} · {prog.duration}
+            </span>
+            <span class="inline-block px-3 py-1.5 bg-white/10 text-white/70 text-[11px] font-bold uppercase tracking-wider">
+              Prerequisites: {prog.level}
+            </span>
+          </div>
+
+          <h1 id="prog-hero-heading" class="font-heading font-bold text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.08] text-white tracking-tight mb-5">
+            {prog.title}<Marker size="lg" class="inline-block ml-3 align-middle" />
+          </h1>
+
+          <p class="font-body text-base-300 text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
+            {prog.description}
+          </p>
+
+          {/* Key stats row */}
+          <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-10">
+            <div class="flex items-center gap-2">
+              <span class="font-heading font-bold text-2xl text-accent">{prog.certs}</span>
+              <span class="text-sm text-white/50">certifications</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="font-heading font-bold text-2xl text-accent">{prog.price}</span>
+              <span class="text-sm text-white/50">DT/year</span>
+            </div>
+            {prog.international.length > 0 && (
+              <div class="flex items-center gap-2">
+                {prog.international.map(partner => (
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/10 text-white/80 text-[10px] font-semibold uppercase tracking-wider">
+                    <Fragment set:html={flags[partnerFlag[partner]]?.svg || ''} />
+                    {partner}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <Button href="/en/pre-registration" variant="primary" size="lg">
+              Pre-register <span class="ml-2" aria-hidden="true">→</span>
+            </Button>
+            <Button href="#curriculum" variant="ghost" size="lg" class="text-white/70 hover:text-accent">
+              View curriculum
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── HIGHLIGHT ───────────────── */}
+    <section class="bg-accent/5 border-b border-accent/10" aria-label="Key highlight">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-6">
+        <div class="flex items-start gap-4">
+          <span class="w-1.5 h-full min-h-8 bg-accent shrink-0" aria-hidden="true"></span>
+          <p class="font-body text-ink font-medium text-base leading-relaxed">{prog.highlight}</p>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── CURRICULUM ───────────────── */}
+    <section id="curriculum" class="py-20 lg:py-28 bg-surface scroll-mt-20 reveal" aria-labelledby="curriculum-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-14">
+          <div class="lg:col-span-7">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Detailed curriculum</p>
+            <h2 id="curriculum-heading" class="font-heading font-bold text-h2 text-ink leading-tight">
+              Academic Pathway<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+          <div class="lg:col-span-5">
+            <p class="font-body text-ink-body text-base leading-relaxed">
+              {prog.degree === 'Licence' ? 'Three years structured in semesters, from foundations to specialization.' : 'Two years of intensive expertise, from specialization to professional thesis.'}
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Accordion */}
+          <div class="lg:col-span-8 space-y-6">
+            {prog.curriculum.map((year, i) => (
+              <div class="curriculum-year group bg-surface border border-border/40 overflow-hidden reveal" style={`--delay: ${i * 80}ms`}>
+                <button type="button" class="curriculum-toggle w-full flex items-center justify-between px-8 py-6 text-left cursor-pointer hover:bg-surface-alt/50 transition-colors">
+                  <div class="flex items-center gap-5">
+                    <span class="font-heading font-bold text-3xl text-accent leading-none">{year.year}</span>
+                    <div>
+                      <span class="font-heading font-semibold text-lg text-ink">{year.title}</span>
+                      <p class="text-sm text-ink-muted mt-0.5">{year.modules.length} modules</p>
+                    </div>
+                  </div>
+                  <svg class="w-5 h-5 text-ink-muted transition-transform duration-200 curriculum-chevron shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="curriculum-content overflow-hidden transition-all duration-300" style="max-height: 0;">
+                  <div class="px-8 pb-7 pt-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {year.modules.map(mod => (
+                        <div class="flex items-start gap-3 py-2">
+                          <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-2" aria-hidden="true"></span>
+                          <span class="text-sm text-ink-body">{mod}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Side photo stack */}
+          <div class="hidden lg:flex lg:col-span-4 flex-col gap-4">
+            <div class="relative overflow-hidden group flex-1">
+              <img src="/images/events/conference-digital.jpg" alt="EBS classes" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+              <div class="absolute bottom-3 left-3">
+                <span class="bg-accent/90 text-base-950 text-[10px] font-bold px-2.5 py-1 uppercase tracking-wider">Classes</span>
+              </div>
+            </div>
+            <div class="relative overflow-hidden group flex-1">
+              <img src="/images/events/seminaire.jpg" alt="EBS seminars" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+              <div class="absolute bottom-3 left-3">
+                <span class="bg-accent/90 text-base-950 text-[10px] font-bold px-2.5 py-1 uppercase tracking-wider">Seminars</span>
+              </div>
+            </div>
+            <div class="relative overflow-hidden group flex-1">
+              <img src="/images/events/it-business-expo.jpg" alt="EBS projects" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+              <div class="absolute bottom-3 left-3">
+                <span class="bg-accent/90 text-base-950 text-[10px] font-bold px-2.5 py-1 uppercase tracking-wider">Projects</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── PEDAGOGY & TOOLS ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="pedagogy-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-14">
+          <div class="lg:col-span-7">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Teaching approach</p>
+            <h2 id="pedagogy-heading" class="font-heading font-bold text-h2 text-ink leading-tight">
+              How you learn<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+          <div class="lg:col-span-5">
+            <p class="font-body text-ink-body text-base leading-relaxed">{prog.teachingFormat}</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Tools */}
+          <div class="bg-surface border border-border/40 p-8">
+            <h3 class="font-heading font-semibold text-lg text-ink mb-5 flex items-center gap-3">
+              <span class="w-8 h-8 bg-accent/10 flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </span>
+              Tools & platforms
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {prog.tools.map(tool => (
+                <span class="inline-block px-3 py-1.5 bg-surface-alt text-ink-body text-sm font-medium border border-border/30">{tool}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Assessment + Sample Projects */}
+          <div class="bg-surface border border-border/40 p-8">
+            <h3 class="font-heading font-semibold text-lg text-ink mb-4 flex items-center gap-3">
+              <span class="w-8 h-8 bg-accent/10 flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </span>
+              Assessment
+            </h3>
+            <p class="text-sm text-ink-body leading-relaxed mb-6">{prog.assessmentModel}</p>
+            <h4 class="font-semibold text-sm text-ink mb-3">Student project examples</h4>
+            <ul class="space-y-2">
+              {prog.sampleProjects.map(project => (
+                <li class="flex items-start gap-3 text-sm text-ink-body">
+                  <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-2" aria-hidden="true"></span>
+                  {project}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── WORK-STUDY STRIP ───────────────── */}
+    <section class="relative overflow-hidden" aria-label="Work-Study">
+      <img src="/images/events/visite-dot.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" aria-hidden="true" />
+      <div class="absolute inset-0 bg-navy/90"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-14 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-7 flex items-start gap-5">
+            <span class="w-14 h-14 bg-accent flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7 text-base-950" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </span>
+            <div>
+              <h3 class="font-heading font-bold text-xl text-white mb-2">Work-study from {prog.degree === 'Licence' ? 'Year 2' : 'Year 1 (M1)'}</h3>
+              <p class="text-sm text-white/60 leading-relaxed">3 days at EBS, 2 days at the company. You gain real professional experience while continuing your education.</p>
+            </div>
+          </div>
+          <div class="md:col-span-5">
+            <div class="grid grid-cols-5 gap-1.5">
+              {['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((day, i) => (
+                <div class={`py-3 text-center ${i < 3 ? 'bg-white/10 border border-white/20' : 'bg-accent border border-accent'}`}>
+                  <span class={`font-heading font-bold text-xs block ${i < 3 ? 'text-white' : 'text-base-950'}`}>{day}</span>
+                  <span class={`text-[10px] ${i < 3 ? 'text-white/50' : 'text-base-950/60'}`}>{i < 3 ? 'School' : 'Company'}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── CERTIFICATIONS ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="certs-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14">
+          <div class="lg:col-span-7">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">{prog.certs} certifications included</p>
+            <h2 id="certs-heading" class="font-heading font-bold text-h2 text-ink leading-tight">
+              International Certifications<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+          <div class="lg:col-span-5">
+            <p class="font-body text-ink-body text-base leading-relaxed">
+              Every certification is included in tuition fees. No additional cost, no surprises.
+            </p>
+          </div>
+        </div>
+
+        {/* Provider logo strip */}
+        <div class="flex flex-wrap items-center gap-6 mb-10 pb-8 border-b border-border/30">
+          {(() => {
+            const providers = [...new Set(prog.certificationDetails.map(c => c.provider))];
+            return providers.map(p => (
+              <div class="flex items-center gap-2">
+                <img src={certLogoMap[p] || ''} alt={p} class="w-8 h-8 object-contain" loading="lazy" />
+                <span class="text-sm text-ink-muted font-medium">{p}</span>
+              </div>
+            ));
+          })()}
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {prog.certificationDetails.map((cert, i) => (
+            <div class="group bg-surface border border-border/40 px-6 py-5 flex items-start gap-4 hover:border-accent/30 transition-colors reveal" style={`--delay: ${i * 60}ms`}>
+              <img src={certLogoMap[cert.provider] || ''} alt={cert.provider} class="w-10 h-10 object-contain shrink-0 grayscale group-hover:grayscale-0 transition-all duration-300" loading="lazy" />
+              <div>
+                <p class="font-semibold text-sm text-ink mb-1">{cert.name}</p>
+                <p class="text-xs text-ink-muted">{cert.provider}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-10 text-center">
+          <a href="/en/certifications" class="inline-flex items-center text-sm font-semibold text-navy hover:text-accent transition-colors gap-1.5 hover:gap-2.5">
+            View the full certification catalog <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── CAREERS ───────────────── */}
+    <section class="relative py-20 lg:py-28 overflow-hidden reveal" aria-labelledby="careers-heading">
+      <img src="/images/campus/students-4.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" aria-hidden="true" />
+      <div class="absolute inset-0 bg-navy/92"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-14">
+          <div class="lg:col-span-7">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Career opportunities</p>
+            <h2 id="careers-heading" class="font-heading font-bold text-h2 text-white leading-tight">
+              After your {prog.degree === 'Licence' ? "Bachelor's" : "Master's"} degree<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+          <div class="lg:col-span-5">
+            <p class="font-body text-white/60 text-base leading-relaxed">
+              Our graduates enter the job market with recognized certifications and hands-on experience through the work-study program.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {prog.careers.map((career, i) => (
+            <div class="group bg-white/[0.05] backdrop-blur-sm border border-white/10 px-6 py-5 hover:bg-white/10 transition-colors reveal" style={`--delay: ${i * 60}ms`}>
+              <div class="flex items-start gap-3">
+                <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                <span class="font-semibold text-sm text-white">{career}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Programme-specific outcomes */}
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="bg-white/[0.05] border border-white/10 px-6 py-5">
+            <span class="font-heading font-bold text-2xl text-accent block mb-1">{prog.outcomes.employmentRate}</span>
+            <span class="text-xs text-white/50 uppercase tracking-wider">Employment rate</span>
+          </div>
+          <div class="bg-white/[0.05] border border-white/10 px-6 py-5">
+            <span class="font-heading font-bold text-2xl text-accent block mb-1">{prog.outcomes.avgSalary}</span>
+            <span class="text-xs text-white/50 uppercase tracking-wider">Average salary</span>
+          </div>
+          <div class="bg-white/[0.05] border border-white/10 px-6 py-5">
+            <p class="text-xs text-white/50 uppercase tracking-wider mb-2">Companies hiring our graduates</p>
+            <div class="flex flex-wrap gap-1.5">
+              {prog.outcomes.topEmployers.map(employer => (
+                <span class="inline-block px-2 py-0.5 bg-white/10 text-white text-xs font-medium">{employer}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── INTERNATIONAL (conditional) ───────────────── */}
+    {prog.international.length > 0 && (
+      <section class="py-20 lg:py-28 bg-navy reveal" aria-labelledby="intl-heading">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-14">
+            <div class="lg:col-span-7">
+              <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">International pathway</p>
+              <h2 id="intl-heading" class="font-heading font-bold text-h2 text-white leading-tight">
+                Your degree crosses borders<Marker size="lg" class="inline-block ml-3 align-middle" />
+              </h2>
+            </div>
+            <div class="lg:col-span-5">
+              <p class="font-body text-white/60 text-base leading-relaxed">
+                Thanks to our partnerships, continue your studies in Canada or France with full credit recognition.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {prog.international.map((partner, i) => {
+              const flagCode = partnerFlag[partner];
+              const flag = flagCode ? flags[flagCode] : null;
+              const coverImg = partnerImages[partner];
+              const logoImg = partnerLogos[partner];
+              return (
+                <div class="group bg-white/[0.05] border border-white/10 overflow-hidden hover:border-accent/30 transition-colors reveal" style={`--delay: ${i * 80}ms`}>
+                  {/* Cover photo */}
+                  {coverImg && (
+                    <div class="relative h-44 overflow-hidden">
+                      <img src={coverImg} alt={partner} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                      <div class="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent"></div>
+                      {flag && <div class="absolute top-3 right-3"><Fragment set:html={flag.svg} /></div>}
+                    </div>
+                  )}
+                  <div class="px-7 py-6">
+                    <div class="flex items-center gap-3 mb-4">
+                      {logoImg && <img src={logoImg} alt="" class="h-8 w-auto object-contain" loading="lazy" />}
+                      {!coverImg && flag && <Fragment set:html={flag.svg} />}
+                      <span class="font-heading font-semibold text-lg text-white">{partner}</span>
+                    </div>
+                    <p class="text-sm text-white/50 leading-relaxed mb-4">
+                      {flag?.label ? `Partner in ${flag.label}` : 'International partner'}. Study continuation and dual degree available.
+                    </p>
+                    <a href="/en/international" class="inline-flex items-center text-xs font-semibold text-accent hover:text-white transition-colors gap-1.5 hover:gap-2.5">
+                      Learn more <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    )}
+
+
+    {/* ───────────────── FAQ ───────────────── */}
+    {prog.faq.length > 0 && (
+      <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="faq-heading">
+        <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20">
+          <div class="text-center mb-14">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Frequently asked questions</p>
+            <h2 id="faq-heading" class="font-heading font-bold text-h2 text-ink">
+              FAQ<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+
+          <div class="space-y-4">
+            {prog.faq.map((item, i) => (
+              <div class="faq-item bg-surface border border-border/40 overflow-hidden reveal" style={`--delay: ${i * 60}ms`}>
+                <button type="button" class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer hover:bg-surface-alt/50 transition-colors">
+                  <span class="font-semibold text-sm text-ink pr-4">{item.q}</span>
+                  <svg class="w-4 h-4 text-ink-muted transition-transform duration-200 faq-chevron shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content overflow-hidden transition-all duration-300" style="max-height: 0;">
+                  <div class="px-6 pb-5">
+                    <p class="text-sm text-ink-body leading-relaxed">{item.a}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+
+    {/* ───────────────── ADMISSION ───────────────── */}
+    <section class="bg-accent/5 border-y border-accent/10 reveal" aria-label="Admission requirements">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-10">
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+          <span class="w-12 h-12 bg-accent flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-base-950" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </span>
+          <div class="flex-1">
+            <h3 class="font-heading font-semibold text-lg text-ink mb-1">Admission requirements</h3>
+            <p class="text-sm text-ink-body leading-relaxed">{prog.admissionSelectivity}</p>
+          </div>
+          <Button href="/en/admissions" variant="ghost" size="base">
+            Admission details <span class="ml-1" aria-hidden="true">→</span>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── PRICING CTA ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface reveal" aria-labelledby="pricing-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Transparent tuition</p>
+            <h2 id="pricing-heading" class="font-heading font-bold text-h2 text-ink leading-tight mb-5">
+              Invest in your future<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+            <p class="font-body text-ink-body text-base leading-relaxed mb-8">
+              All fees are included: tuition, international certifications, access to partner platforms. No hidden costs.
+            </p>
+
+            <!-- Campus photo -->
+            <div class="relative overflow-hidden mb-8 aspect-[16/9]">
+              <img src="/images/campus/campus-2.jpg" alt="EBS Campus" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent"></div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <Button href="/en/pre-registration" variant="primary" size="lg">
+                Start my pre-registration <span class="ml-2" aria-hidden="true">→</span>
+              </Button>
+              <Button href="/en/brochures" variant="ghost" size="lg">
+                Download brochure
+              </Button>
+            </div>
+          </div>
+
+          <div class="bg-surface-alt border border-border/40 p-8 lg:p-10">
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="font-heading font-bold text-[3.5rem] leading-none text-accent">{prog.price}</span>
+              <div>
+                <span class="text-ink-muted text-lg">DT</span>
+                <span class="text-ink-muted text-sm block">/year</span>
+              </div>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3 text-sm">
+                <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-2" aria-hidden="true"></span>
+                <span class="text-ink-body">{prog.certs} international certifications included</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-2" aria-hidden="true"></span>
+                <span class="text-ink-body">Access to training platforms</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-2" aria-hidden="true"></span>
+                <span class="text-ink-body">Personalized mentoring</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-2" aria-hidden="true"></span>
+                <span class="text-ink-body">Internship & work-study support</span>
+              </li>
+              {prog.international.length > 0 && (
+                <li class="flex items-start gap-3 text-sm">
+                  <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-2" aria-hidden="true"></span>
+                  <span class="text-ink-body">International pathways ({prog.international.join(', ')})</span>
+                </li>
+              )}
+            </ul>
+            <p class="text-xs text-ink-muted">Installment payments available. Contact admissions for more details.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── OTHER PROGRAMMES ───────────────── */}
+    {siblings.length > 0 && (
+      <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="others-heading">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+          <div class="text-center mb-14">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Other {prog.degree === 'Licence' ? "bachelor's degrees" : "master's degrees"}</p>
+            <h2 id="others-heading" class="font-heading font-bold text-h2 text-ink">
+              See also
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {siblings.map((sib, i) => {
+              const sibImg = programmeImages[sib.slug] || '/images/campus/students-3.jpg';
+              return (
+              <a href={`/en/programs/${sib.slug}`} class="group bg-surface border border-border/40 overflow-hidden flex flex-col hover:border-accent/30 transition-colors reveal" style={`--delay: ${i * 60}ms`}>
+                <div class="relative h-44 overflow-hidden">
+                  <img src={sibImg} alt={sib.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/40 to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 px-6 pb-4">
+                    <span class={`inline-block px-2 py-1 text-[10px] font-bold uppercase tracking-wider mb-2 ${sib.degree === 'Licence' ? 'bg-white/15 text-white' : 'bg-accent text-base-950'}`}>{sib.degree} · {sib.duration}</span>
+                    <h3 class="font-heading font-semibold text-base text-white">{sib.title}</h3>
+                  </div>
+                </div>
+                <div class="px-6 py-5 flex flex-col flex-1">
+                  <p class="text-sm text-ink-body leading-relaxed mb-4 line-clamp-2">{sib.description}</p>
+                  <div class="mt-auto flex items-center justify-between pt-4 border-t border-border/30">
+                    <span class="text-sm font-semibold text-accent">{sib.price} DT/year</span>
+                    <span class="text-xs font-semibold text-navy group-hover:text-accent transition-colors">{sib.certs} certs</span>
+                  </div>
+                </div>
+                <div class="h-0.5 bg-accent/0 group-hover:bg-accent transition-colors duration-300" aria-hidden="true"></div>
+              </a>
+              );
+            })}
+          </div>
+
+          <div class="text-center mt-10">
+            <a href="/en/programs" class="inline-flex items-center text-sm font-semibold text-navy hover:text-accent transition-colors gap-1.5 hover:gap-2.5">
+              All programs <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    )}
+
+
+    {/* ───────────────── FINAL CTA ───────────────── */}
+    <section class="relative py-20 lg:py-28 overflow-hidden" aria-label="Registration">
+      <img src="/images/campus/students-9.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" aria-hidden="true" />
+      <div class="absolute inset-0 bg-accent/90"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center relative z-10">
+        <p class="text-xs font-semibold text-base-950/50 uppercase tracking-wider mb-4">3 minutes · 4 steps</p>
+        <h2 class="font-heading font-bold text-[clamp(1.75rem,4vw,3rem)] leading-[1.1] text-base-950 mb-5">
+          Ready to join EBS?<Marker size="lg" class="inline-block ml-3 align-middle bg-base-950" />
+        </h2>
+        <p class="font-body text-base-950/60 text-lg mb-10 max-w-md mx-auto">
+          Start your online pre-registration. Response within 48 hours.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button href="/en/pre-registration" variant="inverted" size="lg">
+            Start my pre-registration <span class="ml-2" aria-hidden="true">→</span>
+          </Button>
+          <Button href="/en/brochures" variant="ghost" size="lg" class="text-base-950/70 hover:text-base-950">
+            Download brochure
+          </Button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .curriculum-year.is-open .curriculum-chevron {
+    transform: rotate(180deg);
+  }
+  .faq-item.is-open .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    /* ── Scroll reveal ── */
+    const reveals = document.querySelectorAll<HTMLElement>('.reveal');
+    if (reveals.length) {
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+      );
+      reveals.forEach((el) => obs.observe(el));
+    }
+
+    /* ── Curriculum accordion ── */
+    document.querySelectorAll<HTMLElement>('.curriculum-toggle').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const year = btn.closest('.curriculum-year');
+        const content = year?.querySelector<HTMLElement>('.curriculum-content');
+        if (!year || !content) return;
+        const isOpen = year.classList.toggle('is-open');
+        content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0';
+      });
+    });
+
+    /* Open first curriculum year by default */
+    const firstYear = document.querySelector<HTMLElement>('.curriculum-year');
+    if (firstYear) {
+      const content = firstYear.querySelector<HTMLElement>('.curriculum-content');
+      if (content) {
+        firstYear.classList.add('is-open');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    }
+
+    /* ── FAQ accordion ── */
+    document.querySelectorAll<HTMLElement>('.faq-toggle').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const content = item?.querySelector<HTMLElement>('.faq-content');
+        if (!item || !content) return;
+        const isOpen = item.classList.toggle('is-open');
+        content.style.maxHeight = isOpen ? content.scrollHeight + 'px' : '0';
+      });
+    });
+  });
+</script>

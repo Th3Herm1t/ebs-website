@@ -1,41 +1,57 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
+# node_modules anywhere in repo
+node_modules/
+**/node_modules/
 /.pnp
 .pnp.*
 .yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
 
-# testing
-/coverage
+# testing & build outputs
+coverage/
+**/coverage/
+.next/
+**/.next/
+out/
+**/out/
+build/
+**/build/
 
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
+# debug logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# environment variables
 .env*
+*.env
 
-# vercel
+# Vercel
 .vercel
+**/.vercel
 
-# typescript
+# TypeScript
 *.tsbuildinfo
-next-env.d.ts
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ZIP archives and temp directories
+*.zip
+temp/
+profit_temp/
+
+# Template folders (untracked heavy templates)
+templates/
+templates*/
+*template*/
+educa-*/
+evnia-*/
+lawyer-*/
+optima-*/
+penn-*/
+profit-*/
+"EBS site - claude"/
+"EBS web - v0.1"/

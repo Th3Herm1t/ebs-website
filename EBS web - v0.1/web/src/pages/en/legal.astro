@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Legal Notice — EBS Tunis";
+const description = "Legal notice for EBS Tunis – Espima Business School. Information about the publisher, hosting, and terms of use.";
+---
+
+<BaseLayout title={title} description={description} lang="en">
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* ───────────────── HEADER ───────────────── */}
+    <section class="bg-navy py-14 md:py-18">
+      <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20">
+        <nav class="mb-6" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-xs text-white/40 font-medium">
+            <li><a href="/en" class="hover:text-accent transition-colors">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-white/70">Legal Notice</li>
+          </ol>
+        </nav>
+        <h1 class="font-heading font-bold text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.1] text-white">
+          Legal Notice
+        </h1>
+      </div>
+    </section>
+
+
+    {/* ───────────────── CONTENT ───────────────── */}
+    <section class="py-16 lg:py-20">
+      <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20 prose-legal">
+
+        <h2>1. Site Publisher</h2>
+        <p>
+          The website <strong>ebs.tn</strong> is published by <strong>Espima Business School (EBS Tunis)</strong>, a private university recognized by the Ministry of Higher Education of the Republic of Tunisia.
+        </p>
+        <ul>
+          <li><strong>Company name:</strong> Espima Business School</li>
+          <li><strong>Headquarters:</strong> Tunis, Tunisia</li>
+          <li><strong>Phone:</strong> +216 29 58 28 35</li>
+          <li><strong>Email:</strong> contact@ebs.tn</li>
+          <li><strong>Publication director:</strong> The management of EBS Tunis</li>
+        </ul>
+
+        <h2>2. Hosting</h2>
+        <p>
+          The site is hosted by:
+        </p>
+        <ul>
+          <li><strong>Host:</strong> Vercel Inc.</li>
+          <li><strong>Address:</strong> 440 N Barranca Ave #4133, Covina, CA 91723, United States</li>
+          <li><strong>Website:</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">vercel.com</a></li>
+        </ul>
+
+        <h2>3. Intellectual Property</h2>
+        <p>
+          All content on the ebs.tn website (text, images, graphics, logos, icons, videos, sounds, data, software) is the exclusive property of EBS Tunis or its partners and is protected by Tunisian and international intellectual property laws.
+        </p>
+        <p>
+          Any reproduction, representation, modification, publication, or adaptation of all or part of the site's elements, by any means or process, is prohibited without prior written authorization from EBS Tunis.
+        </p>
+
+        <h2>4. Limitation of Liability</h2>
+        <p>
+          EBS Tunis strives to provide information as accurate as possible on the site. However, it cannot be held responsible for omissions, inaccuracies, or deficiencies in updates, whether caused by itself or by third parties.
+        </p>
+        <p>
+          The information on the site is provided for informational purposes only and is subject to change. It is in no way contractual.
+        </p>
+
+        <h2>5. Hyperlinks</h2>
+        <p>
+          The ebs.tn site may contain links to other websites. EBS Tunis has no control over the content of these third-party sites and disclaims any responsibility for their content.
+        </p>
+
+        <h2>6. Cookies</h2>
+        <p>
+          The site may use cookies for audience measurement and user experience improvement. For more information, see our <a href="/en/privacy" class="text-accent hover:underline">privacy policy</a>.
+        </p>
+
+        <h2>7. Applicable Law</h2>
+        <p>
+          These legal notices are subject to Tunisian law. In the event of a dispute, the courts of Tunis shall have sole jurisdiction.
+        </p>
+
+        <hr />
+        <p class="text-sm text-ink-muted">
+          Last updated: September 2025
+        </p>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .prose-legal {
+    font-family: var(--font-body, system-ui);
+    line-height: 1.75;
+    color: var(--color-ink, #1a1a1a);
+  }
+  .prose-legal h2 {
+    font-family: var(--font-heading, system-ui);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-legal p {
+    margin-bottom: 1rem;
+  }
+  .prose-legal ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .prose-legal li {
+    margin-bottom: 0.35rem;
+    font-size: 0.938rem;
+  }
+  .prose-legal hr {
+    border: none;
+    border-top: 1px solid var(--color-border, #e5e5e5);
+    margin: 2.5rem 0 1.5rem;
+  }
+  .prose-legal strong {
+    font-weight: 600;
+  }
+</style>

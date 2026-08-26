@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2026-07-11" />
+  <title>Proposition — Modèle pédagogique et catalogue certifications EBS</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Proposition — Modèle pédagogique et catalogue
+certifications EBS</h1>
+<p class="date">2026-07-11</p>
+</header>
+<h1
+id="proposition-modèle-pédagogique-et-catalogue-certifications-ebs">Proposition
+— Modèle pédagogique et catalogue certifications EBS</h1>
+<h2 id="modèle-pédagogique">1. Modèle pédagogique</h2>
+<p>Le modèle proposé structure les certifications EBS autour de deux
+axes simples: la nature pédagogique de la certification et son statut
+dans le parcours étudiant.</p>
+<h3 id="classification-pédagogique">1.1 Classification pédagogique</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Classification</th>
+<th>Rôle dans le parcours</th>
+<th>Exemples de compétences développées</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI Literacy</strong></td>
+<td>Socle transversal pour comprendre et utiliser l’IA, quel que soit le
+programme.</td>
+<td>Culture IA, prompting, IA générative, agents IA, productivité,
+limites de l’IA.</td>
+</tr>
+<tr>
+<td><strong>Applied AI</strong></td>
+<td>Application directe de l’IA au métier ou à la spécialité de
+l’étudiant.</td>
+<td>IA pour marketing, finance, CRM, data, cybersécurité, gestion de
+projet, automatisation.</td>
+</tr>
+<tr>
+<td><strong>Non-AI</strong></td>
+<td>Compétences métier fondamentales nécessaires à l’employabilité.</td>
+<td>Marketing digital, finance, gestion de projet, cybersécurité, data,
+CRM, outils professionnels.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="statut-pédagogique">1.2 Statut pédagogique</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Statut</th>
+<th>Définition</th>
+<th>Usage recommandé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mandatory</strong></td>
+<td>Certification intégrée au parcours principal de la filière.</td>
+<td>À suivre dans le cadre du programme, selon le calendrier défini par
+EBS.</td>
+</tr>
+<tr>
+<td><strong>Optional</strong></td>
+<td>Certification complémentaire.</td>
+<td>À utiliser pour spécialisation, portfolio, clubs, challenges,
+employabilité ou Wall of Badges.</td>
+</tr>
+</tbody>
+</table>
+<p>Le statut <code>Recommended</code> n’est pas utilisé dans le modèle
+actif afin d’éviter la confusion opérationnelle. Le parcours devient
+plus lisible pour les étudiants: les certifications sont soit
+obligatoires, soit optionnelles.</p>
+<h3 id="principe-déquilibre">1.3 Principe d’équilibre</h3>
+<p>Chaque programme doit couvrir les trois dimensions suivantes:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Objectif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI Literacy</td>
+<td>Aucun diplômé EBS ne sort sans culture IA commune.</td>
+</tr>
+<tr>
+<td>Applied AI</td>
+<td>Chaque étudiant apprend à appliquer l’IA dans son domaine.</td>
+</tr>
+<tr>
+<td>Non-AI</td>
+<td>Les compétences métier restent solides et certifiables.</td>
+</tr>
+</tbody>
+</table>
+<p>Le catalogue évite volontairement la surcharge: aucun programme ne
+dépasse <strong>14 certifications mandatory</strong>.</p>
+<h3 id="distinction-licence-master-pour-lai-literacy">1.4 Distinction
+Licence / Master pour l’AI Literacy</h3>
+<p>L’AI Literacy est commune dans son objectif, mais le bloc n’est pas
+exactement le même entre Licence et Master.</p>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 28%" />
+<col style="width: 28%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr>
+<th>Niveau</th>
+<th style="text-align: right;">Bloc mandatory</th>
+<th style="text-align: right;">Bloc optional</th>
+<th>Logique pédagogique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Licence</strong></td>
+<td style="text-align: right;">5 certifications</td>
+<td style="text-align: right;">5 certifications</td>
+<td>Construire les bases: culture IA, prompting, IA générative,
+productivité et premiers usages.</td>
+</tr>
+<tr>
+<td><strong>Master</strong></td>
+<td style="text-align: right;">4 certifications</td>
+<td style="text-align: right;">1 certification</td>
+<td>Aller directement vers l’IA générative avancée, les agents IA et les
+usages business.</td>
+</tr>
+</tbody>
+</table>
+<p>Le catalogue AI Literacy contient donc <strong>15 certifications au
+total</strong>: 9 mandatory et 6 optional. Ces 15 certifications ne sont
+pas toutes assignées à chaque étudiant. Les licences utilisent le bloc
+Licence, les masters utilisent le bloc Master.</p>
+<hr />
+<h2 id="catalogue-géré">2. Catalogue géré</h2>
+<p>Le catalogue actif comprend <strong>121 certifications publiques
+gérées</strong>, réparties comme suit.</p>
+<table>
+<thead>
+<tr>
+<th>Classification</th>
+<th style="text-align: right;">Mandatory</th>
+<th style="text-align: right;">Optional</th>
+<th style="text-align: right;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI Literacy</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td>Applied AI</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">43</td>
+</tr>
+<tr>
+<td>Non-AI</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">63</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>86</strong></td>
+<td style="text-align: right;"><strong>35</strong></td>
+<td style="text-align: right;"><strong>121</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="certifications-ai-literacy">2.1 Certifications AI Literacy</h3>
+<p>Le bloc AI Literacy est séparé par niveau d’étude. Les certifications
+ci-dessous forment le catalogue transversal complet, mais leur
+affectation dépend du programme: Licence ou Master.</p>
+<h4 id="mandatory">Mandatory</h4>
+<p><strong>Bloc Licence — Mandatory</strong></p>
+<ul>
+<li>Google AI Essentials — Google</li>
+<li>Google Prompting Essentials — Google</li>
+<li>Présentation de l’IA et des agents génératifs — Microsoft</li>
+<li>Fondements de l’IA — IBM</li>
+<li>Travailler plus intelligemment avec l’IA — Microsoft</li>
+</ul>
+<p><strong>Bloc Master — Mandatory</strong></p>
+<ul>
+<li>Déverrouiller le potentiel commercial — agents IA — Microsoft</li>
+<li>Foundations &amp; Applications of Generative AI — IBM</li>
+<li>Agentic AI in Practice — IBM</li>
+<li>Generative AI Fundamentals — Databricks</li>
+</ul>
+<h4 id="optional">Optional</h4>
+<p><strong>Bloc Licence — Optional</strong></p>
+<ul>
+<li>Concepts d’IA — IBM</li>
+<li>Introduire l’IA — IBM</li>
+<li>Introduction to Modern AI — Cisco</li>
+<li>Apply AI: Update Your Resume — Cisco</li>
+<li>Renforcez votre productivité grâce aux outils d’IA — Microsoft</li>
+</ul>
+<p><strong>Bloc Master — Optional</strong></p>
+<ul>
+<li>AI for Good Specialization — DeepLearning.AI</li>
+</ul>
+<h3 id="certifications-applied-ai">2.2 Certifications Applied AI</h3>
+<h4 id="mandatory-1">Mandatory</h4>
+<ul>
+<li>Scrum with AI Certified (SAC™) — ScrumStudy</li>
+<li>Construire des chatbots IA sans programmation — IBM</li>
+<li>Content Marketing: SEO &amp; AI Search Optimization — SEMrush</li>
+<li>Off-Page SEO &amp; AI Search Essentials — SEMrush</li>
+<li>Découvrir l’IA pour les leaders en finance — Microsoft</li>
+<li>Fondements de la Science des Données — IBM</li>
+<li>CS50’s Introduction to AI with Python — Harvard</li>
+<li>Machine Learning Specialization — DeepLearning.AI</li>
+<li>Mathematics for ML and Data Science — DeepLearning.AI</li>
+<li>Data Science Essentials with Python — Cisco</li>
+<li>Google Cloud Cybersecurity — Google</li>
+<li>Cyber Threat Management — Cisco</li>
+<li>Introduction to Modern AI — Cisco</li>
+<li>AI-Powered Performance Ads Certification — Google</li>
+<li>How to Become an AI-Powered Marketer — SEMrush</li>
+<li>Technical SEO &amp; AI Search Essentials — SEMrush</li>
+<li>n8n Automation - Level One — n8n</li>
+<li>Transformer votre entreprise avec l’IA — Microsoft</li>
+<li>watsonx Orchestrate : Automatisation avec IA Agent — IBM</li>
+<li>Clustering Clients avec KMeans — IBM</li>
+<li>Using AI Agents in Workflows — Databricks</li>
+<li>Bring AI to Your Data — Databricks</li>
+<li>Data Science: Capstone — Harvard</li>
+<li>Markets Quantitative Analysis — Citi (*Simulation Forage)</li>
+</ul>
+<h4 id="optional-1">Optional</h4>
+<ul>
+<li>Introduction to IoT &amp; Digital Transformation — Cisco</li>
+<li>AI-Powered Performance Ads Certification — Google</li>
+<li>Bring AI to Your Data — Databricks</li>
+<li>Fondements de l’Apprentissage Automatique — IBM</li>
+<li>AI Fundamentals with IBM SkillsBuild — Cisco</li>
+<li>AI-Powered Shopping Ads Certification — Google</li>
+<li>watsonx Assistant : Assistants Virtuels IA Générative — IBM</li>
+<li>n8n Automation - Level Two — n8n</li>
+<li>AI for Marketing, Sales &amp; Service Bootcamp — HubSpot</li>
+<li>GenAI for Proposal Generation — EAB (*Simulation Forage)</li>
+<li>AI Agent Pratique (Hands-on) — IBM</li>
+<li>Automation AI Accelerator — Datacom (*Simulation Forage)</li>
+<li>Quantitative Research — JPMorganChase (*Simulation Forage)</li>
+</ul>
+<h3 id="certifications-non-ai">2.3 Certifications Non-AI</h3>
+<h4 id="mandatory-2">Mandatory</h4>
+<ul>
+<li>Google Agile Essentials — Google</li>
+<li>Scrum Fundamentals Certified (SFC™) — ScrumStudy</li>
+<li>Project Management Essentials Certification — MSI</li>
+<li>Business Management Essentials Certification — MSI</li>
+<li>PMI Kickoff — PMI</li>
+<li>Fundamentals of Digital Marketing — Google</li>
+<li>HubSpot Digital Marketing — HubSpot</li>
+<li>HubSpot Content Marketing — HubSpot</li>
+<li>HubSpot Inbound Marketing — HubSpot</li>
+<li>Beginner SEO with Semrush — SEMrush</li>
+<li>Finance &amp; Accounting Essentials — IBM</li>
+<li>Company Essentials — Bloomberg (*Simulation Forage)</li>
+<li>Company Essentials — Citi (*Simulation Forage)</li>
+<li>Introduction to Finance — Mayer Brown (*Simulation Forage)</li>
+<li>CS50: Introduction to Computer Science — Harvard</li>
+<li>CS50’s Introduction to Programming with Python — Harvard</li>
+<li>CS50’s Introduction to Databases with SQL — Harvard</li>
+<li>Python pour la Science des Données, IA &amp; Développement —
+IBM</li>
+<li>Outils de Science des Données (open source) — IBM</li>
+<li>CS50’s Introduction to Cybersecurity — Harvard</li>
+<li>Introduction to Cybersecurity — Cisco</li>
+<li>Cybersecurity Essentials — Cisco</li>
+<li>Fortinet Certified Fundamentals Cybersecurity (FCF) — Fortinet</li>
+<li>Linux Essentials — Cisco</li>
+<li>Google Ads Search Certification — Google</li>
+<li>Google Ads Display Certification — Google</li>
+<li>Google Analytics Certification — Google</li>
+<li>Certification Publicités LinkedIn — LinkedIn</li>
+<li>HubSpot Marketing Hub Software — HubSpot</li>
+<li>Google Business Intelligence Certificate — Google</li>
+<li>Google Data Analytics Certificate — Google</li>
+<li>HubSpot Sales Hub Software — HubSpot</li>
+<li>HubSpot Service Hub Software — HubSpot</li>
+<li>HubSpot Revenue Operations — HubSpot</li>
+<li>Obtenir des données dans Power BI — Microsoft</li>
+<li>Google Project Management Certificate — Google</li>
+<li>Disciplined Agile Essentials — PMI</li>
+<li>Scrum for Operations &amp; DevOps Fundamentals Certified —
+ScrumStudy</li>
+<li>Lean Six Sigma White Belt Certification — MSI</li>
+<li>Bloomberg Market Concepts — Bloomberg</li>
+<li>Bloomberg Finance Fundamentals — Bloomberg</li>
+<li>Bloomberg Spreadsheet Analysis — Bloomberg</li>
+<li>Environmental Social Governance (ESG) — Bloomberg</li>
+<li>Risk — Goldman Sachs (*Simulation Forage)</li>
+<li>Investment Banking — JPMorganChase (*Simulation Forage)</li>
+</ul>
+<h4 id="optional-2">Optional</h4>
+<ul>
+<li>Google People Management Essentials — Google</li>
+<li>Discovering Entrepreneurship — Cisco</li>
+<li>HubSpot Social Media Marketing — HubSpot</li>
+<li>HubSpot Email Marketing — HubSpot</li>
+<li>Keyword Research Essentials — SEMrush</li>
+<li>Finance — Citi (*Simulation Forage)</li>
+<li>Associate Data Practitioner — Google</li>
+<li>Introduction to Data Science — Cisco</li>
+<li>TCP/IP Protocol Overview — IBM</li>
+<li>Fortinet Certified Associate Cybersecurity (FCA) — Fortinet</li>
+<li>Ahrefs SEO Certification — Ahrefs</li>
+<li>Google Advanced Data Analytics Certificate — Google</li>
+<li>Digital Transformation — BCG (*Simulation Forage)</li>
+<li>Project Manager — Siemens Mobility (*Simulation Forage)</li>
+<li>Operations — Goldman Sachs (*Simulation Forage)</li>
+<li>Investment Banking — Bank of America (*Simulation Forage)</li>
+</ul>
+<hr />
+<h2 id="couverture-par-programme">3. Couverture par programme</h2>
+<h3 id="licence-en-management">3.1 Licence en Management</h3>
+<p>Total: <strong>20 certifications</strong> — <strong>12
+mandatory</strong>, <strong>8 optional</strong>.</p>
+<h4 id="ai-literacy-mandatory">AI Literacy — Mandatory</h4>
+<ul>
+<li>Google AI Essentials — Google</li>
+<li>Google Prompting Essentials — Google</li>
+<li>Présentation de l’IA et des agents génératifs — Microsoft</li>
+<li>Fondements de l’IA — IBM</li>
+<li>Travailler plus intelligemment avec l’IA — Microsoft</li>
+</ul>
+<h4 id="ai-literacy-optional">AI Literacy — Optional</h4>
+<ul>
+<li>Concepts d’IA — IBM</li>
+<li>Introduire l’IA — IBM</li>
+<li>Introduction to Modern AI — Cisco</li>
+<li>Apply AI: Update Your Resume — Cisco</li>
+<li>Renforcez votre productivité grâce aux outils d’IA — Microsoft</li>
+</ul>
+<h4 id="applied-ai-mandatory">Applied AI — Mandatory</h4>
+<ul>
+<li>Scrum with AI Certified (SAC™) — ScrumStudy</li>
+<li>Construire des chatbots IA sans programmation — IBM</li>
+</ul>
+<h4 id="applied-ai-optional">Applied AI — Optional</h4>
+<ul>
+<li>Introduction to IoT &amp; Digital Transformation — Cisco</li>
+</ul>
+<h4 id="non-ai-mandatory">Non-AI — Mandatory</h4>
+<ul>
+<li>Google Agile Essentials — Google</li>
+<li>Scrum Fundamentals Certified (SFC™) — ScrumStudy</li>
+<li>Project Management Essentials Certification — MSI</li>
+<li>Business Management Essentials Certification — MSI</li>
+<li>PMI Kickoff — PMI</li>
+</ul>
+<h4 id="non-ai-optional">Non-AI — Optional</h4>
+<ul>
+<li>Google People Management Essentials — Google</li>
+<li>Discovering Entrepreneurship — Cisco</li>
+</ul>
+<h3 id="licence-en-marketing">3.2 Licence en Marketing</h3>
+<p>Total: <strong>22 certifications</strong> — <strong>13
+mandatory</strong>, <strong>9 optional</strong>.</p>
+<h4 id="ai-literacy-mandatory-1">AI Literacy — Mandatory</h4>
+<ul>
+<li>Google AI Essentials — Google</li>
+<li>Google Prompting Essentials — Google</li>
+<li>Présentation de l’IA et des agents génératifs — Microsoft</li>
+<li>Fondements de l’IA — IBM</li>
+<li>Travailler plus intelligemment avec l’IA — Microsoft</li>
+</ul>
+<h4 id="ai-literacy-optional-1">AI Literacy — Optional</h4>
+<ul>
+<li>Concepts d’IA — IBM</li>
+<li>Introduire l’IA — IBM</li>
+<li>Introduction to Modern AI — Cisco</li>
+<li>Apply AI: Update Your Resume — Cisco</li>
+<li>Renforcez votre productivité grâce aux outils d’IA — Microsoft</li>
+</ul>
+<h4 id="applied-ai-mandatory-1">Applied AI — Mandatory</h4>
+<ul>
+<li>Content Marketing: SEO &amp; AI Search Optimization — SEMrush</li>
+<li>Off-Page SEO &amp; AI Search Essentials — SEMrush</li>
+<li>Construire des chatbots IA sans programmation — IBM</li>
+</ul>
+<h4 id="applied-ai-optional-1">Applied AI — Optional</h4>
+<ul>
+<li>AI-Powered Performance Ads Certification — Google</li>
+</ul>
+<h4 id="non-ai-mandatory-1">Non-AI — Mandatory</h4>
+<ul>
+<li>Fundamentals of Digital Marketing — Google</li>
+<li>HubSpot Digital Marketing — HubSpot</li>
+<li>HubSpot Content Marketing — HubSpot</li>
+<li>HubSpot Inbound Marketing — HubSpot</li>
+<li>Beginner SEO with Semrush — SEMrush</li>
+</ul>
+<h4 id="non-ai-optional-1">Non-AI — Optional</h4>
+<ul>
+<li>HubSpot Social Media Marketing — HubSpot</li>
+<li>HubSpot Email Marketing — HubSpot</li>
+<li>Keyword Research Essentials — SEMrush</li>
+</ul>
+<h3 id="licence-en-finance">3.3 Licence en Finance</h3>
+<p>Total: <strong>18 certifications</strong> — <strong>11
+mandatory</strong>, <strong>7 optional</strong>.</p>
+<h4 id="ai-literacy-mandatory-2">AI Literacy — Mandatory</h4>
+<ul>
+<li>Google AI Essentials — Google</li>
+<li>Google Prompting Essentials — Google</li>
+<li>Présentation de l’IA et des agents génératifs — Microsoft</li>
+<li>Fondements de l’IA — IBM</li>
+<li>Travailler plus intelligemment avec l’IA — Microsoft</li>
+</ul>
+<h4 id="ai-literacy-optional-2">AI Literacy — Optional</h4>
+<ul>
+<li>Concepts d’IA — IBM</li>
+<li>Introduire l’IA — IBM</li>
+<li>Introduction to Modern AI — Cisco</li>
+<li>Apply AI: Update Your Resume — Cisco</li>
+<li>Renforcez votre productivité grâce aux outils d’IA — Microsoft</li>
+</ul>
+<h4 id="applied-ai-mandatory-2">Applied AI — Mandatory</h4>
+<ul>
+<li>Découvrir l’IA pour les leaders en finance — Microsoft</li>
+<li>Fondements de la Science des Données — IBM</li>
+</ul>
+<h4 id="applied-ai-optional-2">Applied AI — Optional</h4>
+<ul>
+<li>Bring AI to Your Data — Databricks</li>
+</ul>
+<h4 id="non-ai-mandatory-2">Non-AI — Mandatory</h4>
+<ul>
+<li>Finance &amp; Accounting Essentials — IBM</li>
+<li>Company Essentials — Bloomberg (*Simulation Forage)</li>
+<li>Company Essentials — Citi (*Simulation Forage)</li>
+<li>Introduction to Finance — Mayer Brown (*Simulation Forage)</li>
+</ul>
+<h4 id="non-ai-optional-2">Non-AI — Optional</h4>
+<ul>
+<li>Finance — Citi (*Simulation Forage)</li>
+</ul>
+<h3 id="licence-en-génie-logiciel-option-ia">3.4 Licence en Génie
+Logiciel — Option IA</h3>
+<p>Total: <strong>22 certifications</strong> — <strong>14
+mandatory</strong>, <strong>8 optional</strong>.</p>
+<h4 id="ai-literacy-mandatory-3">AI Literacy — Mandatory</h4>
+<ul>
+<li>Google AI Essentials — Google</li>
+<li>Google Prompting Essentials — Google</li>
+<li>Présentation de l’IA et des agents génératifs — Microsoft</li>
+<li>Fondements de l’IA — IBM</li>
+<li>Travailler plus intelligemment avec l’IA — Microsoft</li>
+</ul>
+<h4 id="ai-literacy-optional-3">AI Literacy — Optional</h4>
+<ul>
+<li>Concepts d’IA — IBM</li>
+<li>Introduire l’IA — IBM</li>
+<li>Introduction to Modern AI — Cisco</li>
+<li>Apply AI: Update Your Resume — Cisco</li>
+<li>Renforcez votre productivité grâce aux outils d’IA — Microsoft</li>
+</ul>
+<h4 id="applied-ai-mandatory-3">Applied AI — Mandatory</h4>
+<ul>
+<li>CS50’s Introduction to AI with Python — Harvard</li>
+<li>Machine Learning Specialization — DeepLearning.AI</li>
+<li>Mathematics for ML and Data Science — DeepLearning.AI</li>
+<li>Data Science Essentials with Python — Cisco</li>
+</ul>
+<h4 id="applied-ai-optional-3">Applied AI — Optional</h4>
+<ul>
+<li>Fondements de l’Apprentissage Automatique — IBM</li>
+</ul>
+<h4 id="non-ai-mandatory-3">Non-AI — Mandatory</h4>
+<ul>
+<li>CS50: Introduction to Computer Science — Harvard</li>
+<li>CS50’s Introduction to Programming with Python — Harvard</li>
+<li>CS50’s Introduction to Databases with SQL — Harvard</li>
+<li>Python pour la Science des Données, IA &amp; Développement —
+IBM</li>
+<li>Outils de Science des Données (open source) — IBM</li>
+</ul>
+<h4 id="non-ai-optional-3">Non-AI — Optional</h4>
+<ul>
+<li>Associate Data Practitioner — Google</li>
+<li>Introduction to Data Science — Cisco</li>
+</ul>
+<h3 id="licence-en-génie-logiciel-option-cybersécurité">3.5 Licence en
+Génie Logiciel — Option Cybersécurité</h3>
+<p>Total: <strong>22 certifications</strong> — <strong>14
+mandatory</strong>, <strong>8 optional</strong>.</p>
+<h4 id="ai-literacy-mandatory-4">AI Literacy — Mandatory</h4>
+<ul>
+<li>Google AI Essentials — Google</li>
+<li>Google Prompting Essentials — Google</li>
+<li>Présentation de l’IA et des agents génératifs — Microsoft</li>
+<li>Fondements de l’IA — IBM</li>
+<li>Travailler plus intelligemment avec l’IA — Microsoft</li>
+</ul>
+<h4 id="ai-literacy-optional-4">AI Literacy — Optional</h4>
+<ul>
+<li>Concepts d’IA — IBM</li>
+<li>Introduire l’IA — IBM</li>
+<li>Introduction to Modern AI — Cisco</li>
+<li>Apply AI: Update Your Resume — Cisco</li>
+<li>Renforcez votre productivité grâce aux outils d’IA — Microsoft</li>
+</ul>
+<h4 id="applied-ai-mandatory-4">Applied AI — Mandatory</h4>
+<ul>
+<li>Google Cloud Cybersecurity — Google</li>
+<li>Cyber Threat Management — Cisco</li>
+<li>Introduction to Modern AI — Cisco</li>
+</ul>
+<h4 id="applied-ai-optional-4">Applied AI — Optional</h4>
+<ul>
+<li>AI Fundamentals with IBM SkillsBuild — Cisco</li>
+</ul>
+<h4 id="non-ai-mandatory-4">Non-AI — Mandatory</h4>
+<ul>
+<li>CS50: Introduction to Computer Science — Harvard</li>
+<li>CS50’s Introduction to Cybersecurity — Harvard</li>
+<li>Introduction to Cybersecurity — Cisco</li>
+<li>Cybersecurity Essentials — Cisco</li>
+<li>Fortinet Certified Fundamentals Cybersecurity (FCF) — Fortinet</li>
+<li>Linux Essentials — Cisco</li>
+</ul>
+<h4 id="non-ai-optional-4">Non-AI — Optional</h4>
+<ul>
+<li>TCP/IP Protocol Overview — IBM</li>
+<li>Fortinet Certified Associate Cybersecurity (FCA) — Fortinet</li>
+</ul>
+<h3 id="master-en-digital-marketing-ia">3.6 Master en Digital Marketing
+&amp; IA</h3>
+<p>Total: <strong>20 certifications</strong> — <strong>13
+mandatory</strong>, <strong>7 optional</strong>.</p>
+<h4 id="ai-literacy-mandatory-5">AI Literacy — Mandatory</h4>
+<ul>
+<li>Déverrouiller le potentiel commercial — agents IA — Microsoft</li>
+<li>Foundations &amp; Applications of Generative AI — IBM</li>
+<li>Agentic AI in Practice — IBM</li>
+<li>Generative AI Fundamentals — Databricks</li>
+</ul>
+<h4 id="ai-literacy-optional-5">AI Literacy — Optional</h4>
+<ul>
+<li>AI for Good Specialization — DeepLearning.AI</li>
+</ul>
+<h4 id="applied-ai-mandatory-5">Applied AI — Mandatory</h4>
+<ul>
+<li>AI-Powered Performance Ads Certification — Google</li>
+<li>How to Become an AI-Powered Marketer — SEMrush</li>
+<li>Technical SEO &amp; AI Search Essentials — SEMrush</li>
+<li>n8n Automation - Level One — n8n</li>
+</ul>
+<h4 id="applied-ai-optional-5">Applied AI — Optional</h4>
+<ul>
+<li>AI-Powered Shopping Ads Certification — Google</li>
+<li>watsonx Assistant : Assistants Virtuels IA Générative — IBM</li>
+<li>n8n Automation - Level Two — n8n</li>
+<li>AI for Marketing, Sales &amp; Service Bootcamp — HubSpot</li>
+<li>GenAI for Proposal Generation — EAB (*Simulation Forage)</li>
+</ul>
+<h4 id="non-ai-mandatory-5">Non-AI — Mandatory</h4>
+<ul>
+<li>Google Ads Search Certification — Google</li>
+<li>Google Ads Display Certification — Google</li>
+<li>Google Analytics Certification — Google</li>
+<li>Certification Publicités LinkedIn — LinkedIn</li>
+<li>HubSpot Marketing Hub Software — HubSpot</li>
+</ul>
+<h4 id="non-ai-optional-5">Non-AI — Optional</h4>
+<ul>
+<li>Ahrefs SEO Certification — Ahrefs</li>
+</ul>
+<h3 id="master-en-crm-transformation-digitale">3.7 Master en CRM &amp;
+Transformation Digitale</h3>
+<p>Total: <strong>22 certifications</strong> — <strong>14
+mandatory</strong>, <strong>8 optional</strong>.</p>
+<h4 id="ai-literacy-mandatory-6">AI Literacy — Mandatory</h4>
+<ul>
+<li>Déverrouiller le potentiel commercial — agents IA — Microsoft</li>
+<li>Foundations &amp; Applications of Generative AI — IBM</li>
+<li>Agentic AI in Practice — IBM</li>
+<li>Generative AI Fundamentals — Databricks</li>
+</ul>
+<h4 id="ai-literacy-optional-6">AI Literacy — Optional</h4>
+<ul>
+<li>AI for Good Specialization — DeepLearning.AI</li>
+</ul>
+<h4 id="applied-ai-mandatory-6">Applied AI — Mandatory</h4>
+<ul>
+<li>Transformer votre entreprise avec l’IA — Microsoft</li>
+<li>watsonx Orchestrate : Automatisation avec IA Agent — IBM</li>
+<li>Clustering Clients avec KMeans — IBM</li>
+<li>n8n Automation - Level One — n8n</li>
+</ul>
+<h4 id="applied-ai-optional-6">Applied AI — Optional</h4>
+<ul>
+<li>watsonx Assistant : Assistants Virtuels IA Générative — IBM</li>
+<li>n8n Automation - Level Two — n8n</li>
+<li>AI for Marketing, Sales &amp; Service Bootcamp — HubSpot</li>
+<li>AI Agent Pratique (Hands-on) — IBM</li>
+<li>Bring AI to Your Data — Databricks</li>
+</ul>
+<h4 id="non-ai-mandatory-6">Non-AI — Mandatory</h4>
+<ul>
+<li>Google Business Intelligence Certificate — Google</li>
+<li>Google Data Analytics Certificate — Google</li>
+<li>HubSpot Sales Hub Software — HubSpot</li>
+<li>HubSpot Service Hub Software — HubSpot</li>
+<li>HubSpot Revenue Operations — HubSpot</li>
+<li>Obtenir des données dans Power BI — Microsoft</li>
+</ul>
+<h4 id="non-ai-optional-6">Non-AI — Optional</h4>
+<ul>
+<li>Google Advanced Data Analytics Certificate — Google</li>
+<li>Digital Transformation — BCG (*Simulation Forage)</li>
+</ul>
+<h3 id="master-en-project-management">3.8 Master en Project
+Management</h3>
+<p>Total: <strong>19 certifications</strong> — <strong>13
+mandatory</strong>, <strong>6 optional</strong>.</p>
+<h4 id="ai-literacy-mandatory-7">AI Literacy — Mandatory</h4>
+<ul>
+<li>Déverrouiller le potentiel commercial — agents IA — Microsoft</li>
+<li>Foundations &amp; Applications of Generative AI — IBM</li>
+<li>Agentic AI in Practice — IBM</li>
+<li>Generative AI Fundamentals — Databricks</li>
+</ul>
+<h4 id="ai-literacy-optional-7">AI Literacy — Optional</h4>
+<ul>
+<li>AI for Good Specialization — DeepLearning.AI</li>
+</ul>
+<h4 id="applied-ai-mandatory-7">Applied AI — Mandatory</h4>
+<ul>
+<li>Scrum with AI Certified (SAC™) — ScrumStudy</li>
+<li>Using AI Agents in Workflows — Databricks</li>
+<li>n8n Automation - Level One — n8n</li>
+<li>Clustering Clients avec KMeans — IBM</li>
+</ul>
+<h4 id="applied-ai-optional-7">Applied AI — Optional</h4>
+<ul>
+<li>n8n Automation - Level Two — n8n</li>
+<li>AI Agent Pratique (Hands-on) — IBM</li>
+<li>Automation AI Accelerator — Datacom (*Simulation Forage)</li>
+<li>GenAI for Proposal Generation — EAB (*Simulation Forage)</li>
+</ul>
+<h4 id="non-ai-mandatory-7">Non-AI — Mandatory</h4>
+<ul>
+<li>Google Project Management Certificate — Google</li>
+<li>Disciplined Agile Essentials — PMI</li>
+<li>Scrum for Operations &amp; DevOps Fundamentals Certified —
+ScrumStudy</li>
+<li>Lean Six Sigma White Belt Certification — MSI</li>
+<li>Bloomberg Market Concepts — Bloomberg</li>
+</ul>
+<h4 id="non-ai-optional-7">Non-AI — Optional</h4>
+<ul>
+<li>Project Manager — Siemens Mobility (*Simulation Forage)</li>
+</ul>
+<h3 id="master-en-ingénierie-financière">3.9 Master en Ingénierie
+Financière</h3>
+<p>Total: <strong>18 certifications</strong> — <strong>14
+mandatory</strong>, <strong>4 optional</strong>.</p>
+<h4 id="ai-literacy-mandatory-8">AI Literacy — Mandatory</h4>
+<ul>
+<li>Déverrouiller le potentiel commercial — agents IA — Microsoft</li>
+<li>Foundations &amp; Applications of Generative AI — IBM</li>
+<li>Agentic AI in Practice — IBM</li>
+<li>Generative AI Fundamentals — Databricks</li>
+</ul>
+<h4 id="ai-literacy-optional-8">AI Literacy — Optional</h4>
+<ul>
+<li>AI for Good Specialization — DeepLearning.AI</li>
+</ul>
+<h4 id="applied-ai-mandatory-8">Applied AI — Mandatory</h4>
+<ul>
+<li>Bring AI to Your Data — Databricks</li>
+<li>Mathematics for ML and Data Science — DeepLearning.AI</li>
+<li>Data Science: Capstone — Harvard</li>
+<li>Markets Quantitative Analysis — Citi (*Simulation Forage)</li>
+</ul>
+<h4 id="applied-ai-optional-8">Applied AI — Optional</h4>
+<ul>
+<li>Quantitative Research — JPMorganChase (*Simulation Forage)</li>
+</ul>
+<h4 id="non-ai-mandatory-8">Non-AI — Mandatory</h4>
+<ul>
+<li>Bloomberg Market Concepts — Bloomberg</li>
+<li>Bloomberg Finance Fundamentals — Bloomberg</li>
+<li>Bloomberg Spreadsheet Analysis — Bloomberg</li>
+<li>Environmental Social Governance (ESG) — Bloomberg</li>
+<li>Risk — Goldman Sachs (*Simulation Forage)</li>
+<li>Investment Banking — JPMorganChase (*Simulation Forage)</li>
+</ul>
+<h4 id="non-ai-optional-8">Non-AI — Optional</h4>
+<ul>
+<li>Operations — Goldman Sachs (*Simulation Forage)</li>
+<li>Investment Banking — Bank of America (*Simulation Forage)</li>
+</ul>
+</body>
+</html>

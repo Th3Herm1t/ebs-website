@@ -1,0 +1,345 @@
+EXTRACTION RESULTS
+==================
+
+Sections found: 11
+  ia-transversal | 🧠 Bloc IA Transversal — Obligatoire pour tous les parcours
+  mgmt | 🏢 Licence en Management
+  mktg | 📣 Licence en Marketing
+  fin | 💹 Licence en Finance
+  ia | 🤖 Licence en Génie Logiciel — Option IA
+  cyber | 🔐 Licence en Génie Logiciel — Option Cybersécurité
+  mktgM | 🚀 Master en Digital Marketing &amp; Intelligence Artificielle
+  crm | ⚙️ Master en CRM &amp; Transformation Digitale
+  proj | 💡 Master en Project Management
+  finM | 🏦 Master en Ingénierie Financière
+  recap | 📊 Récapitulatif &amp; Intégration Web
+
+Subsections:
+  ▸ Bloc IA — Licences (Débutant &amp; Intermédiaire) · 12 certifications
+  ▸ Bloc IA — Masters (Avancé) · 9 certifications
+
+Total certifications extracted: 267
+
+By Provider:
+  Forage: 59
+  IBM: 44
+  HubSpot: 31
+  Google: 25
+  Semrush: 25
+  Cisco: 23
+  Harvard: 13
+  Google Career: 9
+  Microsoft: 7
+  Databricks: 5
+  Scrum: 4
+  DeepLearning.AI: 4
+  Bloomberg: 4
+  MSI: 3
+  Fortinet: 3
+  LinkedIn: 3
+  PMI: 2
+  n8n: 2
+  Ahrefs: 1
+
+By Level:
+  DÉBUTANT: 57
+  INTERMÉDIAIRE: 75
+  AVANCÉ: 135
+
+By Year:
+  L1: 33
+  L2: 46
+  L3: 53
+  M1: 70
+  M2: 65
+
+
+CERTIFICATIONS BY SECTION
+=========================
+
+--- 🧠 Bloc IA Transversal — Obligatoire pour tous les parcours ---
+CERT-001 | Google AI Essentials | Google | DÉBUTANT | L1 | https://www.skills.google/paths/2336
+CERT-002 | Google Prompting Essentials | Google | DÉBUTANT | L1 | https://www.skills.google/paths/2337
+CERT-003 | Présentation de l'IA et des agents génératifs | Microsoft | DÉBUTANT | L1 | https://learn.microsoft.com/fr-fr/training/modules/fundamentals-generative-ai/
+CERT-004 | Fondements de l'IA | IBM | DÉBUTANT | L1 | https://cognitiveclass.ai/learn/fundamentals-of-ai
+CERT-005 | Concepts d'IA | IBM | DÉBUTANT | L1 | https://cognitiveclass.ai/courses/ai-concepts-ba67406f-972f-40ec-bd11-4c45a979f57d
+CERT-006 | Introduire l'IA | IBM | DÉBUTANT | L1 | https://cognitiveclass.ai/courses/introducing-ai-09f5c2a8-b79c-443d-b09a-8227c40c2108
+CERT-007 | Introduction to Modern AI | Cisco | DÉBUTANT | L1 | https://www.netacad.com/courses/introduction-to-modern-ai
+CERT-008 | Apply AI: Update Your Resume | Cisco | DÉBUTANT | L1 | https://www.netacad.com/courses/apply-ai-update-your-resume
+CERT-009 | Statistiques 101 | IBM | DÉBUTANT | L1 | https://cognitiveclass.ai/courses/statistics-101
+CERT-010 | Big Data 101 | IBM | DÉBUTANT | L2 | https://cognitiveclass.ai/courses/what-is-big-data
+CERT-011 | Ingénierie des Prompts pour Tous | IBM | INTERMÉDIAIRE | L2 | https://cognitiveclass.ai/courses/prompt-engineering-for-everyone
+CERT-012 | Travailler plus intelligemment avec l'IA | Microsoft | INTERMÉDIAIRE | L2 | https://learn.microsoft.com/fr-fr/training/paths/work-smarter-with-ai/
+CERT-013 | Renforcez votre productivité grâce aux outils d'IA | Microsoft | INTERMÉDIAIRE | L2 | https://learn.microsoft.com/fr-fr/plans/w0giztqd44m20
+CERT-014 | Fondements de la Science des Données | IBM | INTERMÉDIAIRE | L2 | https://cognitiveclass.ai/learn/data-science
+CERT-015 | Fondements du Big Data | IBM | INTERMÉDIAIRE | L3 | https://cognitiveclass.ai/learn/big-data
+CERT-016 | Méthodologie de la Science des Données | IBM | INTERMÉDIAIRE | L3 | https://cognitiveclass.ai/courses/data-science-methodology-2
+CERT-017 | Outils de Science des Données (open source) | IBM | INTERMÉDIAIRE | L3 | https://cognitiveclass.ai/courses/data-science-hands-open-source-tools-2
+CERT-018 | Introduction to Data Science | Cisco | INTERMÉDIAIRE | L2 | https://www.netacad.com/courses/introduction-data-science
+CERT-019 | AI Fundamentals with IBM SkillsBuild | Cisco | INTERMÉDIAIRE | L2 | https://www.netacad.com/courses/ai-ibm-skillsbuild
+CERT-020 | Data Analytics Essentials | Cisco | INTERMÉDIAIRE | L3 | https://www.netacad.com/courses/data-analytics-essentials
+CERT-021 | Introduction to IoT & Digital Transformation | Cisco | INTERMÉDIAIRE | L3 | https://www.netacad.com/courses/introduction-iot
+CERT-022 | Construire des chatbots IA sans programmation | IBM | INTERMÉDIAIRE | L3 | https://cognitiveclass.ai/courses/building-ai-powered-chatbots-without-programming
+CERT-023 | Scrum with AI Certified (SAC™) | Scrum | AVANCÉ | M1 | https://www.scrumstudy.com/certification/scrum-with-ai-certified
+CERT-024 | Déverrouiller le potentiel commercial — agents IA | Microsoft | AVANCÉ | M1 | https://learn.microsoft.com/fr-fr/plans/pzxuztqe0kpjq
+CERT-025 | Foundations & Applications of Generative AI | IBM | AVANCÉ | M1 | https://www.ibm.com/training/learning-path/foundations-and-applications-of-generative-ai-1061
+CERT-026 | Agentic AI in Practice | IBM | AVANCÉ | M1 | https://www.ibm.com/training/learning-path/agentic-ai-in-practice-1058
+CERT-027 | AI Agent Pratique (Hands-on) | IBM | AVANCÉ | M1 | https://cognitiveclass.ai/learn/agentic-ai-hands-on
+CERT-028 | Introduction à l'IA Agent | IBM | AVANCÉ | M1 | https://cognitiveclass.ai/courses/introduction-to-agentic-ai
+CERT-029 | Build & Deploy Modern Web and AI Apps | IBM | AVANCÉ | M2 | https://www.ibm.com/training/learning-path/build-and-deploy-modern-web-and-ai-apps-from-html-basics-to-generative-ai-1062
+CERT-030 | Fondements de l'Apprentissage Profond | IBM | AVANCÉ | M2 | https://cognitiveclass.ai/courses/introduction-deep-learning
+CERT-031 | Generative AI Fundamentals | Databricks | AVANCÉ | M1 | https://www.databricks.com/resources/learn/training/generative-ai-fundamentals
+CERT-032 | Bring AI to Your Data (Databricks Fundamentals) | Databricks | AVANCÉ | M1 | https://www.databricks.com/resources/learn/training/databricks-fundamentals
+CERT-033 | AI for Good Specialization | DeepLearning.AI | AVANCÉ | M2 | https://www.deeplearning.ai/courses/ai-for-good/
+CERT-034 | Data Science: Capstone (Harvard) | Harvard | AVANCÉ | M2 | https://pll.harvard.edu/course/data-science-capstone/2026-04
+CERT-035 | Datacom | Automation AI Accelerator | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/datacom/automation-zn3l
+CERT-036 | EAB | GenAI for Proposal Generation | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/eab/gen-ai-for-proposal-generation-u7cu
+
+--- 🏢 Licence en Management ---
+CERT-037 | Google People Management Essentials | Google | INTERMÉDIAIRE | L2 | https://www.skills.google/paths/3371
+CERT-038 | Google Agile Essentials | Google | DÉBUTANT | L1 | https://www.skills.google/paths/2338
+CERT-039 | Scrum Fundamentals Certified (SFC®) | Scrum | DÉBUTANT | L1 | https://www.scrumstudy.com/certification/scrum-fundamentals-certified
+CERT-040 | Scrum with AI Certified (SAC™) | Scrum | INTERMÉDIAIRE | L3 | https://www.scrumstudy.com/certification/scrum-with-ai-certified
+CERT-041 | Project Management Essentials Certification | MSI | DÉBUTANT | L2 | https://courses.msicertified.com/course/project-management-essentials-certification
+CERT-042 | Business Management Essentials Certification | MSI | DÉBUTANT | L1 | https://courses.msicertified.com/course/free-business-management-certification
+CERT-043 | PMI Kickoff | PMI | DÉBUTANT | L2 | https://www.pmi.org/kickoff
+CERT-044 | Introduction au Développement Agile et Scrum | IBM | DÉBUTANT | L2 | https://cognitiveclass.ai/courses/introduction-to-agile-development-and-scrum
+CERT-045 | Creating Compelling Reports | Cisco | DÉBUTANT | L2 | https://www.netacad.com/courses/compelling-reports
+CERT-046 | Discovering Entrepreneurship | Cisco | DÉBUTANT | L1 | https://www.netacad.com/courses/discovering-entrepreneurship
+CERT-047 | Launching a Business Venture | Cisco | INTERMÉDIAIRE | L2 | https://www.netacad.com/courses/business-venture
+CERT-048 | Managing a Business Venture | Cisco | INTERMÉDIAIRE | L3 | https://www.netacad.com/courses/managing-business-venture
+CERT-049 | PwC US | Management Consulting | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/pwc-us/management-consulting-gwcm
+CERT-050 | Bloomberg Company Essentials | Forage | DÉBUTANT | L2 | https://www.theforage.com/short-courses/bloomberg/company-pathway-wqtk
+CERT-051 | Bloomberg | Client Engagement | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/bloomberg/client-engagement-a6hi
+CERT-052 | Bloomberg | Client Service | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/bloomberg/client-service-l3u2
+CERT-053 | Mastercard | Advisors & Consulting Services | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/mastercard/advisors-client-services-xvlw
+CERT-054 | BCG | Introduction to Strategy Consulting | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/bcg/intro-strategy-consulting-ubsq
+
+--- 📣 Licence en Marketing ---
+CERT-055 | Fundamentals of Digital Marketing | Google | DÉBUTANT | L1 | https://skillshop.exceedlms.com/student/collection/1830706
+CERT-056 | Communiquer vos idées avec le storytelling et le design | Google | DÉBUTANT | L1 | https://skillshop.exceedlms.com/student/collection/656440-storytelling-design
+CERT-057 | Google UX Design Certificate | Google Career | INTERMÉDIAIRE | L3 | https://www.skills.google/paths/2271
+CERT-058 | HubSpot Social Media Marketing | HubSpot | DÉBUTANT | L2 | https://academy.hubspot.com/courses/social-media
+CERT-059 | HubSpot Digital Marketing | HubSpot | DÉBUTANT | L1 | https://academy.hubspot.com/courses/digital-marketing
+CERT-060 | HubSpot Content Marketing | HubSpot | DÉBUTANT | L1 | https://academy.hubspot.com/courses/content-marketing
+CERT-061 | HubSpot SEO | HubSpot | DÉBUTANT | L2 | https://academy.hubspot.com
+CERT-062 | HubSpot SEO II | HubSpot | INTERMÉDIAIRE | L3 | https://academy.hubspot.com
+CERT-063 | HubSpot Inbound | HubSpot | DÉBUTANT | L1 | https://academy.hubspot.com/courses/inbound
+CERT-064 | HubSpot Inbound Marketing | HubSpot | INTERMÉDIAIRE | L2 | https://academy.hubspot.com/courses/inbound-marketing
+CERT-065 | HubSpot Digital Advertising | HubSpot | INTERMÉDIAIRE | L3 | https://academy.hubspot.com/courses/digital-advertising
+CERT-066 | HubSpot Email Marketing | HubSpot | DÉBUTANT | L2 | https://academy.hubspot.com/courses/email-marketing
+CERT-067 | Beginner SEO with Semrush | Semrush | DÉBUTANT | L1 | https://www.semrush.com/academy/courses/seo-essentials-with-semrush/
+CERT-068 | Getting Started with Semrush | Semrush | DÉBUTANT | L1 | https://www.semrush.com/academy/courses/getting-started-with-semrush/
+CERT-069 | Keyword Research Essentials | Semrush | DÉBUTANT | L2 | https://www.semrush.com/academy/courses/keyword-research-essentials-with-semrush/
+CERT-070 | Fundamentals of Marketing Analytics | Semrush | DÉBUTANT | L2 | https://www.semrush.com/academy/courses/fundamentals-of-marketing-analytics/
+CERT-071 | Content Marketing Principles for Business | Semrush | DÉBUTANT | L2 | https://www.semrush.com/academy/courses/content-marketing-principles-for-business/
+CERT-072 | Content Creation for Magnetic Strategies | Semrush | INTERMÉDIAIRE | L2 | https://www.semrush.com/academy/courses/how-to-plan-magnetic-content-strategy/
+CERT-073 | Content Marketing: SEO & AI Search Optimization | Semrush | INTERMÉDIAIRE | L3 | https://www.semrush.com/academy/courses/content-marketing-essentials-for-seo-and-ai-search-with-semrush/
+CERT-074 | Off-Page SEO & AI Search Essentials | Semrush | INTERMÉDIAIRE | L3 | https://www.semrush.com/academy/courses/off-page-seo-and-ai-search-essentials-with-semrush/
+CERT-075 | Digital Advertising Campaigns | Semrush | INTERMÉDIAIRE | L3 | https://www.semrush.com/academy/courses/high-impact-digital-advertising-campaigns/
+CERT-076 | Influencer Marketing for Beginners | Semrush | DÉBUTANT | L2 | https://www.semrush.com/academy/courses/influencer-marketing-campaigns-for-beginners/
+CERT-077 | How to Increase Sales on Shopify | Semrush | INTERMÉDIAIRE | L3 | https://www.semrush.com/academy/courses/increase-sales-on-shopify-with-content-marketing/
+CERT-078 | Mastering Digital PR with Brian Dean | Semrush | INTERMÉDIAIRE | L3 | https://www.semrush.com/academy/courses/mastering-digital-pr-course-with-brian-dean/
+CERT-079 | Lloyds Banking Group | UX Design Introduction | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/lloyds-banking-group/ux-design-introduction-xhef
+
+--- 💹 Licence en Finance ---
+CERT-080 | Découvrir l'IA pour les leaders en finance | Microsoft | INTERMÉDIAIRE | L3 | https://learn.microsoft.com/fr-fr/training/paths/discover-microsoft-ai-leaders-financial-industry/
+CERT-081 | Finance & Accounting Essentials | IBM | DÉBUTANT | L2 | https://www.ibm.com/training/badge/finance-accounting-essentials
+CERT-082 | Mayer Brown | Introduction to Finance | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/mayer-brown/introduction-to-finance-du23
+CERT-083 | Citi | Finance | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/citi/finance-qt4o
+CERT-084 | Citi Company Essentials | Forage | DÉBUTANT | L2 | https://www.theforage.com/short-courses/citi/company-pathway-citi
+CERT-085 | Citi | Services (Treasury & Trade) | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/citi/treasury-trade-solutions-v8tg
+CERT-086 | Citi | Markets Sales & Trading | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/citi/markets-sales-trading-0vhv
+CERT-087 | Lloyds | Business & Commercial Banking (Intro) | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/lloyds-banking-group/business-commercial-banking-introduction-b3d2
+CERT-088 | Wells Fargo | Consumer, Small & Business Banking | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/wells-fargo/consumer-small-business-banking-tkzc
+CERT-089 | Wells Fargo | Personal Banker | Forage | DÉBUTANT | L2 | https://www.theforage.com/simulations/wells-fargo/personal-banker-dkfi
+CERT-090 | Clifford Chance | Financing the Real Economy | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/clifford-chance/sabre-finance-zn3t
+CERT-091 | Baker McKenzie | Corporate | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/baker-mckenzie-apac/corporate-0t4o
+CERT-092 | Latham & Watkins | Banking | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/latham-watkins/banking-shrf
+
+--- 🤖 Licence en Génie Logiciel — Option IA ---
+CERT-093 | Google AI Professional Certificate | Google Career | INTERMÉDIAIRE | L3 | https://www.skills.google/paths/3644
+CERT-094 | Associate Data Practitioner | Google | INTERMÉDIAIRE | L3 | https://www.skills.google/paths/1336
+CERT-095 | CS50: Introduction to Computer Science | Harvard | DÉBUTANT | L1 | https://pll.harvard.edu/course/cs50-introduction-computer-science
+CERT-096 | CS50's Introduction to Programming with Python | Harvard | DÉBUTANT | L1 | https://pll.harvard.edu/course/cs50s-introduction-programming-python
+CERT-097 | CS50's Introduction to AI with Python | Harvard | INTERMÉDIAIRE | L2 | https://pll.harvard.edu/course/cs50s-introduction-artificial-intelligence-python
+CERT-098 | CS50's Introduction to Databases with SQL | Harvard | INTERMÉDIAIRE | L2 | https://pll.harvard.edu/course/cs50s-introduction-databases-sql
+CERT-099 | Introduction to Data Science with Python | Harvard | INTERMÉDIAIRE | L2 | https://pll.harvard.edu/course/introduction-data-science-python
+CERT-100 | Machine Learning and AI with Python | Harvard | INTERMÉDIAIRE | L3 | https://pll.harvard.edu/course/machine-learning-and-ai-python
+CERT-101 | Mathematics for ML and Data Science | DeepLearning.AI | INTERMÉDIAIRE | L2 | https://www.deeplearning.ai/courses/mathematics-for-machine-learning-and-data-science-specialization/
+CERT-102 | Machine Learning Specialization | DeepLearning.AI | INTERMÉDIAIRE | L3 | https://www.deeplearning.ai/courses/machine-learning-specialization/
+CERT-103 | Data Science Essentials with Python | Cisco | INTERMÉDIAIRE | L3 | https://www.netacad.com/courses/data-science-essentials-with-python
+CERT-104 | Python pour la Science des Données, IA & Développement | IBM | DÉBUTANT | L1 | https://cognitiveclass.ai/courses/python-for-data-science-ai-development
+CERT-105 | Fondements de l'Apprentissage Automatique | IBM | DÉBUTANT | L2 | https://cognitiveclass.ai/learn/machine-learning-basics
+CERT-106 | Science des Données avec Python | IBM | INTERMÉDIAIRE | L2 | https://cognitiveclass.ai/learn/data-science-with-python
+CERT-107 | Analyse de Données avec Python | IBM | INTERMÉDIAIRE | L2 | https://cognitiveclass.ai/courses/data-analysis-python
+CERT-108 | Visualisation de Données avec Python | IBM | DÉBUTANT | L2 | https://cognitiveclass.ai/courses/data-visualization-python
+CERT-109 | Apprentissage Automatique avec Python | IBM | INTERMÉDIAIRE | L3 | https://cognitiveclass.ai/courses/machine-learning-with-python
+
+--- 🔐 Licence en Génie Logiciel — Option Cybersécurité ---
+CERT-110 | Google Cybersecurity Certificate | Google Career | INTERMÉDIAIRE | L3 | https://www.skills.google/paths/2268
+CERT-111 | Google Cloud Cybersecurity (Débutant) | Google | DÉBUTANT | L2 | https://www.skills.google/paths/419
+CERT-112 | Cloud Architect | Google | INTERMÉDIAIRE | L3 | https://www.skills.google/paths/12
+CERT-113 | CS50: Introduction to Computer Science | Harvard | DÉBUTANT | L1 | https://pll.harvard.edu/course/cs50-introduction-computer-science
+CERT-114 | CS50's Introduction to Cybersecurity | Harvard | DÉBUTANT | L2 | https://pll.harvard.edu/course/cs50s-introduction-cybersecurity
+CERT-115 | CS50's Introduction to Databases with SQL | Harvard | INTERMÉDIAIRE | L2 | https://pll.harvard.edu/course/cs50s-introduction-databases-sql
+CERT-116 | CS50's Introduction to Programming with Scratch | Harvard | DÉBUTANT | L1 | https://pll.harvard.edu/course/cs50s-introduction-programming-scratch
+CERT-117 | HTML Essentials | Cisco | DÉBUTANT | L1 | https://www.netacad.com/courses/html-essentials
+CERT-118 | CSS Essentials | Cisco | DÉBUTANT | L1 | https://www.netacad.com/courses/css-essentials
+CERT-119 | Linux Essentials | Cisco | DÉBUTANT | L2 | https://www.netacad.com/courses/linux-essentials
+CERT-120 | Linux Unhatched | Cisco | DÉBUTANT | L1 | https://www.netacad.com/courses/linux-unhatched
+CERT-121 | Introduction to Cybersecurity | Cisco | DÉBUTANT | L1 | https://www.netacad.com/courses/introduction-to-cybersecurity
+CERT-122 | Cybersecurity Essentials | Cisco | INTERMÉDIAIRE | L2 | https://www.netacad.com/courses/cybersecurity-essentials
+CERT-123 | Endpoint Security | Cisco | INTERMÉDIAIRE | L2 | https://www.netacad.com/courses/endpoint-security
+CERT-124 | Network Defense | Cisco | INTERMÉDIAIRE | L3 | https://www.netacad.com/courses/network-defense
+CERT-125 | Cyber Threat Management | Cisco | INTERMÉDIAIRE | L3 | https://www.netacad.com/courses/cyber-threat-management
+CERT-126 | Ethical Hacker | Cisco | INTERMÉDIAIRE | L3 | https://www.netacad.com/courses/ethical-hacker
+CERT-127 | Network Technician Career Path | Cisco | DÉBUTANT | L1 | https://www.netacad.com/career-paths/network-technician
+CERT-128 | Cyber Career Pathway | Cisco | DÉBUTANT | L1 | https://www.netacad.com/career-paths/cybersecurity
+CERT-129 | Fortinet Certified Fundamentals Cybersecurity (FCF) | Fortinet | DÉBUTANT | L2 | https://training.fortinet.com/local/staticpage/view.php?page=fcf_cybersecurity
+CERT-130 | Fortinet Certified Associate Cybersecurity (FCA) | Fortinet | INTERMÉDIAIRE | L3 | https://training.fortinet.com/local/staticpage/view.php?page=fca_cybersecurity
+CERT-131 | Network Security Expert (NSE) | Fortinet | INTERMÉDIAIRE | L3 | https://www.fortinet.com/nse-training
+CERT-132 | Certificat Professionnel DevOps & Ingénierie Logicielle | IBM | INTERMÉDIAIRE | L3 | https://cognitiveclass.ai/learn/ibm-devops-and-software-engineering-professional-certificate
+CERT-133 | Introduction au Cloud | IBM | DÉBUTANT | L1 | https://cognitiveclass.ai/courses/introduction-to-cloud
+CERT-134 | Commencer avec Git et GitHub | IBM | DÉBUTANT | L1 | https://cognitiveclass.ai/courses/getting-started-with-git-and-github
+CERT-135 | Introduction à DevOps | IBM | INTERMÉDIAIRE | L2 | https://cognitiveclass.ai/courses/introduction-to-devops
+CERT-136 | TCP/IP Protocol Overview | IBM | INTERMÉDIAIRE | L2 | https://cognitiveclass.ai/courses/tcp-ip-protocol-overview
+CERT-137 | SQL et Bases de Données Relationnelles 101 | IBM | DÉBUTANT | L2 | https://cognitiveclass.ai/courses/learn-sql-relational-databases
+CERT-138 | Introduction pratique aux commandes Linux & Shell | IBM | INTERMÉDIAIRE | L2 | https://cognitiveclass.ai/courses/hands-on-introduction-to-linux-commands-and-shell-scripting
+CERT-139 | Sécurité des Applications (Dev & DevOps) | IBM | INTERMÉDIAIRE | L3 | https://cognitiveclass.ai/courses/application-security-for-developers-and-devops-professionals
+CERT-140 | NoSQL et DBaaS 101 | IBM | INTERMÉDIAIRE | L3 | https://cognitiveclass.ai/courses/introduction-nosql-dbaas
+CERT-141 | Réseau Blockchain IoT (chaîne d'approvisionnement) | IBM | INTERMÉDIAIRE | L3 | https://cognitiveclass.ai/courses/blockchain-iot-node-red-food-network
+CERT-142 | PwC US | Cyber Security Consulting | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/pwc-us/cybersecurity-consulting-sr1m
+CERT-143 | PwC US | Digital Assurance & Transparency | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/pwc-us/digital-assurance-transparency-9rtv
+CERT-144 | Mastercard | Cybersecurity | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/mastercard/cybersecurity-t8ye
+CERT-145 | Datacom | Introduction to Cloud | Forage | DÉBUTANT | L2 | https://www.theforage.com/simulations/datacom/intro-cloud-yfvk
+CERT-146 | Datacom | Cyber Security Operations | Forage | INTERMÉDIAIRE | L3 | https://www.theforage.com/simulations/datacom/cybersecurity-zm6d
+
+--- 🚀 Master en Digital Marketing &amp; Intelligence Artificielle ---
+CERT-147 | Google Ads Search Certification | Google | AVANCÉ | M1 | https://skillshop.docebosaas.com/learn/courses/8692/google-ads-search-certification
+CERT-148 | Google Ads Display Certification | Google | AVANCÉ | M1 | https://skillshop.docebosaas.com/learn/courses/8696/google-ads-display-certification
+CERT-149 | Google Ads Measurement Certification | Google | AVANCÉ | M1 | https://skillshop.docebosaas.com/learn/courses/18539/google-ads-measurement-certification
+CERT-150 | Google Ads Creative Certification | Google | AVANCÉ | M1 | https://skillshop.docebosaas.com/learn/courses/8992/google-ads-creative-certification
+CERT-151 | Google Ads Apps Certification | Google | AVANCÉ | M2 | https://skillshop.docebosaas.com/learn/courses/17287/google-ads-apps-certification
+CERT-152 | AI-Powered Shopping Ads Certification | Google | AVANCÉ | M2 | https://skillshop.docebosaas.com/learn/courses/8992/google-ads-creative-certification
+CERT-153 | AI-Powered Performance Ads Certification | Google | AVANCÉ | M2 | https://skillshop.docebosaas.com/learn/courses/8510/ai-powered-performance-ads-certification
+CERT-154 | Grow Offline Sales Certification | Google | AVANCÉ | M2 | https://skillshop.docebosaas.com/learn/courses/8542/grow-offline-sales-certification
+CERT-155 | Google Analytics Certification | Google | AVANCÉ | M1 | https://skillshop.docebosaas.com/learn/courses/14810/google-analytics-certification
+CERT-156 | Get Started using Google Analytics | Google | AVANCÉ | M1 | https://skillshop.docebosaas.com/learn/courses/8108/get-started-using-google-analytics
+CERT-157 | Dive Deeper Into GA4 Data and Reports | Google | AVANCÉ | M2 | https://skillshop.docebosaas.com/learn/courses/18104/dive-deeper-into-ga4-data-and-reports
+CERT-158 | Display & Video 360 Certification | Google | AVANCÉ | M2 | https://skillshop.docebosaas.com/learn/courses/14403/display-video-360-certification-exam
+CERT-159 | Search Ads 360 Certification | Google | AVANCÉ | M2 | https://skillshop.docebosaas.com/learn/courses/13722/search-ads-360-certification-exam
+CERT-160 | Campaign Manager 360 Certification | Google | AVANCÉ | M2 | https://skillshop.docebosaas.com/learn/courses/12987/campaign-manager-360-certification-exam
+CERT-161 | Conversion Optimization Certification | Google | AVANCÉ | M2 | https://skillshop.docebosaas.com/learn/courses/8855/conversion-optimization-certification-exam
+CERT-162 | Analysez les besoins et comportements en ligne | Google | AVANCÉ | M1 | https://skillshop.exceedlms.com/student/collection/654407-customers-needs-behaviours
+CERT-163 | Using AI Agents in Workflows | Databricks | AVANCÉ | M1 | https://www.databricks.com/resources/training/level-your-ai-agent-skills
+CERT-164 | watsonx Orchestrate : Automatisation avec IA Agent | IBM | AVANCÉ | M1 | https://cognitiveclass.ai/courses/watsonx-orchestrate-automating-business-with-agentic-ai
+CERT-165 | watsonx Assistant : Assistants Virtuels IA Générative | IBM | AVANCÉ | M2 | https://cognitiveclass.ai/courses/watsonx-assistant-virtual-assistants-with-generative-ai
+CERT-166 | Commencer avec Automation Builder | IBM | AVANCÉ | M1 | https://cognitiveclass.ai/courses/getting-started-with-automation-builder
+CERT-167 | How to Become an AI-Powered Marketer | Semrush | AVANCÉ | M1 | https://www.semrush.com/academy/courses/ai-for-marketing-course/
+CERT-168 | n8n Automation — Level One | n8n | AVANCÉ | M1 | https://docs.n8n.io/courses/level-one/
+CERT-169 | n8n Automation — Level Two | n8n | AVANCÉ | M2 | https://docs.n8n.io/courses/level-two/
+CERT-170 | Certification Publicités LinkedIn (bases) | LinkedIn | AVANCÉ | M1 | https://training.marketing.linkedin.com/advertising-fundamentals-exam-fr
+CERT-171 | Certification Stratégie Marketing LinkedIn | LinkedIn | AVANCÉ | M2 | https://training.marketing.linkedin.com/marketing-strategy-exam-fr
+CERT-172 | Certification Contenu & Publicités LinkedIn | LinkedIn | AVANCÉ | M2 | https://training.marketing.linkedin.com/content-and-creative-design-exam-fr
+CERT-173 | Technical SEO & AI Search Essentials | Semrush | AVANCÉ | M1 | https://www.semrush.com/academy/courses/techincal-seo-and-ai-search-essentials-with-semrush/
+CERT-174 | On-Page SEO Course | Semrush | AVANCÉ | M1 | https://www.semrush.com/academy/courses/on-page-seo-essentials-with-semrush/
+CERT-175 | E-Commerce SEO with Internal Linking | Semrush | AVANCÉ | M2 | https://www.semrush.com/academy/courses/boost-ecommerce-seo-with-internal-linking/
+CERT-176 | Local SEO Course | Semrush | AVANCÉ | M1 | https://www.semrush.com/academy/courses/local-seo-essentials-with-semrush/
+CERT-177 | International SEO Course | Semrush | AVANCÉ | M2 | https://www.semrush.com/academy/courses/International-seo/
+CERT-178 | Content-Led SEO with Brian Dean | Semrush | AVANCÉ | M2 | https://www.semrush.com/academy/courses/content-led-seo-course-with-brian-dean/
+CERT-179 | Analytics for In-House Marketing Teams | Semrush | AVANCÉ | M2 | https://www.semrush.com/academy/courses/analytics-for-in-house-marketing-teams/
+CERT-180 | SEO Strategy for In-House Marketers | Semrush | AVANCÉ | M2 | https://www.semrush.com/academy/courses/seo-strategy-for-in-house-marketers/
+CERT-181 | Boost Conversions with PPC | Semrush | AVANCÉ | M1 | https://www.semrush.com/academy/courses/how-to-incorporate-ppc-into-marketing-strategies/
+CERT-182 | Mobile SEO Course | Semrush | AVANCÉ | M2 | https://www.semrush.com/academy/courses/craft-of-mobile-seo/
+CERT-183 | Marketing Analysis — Theory Meets Practice | Semrush | AVANCÉ | M1 | https://www.semrush.com/academy/courses/marketing-analysis-where-theory-meets-practice/
+CERT-184 | Advanced Content Marketing with Brian Dean | Semrush | AVANCÉ | M2 | https://www.semrush.com/academy/courses/advanced-content-marketing-course-with-brian-dean/
+CERT-185 | Ahrefs SEO Certification | Ahrefs | AVANCÉ | M1 | https://ahrefs.com/certification
+CERT-186 | Inbound Marketing Optimization | HubSpot | AVANCÉ | M1 | https://academy.hubspot.com
+CERT-187 | Social Media Marketing Certification II | HubSpot | AVANCÉ | M1 | https://academy.hubspot.com/courses/social-media
+CERT-188 | HubSpot Marketing Hub Software | HubSpot | AVANCÉ | M1 | https://academy.hubspot.com
+CERT-189 | AI for Marketing, Sales & Service Bootcamp | HubSpot | AVANCÉ | M2 | https://academy.hubspot.com
+CERT-190 | Account-Based Marketing Bootcamp | HubSpot | AVANCÉ | M2 | https://academy.hubspot.com
+CERT-191 | Reporting and Analytics Bootcamp | HubSpot | AVANCÉ | M2 | https://academy.hubspot.com/courses/reporting-and-analytics-bootcamp
+CERT-192 | Lloyds Banking Group | UX Design Advanced | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/lloyds-banking-group/ux-design-advanced-3ntp
+
+--- ⚙️ Master en CRM &amp; Transformation Digitale ---
+CERT-193 | Google Advanced Data Analytics Certificate | Google Career | AVANCÉ | M2 | https://www.skills.google/paths/2417
+CERT-194 | Google IT Automation with Python Certificate | Google Career | AVANCÉ | M2 | https://www.skills.google/paths/2472
+CERT-195 | Google Business Intelligence Certificate | Google Career | AVANCÉ | M1 | https://www.skills.google/paths/2416
+CERT-196 | Google Data Analytics Certificate | Google Career | AVANCÉ | M1 | https://www.skills.google/paths/2267
+CERT-197 | Google Digital Marketing & E-commerce Certificate | Google Career | AVANCÉ | M1 | https://www.skills.google/paths/2270
+CERT-198 | Transformer votre entreprise avec l'IA | Microsoft | AVANCÉ | M1 | https://learn.microsoft.com/fr-fr/training/paths/transform-your-business-with-microsoft-ai/
+CERT-199 | Obtenir des données dans Power BI | Microsoft | AVANCÉ | M1 | https://learn.microsoft.com/fr-fr/training/modules/get-data/
+CERT-200 | AWS Platform Architect Badge | Databricks | AVANCÉ | M2 | https://www.databricks.com/learn/certification/databricks-on-aws
+CERT-201 | Azure Platform Architect Badge | Databricks | AVANCÉ | M2 | https://www.databricks.com/learn/certification/databricks-on-azure
+CERT-202 | Data Science: Visualization (Harvard) | Harvard | AVANCÉ | M1 | https://pll.harvard.edu/course/data-science-visualization
+CERT-203 | Data Science: Productivity Tools (Harvard) | Harvard | AVANCÉ | M1 | https://pll.harvard.edu/course/data-science-productivity-tools
+CERT-204 | Data Analytics Professional Certificate | DeepLearning.AI | AVANCÉ | M2 | https://www.deeplearning.ai/courses/data-analytics/
+CERT-205 | IBM SkillsBuild Business Analyst Certificate | IBM | AVANCÉ | M1 | https://www.ibm.com/training/badge/ibm-skillsbuild-business-analyst-certificate
+CERT-206 | Analyste de Données : Préparation Professionnelle | IBM | AVANCÉ | M1 | https://cognitiveclass.ai/learn/data-analyst-career-preparation
+CERT-207 | Science des Données d'Entreprise | IBM | AVANCÉ | M1 | https://cognitiveclass.ai/learn/data-science-business
+CERT-208 | Clustering Clients avec KMeans | IBM | AVANCÉ | M2 | https://cognitiveclass.ai/courses/customer-clustering-with-kmeans-to-boost-business-strategy
+CERT-209 | IA Générative : Transformation & Croissance | IBM | AVANCÉ | M2 | https://cognitiveclass.ai/courses/generative-ai-business-transformation-and-career-growth
+CERT-210 | HubSpot Sales Hub Software | HubSpot | AVANCÉ | M1 | https://academy.hubspot.com
+CERT-211 | HubSpot Service Hub Software | HubSpot | AVANCÉ | M1 | https://academy.hubspot.com
+CERT-212 | HubSpot Inbound Sales | HubSpot | AVANCÉ | M1 | https://academy.hubspot.com
+CERT-213 | HubSpot Content Hub for Marketers | HubSpot | AVANCÉ | M1 | https://academy.hubspot.com
+CERT-214 | HubSpot Sales Management | HubSpot | AVANCÉ | M2 | https://academy.hubspot.com
+CERT-215 | HubSpot Sales Enablement | HubSpot | AVANCÉ | M2 | https://academy.hubspot.com
+CERT-216 | HubSpot Frictionless Sales | HubSpot | AVANCÉ | M2 | https://academy.hubspot.com
+CERT-217 | HubSpot Revenue Operations | HubSpot | AVANCÉ | M1 | https://academy.hubspot.com
+CERT-218 | Integrating With HubSpot I: Foundations | HubSpot | AVANCÉ | M2 | https://academy.hubspot.com
+CERT-219 | HubSpot CMS for Developers II | HubSpot | AVANCÉ | M2 | https://academy.hubspot.com
+CERT-220 | HubSpot Data Integrations Certification | HubSpot | AVANCÉ | M2 | https://academy.hubspot.com
+CERT-221 | HubSpot Email Marketing Software | HubSpot | AVANCÉ | M1 | https://academy.hubspot.com
+CERT-222 | HubSpot Content Hub Software Certification | HubSpot | AVANCÉ | M1 | https://academy.hubspot.com
+CERT-223 | AI for Marketing, Sales & Service Bootcamp | HubSpot | AVANCÉ | M2 | https://academy.hubspot.com
+CERT-224 | CRM Customization Bootcamp for Developers | HubSpot | AVANCÉ | M2 | https://academy.hubspot.com
+CERT-225 | Reporting and Analytics Bootcamp | HubSpot | AVANCÉ | M2 | https://academy.hubspot.com/courses/reporting-and-analytics-bootcamp
+CERT-226 | BCG | Data Science | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/bcg/data-science-ccdz
+CERT-227 | BCG | Digital Transformation | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/bcg/digital-transformation-pk18
+CERT-228 | BCG | Data for Decision Makers | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/bcg/data-for-decision-makers-tod0
+CERT-229 | Third Bridge | Client Service Delivery | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/third-bridge/client-service-i3mi
+CERT-230 | Quantium | Data Analytics | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/quantium/data-analytics-rqkb
+
+--- 💡 Master en Project Management ---
+CERT-231 | Google Project Management Certificate | Google Career | AVANCÉ | M1 | https://www.skills.google/paths/2272
+CERT-232 | Scrum for Operations & DevOps Fundamentals Certified | Scrum | AVANCÉ | M1 | https://www.scrumstudy.com/certification/scrum-for-ops-and-devops-fundamentals-certified
+CERT-233 | Disciplined Agile Essentials | PMI | AVANCÉ | M1 | https://www.pmi.org/shop/p-/elearning/disciplined-agile-essentials-course/el183
+CERT-234 | Lean Six Sigma White Belt Certification | MSI | AVANCÉ | M1 | https://courses.msicertified.com/course/lean-six-sigma-white-belt-certification
+CERT-235 | Clustering Clients avec KMeans | IBM | AVANCÉ | M2 | https://cognitiveclass.ai/courses/customer-clustering-with-kmeans-to-boost-business-strategy
+CERT-236 | Bloomberg Market Concepts (BMC) | Bloomberg | AVANCÉ | M1 | https://portal.bloombergforeducation.com/courses?course_category_id=3
+CERT-237 | Bloomberg Finance Fundamentals | Bloomberg | AVANCÉ | M1 | https://portal.bloombergforeducation.com/courses?course_category_id=11
+CERT-238 | Bloomberg Spreadsheet Analysis | Bloomberg | AVANCÉ | M2 | https://portal.bloombergforeducation.com/courses?course_category_id=15
+CERT-239 | Environmental Social Governance (ESG) | Bloomberg | AVANCÉ | M2 | https://portal.bloombergforeducation.com/courses?course_category_id=7
+CERT-240 | Siemens Mobility | Project Manager | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/siemens-mobility/project-management-qydx
+CERT-241 | Siemens Mobility | Commercial Project Manager | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/siemens-mobility/commercial-project-manager-fi6g
+CERT-242 | EY | EY Technology Risk | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/ey/technology-risk-ydqh
+CERT-243 | BCG | Strategy Consulting | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/bcg/strategy-consulting-jk76
+CERT-244 | BCG | Venture & Business Builds | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/bcg/x-ventures-lbvf
+CERT-245 | Oliver Wyman | Financial Services: Climate Change | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/oliver-wyman/financial-services-climate-change-rv72
+CERT-246 | Mayer Brown | Financing Renewable Energy Projects | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/mayer-brown/financing-renewable-energy-projects-vzzu
+
+--- 🏦 Master en Ingénierie Financière ---
+CERT-247 | Goldman Sachs | Operations | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/goldman-sachs/operations-9vyc
+CERT-248 | Goldman Sachs | Internal Audit | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/goldman-sachs/internal-audit-j8c6
+CERT-249 | Goldman Sachs | Risk | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/goldman-sachs/risk-ljdz
+CERT-250 | Goldman Sachs | Controllers | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/goldman-sachs/controllers-8npc
+CERT-251 | JPMorganChase | Investment Banking | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/jpmorgan/investment-banking-hkyd
+CERT-252 | J.P. Morgan | Quantitative Research | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/jpmorgan/quantitative-research-11oc
+CERT-253 | Citi | Markets Quantitative Analysis (MQA) | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/citi/global-quantitative-analysis-analyst-6b4m
+CERT-254 | Citi | Investment Banking | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/citi/investment-banking-9wcw
+CERT-255 | Citi | Personal Banking | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/citi/personal-banking-onxf
+CERT-256 | Bank of America | The Private Bank | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/bank-of-america/private-bank-vblo
+CERT-257 | Bank of America | Investment Banking | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/bank-of-america/investment-banking-bwp7
+CERT-258 | Bank of America | Global Markets Sales & Trading | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/bank-of-america/sales-and-trading-analyst-i5jo
+CERT-259 | Lloyds | Business & Commercial Banking (Advanced) | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/lloyds-banking-group/business-commercial-banking-advanced-p1uh
+CERT-260 | Standard Chartered | Credit Analyst | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/standardchartered/banking-coverage-kr4i
+CERT-261 | Wells Fargo | Commercial Banking | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/wells-fargo/commercial-banking-vrde
+CERT-262 | KPMG US | Career Catalyst: Audit | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/kpmg-us/audit-high-school-l4xp
+CERT-263 | KPMG US | Career Catalyst: Tax | Forage | AVANCÉ | M1 | https://www.theforage.com/simulations/kpmg-us/tax-high-school-nnsq
+CERT-264 | KPMG US | Career Catalyst: Advisory | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/kpmg-us/advisory-high-school-vtlj
+CERT-265 | Goodwin | Early Stage Financing | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/goodwin/early-stage-financing-62v2
+CERT-266 | Ashurst | Finance and Mergers & Acquisitions | Forage | AVANCÉ | M2 | https://www.theforage.com/simulations/ashurst/finance-mergers-acquisitions-lb9a
+CERT-267 | PwC UK | Virtual Insight Programme | Forage | AVANCÉ | M1 | https://www.pwc.co.uk/careers/early-careers/entry-level/virtual-insight-programme.html

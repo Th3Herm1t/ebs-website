@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Marker from '../components/ui/Marker.astro';
+import Button from '../components/ui/Button.astro';
+
+const title = "Actualités & Blog — EBS Tunis";
+const description = "Dernières actualités, événements, success stories et conseils certifications de l'EBS – École d'Informatique & Technologies Cloud.";
+
+const articles = [
+  {
+    slug: 'certification-aws-promo-2025',
+    category: 'Certifications',
+    date: '8 avril 2026',
+    title: 'Promotion 2025 : 94% de réussite aux certifications AWS',
+    excerpt: 'Un record historique pour notre programme Informatique. 94% des étudiants de la promotion sortante ont obtenu leur certification AWS Cloud Practitioner dès la première tentative.',
+    image: '/images/certifications/aws.svg',
+    readTime: '3 min',
+  },
+  {
+    slug: 'partenariat-em-normandie-2026',
+    category: 'International',
+    date: '22 mars 2026',
+    title: 'Nouveau partenariat avec EM Normandie : double diplôme Master',
+    excerpt: 'EBS et EM Normandie signent un accord de double diplomation pour les étudiants en Master Ingénierie Financière et Marketing Digital & IA.',
+    image: '/images/events/em-normandie-visit.jpg',
+    readTime: '4 min',
+  },
+  {
+    slug: 'journee-portes-ouvertes-mai-2026',
+    category: 'Événements',
+    date: '15 mars 2026',
+    title: 'Journée Portes Ouvertes — 10 mai 2026',
+    excerpt: 'Découvrez nos campus, rencontrez les enseignants et les étudiants, et assistez à des démonstrations de nos programmes certifiants.',
+    image: '/images/campus/campus-2.jpg',
+    readTime: '2 min',
+  },
+  {
+    slug: 'alumni-spotlight-amine-vermeg',
+    category: 'Alumni',
+    date: '5 mars 2026',
+    title: 'Alumni Spotlight : Amine H., Cloud Engineer chez Vermeg',
+    excerpt: '"Le jour de mon entretien, le recruteur a vu ma certification AWS et a dit : on peut passer directement au technique." Amine partage son parcours.',
+    image: '/images/alumni/amin-hamdi.jpg',
+    readTime: '5 min',
+  },
+  {
+    slug: 'guide-alternance-2026',
+    category: 'Conseils',
+    date: '20 février 2026',
+    title: 'Guide : réussir son alternance en 2026',
+    excerpt: 'Comment décrocher une alternance, les erreurs à éviter en entretien, et pourquoi EBS place 96% de ses alternants. Le guide complet.',
+    image: '/images/events/visite-dot.jpg',
+    readTime: '6 min',
+  },
+  {
+    slug: 'it-business-expo-recap',
+    category: 'Événements',
+    date: '10 février 2026',
+    title: 'Retour sur l\'IT Business Expo 2026',
+    excerpt: 'Nos étudiants ont présenté 5 projets innovants au salon IT Business Expo. Deux d\'entre eux ont été remarqués par des recruteurs de Telnet et Sofrecom.',
+    image: '/images/events/it-business-expo.jpg',
+    readTime: '4 min',
+  },
+];
+
+const categories = ['Tous', 'Certifications', 'International', 'Événements', 'Alumni', 'Conseils'];
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* Hero */}
+    <section class="relative bg-navy overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/campus/students-9.jpg" alt="" class="w-full h-full object-cover opacity-20" loading="eager" />
+        <div class="absolute inset-0 bg-navy/80"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-24 pb-16 md:pt-32 md:pb-20 relative z-10">
+        <nav class="mb-8" aria-label="Fil d'ariane">
+          <ol class="flex items-center gap-2 text-xs text-white/40 font-medium">
+            <li><a href="/" class="hover:text-accent transition-colors">Accueil</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-white/70">Actualités</li>
+          </ol>
+        </nav>
+        <h1 class="font-heading font-bold text-[clamp(2rem,4vw,3rem)] text-white leading-tight mb-4">
+          Actualités & Blog<Marker size="lg" class="inline-block ml-3 align-middle" />
+        </h1>
+        <p class="font-body text-white/60 text-lg max-w-xl">
+          Événements, success stories, et conseils pour tes études et ta carrière.
+        </p>
+      </div>
+    </section>
+
+    {/* Category filter */}
+    <div class="sticky top-16 z-20 bg-surface/95 backdrop-blur-md border-b border-border/40">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="flex items-center gap-2 overflow-x-auto py-3" role="tablist">
+          {categories.map((cat, i) => (
+            <button
+              role="tab"
+              aria-selected={i === 0 ? 'true' : 'false'}
+              data-blog-filter={cat === 'Tous' ? 'all' : cat}
+              class:list={[
+                'blog-filter px-4 py-2 text-xs font-semibold whitespace-nowrap border-b-2 transition-colors',
+                i === 0 ? 'text-accent border-accent' : 'text-ink-muted border-transparent hover:text-ink',
+              ]}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Articles grid */}
+    <section class="py-16 lg:py-24">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="blog-grid">
+          {articles.map((article, i) => (
+            <article class="blog-card group bg-surface border border-border/40 overflow-hidden hover:border-accent/30 transition-all hover:-translate-y-1 duration-300 reveal" data-category={article.category} style={`--delay: ${i * 60}ms`}>
+              <div class="relative h-48 overflow-hidden">
+                <img src={article.image} alt={article.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+                <span class="absolute top-3 left-3 px-2.5 py-1 bg-accent text-base-950 text-[10px] font-bold uppercase tracking-wider">{article.category}</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 text-xs text-ink-muted mb-3">
+                  <time>{article.date}</time>
+                  <span>·</span>
+                  <span>{article.readTime} de lecture</span>
+                </div>
+                <h2 class="font-heading font-bold text-lg text-ink mb-2 group-hover:text-accent transition-colors leading-tight line-clamp-2">
+                  {article.title}
+                </h2>
+                <p class="text-sm text-ink-body leading-relaxed line-clamp-3 mb-4">{article.excerpt}</p>
+                <span class="inline-flex items-center text-sm font-semibold text-navy group-hover:text-accent transition-colors gap-1 group-hover:gap-2">
+                  Lire la suite <span aria-hidden="true">→</span>
+                </span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const filters = document.querySelectorAll<HTMLButtonElement>('.blog-filter');
+    const cards = document.querySelectorAll<HTMLElement>('.blog-card');
+    if (!filters.length) return;
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.dataset.blogFilter || 'all';
+        filters.forEach(f => {
+          f.classList.toggle('text-accent', f === btn);
+          f.classList.toggle('border-accent', f === btn);
+          f.classList.toggle('text-ink-muted', f !== btn);
+          f.classList.toggle('border-transparent', f !== btn);
+          f.setAttribute('aria-selected', f === btn ? 'true' : 'false');
+        });
+        cards.forEach(card => {
+          const show = cat === 'all' || card.dataset.category === cat;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  });
+</script>

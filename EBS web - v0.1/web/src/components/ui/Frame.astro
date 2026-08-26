@@ -1,0 +1,62 @@
+---
+interface Props {
+  class?: string;
+  borderColor?: 'accent' | 'navy';
+  corner?: 'top-right' | 'bottom-left';
+  stroke?: string;
+}
+
+const { 
+  class: className, 
+  borderColor = 'accent',
+  corner = 'top-right',
+  stroke = '2px' 
+} = Astro.props;
+
+// Uses clip-path to cut out a 20% section of the specified corner
+const clipPaths = {
+  'top-right': 'polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%)',
+  'bottom-left': 'polygon(0 0, 100% 0, 100% 100%, 20% 100%, 0 80%)'
+};
+
+const colors = {
+  accent: 'var(--color-accent)',
+  navy: 'var(--color-navy)'
+};
+
+const color = colors[borderColor];
+
+const classes = ["relative", className].filter(Boolean).join(' ');
+---
+
+<div class={classes}>
+  {/* SVG border drawing the frame with the broken corner */}
+  <svg 
+    class="absolute inset-0 w-full h-full pointer-events-none" 
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    {corner === 'top-right' && (
+      <path 
+        d="M 0 100% L 0 0 L 80% 0 M 100% 20% L 100% 100% L 0 100%" 
+        fill="none" 
+        stroke={color} 
+        stroke-width={stroke}
+        vector-effect="non-scaling-stroke"
+      />
+    )}
+    {corner === 'bottom-left' && (
+      <path 
+        d="M 0 0 L 100% 0 L 100% 100% L 20% 100% M 0 80% L 0 0" 
+        fill="none" 
+        stroke={color} 
+        stroke-width={stroke}
+        vector-effect="non-scaling-stroke"
+      />
+    )}
+  </svg>
+  <div class="p-6 relative z-10">
+    <slot />
+  </div>
+</div>

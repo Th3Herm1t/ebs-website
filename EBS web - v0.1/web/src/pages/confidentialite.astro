@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Politique de Confidentialité — EBS Tunis";
+const description = "Politique de confidentialité de l'EBS Tunis. Informations sur la collecte, l'utilisation et la protection de vos données personnelles.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* ───────────────── HEADER ───────────────── */}
+    <section class="bg-navy py-14 md:py-18">
+      <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20">
+        <nav class="mb-6" aria-label="Fil d'ariane">
+          <ol class="flex items-center gap-2 text-xs text-white/40 font-medium">
+            <li><a href="/" class="hover:text-accent transition-colors">Accueil</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-white/70">Politique de confidentialité</li>
+          </ol>
+        </nav>
+        <h1 class="font-heading font-bold text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.1] text-white">
+          Politique de confidentialité
+        </h1>
+      </div>
+    </section>
+
+
+    {/* ───────────────── CONTENT ───────────────── */}
+    <section class="py-16 lg:py-20">
+      <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20 prose-legal">
+
+        <p>
+          L'EBS Tunis (Espima Business School) s'engage à protéger la vie privée de ses utilisateurs. Cette politique de confidentialité décrit la manière dont nous collectons, utilisons et protégeons vos données personnelles lorsque vous utilisez notre site web <strong>ebs.tn</strong>.
+        </p>
+
+        <h2>1. Données collectées</h2>
+        <p>Nous pouvons collecter les données suivantes :</p>
+        <ul>
+          <li><strong>Données d'identification :</strong> nom, prénom, adresse e-mail, numéro de téléphone, fournies lors de la préinscription en ligne ou d'une demande de contact.</li>
+          <li><strong>Données académiques :</strong> niveau d'études, programme souhaité, documents scolaires transmis dans le cadre du processus d'admission.</li>
+          <li><strong>Données de navigation :</strong> adresse IP, type de navigateur, pages visitées, durée de la visite, collectées via des cookies à des fins statistiques.</li>
+        </ul>
+
+        <h2>2. Finalités du traitement</h2>
+        <p>Vos données sont collectées pour les finalités suivantes :</p>
+        <ul>
+          <li>Traitement de votre demande de préinscription ou de contact</li>
+          <li>Communication relative à votre dossier d'admission</li>
+          <li>Envoi d'informations sur nos programmes (uniquement si vous y avez consenti)</li>
+          <li>Amélioration de notre site web et de l'expérience utilisateur</li>
+          <li>Production de statistiques anonymes de fréquentation</li>
+        </ul>
+
+        <h2>3. Base légale du traitement</h2>
+        <p>
+          Le traitement de vos données repose sur :
+        </p>
+        <ul>
+          <li><strong>Votre consentement</strong> pour la collecte via le formulaire de préinscription et l'utilisation de cookies non essentiels.</li>
+          <li><strong>L'intérêt légitime</strong> de l'EBS Tunis pour la gestion des admissions et l'amélioration de ses services.</li>
+          <li><strong>L'exécution d'un contrat</strong> dans le cadre du processus d'inscription.</li>
+        </ul>
+
+        <h2>4. Conservation des données</h2>
+        <p>
+          Les données personnelles sont conservées pendant la durée nécessaire aux finalités pour lesquelles elles ont été collectées :
+        </p>
+        <ul>
+          <li><strong>Données de préinscription :</strong> 2 ans à compter de la dernière interaction, sauf inscription effective.</li>
+          <li><strong>Données d'étudiants inscrits :</strong> durée de la scolarité + 5 ans après la fin des études.</li>
+          <li><strong>Données de navigation :</strong> 13 mois maximum (cookies analytiques).</li>
+        </ul>
+
+        <h2>5. Partage des données</h2>
+        <p>
+          Vos données ne sont jamais vendues à des tiers. Elles peuvent être partagées avec :
+        </p>
+        <ul>
+          <li>Les services internes de l'EBS Tunis (admissions, scolarité, direction)</li>
+          <li>Nos partenaires universitaires (UQAT, EM Normandie, Collège de Paris, Keyce Academy) uniquement dans le cadre d'une candidature à un programme de double diplôme, et avec votre consentement</li>
+          <li>Les prestataires techniques (hébergement, analyse statistique) agissant en notre nom</li>
+        </ul>
+
+        <h2>6. Sécurité des données</h2>
+        <p>
+          Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre l'accès non autorisé, la modification, la divulgation ou la destruction. Les transmissions de formulaires sont chiffrées via HTTPS.
+        </p>
+
+        <h2>7. Vos droits</h2>
+        <p>
+          Conformément à la loi organique n° 2004-63 du 27 juillet 2004 relative à la protection des données à caractère personnel en Tunisie, vous disposez des droits suivants :
+        </p>
+        <ul>
+          <li><strong>Droit d'accès :</strong> obtenir une copie de vos données personnelles détenues par l'EBS Tunis.</li>
+          <li><strong>Droit de rectification :</strong> corriger des données inexactes ou incomplètes.</li>
+          <li><strong>Droit d'opposition :</strong> vous opposer au traitement de vos données pour des motifs légitimes.</li>
+          <li><strong>Droit de suppression :</strong> demander la suppression de vos données, sous réserve des obligations légales de conservation.</li>
+        </ul>
+        <p>
+          Pour exercer ces droits, contactez-nous à : <strong>contact@ebs.tn</strong>
+        </p>
+
+        <h2>8. Cookies</h2>
+        <p>
+          Notre site utilise des cookies pour assurer son bon fonctionnement et mesurer l'audience :
+        </p>
+        <ul>
+          <li><strong>Cookies essentiels :</strong> nécessaires au fonctionnement du site (aucun consentement requis).</li>
+          <li><strong>Cookies analytiques :</strong> mesure d'audience anonyme pour améliorer nos services (consentement requis).</li>
+        </ul>
+        <p>
+          Vous pouvez configurer votre navigateur pour refuser tout ou partie des cookies. Le refus des cookies analytiques n'affecte pas votre navigation sur le site.
+        </p>
+
+        <h2>9. Modification de la politique</h2>
+        <p>
+          L'EBS Tunis se réserve le droit de modifier cette politique de confidentialité. Toute modification sera publiée sur cette page avec la date de mise à jour.
+        </p>
+
+        <h2>10. Contact</h2>
+        <p>
+          Pour toute question relative à cette politique ou à vos données personnelles :
+        </p>
+        <ul>
+          <li><strong>E-mail :</strong> contact@ebs.tn</li>
+          <li><strong>Téléphone :</strong> +216 29 58 28 35</li>
+          <li><strong>Adresse :</strong> EBS Tunis – Espima Business School, Tunis, Tunisie</li>
+        </ul>
+
+        <hr />
+        <p class="text-sm text-ink-muted">
+          Dernière mise à jour : septembre 2025
+        </p>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .prose-legal {
+    font-family: var(--font-body, system-ui);
+    line-height: 1.75;
+    color: var(--color-ink, #1a1a1a);
+  }
+  .prose-legal h2 {
+    font-family: var(--font-heading, system-ui);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-legal p {
+    margin-bottom: 1rem;
+  }
+  .prose-legal ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .prose-legal li {
+    margin-bottom: 0.35rem;
+    font-size: 0.938rem;
+  }
+  .prose-legal hr {
+    border: none;
+    border-top: 1px solid var(--color-border, #e5e5e5);
+    margin: 2.5rem 0 1.5rem;
+  }
+  .prose-legal strong {
+    font-weight: 600;
+  }
+</style>

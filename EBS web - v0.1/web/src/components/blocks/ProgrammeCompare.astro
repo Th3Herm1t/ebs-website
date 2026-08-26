@@ -1,0 +1,134 @@
+---
+/**
+ * Side-by-side programme comparison tool
+ * Pick 2-3 programmes and compare certs, price, careers, outcomes
+ */
+interface Props { lang?: 'fr' | 'en'; }
+const { lang = 'fr' } = Astro.props;
+const isFr = lang === 'fr';
+---
+
+<section id="compare" class="py-20 lg:py-28 bg-surface-alt overflow-hidden" aria-labelledby="compare-heading">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+    <div class="text-center mb-12">
+      <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">{isFr ? 'Comparaison' : 'Comparison'}</p>
+      <h2 id="compare-heading" class="font-heading font-bold text-h2 text-ink">
+        {isFr ? 'Compare les programmes' : 'Compare programmes'}
+      </h2>
+      <p class="font-body text-ink-body text-base mt-3 max-w-lg mx-auto">
+        {isFr ? 'Sélectionne 2 ou 3 programmes pour voir les différences.' : 'Select 2 or 3 programmes to see the differences.'}
+      </p>
+    </div>
+
+    {/* Programme selector */}
+    <div class="flex flex-wrap justify-center gap-3 mb-10" id="compare-selectors">
+      <button class="compare-toggle px-4 py-2.5 border border-border/40 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="lig">{isFr ? 'Licence Informatique' : 'BSc Computer Science'}</button>
+      <button class="compare-toggle px-4 py-2.5 border border-border/40 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="lm">{isFr ? 'Licence Management' : 'BSc Management'}</button>
+      <button class="compare-toggle px-4 py-2.5 border border-border/40 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="lmk">{isFr ? 'Licence Marketing' : 'BSc Marketing'}</button>
+      <button class="compare-toggle px-4 py-2.5 border border-border/40 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="lf">{isFr ? 'Licence Finance' : 'BSc Finance'}</button>
+      <button class="compare-toggle px-4 py-2.5 border border-border/40 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="mmia">{isFr ? 'M. Marketing & IA' : 'MSc Marketing & AI'}</button>
+      <button class="compare-toggle px-4 py-2.5 border border-border/40 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="mcrm">{isFr ? 'M. Digital & CRM' : 'MSc Digital & CRM'}</button>
+      <button class="compare-toggle px-4 py-2.5 border border-border/40 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="mf">{isFr ? 'M. Ing. Financière' : 'MSc Finance Eng.'}</button>
+      <button class="compare-toggle px-4 py-2.5 border border-border/40 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="mmp">{isFr ? 'M. Management Projets' : 'MSc Project Mgmt'}</button>
+    </div>
+
+    {/* Comparison table */}
+    <div id="compare-table" class="hidden overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr id="compare-header" class="border-b-2 border-accent">
+            <th class="text-left py-4 px-4 font-heading font-semibold text-ink-muted text-xs uppercase tracking-wider w-40"></th>
+          </tr>
+        </thead>
+        <tbody id="compare-body"></tbody>
+      </table>
+    </div>
+
+    <p id="compare-hint" class="text-center text-sm text-ink-muted mt-6">
+      {isFr ? 'Sélectionne au moins 2 programmes ci-dessus' : 'Select at least 2 programmes above'}
+    </p>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const toggles = document.querySelectorAll<HTMLButtonElement>('.compare-toggle');
+    const tableEl = document.getElementById('compare-table');
+    const headerRow = document.getElementById('compare-header');
+    const body = document.getElementById('compare-body');
+    const hint = document.getElementById('compare-hint');
+    if (!toggles.length || !tableEl || !headerRow || !body) return;
+
+    const selected: Set<string> = new Set();
+
+    const data: Record<string, { name: string; degree: string; duration: string; certs: number; price: string; intl: string; employment: string; salary: string; careers: string; url: string }> = {
+      lig: { name: 'Licence Informatique', degree: 'Licence', duration: '3 ans', certs: 14, price: '6 000 DT/an', intl: 'Keyce Academy (FR)', employment: '72%', salary: '1 200–1 800 DT', careers: 'Dev web, DevOps, Admin réseaux', url: '/programmes/licence-informatique-genie-logiciel' },
+      lm: { name: 'Licence Management', degree: 'Licence', duration: '3 ans', certs: 10, price: '8 200 DT/an', intl: 'Collège de Paris (FR)', employment: '65%', salary: '1 000–1 500 DT', careers: 'Business Manager, Consultant', url: '/programmes/licence-management' },
+      lmk: { name: 'Licence Marketing', degree: 'Licence', duration: '3 ans', certs: 10, price: '8 200 DT/an', intl: 'Collège de Paris (FR)', employment: '64%', salary: '1 000–1 400 DT', careers: 'Traffic Manager, Community Mgr', url: '/programmes/licence-marketing' },
+      lf: { name: 'Licence Finance', degree: 'Licence', duration: '3 ans', certs: 10, price: '8 200 DT/an', intl: 'Collège de Paris (FR)', employment: '62%', salary: '1 100–1 500 DT', careers: 'Analyste, Contrôleur gestion', url: '/programmes/licence-finance' },
+      mmia: { name: 'Master Marketing & IA', degree: 'Master', duration: '2 ans', certs: 6, price: '8 500 DT/an', intl: 'EM Normandie (FR)', employment: '70%', salary: '1 400–2 200 DT', careers: 'Growth Hacker, Data Marketer', url: '/programmes/master-marketing-digital-ia' },
+      mcrm: { name: 'Master Digital & CRM', degree: 'Master', duration: '2 ans', certs: 8, price: '8 500 DT/an', intl: 'UQAT (CA)', employment: '68%', salary: '1 500–2 300 DT', careers: 'CRM Manager, Consultant Digital', url: '/programmes/master-transformation-digitale-crm' },
+      mf: { name: 'Master Ing. Financière', degree: 'Master', duration: '2 ans', certs: 4, price: '8 500 DT/an', intl: 'EM Normandie (FR)', employment: '66%', salary: '1 600–2 500 DT', careers: 'Analyste financier, Auditeur', url: '/programmes/master-ingenierie-financiere' },
+      mmp: { name: 'Master Management Projets', degree: 'Master', duration: '2 ans', certs: 8, price: '8 500 DT/an', intl: 'UQAT (CA)', employment: '70%', salary: '1 400–2 200 DT', careers: 'Chef de projet, Scrum Master', url: '/programmes/master-management-projets' },
+    };
+
+    const rows = [
+      { label: 'Niveau', key: 'degree' },
+      { label: 'Durée', key: 'duration' },
+      { label: 'Certifications', key: 'certs', highlight: true },
+      { label: 'Tarif', key: 'price' },
+      { label: 'International', key: 'intl' },
+      { label: 'Taux d\'emploi', key: 'employment' },
+      { label: 'Salaire (début)', key: 'salary' },
+      { label: 'Débouchés', key: 'careers' },
+    ];
+
+    function render() {
+      const sel = Array.from(selected);
+      if (sel.length < 2) {
+        tableEl!.classList.add('hidden');
+        hint?.classList.remove('hidden');
+        return;
+      }
+      tableEl!.classList.remove('hidden');
+      hint?.classList.add('hidden');
+
+      // Header
+      headerRow!.innerHTML = '<th class="text-left py-4 px-4 font-heading font-semibold text-ink-muted text-xs uppercase tracking-wider w-40"></th>';
+      sel.forEach(key => {
+        const d = data[key];
+        headerRow!.innerHTML += `<th class="py-4 px-4 text-center"><a href="${d.url}" class="font-heading font-bold text-sm text-accent hover:underline">${d.name}</a></th>`;
+      });
+
+      // Body
+      body!.innerHTML = '';
+      rows.forEach((row, ri) => {
+        const tr = document.createElement('tr');
+        tr.className = ri % 2 === 0 ? 'bg-surface' : 'bg-surface-alt/50';
+        let html = `<td class="py-3 px-4 font-semibold text-ink-muted text-xs">${row.label}</td>`;
+        sel.forEach(key => {
+          const val = String((data[key] as any)[row.key]);
+          const cls = row.highlight ? 'text-accent font-bold' : 'text-ink-body';
+          html += `<td class="py-3 px-4 text-center ${cls}">${val}</td>`;
+        });
+        tr.innerHTML = html;
+        body!.appendChild(tr);
+      });
+    }
+
+    toggles.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.prog || '';
+        if (selected.has(key)) {
+          selected.delete(key);
+          btn.classList.remove('bg-accent', 'text-base-950', 'border-accent');
+        } else {
+          if (selected.size >= 3) return; // max 3
+          selected.add(key);
+          btn.classList.add('bg-accent', 'text-base-950', 'border-accent');
+        }
+        render();
+      });
+    });
+  });
+</script>

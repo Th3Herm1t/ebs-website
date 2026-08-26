@@ -1,0 +1,28 @@
+---
+interface Props {
+  class?: string;
+  height?: 'sm' | 'base' | 'lg';
+  orientation?: 'horizontal' | 'vertical';
+}
+
+const { class: className, height = 'base', orientation = 'horizontal' } = Astro.props;
+
+const dimensions = {
+  horizontal: {
+    sm: "h-1 w-full",
+    base: "h-1.5 w-full",
+    lg: "h-2 w-full"
+  },
+  vertical: {
+    sm: "w-1 h-full",
+    base: "w-1.5 h-full",
+    lg: "w-2 h-full"
+  }
+};
+
+const d = dimensions[orientation][height];
+
+const classes = ["bg-accent", d, className].filter(Boolean).join(' ');
+---
+
+<div class={classes} aria-hidden="true"></div>

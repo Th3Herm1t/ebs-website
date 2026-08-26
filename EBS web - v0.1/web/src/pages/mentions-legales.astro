@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Mentions Légales — EBS Tunis";
+const description = "Mentions légales de l'EBS Tunis – Espima Business School. Informations sur l'éditeur, l'hébergement et les conditions d'utilisation du site.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* ───────────────── HEADER ───────────────── */}
+    <section class="bg-navy py-14 md:py-18">
+      <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20">
+        <nav class="mb-6" aria-label="Fil d'ariane">
+          <ol class="flex items-center gap-2 text-xs text-white/40 font-medium">
+            <li><a href="/" class="hover:text-accent transition-colors">Accueil</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-white/70">Mentions légales</li>
+          </ol>
+        </nav>
+        <h1 class="font-heading font-bold text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.1] text-white">
+          Mentions légales
+        </h1>
+      </div>
+    </section>
+
+
+    {/* ───────────────── CONTENT ───────────────── */}
+    <section class="py-16 lg:py-20">
+      <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20 prose-legal">
+
+        <h2>1. Éditeur du site</h2>
+        <p>
+          Le site <strong>ebs.tn</strong> est édité par <strong>Espima Business School (EBS Tunis)</strong>, université privée reconnue par le Ministère de l'Enseignement Supérieur de la République Tunisienne.
+        </p>
+        <ul>
+          <li><strong>Raison sociale :</strong> Espima Business School</li>
+          <li><strong>Siège social :</strong> Tunis, Tunisie</li>
+          <li><strong>Téléphone :</strong> +216 29 58 28 35</li>
+          <li><strong>E-mail :</strong> contact@ebs.tn</li>
+          <li><strong>Directeur de la publication :</strong> La direction de l'EBS Tunis</li>
+        </ul>
+
+        <h2>2. Hébergement</h2>
+        <p>
+          Le site est hébergé par :
+        </p>
+        <ul>
+          <li><strong>Hébergeur :</strong> Vercel Inc.</li>
+          <li><strong>Adresse :</strong> 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</li>
+          <li><strong>Site :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">vercel.com</a></li>
+        </ul>
+
+        <h2>3. Propriété intellectuelle</h2>
+        <p>
+          L'ensemble des contenus présents sur le site ebs.tn (textes, images, graphismes, logos, icônes, vidéos, sons, données, logiciels) est la propriété exclusive de l'EBS Tunis ou de ses partenaires et est protégé par les lois tunisiennes et internationales relatives à la propriété intellectuelle.
+        </p>
+        <p>
+          Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de l'EBS Tunis.
+        </p>
+
+        <h2>4. Limitation de responsabilité</h2>
+        <p>
+          L'EBS Tunis s'efforce de fournir des informations aussi précises que possible sur le site. Toutefois, elle ne saurait être tenue responsable des omissions, inexactitudes ou carences dans la mise à jour, que celles-ci soient de son fait ou du fait de tiers.
+        </p>
+        <p>
+          Les informations présentes sur le site sont données à titre indicatif et sont susceptibles d'évoluer. Elles ne sont en aucun cas contractuelles.
+        </p>
+
+        <h2>5. Liens hypertextes</h2>
+        <p>
+          Le site ebs.tn peut contenir des liens vers d'autres sites internet. L'EBS Tunis ne dispose d'aucun contrôle sur le contenu de ces sites tiers et décline toute responsabilité quant à leur contenu.
+        </p>
+
+        <h2>6. Cookies</h2>
+        <p>
+          Le site peut utiliser des cookies à des fins de mesure d'audience et d'amélioration de l'expérience utilisateur. Pour en savoir plus, consultez notre <a href="/confidentialite" class="text-accent hover:underline">politique de confidentialité</a>.
+        </p>
+
+        <h2>7. Droit applicable</h2>
+        <p>
+          Les présentes mentions légales sont soumises au droit tunisien. En cas de litige, les tribunaux de Tunis seront seuls compétents.
+        </p>
+
+        <hr />
+        <p class="text-sm text-ink-muted">
+          Dernière mise à jour : septembre 2025
+        </p>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .prose-legal {
+    font-family: var(--font-body, system-ui);
+    line-height: 1.75;
+    color: var(--color-ink, #1a1a1a);
+  }
+  .prose-legal h2 {
+    font-family: var(--font-heading, system-ui);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-legal p {
+    margin-bottom: 1rem;
+  }
+  .prose-legal ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .prose-legal li {
+    margin-bottom: 0.35rem;
+    font-size: 0.938rem;
+  }
+  .prose-legal hr {
+    border: none;
+    border-top: 1px solid var(--color-border, #e5e5e5);
+    margin: 2.5rem 0 1.5rem;
+  }
+  .prose-legal strong {
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,129 @@
+---
+/**
+ * ROI Calculator — "Your investment vs. Expected return"
+ * Interactive sliders to calculate payback period
+ */
+interface Props { lang?: 'fr' | 'en'; }
+const { lang = 'fr' } = Astro.props;
+const isFr = lang === 'fr';
+---
+
+<section id="roi" class="py-20 lg:py-28 bg-navy overflow-hidden" aria-labelledby="roi-heading">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-20">
+    <div class="text-center mb-12">
+      <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">{isFr ? 'Retour sur investissement' : 'Return on Investment'}</p>
+      <h2 id="roi-heading" class="font-heading font-bold text-h2 text-white">
+        {isFr ? 'Calcule ton retour sur investissement' : 'Calculate your ROI'}
+      </h2>
+      <p class="font-body text-white/60 text-base mt-3">{isFr ? 'Combien de mois pour rentabiliser ta formation ?' : 'How many months to recoup your education?'}</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {/* Input panel */}
+      <div class="bg-white/5 border border-white/10 backdrop-blur-sm p-8">
+        <h3 class="font-heading font-semibold text-white text-base mb-6">{isFr ? 'Paramètres' : 'Parameters'}</h3>
+
+        <div class="space-y-6">
+          <div>
+            <label for="roi-level" class="text-xs font-semibold text-white/60 uppercase tracking-wider block mb-2">{isFr ? 'Niveau de programme' : 'Programme level'}</label>
+            <select id="roi-level" class="w-full bg-white/10 border border-white/20 text-white px-4 py-3 text-sm font-medium outline-none focus:border-accent">
+              <option value="licence" class="text-black">{isFr ? 'Licence (3 ans)' : 'Bachelor (3 years)'}</option>
+              <option value="master" class="text-black">{isFr ? 'Master (2 ans)' : 'Master (2 years)'}</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="roi-field" class="text-xs font-semibold text-white/60 uppercase tracking-wider block mb-2">{isFr ? 'Domaine' : 'Field'}</label>
+            <select id="roi-field" class="w-full bg-white/10 border border-white/20 text-white px-4 py-3 text-sm font-medium outline-none focus:border-accent">
+              <option value="tech" class="text-black">{isFr ? 'Informatique' : 'Computer Science'}</option>
+              <option value="biz" class="text-black">{isFr ? 'Management' : 'Management'}</option>
+              <option value="mkt" class="text-black">{isFr ? 'Marketing' : 'Marketing'}</option>
+              <option value="fin" class="text-black">{isFr ? 'Finance' : 'Finance'}</option>
+            </select>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label for="roi-salary" class="text-xs font-semibold text-white/60 uppercase tracking-wider">{isFr ? 'Salaire mensuel estimé' : 'Estimated monthly salary'}</label>
+              <span id="roi-salary-value" class="text-accent font-heading font-bold text-sm">1 500 DT</span>
+            </div>
+            <input type="range" id="roi-salary" min="800" max="3500" step="100" value="1500" class="w-full accent-accent" />
+            <div class="flex justify-between text-[10px] text-white/30 mt-1">
+              <span>800 DT</span>
+              <span>3 500 DT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Results panel */}
+      <div class="bg-accent/10 border border-accent/20 p-8 flex flex-col justify-center">
+        <div class="space-y-6">
+          <div>
+            <span class="text-xs font-semibold text-white/60 uppercase tracking-wider block mb-1">{isFr ? 'Investissement total' : 'Total investment'}</span>
+            <span id="roi-investment" class="font-heading font-bold text-3xl text-white">18 000 DT</span>
+          </div>
+          <div>
+            <span class="text-xs font-semibold text-white/60 uppercase tracking-wider block mb-1">{isFr ? 'Salaire annuel estimé' : 'Estimated annual salary'}</span>
+            <span id="roi-annual" class="font-heading font-bold text-3xl text-accent">18 000 DT</span>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <span class="text-xs font-semibold text-white/60 uppercase tracking-wider block mb-1">{isFr ? 'Retour sur investissement en' : 'ROI payback in'}</span>
+            <span id="roi-payback" class="font-heading font-black text-5xl text-accent">12</span>
+            <span class="text-white/60 font-heading font-semibold text-lg ml-2">{isFr ? 'mois' : 'months'}</span>
+          </div>
+          <div class="w-full bg-white/10 h-3">
+            <div id="roi-bar" class="h-full bg-accent transition-all duration-500" style="width: 50%"></div>
+          </div>
+          <p class="text-xs text-white/40">{isFr ? '* Estimation basée sur les salaires moyens d\'insertion de nos diplômés.' : '* Based on average starting salaries of our graduates.'}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const levelEl = document.getElementById('roi-level') as HTMLSelectElement | null;
+    const fieldEl = document.getElementById('roi-field') as HTMLSelectElement | null;
+    const salaryEl = document.getElementById('roi-salary') as HTMLInputElement | null;
+    const salaryVal = document.getElementById('roi-salary-value');
+    const investmentEl = document.getElementById('roi-investment');
+    const annualEl = document.getElementById('roi-annual');
+    const paybackEl = document.getElementById('roi-payback');
+    const barEl = document.getElementById('roi-bar');
+    if (!levelEl || !fieldEl || !salaryEl) return;
+
+    const tuition: Record<string, Record<string, number>> = {
+      licence: { tech: 6000, biz: 8200, mkt: 8200, fin: 8200 },
+      master: { tech: 8500, biz: 8500, mkt: 8500, fin: 8500 },
+    };
+    const years: Record<string, number> = { licence: 3, master: 2 };
+
+    function fmt(n: number): string {
+      return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+
+    function calc() {
+      const level = levelEl!.value;
+      const field = fieldEl!.value;
+      const salary = parseInt(salaryEl!.value);
+      const annual = tuition[level]?.[field] || 8000;
+      const totalYears = years[level] || 3;
+      const totalInvest = annual * totalYears;
+      const annualSalary = salary * 12;
+      const payback = Math.ceil(totalInvest / salary);
+
+      if (salaryVal) salaryVal.textContent = fmt(salary) + ' DT';
+      if (investmentEl) investmentEl.textContent = fmt(totalInvest) + ' DT';
+      if (annualEl) annualEl.textContent = fmt(annualSalary) + ' DT';
+      if (paybackEl) paybackEl.textContent = String(payback);
+      if (barEl) barEl.style.width = Math.min(100, Math.round((1 - payback / 36) * 100)) + '%';
+    }
+
+    levelEl.addEventListener('change', calc);
+    fieldEl.addEventListener('change', calc);
+    salaryEl.addEventListener('input', calc);
+    calc();
+  });
+</script>

@@ -1,0 +1,224 @@
+---
+import Button from '../ui/Button.astro';
+import { getLocaleFromPath } from '@/lib/i18n';
+const isFr = getLocaleFromPath(Astro.url.pathname) === 'fr';
+const prefix = isFr ? '/programmes' : '/en/programs';
+
+const programmes = [
+  {
+    slug: 'licence-informatique-genie-logiciel',
+    type: 'Licence',
+    typeEn: 'Bachelor',
+    title: isFr ? 'Informatique Génie Logiciel' : 'Computer Science & Software Engineering',
+    duration: isFr ? '3 ans' : '3 years',
+    certs: 14,
+    tuition: '6 000 DT/an',
+    image: '/images/programmes/banner-licence-informatique.jpg',
+  },
+  {
+    slug: 'licence-management',
+    type: 'Licence',
+    typeEn: 'Bachelor',
+    title: 'Management',
+    duration: isFr ? '3 ans' : '3 years',
+    certs: 10,
+    tuition: '8 200 DT/an',
+    image: '/images/programmes/licence-management.jpg',
+  },
+  {
+    slug: 'licence-marketing',
+    type: 'Licence',
+    typeEn: 'Bachelor',
+    title: 'Marketing',
+    duration: isFr ? '3 ans' : '3 years',
+    certs: 10,
+    tuition: '8 200 DT/an',
+    image: '/images/programmes/licence-marketing.jpg',
+  },
+  {
+    slug: 'licence-finance',
+    type: 'Licence',
+    typeEn: 'Bachelor',
+    title: 'Finance',
+    duration: isFr ? '3 ans' : '3 years',
+    certs: 10,
+    tuition: '8 200 DT/an',
+    image: '/images/programmes/licence-finance.jpg',
+  },
+  {
+    slug: 'master-marketing-digital-ia',
+    type: 'Master',
+    typeEn: 'Master',
+    title: isFr ? 'Marketing Digital & IA' : 'Digital Marketing & AI',
+    duration: isFr ? '2 ans' : '2 years',
+    certs: 6,
+    tuition: '8 500 DT/an',
+    image: '/images/programmes/banner-master-marketing.jpg',
+  },
+  {
+    slug: 'master-transformation-digitale-crm',
+    type: 'Master',
+    typeEn: 'Master',
+    title: isFr ? 'Transformation Digitale & CRM' : 'Digital Transformation & CRM',
+    duration: isFr ? '2 ans' : '2 years',
+    certs: 8,
+    tuition: '8 500 DT/an',
+    image: '/images/programmes/banner-master-crm.jpg',
+  },
+  {
+    slug: 'master-ingenierie-financiere',
+    type: 'Master',
+    typeEn: 'Master',
+    title: isFr ? 'Ingénierie Financière' : 'Financial Engineering',
+    duration: isFr ? '2 ans' : '2 years',
+    certs: 4,
+    tuition: '8 500 DT/an',
+    image: '/images/programmes/banner-master-finance.jpg',
+  },
+  {
+    slug: 'master-management-projets',
+    type: 'Master',
+    typeEn: 'Master',
+    title: isFr ? 'Management de Projets' : 'Project Management',
+    duration: isFr ? '2 ans' : '2 years',
+    certs: 8,
+    tuition: '8 500 DT/an',
+    image: '/images/programmes/banner-master-projets.jpg',
+  },
+];
+---
+
+<section id="programmes" class="relative bg-navy py-20 lg:py-28 overflow-hidden" aria-labelledby="programmes-heading">
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+    <header class="mb-14">
+      <span class="text-xs font-bold text-accent uppercase tracking-wider mb-3 block">{isFr ? 'Programmes' : 'Programs'}</span>
+      <h2 id="programmes-heading" class="font-heading font-bold text-h2 text-base-50 mb-4">
+        {isFr ? 'Nos Programmes' : 'Our Programs'}
+      </h2>
+      <p class="font-body text-base-300 text-body-lg max-w-xl leading-relaxed">
+        {isFr ? 'Licence ou Master, chaque cursus intègre des certifications internationales et de l\u2019alternance.' : 'Bachelor or Master, every program includes international certifications and work-study.'}
+      </p>
+    </header>
+
+    {/* Filter tabs */}
+    <div class="flex items-center gap-2 mb-10 text-sm font-semibold" role="tablist" aria-label={isFr ? 'Filtrer par niveau' : 'Filter by level'}>
+      <button role="tab" aria-selected="true" data-filter="all" class="programme-tab px-4 py-2 text-base-50 border-b-2 border-accent transition-colors">{isFr ? 'Tous' : 'All'}</button>
+      <button role="tab" aria-selected="false" data-filter="Licence" class="programme-tab px-4 py-2 text-base-400 border-b-2 border-transparent hover:text-base-200 transition-colors">{isFr ? 'Licence' : 'Bachelor'}</button>
+      <button role="tab" aria-selected="false" data-filter="Master" class="programme-tab px-4 py-2 text-base-400 border-b-2 border-transparent hover:text-base-200 transition-colors">Master</button>
+    </div>
+
+    {/* Programme cards with images */}
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" role="tabpanel">
+      {programmes.map((prog, i) => (
+        <li
+          class="tilt-card programme-card group flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-xl reveal"
+          data-type={prog.type}
+          style={`--delay: ${i * 80}ms`}
+        >
+          <a href={`${prefix}/${prog.slug}`} class="flex flex-col h-full">
+            {/* Image header */}
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src={prog.image}
+                alt={prog.title}
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              {/* Badge */}
+              <span class={`absolute top-4 left-4 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider ${prog.type === 'Licence' ? 'bg-navy text-base-50' : 'bg-accent text-base-950'}`}>
+                {isFr ? prog.type : prog.typeEn}
+              </span>
+              {/* Certs badge */}
+              <span class="absolute top-4 right-4 px-2.5 py-1 bg-white/90 text-navy text-xs font-bold backdrop-blur-sm">
+                {prog.certs} certs
+              </span>
+            </div>
+
+            {/* Content */}
+            <div class="bg-surface p-6 flex flex-col flex-1">
+              <h3 class="font-heading font-bold text-xl text-ink mb-3 group-hover:text-accent transition-colors leading-tight">
+                {prog.title}
+              </h3>
+
+              <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-ink-muted font-medium mb-4">
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m12 6v6l4 2"/></svg>
+                  {prog.duration}
+                </span>
+              </div>
+
+              <p class="text-sm font-semibold text-ink mt-auto mb-4">
+                {prog.tuition}
+              </p>
+
+              <span class="inline-flex items-center text-sm font-semibold text-navy group-hover:text-accent transition-colors gap-1 group-hover:gap-2">
+                {isFr ? 'En savoir plus' : 'Learn more'} <span aria-hidden="true">→</span>
+              </span>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    {/* View all link */}
+    <div class="text-center mt-12">
+      <a href={isFr ? '/programmes' : '/en/programs'} class="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white/20 text-white font-heading font-semibold hover:bg-white/10 hover:border-white/40 transition-all text-sm">
+        {isFr ? 'Voir tous les programmes' : 'View all programs'} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .programme-grid-bg {
+    background-image: radial-gradient(var(--color-accent) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    animation: grid-breathe 8s ease-in-out infinite;
+  }
+
+  @keyframes grid-breathe {
+    0%, 100% { opacity: 0.04; }
+    50% { opacity: 0.08; }
+  }
+
+  .programme-card {
+    animation: card-reveal 0.4s var(--ease-out-expo) both;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  @keyframes card-reveal {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .programme-grid-bg { animation: none; opacity: 0.04; }
+    .programme-card { animation: none; }
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.programme-tab');
+    const cards = document.querySelectorAll<HTMLElement>('.programme-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const filter = tab.dataset.filter;
+        tabs.forEach(t => {
+          t.setAttribute('aria-selected', String(t === tab));
+          t.classList.toggle('border-accent', t === tab);
+          t.classList.toggle('text-base-50', t === tab);
+          t.classList.toggle('border-transparent', t !== tab);
+          t.classList.toggle('text-base-400', t !== tab);
+        });
+        cards.forEach(card => {
+          const show = filter === 'all' || card.dataset.type === filter;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  });
+</script>

@@ -1,0 +1,381 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Marker from '../../components/ui/Marker.astro';
+import { flags } from '../../data/programmes';
+import AlumniMap from '../../components/blocks/AlumniMap.astro';
+
+const partners = [
+  {
+    name: 'UQAT',
+    fullName: 'Université du Québec en Abitibi-Témiscamingue',
+    country: 'Canada',
+    flag: 'CA',
+    description: 'Université publique canadienne reconnue. Double diplôme possible pour les étudiants en Management, Marketing et Finance.',
+    programmes: ['Management', 'Marketing', 'Finance'],
+    advantages: ['Double diplôme Tunisie-Canada', 'Campus au Québec', 'Reconnaissance internationale du diplôme'],
+    image: '/images/programmes/banner-canada.jpg',
+    logo: '/images/partners/uqat.svg',
+    duration: '1 an (2 semestres au Québec)',
+    tuition: '~12 000 CAD / an (frais différenciés pour étudiants internationaux)',
+    language: 'Français (DELF B2 recommandé, test de niveau EBS suffit)',
+    housing: 'Résidences universitaires UQAT (~350–450 CAD/mois). Service logement dédié.',
+    visa: 'Permis d\'études canadien (CAQ + permis fédéral). EBS fournit lettre d\'acceptation et accompagnement.',
+    eligibility: 'Avoir validé la L2 ou L3 à EBS avec une moyenne ≥ 12/20. Dossier complet examiné par l\'UQAT.',
+  },
+  {
+    name: 'EM Normandie',
+    fullName: 'École de Management de Normandie',
+    country: 'France',
+    flag: 'FR',
+    description: 'Grande école de commerce française, membre de la Conférence des Grandes Écoles. Accréditation AACSB, EQUIS et AMBA.',
+    programmes: ['Management', 'Marketing', 'Finance'],
+    advantages: ['Triple accréditation internationale', 'Réseau alumni mondial', 'Stages en France'],
+    image: '/images/events/em-normandie-visit.jpg',
+    logo: '/images/partners/em-normandie-logo.png',
+    duration: '1 à 2 ans (Master ou dernière année de Bachelor)',
+    tuition: '~8 500 – 12 000 € / an selon le programme',
+    language: 'Français et/ou Anglais selon le parcours (TOEFL/IELTS pour parcours anglophone)',
+    housing: 'Résidences étudiantes privées (~400–600 €/mois). Bureau logement EM Normandie.',
+    visa: 'Visa étudiant long séjour France (VLS-TS). EBS + EM Normandie fournissent les justificatifs.',
+    eligibility: 'L3 validée à EBS avec moyenne ≥ 12/20. Entretien de motivation avec EM Normandie.',
+  },
+  {
+    name: 'Collège de Paris',
+    fullName: 'Collège de Paris',
+    country: 'France',
+    flag: 'FR',
+    description: 'Réseau d\'établissements d\'enseignement supérieur en France. Passerelle vers des programmes spécialisés à Paris.',
+    programmes: ['Management', 'Marketing', 'Finance'],
+    advantages: ['Études à Paris', 'Réseau professionnel français', 'Spécialisations variées'],
+    image: '/images/international/paris-student.png',
+    logo: '/images/partners/college-de-paris.png',
+    duration: '1 an (dernière année de Master en alternance possible)',
+    tuition: '~7 000 – 10 000 € / an (alternance prise en charge par l\'entreprise)',
+    language: 'Français (niveau B2 minimum requis)',
+    housing: 'Logement libre à Paris (~500–800 €/mois). Aide à la recherche via le réseau.',
+    visa: 'Visa étudiant long séjour France (VLS-TS). Accompagnement administratif EBS.',
+    eligibility: 'L3 ou M1 validé à EBS avec moyenne ≥ 11/20. Entretien + lettre de motivation.',
+  },
+  {
+    name: 'Keyce Academy',
+    fullName: 'Keyce Academy',
+    country: 'France',
+    flag: 'FR',
+    description: 'École d\'informatique et de digital en France. Partenariat pour la filière Informatique Génie Logiciel.',
+    programmes: ['Informatique Génie Logiciel'],
+    advantages: ['Spécialisation IT en France', 'Alternance en entreprise française', 'Réseau tech'],
+    image: '/images/international/em-strasbourg.jpg',
+    logo: '/images/partners/keyce-academy.png',
+    duration: '1 à 2 ans (Bachelor 3 ou cycle Master en alternance)',
+    tuition: '~6 000 – 9 000 € / an (alternance : 0 € pour l\'étudiant)',
+    language: 'Français (niveau B2). Anglais technique recommandé.',
+    housing: 'Résidences étudiantes (~350–550 €/mois selon la ville). Aide Keyce.',
+    visa: 'Visa étudiant long séjour France (VLS-TS). Dossier accompagné par EBS.',
+    eligibility: 'L2 ou L3 Informatique validé à EBS. Moyenne ≥ 12/20. Projet technique à présenter.',
+  },
+];
+
+const title = "Parcours Internationaux — EBS Tunis";
+const description = "Étudiez au Canada ou en France grâce aux partenariats EBS : UQAT, EM Normandie, Collège de Paris, Keyce Academy. Double diplôme et passerelles internationales.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* ───────────────── HERO ───────────────── */}
+    <section class="relative bg-navy overflow-hidden min-h-[55vh] flex items-center" aria-labelledby="intl-hero">
+      <img src="/images/international/campus-france.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" aria-hidden="true" />
+      <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-20 pb-16 md:pt-28 md:pb-20 lg:pt-36 lg:pb-24 relative z-10">
+        <nav class="mb-8" aria-label="Fil d'ariane">
+          <ol class="flex items-center gap-2 text-xs text-white/40 font-medium">
+            <li><a href="/" class="hover:text-accent transition-colors">Accueil</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-white/70">International</li>
+          </ol>
+        </nav>
+
+        <div class="max-w-3xl">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-5">3 pays · {partners.length} partenaires · Double diplôme</p>
+          <h1 id="intl-hero" class="font-heading font-bold text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.08] text-white tracking-tight mb-5">
+            Ton diplôme traverse<br/>les frontières<Marker size="lg" class="inline-block ml-3 align-middle" />
+          </h1>
+          <p class="font-body text-base-300 text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
+            Grâce à nos partenariats avec des universités au Canada et en France, tu peux poursuivre tes études à l'international avec une reconnaissance complète de tes crédits.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 mb-10">
+            {[
+              { code: 'TN', label: 'Tunisie' },
+              { code: 'CA', label: 'Canada' },
+              { code: 'FR', label: 'France' },
+            ].map(c => (
+              <div class="flex items-center gap-2 px-4 py-2 bg-white/[0.07] border border-white/10">
+                <Fragment set:html={flags[c.code].svg} />
+                <span class="text-sm text-white/80 font-medium">{c.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <Button href="/programmes" variant="ghost" size="lg" class="text-white/70 hover:text-accent">
+            Voir les programmes éligibles
+          </Button>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── HOW IT WORKS ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="how-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Parcours type</p>
+          <h2 id="how-heading" class="font-heading font-bold text-h2 text-ink">
+            Comment ça fonctionne ?
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {[
+            { step: '01', title: 'Licence à EBS', desc: '3 ans de formation à Tunis avec certifications et alternance.' },
+            { step: '02', title: 'Candidature', desc: 'Dossier facilité grâce au partenariat. Pas de concours supplémentaire.' },
+            { step: '03', title: 'Transfert', desc: 'Reconnaissance complète des crédits LMD. Intégration directe.' },
+            { step: '04', title: 'Double diplôme', desc: 'Diplôme EBS + diplôme du partenaire. Deux pays, une carrière.' },
+          ].map((item, i) => (
+            <div class="relative reveal" style={`--delay: ${i * 80}ms`}>
+              <div class="bg-surface border border-border/40 p-6 h-full">
+                <span class="font-heading font-bold text-2xl text-accent/30 mb-3 block">{item.step}</span>
+                <h3 class="font-heading font-semibold text-base text-ink mb-2">{item.title}</h3>
+                <p class="text-sm text-ink-body leading-relaxed">{item.desc}</p>
+              </div>
+              {i < 3 && (
+                <span class="hidden md:block absolute top-1/2 -right-3 text-accent/40 z-10" aria-hidden="true">▸</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── PARTNER CARDS ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface reveal" aria-labelledby="partners-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14">
+          <div class="lg:col-span-7">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Nos partenaires</p>
+            <h2 id="partners-heading" class="font-heading font-bold text-h2 text-ink leading-tight">
+              Universités partenaires<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+          <div class="lg:col-span-5">
+            <p class="font-body text-ink-body text-base leading-relaxed">
+              Chaque partenariat est structuré pour garantir la reconnaissance de tes acquis et une intégration fluide.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {partners.map((partner, i) => (
+            <article class="group bg-surface border border-border/40 overflow-hidden flex flex-col reveal" style={`--delay: ${i * 60}ms`}>
+              <div class="relative h-48 overflow-hidden">
+                <img src={partner.image} alt={partner.fullName} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-transparent"></div>
+                <div class="absolute top-4 left-4">
+                  <img src={partner.logo} alt={partner.name} class="h-10 w-auto object-contain bg-white/90 p-1.5" loading="lazy" />
+                </div>
+                <div class="absolute bottom-0 left-0 px-8 pb-5">
+                  <div class="flex items-center gap-3 mb-2">
+                    <Fragment set:html={flags[partner.flag].svg} />
+                    <span class="text-white/60 text-xs font-semibold uppercase tracking-wider">{partner.country}</span>
+                  </div>
+                  <h3 class="font-heading font-bold text-xl text-white leading-tight">{partner.name}</h3>
+                  <p class="text-sm text-white/60 mt-1">{partner.fullName}</p>
+                </div>
+              </div>
+
+              <div class="px-8 py-7 flex flex-col flex-1">
+                <p class="font-body text-ink-body text-sm leading-relaxed mb-5">{partner.description}</p>
+
+                <div class="mb-5">
+                  <p class="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-2">Programmes éligibles</p>
+                  <div class="flex flex-wrap gap-1.5">
+                    {partner.programmes.map(prog => (
+                      <span class="inline-block px-2.5 py-1 bg-accent/5 text-ink text-xs font-medium">{prog}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div class="mb-5">
+                  <p class="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-2">Avantages</p>
+                  <ul class="space-y-2">
+                    {partner.advantages.map(adv => (
+                      <li class="flex items-start gap-2 text-sm text-ink-body">
+                        <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                        {adv}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Operational details grid */}
+                <div class="grid grid-cols-2 gap-3 mb-5">
+                  <div class="bg-surface-alt px-3 py-2.5 border border-border/20">
+                    <p class="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-1">Durée</p>
+                    <p class="text-xs text-ink-body">{partner.duration}</p>
+                  </div>
+                  <div class="bg-surface-alt px-3 py-2.5 border border-border/20">
+                    <p class="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-1">Frais</p>
+                    <p class="text-xs text-ink-body">{partner.tuition}</p>
+                  </div>
+                  <div class="bg-surface-alt px-3 py-2.5 border border-border/20">
+                    <p class="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-1">Langue</p>
+                    <p class="text-xs text-ink-body">{partner.language}</p>
+                  </div>
+                  <div class="bg-surface-alt px-3 py-2.5 border border-border/20">
+                    <p class="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-1">Logement</p>
+                    <p class="text-xs text-ink-body">{partner.housing}</p>
+                  </div>
+                </div>
+                <div class="bg-accent/5 border border-accent/15 px-4 py-3 mb-5">
+                  <p class="text-[10px] font-bold uppercase tracking-wider text-accent mb-1">Visa & Accompagnement</p>
+                  <p class="text-xs text-ink-body">{partner.visa}</p>
+                </div>
+                <div class="mb-5">
+                  <p class="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-1">Éligibilité</p>
+                  <p class="text-xs text-ink-body">{partner.eligibility}</p>
+                </div>
+
+                <div class="mt-auto pt-5 border-t border-border/30">
+                  <a href="/programmes" class="inline-flex items-center text-sm font-semibold text-navy hover:text-accent transition-colors gap-1.5 hover:gap-2.5">
+                    Voir les programmes <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── PATHWAY TABLE ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="pathway-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Passerelles concrètes</p>
+          <h2 id="pathway-heading" class="font-heading font-bold text-h2 text-ink">
+            Quel parcours pour quel diplôme ?
+          </h2>
+          <p class="font-body text-ink-body text-base max-w-xl mx-auto mt-3">
+            Chaque filière EBS ouvre des portes vers des partenaires spécifiques. Voici la correspondance exacte.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border-collapse min-w-[640px]">
+            <thead>
+              <tr class="bg-navy text-white text-left">
+                <th class="px-5 py-3.5 font-heading font-semibold text-xs uppercase tracking-wider">Programme EBS</th>
+                <th class="px-5 py-3.5 font-heading font-semibold text-xs uppercase tracking-wider">Partenaire</th>
+                <th class="px-5 py-3.5 font-heading font-semibold text-xs uppercase tracking-wider">Pays</th>
+                <th class="px-5 py-3.5 font-heading font-semibold text-xs uppercase tracking-wider">Diplôme obtenu</th>
+                <th class="px-5 py-3.5 font-heading font-semibold text-xs uppercase tracking-wider">Stage</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { programme: 'Licence Management', partner: 'UQAT', country: 'Canada', flag: 'CA', diploma: 'B.A.A. (Baccalauréat en administration des affaires)', stage: '✓' },
+                { programme: 'Licence Management', partner: 'EM Normandie', country: 'France', flag: 'FR', diploma: 'Bachelor in Management', stage: '✓' },
+                { programme: 'Licence Management', partner: 'Collège de Paris', country: 'France', flag: 'FR', diploma: 'Bachelor Management', stage: '✓' },
+                { programme: 'Licence Marketing', partner: 'UQAT', country: 'Canada', flag: 'CA', diploma: 'B.A.A. concentration Marketing', stage: '✓' },
+                { programme: 'Licence Marketing', partner: 'EM Normandie', country: 'France', flag: 'FR', diploma: 'Bachelor Marketing & Communication', stage: '✓' },
+                { programme: 'Licence Finance', partner: 'UQAT', country: 'Canada', flag: 'CA', diploma: 'B.A.A. concentration Finance', stage: '✓' },
+                { programme: 'Licence Finance', partner: 'EM Normandie', country: 'France', flag: 'FR', diploma: 'Bachelor Finance', stage: '✓' },
+                { programme: 'Licence Informatique', partner: 'Keyce Academy', country: 'France', flag: 'FR', diploma: 'Bachelor Informatique / Développement', stage: '✓' },
+              ].map((row, i) => (
+                <tr class={`border-b border-border/30 ${i % 2 === 0 ? 'bg-surface' : 'bg-surface-alt'}`}>
+                  <td class="px-5 py-3.5 font-medium text-ink">{row.programme}</td>
+                  <td class="px-5 py-3.5 text-ink-body font-semibold">{row.partner}</td>
+                  <td class="px-5 py-3.5">
+                    <div class="flex items-center gap-2">
+                      <Fragment set:html={flags[row.flag].svg} />
+                      <span class="text-ink-body">{row.country}</span>
+                    </div>
+                  </td>
+                  <td class="px-5 py-3.5 text-ink-body">{row.diploma}</td>
+                  <td class="px-5 py-3.5 text-center text-accent font-bold">{row.stage}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-xs text-ink-muted mt-6 text-center">
+          * Les passerelles sont disponibles à partir de la 3ème année de Licence (L3). Conditions d'éligibilité auprès du service des admissions.
+        </p>
+      </div>
+    </section>
+
+
+    {/* ───────────────── ALUMNI MAP ───────────────── */}
+    <AlumniMap lang="fr" />
+
+
+    {/* ───────────────── CTA ───────────────── */}
+    <section class="relative py-20 lg:py-28 overflow-hidden" aria-label="Inscription">
+      <img src="/images/international/em-presentiel.png" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" aria-hidden="true" />
+      <div class="absolute inset-0 bg-accent/90"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center relative z-10">
+        <p class="text-xs font-semibold text-base-950/50 uppercase tracking-wider mb-4">Canada · France · Tunisie</p>
+        <h2 class="font-heading font-bold text-[clamp(1.75rem,4vw,3rem)] leading-[1.1] text-base-950 mb-5">
+          Ton parcours international commence ici<Marker size="lg" class="inline-block ml-3 align-middle bg-base-950" />
+        </h2>
+        <p class="font-body text-base-950/60 text-lg mb-10 max-w-md mx-auto">
+          Explore les programmes éligibles et commence ta préinscription.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button href="/preinscription" variant="inverted" size="lg">
+            Commencer ma préinscription <span class="ml-2" aria-hidden="true">→</span>
+          </Button>
+          <Button href="/programmes" variant="ghost" size="lg" class="text-base-950/70 hover:text-base-950">
+            Voir les programmes
+          </Button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const reveals = document.querySelectorAll<HTMLElement>('.reveal');
+    if (reveals.length) {
+      const obs = new IntersectionObserver(
+        (entries) => entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        }),
+        { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+      );
+      reveals.forEach((el) => obs.observe(el));
+    }
+  });
+</script>

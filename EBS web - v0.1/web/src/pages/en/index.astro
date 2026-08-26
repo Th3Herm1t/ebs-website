@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/blocks/Hero.astro';
+import TrustBar from '../../components/blocks/TrustBar.astro';
+import ValueProps from '../../components/blocks/ValueProps.astro';
+import ProgrammeGrid from '../../components/blocks/ProgrammeGrid.astro';
+import ProgrammeFinder from '../../components/blocks/ProgrammeFinder.astro';
+import CertificationProof from '../../components/blocks/CertificationProof.astro';
+import Alternance from '../../components/blocks/Alternance.astro';
+import InternationalPathways from '../../components/blocks/InternationalPathways.astro';
+import CampusLife from '../../components/blocks/CampusLife.astro';
+import Outcomes from '../../components/blocks/Outcomes.astro';
+import FinalCTA from '../../components/blocks/FinalCTA.astro';
+
+const title = "EBS | Computer Science & Cloud Technology School";
+const description = "Graduate, certified, employed. EBS trains tomorrow's cloud, network and AI engineers with globally recognized certifications included (AWS, IBM, Google).";
+---
+
+<BaseLayout title={title} description={description} lang="en">
+  <div class="w-full bg-surface text-ink antialiased selection:bg-accent selection:text-white">
+    <h1 class="sr-only">EBS - Bilingual School of Computer Science and Technology</h1>
+    <Hero />
+    <TrustBar />
+    <ValueProps />
+
+    {/* ── Programmes ── */}
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-base-200 to-transparent"></div>
+    <ProgrammeGrid />
+    <ProgrammeFinder lang="en" />
+    <CertificationProof />
+
+    {/* ── Student Life ── */}
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-base-200 to-transparent"></div>
+    <Alternance />
+    <InternationalPathways />
+    <CampusLife />
+
+    {/* ── Results ── */}
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-base-200 to-transparent"></div>
+    <Outcomes />
+    <FinalCTA />
+  </div>
+</BaseLayout>

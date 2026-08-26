@@ -1,0 +1,168 @@
+---
+/**
+ * Alumni World Map — Leaflet interactive map with alumni location markers
+ */
+import { getLocaleFromPath } from '@/lib/i18n';
+
+interface Props { lang?: 'fr' | 'en'; }
+const { lang } = Astro.props;
+const isFr = lang ? lang === 'fr' : getLocaleFromPath(Astro.url.pathname) === 'fr';
+
+const alumniLocations = [
+  { country: isFr ? 'Tunisie' : 'Tunisia', flag: '🇹🇳', count: 350, lat: 36.8, lng: 10.18, highlight: true },
+  { country: 'France', flag: '🇫🇷', count: 45, lat: 48.86, lng: 2.35 },
+  { country: 'Canada', flag: '🇨🇦', count: 20, lat: 45.50, lng: -73.57 },
+  { country: isFr ? 'Allemagne' : 'Germany', flag: '🇩🇪', count: 12, lat: 52.52, lng: 13.40 },
+  { country: isFr ? 'Belgique' : 'Belgium', flag: '🇧🇪', count: 8, lat: 50.85, lng: 4.35 },
+  { country: isFr ? 'Suisse' : 'Switzerland', flag: '🇨🇭', count: 7, lat: 46.95, lng: 7.45 },
+  { country: isFr ? 'Émirats' : 'UAE', flag: '🇦🇪', count: 15, lat: 25.20, lng: 55.27 },
+  { country: 'Qatar', flag: '🇶🇦', count: 6, lat: 25.29, lng: 51.53 },
+  { country: isFr ? 'Arabie Saoudite' : 'Saudi Arabia', flag: '🇸🇦', count: 5, lat: 24.71, lng: 46.68 },
+  { country: isFr ? 'Maroc' : 'Morocco', flag: '🇲🇦', count: 8, lat: 33.97, lng: -6.85 },
+  { country: isFr ? "Côte d'Ivoire" : 'Ivory Coast', flag: '🇨🇮', count: 4, lat: 5.36, lng: -4.01 },
+  { country: isFr ? 'Sénégal' : 'Senegal', flag: '🇸🇳', count: 3, lat: 14.69, lng: -17.44 },
+  { country: isFr ? 'Royaume-Uni' : 'United Kingdom', flag: '🇬🇧', count: 6, lat: 51.51, lng: -0.13 },
+  { country: isFr ? 'Italie' : 'Italy', flag: '🇮🇹', count: 5, lat: 41.90, lng: 12.50 },
+  { country: isFr ? 'Turquie' : 'Turkey', flag: '🇹🇷', count: 4, lat: 41.01, lng: 28.98 },
+];
+
+const graduatesLabel = isFr ? 'diplômés' : 'graduates';
+---
+
+<section class="py-20 lg:py-28 bg-surface-alt overflow-hidden" aria-labelledby="alumni-map-heading">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+    <div class="text-center mb-14">
+      <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">{isFr ? 'Réseau alumni' : 'Alumni Network'}</p>
+      <h2 id="alumni-map-heading" class="font-heading font-bold text-h2 text-ink">
+        {isFr ? 'Nos diplômés dans le monde' : 'Our graduates worldwide'}
+      </h2>
+      <p class="font-body text-ink-body text-base mt-3 max-w-lg mx-auto">
+        {isFr ? `${alumniLocations.length}+ pays, 500+ diplômés — un réseau qui s'étend chaque année.` : `${alumniLocations.length}+ countries, 500+ graduates — a network growing every year.`}
+      </p>
+    </div>
+
+    {/* Leaflet map container */}
+    <div
+      id="alumni-map"
+      style="height:420px;width:100%;border-radius:0.5rem;border:1px solid rgba(0,0,0,0.08);z-index:0;"
+      class="mb-10"
+    ></div>
+
+    {/* Country list */}
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+      {alumniLocations.sort((a, b) => b.count - a.count).map(loc => (
+        <div class={`flex items-center gap-2.5 px-4 py-3 border ${loc.highlight ? 'border-accent/30 bg-accent/5' : 'border-border/30 bg-surface'}`}>
+          <span class="text-lg">{loc.flag}</span>
+          <div>
+            <span class="font-heading font-bold text-sm text-ink block leading-tight">{loc.country}</span>
+            <span class="text-xs text-ink-muted">{loc.count} {isFr ? 'diplômés' : 'grads'}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<script define:vars={{ alumniLocations, graduatesLabel }}>
+  function initAlumniMap() {
+    const container = document.getElementById('alumni-map');
+    if (!container || container.dataset.init) return;
+    container.dataset.init = '1';
+
+    const L = window.L;
+    if (!L) return;
+
+    const map = L.map('alumni-map', {
+      center: [30, 10],
+      zoom: 2.5,
+      minZoom: 2,
+      maxZoom: 6,
+      scrollWheelZoom: false,
+      attributionControl: false,
+    });
+
+    // Light, clean tile layer (no API key needed)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19,
+    }).addTo(map);
+
+    // Custom circle markers for each alumni location
+    alumniLocations.forEach(loc => {
+      const radius = loc.highlight ? 18 : Math.max(6, Math.min(14, loc.count / 4));
+      const color = loc.highlight ? '#FF6D00' : '#063966';
+
+      const marker = L.circleMarker([loc.lat, loc.lng], {
+        radius: radius,
+        fillColor: color,
+        color: loc.highlight ? '#FF6D00' : '#063966',
+        weight: loc.highlight ? 3 : 1.5,
+        opacity: 1,
+        fillOpacity: loc.highlight ? 0.45 : 0.35,
+      }).addTo(map);
+
+      marker.bindPopup(
+        `<div style="text-align:center;font-family:system-ui,sans-serif;">
+          <span style="font-size:1.8rem;">${loc.flag}</span><br>
+          <strong style="font-size:0.95rem;">${loc.country}</strong><br>
+          <span style="color:#FF6D00;font-weight:700;font-size:1.1rem;">${loc.count}</span>
+          <span style="font-size:0.8rem;color:#555;"> ${graduatesLabel}</span>
+        </div>`,
+        { closeButton: false, className: 'alumni-popup' }
+      );
+
+      // Pulsing ring for highlighted (Tunisia)
+      if (loc.highlight) {
+        const pulse = L.circleMarker([loc.lat, loc.lng], {
+          radius: 18,
+          fillColor: '#FF6D00',
+          color: '#FF6D00',
+          weight: 2,
+          opacity: 0.6,
+          fillOpacity: 0.15,
+          className: 'alumni-pulse',
+        }).addTo(map);
+      }
+    });
+  }
+
+  // Load Leaflet JS then init
+  if (!window.L) {
+    const s = document.createElement('script');
+    s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    s.onload = initAlumniMap;
+    document.head.appendChild(s);
+  } else {
+    initAlumniMap();
+  }
+  // Re-init on Astro page transitions
+  document.addEventListener('astro:page-load', () => {
+    if (window.L) initAlumniMap();
+  });
+</script>
+
+<style is:global>
+  .alumni-pulse {
+    animation: alumni-ring 2s ease-out infinite;
+  }
+  @keyframes alumni-ring {
+    0%   { opacity: 0.6; transform: scale(1); }
+    100% { opacity: 0;   transform: scale(2.5); }
+  }
+  .alumni-popup .leaflet-popup-content-wrapper {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    padding: 4px;
+  }
+  .alumni-popup .leaflet-popup-tip {
+    background: white;
+  }
+  /* Prevent Leaflet z-index from covering header */
+  #alumni-map { z-index: 0 !important; }
+  #alumni-map .leaflet-pane { z-index: 0; }
+  #alumni-map .leaflet-top,
+  #alumni-map .leaflet-bottom { z-index: 1; }
+</style>

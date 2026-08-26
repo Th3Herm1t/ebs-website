@@ -1,0 +1,705 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Marker from '../../components/ui/Marker.astro';
+import { licences, masters, flags, partnerFlag, programmeImages } from '../../data/programmes';
+import CurriculumExplorer from '../../components/blocks/CurriculumExplorer.astro';
+
+const title = "Nos Programmes — Licences et Masters | EBS Tunis";
+const description = "Découvrez les licences et masters de l'EBS Tunis : informatique, management, marketing, finance. Certifications internationales incluses et alternance dès la L2.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* ───────────────── HERO ───────────────── */}
+    <section class="relative bg-navy overflow-hidden min-h-[70vh] flex items-end" aria-labelledby="hero-heading">
+      <img src="/images/campus/students-3.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" aria-hidden="true" />
+      <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/60"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent"></div>
+      <div class="absolute left-6 md:left-12 lg:left-20 top-20 bottom-20 w-1 bg-accent/15 hidden lg:block" aria-hidden="true"></div>
+
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-20 pb-16 md:pt-28 md:pb-24 lg:pt-36 lg:pb-28 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          {/* Left — Copy */}
+          <div class="lg:col-span-7">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-5">8 programmes · 27+ certifications · 3 pays</p>
+            <h1 id="hero-heading" class="font-heading font-bold text-[clamp(2.25rem,5vw,4rem)] leading-[1.05] text-white tracking-tight mb-6">
+              Ton parcours,<br/>
+              <span class="lg:ml-12">tes ambitions</span><Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h1>
+            <p class="font-body text-base-300 text-lg md:text-xl leading-relaxed max-w-lg mb-10">
+              Chaque cursus EBS intègre des certifications internationales, de l'alternance en entreprise et des passerelles vers le Canada et la France.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-14">
+              <Button href="/preinscription" variant="primary" size="lg">
+                Préinscription <span class="ml-2" aria-hidden="true">→</span>
+              </Button>
+              <Button href="#licences" variant="ghost" size="lg" class="text-white/70 hover:text-accent">
+                Explorer les programmes
+              </Button>
+            </div>
+
+            {/* Trust strip — animated counters */}
+            <div class="flex flex-wrap items-center gap-x-10 gap-y-4 pt-8 border-t border-white/10">
+              <div class="flex items-baseline gap-2">
+                <span class="font-heading font-bold text-3xl text-accent" data-countup="27">0</span>
+                <span class="text-sm text-white/50 font-medium">certifications</span>
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="font-heading font-bold text-3xl text-accent" data-countup="68" data-suffix="%">0</span>
+                <span class="text-sm text-white/50 font-medium">taux d'emploi</span>
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="font-heading font-bold text-3xl text-accent">L2</span>
+                <span class="text-sm text-white/50 font-medium">alternance</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right — Anchor panels */}
+          <div class="lg:col-span-5 flex flex-col gap-5 hero-panels">
+            <a href="#licences" class="group block border border-white/15 hover:border-accent/40 p-7 transition-all relative overflow-hidden">
+              <span class="absolute -right-4 -top-4 font-heading font-bold text-[6rem] leading-none text-white/[0.03] select-none" aria-hidden="true">L</span>
+              <div class="relative">
+                <span class="inline-block px-2.5 py-1 bg-white/15 text-white text-[11px] font-bold uppercase tracking-wider mb-4">Licences</span>
+                <div class="flex items-baseline gap-3 mb-2">
+                  <span class="font-heading font-bold text-[2.5rem] leading-none text-accent">4</span>
+                  <span class="text-white/70 text-sm font-medium">programmes</span>
+                </div>
+                <p class="text-white/50 text-sm leading-relaxed mb-4">Bac → Bac+3 · 3 ans · Alternance dès L2</p>
+                <span class="inline-flex items-center text-xs font-semibold text-accent gap-1 group-hover:gap-2 transition-all">
+                  Voir les licences <span aria-hidden="true">↓</span>
+                </span>
+              </div>
+            </a>
+
+            <a href="#masters" class="group block border border-white/15 hover:border-accent/40 p-7 transition-all relative overflow-hidden">
+              <span class="absolute -right-4 -top-4 font-heading font-bold text-[6rem] leading-none text-white/[0.03] select-none" aria-hidden="true">M</span>
+              <div class="relative">
+                <span class="inline-block px-2.5 py-1 bg-accent text-base-950 text-[11px] font-bold uppercase tracking-wider mb-4">Masters</span>
+                <div class="flex items-baseline gap-3 mb-2">
+                  <span class="font-heading font-bold text-[2.5rem] leading-none text-accent">4</span>
+                  <span class="text-white/70 text-sm font-medium">spécialisations</span>
+                </div>
+                <p class="text-white/50 text-sm leading-relaxed mb-4">Bac+3 → Bac+5 · 2 ans · Expertise sectorielle</p>
+                <span class="inline-flex items-center text-xs font-semibold text-accent gap-1 group-hover:gap-2 transition-all">
+                  Voir les masters <span aria-hidden="true">↓</span>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── LICENCES ───────────────── */}
+    <section id="licences" class="py-20 lg:py-28 bg-surface-alt scroll-mt-20" aria-labelledby="licences-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 reveal">
+        {/* Section header */}
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14">
+          <div class="lg:col-span-7 relative">
+            <span class="absolute -left-2 -top-8 font-heading font-bold text-[5rem] leading-none text-ink/[0.04] select-none hidden lg:block" aria-hidden="true">01</span>
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Bac → Bac+3 · 3 ans</p>
+            <h2 id="licences-heading" class="font-heading font-bold text-h2 text-ink leading-tight">
+              Nos Licences<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+          <div class="lg:col-span-5">
+            <p class="font-body text-ink-body text-base leading-relaxed">
+              Diplôme Bac+3 reconnu par l'État. Trois années de fondamentaux, de stages en entreprise et de certifications pour entrer sur le marché — ou poursuivre en Master.
+            </p>
+          </div>
+        </div>
+
+        {/* Licence cards — 2×2 */}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {licences.map((prog, i) => (
+            <article
+              class="prog-card group bg-surface border border-border/40 overflow-hidden flex flex-col reveal"
+              style={`--delay: ${i * 60}ms`}
+            >
+              {/* Card header */}
+              <div class="relative h-48 overflow-hidden">
+                <img src={programmeImages[prog.slug] || '/images/campus/students-3.jpg'} alt={prog.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/40 to-navy/10"></div>
+                <span class="absolute right-3 top-3 font-heading font-bold text-[5rem] leading-none text-white/[0.06] select-none" aria-hidden="true">L{i + 1}</span>
+                <div class="absolute bottom-0 left-0 px-8 pb-5 relative">
+                  <span class="inline-block px-2.5 py-1 bg-white/15 text-white text-[11px] font-bold uppercase tracking-wider mb-3">
+                    Licence · {prog.duration}
+                  </span>
+                  <h3 class="font-heading font-bold text-xl text-white leading-tight mb-3">{prog.title}</h3>
+                  {/* International tags with SVG flags */}
+                  {prog.international.length > 0 && (
+                    <div class="flex flex-wrap gap-2">
+                      {prog.international.map(partner => (
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/10 text-white/80 text-[10px] font-semibold uppercase tracking-wider">
+                          <Fragment set:html={flags[partnerFlag[partner]].svg} />
+                          {partner}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Card body */}
+              <div class="px-8 py-7 flex flex-col flex-1">
+                <p class="font-body text-ink-body text-sm leading-relaxed mb-5">{prog.description}</p>
+
+                {/* Highlight callout */}
+                <div class="flex items-start gap-3 px-4 py-3 bg-accent/5 border-l-2 border-accent mb-5">
+                  <p class="text-xs font-medium text-ink leading-relaxed">{prog.highlight}</p>
+                </div>
+
+                {/* Key facts */}
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2.5 mb-5">
+                  <div class="flex items-center gap-2 text-sm">
+                    <span class="w-1.5 h-1.5 bg-accent shrink-0" aria-hidden="true"></span>
+                    <span class="text-ink-muted">{prog.certs} certifications</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-sm">
+                    <span class="w-1.5 h-1.5 bg-accent shrink-0" aria-hidden="true"></span>
+                    <span class="text-ink-muted">Prérequis : {prog.level}</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-sm">
+                    <span class="w-1.5 h-1.5 bg-accent shrink-0" aria-hidden="true"></span>
+                    <span class="text-ink-muted">Alternance dès L2</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-sm">
+                    <span class="w-1.5 h-1.5 bg-accent shrink-0" aria-hidden="true"></span>
+                    <span class="text-ink-muted">Rentrée : Septembre</span>
+                  </div>
+                </div>
+
+                {/* Career chips — expandable */}
+                <div class="mb-6 careers-block">
+                  <button type="button" class="careers-toggle flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-2 hover:text-accent transition-colors cursor-pointer">
+                    <span>Débouchés</span>
+                    <svg class="w-3 h-3 careers-chevron transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <div class="careers-list overflow-hidden transition-all duration-300" style="max-height: 0;">
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                      {prog.careers.map(career => (
+                        <span class="inline-block px-2.5 py-1 bg-navy/5 text-ink-muted text-xs font-medium">{career}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Price + CTA */}
+                <div class="mt-auto flex items-center justify-between pt-5 border-t border-border/30">
+                  <div>
+                    <span class="font-heading font-bold text-2xl text-accent">{prog.price}</span>
+                    <span class="text-ink-muted text-sm ml-1">DT/an</span>
+                  </div>
+                  <a
+                    href={`/programmes/${prog.slug}`}
+                    class="inline-flex items-center text-sm font-semibold text-navy hover:text-accent transition-colors gap-1.5 hover:gap-2.5"
+                  >
+                    En savoir plus <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Bottom accent bar */}
+              <div class="h-1 bg-accent/15 group-hover:bg-accent transition-colors duration-300" aria-hidden="true"></div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── JOURNEY BRIDGE ───────────────── */}
+    <section class="relative bg-navy py-16 lg:py-20 overflow-hidden reveal" aria-label="Parcours académique">
+      <div class="absolute inset-0 pointer-events-none prog-grid-bg" aria-hidden="true"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Left — CTA */}
+          <div class="lg:col-span-5">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-4">Parcours intégré</p>
+            <h2 class="font-heading font-bold text-h3 text-white leading-tight mb-4">
+              De la Licence au Master<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+            <p class="font-body text-white/60 text-base leading-relaxed mb-6">
+              Tu termines ta Licence à l'EBS ? Poursuis directement en Master — sans concours, sans interruption. Ton parcours est conçu comme un tout.
+            </p>
+            <a href="#masters" class="inline-flex items-center text-sm font-semibold text-accent hover:text-white transition-colors gap-1.5 hover:gap-2.5">
+              Découvrir les Masters <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          {/* Right — Interactive Timeline */}
+          <div class="lg:col-span-7">
+            <div class="flex items-stretch gap-0 overflow-x-auto pb-2 journey-bar">
+              {[
+                { label: 'L1', sub: 'Fondamentaux', detail: 'Bases théoriques, langues, culture générale', active: false },
+                { label: 'L2', sub: 'Alternance', detail: 'Début de l\'alternance en entreprise', active: true },
+                { label: 'L3', sub: 'Diplôme Bac+3', detail: 'Projet de fin d\'études + diplôme', active: false },
+                { label: 'M1', sub: 'Spécialisation', detail: 'Expertise sectorielle approfondie', active: false },
+                { label: 'M2', sub: 'Diplôme Bac+5', detail: 'Mémoire professionnel + diplôme', active: true },
+              ].map((step, i) => (
+                <div class="flex items-stretch flex-1 min-w-0">
+                  <button type="button" class={`journey-step flex flex-col items-center justify-center px-3 py-5 flex-1 text-center border cursor-pointer transition-all duration-200 ${step.active ? 'bg-accent/15 border-accent/30' : 'bg-white/[0.03] border-white/10 hover:bg-white/[0.06] hover:border-white/20'}`} data-detail={step.detail}>
+                    <span class={`font-heading font-bold text-lg transition-colors ${step.active ? 'text-accent' : 'text-white/80'}`}>{step.label}</span>
+                    <span class="text-white/40 text-[11px] font-medium mt-1 whitespace-nowrap">{step.sub}</span>
+                  </button>
+                  {i < 4 && (
+                    <div class="flex items-center -mx-px z-10">
+                      <span class={`text-xs ${i === 2 ? 'text-accent' : 'text-white/30'}`} aria-hidden="true">▸</span>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            {/* Journey tooltip */}
+            <div class="journey-tooltip mt-4 px-4 py-3 bg-white/[0.05] border border-white/10 text-white/60 text-sm font-medium transition-all duration-300 opacity-0 translate-y-1" aria-live="polite">
+              <span class="journey-tooltip-text">Survole une étape pour en savoir plus.</span>
+            </div>
+            {/* Legend */}
+            <div class="flex items-center gap-6 mt-3">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-2 bg-white/[0.03] border border-white/10" aria-hidden="true"></span>
+                <span class="text-white/40 text-[10px] font-medium uppercase tracking-wider">Cursus</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-2 bg-accent/15 border border-accent/30" aria-hidden="true"></span>
+                <span class="text-white/40 text-[10px] font-medium uppercase tracking-wider">Temps fort</span>
+              </div>
+              <div class="flex items-center gap-2 ml-auto">
+                <span class="text-accent text-[10px] font-bold" aria-hidden="true">▸</span>
+                <span class="text-white/40 text-[10px] font-medium uppercase tracking-wider">Passage Licence → Master</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── CURRICULUM EXPLORER ───────────────── */}
+    <CurriculumExplorer lang="fr" />
+
+
+    {/* ───────────────── MASTERS ───────────────── */}
+    <section id="masters" class="py-20 lg:py-28 bg-surface scroll-mt-20" aria-labelledby="masters-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 reveal">
+        {/* Section header */}
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14">
+          <div class="lg:col-span-7 relative">
+            <span class="absolute -left-2 -top-8 font-heading font-bold text-[5rem] leading-none text-ink/[0.04] select-none hidden lg:block" aria-hidden="true">02</span>
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Bac+3 → Bac+5 · 2 ans</p>
+            <h2 id="masters-heading" class="font-heading font-bold text-h2 text-ink leading-tight">
+              Nos Masters<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+          <div class="lg:col-span-5">
+            <p class="font-body text-ink-body text-base leading-relaxed">
+              Deux années de spécialisation intensive. Chaque Master est conçu avec les entreprises partenaires pour garantir l'employabilité immédiate.
+            </p>
+          </div>
+        </div>
+
+        {/* Master cards — 2×2 */}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {masters.map((prog, i) => (
+            <article
+              class="prog-card group bg-surface border border-border/40 overflow-hidden flex flex-col reveal"
+              style={`--delay: ${i * 60}ms`}
+            >
+              {/* Card header */}
+              <div class="relative h-48 overflow-hidden">
+                <img src={programmeImages[prog.slug] || '/images/campus/students-4.jpg'} alt={prog.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/40 to-navy/10"></div>
+                <span class="absolute right-3 top-3 font-heading font-bold text-[5rem] leading-none text-white/[0.06] select-none" aria-hidden="true">M{i + 1}</span>
+                <div class="absolute bottom-0 left-0 px-8 pb-5 relative">
+                  <span class="inline-block px-2.5 py-1 bg-accent text-base-950 text-[11px] font-bold uppercase tracking-wider mb-3">
+                    Master · {prog.duration}
+                  </span>
+                  <h3 class="font-heading font-bold text-xl text-white leading-tight">{prog.title}</h3>
+                </div>
+              </div>
+
+              {/* Card body */}
+              <div class="px-8 py-7 flex flex-col flex-1">
+                <p class="font-body text-ink-body text-sm leading-relaxed mb-5">{prog.description}</p>
+
+                {/* Highlight callout */}
+                <div class="flex items-start gap-3 px-4 py-3 bg-accent/5 border-l-2 border-accent mb-5">
+                  <p class="text-xs font-medium text-ink leading-relaxed">{prog.highlight}</p>
+                </div>
+
+                {/* Key facts */}
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2.5 mb-5">
+                  <div class="flex items-center gap-2 text-sm">
+                    <span class="w-1.5 h-1.5 bg-accent shrink-0" aria-hidden="true"></span>
+                    <span class="text-ink-muted">{prog.certs} certifications</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-sm">
+                    <span class="w-1.5 h-1.5 bg-accent shrink-0" aria-hidden="true"></span>
+                    <span class="text-ink-muted">Prérequis : {prog.level}</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-sm">
+                    <span class="w-1.5 h-1.5 bg-accent shrink-0" aria-hidden="true"></span>
+                    <span class="text-ink-muted">Alternance incluse</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-sm">
+                    <span class="w-1.5 h-1.5 bg-accent shrink-0" aria-hidden="true"></span>
+                    <span class="text-ink-muted">Rentrée : Septembre</span>
+                  </div>
+                </div>
+
+                {/* Career chips — expandable */}
+                <div class="mb-6 careers-block">
+                  <button type="button" class="careers-toggle flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-2 hover:text-accent transition-colors cursor-pointer">
+                    <span>Débouchés</span>
+                    <svg class="w-3 h-3 careers-chevron transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <div class="careers-list overflow-hidden transition-all duration-300" style="max-height: 0;">
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                      {prog.careers.map(career => (
+                        <span class="inline-block px-2.5 py-1 bg-navy/5 text-ink-muted text-xs font-medium">{career}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Price + CTA */}
+                <div class="mt-auto flex items-center justify-between pt-5 border-t border-border/30">
+                  <div>
+                    <span class="font-heading font-bold text-2xl text-accent">{prog.price}</span>
+                    <span class="text-ink-muted text-sm ml-1">DT/an</span>
+                  </div>
+                  <a
+                    href={`/programmes/${prog.slug}`}
+                    class="inline-flex items-center text-sm font-semibold text-navy hover:text-accent transition-colors gap-1.5 hover:gap-2.5"
+                  >
+                    En savoir plus <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Bottom accent bar */}
+              <div class="h-1 bg-accent/15 group-hover:bg-accent transition-colors duration-300" aria-hidden="true"></div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── LICENCE VS MASTER ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="compare-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">En un coup d'œil</p>
+          <h2 id="compare-heading" class="font-heading font-bold text-h2 text-ink">
+            Licence ou Master ?
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* Licence panel */}
+          <div class="bg-surface border border-border/40 overflow-hidden">
+            <div class="bg-navy px-8 py-6 relative overflow-hidden">
+              <span class="absolute -right-4 -top-4 font-heading font-bold text-[6rem] leading-none text-white/[0.04] select-none" aria-hidden="true">L</span>
+              <div class="relative">
+                <span class="inline-block px-2.5 py-1 bg-white/15 text-white text-[11px] font-bold uppercase tracking-wider mb-2">Licence</span>
+                <p class="font-heading font-bold text-2xl text-white">Bac+3</p>
+              </div>
+            </div>
+            <div class="px-8 py-7">
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                  <div>
+                    <span class="font-semibold text-sm text-ink">Durée</span>
+                    <p class="text-sm text-ink-muted">3 ans (6 semestres)</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                  <div>
+                    <span class="font-semibold text-sm text-ink">Prérequis</span>
+                    <p class="text-sm text-ink-muted">Baccalauréat, toutes sections</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                  <div>
+                    <span class="font-semibold text-sm text-ink">Certifications</span>
+                    <p class="text-sm text-ink-muted">10 à 14 incluses</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                  <div>
+                    <span class="font-semibold text-sm text-ink">Tarif</span>
+                    <p class="text-sm text-ink-muted">Dès 6 000 DT/an</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                  <div>
+                    <span class="font-semibold text-sm text-ink">International</span>
+                    <p class="text-sm text-ink-muted flex items-center gap-1 flex-wrap"><Fragment set:html={flags.CA.svg} /> UQAT · <Fragment set:html={flags.FR.svg} /> EM Normandie · Collège de Paris</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                  <div>
+                    <span class="font-semibold text-sm text-ink">Après</span>
+                    <p class="text-sm text-ink-muted">Emploi ou poursuite en Master</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="mt-7">
+                <a href="#licences" class="inline-flex items-center text-sm font-semibold text-navy hover:text-accent transition-colors gap-1.5 hover:gap-2.5">
+                  Voir les 4 licences <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Master panel */}
+          <div class="bg-surface border border-border/40 overflow-hidden">
+            <div class="bg-navy px-8 py-6 relative overflow-hidden">
+              <span class="absolute -right-4 -top-4 font-heading font-bold text-[6rem] leading-none text-white/[0.04] select-none" aria-hidden="true">M</span>
+              <div class="relative">
+                <span class="inline-block px-2.5 py-1 bg-accent text-base-950 text-[11px] font-bold uppercase tracking-wider mb-2">Master</span>
+                <p class="font-heading font-bold text-2xl text-white">Bac+5</p>
+              </div>
+            </div>
+            <div class="px-8 py-7">
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                  <div>
+                    <span class="font-semibold text-sm text-ink">Durée</span>
+                    <p class="text-sm text-ink-muted">2 ans (4 semestres)</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                  <div>
+                    <span class="font-semibold text-sm text-ink">Prérequis</span>
+                    <p class="text-sm text-ink-muted">Licence (Bac+3) dans le domaine</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                  <div>
+                    <span class="font-semibold text-sm text-ink">Certifications</span>
+                    <p class="text-sm text-ink-muted">4 à 8 spécialisées</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                  <div>
+                    <span class="font-semibold text-sm text-ink">Tarif</span>
+                    <p class="text-sm text-ink-muted">8 500 DT/an</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                  <div>
+                    <span class="font-semibold text-sm text-ink">Focus</span>
+                    <p class="text-sm text-ink-muted">Spécialisation sectorielle + certifications métier</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-2 h-2 bg-accent shrink-0 mt-1.5" aria-hidden="true"></span>
+                  <div>
+                    <span class="font-semibold text-sm text-ink">Après</span>
+                    <p class="text-sm text-ink-muted">Postes cadres et management</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="mt-7">
+                <a href="#masters" class="inline-flex items-center text-sm font-semibold text-navy hover:text-accent transition-colors gap-1.5 hover:gap-2.5">
+                  Voir les 4 masters <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── FINAL CTA ───────────────── */}
+    <section class="relative py-20 lg:py-28 overflow-hidden" aria-label="Inscription">
+      <img src="/images/campus/students-8.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" aria-hidden="true" />
+      <div class="absolute inset-0 bg-accent/90"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center relative z-10">
+        <p class="text-xs font-semibold text-base-950/50 uppercase tracking-wider mb-4">3 minutes · 4 étapes</p>
+        <h2 class="font-heading font-bold text-[clamp(1.75rem,4vw,3rem)] leading-[1.1] text-base-950 mb-5">
+          Ta place est réservée<Marker size="lg" class="inline-block ml-3 align-middle bg-base-950" />
+        </h2>
+        <p class="font-body text-base-950/60 text-lg mb-10 max-w-md mx-auto">
+          Commence ta préinscription en ligne. Réponse sous 48h.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button href="/preinscription" variant="inverted" size="lg">
+            Commencer ma préinscription <span class="ml-2" aria-hidden="true">→</span>
+          </Button>
+          <Button href="/brochures" variant="ghost" size="lg" class="text-base-950/70 hover:text-base-950">
+            Télécharger la brochure
+          </Button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .prog-grid-bg {
+    background-image: radial-gradient(var(--color-accent) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    animation: grid-breathe 8s ease-in-out infinite;
+  }
+
+  @keyframes grid-breathe {
+    0%, 100% { opacity: 0.04; }
+    50% { opacity: 0.08; }
+  }
+
+  /* Scroll-triggered reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .prog-card {
+    animation: none; /* Controlled by IntersectionObserver now */
+    transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+  }
+  .prog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(6, 57, 102, 0.08);
+  }
+
+  .hero-panels > * {
+    animation: panel-slide 0.5s var(--ease-out-expo) both;
+  }
+  .hero-panels > :nth-child(1) { animation-delay: 200ms; }
+  .hero-panels > :nth-child(2) { animation-delay: 320ms; }
+
+  @keyframes panel-slide {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .journey-bar {
+    scrollbar-width: none;
+  }
+  .journey-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Career chevron rotation */
+  .careers-block.is-open .careers-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Journey tooltip active */
+  .journey-tooltip.is-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .prog-grid-bg { animation: none; opacity: 0.04; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .prog-card { transition: none; }
+    .prog-card:hover { transform: none; }
+    .hero-panels > * { animation: none; }
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    /* ── Scroll reveal (IntersectionObserver) ── */
+    const reveals = document.querySelectorAll<HTMLElement>('.reveal');
+    if (reveals.length) {
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              /* Stagger children if it's a grid of cards */
+              const cards = entry.target.querySelectorAll<HTMLElement>('.prog-card');
+              if (cards.length) {
+                cards.forEach((card, i) => {
+                  setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                  }, i * 80);
+                });
+              }
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+      );
+      reveals.forEach((el) => {
+        /* Set initial state for child cards */
+        el.querySelectorAll<HTMLElement>('.prog-card').forEach((card) => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(16px)';
+          card.style.transition = 'opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo)';
+        });
+        revealObserver.observe(el);
+      });
+    }
+
+
+
+    /* ── Expandable career chips ── */
+    document.querySelectorAll<HTMLElement>('.careers-toggle').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const block = btn.closest('.careers-block');
+        const list = block?.querySelector<HTMLElement>('.careers-list');
+        if (!block || !list) return;
+        const isOpen = block.classList.toggle('is-open');
+        if (isOpen) {
+          list.style.maxHeight = list.scrollHeight + 'px';
+        } else {
+          list.style.maxHeight = '0';
+        }
+      });
+    });
+
+    /* ── Journey timeline hover tooltip ── */
+    const tooltip = document.querySelector<HTMLElement>('.journey-tooltip');
+    const tooltipText = document.querySelector<HTMLElement>('.journey-tooltip-text');
+    document.querySelectorAll<HTMLButtonElement>('.journey-step').forEach((step) => {
+      step.addEventListener('mouseenter', () => {
+        if (tooltip && tooltipText) {
+          tooltipText.textContent = step.dataset.detail || '';
+          tooltip.classList.add('is-active');
+        }
+      });
+      step.addEventListener('mouseleave', () => {
+        tooltip?.classList.remove('is-active');
+      });
+      /* Touch support */
+      step.addEventListener('click', () => {
+        if (tooltip && tooltipText) {
+          tooltipText.textContent = step.dataset.detail || '';
+          tooltip.classList.add('is-active');
+          setTimeout(() => tooltip.classList.remove('is-active'), 2500);
+        }
+      });
+    });
+  });
+</script>

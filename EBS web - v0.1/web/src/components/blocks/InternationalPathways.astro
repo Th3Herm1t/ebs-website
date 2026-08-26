@@ -1,0 +1,113 @@
+---
+import { getLocaleFromPath } from '@/lib/i18n';
+const isFr = getLocaleFromPath(Astro.url.pathname) === 'fr';
+
+const partners = [
+  {
+    name: 'UQAT',
+    full: isFr ? 'Université du Québec en Abitibi-Témiscamingue' : 'University of Québec in Abitibi-Témiscamingue',
+    country: 'Canada',
+    flag: '🇨🇦',
+    what: isFr ? 'Poursuis ton Master au Québec avec reconnaissance complète de ta Licence EBS.' : 'Continue your Master\'s in Québec with full recognition of your EBS Bachelor\'s.',
+    href: isFr ? '/international' : '/en/international',
+    logo: '/images/partners/uqat.svg',
+    image: '/images/programmes/banner-canada.jpg',
+  },
+  {
+    name: 'EM Normandie',
+    full: isFr ? 'École de Management de Normandie' : 'Normandy School of Management',
+    country: 'France',
+    flag: '🇫🇷',
+    what: isFr ? 'Double diplôme en management et marketing digital. Campus Le Havre, Caen ou Paris.' : 'Dual degree in management and digital marketing. Le Havre, Caen or Paris campus.',
+    href: isFr ? '/international' : '/en/international',
+    logo: '/images/partners/em-normandie.svg',
+    image: '/images/events/em-normandie-visit.jpg',
+  },
+  {
+    name: 'Collège de Paris',
+    full: 'Collège de Paris',
+    country: 'France',
+    flag: '🇫🇷',
+    what: isFr ? 'Accès au réseau de 30+ écoles du groupe. Spécialisations tech, luxe, finance.' : 'Access to the group\'s 30+ schools network. Tech, luxury, finance specializations.',
+    href: isFr ? '/international' : '/en/international',
+    logo: '/images/partners/college-de-paris.png',
+    image: '/images/international/paris-student.png',
+  },
+];
+
+const alumni = [
+  { name: 'Yassine M.', year: 2023, path: 'EBS → UQAT', role: isFr ? 'Analyste BI, Montréal' : 'BI Analyst, Montreal' },
+  { name: 'Sarra B.', year: 2022, path: 'EBS → EM Normandie', role: isFr ? 'Chef de projet digital, Paris' : 'Digital Project Manager, Paris' },
+];
+---
+
+<section id="international" class="py-20 lg:py-28 bg-surface" aria-labelledby="intl-heading">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+
+    {/* ── Header ── */}
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+      <div class="max-w-xl">
+        <span class="text-xs font-bold text-accent uppercase tracking-wider mb-3 block">International</span>
+        <h2 id="intl-heading" class="font-heading font-bold text-h2 text-ink mb-4">
+          {isFr
+            ? <>Commence à Tunis<span class="text-accent">.</span><br/>Continue au Canada ou en France<span class="text-accent">.</span></>
+            : <>Start in Tunis<span class="text-accent">.</span><br/>Continue in Canada or France<span class="text-accent">.</span></>}
+        </h2>
+        <p class="font-body text-ink-body text-body-lg leading-relaxed">
+          {isFr ? 'Ton diplôme EBS ouvre des passerelles concrètes vers des universités partenaires reconnues.' : 'Your EBS degree opens concrete pathways to recognized partner universities.'}
+        </p>
+      </div>
+      <a href={isFr ? '/international' : '/en/international'} class="inline-flex items-center text-sm font-semibold text-navy hover:text-accent transition-colors gap-1 hover:gap-2 shrink-0 pb-2">
+        {isFr ? 'Découvrir les parcours internationaux' : 'Discover international pathways'} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    {/* ── Partner cards with images ── */}
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+      {partners.map((p, i) => (
+        <li class="reveal group overflow-hidden flex flex-col hover:-translate-y-2 transition-all duration-300 hover:shadow-xl" style={`--delay: ${i * 100}ms`}>
+          {/* Image */}
+          <div class="relative h-52 overflow-hidden">
+            <img src={p.image} alt={p.name} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent"></div>
+            <span class="absolute top-4 right-4 inline-flex items-center gap-1.5 px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-bold uppercase tracking-wider text-navy">
+              <span aria-hidden="true">{p.flag}</span> {p.country}
+            </span>
+            <div class="absolute bottom-4 left-4 flex items-center gap-3">
+              {p.logo && (
+                <img src={p.logo} alt="" class="h-8 w-auto object-contain brightness-0 invert" loading="lazy" />
+              )}
+            </div>
+          </div>
+
+          {/* Content */}
+          <div class="px-8 py-6 flex flex-col flex-1 bg-surface border border-t-0 border-border/40">
+            <h3 class="font-heading font-bold text-lg text-ink mb-1">{p.name}</h3>
+            <p class="text-xs text-ink-muted mb-4">{p.full}</p>
+            <p class="font-body text-ink-body text-sm leading-relaxed mb-5 flex-1">{p.what}</p>
+            <a href={p.href} class="inline-flex items-center text-sm font-semibold text-navy hover:text-accent transition-colors gap-1 hover:gap-2">
+              {isFr ? 'En savoir plus' : 'Learn more'} <span aria-hidden="true">→</span>
+            </a>
+          </div>
+          <div class="h-1 bg-accent/15 group-hover:bg-accent transition-colors duration-300" aria-hidden="true"></div>
+        </li>
+      ))}
+    </ul>
+
+    {/* ── Alumni proof ── */}
+    <div class="bg-surface-alt border border-border/30 px-8 py-6 flex flex-col sm:flex-row sm:items-center gap-6 reveal">
+      <div class="flex items-center gap-3 shrink-0">
+        <span class="w-2.5 h-2.5 bg-accent shrink-0" aria-hidden="true"></span>
+        <span class="font-heading font-bold text-ink text-base">{isFr ? 'Ils l\'ont fait' : 'They did it'}</span>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
+        {alumni.map((a) => (
+          <p class="text-sm text-ink">
+            <span class="font-semibold">{a.name}</span> ({a.year}) — {a.path} — <span class="text-ink-muted">{a.role}</span>
+          </p>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

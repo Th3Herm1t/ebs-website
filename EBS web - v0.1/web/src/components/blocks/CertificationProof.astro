@@ -1,0 +1,102 @@
+---
+import { getLocaleFromPath } from '@/lib/i18n';
+const isFr = getLocaleFromPath(Astro.url.pathname) === 'fr';
+
+const logos = [
+  { name: 'AWS', img: '/images/certifications/aws.svg', url: 'https://aws.amazon.com/verification' },
+  { name: 'Google Cloud', img: '/images/certifications/google.svg', url: 'https://cloud.google.com/certification' },
+  { name: 'IBM', img: '/images/certifications/ibm.svg', url: 'https://www.ibm.com/training/credentials' },
+  { name: 'Salesforce', img: '/images/certifications/salesforce.svg', url: 'https://trailhead.salesforce.com/credentials/verification' },
+  { name: 'Cisco', img: '/images/certifications/cisco.svg', url: 'https://www.cisco.com/c/en/us/training-events/training-certifications/certifications.html' },
+  { name: 'Oracle', img: '/images/certifications/oracle.svg', url: 'https://education.oracle.com/certification' },
+  { name: 'Microsoft', img: '/images/certifications/microsoft.svg', url: 'https://learn.microsoft.com/en-us/certifications/' },
+  { name: 'HubSpot', img: '/images/certifications/hubspot.svg', url: 'https://academy.hubspot.com/certification' },
+];
+---
+
+<section id="certifications" class="relative py-20 lg:py-28 overflow-hidden" aria-labelledby="cert-heading">
+  <img src="/images/about/certifications-showcase.png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-5" loading="lazy" aria-hidden="true" />
+  <div class="absolute inset-0 bg-surface-alt/98"></div>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+
+    {/* ── Header row ── */}
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+      <div>
+        <div class="flex items-end gap-4 mb-3">
+          <span class="cert-number font-heading font-black text-[4.5rem] sm:text-[6rem] lg:text-[8rem] leading-none text-accent" aria-label="36+" data-countup="36" data-suffix="+">0</span>
+          <h2 id="cert-heading" class="font-heading font-bold text-h3 sm:text-h2 text-ink pb-2 sm:pb-4">
+            Certifications<span class="text-accent">.</span>
+          </h2>
+        </div>
+        <p class="font-body text-ink-body text-body-lg max-w-lg leading-relaxed">
+          {isFr ? 'Incluses dans ton cursus, reconnues mondialement, et vérifiables à vie sur les portails officiels.' : 'Included in your curriculum, globally recognized, and verifiable for life on official portals.'}
+        </p>
+      </div>
+      <a href={isFr ? '/certifications' : '/en/certifications'} class="inline-flex items-center text-sm font-semibold text-navy hover:text-accent transition-colors gap-1 hover:gap-2 shrink-0 pb-2 sm:pb-4">
+        {isFr ? 'Voir le catalogue complet' : 'View full catalog'} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    {/* ── Logo cards grid ── */}
+    <ul class="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-5 mb-14">
+      {logos.map((logo, i) => (
+        <li style={`--delay: ${i * 50}ms`} class="cert-logo">
+          <a
+            href={logo.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex flex-col items-center gap-4 bg-surface border border-border/40 p-6 lg:p-8 hover:border-accent/30 hover:shadow-sm transition-all"
+            title={`${isFr ? 'Vérifier sur' : 'Verify on'} ${logo.name}`}
+          >
+            <div class="w-16 h-16 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-300">
+              <img src={logo.img} alt={logo.name} loading="lazy" class="w-full h-full object-contain" />
+            </div>
+            <span class="font-heading font-semibold text-sm text-ink-muted group-hover:text-ink transition-colors">{logo.name}</span>
+            <span class="text-xs text-accent opacity-0 group-hover:opacity-100 transition-opacity font-medium flex items-center gap-1">
+              {isFr ? 'Vérifier' : 'Verify'} <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    {/* ── Loss frame contrast bar ── */}
+    <div class="bg-navy px-8 py-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+      <div class="flex items-center gap-3 shrink-0">
+        <span class="w-2.5 h-2.5 bg-accent shrink-0" aria-hidden="true"></span>
+        <span class="font-heading font-bold text-white text-lg">{isFr ? 'Le savais-tu ?' : 'Did you know?'}</span>
+      </div>
+      <p class="font-body text-white/80 leading-relaxed">
+        {isFr
+          ? "Dans d'autres écoles, chaque certification se paie séparément. À l'EBS, les 36+ sont déjà incluses dans ta scolarité."
+          : 'At other schools, each certification costs extra. At EBS, all 36+ are already included in your tuition.'}
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .cert-number {
+    animation: count-fade 0.6s var(--ease-out-expo) both;
+  }
+
+  .cert-logo {
+    animation: logo-reveal 0.4s var(--ease-out-expo) both;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  @keyframes count-fade {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes logo-reveal {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cert-number, .cert-logo { animation: none; }
+  }
+</style>

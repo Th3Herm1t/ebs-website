@@ -1,0 +1,343 @@
+---
+/**
+ * ProgrammeFinder — merged Quiz + Compare in a tabbed interface
+ * Tab 1: "Which programme is for you?" 5-question quiz
+ * Tab 2: Side-by-side comparison table (pick 2-3)
+ */
+interface Props { lang?: 'fr' | 'en'; }
+const { lang = 'fr' } = Astro.props;
+const isFr = lang === 'fr';
+---
+
+<section id="finder" class="py-20 lg:py-28 bg-surface-alt overflow-hidden" aria-labelledby="finder-heading">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+
+    {/* Header */}
+    <div class="text-center mb-10">
+      <p class="text-xs font-bold text-accent uppercase tracking-wider mb-3 block">{isFr ? 'Orientation' : 'Find Your Path'}</p>
+      <h2 id="finder-heading" class="font-heading font-bold text-h2 text-ink mb-4">
+        {isFr ? 'Trouve ton programme' : 'Find your programme'}
+      </h2>
+    </div>
+
+    {/* Tab switcher */}
+    <div class="flex items-center justify-center gap-1 mb-10" role="tablist">
+      <button role="tab" aria-selected="true" id="finder-tab-quiz" class="finder-tab px-6 py-3 text-sm font-heading font-semibold transition-all bg-accent text-base-950">
+        <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5"/></svg>
+        {isFr ? 'Quiz' : 'Quiz'}
+      </button>
+      <button role="tab" aria-selected="false" id="finder-tab-compare" class="finder-tab px-6 py-3 text-sm font-heading font-semibold transition-all border border-base-300 text-ink-muted hover:text-ink hover:border-base-400">
+        <svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+        {isFr ? 'Comparer' : 'Compare'}
+      </button>
+    </div>
+
+    {/* ════════ QUIZ PANEL ════════ */}
+    <div id="finder-panel-quiz">
+      <div class="max-w-3xl mx-auto">
+        <p class="font-body text-ink-muted text-sm text-center mb-8">{isFr ? '5 questions · 1 minute · Recommandation personnalisée' : '5 questions · 1 minute · Personalized recommendation'}</p>
+
+        <div class="bg-white border border-base-200 shadow-sm p-8 md:p-10">
+          {/* Progress bar */}
+          <div class="mb-8">
+            <div class="flex items-center justify-between text-xs text-ink-muted mb-2">
+              <span id="quiz-progress-text">Question 1/5</span>
+              <span id="quiz-percent">0%</span>
+            </div>
+            <div class="w-full h-1.5 bg-base-200">
+              <div id="quiz-bar" class="h-full bg-accent transition-all duration-500" style="width: 0%"></div>
+            </div>
+          </div>
+
+          {/* Questions */}
+          <div id="quiz-questions">
+            <div class="quiz-q" data-q="0">
+              <h3 class="font-heading font-semibold text-lg text-ink mb-6">{isFr ? 'Quel domaine t\'attire le plus ?' : 'Which field interests you most?'}</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="tech"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>{isFr ? 'Technologie & Code' : 'Technology & Code'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="biz"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>{isFr ? 'Business & Stratégie' : 'Business & Strategy'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="mkt"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>{isFr ? 'Marketing & Communication' : 'Marketing & Communication'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="fin"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>{isFr ? 'Finance & Chiffres' : 'Finance & Numbers'}</button>
+              </div>
+            </div>
+
+            <div class="quiz-q hidden" data-q="1">
+              <h3 class="font-heading font-semibold text-lg text-ink mb-6">{isFr ? 'Quel est ton niveau actuel ?' : 'What is your current level?'}</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="bac"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="m4 15 8-8 8 8"/><path d="M12 3v4"/></svg>{isFr ? 'Bac / Bac en cours' : 'High School / In progress'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="bac3"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>{isFr ? 'Bac+3 / Licence' : 'Bachelor\'s degree'}</button>
+              </div>
+            </div>
+
+            <div class="quiz-q hidden" data-q="2">
+              <h3 class="font-heading font-semibold text-lg text-ink mb-6">{isFr ? 'Qu\'est-ce qui compte le plus pour toi ?' : 'What matters most to you?'}</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="certs"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/><circle cx="12" cy="8" r="7"/></svg>{isFr ? 'Les certifications' : 'Certifications'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="intl"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>{isFr ? 'L\'international' : 'International opportunities'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="job"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09Z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2Z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>{isFr ? 'L\'employabilité rapide' : 'Fast employability'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="salary"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3l-1.5-2"/><path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3l-1.5-2"/><path d="M3.34 14H2v-3a1 1 0 0 1 1-1h3.5"/><path d="M13.34 14H12v-3a1 1 0 0 1 1-1h3.5"/></svg>{isFr ? 'Le salaire élevé' : 'High salary'}</button>
+              </div>
+            </div>
+
+            <div class="quiz-q hidden" data-q="3">
+              <h3 class="font-heading font-semibold text-lg text-ink mb-6">{isFr ? 'Tu préfères travailler avec...' : 'You prefer working with...'}</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="data"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>{isFr ? 'Des données et des chiffres' : 'Data and numbers'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="people"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>{isFr ? 'Des clients et des équipes' : 'Clients and teams'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="creative"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="m2 13 10 7 10-7"/><path d="M12 6l-4 4h8l-4-4z"/><circle cx="12" cy="16" r="1"/></svg>{isFr ? 'Des contenus et de la créativité' : 'Content and creativity'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="systems"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>{isFr ? 'Des systèmes et des algorithmes' : 'Systems and algorithms'}</button>
+              </div>
+            </div>
+
+            <div class="quiz-q hidden" data-q="4">
+              <h3 class="font-heading font-semibold text-lg text-ink mb-6">{isFr ? 'Où te vois-tu dans 5 ans ?' : 'Where do you see yourself in 5 years?'}</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="dev"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>{isFr ? 'Développeur / Ingénieur' : 'Developer / Engineer'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="manager"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>{isFr ? 'Manager / Chef de projet' : 'Manager / Project Lead'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="marketer"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>{isFr ? 'Marketer / Growth' : 'Marketer / Growth'}</button>
+                <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-base-300 text-ink hover:bg-accent hover:text-white hover:border-accent transition-all text-sm font-medium" data-val="analyst"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><ellipse cx="12" cy="5" rx="9" ry="3"/></svg>{isFr ? 'Analyste / Auditeur' : 'Analyst / Auditor'}</button>
+              </div>
+            </div>
+          </div>
+
+          {/* Result */}
+          <div id="quiz-result" class="hidden text-center py-8">
+            <span class="text-accent text-xs font-semibold uppercase tracking-wider block mb-3">{isFr ? 'Ton programme idéal' : 'Your ideal programme'}</span>
+            <h3 id="quiz-result-title" class="font-heading font-bold text-2xl text-ink mb-3"></h3>
+            <p id="quiz-result-desc" class="text-sm text-ink-muted mb-8 max-w-md mx-auto"></p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+              <a id="quiz-result-link" href="#" class="inline-flex items-center justify-center px-6 py-3 bg-accent text-base-950 font-heading font-semibold text-sm hover:bg-accent-hover transition-colors">
+                {isFr ? 'Voir le programme' : 'View programme'} <span class="ml-2">→</span>
+              </a>
+              <button id="quiz-restart" class="inline-flex items-center justify-center px-6 py-3 border border-base-300 text-ink font-heading font-semibold text-sm hover:bg-base-100 transition-colors">
+                {isFr ? 'Recommencer' : 'Start over'}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* ════════ COMPARE PANEL ════════ */}
+    <div id="finder-panel-compare" class="hidden">
+      <p class="font-body text-ink-muted text-sm text-center mb-8">{isFr ? 'Sélectionne 2 ou 3 programmes pour voir les différences.' : 'Select 2 or 3 programmes to see the differences.'}</p>
+
+      {/* Programme selector */}
+      <div class="flex flex-wrap justify-center gap-3 mb-10" id="compare-selectors">
+        <button class="compare-toggle px-4 py-2.5 border border-base-300 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="lig">{isFr ? 'Licence Informatique' : 'BSc Computer Science'}</button>
+        <button class="compare-toggle px-4 py-2.5 border border-base-300 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="lm">{isFr ? 'Licence Management' : 'BSc Management'}</button>
+        <button class="compare-toggle px-4 py-2.5 border border-base-300 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="lmk">{isFr ? 'Licence Marketing' : 'BSc Marketing'}</button>
+        <button class="compare-toggle px-4 py-2.5 border border-base-300 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="lf">{isFr ? 'Licence Finance' : 'BSc Finance'}</button>
+        <button class="compare-toggle px-4 py-2.5 border border-base-300 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="mmia">{isFr ? 'M. Marketing & IA' : 'MSc Marketing & AI'}</button>
+        <button class="compare-toggle px-4 py-2.5 border border-base-300 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="mcrm">{isFr ? 'M. Digital & CRM' : 'MSc Digital & CRM'}</button>
+        <button class="compare-toggle px-4 py-2.5 border border-base-300 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="mf">{isFr ? 'M. Ing. Financière' : 'MSc Finance Eng.'}</button>
+        <button class="compare-toggle px-4 py-2.5 border border-base-300 text-sm font-semibold text-ink-muted hover:border-accent hover:text-accent transition-all" data-prog="mmp">{isFr ? 'M. Management Projets' : 'MSc Project Mgmt'}</button>
+      </div>
+
+      {/* Comparison table */}
+      <div id="compare-table" class="hidden overflow-x-auto bg-white border border-base-200 shadow-sm">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr id="compare-header" class="border-b-2 border-accent">
+              <th class="text-left py-4 px-4 font-heading font-semibold text-ink-muted text-xs uppercase tracking-wider w-40"></th>
+            </tr>
+          </thead>
+          <tbody id="compare-body"></tbody>
+        </table>
+      </div>
+
+      <p id="compare-hint" class="text-center text-sm text-ink-muted mt-6">
+        {isFr ? 'Sélectionne au moins 2 programmes ci-dessus' : 'Select at least 2 programmes above'}
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    /* ── Tab switching ── */
+    const tabQuiz = document.getElementById('finder-tab-quiz');
+    const tabCompare = document.getElementById('finder-tab-compare');
+    const panelQuiz = document.getElementById('finder-panel-quiz');
+    const panelCompare = document.getElementById('finder-panel-compare');
+    if (!tabQuiz || !tabCompare || !panelQuiz || !panelCompare) return;
+
+    function activateTab(tab: 'quiz' | 'compare') {
+      const isQuiz = tab === 'quiz';
+      panelQuiz!.classList.toggle('hidden', !isQuiz);
+      panelCompare!.classList.toggle('hidden', isQuiz);
+      tabQuiz!.classList.toggle('bg-accent', isQuiz);
+      tabQuiz!.classList.toggle('text-base-950', isQuiz);
+      tabQuiz!.classList.toggle('border', !isQuiz);
+      tabQuiz!.classList.toggle('border-base-300', !isQuiz);
+      tabQuiz!.classList.toggle('text-ink-muted', !isQuiz);
+      tabCompare!.classList.toggle('bg-accent', !isQuiz);
+      tabCompare!.classList.toggle('text-base-950', !isQuiz);
+      tabCompare!.classList.toggle('border', isQuiz);
+      tabCompare!.classList.toggle('border-base-300', isQuiz);
+      tabCompare!.classList.toggle('text-ink-muted', isQuiz);
+      tabQuiz!.setAttribute('aria-selected', String(isQuiz));
+      tabCompare!.setAttribute('aria-selected', String(!isQuiz));
+    }
+    tabQuiz.addEventListener('click', () => activateTab('quiz'));
+    tabCompare.addEventListener('click', () => activateTab('compare'));
+
+    /* ── Quiz logic ── */
+    const questions = document.querySelectorAll<HTMLElement>('.quiz-q');
+    const bar = document.getElementById('quiz-bar');
+    const progressText = document.getElementById('quiz-progress-text');
+    const percentText = document.getElementById('quiz-percent');
+    const resultBox = document.getElementById('quiz-result');
+    const resultTitle = document.getElementById('quiz-result-title');
+    const resultDesc = document.getElementById('quiz-result-desc');
+    const resultLink = document.getElementById('quiz-result-link') as HTMLAnchorElement | null;
+    const restartBtn = document.getElementById('quiz-restart');
+    if (!questions.length || !bar) return;
+
+    const answers: string[] = [];
+    let current = 0;
+
+    const programmes: Record<string, { title: string; desc: string; url: string }> = {
+      'licence-informatique': { title: 'Licence Informatique Génie Logiciel', desc: '3 ans · 14 certifications · AWS, Cisco, Oracle — Le cursus IT le plus complet en Tunisie.', url: '/programmes/licence-informatique-genie-logiciel' },
+      'licence-management': { title: 'Licence Management', desc: '3 ans · 10 certifications · Salesforce, Google, IBM — Business et stratégie.', url: '/programmes/licence-management' },
+      'licence-marketing': { title: 'Licence Marketing', desc: '3 ans · 10 certifications · HubSpot, Google — Marketing digital et communication.', url: '/programmes/licence-marketing' },
+      'licence-finance': { title: 'Licence Finance', desc: '3 ans · 10 certifications · Oracle, Microsoft — Finance et comptabilité.', url: '/programmes/licence-finance' },
+      'master-marketing-ia': { title: 'Master Marketing Digital & IA', desc: '2 ans · 6 certifications — Intelligence artificielle au service du marketing.', url: '/programmes/master-marketing-digital-ia' },
+      'master-projets': { title: 'Master Management de Projets', desc: '2 ans · 8 certifications — Pilotage de projets et transformation digitale.', url: '/programmes/master-management-projets' },
+      'master-finance': { title: 'Master Ingénierie Financière', desc: '2 ans · 4 certifications — Finance avancée et fintech.', url: '/programmes/master-ingenierie-financiere' },
+      'master-crm': { title: 'Master Transformation Digitale & CRM', desc: '2 ans · 8 certifications — CRM, Salesforce et transformation.', url: '/programmes/master-transformation-digitale-crm' },
+    };
+
+    function recommend(): string {
+      const [field, level, , work, goal] = answers;
+      if (level === 'bac3') {
+        if (field === 'tech' || goal === 'dev') return 'master-crm';
+        if (field === 'mkt' || goal === 'marketer') return 'master-marketing-ia';
+        if (field === 'fin' || goal === 'analyst') return 'master-finance';
+        return 'master-projets';
+      }
+      if (field === 'tech' || work === 'systems' || goal === 'dev') return 'licence-informatique';
+      if (field === 'mkt' || work === 'creative' || goal === 'marketer') return 'licence-marketing';
+      if (field === 'fin' || work === 'data' || goal === 'analyst') return 'licence-finance';
+      return 'licence-management';
+    }
+
+    function showQuestion(idx: number) {
+      questions.forEach((q, i) => q.classList.toggle('hidden', i !== idx));
+      const pct = Math.round((idx / 5) * 100);
+      bar!.style.width = pct + '%';
+      if (progressText) progressText.textContent = `Question ${idx + 1}/5`;
+      if (percentText) percentText.textContent = pct + '%';
+    }
+
+    function showResult() {
+      questions.forEach(q => q.classList.add('hidden'));
+      const key = recommend();
+      const prog = programmes[key];
+      if (resultTitle) resultTitle.textContent = prog.title;
+      if (resultDesc) resultDesc.textContent = prog.desc;
+      if (resultLink) resultLink.href = prog.url;
+      bar!.style.width = '100%';
+      if (percentText) percentText.textContent = '100%';
+      if (progressText) progressText.textContent = 'Résultat';
+      resultBox?.classList.remove('hidden');
+    }
+
+    document.querySelectorAll<HTMLButtonElement>('.quiz-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        answers[current] = btn.dataset.val || '';
+        current++;
+        if (current >= 5) showResult();
+        else showQuestion(current);
+      });
+    });
+
+    restartBtn?.addEventListener('click', () => {
+      current = 0;
+      answers.length = 0;
+      resultBox?.classList.add('hidden');
+      showQuestion(0);
+    });
+
+    showQuestion(0);
+
+    /* ── Compare logic ── */
+    const toggles = document.querySelectorAll<HTMLButtonElement>('.compare-toggle');
+    const tableEl = document.getElementById('compare-table');
+    const headerRow = document.getElementById('compare-header');
+    const tbody = document.getElementById('compare-body');
+    const hint = document.getElementById('compare-hint');
+    if (!toggles.length || !tableEl || !headerRow || !tbody) return;
+
+    const selected: Set<string> = new Set();
+
+    const data: Record<string, { name: string; degree: string; duration: string; certs: number; price: string; intl: string; employment: string; salary: string; careers: string; url: string }> = {
+      lig: { name: 'Licence Informatique', degree: 'Licence', duration: '3 ans', certs: 14, price: '6 000 DT/an', intl: 'Keyce Academy (FR)', employment: '72%', salary: '1 200–1 800 DT', careers: 'Dev web, DevOps, Admin réseaux', url: '/programmes/licence-informatique-genie-logiciel' },
+      lm: { name: 'Licence Management', degree: 'Licence', duration: '3 ans', certs: 10, price: '8 200 DT/an', intl: 'Collège de Paris (FR)', employment: '65%', salary: '1 000–1 500 DT', careers: 'Business Manager, Consultant', url: '/programmes/licence-management' },
+      lmk: { name: 'Licence Marketing', degree: 'Licence', duration: '3 ans', certs: 10, price: '8 200 DT/an', intl: 'Collège de Paris (FR)', employment: '64%', salary: '1 000–1 400 DT', careers: 'Traffic Manager, Community Mgr', url: '/programmes/licence-marketing' },
+      lf: { name: 'Licence Finance', degree: 'Licence', duration: '3 ans', certs: 10, price: '8 200 DT/an', intl: 'Collège de Paris (FR)', employment: '62%', salary: '1 100–1 500 DT', careers: 'Analyste, Contrôleur gestion', url: '/programmes/licence-finance' },
+      mmia: { name: 'Master Marketing & IA', degree: 'Master', duration: '2 ans', certs: 6, price: '8 500 DT/an', intl: 'EM Normandie (FR)', employment: '70%', salary: '1 400–2 200 DT', careers: 'Growth Hacker, Data Marketer', url: '/programmes/master-marketing-digital-ia' },
+      mcrm: { name: 'Master Digital & CRM', degree: 'Master', duration: '2 ans', certs: 8, price: '8 500 DT/an', intl: 'UQAT (CA)', employment: '68%', salary: '1 500–2 300 DT', careers: 'CRM Manager, Consultant Digital', url: '/programmes/master-transformation-digitale-crm' },
+      mf: { name: 'Master Ing. Financière', degree: 'Master', duration: '2 ans', certs: 4, price: '8 500 DT/an', intl: 'EM Normandie (FR)', employment: '66%', salary: '1 600–2 500 DT', careers: 'Analyste financier, Auditeur', url: '/programmes/master-ingenierie-financiere' },
+      mmp: { name: 'Master Management Projets', degree: 'Master', duration: '2 ans', certs: 8, price: '8 500 DT/an', intl: 'UQAT (CA)', employment: '70%', salary: '1 400–2 200 DT', careers: 'Chef de projet, Scrum Master', url: '/programmes/master-management-projets' },
+    };
+
+    const rows = [
+      { label: 'Niveau', key: 'degree' },
+      { label: 'Durée', key: 'duration' },
+      { label: 'Certifications', key: 'certs', highlight: true },
+      { label: 'Tarif', key: 'price' },
+      { label: 'International', key: 'intl' },
+      { label: 'Taux d\'emploi', key: 'employment' },
+      { label: 'Salaire (début)', key: 'salary' },
+      { label: 'Débouchés', key: 'careers' },
+    ];
+
+    function render() {
+      const sel = Array.from(selected);
+      if (sel.length < 2) {
+        tableEl!.classList.add('hidden');
+        hint?.classList.remove('hidden');
+        return;
+      }
+      tableEl!.classList.remove('hidden');
+      hint?.classList.add('hidden');
+
+      headerRow!.innerHTML = '<th class="text-left py-4 px-4 font-heading font-semibold text-ink-muted text-xs uppercase tracking-wider w-40"></th>';
+      sel.forEach(key => {
+        const d = data[key];
+        headerRow!.innerHTML += `<th class="py-4 px-4 text-center"><a href="${d.url}" class="font-heading font-bold text-sm text-accent hover:underline">${d.name}</a></th>`;
+      });
+
+      tbody!.innerHTML = '';
+      rows.forEach((row, ri) => {
+        const tr = document.createElement('tr');
+        tr.className = ri % 2 === 0 ? 'bg-base-50' : 'bg-base-100';
+        let html = `<td class="py-3 px-4 font-semibold text-ink-muted text-xs">${row.label}</td>`;
+        sel.forEach(key => {
+          const val = String((data[key] as any)[row.key]);
+          const cls = row.highlight ? 'text-accent font-bold' : 'text-ink';
+          html += `<td class="py-3 px-4 text-center ${cls}">${val}</td>`;
+        });
+        tr.innerHTML = html;
+        tbody!.appendChild(tr);
+      });
+    }
+
+    toggles.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.prog || '';
+        if (selected.has(key)) {
+          selected.delete(key);
+          btn.classList.remove('bg-accent', 'text-base-950', 'border-accent');
+        } else {
+          if (selected.size >= 3) return;
+          selected.add(key);
+          btn.classList.add('bg-accent', 'text-base-950', 'border-accent');
+        }
+        render();
+      });
+    });
+  });
+</script>

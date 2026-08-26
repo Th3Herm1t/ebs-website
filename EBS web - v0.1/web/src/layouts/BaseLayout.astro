@@ -1,0 +1,269 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import Navbar from '../components/blocks/Navbar.astro';
+import Footer from '../components/blocks/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: string;
+}
+
+const { 
+  title = "EBS — Licence et Master avec certifications internationales | Tunis", 
+  description = "Diplômes en informatique et management. Accélérez votre carrière avec 27+ certifications (AWS, Google, IBM) incluses dans votre cursus universitaire.",
+  lang = "fr"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{title}</title>
+    
+    {/* Optional: Add fonts preload here */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+
+    <ClientRouter />
+  </head>
+  <body class="bg-base text-ink-body font-body selection:bg-accent-subtle selection:text-ink min-h-screen flex flex-col">
+    {/* Page loader */}
+    <div id="page-loader" class="page-loader" aria-hidden="true">
+      <div class="flex flex-col items-center gap-4">
+        <img src="/images/logos/ebs-logo.png" alt="" width="100" height="24" class="h-8 w-auto opacity-80" />
+        <div class="loader-bar"></div>
+      </div>
+    </div>
+
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-accent focus:text-text-on-accent focus:top-0 focus:left-0">
+      Aller au contenu principal
+    </a>
+    
+    <Navbar />
+
+    {/* Search overlay */}
+    <div id="search-overlay" class="fixed inset-0 z-[60] bg-navy/95 backdrop-blur-md hidden opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-label="Recherche">
+      <div class="max-w-2xl mx-auto px-6 pt-24">
+        <div class="flex items-center gap-4 mb-8">
+          <svg class="w-6 h-6 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input id="search-input" type="search" placeholder="Rechercher programmes, certifications, FAQ..." class="w-full bg-transparent border-b-2 border-white/20 focus:border-accent text-white text-xl font-heading font-semibold py-3 outline-none placeholder:text-white/30" autocomplete="off" />
+          <button id="search-close" class="text-white/50 hover:text-white transition-colors p-2" aria-label="Fermer">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div id="search-results" class="space-y-2 max-h-[60vh] overflow-y-auto"></div>
+      </div>
+    </div>
+    
+    <main id="main" class="flex-1 w-full relative z-10" aria-label="Main content">
+      <slot />
+    </main>
+    
+    <Footer />
+
+    {/* Sticky WhatsApp FAB */}
+    <a
+      href="https://wa.me/21629582835"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] text-white flex items-center justify-center shadow-lg shadow-black/20 hover:scale-110 transition-transform"
+      aria-label="Contacter via WhatsApp"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+      document.addEventListener('astro:page-load', () => {
+        /* ── Reveal animations ── */
+        const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-scale');
+        if (revealEls.length) {
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                io.unobserve(e.target);
+              }
+            });
+          }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+          revealEls.forEach(el => io.observe(el));
+        }
+
+        /* ── Animated count-up numbers ── */
+        const counters = document.querySelectorAll<HTMLElement>('[data-countup]');
+        if (counters.length) {
+          const counterObs = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target as HTMLElement;
+                if (el.dataset.counted) return;
+                el.dataset.counted = '1';
+
+                const target = parseFloat(el.dataset.countup || '0');
+                const suffix = el.dataset.suffix || '';
+                const prefix = el.dataset.prefix || '';
+                const sep = el.dataset.sep || '';
+                const decimals = (el.dataset.countup || '').includes('.') ? 1 : 0;
+                const duration = 1200;
+                const start = performance.now();
+
+                function formatNum(n: number): string {
+                  const str = decimals ? n.toFixed(decimals) : String(Math.round(n));
+                  if (!sep) return str;
+                  const [intPart, decPart] = str.split('.');
+                  const formatted = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+                  return decPart ? formatted + '.' + decPart : formatted;
+                }
+
+                function tick(now: number) {
+                  const elapsed = now - start;
+                  const progress = Math.min(elapsed / duration, 1);
+                  /* ease-out-expo for smooth deceleration */
+                  const eased = 1 - Math.pow(1 - progress, 4);
+                  const current = target * eased;
+                  el.textContent = prefix + formatNum(current) + suffix;
+                  if (progress < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+                counterObs.unobserve(el);
+              });
+            },
+            { threshold: 0.3 }
+          );
+          counters.forEach((c) => counterObs.observe(c));
+        }
+
+        /* ── Parallax hero backgrounds ── */
+        const parallaxEls = document.querySelectorAll<HTMLElement>('.parallax-bg');
+        if (parallaxEls.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          let ticking = false;
+          window.addEventListener('scroll', () => {
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                const scrollY = window.scrollY;
+                parallaxEls.forEach(el => {
+                  const rect = el.getBoundingClientRect();
+                  if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                    el.style.transform = `translateY(${scrollY * 0.3}px)`;
+                  }
+                });
+                ticking = false;
+              });
+              ticking = true;
+            }
+          }, { passive: true });
+        }
+
+        /* ── 3D tilt on .tilt-card children ── */
+        document.querySelectorAll<HTMLElement>('.tilt-card').forEach(card => {
+          const inner = card.firstElementChild as HTMLElement | null;
+          if (!inner || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          card.addEventListener('mousemove', (e: MouseEvent) => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            inner.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg) scale(1.02)`;
+            inner.style.boxShadow = `${-x * 20}px ${y * 20}px 30px rgba(0,0,0,0.15)`;
+          });
+          card.addEventListener('mouseleave', () => {
+            inner.style.transform = '';
+            inner.style.boxShadow = '';
+          });
+        });
+
+        /* ── Page loader hide ── */
+        const loader = document.getElementById('page-loader');
+        if (loader) loader.classList.add('loaded');
+
+        /* ── Dark mode toggle ── */
+        const darkToggle = document.getElementById('dark-toggle');
+        if (darkToggle) {
+          darkToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('ebs-theme', isDark ? 'dark' : 'light');
+          });
+        }
+
+        /* ── Search overlay ── */
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
+        const searchResults = document.getElementById('search-results');
+        const searchClose = document.getElementById('search-close');
+        const searchTriggers = document.querySelectorAll('[data-search-trigger]');
+
+        const searchIndex = [
+          { title: 'Licence Informatique Génie Logiciel', url: '/programmes/licence-informatique-genie-logiciel', tags: 'informatique développement aws cisco cloud devops' },
+          { title: 'Licence Management', url: '/programmes/licence-management', tags: 'management gestion leadership rh' },
+          { title: 'Licence Marketing', url: '/programmes/licence-marketing', tags: 'marketing digital communication' },
+          { title: 'Licence Finance', url: '/programmes/licence-finance', tags: 'finance comptabilité banque' },
+          { title: 'Master Marketing Digital & IA', url: '/programmes/master-marketing-digital-ia', tags: 'marketing intelligence artificielle ia digital crm' },
+          { title: 'Master Transformation Digitale & CRM', url: '/programmes/master-transformation-digitale-crm', tags: 'crm salesforce digital transformation' },
+          { title: 'Master Ingénierie Financière', url: '/programmes/master-ingenierie-financiere', tags: 'finance ingénierie fintech audit' },
+          { title: 'Master Management de Projets', url: '/programmes/master-management-projets', tags: 'projet management agile scrum' },
+          { title: 'Certifications', url: '/certifications', tags: 'aws google ibm cisco oracle salesforce hubspot microsoft certifications' },
+          { title: 'Admissions', url: '/admissions', tags: 'inscription frais tarifs admission bac prérequis' },
+          { title: 'Alternance', url: '/alternance', tags: 'alternance stage entreprise emploi expérience' },
+          { title: 'International', url: '/international', tags: 'canada france uqat em normandie international mobilité' },
+          { title: 'À Propos', url: '/a-propos', tags: 'histoire campus gouvernance équipe' },
+          { title: 'Contact', url: '/contact', tags: 'contact téléphone email adresse' },
+          { title: 'Préinscription', url: '/preinscription', tags: 'préinscription inscription candidature' },
+        ];
+
+        function openSearch() {
+          if (!searchOverlay || !searchInput) return;
+          searchOverlay.classList.remove('hidden');
+          requestAnimationFrame(() => {
+            searchOverlay.classList.remove('opacity-0');
+            searchInput.focus();
+          });
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeSearch() {
+          if (!searchOverlay || !searchInput) return;
+          searchOverlay.classList.add('opacity-0');
+          setTimeout(() => searchOverlay.classList.add('hidden'), 300);
+          document.body.style.overflow = '';
+          searchInput.value = '';
+          if (searchResults) searchResults.innerHTML = '';
+        }
+
+        searchTriggers.forEach(t => t.addEventListener('click', openSearch));
+        searchClose?.addEventListener('click', closeSearch);
+        searchOverlay?.addEventListener('click', (e) => { if (e.target === searchOverlay) closeSearch(); });
+        document.addEventListener('keydown', (e) => {
+          if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+          if (e.key === 'Escape') closeSearch();
+        });
+
+        searchInput?.addEventListener('input', () => {
+          if (!searchResults || !searchInput) return;
+          const q = searchInput.value.toLowerCase().trim();
+          if (!q) { searchResults.innerHTML = ''; return; }
+          const matches = searchIndex.filter(s =>
+            s.title.toLowerCase().includes(q) || s.tags.includes(q)
+          );
+          searchResults.innerHTML = matches.length
+            ? matches.map(m => `<a href="${m.url}" class="flex items-center gap-3 px-4 py-3 text-white/80 hover:bg-white/10 transition-colors"><svg class="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m9 5 7 7-7 7"/></svg><span class="font-medium">${m.title}</span></a>`).join('')
+            : '<p class="px-4 py-6 text-white/40 text-center">Aucun résultat trouvé</p>';
+        });
+      });
+
+      /* ── Restore dark mode from localStorage ── */
+      const savedTheme = localStorage.getItem('ebs-theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </body>
+</html>

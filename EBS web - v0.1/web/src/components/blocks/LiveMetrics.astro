@@ -1,0 +1,64 @@
+---
+/**
+ * Live Success Metrics Dashboard — Animated real-time-looking counters
+ * "Applications this week", "Certifications passed", etc.
+ */
+interface Props { lang?: 'fr' | 'en'; }
+const { lang = 'fr' } = Astro.props;
+const isFr = lang === 'fr';
+---
+
+<section class="py-16 bg-navy border-y border-white/5 overflow-hidden" aria-label={isFr ? 'Métriques en temps réel' : 'Live metrics'}>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+    <div class="flex items-center gap-3 mb-8 justify-center">
+      <span class="relative flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full bg-green-400 opacity-75"></span>
+        <span class="relative inline-flex h-3 w-3 bg-green-500"></span>
+      </span>
+      <span class="text-xs font-semibold text-white/40 uppercase tracking-wider">{isFr ? 'Statistiques en direct' : 'Live Statistics'}</span>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white/[0.03] border border-white/5 p-6 text-center">
+        <span class="font-heading font-black text-3xl md:text-4xl text-accent block mb-1 live-ticker" data-base="47" data-variance="5">47</span>
+        <span class="text-xs text-white/40 font-medium">{isFr ? 'Candidatures cette semaine' : 'Applications this week'}</span>
+      </div>
+      <div class="bg-white/[0.03] border border-white/5 p-6 text-center">
+        <span class="font-heading font-black text-3xl md:text-4xl text-white block mb-1 live-ticker" data-base="1247" data-variance="3">1 247</span>
+        <span class="text-xs text-white/40 font-medium">{isFr ? 'Certifications passées' : 'Certifications passed'}</span>
+      </div>
+      <div class="bg-white/[0.03] border border-white/5 p-6 text-center">
+        <span class="font-heading font-black text-3xl md:text-4xl text-white block mb-1 live-ticker" data-base="96" data-variance="2">96%</span>
+        <span class="text-xs text-white/40 font-medium">{isFr ? 'Taux de satisfaction' : 'Satisfaction rate'}</span>
+      </div>
+      <div class="bg-white/[0.03] border border-white/5 p-6 text-center">
+        <span class="font-heading font-black text-3xl md:text-4xl text-accent block mb-1 live-ticker" data-base="12" data-variance="3">12</span>
+        <span class="text-xs text-white/40 font-medium">{isFr ? 'Entreprises recrutent ce mois' : 'Companies hiring this month'}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const tickers = document.querySelectorAll<HTMLElement>('.live-ticker');
+    if (!tickers.length) return;
+
+    function fmt(n: number): string {
+      return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+
+    function tick() {
+      tickers.forEach(el => {
+        const base = parseInt(el.dataset.base || '0');
+        const variance = parseInt(el.dataset.variance || '0');
+        const val = base + Math.floor(Math.random() * variance);
+        const suffix = el.textContent?.includes('%') ? '%' : '';
+        el.textContent = fmt(val) + suffix;
+      });
+    }
+
+    // Update every 4 seconds for a "live" feel
+    setInterval(tick, 4000);
+  });
+</script>

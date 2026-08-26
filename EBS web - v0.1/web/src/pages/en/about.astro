@@ -1,0 +1,449 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Marker from '../../components/ui/Marker.astro';
+import VideoTour from '../../components/blocks/VideoTour.astro';
+
+const title = "About — EBS Tunis | Espima Business School";
+const description = "Discover EBS Tunis: mission, values, accreditations and campus. The private university where degree meets international certifications and employment.";
+---
+
+<BaseLayout title={title} description={description} lang="en">
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* ───────────────── HERO ───────────────── */}
+    <section class="relative bg-navy overflow-hidden min-h-[55vh] flex items-center" aria-labelledby="about-hero">
+      <img src="/images/about/groupe.png" alt="EBS Tunis team" class="absolute inset-0 w-full h-full object-cover" loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-20 pb-16 md:pt-28 md:pb-20 lg:pt-36 lg:pb-24 relative z-10">
+        <nav class="mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-xs text-white/40 font-medium">
+            <li><a href="/en" class="hover:text-accent transition-colors">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-white/70">About</li>
+          </ol>
+        </nav>
+
+        <div class="max-w-3xl">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-5">Since 2013 · Tunis, Tunisia</p>
+          <h1 id="about-hero" class="font-heading font-bold text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.08] text-white tracking-tight mb-5">
+            The university that prepares you<br/>for the real world<Marker size="lg" class="inline-block ml-3 align-middle" />
+          </h1>
+          <p class="font-body text-base-300 text-lg md:text-xl leading-relaxed max-w-2xl">
+            EBS Tunis – Espima Business School – is a private university recognized by the Tunisian state. Our mission: to train immediately operational professionals through a unique model combining degree, international certifications and work-study.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── STATS ───────────────── */}
+    <section class="bg-surface-alt border-b border-border/30 py-12 reveal" aria-label="Key figures">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <span class="font-heading font-bold text-4xl text-accent block mb-1" data-countup="20" data-suffix="+">0</span>
+            <span class="text-sm text-ink-muted font-medium">years of experience</span>
+          </div>
+          <div>
+            <span class="font-heading font-bold text-4xl text-accent block mb-1" data-countup="8">0</span>
+            <span class="text-sm text-ink-muted font-medium">programs</span>
+          </div>
+          <div>
+            <span class="font-heading font-bold text-4xl text-accent block mb-1" data-countup="27" data-suffix="+">0</span>
+            <span class="text-sm text-ink-muted font-medium">certifications included</span>
+          </div>
+          <div>
+            <span class="font-heading font-bold text-4xl text-accent block mb-1" data-countup="4">0</span>
+            <span class="text-sm text-ink-muted font-medium">international partners</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── MISSION ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface reveal" aria-labelledby="mission-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Our mission</p>
+            <h2 id="mission-heading" class="font-heading font-bold text-h2 text-ink leading-tight mb-5">
+              Training for employment,<br/>not just for a diploma<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+            <div class="space-y-6 font-body text-ink-body text-base leading-relaxed">
+              <p>
+                The job market no longer just asks for a degree. It demands proven skills, recognized certifications and field experience. That is exactly what EBS offers.
+              </p>
+              <p>
+                Each programme integrates international certifications (AWS, Google, Salesforce, IBM, Cisco, Oracle, Microsoft, HubSpot) directly into the curriculum. Not as an option. Not as a supplement.
+              </p>
+              <p>
+                Work-study begins in the second year of the Bachelor's programme. Our students spend 3 days at EBS and 2 days in a company, gaining concrete professional experience before even graduating.
+              </p>
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="relative overflow-hidden group">
+                <img src="/images/events/conference-digital.jpg" alt="Digital conference" class="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent"></div>
+              </div>
+              <div class="relative overflow-hidden group mt-8">
+                <img src="/images/events/seminaire.jpg" alt="EBS seminar" class="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent"></div>
+              </div>
+              <div class="relative overflow-hidden group col-span-2">
+                <img src="/images/about/certifications-showcase.png" alt="EBS certifications" class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── VALUES ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="values-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">What defines us</p>
+          <h2 id="values-heading" class="font-heading font-bold text-h2 text-ink">
+            Our values
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {[
+            { title: 'Operational excellence', desc: 'Every module, every certification, every internship is designed to produce a professional ready to contribute from day one.', img: '/images/events/ebs-challenge.jpg' },
+            { title: 'Total transparency', desc: 'Clear fees, certifications included, no hidden costs. You know exactly what you get before you enrol.', img: '/images/campus/students-5.jpg' },
+            { title: 'International openness', desc: 'Our partnerships with UQAT, EM Normandie and Collège de Paris open doors to Canada and France.', img: '/images/international/paris-student.png' },
+          ].map((val, i) => (
+            <div class="group bg-surface border border-border/40 overflow-hidden reveal" style={`--delay: ${i * 80}ms`}>
+              <div class="relative h-48 overflow-hidden">
+                <img src={val.img} alt={val.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+              </div>
+              <div class="p-7">
+                <span class="w-2 h-2 bg-accent block mb-4" aria-hidden="true"></span>
+                <h3 class="font-heading font-semibold text-lg text-ink mb-3">{val.title}</h3>
+                <p class="text-sm text-ink-body leading-relaxed">{val.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── RECOGNITION ───────────────── */}
+    <section class="relative py-20 lg:py-28 overflow-hidden reveal" aria-labelledby="recognition-heading">
+      <img src="/images/campus/students-4.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" aria-hidden="true" />
+      <div class="absolute inset-0 bg-navy/92"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-5">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Recognition</p>
+            <h2 id="recognition-heading" class="font-heading font-bold text-h2 text-white leading-tight mb-5">
+              Accreditations & recognition<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="space-y-4">
+              {[
+                { title: 'Ministry of Higher Education', desc: 'Degrees recognized by the Tunisian state. Full compliance with the LMD system.', img: '/images/partners/ministere.gif' },
+                { title: 'International academic partners', desc: 'Agreements with UQAT (Canada), EM Normandie, Collège de Paris and Keyce Academy (France).', img: '/images/partners/em-normandie-logo.png' },
+                { title: 'Certification partners', desc: 'Authorized testing centre for AWS, Google, Salesforce, IBM, Cisco, Oracle, Microsoft and HubSpot.', img: '/images/certifications/aws.svg' },
+              ].map(item => (
+                <div class="bg-white/[0.05] backdrop-blur-sm border border-white/10 px-7 py-5 flex items-start gap-5">
+                  <img src={item.img} alt="" class="w-10 h-10 object-contain shrink-0 mt-1" loading="lazy" />
+                  <div>
+                    <h3 class="font-heading font-semibold text-base text-white mb-2">{item.title}</h3>
+                    <p class="text-sm text-white/50 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── VIDEO TOUR ───────────────── */}
+    <VideoTour lang="en" />
+
+
+    {/* ───────────────── CAMPUS ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface reveal" aria-labelledby="campus-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-7">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Our campus</p>
+            <h2 id="campus-heading" class="font-heading font-bold text-h2 text-ink leading-tight mb-5">
+              In the heart of Tunis<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+            <div class="space-y-4 font-body text-ink-body text-base leading-relaxed mb-8">
+              <p>
+                The EBS campus is located in Tunis, easily accessible by public transport. Modern classrooms, coworking spaces and access to online certification platforms.
+              </p>
+              <p>
+                The environment is designed to foster collaborative learning and certification preparation.
+              </p>
+            </div>
+            {/* Photo grid */}
+            <div class="grid grid-cols-3 gap-2">
+              {[
+                '/images/campus/campus-1.jpg',
+                '/images/campus/campus-2.jpg',
+                '/images/campus/students-2.jpg',
+                '/images/events/salon-riyeda.jpg',
+                '/images/events/forum-mobilites.jpg',
+                '/images/campus/students-6.jpg',
+              ].map((src, i) => (
+                <div class="relative overflow-hidden group aspect-square">
+                  <img src={src} alt="EBS Campus" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+                  <div class="absolute inset-0 bg-navy/20 group-hover:bg-navy/0 transition-colors duration-300"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <div class="bg-surface-alt border border-border/40 p-7 mb-6">
+              <h3 class="font-heading font-semibold text-base text-ink mb-4">Practical information</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3 text-sm">
+                  <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-2" aria-hidden="true"></span>
+                  <span class="text-ink-body"><strong>Address:</strong> Tunis, Tunisia</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm">
+                  <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-2" aria-hidden="true"></span>
+                  <span class="text-ink-body"><strong>Phone:</strong> +216 29 58 28 35</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm">
+                  <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-2" aria-hidden="true"></span>
+                  <span class="text-ink-body"><strong>Email:</strong> admission@ebs.tn</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm">
+                  <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-2" aria-hidden="true"></span>
+                  <span class="text-ink-body"><strong>Intake:</strong> September</span>
+                </li>
+              </ul>
+            </div>
+            {/* Large campus photo */}
+            <div class="relative overflow-hidden group">
+              <img src="/images/about/campus-life.jpg" alt="EBS student life" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent"></div>
+              <div class="absolute bottom-4 left-4">
+                <span class="bg-accent/90 text-base-950 text-xs font-bold px-3 py-1.5">Student life</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── GOVERNANCE ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="governance-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14">
+          <div class="lg:col-span-7">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Governance</p>
+            <h2 id="governance-heading" class="font-heading font-bold text-h2 text-ink leading-tight">
+              The team behind EBS<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+          <div class="lg:col-span-5">
+            <p class="font-body text-ink-body text-base leading-relaxed">
+              A committed leadership team, field professionals and recognized academics.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { role: 'General Management', desc: 'Strategic oversight, international partnerships and programme development. Ensures alignment between training and market requirements.' },
+            { role: 'Academic Management', desc: 'Curriculum design, certification integration into programmes, faculty coordination and pedagogical quality assurance.' },
+            { role: 'Corporate Relations', desc: 'Management of a 50+ partner company network, work-study placements, Career Center and graduate follow-up.' },
+          ].map((person, i) => (
+            <div class="bg-surface border border-border/40 p-7 reveal" style={`--delay: ${i * 80}ms`}>
+              <span class="w-2 h-2 bg-accent block mb-5" aria-hidden="true"></span>
+              <h3 class="font-heading font-semibold text-lg text-ink mb-2">{person.role}</h3>
+              <p class="text-sm text-ink-body leading-relaxed">{person.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── FACULTY ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface reveal" aria-labelledby="faculty-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Faculty</p>
+          <h2 id="faculty-heading" class="font-heading font-bold text-h2 text-ink">
+            Our instructors
+          </h2>
+          <p class="font-body text-ink-body text-base max-w-xl mx-auto mt-3">
+            A mix of academics and active professionals. Every instructor brings up-to-date field expertise.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { domain: 'Computer Science & Tech', highlights: 'AWS, Cisco and Oracle certified engineers. Senior developers working in Tunisian IT companies.', certCount: '5+ certified' },
+            { domain: 'Management & Strategy', highlights: 'PhDs in management science, business transformation consultants, Salesforce trainers.', certCount: '4+ certified' },
+            { domain: 'Marketing & Digital', highlights: 'Google Ads, HubSpot and analytics experts. Marketing directors working in national companies.', certCount: '4+ certified' },
+            { domain: 'Finance & Accounting', highlights: 'Chartered accountants, financial analysts, former banking executives. Oracle and Microsoft certified.', certCount: '3+ certified' },
+          ].map((dept, i) => (
+            <div class="bg-surface-alt border border-border/40 p-7 reveal" style={`--delay: ${i * 60}ms`}>
+              <h3 class="font-heading font-semibold text-base text-ink mb-3">{dept.domain}</h3>
+              <p class="text-sm text-ink-body leading-relaxed mb-4">{dept.highlights}</p>
+              <span class="inline-block px-2.5 py-1 bg-accent/10 text-accent text-xs font-semibold">{dept.certCount}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── STUDENT SERVICES ───────────────── */}
+    <section class="py-20 lg:py-28 bg-navy reveal" aria-labelledby="services-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Student services</p>
+          <h2 id="services-heading" class="font-heading font-bold text-h2 text-white">
+            Everything to succeed
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { svg: '<svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>', title: 'Career Center', desc: 'CV workshops, mock interviews, work-study matching, employer network. Available from year 1.' },
+            { svg: '<svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/><circle cx="12" cy="8" r="7"/></svg>', title: 'Certification center', desc: 'Dedicated rooms for certification exams. Access to official AWS, Google, Salesforce platforms and more.' },
+            { svg: '<svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>', title: 'International office', desc: 'Visa support, application files for partner universities, preparation for studying abroad.' },
+            { svg: '<svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>', title: 'Library & e-learning', desc: 'Access to digital resources, textbooks, supplementary online courses and databases.' },
+            { svg: '<svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>', title: 'Tutoring & support', desc: 'Catch-up sessions, peer tutoring, individual support for students in difficulty.' },
+            { svg: '<svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0H5m14 0h2m-16 0H3"/><path d="M9 7h1m-1 4h1m4-4h1m-1 4h1"/></svg>', title: 'Coworking spaces', desc: 'Collaborative work zones, project rooms and dedicated spaces for group work.' },
+          ].map((service, i) => (
+            <div class="bg-white/[0.05] border border-white/10 p-7 hover:bg-white/10 transition-colors reveal" style={`--delay: ${i * 60}ms`}>
+              <span class="w-10 h-10 bg-white/[0.06] flex items-center justify-center mb-4" aria-hidden="true"><Fragment set:html={service.svg} /></span>
+              <h3 class="font-heading font-semibold text-base text-white mb-2">{service.title}</h3>
+              <p class="text-sm text-white/50 leading-relaxed">{service.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── ALUMNI ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="alumni-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Alumni network</p>
+            <h2 id="alumni-heading" class="font-heading font-bold text-h2 text-ink leading-tight mb-5">
+              Our graduates are our pride<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+            <p class="font-body text-ink-body text-base leading-relaxed mb-8">
+              EBS graduates work in leading companies in Tunisia and internationally. Their success is our best proof.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-surface border border-border/40 p-5 text-center">
+                <span class="font-heading font-bold text-2xl text-accent block" data-countup="500" data-suffix="+">0</span>
+                <span class="text-xs text-ink-muted">graduates</span>
+              </div>
+              <div class="bg-surface border border-border/40 p-5 text-center">
+                <span class="font-heading font-bold text-2xl text-accent block" data-countup="75" data-suffix="%">0</span>
+                <span class="text-xs text-ink-muted">employed at 6 months</span>
+              </div>
+              <div class="bg-surface border border-border/40 p-5 text-center">
+                <span class="font-heading font-bold text-2xl text-accent block" data-countup="15" data-suffix="+">0</span>
+                <span class="text-xs text-ink-muted">destination countries</span>
+              </div>
+              <div class="bg-surface border border-border/40 p-5 text-center">
+                <span class="font-heading font-bold text-2xl text-accent block" data-countup="50" data-suffix="+">0</span>
+                <span class="text-xs text-ink-muted">partner companies</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6">
+            <div class="bg-surface border border-border/40 p-8">
+              <h3 class="font-heading font-semibold text-base text-ink mb-5">Companies hiring our graduates</h3>
+              <div class="flex flex-wrap gap-2">
+                {[
+                  'Vermeg', 'Sofrecom', 'Telnet', 'Orange Tunisie', 'Think IT', 'Linedata',
+                  'Biat', 'Amen Bank', 'BH Bank', 'Tunisair', 'Poulina Group', 'Deloitte',
+                  'Ernst & Young', 'Capgemini', 'Talan', 'CGI', 'Berexia', 'Salesforce EMEA',
+                  'MG Tunisie', 'Jumia', 'Carrefour Tunisie', 'Publicis',
+                ].map(company => (
+                  <span class="inline-block px-3 py-1.5 bg-surface-alt text-ink-body text-sm font-medium border border-border/30">{company}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── CTA ───────────────── */}
+    <section class="relative py-20 lg:py-28 overflow-hidden" aria-label="Registration">
+      <img src="/images/campus/students-9.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" aria-hidden="true" />
+      <div class="absolute inset-0 bg-accent/90"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center relative z-10">
+        <p class="text-xs font-semibold text-base-950/50 uppercase tracking-wider mb-4">Join EBS</p>
+        <h2 class="font-heading font-bold text-[clamp(1.75rem,4vw,3rem)] leading-[1.1] text-base-950 mb-5">
+          Ready to build your future?<Marker size="lg" class="inline-block ml-3 align-middle bg-base-950" />
+        </h2>
+        <p class="font-body text-base-950/60 text-lg mb-10 max-w-md mx-auto">
+          Explore our programmes and start your pre-registration in just a few minutes.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button href="/en/programs" variant="inverted" size="lg">
+            View programmes <span class="ml-2" aria-hidden="true">→</span>
+          </Button>
+          <Button href="/preinscription" variant="ghost" size="lg" class="text-base-950/70 hover:text-base-950">
+            Start my pre-registration
+          </Button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const reveals = document.querySelectorAll<HTMLElement>('.reveal');
+    if (reveals.length) {
+      const obs = new IntersectionObserver(
+        (entries) => entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        }),
+        { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+      );
+      reveals.forEach((el) => obs.observe(el));
+    }
+  });
+</script>

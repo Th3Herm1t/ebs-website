@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Marker from '../../components/ui/Marker.astro';
+import Button from '../../components/ui/Button.astro';
+
+const title = "Events & Calendar — EBS Tunis";
+const description = "Open days, webinars, certification sessions and student events at EBS Tunis.";
+
+const upcomingEvents = [
+  {
+    date: 'May 10, 2026',
+    day: '10',
+    month: 'MAY',
+    type: 'Open Day',
+    title: 'Campus Open Day',
+    desc: 'Explore our campus, meet faculty and attend programme demonstrations.',
+    time: '09:00 – 16:00',
+    location: 'EBS Campus, Les Berges du Lac, Tunis',
+    cta: '/en/pre-registration',
+    highlight: true,
+  },
+  {
+    date: 'May 22, 2026',
+    day: '22',
+    month: 'MAY',
+    type: 'Webinar',
+    title: 'Webinar: Work-Study — How It Works',
+    desc: 'Online session to understand the work-study format, partner companies and student testimonials.',
+    time: '18:00 – 19:30',
+    location: 'Online (Zoom)',
+    cta: '#',
+    highlight: false,
+  },
+  {
+    date: 'June 5, 2026',
+    day: '05',
+    month: 'JUN',
+    type: 'Certification',
+    title: 'AWS Cloud Practitioner Certification Session',
+    desc: 'Official AWS certification exam for L2 and L3 Computer Science students.',
+    time: '10:00 – 12:00',
+    location: 'EBS Campus, Room 201',
+    cta: '#',
+    highlight: false,
+  },
+  {
+    date: 'June 15, 2026',
+    day: '15',
+    month: 'JUN',
+    type: 'Conference',
+    title: 'Conference: AI in Marketing in 2026',
+    desc: 'Guest speaker from Google Tunisia. AI trends, tools and career opportunities.',
+    time: '14:00 – 16:00',
+    location: 'EBS Campus, Amphitheatre',
+    cta: '#',
+    highlight: false,
+  },
+  {
+    date: 'June 28, 2026',
+    day: '28',
+    month: 'JUN',
+    type: 'Open Day',
+    title: 'Master Programmes Open Day',
+    desc: 'Dedicated to Master programmes. Track presentations, September intake and international partnerships.',
+    time: '10:00 – 14:00',
+    location: 'EBS Campus, Les Berges du Lac, Tunis',
+    cta: '/en/pre-registration',
+    highlight: true,
+  },
+  {
+    date: 'July 10, 2026',
+    day: '10',
+    month: 'JUL',
+    type: 'Workshop',
+    title: 'Salesforce Workshop: CRM & Digital Transformation',
+    desc: 'Hands-on workshop led by a certified Salesforce consultant. Open to L3 and Master students.',
+    time: '09:00 – 12:00',
+    location: 'EBS Campus, Digital Lab',
+    cta: '#',
+    highlight: false,
+  },
+];
+
+const typeColors: Record<string, string> = {
+  'Open Day': 'bg-accent text-base-950',
+  'Webinar': 'bg-blue-600 text-white',
+  'Certification': 'bg-emerald-600 text-white',
+  'Conference': 'bg-purple-600 text-white',
+  'Workshop': 'bg-amber-600 text-base-950',
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* Hero */}
+    <section class="relative bg-navy overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/events/conference-digital.jpg" alt="" class="w-full h-full object-cover opacity-20" loading="eager" />
+        <div class="absolute inset-0 bg-navy/80"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-24 pb-16 md:pt-32 md:pb-20 relative z-10">
+        <nav class="mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-xs text-white/40 font-medium">
+            <li><a href="/en" class="hover:text-accent transition-colors">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-white/70">Events</li>
+          </ol>
+        </nav>
+        <h1 class="font-heading font-bold text-[clamp(2rem,4vw,3rem)] text-white leading-tight mb-4">
+          Events & Calendar<Marker size="lg" class="inline-block ml-3 align-middle" />
+        </h1>
+        <p class="font-body text-white/60 text-lg max-w-xl">
+          Open days, webinars, certification sessions and conferences.
+        </p>
+      </div>
+    </section>
+
+    {/* Events list */}
+    <section class="py-16 lg:py-24">
+      <div class="max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="space-y-6">
+          {upcomingEvents.map((event, i) => (
+            <div class:list={[
+              'group flex flex-col md:flex-row gap-6 border overflow-hidden transition-all hover:border-accent/30 reveal',
+              event.highlight ? 'border-accent/30 bg-accent/5' : 'border-border/40 bg-surface',
+            ]} style={`--delay: ${i * 60}ms`}>
+              {/* Date badge */}
+              <div class="flex-shrink-0 w-full md:w-24 bg-navy flex flex-row md:flex-col items-center justify-center gap-2 md:gap-0 p-4 md:p-6">
+                <span class="font-heading font-black text-3xl md:text-4xl text-white">{event.day}</span>
+                <span class="font-heading font-bold text-xs text-accent uppercase tracking-wider">{event.month}</span>
+              </div>
+
+              {/* Content */}
+              <div class="flex-1 p-6 md:py-6 md:px-2">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                  <span class={`px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider ${typeColors[event.type] || 'bg-ink-muted text-white'}`}>{event.type}</span>
+                  <span class="text-xs text-ink-muted">{event.time}</span>
+                </div>
+                <h2 class="font-heading font-bold text-lg text-ink mb-2 group-hover:text-accent transition-colors">{event.title}</h2>
+                <p class="text-sm text-ink-body leading-relaxed mb-3">{event.desc}</p>
+                <div class="flex items-center gap-2 text-xs text-ink-muted">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  {event.location}
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div class="flex-shrink-0 flex items-center p-6">
+                {event.highlight ? (
+                  <Button href={event.cta} variant="primary" size="sm">
+                    Register <span class="ml-1">→</span>
+                  </Button>
+                ) : (
+                  <span class="text-xs font-semibold text-ink-muted group-hover:text-accent transition-colors">Details →</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

@@ -1,0 +1,409 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Marker from '../../components/ui/Marker.astro';
+import ROICalculator from '../../components/blocks/ROICalculator.astro';
+
+const title = "Admissions — EBS Tunis | Complete Guide";
+const description = "Everything you need to know about admissions at EBS Tunis: entry requirements, steps, calendar and required documents for Bachelor's and Master's programs.";
+
+const steps = [
+  {
+    num: '01',
+    title: 'Online Pre-registration',
+    description: 'Fill out the form in 3 minutes with your personal information and program choice.',
+    svg: '<svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"/></svg>',
+  },
+  {
+    num: '02',
+    title: 'Application Review',
+    description: 'Our team reviews your application within 48 hours. No entrance exam \u2014 admission is based on your academic record.',
+    svg: '<svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"/></svg>',
+  },
+  {
+    num: '03',
+    title: 'Motivation Interview',
+    description: 'A 20-minute conversation to understand your career goals and answer all your questions.',
+    svg: '<svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>',
+  },
+  {
+    num: '04',
+    title: 'Enrollment Confirmation',
+    description: 'You receive your admission letter and finalize your enrollment with the official documents.',
+    svg: '<svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+  },
+];
+
+const requirementsLicence = [
+  'High school diploma (all tracks)',
+  'High school transcript',
+  'Copy of national ID card',
+  'Recent passport-size photo',
+  '2 stamped envelopes',
+];
+
+const requirementsMaster = [
+  'Bachelor\'s degree or equivalent (Bac+3)',
+  'Transcripts from all 3 years of bachelor\'s',
+  'Copy of bachelor\'s diploma',
+  'Copy of national ID card',
+  'Updated CV',
+  'Cover letter',
+  'Recent passport-size photo',
+];
+
+const faq = [
+  { q: 'Is there an entrance exam?', a: 'No. Admission to EBS is based on your application file and a motivation interview. No exam, no unnecessary stress.' },
+  { q: 'When do registrations open?', a: 'Registrations open every year in May and remain open until the end of September, subject to availability.' },
+  { q: 'Can I enroll mid-year?', a: 'Mid-year enrollment is possible under certain conditions. Contact our team to discuss your situation.' },
+  { q: 'Is EBS recognized by the State?', a: 'Yes, EBS Tunis is a private university recognized by the Tunisian Ministry of Higher Education. Our degrees comply with the LMD system.' },
+  { q: 'How much is tuition?', a: 'Fees vary by program: starting from 6,000 DT/year for the Computer Science Bachelor\'s, 8,200 DT/year for other Bachelor\'s programs, and 8,500 DT/year for Master\'s. The 27+ certifications are included.' },
+  { q: 'Are payment plans available?', a: 'Yes, payments can be spread over several installments. Contact our finance department for a personalized plan.' },
+];
+---
+
+<BaseLayout title={title} description={description} lang="en">
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* ───────────────── HERO ───────────────── */}
+    <section class="relative bg-navy overflow-hidden min-h-[55vh] flex items-center" aria-labelledby="admissions-hero">
+      <img src="/images/campus/students-1.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" aria-hidden="true" />
+      <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-20 pb-16 md:pt-28 md:pb-20 lg:pt-36 lg:pb-24 relative z-10">
+        <nav class="mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-xs text-white/40 font-medium">
+            <li><a href="/en" class="hover:text-accent transition-colors">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-white/70">Admissions</li>
+          </ol>
+        </nav>
+
+        <div class="max-w-3xl">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-5">Application-based · No entrance exam</p>
+          <h1 id="admissions-hero" class="font-heading font-bold text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.08] text-white tracking-tight mb-5">
+            Your admission,<br/>step by step<Marker size="lg" class="inline-block ml-3 align-middle" />
+          </h1>
+          <p class="font-body text-base-300 text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
+            No exam, no surprises. Admission to EBS is based on your academic record and motivation. Here's everything you need to know.
+          </p>
+          <Button href="/en/pre-registration" variant="primary" size="lg">
+            Start my pre-registration <span class="ml-2" aria-hidden="true">→</span>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── STEPS ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface reveal" aria-labelledby="steps-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Simplified process</p>
+          <h2 id="steps-heading" class="font-heading font-bold text-h2 text-ink">
+            4 steps to enrollment
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {steps.map((step) => (
+            <div class="relative bg-surface-alt border border-border/30 p-8 group reveal">
+              <span class="w-12 h-12 bg-accent/10 flex items-center justify-center mb-4" aria-hidden="true"><Fragment set:html={step.svg} /></span>
+              <span class="font-heading font-bold text-accent text-sm mb-2 block">{step.num}</span>
+              <h3 class="font-heading font-bold text-lg text-ink mb-3">{step.title}</h3>
+              <p class="font-body text-ink-muted text-sm leading-relaxed">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ───────────────── CAMPUS PHOTO STRIP ───────────────── */}
+    <section class="bg-surface-alt border-y border-border/30 py-0" aria-label="Campus photos">
+      <div class="grid grid-cols-2 md:grid-cols-4 h-48 md:h-56">
+        {['/images/campus/campus-1.jpg', '/images/events/conference.jpg', '/images/campus/students-10.jpg', '/images/events/it-business-expo.jpg'].map((src) => (
+          <div class="relative overflow-hidden group">
+            <img src={src} alt="EBS Campus" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+            <div class="absolute inset-0 bg-navy/10 group-hover:bg-navy/0 transition-colors"></div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+
+    {/* ───────────────── REQUIREMENTS ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="requirements-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Admission file</p>
+          <h2 id="requirements-heading" class="font-heading font-bold text-h2 text-ink">
+            Required documents
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+          {/* Bachelor's */}
+          <div class="bg-surface border border-border/30 p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="bg-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-wider">Bachelor's</span>
+              <span class="text-sm text-ink-muted">High school diploma required</span>
+            </div>
+            <ul class="space-y-3">
+              {requirementsLicence.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="text-accent font-bold mt-0.5">✓</span>
+                  <span class="font-body text-sm text-ink">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Master's */}
+          <div class="bg-surface border border-border/30 p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="bg-accent text-base-950 text-xs font-bold px-3 py-1 uppercase tracking-wider">Master's</span>
+              <span class="text-sm text-ink-muted">Bachelor's degree required</span>
+            </div>
+            <ul class="space-y-3">
+              {requirementsMaster.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="text-accent font-bold mt-0.5">✓</span>
+                  <span class="font-body text-sm text-ink">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── FINANCING & PAYMENT ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface reveal" aria-labelledby="financing-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14">
+          <div class="lg:col-span-7">
+            <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Tuition & Financing</p>
+            <h2 id="financing-heading" class="font-heading font-bold text-h2 text-ink leading-tight">
+              Full transparency<Marker size="lg" class="inline-block ml-3 align-middle" />
+            </h2>
+          </div>
+          <div class="lg:col-span-5">
+            <p class="font-body text-ink-body text-base leading-relaxed">
+              Tuition fees include all international certifications. No hidden costs.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div class="bg-surface-alt border border-border/40 p-7">
+            <p class="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">Computer Science Bachelor</p>
+            <span class="font-heading font-bold text-3xl text-accent" data-countup="6000" data-sep=" ">0</span>
+            <span class="text-ink-muted text-sm ml-1">DT/year</span>
+            <p class="text-xs text-ink-muted mt-2">14 certifications included</p>
+          </div>
+          <div class="bg-surface-alt border border-border/40 p-7">
+            <p class="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">Other Bachelors</p>
+            <span class="font-heading font-bold text-3xl text-accent" data-countup="8200" data-sep=" ">0</span>
+            <span class="text-ink-muted text-sm ml-1">DT/year</span>
+            <p class="text-xs text-ink-muted mt-2">10 certifications included</p>
+          </div>
+          <div class="bg-surface-alt border border-border/40 p-7">
+            <p class="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">Masters</p>
+            <span class="font-heading font-bold text-3xl text-accent" data-countup="8500" data-sep=" ">0</span>
+            <span class="text-ink-muted text-sm ml-1">DT/year</span>
+            <p class="text-xs text-ink-muted mt-2">4 to 8 certifications included</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Payment plans */}
+          <div class="bg-surface-alt border border-border/40 p-7">
+            <h3 class="font-heading font-semibold text-base text-ink mb-4">Payment plans</h3>
+            <ul class="space-y-3">
+              {[
+                'Payment in 3 installments (registration + 2 quarterly payments)',
+                'Payment in 4 installments on request (registration + 3 payments)',
+                'Registration fee: 1,500 DT upon confirmation (deducted from total)',
+                'Sibling discount: -10% for 2nd child enrolled at EBS',
+              ].map(item => (
+                <li class="flex items-start gap-3 text-sm text-ink-body">
+                  <span class="w-1.5 h-1.5 bg-accent shrink-0 mt-2" aria-hidden="true"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* Counselor contact */}
+          <div class="bg-accent/5 border border-accent/15 p-7">
+            <h3 class="font-heading font-semibold text-base text-ink mb-4">Admissions counselor</h3>
+            <p class="text-sm text-ink-body leading-relaxed mb-4">
+              For any questions about fees, payment plans, or your application, contact our team directly.
+            </p>
+            <div class="space-y-2">
+              <div class="flex items-center gap-3 text-sm">
+                <span class="text-accent" aria-hidden="true"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                <a href="tel:+21629582835" class="text-ink hover:text-accent transition-colors font-medium">+216 29 58 28 35</a>
+              </div>
+              <div class="flex items-center gap-3 text-sm">
+                <span class="text-accent" aria-hidden="true"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+                <a href="mailto:admission@ebs.tn" class="text-ink hover:text-accent transition-colors font-medium">admission@ebs.tn</a>
+              </div>
+              <div class="flex items-center gap-3 text-sm">
+                <span class="text-accent" aria-hidden="true"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                <a href="https://wa.me/21629582835" target="_blank" rel="noopener noreferrer" class="text-ink hover:text-accent transition-colors font-medium">WhatsApp</a>
+              </div>
+              <p class="text-xs text-ink-muted mt-3">Available Monday to Friday, 9am–5pm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── INTAKE INFO ───────────────── */}
+    <section class="bg-navy reveal" aria-label="Intake dates and availability">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          <div>
+            <span class="text-xs font-semibold text-accent uppercase tracking-wider block mb-2">Main intake</span>
+            <span class="font-heading font-bold text-3xl text-white">October 2025</span>
+            <p class="text-sm text-white/50 mt-1">Classes start: first week of October</p>
+          </div>
+          <div>
+            <span class="text-xs font-semibold text-accent uppercase tracking-wider block mb-2">Available seats</span>
+            <span class="font-heading font-bold text-3xl text-white">~30 seats/program</span>
+            <p class="text-sm text-white/50 mt-1">Bachelors & Masters. First come, first served.</p>
+          </div>
+          <div>
+            <span class="text-xs font-semibold text-accent uppercase tracking-wider block mb-2">Deadline</span>
+            <span class="font-heading font-bold text-3xl text-white">Sept. 30, 2025</span>
+            <p class="text-sm text-white/50 mt-1">Registration closes (subject to availability)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── CALENDAR ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface reveal" aria-labelledby="calendar-heading">
+      <div class="max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Calendar</p>
+          <h2 id="calendar-heading" class="font-heading font-bold text-h2 text-ink">
+            Key dates
+          </h2>
+        </div>
+
+        <div class="relative">
+          {/* Timeline line */}
+          <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-border/50 hidden md:block" aria-hidden="true"></div>
+
+          <div class="space-y-8 md:space-y-12">
+            {[
+              { period: 'May – June', label: 'Registrations open', detail: 'Online pre-registration is open. Early applications are processed first.' },
+              { period: 'July – August', label: 'Motivation interviews', detail: 'Weekly interview sessions. Results communicated within 48 hours.' },
+              { period: 'September', label: 'Last available spots', detail: 'Late registrations accepted subject to availability.' },
+              { period: 'October', label: 'Academic year begins', detail: 'Classes start. Integration week and certification program introduction.' },
+            ].map((event, i) => (
+              <div class={`md:grid md:grid-cols-2 md:gap-12 items-center ${i % 2 === 1 ? 'md:direction-rtl' : ''}`}>
+                <div class={`${i % 2 === 1 ? 'md:text-right md:col-start-2' : 'md:col-start-1'}`}>
+                  <span class="inline-block bg-accent/10 text-accent text-xs font-bold px-3 py-1 mb-2">{event.period}</span>
+                  <h3 class="font-heading font-bold text-lg text-ink mb-2">{event.label}</h3>
+                  <p class="font-body text-sm text-ink-muted leading-relaxed">{event.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── ROI CALCULATOR ───────────────── */}
+    <ROICalculator lang="en" />
+
+
+    {/* ───────────────── FAQ ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface-alt reveal" aria-labelledby="faq-heading">
+      <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-14">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">Frequently asked questions</p>
+          <h2 id="faq-heading" class="font-heading font-bold text-h2 text-ink">
+            Admissions FAQ
+          </h2>
+        </div>
+
+        <div class="space-y-4">
+          {faq.map((item) => (
+            <details class="group bg-surface border border-border/30 overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer p-6 font-heading font-semibold text-ink hover:text-accent transition-colors">
+                <span>{item.q}</span>
+                <span class="ml-4 text-accent transition-transform group-open:rotate-45 text-xl leading-none" aria-hidden="true">+</span>
+              </summary>
+              <div class="px-6 pb-6 pt-0">
+                <p class="font-body text-sm text-ink-muted leading-relaxed">{item.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── CTA ───────────────── */}
+    <section class="relative bg-accent overflow-hidden" aria-labelledby="admissions-cta">
+      <img src="/images/campus/students-8.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" aria-hidden="true" />
+      <div class="absolute inset-0 bg-accent/90"></div>
+      <div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 py-20 lg:py-28 text-center relative z-10">
+        <h2 id="admissions-cta" class="font-heading font-bold text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.1] text-base-950 mb-4">
+          Ready to join EBS?
+        </h2>
+        <p class="font-body text-base-950/70 text-lg mb-8 max-w-lg mx-auto">
+          Online pre-registration in 3 minutes. Our team will get back to you within 48 hours.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/en/pre-registration" variant="inverted" size="lg">
+            Start my pre-registration <span class="ml-2" aria-hidden="true">→</span>
+          </Button>
+          <Button href="/en/programs" variant="ghost" size="lg" class="text-base-950/70 hover:text-base-950">
+            Explore programs
+          </Button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    reveals.forEach((el) => io.observe(el));
+  });
+</script>

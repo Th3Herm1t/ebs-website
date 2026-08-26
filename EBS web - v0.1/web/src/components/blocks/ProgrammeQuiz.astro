@@ -1,0 +1,182 @@
+---
+/**
+ * "Which programme is for you?" — 5-question interactive quiz
+ * Recommends a programme based on user answers with CTA
+ */
+interface Props { lang?: 'fr' | 'en'; }
+const { lang = 'fr' } = Astro.props;
+const isFr = lang === 'fr';
+---
+
+<section id="quiz" class="py-20 lg:py-28 bg-navy overflow-hidden" aria-labelledby="quiz-heading">
+  <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+    <div class="text-center mb-12">
+      <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-3">{isFr ? 'Orientation' : 'Find Your Path'}</p>
+      <h2 id="quiz-heading" class="font-heading font-bold text-h2 text-white">
+        {isFr ? 'Quel programme est fait pour toi ?' : 'Which programme is right for you?'}
+      </h2>
+      <p class="font-body text-white/60 text-base mt-3">{isFr ? '5 questions · 1 minute · Recommandation personnalisée' : '5 questions · 1 minute · Personalized recommendation'}</p>
+    </div>
+
+    <div id="quiz-container" class="bg-white/5 border border-white/10 backdrop-blur-sm p-8 md:p-10">
+      {/* Progress bar */}
+      <div class="mb-8">
+        <div class="flex items-center justify-between text-xs text-white/40 mb-2">
+          <span id="quiz-progress-text">Question 1/5</span>
+          <span id="quiz-percent">0%</span>
+        </div>
+        <div class="w-full h-1.5 bg-white/10">
+          <div id="quiz-bar" class="h-full bg-accent transition-all duration-500" style="width: 0%"></div>
+        </div>
+      </div>
+
+      {/* Questions */}
+      <div id="quiz-questions">
+        <div class="quiz-q" data-q="0">
+          <h3 class="font-heading font-semibold text-lg text-white mb-6">{isFr ? 'Quel domaine t\'attire le plus ?' : 'Which field interests you most?'}</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="tech"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>{isFr ? 'Technologie & Code' : 'Technology & Code'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="biz"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>{isFr ? 'Business & Stratégie' : 'Business & Strategy'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="mkt"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>{isFr ? 'Marketing & Communication' : 'Marketing & Communication'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="fin"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>{isFr ? 'Finance & Chiffres' : 'Finance & Numbers'}</button>
+          </div>
+        </div>
+
+        <div class="quiz-q hidden" data-q="1">
+          <h3 class="font-heading font-semibold text-lg text-white mb-6">{isFr ? 'Quel est ton niveau actuel ?' : 'What is your current level?'}</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="bac"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="m4 15 8-8 8 8"/><path d="M12 3v4"/></svg>{isFr ? 'Bac / Bac en cours' : 'High School / In progress'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="bac3"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>{isFr ? 'Bac+3 / Licence' : 'Bachelor\'s degree'}</button>
+          </div>
+        </div>
+
+        <div class="quiz-q hidden" data-q="2">
+          <h3 class="font-heading font-semibold text-lg text-white mb-6">{isFr ? 'Qu\'est-ce qui compte le plus pour toi ?' : 'What matters most to you?'}</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="certs"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/><circle cx="12" cy="8" r="7"/></svg>{isFr ? 'Les certifications' : 'Certifications'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="intl"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>{isFr ? 'L\'international' : 'International opportunities'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="job"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09Z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2Z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>{isFr ? 'L\'employabilité rapide' : 'Fast employability'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="salary"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3l-1.5-2"/><path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3l-1.5-2"/><path d="M3.34 14H2v-3a1 1 0 0 1 1-1h3.5"/><path d="M13.34 14H12v-3a1 1 0 0 1 1-1h3.5"/></svg>{isFr ? 'Le salaire élevé' : 'High salary'}</button>
+          </div>
+        </div>
+
+        <div class="quiz-q hidden" data-q="3">
+          <h3 class="font-heading font-semibold text-lg text-white mb-6">{isFr ? 'Tu préfères travailler avec...' : 'You prefer working with...'}</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="data"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>{isFr ? 'Des données et des chiffres' : 'Data and numbers'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="people"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>{isFr ? 'Des clients et des équipes' : 'Clients and teams'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="creative"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="m2 13 10 7 10-7"/><path d="M12 6l-4 4h8l-4-4z"/><circle cx="12" cy="16" r="1"/></svg>{isFr ? 'Des contenus et de la créativité' : 'Content and creativity'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="systems"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>{isFr ? 'Des systèmes et des algorithmes' : 'Systems and algorithms'}</button>
+          </div>
+        </div>
+
+        <div class="quiz-q hidden" data-q="4">
+          <h3 class="font-heading font-semibold text-lg text-white mb-6">{isFr ? 'Où te vois-tu dans 5 ans ?' : 'Where do you see yourself in 5 years?'}</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="dev"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>{isFr ? 'Développeur / Ingénieur' : 'Developer / Engineer'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="manager"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>{isFr ? 'Manager / Chef de projet' : 'Manager / Project Lead'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="marketer"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>{isFr ? 'Marketer / Growth' : 'Marketer / Growth'}</button>
+            <button class="quiz-opt flex items-center gap-3 text-left px-5 py-4 border border-white/15 text-white/80 hover:bg-accent hover:text-base-950 hover:border-accent transition-all text-sm font-medium" data-val="analyst"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><ellipse cx="12" cy="5" rx="9" ry="3"/></svg>{isFr ? 'Analyste / Auditeur' : 'Analyst / Auditor'}</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Result */}
+      <div id="quiz-result" class="hidden text-center py-8">
+        <span class="text-accent text-xs font-semibold uppercase tracking-wider block mb-3">{isFr ? 'Ton programme idéal' : 'Your ideal programme'}</span>
+        <h3 id="quiz-result-title" class="font-heading font-bold text-2xl text-white mb-3"></h3>
+        <p id="quiz-result-desc" class="text-sm text-white/60 mb-8 max-w-md mx-auto"></p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a id="quiz-result-link" href="#" class="inline-flex items-center justify-center px-6 py-3 bg-accent text-base-950 font-heading font-semibold text-sm hover:bg-accent-hover transition-colors">
+            {isFr ? 'Voir le programme' : 'View programme'} <span class="ml-2">→</span>
+          </a>
+          <button id="quiz-restart" class="inline-flex items-center justify-center px-6 py-3 border border-white/20 text-white font-heading font-semibold text-sm hover:bg-white/10 transition-colors">
+            {isFr ? 'Recommencer' : 'Start over'}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const questions = document.querySelectorAll<HTMLElement>('.quiz-q');
+    const bar = document.getElementById('quiz-bar');
+    const progressText = document.getElementById('quiz-progress-text');
+    const percentText = document.getElementById('quiz-percent');
+    const resultBox = document.getElementById('quiz-result');
+    const resultTitle = document.getElementById('quiz-result-title');
+    const resultDesc = document.getElementById('quiz-result-desc');
+    const resultLink = document.getElementById('quiz-result-link') as HTMLAnchorElement | null;
+    const restartBtn = document.getElementById('quiz-restart');
+    if (!questions.length || !bar) return;
+
+    const answers: string[] = [];
+    let current = 0;
+
+    const programmes: Record<string, { title: string; desc: string; url: string }> = {
+      'licence-informatique': { title: 'Licence Informatique Génie Logiciel', desc: '3 ans · 14 certifications · AWS, Cisco, Oracle — Le cursus IT le plus complet en Tunisie.', url: '/programmes/licence-informatique-genie-logiciel' },
+      'licence-management': { title: 'Licence Management', desc: '3 ans · 10 certifications · Salesforce, Google, IBM — Business et stratégie.', url: '/programmes/licence-management' },
+      'licence-marketing': { title: 'Licence Marketing', desc: '3 ans · 10 certifications · HubSpot, Google — Marketing digital et communication.', url: '/programmes/licence-marketing' },
+      'licence-finance': { title: 'Licence Finance', desc: '3 ans · 10 certifications · Oracle, Microsoft — Finance et comptabilité.', url: '/programmes/licence-finance' },
+      'master-marketing-ia': { title: 'Master Marketing Digital & IA', desc: '2 ans · 6 certifications — Intelligence artificielle au service du marketing.', url: '/programmes/master-marketing-digital-ia' },
+      'master-projets': { title: 'Master Management de Projets', desc: '2 ans · 8 certifications — Pilotage de projets et transformation digitale.', url: '/programmes/master-management-projets' },
+      'master-finance': { title: 'Master Ingénierie Financière', desc: '2 ans · 4 certifications — Finance avancée et fintech.', url: '/programmes/master-ingenierie-financiere' },
+      'master-crm': { title: 'Master Transformation Digitale & CRM', desc: '2 ans · 8 certifications — CRM, Salesforce et transformation.', url: '/programmes/master-transformation-digitale-crm' },
+    };
+
+    function recommend(): string {
+      const [field, level, , work, goal] = answers;
+      if (level === 'bac3') {
+        if (field === 'tech' || goal === 'dev') return 'master-crm';
+        if (field === 'mkt' || goal === 'marketer') return 'master-marketing-ia';
+        if (field === 'fin' || goal === 'analyst') return 'master-finance';
+        return 'master-projets';
+      }
+      if (field === 'tech' || work === 'systems' || goal === 'dev') return 'licence-informatique';
+      if (field === 'mkt' || work === 'creative' || goal === 'marketer') return 'licence-marketing';
+      if (field === 'fin' || work === 'data' || goal === 'analyst') return 'licence-finance';
+      return 'licence-management';
+    }
+
+    function showQuestion(idx: number) {
+      questions.forEach((q, i) => q.classList.toggle('hidden', i !== idx));
+      const pct = Math.round((idx / 5) * 100);
+      bar!.style.width = pct + '%';
+      if (progressText) progressText.textContent = `Question ${idx + 1}/5`;
+      if (percentText) percentText.textContent = pct + '%';
+    }
+
+    function showResult() {
+      questions.forEach(q => q.classList.add('hidden'));
+      const key = recommend();
+      const prog = programmes[key];
+      if (resultTitle) resultTitle.textContent = prog.title;
+      if (resultDesc) resultDesc.textContent = prog.desc;
+      if (resultLink) resultLink.href = prog.url;
+      bar!.style.width = '100%';
+      if (percentText) percentText.textContent = '100%';
+      if (progressText) progressText.textContent = 'Résultat';
+      resultBox?.classList.remove('hidden');
+    }
+
+    document.querySelectorAll<HTMLButtonElement>('.quiz-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        answers[current] = btn.dataset.val || '';
+        current++;
+        if (current >= 5) showResult();
+        else showQuestion(current);
+      });
+    });
+
+    restartBtn?.addEventListener('click', () => {
+      current = 0;
+      answers.length = 0;
+      resultBox?.classList.add('hidden');
+      showQuestion(0);
+    });
+
+    showQuestion(0);
+  });
+</script>

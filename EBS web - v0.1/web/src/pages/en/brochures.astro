@@ -1,0 +1,253 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Marker from '../../components/ui/Marker.astro';
+
+const title = "Brochures — EBS Tunis";
+const description = "Download EBS Tunis programme brochures: Bachelor's, Master's, certifications and student life.";
+
+const brochures = [
+  {
+    title: 'EBS Tunis General Brochure',
+    description: 'Complete university overview: programmes, certifications, work-study, international pathways and campus.',
+    category: 'General',
+    pages: '24 pages',
+    file: '/brochures/ebs-tunis-brochure-generale.pdf',
+  },
+  {
+    title: 'Bachelor in Computer Science & Software Engineering',
+    description: 'Detailed curriculum, 14 included certifications, career opportunities and international pathway.',
+    category: 'Bachelor',
+    pages: '8 pages',
+    file: '/brochures/ebs-licence-informatique.pdf',
+  },
+  {
+    title: 'Bachelor in Management',
+    description: 'LMD programme, work-study, UQAT dual degree and international partners.',
+    category: 'Bachelor',
+    pages: '8 pages',
+    file: '/brochures/ebs-licence-management.pdf',
+  },
+  {
+    title: 'Bachelor in Marketing',
+    description: 'Marketing strategy, HubSpot & Google certifications, professional career paths.',
+    category: 'Bachelor',
+    pages: '8 pages',
+    file: '/brochures/ebs-licence-marketing.pdf',
+  },
+  {
+    title: 'Bachelor in Finance',
+    description: 'Accounting, financial markets, Oracle & Microsoft certifications, Master\'s pathway.',
+    category: 'Bachelor',
+    pages: '8 pages',
+    file: '/brochures/ebs-licence-finance.pdf',
+  },
+  {
+    title: 'Master in Digital Marketing & AI',
+    description: 'SEO, data analytics, AI applied to marketing. Google & HubSpot certifications.',
+    category: 'Master',
+    pages: '8 pages',
+    file: '/brochures/ebs-master-marketing-digital.pdf',
+  },
+  {
+    title: 'Master in Project Management',
+    description: 'Agile management, leadership, PMP & Scrum certifications.',
+    category: 'Master',
+    pages: '8 pages',
+    file: '/brochures/ebs-master-management-projets.pdf',
+  },
+  {
+    title: 'Master in Financial Engineering',
+    description: 'Advanced finance, modelling, risk management and Oracle certifications.',
+    category: 'Master',
+    pages: '8 pages',
+    file: '/brochures/ebs-master-ingenierie-financiere.pdf',
+  },
+  {
+    title: 'Master in Digital Transformation & CRM',
+    description: 'CRM, automation, digital strategy. Salesforce, HubSpot and Google certifications.',
+    category: 'Master',
+    pages: '8 pages',
+    file: '/brochures/ebs-master-transformation-digitale-crm.pdf',
+  },
+  {
+    title: 'Certifications Guide',
+    description: 'Complete catalogue of the 27+ international certifications included in EBS programmes.',
+    category: 'Certifications',
+    pages: '12 pages',
+    file: '/brochures/ebs-guide-certifications.pdf',
+  },
+];
+
+const categories = [...new Set(brochures.map(b => b.category))];
+---
+
+<BaseLayout title={title} description={description} lang="en">
+  <div class="w-full bg-surface text-ink antialiased">
+
+    {/* ───────────────── HERO ───────────────── */}
+    <section class="relative bg-navy overflow-hidden min-h-[50vh] flex items-end" aria-labelledby="brochures-hero">
+      <img src="/images/campus/students-3.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" aria-hidden="true" />
+      <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-20 pb-16 md:pt-28 md:pb-20 relative z-10">
+        <nav class="mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-xs text-white/40 font-medium">
+            <li><a href="/en" class="hover:text-accent transition-colors">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-white/70">Brochures</li>
+          </ol>
+        </nav>
+
+        <div class="max-w-3xl">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-5">Free download</p>
+          <h1 id="brochures-hero" class="font-heading font-bold text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.08] text-white tracking-tight mb-5">
+            Our Brochures<Marker size="lg" class="inline-block ml-3 align-middle" />
+          </h1>
+          <p class="font-body text-base-300 text-lg md:text-xl leading-relaxed max-w-2xl">
+            Download our brochures to discover each programme in detail. No registration required.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    {/* ───────────────── FILTER + GRID ───────────────── */}
+    <section class="py-20 lg:py-28 bg-surface" aria-label="Downloadable brochures">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+
+        {/* Category filter */}
+        <div class="flex flex-wrap gap-3 mb-12" role="group" aria-label="Filter by category">
+          <button
+            class="brochure-filter active bg-navy text-white text-xs font-bold px-4 py-2 uppercase tracking-wider transition-colors"
+            data-category="all"
+          >
+            All
+          </button>
+          {categories.map((cat) => (
+            <button
+              class="brochure-filter bg-surface-alt text-ink-muted text-xs font-bold px-4 py-2 uppercase tracking-wider hover:bg-navy hover:text-white transition-colors"
+              data-category={cat}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Grid */}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="brochure-grid">
+          {brochures.map((brochure) => (
+            <article
+              class="brochure-card bg-surface-alt border border-border/30 p-8 flex flex-col justify-between hover:border-accent/30 transition-colors reveal"
+              data-category={brochure.category}
+            >
+              <div>
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="bg-accent/10 text-accent text-xs font-bold px-2 py-0.5 uppercase tracking-wider">{brochure.category}</span>
+                  <span class="text-xs text-ink-muted">{brochure.pages}</span>
+                </div>
+                <h3 class="font-heading font-bold text-lg text-ink mb-3">{brochure.title}</h3>
+                <p class="font-body text-sm text-ink-muted leading-relaxed mb-6">{brochure.description}</p>
+              </div>
+              <a
+                href={brochure.file}
+                download
+                class="inline-flex items-center gap-2 text-sm font-heading font-semibold text-accent hover:text-accent-hover transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+                Download PDF
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <p class="text-center text-sm text-ink-muted mt-12">
+          All brochures are in PDF format. Can't find what you're looking for? <a href="/en/pre-registration" class="text-accent hover:underline">Contact us</a>.
+        </p>
+      </div>
+    </section>
+
+
+    {/* ───────────────── CTA ───────────────── */}
+    <section class="bg-surface-alt border-t border-border/30 py-16 reveal" aria-label="Call to action">
+      <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20 text-center">
+        <h2 class="font-heading font-bold text-h3 text-ink mb-4">
+          Want to learn more?
+        </h2>
+        <p class="font-body text-ink-muted mb-8 max-w-lg mx-auto">
+          Explore our programmes and start your online pre-registration.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/en/programmes" variant="primary" size="lg">
+            Explore programmes
+          </Button>
+          <Button href="/en/pre-registration" variant="ghost" size="lg">
+            Pre-registration <span class="ml-2" aria-hidden="true">→</span>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .brochure-filter.active {
+    background-color: var(--color-navy, #063966);
+    color: white;
+  }
+  .brochure-card.hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    /* Scroll reveals */
+    const reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      reveals.forEach((el) => io.observe(el));
+    }
+
+    /* Category filter */
+    const filters = document.querySelectorAll<HTMLButtonElement>('.brochure-filter');
+    const cards = document.querySelectorAll<HTMLElement>('.brochure-card');
+
+    filters.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filters.forEach((f) => f.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.category;
+        cards.forEach((card) => {
+          if (cat === 'all' || card.dataset.category === cat) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  });
+</script>
