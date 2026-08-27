@@ -1291,42 +1291,73 @@ const canonicalPartenaires = {
     country: "🇴🇲 Oman",
     countryCode: "OM",
     logo: "/images/partenaires-academiques/gutech.webp",
-    type: "Université germanophone en partenariat avec RWTH Aachen (Allemagne) — English-taught programs",
-    presentation: "German University of Technology in Oman (GUtech), fondée en 2007 à Halban (Muscat, Oman), est une université privée technologique dispensant ses formations en anglais en étroite collaboration académique avec la prestigieuse RWTH Aachen University en Allemagne. Ses programmes Bachelor sont accrédités internationalement par ACQUIN et par l'OAAAQA.",
+    type: "Université privée technologique",
+    presentation: "Fondée en 2007, German University of Technology in Oman (GUtech) est une université privée technologique située à Halban, près de Muscat, dans le Sultanat d’Oman. L’anglais est la langue d’enseignement.\nGUtech entretient une collaboration académique étroite avec RWTH Aachen University en Allemagne. Son Department of Computer Science propose notamment des programmes en Computer Science, Artificial Intelligence et Cyber Security. GUtech bénéficie d’une accréditation institutionnelle de l’Oman Authority for Academic Accreditation and Quality Assurance of Education (OAAAQA), et ses programmes Bachelor sont accrédités par l’agence internationale ACQUIN.\nLe Memorandum of Understanding entre ESPIMA Business School et GUtech établit un cadre de coopération académique dans les domaines de l’informatique, de l’intelligence artificielle, de la cybersécurité, de la transformation digitale et des systèmes d’information. Il prévoit notamment des projets conjoints, des Summer Schools, des activités de mobilité, des échanges d’expertise et des préparations à des certifications internationales.",
     programmes: [
-      { nom: "Bachelor of Science (BSc) – Computer Science / AI / Cyber Security", duree: "4 ans (240 ECTS)", details: "Accrédité ACQUIN • Programmes en Computer Science, Artificial Intelligence et Cyber Security. Cours en anglais à Halban, Muscat." },
-      { nom: "Master of Science (MSc) in Computer Science", duree: "2 ans (120 ECTS)", details: "Spécialisations : Data Science • Technology Management. Accès après Licence Informatique EBS. Cours en anglais." },
-      { nom: "Bachelor of Science in Management", duree: "Poursuite d'études", details: "Accès depuis Licence Management EBS selon dispositions du partenariat." },
+      {
+        nom: "Bachelor of Science (BSc) Computer Science • Artificial Intelligence • Cyber Security",
+        duree: "4 ans",
+        details: "Bachelor • 240 ECTS • Accréditation ACQUIN.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bachelor • 4 ans • 240 ECTS • Accréditation ACQUIN",
+              "**Étudiants EBS concernés** : Étudiants EBS en Informatique",
+              "**Campus** : Halban Oman",
+              "**Langue** : Anglais"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Master of Science (MSc) in Computer Science Data Science • Technology Management",
+        duree: "Master",
+        details: "Master of Science • 120 ECTS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Master of Science • 120 ECTS",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence EBS en Informatique",
+              "**Campus** : Halban Oman",
+              "**Langue** : Anglais"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Accès depuis les Licences Informatique et Management EBS. Admission et reconnaissance des acquis étudiées au cas par cas par GUtech. Anglais requis.",
+    eligibilite: "Le partenariat EBS–GUtech permet d’envisager des poursuites d’études dans les programmes de GUtech correspondant au parcours académique de l’étudiant. L’admission et la reconnaissance des acquis sont étudiées au cas par cas par GUtech.",
     avantages: [
-      "Collaboration académique étroite avec RWTH Aachen University (Allemagne)",
-      "Programmes Bachelor accrédités internationalement par ACQUIN",
-      "Enseignement 100% en anglais dans un environnement technologique moderne",
-      "Opportunités de Summer Schools, workshops, bootcamps et projets conjoints",
-      "Préparation aux certifications internationales (AWS, Azure, Google Cloud, Cisco, Meta)",
-      "Accès privilégié au marché de l'emploi dynamique du Golfe (Oman, EAU, Qatar, Arabie Saoudite)",
-      "Possibilité de tarifs préférentiels pour les étudiants EBS",
+      "Université technologique internationale anglophone fondée en 2007 dans le Sultanat d’Oman.",
+      "Collaboration académique étroite avec RWTH Aachen University en Allemagne.",
+      "Programmes Bachelor accrédités internationalement par ACQUIN.",
+      "Programmes en Computer Science, Artificial Intelligence et Cyber Security alignés sur des domaines technologiques à forte croissance.",
+      "Master of Science in Computer Science de 120 ECTS avec spécialisations Data Science et Technology Management.",
+      "Possibilités de Summer Schools, projets conjoints, bootcamps, workshops et mobilité académique dans le cadre du partenariat EBS – GUtech.",
+      "Possibilité de tarifs préférentiels pour les étudiants EBS, selon les conditions en vigueur de GUtech."
     ],
-    debouches: [
-      "Software Engineer / Architecte logiciel",
-      "Spécialiste Intelligence Artificielle & Machine Learning",
-      "Expert Cybersécurité & Sécurité des Réseaux",
-      "Data Scientist / Consultant Big Data",
-      "IT Project Leader / Manager des Systèmes d'Information",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Création", value: "2007" },
-      { label: "Localisation", value: "Halban, Muscat, Sultanat d'Oman" },
-      { label: "Accréditations", value: "OAAAQA, ACQUIN" },
+      { label: "Nom", value: "German University of Technology in Oman (GUtech)" },
+      { label: "Type", value: "Université privée technologique" },
+      { label: "Année de création", value: "2007" },
+      { label: "Localisation", value: "Halban, près de Muscat – Sultanat d’Oman" },
+      { label: "Langue d’enseignement", value: "Anglais" },
+      { label: "Collaboration académique", value: "RWTH Aachen University – Allemagne" },
+      { label: "Domaines concernés", value: "Computer Science • Artificial Intelligence • Cyber Security • Digital Transformation • Information Systems • Cloud Computing • DevOps" },
+      { label: "Programmes en informatique", value: "BSc Computer Science • BSc Artificial Intelligence • BSc Cyber Security • MSc Computer Science • PhD Computer Science" },
+      { label: "Accréditations", value: "Accréditation institutionnelle nationale (OAAAQA – Oman) • Programmes Bachelor accrédités par ACQUIN • Programmes licenciés par le Ministry of Education, Research and Innovation d’Oman" },
+      { label: "Partenariat avec ESPIMA", value: "Coopération académique • mobilité • projets conjoints • Summer Schools • certifications • activités pédagogiques" }
     ],
     pricing: [
-      { label: "BSc & MSc", amount: "Tarif GUtech", period: "", note: "Tarifs préférentiels EBS" },
+      { label: "Bachelor of Science (BSc)", amount: "Tarif GUtech", period: "" },
+      { label: "Master of Science (MSc)", amount: "Tarif GUtech", period: "" },
     ],
     extraSections: [
       {
         title: "Coopération académique, projets et mobilité",
-        body: "- **Stages, projets appliqués**, ateliers techniques et visites académiques ou professionnelles.\n- **Conférences, séminaires, workshops** et Summer Schools.\n- **Mobilité d'enseignants**, d'experts et échanges étudiants de courte durée.\n- **Recherche appliquée**, supervision de projets et développement de modules pédagogiques.\n- **Certifications internationales** : AWS, Azure, Google Cloud, Cisco, Meta..."
+        body: "Le partenariat EBS - GUtech permet de développer, après accord des deux établissements, différentes activités académiques et internationales :\n- stages, projets appliqués, ateliers techniques et visites académiques ou professionnelles ;\n- conférences, séminaires, workshops et Summer Schools ;\n- mobilité d’enseignants, d’experts et échanges étudiants de courte durée ;\n- recherche appliquée, supervision de projets et développement de modules pédagogiques ;\n- préparation à des certifications internationales : AWS, Azure, Google Cloud, Cisco, Meta,...\n\nLes principaux domaines de coopération sont : Software Engineering • Artificial Intelligence • Cyber Security • Digital Transformation • Information Systems • Cloud Computing • DevOps."
       }
     ],
   },
