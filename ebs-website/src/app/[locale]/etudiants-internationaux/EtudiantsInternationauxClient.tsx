@@ -89,7 +89,7 @@ export default function EtudiantsInternationauxPage() {
               <span className="text-[#2B8FAB]">en Tunisie</span> avec EBS<span className="text-[#2B8FAB]">.</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[16px] md:text-[18px] text-white/60 leading-relaxed max-w-[550px] mb-8">
-              Rejoindre ESPIMA Business School à Tunis, c’est choisir une université privée agréée offrant un environnement académique ouvert sur l’international et des formations adaptées aux évolutions du monde professionnel. De votre première candidature jusqu’à votre installation, notre équipe vous accompagne.
+              Rejoindre ESPIMA Business School à Tunis, c'est choisir une université privée agréée offrant un environnement académique ouvert sur l'international et des formations adaptées aux évolutions du monde professionnel. De votre première candidature jusqu'à votre installation en Tunisie, puis tout au long de vos études, notre équipe vous accompagne pour faciliter votre arrivée, votre intégration et votre réussite à EBS.
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className="flex flex-wrap gap-4">
               {[
@@ -236,7 +236,10 @@ export default function EtudiantsInternationauxPage() {
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="text-center mb-14">
             <Badge variant="default" size="lg" className="mb-4">Depuis l&apos;international</Badge>
-            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">Vous venez de loin.<br />Votre avenir est <span className="text-[#2B8FAB]">ici</span>.</h2>
+            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">Vous venez de loin.<br />Votre avenir est <span className="text-[#2B8FAB]">ici</span>.</h2>
+            <p className="text-[16px] text-penn-body max-w-[700px] mx-auto">
+              Commencez vos études à EBS en Tunisie et ouvrez-vous les portes de l'international en France, au Canada, en Italie et à Oman grâce à notre réseau de partenaires académiques.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1100px] mx-auto">
@@ -266,6 +269,14 @@ export default function EtudiantsInternationauxPage() {
       </section>
 
       {/* ═══════════ ACADEMIC PARTNERS MARQUEE ═══════════ */}
+      <div className="max-w-[1280px] mx-auto px-5 lg:px-12 pt-16 text-center">
+        <p className="text-[16px] md:text-[18px] text-penn-body leading-relaxed max-w-[800px] mx-auto mb-4">
+          EBS développe des partenariats avec des universités, Grandes Écoles et écoles spécialisées en France, au Canada, en Italie et à Oman.
+        </p>
+        <p className="text-[16px] md:text-[18px] text-penn-body leading-relaxed max-w-[800px] mx-auto mb-8">
+          Ces collaborations permettent, selon les accords, de développer des poursuites d'études, mobilités, projets académiques, Summer Schools et autres expériences internationales.
+        </p>
+      </div>
       <AcademicPartners />
 
       {/* ═══════════ TESTIMONIAL ═══════════ */}

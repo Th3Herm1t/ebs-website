@@ -84,9 +84,9 @@ const canonicalPartenaires = {
       { label: "Campus", value: "3" },
     ],
     pricing: [
-      { label: "Étudiants internationaux", amount: "~7 500", period: "€/an", note: "Bourse d'accueil : -25%" },
-      { label: "Frais identiques", amount: "Mêmes frais", period: "que les Québécois", note: "Avantage exclusif EBS-UQAT", featured: true },
-      { label: "Bourse d'accueil", amount: "25–50", period: "%", note: "Selon le programme choisi" },
+      { label: "Coût estimatif (2 ans)", amount: "24 000 - 30 000", period: "$ CAD", note: "Pour les deux années de Maîtrise", featured: true },
+      { label: "Frais d'admission", amount: "75", period: "$ CAD", note: "À régler lors de l'admission" },
+      { label: "Indexation annuelle", amount: "~3", period: "%", note: "Les frais peuvent être révisés" },
     ],
     imageSection: { src: "/images/ebs-tn/img-uqat.png", caption: "Abitibi-Témiscamingue, Québec" },
     professors: [
