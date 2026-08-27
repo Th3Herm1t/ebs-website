@@ -31,85 +31,81 @@ const canonicalPartenaires = {
     country: "🇨🇦 Canada",
     countryCode: "CA",
     logo: "/images/partenaires-academiques/uqat.webp",
-    heroImage: "https://www.uqat.ca/resources/medias/covers/mait-en-gestion-de-projet-profil-professionnel.jpg",
-    type: "Université publique québécoise — Membre du réseau Université du Québec",
-    presentation: "L'Université du Québec en Abitibi-Témiscamingue (UQAT) est une université publique canadienne affiliée au réseau de l'Université du Québec qui compte dix établissements. Elle offre plus de 100 programmes d'études couvrant les trois cycles d'études (Bachelor, Maîtrise et Doctorat) dans des domaines variés. Avec ses 14 chaires de recherche et ses 11 unités de recherche, l'UQAT est première au Canada pour le volume de recherche par étudiant de cycles supérieurs.",
+    presentation: "L'Université du Québec en Abitibi-Témiscamingue (UQAT) est une université publique canadienne membre du réseau de l'Université du Québec, reconnue pour la qualité de son enseignement, son accompagnement personnalisé et son ouverture à l'international. Elle accueille chaque année des étudiants de nombreux pays et offre des formations de cycles supérieurs dans des domaines répondant aux besoins du marché de l'emploi, notamment la gestion de projet, la gestion des organisations, les sciences, l'ingénierie, l'éducation et les technologies. Grâce à un environnement d'études à taille humaine et à un encadrement de proximité, l'UQAT favorise la réussite académique, l'intégration et le développement professionnel de ses étudiants internationaux.",
     programmes: [
       {
-        nom: "MGP — Maîtrise en Gestion de Projet (profil professionnel)",
+        nom: "Maîtrise en gestion de projet (MGP)",
         duree: "2 ans",
-        details: "L'objectif fondamental du programme MGP est de former des gestionnaires dotés d'une vision stratégique et intégrée du domaine, aptes à gérer stratégiquement et efficacement des projets, programmes et portefeuilles, de leur conception jusqu'à l'obtention des bénéfices. Programme de cours (profil professionnel).",
+        details: "Maîtrise (Master). Licence EBS.",
         richExpanded: [
-          { type: "bullets", items: ["L'utilisation d'outils techniques vous permettant de planifier et de gérer tout type de projet et d'en faire le suivi.", "Une formation offerte à temps partiel (cours de soir et de fin de semaine) qui vous permet de concilier les études, le travail et la famille.", "Des professeurs d'expérience et des chargés de cours chevronnés qui vous offrent un enseignement pratique de la gestion de projet."], extra: "Forces de la MGP" },
-          { type: "text", testimonial: { quote: "J'ai pu devenir directrice générale d'une entreprise du secteur hôtelier grâce au DESS en gestion de projet qui m'a donné toutes les compétences nécessaires.", name: "Zabrina Rojas", role: "Diplômée DESS + Maîtrise en gestion de projet", photo: "https://www.uqat.ca/resources/medias/etudes/temoignages/zabrina-rojas.jpg" } },
-          { type: "text", bourse: "Bourse d'accueil : 25% des frais de scolarité majorés couverts pour les étudiants internationaux, pour 6 sessions consécutives." },
-        ],
+          {
+            type: "bullets",
+            items: [
+              "**Diplôme** : Maîtrise (Master)",
+              "**Étudiants EBS concernés** : Licence EBS",
+              "**Campus** : Val-d'Or",
+              "**Conditions d'admission** : Moyenne ≥ 11/20 • Programme préparatoire ESPIMA • Tests de statistiques et mathématiques financières",
+              "**Coût estimatif** : 24 000 à 30 000 $ CAD (2 ans)"
+            ]
+          }
+        ]
       },
       {
-        nom: "MGO — Maîtrise en Gestion des Organisations (profil recherche)",
+        nom: "Maîtrise en gestion des organisations (MGO)",
         duree: "2 ans",
-        details: "Cette maîtrise vise à développer vos connaissances et vos habiletés en recherche, vous permettant de faire progresser des organisations et de contribuer à l'avancement du savoir. Innovation, entrepreneuriat, efficacité organisationnelle, gestion du changement, développement régional ou mondialisation des échanges — la MGO enrichira votre vision de gestionnaire par de nouvelles perspectives.",
+        details: "Maîtrise (Master). Licence EBS.",
         richExpanded: [
-          { type: "grid", items: ["Changement organisationnel et RH", "Climat psychologique au travail", "Développement durable (secteur minier)", "Développement local et régional", "Entrepreneuriat", "Évaluation de la performance", "Gestion allégée (Lean management)", "Nouveaux modèles d'affaires électroniques", "Systèmes d'information et TI"], extra: "Champs de recherche" },
-          { type: "thesis", thesisProjects: [{ author: "A. Ben Abdel Wahed", year: "2024", topic: "Facteurs de rétention des employés — secteur manufacturier" }, { author: "M. Labrecque-Denis", year: "2024", topic: "Développement des écosystèmes technocréatifs en régions périphériques" }, { author: "M-P. Côté", year: "2023", topic: "Responsabilité sociale et identification sociale des employés" }, { author: "K. Gareau", year: "2023", topic: "Fidélisation des donateurs — modélisation du parcours philanthropique" }, { author: "É. Alain", year: "2020", topic: "Modèle intégrant créativité et analyse fonctionnelle en innovation" }], extra: "Thèses récentes" },
-          { type: "text", testimonial: { quote: "Étudier à la MGO a vraiment été l'une des meilleures décisions de ma vie. L'encadrement attentif et bienveillant des professeurs a vraiment fait la différence.", name: "Larissa Fomena Neuchy", role: "Finissante MGO, étudiante internationale", photo: "https://www.uqat.ca/resources/medias/etudes/temoignages/llarissa-fomena-neuchy.jpg" } },
-          { type: "text", bourse: "Bourse d'accueil : 50% des frais de scolarité majorés couverts pour les étudiants internationaux, pour 4 sessions consécutives." },
-        ],
-      },
+          {
+            type: "bullets",
+            items: [
+              "**Diplôme** : Maîtrise (Master)",
+              "**Étudiants EBS concernés** : Licence EBS",
+              "**Campus** : Rouyn-Noranda",
+              "**Conditions d'admission** : Moyenne ≥ 12/20 • Projet de recherche • Lettre d'invitation • Dossier académique",
+              "**Coût estimatif** : 24 000 à 30 000 $ CAD (2 ans)"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Détenir le diplôme de Licence ou de Master d'ESPIMA Business School (études équivalentes au grade de bachelier au Québec) ou l'équivalent ; Avoir réussi les cours avec une moyenne équivalente à un minimum de 11 sur 20 ; Avoir réussi le programme de préparation pour la maîtrise en gestion de projet préparé par ESPIMA Business School ; Satisfaire aux conditions d'admission en vigueur du programme MGP de l'UQAT ; Posséder une connaissance adéquate du français et une compréhension suffisante de l'anglais.",
+    eligibilite: "• Être titulaire d'une Licence ESPIMA ou d'un diplôme équivalent.\n• Respecter la moyenne minimale exigée selon le programme.\n• Être proposé par ESPIMA Business School.\n• Déposer un dossier complet.\n• Régler les frais d'admission (75 $ CAD).\n• Respecter les délais de candidature.\n• Obtenir le CAQ, le permis d'études et le visa.\n\n**Calendrier**\n- Transmission de la liste des étudiants par ESPIMA : 15 janvier\n- Dépôt du dossier d'admission : 1er février\n- Communication avec les professeurs (MGO) : Avant le 20 février\n- Traitement du dossier : 3 à 4 semaines",
     avantages: [
-      "Diplôme de Maîtrise d'une université publique canadienne reconnu à l'échelle internationale",
-      "Maîtrise en gestion de projet particulièrement reconnue en entreprise",
-      "Frais de scolarité identiques à ceux des étudiants canadiens (tarifs réduits)",
-      "Région dynamique avec plusieurs opportunités d'emplois",
-      "Possibilité de jobs étudiants à temps plein sur le campus et à temps partiel en dehors",
-      "Logement disponible sur le campus",
-      "Visa étudiant facilité grâce à la convention inter-universitaire EBS–UQAT",
-      "Possibilité de résidence permanente via le Programme de l'expérience québécoise (PEQ)",
-      "Bourses d'accueil couvrant 25% des frais de scolarité majorés (étudiants internationaux)",
+      "✓ Université publique canadienne membre du réseau de l'Université du Québec.",
+      "✓ Diplômes universitaires reconnus au Canada et à l'international.",
+      "✓ Deux maîtrises accessibles aux diplômés d'ESPIMA.",
+      "✓ Tarif canadien préférentiel réservé aux étudiants ESPIMA.",
+      "✓ Bourse spécifique pour les étudiants de la MGP.",
+      "✓ Encadrement académique personnalisé.",
+      "✓ Études au Québec avec possibilité d'acquérir une expérience internationale.",
+      "✓ Excellentes perspectives professionnelles en gestion de projet et en gestion des organisations."
     ],
-    debouches: [
-      "Gestionnaire de projets international (PMP-ready)",
-      "Directeur de programme / PMO",
-      "Consultant en management stratégique",
-      "Chef de projet IT / Transformation digitale",
-      "Analyste-chercheur en gestion des organisations",
-      "Entrepreneur / Fondateur de startup",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Programmes", value: "100+" },
-      { label: "Chaires", value: "14" },
-      { label: "Étudiants", value: "3 000+" },
-      { label: "Campus", value: "3" },
+      { label: "Nom", value: "Université du Québec en Abitibi-Témiscamingue (UQAT)" },
+      { label: "Type", value: "Université publique canadienne" },
+      { label: "Réseau", value: "Université du Québec" },
+      { label: "Province", value: "Québec (Canada)" },
+      { label: "Campus concernés", value: "Val-d'Or • Rouyn-Noranda" },
+      { label: "Langue d'enseignement", value: "Français" },
+      { label: "Diplômes", value: "Maîtrise (Master)" },
+      { label: "Partenariat avec ESPIMA", value: "Poursuite d'études après Licence" }
     ],
     pricing: [
-      { label: "Coût estimatif (2 ans)", amount: "24 000 - 30 000", period: "$ CAD", note: "Pour les deux années de Maîtrise", featured: true },
-      { label: "Frais d'admission", amount: "75", period: "$ CAD", note: "À régler lors de l'admission" },
-      { label: "Indexation annuelle", amount: "~3", period: "%", note: "Les frais peuvent être révisés" },
+      { label: "Maîtrise en gestion de projet (MGP)", amount: "24 000 à 30 000", period: "$ CAD" },
+      { label: "Maîtrise en gestion des organisations (MGO)", amount: "24 000 à 30 000", period: "$ CAD" }
     ],
-    imageSection: { src: "/images/ebs-tn/img-uqat.png", caption: "Abitibi-Témiscamingue, Québec" },
-    professors: [
-      { nom: "Louis Belisle", img: "https://www.uqat.ca/resources/medias/professeurs/professeur-louis-belisle.jpg" },
-      { nom: "Jérôme Deschênes", img: "https://www.uqat.ca/resources/medias/professeurs/professeur-jerome-deschenes.jpg" },
-      { nom: "Augustin Épenda", img: "https://www.uqat.ca/resources/medias/professeurs/professeur-augustin-ependa.jpg" },
-      { nom: "Julie-Andrée Girard", img: "https://www.uqat.ca/resources/medias/professeurs/profeseure-julie-andree-girard.jpg" },
-      { nom: "Oscar Labra", img: "https://www.uqat.ca/resources/medias/professeurs/professeur-oscar-labra.jpg" },
-      { nom: "Ahmed Marhfor", img: "https://www.uqat.ca/resources/medias/professeurs/professeur-ahmed-marhfor.jpg" },
-      { nom: "Wassila Merkouche", img: "https://www.uqat.ca/resources/medias/professeurs/professeure-wassila-merkouche.jpg" },
-      { nom: "Yasmine Mohamed", img: "https://www.uqat.ca/resources/medias/professeurs/professeure-yasmine-mohamed.jpg" },
-      { nom: "Doina Muresanu", img: "https://www.uqat.ca/resources/medias/professeurs/professeure-doina-muresanu.jpg" },
-      { nom: "Mycalle Trudel", img: "https://www.uqat.ca/resources/medias/professeurs/professeure-doina-muresanu.jpg" },
-    ],
-    testimonials: [
-      { quote: "J'ai pu devenir directrice générale d'une entreprise du secteur hôtelier grâce au DESS en gestion de projet qui m'a donné toutes les compétences nécessaires.", name: "Zabrina Rojas", role: "Diplômée DESS + Maîtrise en gestion de projet", photo: "https://www.uqat.ca/resources/medias/etudes/temoignages/zabrina-rojas.jpg", programKey: "MGP" },
-      { quote: "Étudier à la MGO a vraiment été l'une des meilleures décisions de ma vie. L'encadrement attentif et bienveillant des professeurs a vraiment fait la différence.", name: "Larissa Fomena Neuchy", role: "Finissante MGO, étudiante internationale", photo: "https://www.uqat.ca/resources/medias/etudes/temoignages/llarissa-fomena-neuchy.jpg", programKey: "MGO" },
-    ],
-    residencyBadge: { text: "Résidence permanente possible via le PEQ", sub: "Programme de l'expérience québécoise" },
     extraSections: [
       {
+        title: "Reconnaissances et qualité académique",
+        body: "- **Université publique** : Membre du réseau de l'Université du Québec.\n- **Diplômes** : Diplômes universitaires reconnus au Canada et à l'international.\n- **Recherche** : Université reconnue pour ses activités de recherche et ses liens avec les entreprises.\n- **Système universitaire** : Programmes conformes aux normes canadiennes et nord-américaines."
+      },
+      {
+        title: "Informations importantes pour les étudiants",
+        body: "- Les frais sont payés directement à l'UQAT.\n- Les frais d'admission sont de 75 $ CAD.\n- Les frais de scolarité sont indexés d'environ 3 % par année.\n- Les étudiants doivent obtenir un CAQ, un permis d'études et un visa.\n- Les frais de logement, de transport, d'assurance et de séjour restent à la charge de l'étudiant.\n- Les étudiants de la MGP doivent suivre le programme préparatoire organisé par ESPIMA et réussir les tests de statistiques et de mathématiques financières.\n- Les étudiants de la MGO doivent identifier un directeur de recherche et obtenir une lettre d'invitation."
+      },
+      {
         title: "Conditions financières du partenariat",
-        body: "- **Coût estimatif** : Entre 24 000 et 30 000 $ CAD pour les deux années.\n- **Frais d'admission** : 75 $ CAD.\n- **Bourse (MGP uniquement)** : 2 500 $ CAD par session, jusqu'à un maximum de 4 sessions.\n- **Indexation** : Les frais de scolarité peuvent être révisés d'environ 3 % par an.\n- **Tarif préférentiel** : Les étudiants d'ESPIMA bénéficient du tarif canadien, inférieur au tarif international."
+        body: "- **Tarif préférentiel** : Les étudiants d'ESPIMA bénéficient du tarif canadien, inférieur au tarif international.\n- **Coût estimatif** : Entre 24 000 et 30 000 $ CAD pour les deux années (selon les informations communiquées par l'UQAT).\n- **Frais d'admission** : 75 $ CAD.\n- **Indexation** : Les frais de scolarité peuvent être révisés d'environ 3 % par an.\n- **Bourse (MGP uniquement)** : 2 500 $ CAD par session, jusqu'à un maximum de 4 sessions, conformément à la convention.\n- **Autres frais** : Logement, assurance, transport, restauration et dépenses personnelles à la charge de l'étudiant."
       }
     ],
   },
