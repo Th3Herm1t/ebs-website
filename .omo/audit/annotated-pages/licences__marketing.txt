@@ -1,0 +1,65 @@
+P655: [underline]Licence · Bac+3 · 3 ans · Diplôme a [underline]ccrédité [underline] par l'État tunisien
+P656: [underline]Licence en Marketing
+P657: [bold]Alliez vision stratégique, maîtrise du digital et intelligence artificielle pour relever les défis du marketing de demain. 
+P658: [plain]La Licence en Marketing d'EBS associe les fondamentaux du marketing aux compétences les plus recherchées en digital, data et intelligence artificielle. Vous apprendrez à concevoir des stratégies performantes, à automatiser vos campagnes grâce à l'IA et à optimiser la conversion pour maximiser l'impact de vos actions marketing.
+P659: [plain]28+
+P660: [highlight=yellow]Certifications incluses
+P661: [plain]3 ans
+P662: [plain]100 %
+P663: [plain]Diplôme agréé par l'État tunisien
+P664: [plain]Certifications incluses
+P665: [plain]Télécharger la brochure
+P667: [underline]Licence en Marketing — Présentation
+P668: [bold]La Licence en Marketing d'EBS est l'une des formations les plus complètes en marketing en Tunisie. Elle associe les fondamentaux du marketing aux compétences les plus recherchées en marketing digital, data, CRM, IA générative et automatisation. Vous développerez une vision stratégique du marketing tout en apprenant à exploiter les technologies d'intelligence artificielle pour optimiser les performances et devenir un  [plain]AI-Driven Marketer [plain], [bold] capable d'allier créativité, analyse et puissance des algorithmes.
+P669: [plain]Public cible
+P670: [plain]Bacheliers toutes séries (sauf Lettres et Sport) [plain].
+P671: [plain]Passionnés par le marketing, la communication, le digital, les réseaux sociaux et les nouvelles technologies.
+P672: [plain]Futurs responsables marketing, chefs de produit, spécialistes du marketing digital, chargés de communication ou entrepreneurs.
+P673: [plain]Modules du programme (11)
+P674: [bold]Le programme est structuré autour des principaux modules de formation suivants, répartis sur les six semestres de la Licence. Cette progression pédagogique permet aux étudiants d'ESPIMA de développer progressivement les compétences essentielles à leur spécialité.
+P675: [plain]1. Fondements du marketing et comportement du consommateur
+P676: [plain]Principes du marketing, comportement du consommateur, études de marché et environnement de l'entreprise.
+P677: [plain]2. Marketing digital stratégique et e-commerce
+P678: [plain]Marketing stratégique, marketing digital, e-commerce et transformation digitale des entreprises.
+P679: [plain]3. SEO / SEA et référencement (Google Ads)
+P680: [plain]Référencement naturel et payant, acquisition de trafic et optimisation de la visibilité en ligne.
+P681: [plain]4. Social Media Marketing et Community Management
+P682: [plain]Communication digitale, réseaux sociaux, gestion de communautés et réputation numérique.
+P683: [plain]5. Google Analytics 4 – Analyse des performances web
+P684: [plain]Analyse des données marketing, web analytics, tableaux de bord et aide à la décision.
+P685: [plain]6. Content Marketing, Copywriting et Storytelling
+P686: [plain]Création de contenus, communication de marque, storytelling et stratégie éditoriale.
+P687: [plain]7. CRM, gestion de la relation client et Marketing Automation (HubSpot)
+P688: [plain]Gestion de la relation client, fidélisation, CRM, email marketing et automatisation des campagnes.
+P689: [plain]8. LinkedIn Marketing et Social Selling B2B
+P690: [plain]Marketing B2B, développement commercial, négociation et techniques de vente.
+P691: [plain]9. Intelligence Artificielle appliquée au marketing
+P692: [plain]Intelligence Artificielle, data marketing, personnalisation, analyse prédictive et automatisation des actions marketing.
+P693: [plain]10. Publicité programmatique (DV360, SA360)
+P694: [plain]Publicité digitale, campagnes multicanales, pilotage des investissements marketing et mesure des performances.
+P695: [plain]11. Stage professionnel et Projet de Fin d'Études (PFE)
+P696: [plain]Immersion en entreprise, marketing international, Responsabilité Sociétale des Entreprises (RSE), éthique professionnelle et réalisation du Projet de Fin d'Études.
+P698: [underline]Parcours certifiant EBS
+P699: [plain]Un parcours structuré entre [plain] socle commun et spécialisation
+P700: [plain]Les certifications obligatoires constituent le socle de compétences attendu par EBS. Les certifications optionnelles permettent à chaque étudiant de renforcer son profil en fonction de son projet professionnel.
+P702: [underline]L'IA est obligatoire dans ce programme
+P703: [plain]Les compétences en Intelligence Artificielle constituent un socle commun obligatoire dans tous les parcours EBS. Voici quelques-unes des principales certifications IA intégrées à cette Licence.
+P705: [underline]Perspectives d'études à l'international
+P706: [plain]Ce programme permet de poursuivre vos études auprès de nos universités partenaires en France,  [plain]en Italie,  [plain]au Canada et dans d'autres pays grâce aux accords de coopération conclus par EBS.
+P708: [underline]Débouchés professionnels
+P709: [plain]Débouchés professionnels
+P710: [plain]AI-Driven Marketer
+P711: [plain]Responsable Marketing
+P712: [plain]Chef de Produit
+P713: [plain]Chargé d'Études Marketing
+P714: [plain]Responsable Communication
+P715: [plain]Responsable Commercial
+P716: [plain]Digital Marketing Manager
+P717: [plain]Marketing Data Analyst
+P718: [plain]Responsable CRM
+P719: [plain]Spécialiste SEO / SEA
+P720: [plain]Social Media Manager
+P722: [underline]Prêt(e) à rejoindre la Licence en Marketing ?
+P723: [plain]Les candidatures 2026/2027 sont ouvertes. 
+P724: [plain]Bénéficiez de nos avantages en cours.
+P725: [plain]Réponse garantie sous 24 h.

@@ -1,0 +1,208 @@
+P1253: [underline]Pré-inscription en Master
+P1254: [plain]Réponse sous 24 h • Gratuite • Sans engagement
+P1255: [plain]Coordonnées
+P1256: [plain]Profil
+P1257: [plain]Formation
+P1258: [plain]Prénom * [plain]Nom * [plain]E-mail * [plain]Téléphone / WhatsApp *
+P1260: [underline]Master · Bac+5 · 2 ans · Diplôme a [underline]ccrédité [underline] par l'État tunisien
+P1261: [underline]Master Marketing Digital & IA
+P1262: [underline]Développez des stratégies marketing innovantes grâce à l'Intelligence Artificielle et aux technologies digitales.
+P1263: [plain]Le Master Marketing Digital & IA d'EBS prépare des spécialistes capables de concevoir, piloter et optimiser des stratégies marketing performantes en s'appuyant sur l'Intelligence Artificielle, l'analyse des données et les outils digitaux les plus avancés.
+P1264: [plain]23+
+P1265: [highlight=yellow]Certifications incluses
+P1266: [plain]2 ans
+P1267: [plain]100 %
+P1268: [plain]Diplôme  [plain]habilité par le Ministère de l’Enseignement Supérieur et de la Recherche Scientifique
+P1269: [plain]Certifications incluses
+P1270: [plain]Télécharger la brochure
+P1272: [bold]Accueil
+P1273: [bold]Masters
+P1274: [bold]Master Marketing Digital & IA
+P1276: [underline]1. PRÉSENTATION GÉNÉRALE DU MASTER
+P1277: [plain]Intitulé du diplôme : [plain] Master Professionnel en Marketing Digital & Intelligence Artificielle
+P1278: [plain]Diplôme : [plain]  [plain]Master habilité par le Ministère de l’Enseignement Supérieur et de la Recherche Scientifique
+P1279: [plain]Durée : [plain]  [plain]2 années universitaires (4 semestres – 120 crédits).
+P1280: [plain]Organisation : [plain]  [plain]Formation professionnalisante articulée autour de cours, études de cas, projets, certifications, stage de longue durée et mémoire (PFE) projet de fin d'études.
+P1281: [underline]Présentation [plain] : 
+P1282: [plain]Le  [plain]Master Marketing Digital & Intelligence Artificielle [plain] d'ESPIMA Business School forme des cadres capables de concevoir, piloter et optimiser des stratégies marketing dans un environnement où le digital, les données et l'Intelligence Artificielle occupent une place centrale.
+P1283: [plain]Conforme au référentiel académique validé par le Ministère de l'Enseignement Supérieur, le programme associe les fondamentaux du marketing stratégique, du marketing digital, du e-business, de la communication numérique, du CRM et de l'analyse des données avec les technologies les plus récentes, notamment l'Intelligence Artificielle, la Business Intelligence, le Marketing Automation et les outils numériques utilisés par les entreprises.
+P1284: [plain]Cette approche permet aux étudiants de développer une double expertise, stratégique et opérationnelle, afin d'accompagner efficacement la transformation digitale des organisations et d'améliorer leur performance marketing.
+P1286: [bold|underline]2. OBJECTIFS DE LA FORMATION
+P1287: [plain]Le Master a pour objectif de former des professionnels capables de :
+P1288: [plain]Élaborer et piloter une stratégie de marketing digital adaptée aux objectifs de l'entreprise ;
+P1289: [plain]Développer des stratégies d'acquisition, de fidélisation et de gestion de la relation client dans un environnement omnicanal ;
+P1290: [plain]Concevoir et mettre en œuvre des dispositifs de communication digitale performants ;
+P1291: [plain]Exploiter les données marketing afin de mesurer la performance et d'améliorer la prise de décision ;
+P1292: [plain]Intégrer les outils du e-business, du CRM, du marketing automation et de la Business Intelligence dans les projets marketing ;
+P1293: [plain]Utiliser l'Intelligence Artificielle pour optimiser la création de contenus, l'analyse des données, la personnalisation des campagnes et l'automatisation des processus marketing ;
+P1294: [plain]Piloter des projets de transformation digitale et accompagner les entreprises dans leur évolution numérique ;
+P1295: [plain]Développer une démarche d'innovation, de veille stratégique et d'amélioration continue adaptée aux nouveaux enjeux du marketing.
+P1297: [bold|underline]3. PUBLIC CIBLE
+P1298: [plain]Le Master s'adresse :
+P1299: [bold]aux titulaires d'une Licence en Marketing ou en Management [plain] ; 
+P1300: [bold]aux titulaires d'une Licence dans des disciplines en lien avec le domaine  [plain]souhaitant se spécialiser en marketing digital et en Intelligence Artificielle appliquée au marketing.
+P1301: [bold]aux professionnels [plain] souhaitant développer ou actualiser leurs compétences en marketing digital, transformation digitale et Intelligence Artificielle.
+P1303: [bold|underline]4. COMPÉTENCES DÉVELOPPÉES
+P1304: [plain]Au terme de la formation, les diplômés seront capables de maîtriser les compétences essentielles suivantes :
+P1305: [plain]Stratégie marketing [plain]• Stratégie marketing et digitale, analyse des marchés et du comportement du consommateur [plain]• Segmentation, positionnement et développement de marque
+P1306: [plain]Marketing digital [plain]• Stratégie digitale, e-business et e-commerce [plain]• SEO, SEA, marketing omnicanal, Social Media et marketing d’influence
+P1307: [plain]Data Marketing et Business Intelligence [plain]• Analyse des données et mesure de la performance marketing [plain]• Google Analytics 4, Looker Studio et tableaux de bord décisionnels
+P1308: [plain]CRM et Marketing Automation [plain]• Gestion de la relation client et personnalisation de l’expérience client [plain]• HubSpot CRM, automatisation et optimisation des campagnes
+P1309: [plain]Intelligence Artificielle appliquée au marketing [plain]• IA générative, Prompt Engineering et création de contenus assistée par l’IA [plain]• Analyse prédictive, automatisation et assistants IA appliqués au marketing
+P1310: [plain]Communication et création de contenu [plain]• Communication digitale, Content Marketing, Copywriting et Storytelling [plain]• Community Management
+P1311: [plain]Management et développement professionnel [plain]• Gestion de projets digitaux, innovation et transformation digitale [plain]• Veille stratégique, conduite du changement, leadership et soft skills [plain]• Anglais des affaires et préparation aux certifications professionnelles
+P1313: [bold|underline]5. LES ATOUTS DISTINCTIFS D'ESPIMA BUSINESS SCHOOL
+P1314: [plain]Programme habilité par l’État tunisien
+P1315: [plain]Intelligence Artificielle intégrée dans l'ensemble du parcours.
+P1316: [plain]Plus de  [bold]20 certifications professionnelles internationales [plain] incluses selon le programme.
+P1317: [plain]Enseignements combinant théorie, études de cas, projets et applications concrètes.
+P1318: [plain]Utilisation des principaux outils et plateformes employés par les entreprises.
+P1319: [plain]Stage professionnel de longue durée et accompagnement vers l'emploi.
+P1320: [plain]Possibilités de poursuite d'études auprès des universités partenaires d'ESPIMA.
+P1321: [plain]Pédagogie orientée vers l'innovation, la professionnalisation et les besoins du marché.
+P1323: [bold|underline]6. MODULES DU PROGRAMME
+P1324: [plain]Le programme est structuré autour de plusieurs modules complémentaires couvrant les différents domaines du marketing digital, de la communication numérique, de la gestion de la relation client, de la Business Intelligence et de l'Intelligence Artificielle.
+P1325: [bold]❖ [bold]  [bold]  [bold]Marketing stratégique, comportement du consommateur et innovation digitale
+P1326: [bold]Objectif :  [plain]Acquérir les fondamentaux du marketing stratégique et comprendre les nouveaux comportements des consommateurs dans un environnement numérique.
+P1327: [bold]Contenu : [plain] Marketing Management • Marketing électronique • Comportement du cyberconsommateur • Tendances et innovations marketing • Études de marché • Techniques quantitatives • Études de cas.
+P1329: [bold]❖ [bold]  [bold]  [bold]Marketing digital, e-business et stratégies omnicanales
+P1330: [bold]Objectif :  [plain]Concevoir et piloter une stratégie digitale intégrant le e-business, le e-commerce et la communication omnicanale.
+P1331: [bold]Contenu : [plain] Marketing digital • E-Business • E-Commerce • Marketing communautaire • Communication marketing intégrée • Marketing multicanal • Projets digitaux.
+P1333: [bold]❖ [bold]  [bold]  [bold]Acquisition digitale, référencement et Web Analytics
+P1334: [bold]Objectif :  [plain]Optimiser la visibilité, le trafic et la performance des actions marketing grâce aux principaux leviers d'acquisition.
+P1335: [bold]Contenu : [plain]  [plain]SEO • SEA • Webmastering • Web Analytics • Marketing mobile • Marketing viral • Google Ads • Google Analytics 4 • Looker Studio.
+P1337: [bold]❖ [bold]  [bold]  [bold]Communication digitale, Content Marketing et Social Media
+P1338: [bold]Objectif :  [plain]Créer des contenus performants et développer une communication digitale adaptée aux nouveaux usages.
+P1339: [bold]Contenu : [plain] Communication digitale • Content Marketing • Storytelling • Community Management • Marketing d'influence • E-réputation • LinkedIn Marketing • Social Selling.
+P1341: [bold]❖ [bold]  [bold]  [bold]CRM, expérience client et Marketing Automation
+P1342: [bold]Objectif :  [plain]Développer des stratégies de fidélisation et automatiser la relation client.
+P1343: [bold]Contenu : [plain] CRM • E-CRM • Fidélisation • Parcours clients • HubSpot CRM • Marketing Automation • n8n • Email Marketing.
+P1345: [bold]❖ [bold]  [bold]  [bold]Data Marketing, Business Intelligence et Intelligence Artificielle
+P1346: [bold]Objectif :  [plain]Exploiter les données et l'Intelligence Artificielle pour améliorer la performance des actions marketing.
+P1347: [bold]Contenu : [plain] Data Analytics • Business Intelligence • Big Data • IA générative • Prompt Engineering • ChatGPT • Gemini • Microsoft Copilot • Analyse prédictive.
+P1349: [bold]❖ [bold]  [bold]  [bold]Publicité digitale, Growth Marketing et acquisition avancée
+P1350: [bold]Objectif :  [plain]Développer la croissance des entreprises grâce aux stratégies d'acquisition digitales.
+P1351: [bold]Contenu : [plain] Publicité digitale • Growth Marketing • Marketing mobile • Marketing viral • Google Ads • Meta Ads • DV360 • SA360 • Optimisation des conversions.
+P1353: [bold]❖ [bold]  [bold]  [bold]Management de projets digitaux, innovation et transformation digitale
+P1354: [bold]Objectif :  [plain]Piloter des projets digitaux et accompagner la transformation des organisations.
+P1355: [bold]Contenu : [plain] Gestion de projet • Innovation • Transformation digitale • Veille stratégique • Méthodes Agiles • Consulting • Études de cas.
+P1357: [bold]❖ [bold]  [bold]  [bold]Développement professionnel et parcours certifiant
+P1358: [bold]Objectif :  [plain]Renforcer les compétences professionnelles et préparer les certifications internationales.
+P1359: [bold]Contenu : [plain] Communication professionnelle • Anglais des affaires • Leadership • Soft Skills • Personal Branding • Certifications Google • HubSpot • Microsoft • IBM • Meta • Semrush.
+P1361: [bold]❖ [bold]  [bold]  [bold]Stage professionnel, mémoire et projet defin d’études
+P1362: [plain]Mettre en pratique les compétences acquises à travers une immersion professionnelle en entreprise, la réalisation d’un projet de fin d’études et la rédaction d’un mémoire, suivies d’une soutenance devant un jury
+P1363: [bold]PROGRESSION PÉDAGOGIQUE
+P1364: [bold]Semestre
+P1365: [bold]Objectif principal
+P1366: [bold]Master 1 – S1
+P1367: [plain]Fondements du marketing stratégique et digital
+P1368: [bold]Master 1 – S2
+P1369: [plain]Acquisition digitale, communication numérique et e-business
+P1370: [bold]Master 2 – S3
+P1371: [plain]Data Marketing, CRM, Intelligence Artificielle, Growth Marketing et gestion de projet
+P1372: [bold]Master 2 – S4
+P1373: [plain]Immersion en entreprise, mémoire et professionnalisation
+P1375: [bold|underline]7. PARCOURS CERTIFIANT EBS
+P1376: [plain]Le Master intègre un parcours comprenant une vingtaine de certifications professionnelles internationales, conçu pour compléter les enseignements académiques et renforcer les compétences directement applicables aux métiers du marketing digital et de l’Intelligence Artificielle.
+P1377: [bold] Marketing Digital & Outils
+P1378: [plain]Développer une maîtrise des principales plateformes et outils utilisés par les professionnels du marketing digital, du référencement, de la publicité en ligne, de l'analyse des données et de la gestion de la relation client, à travers des certifications  [highlight=yellow]telles que  [highlight=yellow|bold]Google Analytics Certification [highlight=yellow],  [highlight=yellow|bold]Google Ads Search Certification [highlight=yellow],  [highlight=yellow|bold]Google Ads Display Certification [highlight=yellow],  [highlight=yellow|bold]HubSpot Marketing Hub Software [highlight=yellow],  [highlight=yellow|bold]Certification Publicités LinkedIn [highlight=yellow] et  [highlight=yellow|bold]Ahrefs SEO Certification [highlight=yellow].
+P1379: [bold] Intelligence Artificielle appliquée au Marketing
+P1380: [plain]Exploiter l'Intelligence Artificielle pour automatiser les processus marketing, optimiser les campagnes, améliorer le référencement, analyser les données et personnaliser l'expérience client grâce à des certifications  [highlight=yellow]telles que  [highlight=yellow|bold]How to Become an AI-Powered Marketer [highlight=yellow],  [highlight=yellow|bold]n8n Automation [highlight=yellow],  [highlight=yellow|bold]Technical SEO & AI Search Essentials [highlight=yellow],  [highlight=yellow|bold]AI-Powered Performance Ads [highlight=yellow] et  [highlight=yellow|bold]watsonx Assistant – Assistants Virtuels IA Générative [highlight=yellow].
+P1381: [bold] Culture IA
+P1382: [plain]Acquérir une compréhension des fondamentaux de l'Intelligence Artificielle générative, des agents IA et de leurs applications en entreprise à travers des certifications  [highlight=yellow]telles que  [highlight=yellow|bold]Agentic AI in Practice [highlight=yellow],  [highlight=yellow|bold]Foundations & Applications of Generative AI [highlight=yellow],  [highlight=yellow|bold]Generative AI Fundamentals [highlight=yellow] et  [highlight=yellow|bold]AI for Good Specialization [highlight=yellow].
+P1384: [bold]Le catalogue des certifications est régulièrement actualisé afin d'intégrer les évolutions technologiques et les besoins des entreprises.
+P1386: [bold|underline]8. L'INTELLIGENCE ARTIFICIELLE AU CŒUR DU MASTER
+P1387: [plain]À ESPIMA Business School,  [bold]l'Intelligence Artificielle n'est pas une spécialisation isolée : elle constitue un socle commun intégré dans l'ensemble des Masters.
+P1388: [plain]Dans le Master Marketing Digital & Intelligence Artificielle, elle est utilisée comme un véritable levier de création de valeur pour les entreprises.
+P1389: [plain]Les étudiants apprennent notamment à :
+P1390: [plain]exploiter l'IA générative dans les activités marketing ;
+P1391: [plain]créer des contenus assistés par l'IA ;
+P1392: [plain]concevoir des prompts efficaces ;
+P1393: [plain]automatiser des campagnes marketing ;
+P1394: [plain]analyser les données grâce à l'IA ;
+P1395: [plain]personnaliser l'expérience client ;
+P1396: [plain]améliorer les performances des campagnes digitales ;
+P1397: [plain]intégrer les assistants IA dans les processus marketing.
+P1398: [plain]L'objectif n'est pas de former des spécialistes de l'Intelligence Artificielle, mais des  [bold]professionnels du marketing capables d'utiliser efficacement l'IA dans leur métier [plain].
+P1400: [bold|underline]9. PÉDAGOGIE
+P1401: [plain]Le Master privilégie une pédagogie professionnalisante reposant sur  [plain]l’articulation entre enseignements académiques, mises en situation, projets et expériences en entreprise [plain].
+P1402: [plain]Les étudiants développent leurs compétences à travers :
+P1403: [plain]des études de cas réels ;
+P1404: [plain]des projets individuels et collectifs ;
+P1405: [plain]des ateliers pratiques ;
+P1406: [plain]des simulations professionnelles ;
+P1407: [plain]des conférences animées par des experts ;
+P1408: [plain]l'utilisation des outils numériques utilisés par les entreprises ;
+P1409: [plain]la préparation aux certifications internationales.
+P1410: [plain]Cette approche favorise le développement de compétences directement transférables dans le monde professionnel.
+P1412: [bold|underline]10. STAGE, MÉMOIRE ET PROJET PROFESSIONNEL
+P1413: [plain]Le quatrième semestre est consacré à une  [bold]immersion professionnelle obligatoire [plain], permettant aux étudiants de mettre en pratique les compétences acquises tout au long du parcours.
+P1414: [plain]Cette immersion professionnelle comprend notamment :
+P1415: [plain]un stage de longue durée ;
+P1416: [plain]la réalisation d’un mémoire professionnel ;
+P1417: [plain]la réalisation d’un projet de consulting pour une entreprise.
+P1418: [plain]Cette expérience permet aux étudiants de mettre en pratique leurs compétences 
+P1419: [plain]sur des problématiques réelles de marketing digital, de transformation digitale et d’Intelligence Artificielle appliquée, tout en les préparant à l’emploi ou à la création de leur propre projet.
+P1421: [bold|underline]11. DÉBOUCHÉS PROFESSIONNELS
+P1422: [plain]Le Master prépare aux fonctions suivantes :
+P1423: [plain]Responsable Marketing Digital
+P1424: [plain]Digital Marketing Manager
+P1425: [plain]Responsable Acquisition
+P1426: [plain]Growth Marketing Manager
+P1427: [plain]Traffic Manager
+P1428: [plain]CRM & Marketing Automation Manager
+P1429: [plain]Consultant en stratégie digitale
+P1430: [plain]Marketing Data Analyst
+P1431: [plain]Social Media & Content Manager
+P1432: [plain]E-commerce Manager
+P1433: [plain]Responsable Communication Digitale
+P1434: [plain]Chef de Projet Digital
+P1435: [plain]Consultant en Transformation Digitale
+P1436: [plain]Expert en Intelligence Artificielle appliquée au Marketing
+P1437: [plain]Selon leur expérience professionnelle, les diplômés pourront également évoluer vers des fonctions de direction marketing ou de pilotage de la transformation digitale.
+P1439: [bold|underline]12. POURSUITE D'ÉTUDES ET OUVERTURE INTERNATIONALE
+P1440: [bold|underline]Perspectives d'études à l'international
+P1441: [plain]Après la validation du  [bold]Master 1 [plain] à ESPIMA Business School, les étudiants peuvent poursuivre leurs études auprès de nos universités et Grandes Écoles partenaires en  [bold]France [plain], en  [bold]Italie [plain] ou au  [bold]Canada [plain], conformément aux accords de partenariat et aux conditions d'admission propres à chaque établissement.
+P1442: [bold|underline]FRANCE
+P1443: [bold]  [bold|underline]EM Normandie Business School
+P1444: [plain]Programme Grande École (Grade de Master)
+P1445: [plain]Masters of Science (MSc)
+P1446: [plain]Mastères Spécialisés (MS)
+P1447: [bold|underline]Domaines [bold] : [plain] Marketing digital • Stratégie digitale • Innovation • Data • Digital • Management • Transformation des entreprises.
+P1449: [bold]  [bold|underline]Excelia Business School
+P1450: [plain]Programme Grande École (Grade de Master)
+P1451: [plain]Masters of Science (MSc)
+P1452: [bold|underline]Domaines [bold] : [plain] Marketing • Digital • Communication • Entrepreneuriat • Innovation • Management.
+P1454: [bold]  [bold|underline]Paris School of Business (PSB)
+P1455: [plain]Programme Grande École (Grade de Master)
+P1456: [plain]Masters
+P1457: [plain]Masters of Science (MSc)
+P1458: [bold|underline]Domaines [bold] : [plain] Marketing & Data • Digital Business • International Management & Business Development • Data Management.
+P1460: [bold]  [bold|underline]Sup' de Com
+P1461: [plain]Programmes spécialisés dans les domaines de la  [bold]communication [plain], du  [bold]marketing [plain], de la  [bold]communication digitale [plain], de la  [bold]stratégie de marque [plain], de la  [bold]publicité [plain] et des  [bold]médias numériques [plain].
+P1463: [bold|underline]ITALIE
+P1464: [bold]  [bold|underline]Link University (Rome)
+P1465: [plain]Programmes de Master (Laurea Magistrale) dans les domaines de :
+P1466: [plain]Advanced Global Management
+P1467: [plain]Technologies and Languages of Communications
+P1469: [bold|underline]CANADA
+P1470: [bold]  [bold|underline]Université du Québec en Abitibi-Témiscamingue (UQAT)
+P1471: [plain]Les étudiants peuvent poursuivre leurs études dans le programme suivant :
+P1472: [bold]Maîtrise en gestion de projet (MGP) [plain]  [bold]– Profil professionnel [plain] – Gestion de projet, innovation et management. 
+P1473: [bold]Maîtrise en gestion des organisations (MGO) [plain]  [bold] – Profil avec mémoire [plain] – Management des organisations, recherche appliquée et poursuite éventuelle vers le doctorat.
+P1475: [plain]L'admission est réalisée conformément aux conditions prévues par l'UQAT.
+P1477: [bold|underline]13. LES ATOUTS DU MASTER
+P1478: [plain]Le Master Marketing Digital & Intelligence Artificielle d'ESPIMA Business School se distingue par :
+P1479: [plain]un  [bold]Master accrédité par l'État tunisien [plain] ;
+P1480: [plain]un programme alliant  [bold]exigences académiques et compétences recherchées par les entreprises [plain] ;
+P1481: [plain]l'intégration de  [bold]l'Intelligence Artificielle dans l'ensemble des enseignements [plain] ;
+P1482: [plain]un  [bold]parcours de plus de 20 certifications professionnelles internationales [plain] selon le programme ;
+P1483: [plain]la maîtrise des  [bold]outils et plateformes de référence [plain] du marketing digital ;
+P1484: [plain]une pédagogie fondée sur  [bold]des projets, des études de cas et des mises en situation professionnelles [plain] ;
+P1485: [plain]un  [bold]stage professionnel de longue durée [plain] favorisant l'insertion professionnelle ;
+P1486: [plain]des  [bold]opportunités de poursuite d'études à l'international [plain] auprès des universités partenaires d'EBS ;
+P1487: [plain]Une organisation favorisant  [bold]un accompagnement personnalisé
+P1490: [underline]Prêt(e) à rejoindre le Master Marketing Digital & IA ?
+P1491: [plain]Les candidatures  [plain]2026/2027 [plain] sont ouvertes.
+P1492: [plain]Bénéficiez de nos avantages en cours.
+P1493: [plain]Réponse garantie sous 24 h.

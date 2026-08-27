@@ -1,0 +1,263 @@
+P955: [underline]Masters
+P956: [underline]Nos Masters : 2 ans pour atteindre l'excellence.
+P957: [plain]4 Masters professionnels • Intelligence Artificielle intégrée dans chaque parcours 
+P958: [plain]P [bold]lus de 20 certifications professionnelles internationales [plain] selon le programme ;
+P959: [plain]Diplôme a [plain]ccrédité [plain] par l'État tunisien.
+P960: [plain]150+ certifications
+P961: [plain]Offertes
+P962: [plain]IA obligatoire
+P963: [plain]Dans tous les parcours
+P964: [plain]4 Masters
+P965: [plain]Diplômes  [plain]habilités par le Ministère de l’Enseignement Supérieur et de la Recherche Scientifique
+P966: [plain]Google • Harvard • IBM • Cisco • HubSpot
+P968: [underline]Pré-inscription en Master
+P969: [plain]Réponse sous 24 h • Gratuite • Sans engagement
+P970: [plain]Coordonnées
+P971: [plain]Profil
+P972: [plain]Formation
+P973: [plain]Prénom * [plain]Nom * [plain]E-mail * [plain]Téléphone / WhatsApp *
+P974: [plain]Sélectionnez un programme
+P976: [underline]EBS Masters
+P977: [underline]Expertise de pointe. Diplôme agréé. Certifications internationales.
+P978: [plain]Des programmes de spécialisation conçus pour former les experts dont les entreprises ont besoin. L'Intelligence Artificielle, l'automatisation et les certifications internationales sont intégrées à l'ensemble de nos parcours.
+P980: [highlight=yellow]24+ certifications
+P981: [underline]Master CRM Marketing & Transformation Digitale
+P982: [plain]CRM, marketing automation, Intelligence Artificielle et transformation digitale avec HubSpot, n8n et des outils professionnels reconnus.
+P983: [plain]Découvrir le programme
+P985: [highlight=yellow]23+ certifications
+P986: [underline]Master Marketing Digital & IA
+P987: [plain]Marketing digital, analyse des données, Intelligence Artificielle et automatisation des campagnes marketing.
+P988: [plain]Découvrir le programme
+P990: [highlight=yellow]22+ certifications
+P991: [underline]Master Management de Projets Innovants & Startups
+P992: [plain]Management de projet, innovation, entrepreneuriat, méthodes Agile, PMI® et Scrum.
+P993: [plain]Découvrir le programme
+P995: [highlight=yellow]20+ certifications
+P996: [underline]Master Ingénierie Financière
+P997: [plain]Finance d'entreprise, marchés financiers, analyse des données et certifications Bloomberg.
+P998: [plain]Découvrir le programme
+P999: [underline]Pourquoi choisir un Master à EBS ?
+P1000: [underline]IA générative
+P1001: [plain]Développez une maîtrise des technologies qui transforment les entreprises : agents IA, automatisation, analyse des données et outils no-code.
+P1002: [underline]Certifications internationales
+P1003: [plain]Des certifications délivrées par PMI, Scrum, Bloomberg, HubSpot, IBM, Google et d'autres organismes reconnus sont intégrées à votre parcours.
+P1004: [underline]Ouverture internationale
+P1005: [plain]Poursuivez vos études ou développez votre carrière en France, au Canada et dans d'autres pays grâce à nos partenariats internationaux.
+P1006: [underline]Certifications incluses
+P1007: [plain]En complément de votre diplôme agréé par l'État tunisien, obtenez des certifications délivrées par Google, IBM, Harvard, Bloomberg, HubSpot, PMI, DeepLearning.AI et d'autres organismes internationaux, sans frais supplémentaires.
+P1008: [underline]Prêt(e) à choisir votre Master ?
+P1009: [plain]Les candidatures  [plain]2026/2027 [plain] sont ouvertes.
+P1010: [plain]Bénéficiez de nos avantages en cours.
+P1011: [plain]Réponse garantie sous 24 h.
+P1013: [highlight=yellow|bold|underline]Page :    
+P1014: [underline]Pré-inscription en Master
+P1015: [plain]Réponse sous 24 h • Gratuite • Sans engagement
+P1016: [plain]Coordonnées
+P1017: [plain]Profil
+P1018: [plain]Formation
+P1019: [plain]Prénom * [plain]Nom * [plain]E-mail * [plain]Téléphone / WhatsApp *
+P1021: [underline]Master · Bac+5 · 2 ans · Diplôme a [underline]ccrédité [underline] par l'État tunisien
+P1022: [underline]Master CRM Marketing & Transformation Digitale
+P1023: [underline]Pilotez la relation client et la transformation digitale grâce à l'Intelligence Artificielle.
+P1024: [plain]Le Master CRM Marketing & Transformation Digitale d'EBS prépare des spécialistes capables de concevoir des stratégies CRM performantes, d'automatiser les processus métier et d'exploiter les données clients grâce à l'Intelligence Artificielle. Le programme intègre les principaux outils du marché tels que HubSpot, n8n, IBM watsonx et Power BI.
+P1025: [plain]24+
+P1026: [highlight=yellow]Certifications incluses
+P1027: [plain]2 ans
+P1028: [plain]100 %
+P1029: [plain]Diplôme agréé par l'État tunisien
+P1030: [plain]Certifications incluses
+P1031: [plain]Télécharger la brochure
+P1033: [bold]Accueil
+P1034: [bold]Masters
+P1035: [bold]Master CRM Marketing & Transformation Digitale
+P1037: [underline]1. PRÉSENTATION GÉNÉRALE DU MASTER
+P1038: [plain]Intitulé du diplôme : [plain]  [plain]Master Professionnel en CRM & Transformation Digitale
+P1039: [plain]Diplôme : [plain]  [plain]Master habilité par le Ministère de l’Enseignement Supérieur et de la Recherche Scientifique
+P1040: [plain]Durée : [plain]  [plain]2 années universitaires (4 semestres – 120 crédits).
+P1041: [plain]Organisation : [plain]  [plain]Formation professionnalisante articulée autour de cours, études de cas, projets, certifications, stage de longue durée et mémoire (PFE) projet de fin d'études.
+P1042: [underline]Présentation [plain] : 
+P1043: [plain]Le Master CRM & Transformation Digitale d'ESPIMA Business School forme des spécialistes capables de concevoir, piloter et mettre en œuvre des stratégies de gestion de la relation client et de transformation digitale au service de la performance des organisations.
+P1044: [plain]Conforme au référentiel académique validé par le Ministère de l'Enseignement Supérieur, le programme associe les fondamentaux du CRM, du marketing relationnel, de la transformation digitale, de la Business Intelligence et de l'analyse des données aux technologies les plus récentes, notamment l'Intelligence Artificielle, les plateformes CRM, l'automatisation des processus, les outils de Data Analytics et les solutions numériques utilisées par les entreprises.
+P1045: [plain]Cette approche permet aux étudiants de développer une double expertise, managériale et technologique, afin d'accompagner les entreprises dans l'amélioration de l'expérience client, l'optimisation des processus commerciaux, la transformation digitale et la création de valeur dans un environnement économique en constante évolution.
+P1047: [bold|underline]2. OBJECTIFS DE LA FORMATION
+P1048: [plain]Le Master poursuit plusieurs objectifs complémentaires :
+P1049: [plain]maîtriser les stratégies de gestion de la relation client (CRM) et les leviers de fidélisation ;
+P1050: [plain]concevoir et piloter des projets de transformation digitale adaptés aux besoins des organisations;
+P1051: [plain]développer une expertise en analyse des données clients, Business Intelligence et aide à la décision;
+P1052: [plain]exploiter les plateformes CRM, les outils d'automatisation marketing et les technologies numériques utilisées par les entreprises ;
+P1053: [plain]utiliser l'Intelligence Artificielle pour améliorer la connaissance client, personnaliser les parcours et optimiser les performances commerciales ;
+P1054: [plain]maîtriser les processus de marketing automation, de gestion omnicanale et de transformation des organisations ;
+P1055: [plain]développer une vision stratégique de l'expérience client, de l'innovation digitale et de la création de valeur ;
+P1056: [plain]préparer les étudiants aux certifications professionnelles internationales les plus recherchées dans les domaines du CRM, de la Data, de l'IA et de la transformation digitale ;
+P1057: [plain]favoriser l'insertion professionnelle grâce à une pédagogie orientée projets, un stage de longue durée et une forte proximité avec les entreprises.
+P1058: [bold|underline]3. PUBLIC CIBLE
+P1059: [plain]Le Master s'adresse :
+P1060: [bold]aux titulaires d'une Licence en Marketing ou en Management [plain] ; 
+P1061: [bold]aux titulaires d'une Licence dans des disciplines en lien avec le domaine du parcours  [plain]souhaitant se spécialiser en CRM, gestion de la relation client et transformation digitale ;
+P1062: [bold]aux professionnels [plain]  [plain]souhaitant développer ou actualiser leurs compétences en CRM, marketing automation, Business Intelligence, Intelligence Artificielle et transformation digitale des organisations.
+P1064: [bold|underline]4. COMPÉTENCES DÉVELOPPÉES
+P1065: [plain]Au terme de la formation, les diplômés seront capables de :
+P1066: [bold]CRM & Expérience Client
+P1067: [plain]Concevoir et déployer une stratégie de gestion de la relation client (CRM).
+P1068: [plain]Optimiser les parcours clients et les actions de fidélisation.
+P1069: [plain]Améliorer l'expérience client sur les différents canaux de communication.
+P1070: [plain]Piloter la performance de la relation client grâce aux indicateurs de suivi.
+P1071: [bold]Transformation Digitale
+P1072: [plain]Concevoir et piloter des projets de transformation digitale.
+P1073: [plain]Accompagner les organisations dans leur transition numérique.
+P1074: [plain]Déployer des solutions digitales adaptées aux enjeux métiers.
+P1075: [plain]Conduire le changement et favoriser l'innovation au sein des organisations.
+P1076: [bold]Data Analytics & Business Intelligence
+P1077: [plain]Collecter, analyser et exploiter les données clients.
+P1078: [plain]Concevoir des tableaux de bord décisionnels.
+P1079: [plain]Utiliser les outils de Data Analytics et de Business Intelligence.
+P1080: [plain]Transformer les données en informations utiles à la prise de décision.
+P1081: [bold]Intelligence Artificielle appliquée au CRM
+P1082: [plain]Exploiter l'Intelligence Artificielle pour personnaliser la relation client.
+P1083: [plain]Automatiser certaines actions marketing et commerciales.
+P1084: [plain]Utiliser les outils d'IA générative dans les projets CRM et de transformation digitale.
+P1085: [plain]Intégrer les technologies d'automatisation et les agents IA dans les processus de l'entreprise.
+P1086: [bold]Marketing Digital & Outils Professionnels
+P1087: [plain]Développer des stratégies d'acquisition et de fidélisation multicanales.
+P1088: [plain]Maîtriser les plateformes CRM, les outils d'automatisation marketing et les solutions digitales.
+P1089: [plain]Piloter des campagnes digitales orientées performance.
+P1090: [plain]Exploiter les technologies numériques pour améliorer l'efficacité commerciale.
+P1091: [bold]Compétences professionnelles
+P1092: [plain]Piloter des projets transversaux en équipe.
+P1093: [plain]Communiquer efficacement avec les directions métiers et les clients.
+P1094: [plain]Développer une posture professionnelle conforme aux attentes des entreprises engagées dans leur transformation digitale.
+P1096: [bold|underline]5. LES ATOUTS DISTINCTIFS D'ESPIMA BUSINESS SCHOOL
+P1097: [plain]Le Master CRM & Transformation Digitale d’ESPIMA Business School se distingue par :
+P1098: [plain]un programme habilité par l'État tunisien ;
+P1099: [plain]une approche pédagogique orientée vers les besoins réels des entreprises en matière de CRM, d'expérience client et de transformation digitale ;
+P1100: [plain]l'intégration de l'Intelligence Artificielle dans l'ensemble du parcours ;
+P1101: [plain]un parcours certifiant permettant d'obtenir plusieurs certifications internationales reconnues dans les domaines du CRM, de la Data, de l'IA et des technologies numériques ;
+P1102: [plain]des projets réels, des études de cas et des simulations professionnelles favorisant l'acquisition de compétences opérationnelles ;
+P1103: [plain]un stage obligatoire de longue durée facilitant l'insertion professionnelle ;
+P1104: [plain]des enseignants issus du monde universitaire et du monde professionnel ;
+P1105: [plain]des partenariats académiques internationaux permettant une poursuite d'études en France, en Italie et au Canada ;
+P1106: [plain]un accompagnement personnalisé vers l'emploi et le développement de carrière.
+P1108: [bold|underline]6. MODULES DU PROGRAMME
+P1109: [plain]Le programme est structuré autour de plusieurs modules complémentaires couvrant les différents domaines du CRM, de la transformation digitale, de la Business Intelligence et de l'IA.
+P1110: [plain]❖ [plain]  [plain]  [plain]CRM stratégique, expérience client et marketing relationnel
+P1111: [plain]Objectif : [plain] Concevoir et piloter une stratégie de gestion de la relation client afin d'améliorer l'acquisition, la fidélisation et l'expérience client.
+P1112: [plain]Contenu : [plain] CRM • E-CRM • Customer Experience • Customer Journey • Design Thinking • Acquisition et fidélisation • Gestion des réclamations • Satisfaction client • Customer Success.
+P1114: [plain]❖ [plain]  [plain]  [plain]CRM opérationnel, Marketing Automation et outils professionnels
+P1115: [plain]Objectif : [plain] Déployer des solutions CRM modernes pour automatiser les processus commerciaux, marketing et de service client.
+P1116: [plain]Contenu : [plain] HubSpot CRM • Marketing Automation • Sales Automation • Service Automation • Email Marketing • n8n • Workflows CRM.
+P1118: [plain]❖ [plain]  [plain]  [plain]Data Analytics, Business Intelligence et Intelligence Artificielle
+P1119: [plain]Objectif : [plain] Exploiter les données et l'Intelligence Artificielle afin d'améliorer la prise de décision et la performance des organisations.
+P1120: [plain]Contenu : [plain] Data Analytics • Business Intelligence • Customer Analytics • Big Data • IA générative • Prompt Engineering • IA appliquée au CRM • Analyse prédictive.
+P1122: [plain]❖ [plain]  [plain]  [plain]Transformation digitale, Business Analysis et management de projet
+P1123: [plain]Objectif : [plain] Accompagner la transformation digitale des organisations et piloter des projets d'innovation.
+P1124: [plain]Contenu : [plain] Transformation digitale • Gestion des systèmes d'information • Business Analysis • Digitalisation des processus • Conduite du changement • Innovation • Gestion de projet.
+P1126: [plain]❖ [plain]  [plain]  [plain]RevOps, gouvernance CRM et performance commerciale
+P1127: [plain]Objectif : [plain] Optimiser la performance commerciale grâce à une approche intégrée du CRM, des ventes et du service client.
+P1128: [plain]Contenu : [plain] Revenue Operations (RevOps) • CRM Analytics • Gouvernance des données clients • Tableaux de bord • Pilotage de la relation client • Performance commerciale.
+P1130: [plain]❖ [plain]  [plain]  [plain]Développement professionnel et parcours certifiant
+P1131: [plain]Objectif : [plain] Développer les compétences professionnelles et préparer les certifications internationales.
+P1132: [plain]Contenu : [plain] Communication professionnelle • Anglais des affaires • Leadership • Soft Skills • Certifications HubSpot • Google • Microsoft • IBM • Power BI.
+P1134: [plain]❖ [plain]  [plain]  [plain]Stage professionnel, mémoire et projet de fin d'études
+P1135: [plain]Mettre en pratique les compétences acquises à travers une immersion professionnelle en entreprise, la réalisation d'un projet de fin d'études et la rédaction d'un mémoire, suivies d'une soutenance devant un jury.
+P1137: [bold|underline]OUTILS ET PLATEFORMES PROFESSIONNELS
+P1138: [plain]Les étudiants utilisent tout au long de leur formation des outils largement déployés dans les entreprises afin de développer des compétences directement opérationnelles.
+P1139: [plain]Domaines
+P1140: [plain]Principaux outils
+P1141: [plain]CRM & Marketing Automation
+P1142: [plain]HubSpot CRM • HubSpot Sales Hub • HubSpot Service Hub • n8n
+P1143: [plain]Business Intelligence & Data
+P1144: [plain]Power BI • Google Analytics 4 • Looker Studio • BigQuery
+P1145: [plain]Intelligence Artificielle
+P1146: [plain]ChatGPT • Microsoft Copilot • Google Gemini • IBM watsonx
+P1147: [plain]Gestion de projet
+P1148: [plain]Microsoft Project • Trello • Jira • Notion
+P1149: [plain]Collaboration & Productivité
+P1150: [plain]Microsoft 365 • Google Workspace • Microsoft Teams
+P1151: [plain]Les outils et plateformes évoluent régulièrement afin d'intégrer les innovations technologiques et les pratiques des entreprises.
+P1153: [bold]PROGRESSION PÉDAGOGIQUE
+P1154: [plain]Semestre
+P1155: [plain]Objectif principal
+P1156: [plain]Master 1 – S1
+P1157: [plain]Fondements du CRM, du marketing digital, de la relation client et de la transformation digitale.
+P1158: [plain]Master 1 – S2
+P1159: [plain]CRM opérationnel, Marketing Automation, Data Analytics, Business Intelligence et gestion de projet.
+P1160: [plain]Master 2 – S3
+P1161: [plain]Customer Experience, Intelligence Artificielle, CRM Analytics, Business Analysis et transformation digitale.
+P1162: [plain]Master 2 – S4
+P1163: [plain]Stage professionnel, mémoire et projet de fin d'études.
+P1165: [bold|underline]7. PARCOURS CERTIFIANT EBS
+P1166: [plain]Le Master CRM & Transformation Digitale intègre un parcours comprenant plusieurs certifications professionnelles internationales, conçu pour compléter les enseignements académiques et renforcer les compétences directement applicables aux métiers du CRM, de la transformation digitale, du marketing automation, de la Business Intelligence et de l'Intelligence Artificielle. Les certifications évoluent régulièrement afin d'intégrer les nouvelles technologies et les attentes des entreprises.
+P1167: [plain]❖ [plain] CRM, Marketing Automation & Outils Professionnels
+P1168: [plain]Développer une maîtrise des principales plateformes CRM, des outils d'automatisation marketing et des solutions utilisées dans les métiers de la relation client grâce à des certifications  [highlight=yellow]telles que  [plain]HubSpot Revenue Operations [highlight=yellow],  [plain]HubSpot Sales Hub Software [highlight=yellow],  [plain]HubSpot Service Hub Software [highlight=yellow],  [plain]HubSpot Content Hub for Marketers [highlight=yellow] et  [plain]HubSpot Inbound Sales [highlight=yellow].
+P1169: [plain]❖ [plain] Data Analytics, Business Intelligence & Transformation Digitale
+P1170: [plain]Développer des compétences en analyse des données, Business Intelligence et pilotage de la transformation digitale grâce à des certifications  [highlight=yellow]telles que  [plain]Google Business Intelligence Certificate [highlight=yellow],  [plain]Google Data Analytics Certificate [highlight=yellow],  [plain]Google Advanced Data Analytics Certificate [highlight=yellow],  [plain]Digital Transformation (BCG) [highlight=yellow] et  [plain]Obtenir des données dans Power BI [highlight=yellow].
+P1171: [plain]❖ [plain] Intelligence Artificielle appliquée au CRM
+P1172: [plain]Exploiter l'Intelligence Artificielle pour automatiser les processus, personnaliser la relation client et améliorer la prise de décision grâce à des certifications  [highlight=yellow]telles que  [plain]n8n Automation – Level One [highlight=yellow],  [plain]watsonx Orchestrate [highlight=yellow],  [plain]Transformer votre entreprise avec l'IA [highlight=yellow],  [plain]Clustering Clients avec KMeans [highlight=yellow] et  [plain]Bring AI to Your Data [highlight=yellow].
+P1173: [plain]❖ [plain] Culture IA
+P1174: [plain]Acquérir une compréhension des fondamentaux de l'Intelligence Artificielle générative, des agents IA et de leurs applications dans les métiers du CRM et de la transformation digitale à travers des certifications  [highlight=yellow]telles que  [plain]Agentic AI in Practice [highlight=yellow],  [plain]Foundations & Applications of Generative AI [highlight=yellow],  [plain]Generative AI Fundamentals [highlight=yellow],  [plain]Déverrouiller le potentiel commercial — Agents IA [highlight=yellow] et  [plain]AI for Good Specialization [highlight=yellow].
+P1176: [bold|underline]8. L'INTELLIGENCE ARTIFICIELLE AU CŒUR DU MASTER
+P1177: [plain]L'Intelligence Artificielle est intégrée progressivement dans l'ensemble du parcours afin de préparer les étudiants aux nouveaux usages du CRM, de la transformation digitale et de la gestion de la relation client.
+P1178: [plain]Les étudiants apprennent notamment à utiliser l'IA pour :
+P1179: [plain]analyser les données clients et améliorer la prise de décision grâce à la Business Intelligence et à l'analyse prédictive ; 
+P1180: [plain]personnaliser les parcours clients, optimiser l'expérience utilisateur et développer des stratégies de fidélisation intelligentes ; 
+P1181: [plain]automatiser les processus commerciaux, marketing et de service client à l'aide de workflows intelligents et d'agents IA ; 
+P1182: [plain]développer des solutions de CRM intelligent intégrant le  [bold]Lead Scoring [plain], la segmentation avancée, les assistants conversationnels et les recommandations automatisées. 
+P1183: [highlight=yellow]Les étudiants mettent en pratique ces différentes applications grâce à l'utilisation de plateformes professionnelles telles que  [highlight=yellow|bold]HubSpot AI [highlight=yellow],  [highlight=yellow|bold]ChatGPT [highlight=yellow],  [highlight=yellow|bold]Microsoft Copilot [highlight=yellow],  [highlight=yellow|bold]Google Gemini [highlight=yellow],  [highlight=yellow|bold]IBM watsonx [highlight=yellow] et  [highlight=yellow|bold]n8n [highlight=yellow], utilisées pour développer des solutions innovantes en CRM, Business Intelligence, automatisation des processus et transformation digitale.
+P1184: [plain]Grâce à cette approche, les étudiants développent une maîtrise des principales applications de l'Intelligence Artificielle au service de la relation client, de la performance des organisations et de la transformation digitale.
+P1186: [bold|underline]9. PÉDAGOGIE
+P1187: [plain]Le Master privilégie une pédagogie active et professionnalisante associant enseignements académiques, études de cas, projets collaboratifs, ateliers pratiques, certifications internationales et immersion en entreprise.
+P1188: [plain]Les étudiants travaillent sur des problématiques concrètes inspirées des entreprises et utilisent des plateformes professionnelles afin de développer des compétences immédiatement opérationnelles en CRM, Data Analytics, Business Intelligence, Intelligence Artificielle et transformation digitale.
+P1189: [plain]Cette approche favorise l'acquisition progressive de compétences techniques, managériales et comportementales répondant aux attentes du marché de l'emploi.
+P1191: [bold|underline]10. STAGE, MÉMOIRE ET PROJET PROFESSIONNEL
+P1192: [plain]Stage professionnel [plain] : une immersion de longue durée au sein d’entreprises partenaires pour mettre en pratique les compétences acquises. 
+P1193: [plain]Mémoire ou projet de fin d’études [plain] : réalisation d’un projet basé sur une problématique réelle liée au  [plain]CRM, à la transformation digitale, à la Business Intelligence ou à l’Intelligence Artificielle [plain]. 
+P1194: [plain]Soutenance [plain] : présentation devant un jury d’enseignants et de professionnels, permettant de valoriser les capacités d’analyse, d’innovation et de conduite de projet.
+P1196: [bold|underline]11. DÉBOUCHÉS PROFESSIONNELS
+P1197: [plain]Le Master CRM & Transformation Digitale prépare les étudiants aux métiers de la  [bold]relation client, du digital, du marketing, de la data et de la performance commerciale [plain].
+P1198: [plain]Les diplômés peuvent notamment exercer les fonctions suivantes :
+P1199: [bold]CRM Manager
+P1200: [bold]Customer Experience Manager
+P1201: [bold]Customer Success Manager
+P1202: [bold]Consultant CRM
+P1203: [bold]Consultant en Transformation Digitale
+P1204: [bold]Business Analyst
+P1205: [bold]CRM Analyst
+P1206: [bold]Marketing Automation Manager
+P1207: [bold]Responsable Relation Client
+P1208: [bold]Data & CRM Analyst
+P1209: [bold]Responsable de la Transformation Digitale
+P1210: [bold]Responsable de la Performance Commerciale
+P1211: [plain]Avec l’expérience, les diplômés peuvent évoluer vers des  [bold]postes de direction [plain] dans les domaines du CRM, de la transformation digitale, de l’expérience client, du marketing ou de la performance commerciale.
+P1213: [bold|underline]12. POURSUITE D'ÉTUDES ET OUVERTURE INTERNATIONALE
+P1214: [bold|underline]Perspectives d'études à l'international
+P1215: [plain]Après la validation du  [plain]Master 1 [plain] à ESPIMA Business School, les étudiants peuvent poursuivre leurs études auprès de nos universités partenaires en  [plain]France [plain], en  [plain]Italie [plain] ou au  [plain]Canada [plain], sous réserve des conditions d'admission propres à chaque établissement.
+P1216: [underline]FRANCE
+P1217: [bold]  [plain]EM Normandie [plain]MSc Digital Strategy & Innovation [plain] – Innovation, transformation digitale, stratégie numérique et management de projets.
+P1218: [bold]  [plain]Excelia Business School [plain]MSc Digital Transformation & Consulting [plain] – Transformation digitale, innovation, conseil, management des organisations et technologies numériques.
+P1219: [bold]  [underline]Paris School of Business [plain]Master in Management [plain] ou  [plain]Master of Science (MSc) [plain] dans des domaines tels que la transformation digitale, le management, le marketing, la Business Intelligence et l'innovation, selon les conditions d'admission et les programmes proposés.
+P1221: [bold|underline]ITALIE
+P1222: [bold]  [bold|underline]Link University (Rome)
+P1223: [plain]Programmes de Master (Laurea Magistrale) dans les domaines de :
+P1224: [plain]Advanced Global Management
+P1225: [plain]Technologies and Languages of Communications
+P1227: [bold|underline]CANADA
+P1228: [bold]  [bold|underline]Université du Québec en Abitibi-Témiscamingue (UQAT)
+P1229: [plain]Les étudiants peuvent poursuivre leurs études dans le programme suivant :
+P1230: [bold]Maîtrise en gestion de projet (MGP) [plain]  [bold]– Profil professionnel [plain] – Gestion de projet, innovation et management. 
+P1231: [bold]Maîtrise en gestion des organisations (MGO) [plain]  [bold] – Profil avec mémoire [plain] – Management des organisations, recherche appliquée et poursuite éventuelle vers le doctorat.
+P1233: [plain]L'admission est réalisée conformément aux conditions prévues par l'UQAT.
+P1235: [bold|underline]13. LES ATOUTS DU MASTER
+P1236: [plain]Le Master CRM & Transformation Digitale d'ESPIMA Business School offre une formation professionnalisante qui associe les fondamentaux du CRM, de la transformation digitale, de la Business Intelligence et de l'Intelligence Artificielle afin de préparer les étudiants aux nouveaux métiers de la relation client et de la performance des organisations.
+P1237: [plain]Le programme se distingue notamment par :
+P1238: [plain]un diplôme habilité par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique ;
+P1239: [plain]une pédagogie orientée vers les projets, les études de cas et les besoins des entreprises ;
+P1240: [plain]l'intégration de l'Intelligence Artificielle dans l'ensemble du parcours ;
+P1241: [highlight=yellow]des plateformes professionnelles telles que  [highlight=yellow|bold]HubSpot CRM [highlight=yellow],  [highlight=yellow|bold]Power BI [highlight=yellow],  [highlight=yellow|bold]Google Analytics [highlight=yellow],  [highlight=yellow|bold]n8n [highlight=yellow] et  [highlight=yellow|bold]IBM watsonx [highlight=yellow] ;
+P1242: [plain]un parcours comprenant des certifications professionnelles internationales reconnues ;
+P1243: [plain]un stage obligatoire de longue durée favorisant une insertion professionnelle rapide ;
+P1244: [plain]des partenariats académiques permettant une poursuite d'études en  [bold]France [plain], en  [bold]Italie [plain] et au  [bold]Canada [plain] ;
+P1245: [plain]des débouchés dans les métiers du  [bold]CRM [plain], de l' [bold]expérience client [plain], de la  [bold]Business Intelligence [plain], de la  [bold]transformation digitale [plain] et du  [bold]management de projets [plain].
+P1247: [underline]Prêt(e) à rejoindre le Master CRM Marketing & Transformation Digitale ?
+P1248: [plain]Les candidatures  [plain]2026/2027 [plain] sont ouvertes.
+P1249: [plain]Bénéficiez de nos avantages en cours.
+P1250: [plain]Réponse garantie sous 24 h.

@@ -6,25 +6,7 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import SectionHeading from "@/components/ui/SectionHeading";
-
-const logos = [
-  { file: "logo-audencia.png", name: "Audencia", slug: "audencia" },
-  { file: "/images/ebs-tn/EM_Normandie-Logo.png", name: "EM Normandie", slug: "em-normandie" },
-  { file: "udl.webp", name: "Link University", slug: "link-university" },
-  { file: "eklore.webp", name: "Eklore", slug: "eklore" },
-  { file: "epitech.webp", name: "Epitech", slug: "epitech" },
-  { file: "epsi.webp", name: "EPSI", slug: "epsi" },
-  { file: "excelia.webp", name: "Excelia", slug: "excelia" },
-  { file: "figs (2).webp", name: "FIGS", slug: "figs" },
-  { file: "gutech.webp", name: "GUtech", slug: "gutech" },
-  { file: "idrac.webp", name: "IDRAC", slug: "idrac" },
-  { file: "ifag.webp", name: "IFAG", slug: "ifag" },
-  { file: "igefi.webp", name: "IGEFI", slug: "igefi" },
-  { file: "psb.webp", name: "PSB", slug: "psb" },
-  { file: "redsup.webp", name: "Redsup", slug: "redsup" },
-  { file: "supdecom.webp", name: "Sup de Com", slug: "supdecom" },
-  { file: "uqat.webp", name: "UQAT", slug: "uqat" },
-];
+import { academicPartners } from "@/lib/partenaires/academic-partners";
 
 export default function AcademicPartners() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -79,9 +61,9 @@ export default function AcademicPartners() {
             onMouseLeave={resumeScroll}
           >
             <div className="inline-flex items-center gap-16 w-max">
-              {[...logos, ...logos, ...logos, ...logos].map((logo, i) => (
-                <Link key={i} href={`/partenaires/${logo.slug}`} className="inline-block flex-shrink-0">
-                  <Image src={logo.file.startsWith("http") || logo.file.startsWith("/") ? logo.file : `/images/partenaires-academiques/${logo.file}`} alt={logo.name} width={180} height={90} className="h-[90px] w-auto object-contain" style={{ width: "auto" }} />
+              {[...academicPartners, ...academicPartners, ...academicPartners, ...academicPartners].map((partner, i) => (
+                <Link key={`${partner.slug}-${i}`} href={`/partenaires/${partner.slug}`} className="inline-block flex-shrink-0">
+                  <Image src={partner.logo} alt={partner.name} width={180} height={90} className="h-[90px] w-auto object-contain" style={{ width: "auto" }} />
                 </Link>
               ))}
             </div>

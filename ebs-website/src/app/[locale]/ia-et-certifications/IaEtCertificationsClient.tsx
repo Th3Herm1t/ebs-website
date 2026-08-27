@@ -232,8 +232,8 @@ export default function IAEtCertificationsPage() {
               size="lg"
               className="mb-6 border-white/20 text-white/80"
             >
-              Intelligence Artificielle · Compétence transversale obligatoire
-              depuis 2026
+              Intelligence Artificielle · Compétence transversale intégrée à
+              tous les parcours depuis 2026
             </Badge>
           </motion.div>
 
@@ -292,7 +292,7 @@ export default function IAEtCertificationsPage() {
                 {aiStats.mandatory}
               </p>
               <p className="text-[12px] text-white/50 font-medium">
-                Obligatoires IA
+                Modules obligatoires IA
               </p>
             </div>
             <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
@@ -300,7 +300,7 @@ export default function IAEtCertificationsPage() {
                 {aiStats.optional}
               </p>
               <p className="text-[12px] text-white/50 font-medium mt-1">
-                Options IA
+                Modules optionnels IA
               </p>
             </div>
           </motion.div>
@@ -661,8 +661,8 @@ export default function IAEtCertificationsPage() {
       </section>
 
       <CtaSection
-        title="Rejoignez la première université tunisienne avec l'IA comme compétence fondamentale."
-        subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant."
+        title="Une décision stratégique, pionnière en Tunisie."
+        subtitle="Chaque étudiant développe des compétences concrètes en IA appliquées à son domaine et peut les valoriser grâce à des certifications reconnues à l'international."
         primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         secondaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"

@@ -1,0 +1,40 @@
+P198: [underline]Partenaires Académiques
+P199: [plain]Notre réseau universitaire international.
+P200: [plain]14 [plain] partenaires académiques en France, au Canada, en  [plain]Italie,  [plain]et à Oman. Des institutions d'excellence qui offrent à nos étudiants des opportunités d'études, de mobilité et de doubles diplômes à l'international.
+P201: [plain]1 [plain]4
+P202: [plain]Universités partenaires
+P203: [plain]4
+P204: [plain]Pays
+P205: [plain]1 [plain]1
+P206: [plain]En France
+P208: [plain]1 [plain]4
+P209: [plain]Partenaires académiques
+P210: [plain]4
+P211: [plain]Pays représentés
+P212: [plain]8 [plain]0+
+P213: [plain]Programmes accessibles
+P215: [underline]Notre réseau
+P216: [plain]Nos partenaires académiques
+P217: [plain]Des institutions d'excellence qui partagent notre vision : offrir aux étudiants tunisiens une formation de qualité et des opportunités académiques à l'international.
+P220: [underline]Pourquoi EBS ?
+P221: [plain]Pourquoi vous associer à EBS ?
+P222: [plain]Un partenariat gagnant-gagnant au service de votre institution et de nos étudiants.
+P223: [underline]Vivier d'Étudiants Qualifiés
+P224: [plain]Nos étudiants bénéficient d'une formation de qualité, de certifications internationales et d'une préparation académique répondant aux standards internationaux.
+P225: [underline]Programmes Complémentaires
+P226: [plain]Nos licences et nos masters s'articulent parfaitement avec vos cursus. La reconnaissance mutuelle des crédits facilite la mobilité des étudiants.
+P227: [underline]Rayonnement International
+P228: [plain]Développez votre présence en Afrique du Nord grâce à un partenaire universitaire tunisien agréé par l'État.
+P229: [underline]Cadre Sécurisé
+P230: [plain]Conventions interuniversitaires, procédures transparentes et suivi académique conjoint garantissent une collaboration durable.
+P231: [underline]Excellence Académique
+P232: [plain]EBS est une université privée agréée par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique de Tunisie et conforme au système LMD.
+P234: [underline]Candidature
+P235: [plain]Devenir partenaire académique
+P236: [plain]Vous représentez une université ou une école [plain] supérieure [plain] internationale et souhaitez établir un partenariat avec EBS ?
+P238: [highlight=yellow]Une question ?
+P239: [plain]Contactez directement notre équipe pour échanger sur votre projet de partenariat académique avec EBS.
+P240: [plain]+216 55 582 843
+P241: [plain]info@ebs.tn
+P243: [highlight=yellow]Rejoignez notre réseau universitaire international.
+P244: [plain]14 [plain] partenaires nous font déjà confiance. Et si votre établissement était le prochain ?

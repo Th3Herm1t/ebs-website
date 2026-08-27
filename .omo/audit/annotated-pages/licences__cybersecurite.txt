@@ -1,0 +1,62 @@
+P882: [underline]Licence • Bac+3 • 3 ans • Diplôme a [underline]ccrédité [underline] par l'État tunisien
+P883: [bold|underline]Licence Informatique – Génie Logiciel et Systèmes d'Information (Option Cybersécurité)
+P884: [bold|underline]Développez des logiciels sécurisés et protégez les systèmes d'information de demain.
+P885: [plain]La  [plain]Licence Informatique – Génie Logiciel et Systèmes d'Information (option Cybersécurité) [plain] d'EBS prépare des professionnels capables de concevoir, développer et sécuriser des applications logicielles ainsi que des systèmes d'information. Le programme associe les fondamentaux du génie logiciel, des systèmes d'information, des bases de données et du Cloud avec une spécialisation progressive en cybersécurité afin de répondre aux besoins croissants des entreprises en sécurité numérique. Cette formation intègre également des certifications internationales reconnues.
+P887: [plain]26+
+P888: [plain]Certifications incluses
+P889: [plain]3 ans
+P890: [plain]100 %
+P891: [plain]Diplôme a [plain]ccrédité [plain] par l'État tunisien
+P892: [plain]Certifications incluses
+P893: [plain]Télécharger la brochure
+P895: [bold|underline]Licence Informatique – Génie Logiciel et Systèmes d'Infor [bold|underline]mation (Option Cybersécurité)
+P896: [bold|underline]Présentation
+P897: [plain]La Licence Informatique – Génie Logiciel et Systèmes d'Information (option Cybersécurité) forme des professionnels capables de développer des applications Web et mobiles, de concevoir et administrer des bases de données, de sécuriser les systèmes d'information et de contribuer au développement de solutions numériques fiables. Grâce à une progression pédagogique cohérente, les étudiants acquièrent d'abord les fondamentaux du génie logiciel avant de se spécialiser progressivement en cybersécurité. Cette formation constitue également une base solide pour poursuivre des études en Master, notamment dans les domaines de la transformation digitale et de la cybersécurité. Elle s'appuie sur les objectifs et l'organisation de la licence officielle.
+P899: [underline]Public cible
+P900: [plain]Bacheliers toutes séries (sauf Lettres et Sport)
+P901: [plain]Passionnés de programmation, de génie logiciel, de réseaux et de cybersécurité
+P902: [plain]Futurs développeurs logiciels, spécialistes de la cybersécurité, administrateurs systèmes ou intégrateurs de solutions informatiques
+P904: [plain]Modules du programme (11)
+P905: [bold]Le programme est structuré autour des principaux modules de formation suivants, répartis sur les six semestres de la Licence. Cette progression pédagogique permet aux étudiants d'ESPIMA de développer progressivement les compétences essentielles à leur spécialité.
+P906: [plain]1. Mathématiques appliquées, algorithmique et programmation
+P907: [plain]Algèbre, analyse, algorithmique, structures de données, programmation Python et Java. 
+P908: [plain]2. Systèmes d'exploitation, architecture des ordinateurs et réseaux
+P909: [plain]Architecture des ordinateurs, systèmes d'exploitation, réseaux informatiques et services réseau. 
+P910: [plain]3. Bases de données et systèmes d'information
+P911: [plain]Bases de données relationnelles (SQL), ingénierie et administration des bases de données, systèmes d'information. 
+P912: [plain]4. Génie logiciel, programmation orientée objet et méthodes agiles
+P913: [plain]Ingénierie des exigences, UML, programmation orientée objet, développement logiciel et méthodes agiles. 
+P914: [plain]5. Développement Web, Mobile et Cloud
+P915: [plain]Technologies Web, développement mobile, Cloud Computing, DevOps et services Web. 
+P916: [plain]6. Cybersécurité des systèmes d'information
+P917: [plain]Sécurité des applications, sécurité des systèmes d'information, protection des réseaux et gestion des vulnérabilités. 
+P918: [plain]7. Ethical Hacking, sécurité Cloud et DevSecOps
+P919: [plain]Tests d'intrusion, sécurité Cloud, DevSecOps, bonnes pratiques de développement sécurisé et gestion des risques cyber. 
+P920: [plain]8. Investigation numérique et opérations de sécurité
+P921: [plain]Réponse aux incidents, Digital Forensics, supervision des systèmes, analyse des journaux et centres opérationnels de sécurité (SOC). 
+P922: [plain]9. Intelligence Artificielle appliquée à la cybersécurité
+P923: [plain]Intelligence Artificielle, automatisation de la détection des menaces et utilisation de l'IA au service de la cybersécurité. 
+P924: [plain]10. Communication professionnelle, Soft Skills et entrepreneuriat
+P925: [plain]Communication en français et en anglais, compétences numériques, développement personnel, entrepreneuriat et préparation à la vie professionnelle. 
+P926: [plain]11. Projet de Fin d'Études (PFE)
+P927: [plain]Projet de fin d'études réalisé en entreprise sur une problématique réelle de développement logiciel et de cybersécurité.  [bold](Semestre 6)
+P929: [underline]Parcours de certifications EBS
+P930: [plain]Un parcours structuré entre socle commun et spécialisation.
+P931: [plain]Les certifications obligatoires constituent le socle de compétences attendu par EBS. Les certifications optionnelles permettent à chaque étudiant de renforcer son profil en fonction de son projet professionnel.
+P933: [plain]L'IA est obligatoire dans ce programme
+P934: [plain]Les compétences en Intelligence Artificielle constituent un socle commun obligatoire dans tous les parcours EBS. Cette option permet également d'appliquer l'IA à la détection des menaces, à l'automatisation de la sécurité et à la protection des systèmes d'information.
+P936: [plain]Perspectives d'études à l'international
+P937: [plain]Ce programme permet de poursuivre vos études auprès de nos universités partenaires en France, au Canada et dans d'autres pays grâce aux accords de coopération conclus par EBS.
+P939: [plain]Débouchés professionnels
+P940: [plain]Développeur logiciel / applicatif
+P941: [plain]Gestionnaire de bases de données
+P942: [plain]Testeur logiciel / Assurance Qualité (QA)
+P943: [plain]Intégrateur de systèmes et solutions informatiques
+P944: [plain]Technicien support informatique (niveau 1)
+P945: [plain]Analyste cybersécurité junior
+P946: [plain]Administrateur sécurité des systèmes
+P947: [plain]Consultant cybersécurité junior
+P949: [bold|underline]Prêt(e) à rejoindre la Licence Informatique – (Option Cybersécurité) ?
+P950: [plain]Les candidatures  [plain]2026/2027 [plain] sont ouvertes.
+P951: [plain]Bénéficiez de nos avantages en cours.
+P952: [plain]Réponse garantie sous 24 h.

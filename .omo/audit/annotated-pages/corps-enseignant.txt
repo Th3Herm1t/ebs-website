@@ -1,0 +1,11 @@
+P184: [underline]Corps Enseignant
+P185: [highlight=yellow]Un corps enseignant d'excellence, au croisement de l'académie et de l'entreprise.
+P186: [plain]Nos enseignants allient excellence académique et expérience professionnelle. Enseignants-chercheurs, experts et dirigeants d'entreprise partagent leur expertise et transmettent des compétences en phase avec les réalités du marché.
+P187: [plain]55 [plain]+
+P188: [plain]Enseignants
+P189: [plain]7 [plain]0+
+P190: [plain]Domaines d'expertise
+P191: [plain]4 [plain]0 %
+P192: [plain]Issus du monde professionnel
+P193: [underline]Vous souhaitez rejoindre notre équipe enseignante ?
+P194: [plain]EBS recrute des enseignants, des experts et des professionnels passionnés souhaitant transmettre leur savoir et contribuer à la formation des leaders de demain.

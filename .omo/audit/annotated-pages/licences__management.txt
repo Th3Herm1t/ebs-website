@@ -1,0 +1,64 @@
+P580: [underline]Licence · Bac+3 · 3 ans · Diplôme a [underline]ccrédité [underline] par l'État tunisien
+P581: [underline]Licence en Management
+P582: [plain]Devenez un manager augmenté par l'Intelligence Artificielle, prêt à relever les défis des entreprises de demain.
+P583: [plain]La Licence en Management d'EBS forme des managers capables de piloter des équipes, des projets et des organisations dans un environnement en constante évolution. Grâce à l'intégration de l'Intelligence Artificielle, vous apprendrez à automatiser certaines tâches, à analyser les données et à renforcer votre capacité de décision afin de vous concentrer sur les activités à forte valeur ajoutée.
+P585: [plain]25+
+P586: [highlight=yellow]Certifications incluses
+P587: [plain]3 ans
+P588: [plain]100 %
+P589: [plain]Diplôme agréé par l'État tunisien
+P590: [plain]Certifications incluses
+P591: [plain]Télécharger la brochure
+P593: [bold]Accueil
+P594: [bold]Licences
+P595: [bold]Licence en Management
+P597: [underline]Licence en Management — Présentation
+P598: [plain]La Licence en Management d'EBS prépare des managers capables de piloter des équipes, des projets et des organisations dans un environnement digital. Le programme associe management, gestion de projet, leadership et Intelligence Artificielle afin de développer des compétences immédiatement mobilisables en entreprise.
+P599: [plain]Public cible
+P600: [plain]Bacheliers toutes séries (sauf Lettres et Sport)
+P601: [plain]Étudiants souhaitant se réorienter vers le management
+P602: [plain]Futurs entrepreneurs, chefs de projet et consultants
+P603: [plain]Modules du programme (11)
+P604: [bold]Le programme est structuré autour des principaux modules de formation suivants, répartis sur les six semestres de la Licence. Cette progression pédagogique permet aux étudiants d'ESPIMA de développer progressivement les compétences essentielles à leur spécialité.
+P605: [plain]1. Fondements du management, de la gestion et des organisations
+P606: [plain]Principes de management, gestion, économie, comptabilité et fonctionnement des organisations. 
+P607: [plain]2. Leadership et management des équipes
+P608: [plain]Leadership, management des équipes, gestion des ressources humaines et développement des compétences.
+P609: [plain]3. Gestion de projet (PMI PMBOK®, Scrum et Kanban)
+P610: [plain]Méthodes de gestion de projet, management de la qualité, conduite du changement et amélioration des performances. 
+P611: [plain]4. Stratégie d'entreprise et analyse de marché
+P612: [plain]Management stratégique, analyse de l'environnement, développement des organisations et prise de décision.
+P613: [plain]5. Business Analytics et tableaux de bord décisionnels
+P614: [plain]Analyse de données, Business Intelligence, analyses quantitatives et qualitatives et outils d'aide à la décision. 
+P615: [plain]6. Management des Ressources Humaines
+P616: [plain]Gestion des talents, organisation du travail, communication managériale et développement des équipes.
+P617: [plain]7. Entrepreneuriat, innovation et création d'entreprise
+P618: [plain]Innovation, entrepreneuriat, business development et transformation des organisations. 
+P619: [plain]8. Droit des affaires et environnement réglementaire
+P620: [plain]Droit des affaires, droit des sociétés, fiscalité, conformité et environnement juridique de l'entreprise. 
+P621: [plain]9. Intelligence Artificielle appliquée au management
+P622: [plain]Transformation digitale, Intelligence Artificielle, systèmes d'information et outils numériques au service du management. 
+P623: [plain]10. Anglais des affaires, communication professionnelle et Soft Skills
+P624: [plain]Business English, communication professionnelle, développement personnel et compétences comportementales. 
+P625: [plain]11. Stage professionnel et Projet de Fin d'Études (PFE)
+P626: [plain]Immersion en entreprise, réalisation d'un projet concret et préparation à l'insertion professionnelle. 
+P628: [underline]Parcours de certifications EBS
+P629: [plain]Un parcours structuré entre socle commun et spécialisation.
+P630: [plain]Les certifications obligatoires constituent le socle de compétences attendu par EBS. Les certifications optionnelles permettent à chaque étudiant de renforcer son profil en fonction de son projet professionnel.
+P632: [underline]L'IA est obligatoire dans ce programme
+P633: [plain]Les compétences en Intelligence Artificielle constituent un socle commun obligatoire dans tous les parcours EBS. Voici quelques-unes des principales certifications IA intégrées à cette Licence.
+P635: [underline]Perspectives d'études à l'international
+P636: [plain]Ce programme permet de poursuivre vos études auprès de nos universités partenaires en France, au Canada et dans d'autres pays grâce aux accords de coopération conclus par EBS.
+P638: [plain]Débouchés professionnels
+P639: [plain]Manager augmenté par l'IA (AI-Driven Manager)
+P640: [plain]Chef de projet junior
+P641: [plain]Manager d'équipe
+P642: [plain]Business Analyst
+P643: [plain]Responsable administratif
+P644: [plain]Entrepreneur
+P645: [plain]Chargé de développement commercial
+P646: [plain]Responsable des opérations
+P648: [plain]Prêt(e) à rejoindre la Licence en Management ?
+P649: [highlight=yellow]Les candidatures 2026/2027 sont ouvertes. 
+P650: [highlight=yellow]Bénéficiez de nos avantages en cours.
+P651: [highlight=yellow]Réponse garantie sous 24 h.

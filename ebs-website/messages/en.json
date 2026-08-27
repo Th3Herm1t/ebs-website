@@ -44,7 +44,7 @@
     "toppromo": {
       "p1": {
         "title": "Need more information?",
-        "desc": "You can browse and download brochures for the programs that interest you, where you'll find the information you need.",
+        "desc": "View and download brochures for the programs that interest you to help prepare your choice.",
         "btn": "BROWSE BROCHURES"
       },
       "p2": {
@@ -61,14 +61,14 @@
     "pillars": {
       "p1": {
         "title": "International Mobility",
-        "desc1": "International mobility offers students the opportunity to broaden their academic and cultural horizons through study or collaboration experiences abroad.",
-        "desc2": "With a strong network of international academic partners, EBS students have the opportunity to begin their studies in Tunisia and complete them at a partner international institution.",
+        "desc1": "International mobility allows students to enrich their academic journey and experience life in an intercultural environment abroad.",
+        "desc2": "Through a network of prestigious academic partners in Canada, France, Italy, and many other countries, EBS students can begin their studies in Tunisia and complete them at an international partner institution.",
         "btn": "LEARN MORE"
       },
       "p2": {
         "title": "Technologies & Certifications",
-        "desc1": "The integration of emerging technologies is a central element of our training programs. AI is now a cross-cutting skill in all our courses.",
-        "desc2": "Academic pathways are enriched by recognized certifications, allowing students to validate practical skills in high value-added fields and strengthen the employability and adaptability of graduates.",
+        "desc1": "The integration of emerging technologies is at the heart of our training programs. Artificial intelligence is now a cross-cutting skill integrated across all our courses.",
+        "desc2": "Academic pathways are complemented by internationally recognized certifications that validate operational skills in high-value fields and strengthen the employability and adaptability of our graduates.",
         "btn": "EXPLORE CERTIFICATIONS"
       },
       "p3": {
@@ -81,8 +81,8 @@
     "infoslider": {
       "s1": {
         "badge": "★ NEW",
-        "title": "AI as a mandatory skill in all our programs",
-        "desc": "For the 2025/2026 academic year, artificial intelligence will be integrated as an essential skill in all our programs, regardless of the chosen specialty. Students develop an understanding of AI tools, uses, and challenges to make it a lever for analysis, innovation, and performance. This approach prepares graduates capable of evolving in an environment where artificial intelligence is progressively transforming professions and organizations.",
+        "title": "AI, a key skill in all our programs",
+        "desc": "For the 2026/2027 academic year, artificial intelligence will be integrated as a cross-cutting skill across all our programs, regardless of the chosen specialty. Students develop mastery of AI tools, uses, and related challenges so they can use it as a lever for analysis, innovation, and performance. This approach prepares graduates who can adapt to the evolution of professions and organizations in a constantly changing world.",
         "btn": "Learn more"
       },
       "s2": {
@@ -93,19 +93,19 @@
       },
       "s3": {
         "badge": "★ NEWS",
-        "title": "2025-2026 Registrations Open — Early Bird Discounts until June 30",
-        "desc": "Applications for the 2025-2026 academic year are now open for all our bachelor's, master's, and specialized training programs. Take advantage of our Early Bird discounts, up to 25% off your tuition fees, by finalizing your registration before June 30, and prepare your academic journey today in an environment focused on innovation, technologies, and tomorrow's skills. Our teaching and administrative teams are at your disposal to support you in choosing the training best suited to your academic and professional project.",
-        "btn": "Learn more"
+        "title": "2026-2027 Registrations Open — Special August 2026 Offers",
+        "desc": "Applications for the 2026-2027 academic year are now open for all our bachelor's and master's programs. Take advantage of our special July 2026 offers by pre-registering now, and prepare your academic journey in an environment focused on innovation, technology, and the skills of tomorrow. Our teaching and administrative teams are available to support you in choosing the program best suited to your academic and professional project.",
+        "btn": "Apply now"
       }
     },
     "about": {
-      "title": "Join the Business School",
+      "title": "EBS: The AI-Augmented University",
       "titleHighlight": "Focused on the Future",
-      "desc": "Espima Business School evolves its programs with one ultimate goal: to allow each student to build a more competitive profile, better prepared for the demands of the job market.",
-      "f1Title": "AI as a differentiator",
-      "f1Desc": "At EBS, every student - regardless of their field - masters the AI tools most demanded by recruiters. From management bachelor's to financial engineering master's. It's not an option: it's our commitment to your employability.",
+      "desc": "Espima Business School transforms its programs by integrating artificial intelligence at the heart of its training to meet the changing needs of the professional world. Our goal: to help every student build a more competitive, versatile profile aligned with the latest demands of the job market.",
+      "f1Title": "AI as a differentiating advantage",
+      "f1Desc": "At EBS, every student, regardless of their field, develops mastery of the artificial intelligence tools most sought after by recruiters. Across our bachelor's and master's programs in computer science, management, finance, and marketing, AI is integrated into the heart of learning. It is not an option: it is a concrete commitment to strengthening your employability.",
       "f2Title": "Certified skills",
-      "f2Desc": "In addition to your degree recognized by the Tunisian state, you leave with certifications issued by the most recognized organizations in the world. Free. Included in your training. Valued anywhere in the world.",
+      "f2Desc": "Beyond your degree recognized by the Tunisian State and internationally, you graduate with certifications issued by recognized organizations. Free, included in your training, and valued worldwide, they strengthen your professional profile and employability.",
       "btn": "Discover the EBS approach"
     },
     "counters": {

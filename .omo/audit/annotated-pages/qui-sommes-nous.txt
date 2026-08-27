@@ -1,0 +1,70 @@
+P6: [highlight=yellow|bold]Université privée agréée · Tunis, Tunisie · Fondée en 2013
+P7: [plain]L'université qui prépare votre avenir.
+P8: [plain]EBS Tunisie – ESPIMA Business School est une université privée agréée par l'État tunisien. Notre mission est de former des diplômés compétents et ouverts sur le monde grâce à une pédagogie innovante associant diplôme agréé, certifications internationales, expérience en entreprise et parcours d'études à l'étranger. Grâce à son réseau d'universités partenaires de renom en France, au Canada, en  [plain]Italie  [plain]et à Oman, EBS ouvre à ses étudiants de nouvelles perspectives d'études et les prépare à construire une carrière ambitieuse.
+P10: [highlight=yellow]Le mot du Président Fondateur
+P11: [plain]Espima Business School cultive, depuis sa création en 2013, un modèle spécifique fondé sur une identité et des valeurs fortes : l'innovation, l'ouverture, la responsabilité et l'excellence.  [plain]Notre pédagogie privilégie la mise en pratique des connaissances, le développement de la créativité, de l'esprit critique et des compétences recherchées par les entreprises.
+P12: [plain]Le développement d'EBS repose sur une vision claire, des équipes engagées et des moyens adaptés pour former des diplômés compétents, innovants, maîtrisant les outils de l'Intelligence Artificielle et capables de répondre aux évolutions rapides du monde professionnel.
+P13: [plain]À taille humaine, EBS offre un environnement dynamique où se conjuguent excellence académique, vie étudiante, innovation, ouverture internationale et proximité avec les entreprises.
+P14: [plain]Photo plus petite 
+P17: [highlight=yellow]Un campus pensé pour votre réussite
+P18: [plain]EBS dispose de toutes les commodités nécessaires à l'épanouissement de ses étudiants : une superficie de 3000 m² avec un bâtiment moderne entièrement climatisé et équipé de WIFI haut débit, une salle polyvalente, un espace de détente, une salle des jeux et une buvette, offrant un cadre convivial permettant aux étudiants de se rencontrer et d'échanger leurs expériences, avec une vie associative active et des compétitions sportives.
+P19: [plain]La réussite personnelle et professionnelle de nos étudiants repose sur une formation [plain] universitaire [plain] de qualité, un accompagnement personnalisé et un environnement propice à leur épanouissement et à leur insertion professionnelle.
+P21: [highlight=yellow]Notre Histoire
+P22: [highlight=yellow]Plus de 1 [highlight=yellow]2 [highlight=yellow] ans d'excellence
+P23: [plain]2013 – Fondation d'EBS [plain]Création d'Espima Business School à Tunis. Agrément n° 2013/02 délivré par  [plain]Ministère de l’Enseignement Supérieur et de la Recherche Scientifique [plain]. Dès sa création, une conviction forte : offrir en Tunisie des formations [plain] universitaires [plain] répondant aux standards internationaux.
+P24: [plain]2016 – Premiers partenariats [plain]Signature des premières conventions avec des universités françaises. Lancement des Licences en Management, Marketing, Finance et Informatique.
+P25: [plain]2020 – Expansion internationale [plain]Le réseau de partenaires s'élargit avec l'UQAT (Canada), EM Normandie [plain], Excelia [plain] et Paris School of Business (PSB). Développement des parcours internationaux et lancement des Masters professionnels.
+P26: [plain]2026 – Le virage de l'IA [plain]EBS devient la première université tunisienne à intégrer l'intelligence artificielle comme compétence transversale obligatoire dans tous ses cursus. Plus de  [plain]150 certifications internationales offertes [plain], en partenariat avec  [plain]Google, IBM, Harvard, Bloomberg [plain] et plus de  [plain]15 partenaires technologiques internationaux [plain].
+P28: [highlight=yellow]Ce qui nous définit
+P29: [underline]Les 4 piliers d'EBS
+P30: [highlight=yellow]Qualité de l'Enseignement
+P31: [plain]EBS propose des formations de Licence et de Master reconnues pour leur qualité académique, enrichies par des certifications internationales, des partenariats universitaires et une ouverture vers l'international afin de répondre aux exigences du marché de l'emploi.
+P32: [highlight=yellow]Pédagogie Innovante
+P33: [plain]Notre pédagogie associe apprentissage par projets (« learning by doing »), intelligence artificielle, outils numériques et plateforme E-Learning afin de développer les compétences techniques, l'esprit d'analyse, la créativité et le travail en équipe.
+P34: [highlight=yellow]Développement Personnel et Professionnel
+P35: [plain]Le développement personnel et professionnel est au cœur de notre projet pédagogique. Nous accompagnons chaque étudiant dans le développement de ses soft skills, de son leadership, de son ouverture d'esprit et de sa capacité à évoluer dans un environnement international.
+P36: [highlight=yellow]Ouverture sur l'Environnement
+P37: [plain]EBS entretient des partenariats étroits avec des entreprises et des universités internationales afin d'offrir à ses étudiants des stages, des projets, des opportunités de mobilité et des perspectives de carrière en Tunisie et à l'étranger.
+P39: [underline]EBS en chiffres
+P40: [highlight=yellow]L'excellence en quelques chiffres
+P41: [underline]2013 [plain] 
+P42: [plain]Année de fondation
+P43: [underline]12+ [plain]Années d'expérience
+P44: [underline]9 [underline]  [underline]Programmes disponibles
+P45: [plain]3 [plain] Licences [plain] en Sciences de Gestion
+P46: [plain]1 Licence en Informatique (2 Options)   
+P47: [plain]4 Masters
+P48: [underline]150+ [plain]Certifications internationales
+P49: [plain]Incluses dans nos parcours
+P50: [underline]95 % [plain]Taux de réussite
+P51: [underline]1 [underline]4 [plain]Partenaires internationaux
+P52: [plain]France · Canada · Italie  [plain]·  [plain]Oman
+P54: [highlight=yellow|underline]Reconnaissance
+P55: [highlight=yellow]Accréditations & Reconnaissance
+P56: [underline]Agrément d'État
+P57: [plain]Université privée agréée par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique de la République Tunisienne.  [plain]Agrément n°2013/02. Diplômes reconnus par l'État tunisien.
+P58: [underline]Réseau International
+P59: [plain]Un réseau de 14 universités partenaires, dont UQAT (Canada), Link University (Italie) et GUtech (Oman), ainsi que plusieurs établissements en France : EM Normandie, Paris School of Business, IDRAC, IFAG, IGEFI, Éklore, Epitech, EPSI, Excelia, Groupe FIGS Education, Sup’ de Com et RedSup, favorisant la mobilité internationale, les doubles diplômes et les poursuites d’études.
+P60: [underline]Partenariats Entreprises
+P61: [plain]Partenariats actifs avec des entreprises nationales et multinationales pour offrir à nos étudiants des  [plain]stages, des parcours en alternance, des projets en entreprise [plain] et des opportunités de recrutement dans des environnements professionnels réels.
+P62: [underline]Certifications Mondiales
+P63: [plain]Des certifications proposées par Google, IBM, Harvard, Cisco, Bloomberg, Fortinet, HubSpot, DeepLearning.AI et plus de 15 autres organismes internationaux. Plus de 150 certifications internationales sont incluses gratuitement dans nos parcours.
+P64: [highlight=yellow]Services étudiants
+P65: [highlight=yellow]Tout pour réussir
+P66: [underline]Career Center
+P67: [plain]Accessible dès la 1re année de Licence : ateliers CV, simulations d'entretien, accompagnement personnalisé et stages longs en Master pour renforcer l'employabilité et favoriser la pré-embauche.
+P68: [underline]Centre de Certification
+P69: [plain]Salles dédiées au passage des certifications. Accès aux plateformes officielles Google, IBM, AWS, Cisco, Microsoft, PMI, Fortinet et bien d'autres.
+P70: [underline]Bureau International
+P71: [plain]Accompagnement pour les candidatures, la préparation du dossier Campus France, les démarches auprès de nos universités partenaires, les départs à l'étranger et les procédures de visa.
+P72: [underline]Bibliothèque & E-Learning
+P73: [plain]Accès aux ressources numériques, aux manuels, aux plateformes de cours en ligne et aux bases de données académiques.
+P74: [underline]Tutorat & Soutien
+P75: [plain]Séances de rattrapage, tutorat, accompagnement pédagogique et suivi personnalisé pour les étudiants qui en ont besoin.
+P76: [underline]Vie étudiante
+P77: [plain]Espaces de travail collaboratif, salles de projet, salle de jeux, buvette, espaces de détente et clubs étudiants favorisant la vie universitaire et les activités associatives.
+P79: [highlight=yellow]Rejoignez la première université tunisienne avec l'IA intégrée.
+P80: [plain]Les  [plain]candidatures pour l'année universitaire 2026/2027 sont ouvertes. 
+P81: [plain]Déposez votre dossier dès maintenant.
+P83: [highlight=yellow]EBS
+P84: [plain]ESPIMA Business School est une université privée d'informatique et de management en Tunisie, fondée en 2013 et agréée par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique (Agrément n°2013/02).

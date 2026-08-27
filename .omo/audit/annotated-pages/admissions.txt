@@ -1,0 +1,123 @@
+P2211: [highlight=yellow]Admission sur dossier · Étude personnalisée
+P2212: [underline]Votre admission, étape par étape
+P2213: [plain]L’admission à EBS repose sur  [plain]l’étude de votre dossier académique, de votre parcours et de votre motivation [plain]. Découvrez les différentes étapes pour rejoindre EBS.
+P2214: [underline]Commencer ma pré-inscription
+P2215: [underline]Explorer les programmes
+P2217: [underline]Processus simplifié
+P2218: [underline]4 étapes vers votre inscription
+P2219: [underline]01 — Pré-inscription [underline]en ligne
+P2220: [plain]Complétez le formulaire en quelques minutes en indiquant vos informations personnelles et le programme souhaité.
+P2221: [underline]02 — Étude du dossier
+P2222: [plain]Notre équipe étudie votre dossier dans les meilleurs délais. L'admission repose sur votre parcours académique, votre projet d'études et votre motivation.
+P2223: [underline]03 — Entretien de motivation
+P2224: [plain]Un échange permettant de mieux comprendre votre projet académique et professionnel, de répondre à vos questions et de vous accompagner dans votre orientation.
+P2225: [underline]04 — Confirmation d'inscription
+P2226: [plain]Après validation de votre dossier, vous finalisez votre inscription avec les pièces et formalités demandées
+P2228: [underline]Dossier d'admission
+P2229: [plain]Documents requis
+P2230: [underline]Licence
+P2231: [bold|underline]Baccalauréat accepté : toutes sections sauf Lettres et Sport
+P2232: [plain]-  [plain]Diplôme ou attestation du Baccalauréat [plain]-  [plain]Relevé de notes du Baccalauréat [plain]-  [plain]Copie de la carte d’identité nationale [plain]-  [plain]Photo d’identité récente
+P2233: [underline]Master
+P2234: [underline]Bac+3 requis
+P2235: [plain]-  [plain]Diplôme de Licence ou diplôme équivalent  [plain](Bac+3) [plain]-  [plain]Relevés de notes des trois années de Licence [plain]-  [plain]Copie de la carte d’identité nationale [plain]-  [plain]Curriculum Vitae (CV) actualisé [plain]-  [plain]Lettre de motivation [plain]-  [plain]Photo d’identité récente
+P2237: [underline]Nos formations
+P2238: [underline]Licences & Masters
+P2239: [plain]Des formations professionnalisantes, avec des diplômes agréés par l'État tunisien et plus de 150 certifications internationales reconnues.
+P2240: [bold|underline]Parcours Général
+P2241: [plain]Licence
+P2242: [highlight=yellow|bold]7 500 DT / an
+P2243: [plain]4 Licences et 5 [plain] parcours
+P2244: [plain]Management
+P2245: [plain]Finance
+P2246: [plain]Marketing
+P2247: [plain]Informatique –  [plain]Génie [plain] logiciel & Systèmes d'information
+P2248: [plain]Option : [plain] Intelligence Artificielle
+P2249: [plain]Option :  [plain]Cybersécurité
+P2250: [plain]3 ans • Bac+3 • 6 semestres
+P2251: [bold|underline]Voir les parcours
+P2253: [underline]Parcours International
+P2254: [plain]Licence [plain] (toutes spécialités)
+P2255: [highlight=yellow|bold]9 500 DT / an
+P2256: [plain]3 destinations
+P2257: [plain]L1 en Tunisie → Bachelor 2 ou Bachelor 3 en Italie
+P2258: [plain]L2 en Tunisie → Bachelor 3 en France
+P2259: [plain]Licence à EBS → Master ou Maîtrise en France, au Canada ou en Italie
+P2260: [plain]3 ans • Mobilité internationale
+P2261: [bold|underline]Voir les destinations
+P2263: [underline]Masters
+P2264: [plain]Master
+P2265: [highlight=yellow|bold]8 500 DT / an
+P2266: [plain]4 Masters
+P2267: [plain]Management de Projets Innovants & Startups
+P2268: [plain]CRM Marketing & Transformation Digitale
+P2269: [plain]Marketing Digital & Intelligence Artificielle
+P2270: [plain]Ingénierie Financière
+P2271: [plain]2 ans • Bac+5 • 4 semestres
+P2272: [bold|underline]Voir les Masters
+P2274: [bold|underline]Master pour les professionnels
+P2275: [plain]Conciliez études et activité professionnelle grâce à un emploi du temps aménagé.
+P2276: [plain]Master
+P2277: [plain]6 900 DT / an
+P2278: [plain]4 Masters
+P2279: [plain]· Management de Projets Innovants & Startups [plain]· CRM Marketing & Transformation Digitale [plain]· Marketing Digital & Intelligence Artificielle [plain]· Ingénierie Financière
+P2280: [plain]2 ans • Bac+5 • Emploi du temps aménagé
+P2281: [bold|underline]Voir les Masters
+P2282: [underline]Obtenez toutes les informations sur nos tarifs
+P2283: [plain]Notre équipe vous répond sous  [plain]24 h [plain] et vous informe sur les  [plain]frais de scolarité, réductions disponibles et facilités de paiement [plain] selon le programme choisi.
+P2284: [plain]Nous contacter [plain]+216 55 582 843
+P2286: [plain]Rentrée principale
+P2287: [underline]Octobre 2026
+P2288: [plain]Début des cours : première semaine d'octobre.
+P2289: [plain]Places disponibles
+P2290: [plain]Environ 30 places par filière.
+P2291: [plain]Les inscriptions sont traitées dans l'ordre de réception des dossiers complets.
+P2292: [plain]Date limite
+P2293: [plain]30 septembre 2026
+P2294: [plain]Les inscriptions restent ouvertes dans la limite des places disponibles.
+P2296: [underline]Calendrier
+P2297: [underline]Dates clés
+P2298: [plain]Mai – Juin
+P2299: [plain]Ouverture des inscriptions.
+P2300: [plain]Pré-inscription en ligne ouverte. Les premiers dossiers sont étudiés en priorité.
+P2301: [plain]Juillet – Août
+P2302: [plain]Entretiens de motivation.
+P2303: [plain]Des sessions sont organisées régulièrement. Les réponses sont communiquées dans les meilleurs délais après l'entretien.
+P2304: [plain]Septembre
+P2305: [plain]Dernières places disponibles.
+P2306: [plain]Les inscriptions restent possibles sous réserve des places disponibles.
+P2307: [plain]Fin septembre 
+P2308: [plain]Rentrée universitaire.
+P2309: [plain]Début des cours, semaine d'intégration et présentation des certifications internationales.
+P2311: [underline]FAQ Admissions
+P2312: [highlight=yellow]-  [highlight=yellow]Y a-t-il un concours d'entrée ?
+P2313: [plain]Non. L’admission à EBS se fait  [plain]s [bold]ur étude du dossier académique et de la motivation du candidat [bold].
+P2314: [highlight=yellow]-  [highlight=yellow]Quand ouvrent les inscriptions ?
+P2315: [plain]Les inscriptions sont ouvertes chaque année pour la  [plain]prochaine rentrée universitaire [plain], dans la limite des places disponibles.
+P2316: [highlight=yellow]-  [highlight=yellow]Peut-on s'inscrire en cours d'année ?
+P2317: [plain]En principe,  [plain]les inscriptions ne sont pas possibles en cours d’année [plain]. Des admissions exceptionnelles peuvent toutefois être envisagées  [plain]au cas par cas et sous réserve de l’autorisation du Ministère de l’Enseignement Supérieur et de la Recherche Scientifique [plain].
+P2318: [highlight=yellow]-  [highlight=yellow]EBS est-elle agréée par l'État tunisien ?
+P2319: [plain]Oui.  [plain]ESPIMA Business School est une université privée agréée par le Ministère de l’Enseignement Supérieur et de la Recherche Scientifique sous le n° 02-2013.
+P2320: [highlight=yellow]- Des facilités de paiement ou des réductions sont-elles proposées ?
+P2321: [plain]Oui. EBS propose des  [plain]facilités de paiement ainsi que des réductions selon les conditions et offres en vigueur [plain]. Pour connaître les modalités applicables, contactez le  [plain]service Scolarité [plain].
+P2322: [highlight=yellow]-  [highlight=yellow]Quels Baccalauréats permettent de s'inscrire en Licence ?
+P2323: [plain]L’admission en Licence est ouverte aux titulaires du  [plain]Baccalauréat, toutes sections sauf Lettres et Sport [plain].
+P2324: [highlight=yellow]-  [highlight=yellow]Puis-je intégrer EBS après avoir commencé mes études dans une autre université ?
+P2325: [plain]Oui. Une admission peut être étudiée en fonction de  [plain]votre niveau, de votre filière et des études déjà validées [plain]. L’équivalence et le niveau d’intégration sont examinés sur dossier.
+P2326: [highlight=yellow]-  [highlight=yellow]Puis-je poursuivre mes études à l'étranger après EBS ?
+P2327: [plain]Oui. EBS dispose de  [plain]partenaires académiques internationaux en France, au Canada, en Italie et à Oman [plain], offrant différentes possibilités de poursuite d’études selon votre filière, votre niveau et les conditions du partenaire.
+P2328: [highlight=yellow]-  [highlight=yellow]Dois-je choisir le Parcours International dès ma première année ?
+P2329: [plain]Oui. Le  [plain]Parcours International est une classe spécifique à choisir dès la première année [plain]. L’admission chez un partenaire reste soumise à  [plain]l’étude du dossier et à ses conditions d’admission [plain].
+P2330: [highlight=yellow]-  [highlight=yellow]Peut-on intégrer un Master EBS avec une Licence obtenue dans une autre université ?
+P2331: [plain]Oui, sous réserve que votre  [plain]Licence ou diplôme Bac+3 soit compatible avec le Master choisi [plain] et après étude de votre dossier.
+P2332: [highlight=yellow]-  [highlight=yellow]Les étudiants internationaux peuvent-ils s'inscrire à EBS ?
+P2333: [plain]Oui. EBS accueille des  [plain]étudiants internationaux [plain] et les accompagne dans leur candidature ainsi que dans la préparation de leur arrivée et de leur installation en Tunisie.
+P2334: [highlight=yellow]-  [highlight=yellow]EBS accompagne-t-elle les étudiants pour le visa ?
+P2335: [plain]Oui. Pour les étudiants internationaux, EBS apporte un  [plain]accompagnement dans la préparation des démarches administratives liées à leur venue en Tunisie [plain]. Pour les mobilités à l’étranger, l’accompagnement dépend de la destination et du partenariat.
+P2336: [highlight=yellow]-  [highlight=yellow]La pré-inscription est-elle définitive ?
+P2337: [plain]Non. La pré-inscription permet de  [plain]déposer votre candidature et de démarrer l’étude de votre dossier [plain]. L’inscription définitive intervient après validation de l’admission et accomplissement des formalités demandées.
+P2338: [highlight=yellow]-  [highlight=yellow]Puis-je être conseillé avant de choisir ma filière ?
+P2339: [plain]Oui. L’équipe EBS peut vous accompagner pour identifier le  [plain]programme le plus adapté à votre profil, vos objectifs et votre projet professionnel [plain].
+P2341: [underline]Prêt(e) à rejoindre EBS ?
+P2342: [plain]Pré-inscription en ligne en quelques minutes. 
+P2343: [plain]Notre équipe vous recontacte dans les meilleurs délais pour vous accompagner dans votre projet d'études.

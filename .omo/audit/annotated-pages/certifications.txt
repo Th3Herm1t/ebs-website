@@ -1,0 +1,61 @@
+P350: [highlight=yellow]AI Passport EBS · Catalogue international de certifications
+P351: [highlight=yellow]Plus de 156 certifications.
+P352: [plain]Un parcours structuré.
+P353: [plain]Un catalogue organisé par programme, associant des certifications obligatoires constituant le socle EBS et des certifications optionnelles permettant à chaque étudiant de construire un profil différenciant.
+P354: [plain]Explorer le catalogue
+P355: [plain]Découvrir notre approche IA
+P356: [plain]15
+P357: [plain]Culture IA
+P358: [plain]45
+P359: [plain]IA appliquée
+P360: [plain]96
+P361: [plain]Métier & outils
+P363: [bold]Catalogue mis à jour
+P364: [plain]156
+P365: [plain]Certifications
+P366: [plain]71
+P367: [plain]Obligatoires
+P368: [plain]85
+P369: [plain]Optionnelles
+P371: [bold]9 programmes couverts [plain] 
+P372: [highlight=yellow|bold]Accès aux plateformes réservé aux étudiants EBS [highlight=yellow] 
+P373: [highlight=yellow|bold]Simulations professionnelles Forage
+P374: [highlight=yellow|underline]Notre catalogue de certifications
+P375: [plain]Plus qu'une liste de certifications. 
+P376: [plain]Un véritable parcours de compétences.
+P377: [plain]Filtrez les certifications par catégorie, niveau d'études et caractère obligatoire.  [plain]L'accès aux plateformes de certification est réservé aux étudiants EBS.
+P378: [plain]Résultats affichés : 156
+P379: [plain]Le catalogue public met en avant la qualité des certifications. Les modalités d'accès, les liens externes et le suivi restent réservés à l'espace étudiant.
+P380: [bold|underline]Organismes de certification 
+P381: [plain]Les plus grandes références internationales.
+P382: [plain]Les plus grands organismes de certification réunis dans un seul catalogue. 
+P383: [plain]Les informations détaillées, les liens d'accès et le suivi des certifications sont réservés aux étudiants EBS.
+P385: [underline]Pourquoi EBS ?
+P386: [underline]Un système de reconnaissance des compétences, 
+P387: [underline]bien plus qu'une collection de badges.
+P388: [plain]Reconnaissance mondiale
+P389: [plain]Des certifications délivrées par des organismes reconnus par les recruteurs et les grandes entreprises.
+P390: [plain]Inclus dans la formation
+P391: [plain]Le parcours de certifications est intégré à la formation et accompagne la progression de chaque étudiant.
+P392: [plain]9 programmes couverts
+P393: [plain]Chaque licence et chaque master disposent d'un parcours de certifications adapté.
+P394: [plain]Charge maîtrisée
+P395: [plain]Jusqu'à  [highlight=yellow]1 [highlight=yellow]2 [highlight=yellow] certifications obligatoires [plain] par programme afin de garantir un apprentissage progressif et cohérent.
+P396: [plain]IA dans chaque filière
+P397: [plain]Culture IA, IA appliquée et compétences métier sont intégrées dans tous les parcours.
+P399: [underline]Construisez votre profil certifié EBS.
+P400: [plain]Nos Licences
+P401: [plain]4 Licences [plain] avec des parcours de certifications dédiés.
+P402: [plain]Explorer
+P403: [plain]Nos Masters
+P404: [plain]4 Masters [plain] professionnels avec des certifications avancées.
+P405: [plain]Explorer
+P406: [plain]IA & Certifications
+P407: [plain]Découvrez comment l'Intelligence Artificielle transforme l'employabilité.
+P408: [underline]Découvrir
+P409: [plain]Pré-inscription
+P410: [plain]Les candidatures 2026/2027 sont ouvertes. 
+P411: [plain]Bénéficiez de nos avantages en cours en déposant votre candidature dès aujourd'hui.
+P412: [underline]Postuler
+P414: [plain]Rejoignez une formation qui transforme les certifications en véritable avantage professionnel.
+P415: [plain]Candidatures 2026/2027 ouvertes. Déposez votre dossier dès maintenant.

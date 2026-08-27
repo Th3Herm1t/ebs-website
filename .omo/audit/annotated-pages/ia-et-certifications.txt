@@ -1,0 +1,33 @@
+P145: [highlight=yellow|underline]Intelligence Artificielle · Compétence transversale intégrée à tous les parcours depuis 2026
+P146: [underline]L'IA n'est plus une option.
+P147: [bold|underline]C'est une obligation.
+P148: [plain]À partir de 2026, EBS intègre l'Intelligence Artificielle comme socle commun dans tous ses programmes. Une approche innovante en Tunisie : chaque étudiant, quel que soit son parcours, développe des compétences en IA et peut obtenir des certifications internationales reconnues.
+P149: [plain]15 [plain]Culture IA
+P150: [plain]45 [plain]IA appliquée
+P151: [plain]2 [plain]0 [plain]Modules obligatoires IA
+P152: [plain]40 [plain]Modules optionnels IA
+P154: [plain]Pourquoi l'IA dans chaque filière ?
+P155: [plain]Le marché du travail évolue rapidement. Aujourd'hui, l'IA est présente dans tous les secteurs: finance, marketing, management, informatique, cybersécurité et entrepreneuriat. Les entreprises recherchent désormais des professionnels capables d'utiliser l'Intelligence Artificielle pour gagner en efficacité, renforcer leur créativité et améliorer leur prise de décision.
+P157: [plain]Une décision stratégique, pionnière en Tunisie.
+P158: [plain]EBS a fait le choix d'intégrer les compétences en Intelligence Artificielle comme socle commun dans tous ses programmes, de la Licence au Master. Chaque étudiant développe des compétences concrètes en IA appliquées à son domaine et peut les valoriser grâce à des certifications reconnues à l'international.
+P160: [underline]Haut du formulaire
+P161: [underline]Compétences fondamentales
+P162: [highlight=yellow]Les 5 compé [highlight=yellow]tences en IA maîtrisées par TOUS [highlight=yellow] les étudiants EBS
+P163: [underline]IA Générative & Prompting
+P164: [plain]ChatGPT, Gemini, Claude, Copilot. Rédaction, synthèse, génération de contenu, analyse de documents : vous maîtrisez les principaux outils d'IA générative utilisés dans le monde professionnel.
+P165: [plain]Google Prompting Essentials · IBM Prompt Engineering · DeepLearning.AI GenAI
+P166: [underline]Agents IA & Automatisation
+P167: [plain]Conception de workflows intelligents avec n8n, IBM Watsonx, LangChain. Vous automatisez des processus métier et développez des solutions d'IA adaptées aux besoins des entreprises.
+P168: [plain]n8n Level 1 & 2 · IBM Watsonx Orchestrate · Databricks AI Agents
+P169: [underline]Analyse de Données Augmentée
+P170: [plain]Power BI, IA, GA4, IBM Data Science, Looker Studio. Vous analysez et exploitez des données complexes grâce aux outils les plus utilisés par les entreprises.
+P171: [plain]Google Data Analytics · IBM Data Science · Databricks GenAI
+P172: [underline]IA Appliquée au Métier
+P173: [plain]Marketing augmenté, trading algorithmique, détection de fraude, CRM prédictif : l'IA au service de votre spécialité, quel que soit votre programme.
+P174: [plain]Certifications spécifiques à chaque filière · Projets pratiques
+P175: [underline]Éthique & IA Responsable
+P176: [plain]Biais algorithmiques, transparence, réglementation (EU AI Act), protection des données et impact sociétal. Vous comprenez les enjeux d'une utilisation responsable de l'Intelligence Artificielle.
+P177: [plain]Google AI Essentials · IBM Foundations of AI · Harvard CS50 AI
+P179: [underline]Certifications IA
+P180: [highlight=yellow]60 [highlight=yellow]+ [highlight=yellow] certifications IA disponibles
+P181: [plain]Toutes sont incluses dans votre formation et reconnues par les entreprises et les recruteurs à l'international.

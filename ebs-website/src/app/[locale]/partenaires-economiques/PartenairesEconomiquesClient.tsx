@@ -385,7 +385,7 @@ export default function PartenairesEconomiquesPage() {
             </h2>
             <p className="text-[16px] text-penn-body/60 max-w-[620px] mx-auto">
               Un écosystème d&apos;entreprises leaders qui recrutent nos talents,
-              proposent des stages et collaborent sur des projets concrets.
+              accueillent nos étudiants en stage et collaborent avec EBS sur des projets concrets.
             </p>
           </motion.div>
 
@@ -439,8 +439,7 @@ export default function PartenairesEconomiquesPage() {
               5 bonnes raisons de recruter chez nous
             </h2>
             <p className="text-[16px] text-penn-body mt-3 max-w-[650px] mx-auto">
-              Un diplômé EBS n&apos;est pas un étudiant comme les autres.
-              C&apos;est un talent déjà certifié, déjà formé, déjà prêt.
+              Un diplômé EBS n&apos;est pas un profil parmi d&apos;autres. C&apos;est un talent certifié, préparé et immédiatement opérationnel, prêt à transformer ses compétences en impact concret.
             </p>
           </motion.div>
 
@@ -505,7 +504,7 @@ export default function PartenairesEconomiquesPage() {
               Quatre façons de travailler avec nos talents
             </h2>
             <p className="text-[16px] text-penn-body mt-3 max-w-[650px] mx-auto">
-              Chaque entreprise a des besoins différents. Choisissez le format qui vous correspond.
+              Chaque entreprise a des besoins différents. Choisissez la formule qui vous convient.
             </p>
           </motion.div>
 
@@ -574,7 +573,7 @@ export default function PartenairesEconomiquesPage() {
               Le profil du diplômé EBS
             </h2>
             <p className="text-[16px] text-white/50 mt-3 max-w-[600px] mx-auto">
-              Voici ce que vous obtenez quand vous recrutez un talent formé chez nous.
+              Voici ce que vous obtenez lorsque vous recrutez un diplômé EBS.
             </p>
           </motion.div>
 
@@ -615,7 +614,7 @@ export default function PartenairesEconomiquesPage() {
               Comment devenir partenaire ?
             </h2>
             <p className="text-[15px] text-penn-body/50 max-w-[500px] mx-auto">
-              Un processus simple en 3 étapes pour rejoindre notre réseau.
+              Un processus simple en trois étapes pour rejoindre notre réseau.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[900px] mx-auto">
@@ -658,7 +657,7 @@ export default function PartenairesEconomiquesPage() {
               Formulaire de partenariat
             </h2>
             <p className="text-[15px] text-penn-body/50 max-w-[480px] mx-auto">
-              Remplissez ce formulaire et notre équipe vous contactera sous 48h.
+              Remplissez ce formulaire et notre équipe vous contactera dans les meilleurs délais.
             </p>
           </motion.div>
 

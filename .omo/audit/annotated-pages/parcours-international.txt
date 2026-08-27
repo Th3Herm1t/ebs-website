@@ -1,0 +1,147 @@
+P1954: [underline]Parcours International
+P1955: [plain]Votre passeport vers le Canada, la France, l'Italie et Oman.
+P1956: [plain]Étudiez à EBS, poursuivez vos études à l'international. Grâce à nos partenariats avec 1 [plain]4 [plain] universités, développez un parcours académique et professionnel ouvert sur le monde.
+P1958: [underline]Pré-inscription Parcours International
+P1959: [plain]Réponse sous 24 h • Gratuite • Sans engagement
+P1960: [plain]Coordonnées
+P1961: [plain]Profil
+P1962: [plain]Baccalauréat
+P1963: [plain]Prénom * [plain]Nom * [plain]E-mail * [plain]Téléphone / WhatsApp *
+P1965: [underline]Le Parcours International d'EBS
+P1966: [plain]Le  [plain]Parcours International d’EBS [plain] permet aux étudiants de construire une partie de leur cursus à l’étranger grâce à un réseau de  [plain]14 partenaires académiques internationaux en France, au Canada, en Italie et à Oman [plain].
+P1967: [plain]Selon leur niveau d’études, leur filière et le partenariat choisi, les étudiants peuvent rejoindre une école ou une université partenaire  [plain]après une, deux ou trois années d’études à EBS [plain], et dans certains cas après un Master 1.
+P1968: [plain]Ces parcours ouvrent l’accès, selon les établissements et les conditions d’admission, à des  [plain]Bachelors, Programmes Grande École, Masters, MSc, Mastères, Maîtrises et autres diplômes reconnus [plain].
+P1969: [plain]Au-delà du diplôme, le Parcours International EBS permet de développer une  [plain]expérience académique internationale [plain], de renforcer ses compétences linguistiques et interculturelles et de préparer sa carrière dans un environnement international.
+P1971: [underline]Notre réseau
+P1972: [underline]14 partenaires académiques internationaux
+P1973: [plain]ESPIMA Business School développe un réseau d’ [plain]universités, Grandes Écoles et écoles [plain] supérieures [plain] spécialisées [plain] en France, au Canada, en Italie et à Oman. Ces partenariats offrent aux étudiants EBS différentes possibilités de  [plain]poursuite d’études, mobilité académique et ouverture internationale [plain], selon leur filière et leur niveau d’études.
+P1975: [underline]FRANCE
+P1976: [underline]EM Normandie Business School [underline] 
+P1977: [bold|underline]Grande École de management
+P1978: [plain]Fondée en 1871,  [plain]EM Normandie [plain] est une Grande École française de management, membre de la Conférence des Grandes Écoles et bénéficiant de la triple accréditation internationale  [plain]EQUIS, AACSB et AMBA [plain]. Elle propose des formations en management, marketing, finance, supply chain, digital, IA, entrepreneuriat et international.
+P1979: [underline] Opportunités étudiants EBS [plain]Le partenariat offre différentes possibilités de poursuite d’études selon le niveau académique :  [plain]Bachelor, Programme Grande École – Grade de Master, MSc et programmes spécialisés [plain].
+P1980: [plain]→ CONSULTER LE GUIDE [plain] DU PARTENARIAT ESPIMA - [plain] EM NORMANDIE
+P1982: [underline]Excelia Business School
+P1983: [underline]Grande École de management
+P1984: [plain]Excelia Business School [plain] est une Grande École française reconnue pour son ouverture internationale et ses formations en management. Elle propose des cursus en management, marketing, finance, stratégie, international, digital et développement durable, du Bachelor au Bac+5.
+P1985: [underline] Opportunités étudiants EBS [plain]Les étudiants peuvent accéder, selon leur niveau et leur filière, à différents  [plain]Bachelors et programmes Bac+5 [plain], conformément aux passerelles et conditions prévues par le partenariat.
+P1986: [plain]→ CONSULTER LE GUIDE [plain] DU PARTENARIAT ESPIMA - [plain] EXCELIA
+P1988: [underline]Paris School of Business — PSB 
+P1989: [bold|underline]Grande École de management à Paris
+P1990: [plain]Paris School of Business [plain] est une Grande École française membre de la Conférence des Grandes Écoles et bénéficiant de la  [plain]triple accréditation AACSB, EQUIS et AMBA [plain]. Elle propose notamment un Bachelor, un Programme Grande École conférant le Grade de Master et de nombreux MSc dans des domaines variés.
+P1991: [underline] Opportunités étudiants EBS [plain]Des poursuites d’études sont possibles  [plain]après Bac+2, après la Licence et, selon les programmes, après un Master 1 [plain], notamment en management, marketing, finance, digital, data, supply chain et international.
+P1992: [plain]→ CONSULTER LE GUIDE [plain] DU PARTENARIAT ESPIMA - [plain] PSB
+P1994: [underline]EKLORE-ed 
+P1995: [bold|underline]Grande École de management
+P1996: [plain]EKLORE-ed [plain], anciennement ESC Pau Business School, est une Grande École de commerce proposant des formations du Bachelor au Bac+5 dans les domaines du management, marketing, finance, ressources humaines, supply chain, sport management et international.
+P1997: [underline] Opportunités étudiants EBS [plain]Le partenariat permet notamment d'accéder au  [plain]Bachelor Business Management [plain], au  [plain]Programme Grande École [plain] ainsi qu'à différents programmes Bac+5, selon le niveau et la spécialité de l'étudiant.
+P1998: [plain]→ CONSULTER LE GUIDE DU PARTENARIAT ESPIMA - EKLORE-ed
+P2000: [underline]EPITECH 
+P2001: [bold|underline]École supérieure d’informatique – Programme Grande École
+P2002: [plain]EPITECH [plain] est une école française spécialisée dans l'informatique, reconnue pour sa pédagogie intensive fondée sur les  [plain]projets et la pratique [plain]. Ses formations couvrent notamment l'intelligence artificielle, la cybersécurité, le cloud, la data, le développement logiciel, l'IoT et les nouvelles technologies.
+P2003: [underline] Opportunités étudiants EBS [plain]Les étudiants de la  [plain]Licence Informatique – Génie Logiciel & Systèmes d'Information [plain] peuvent poursuivre leurs études dans les programmes informatiques proposés par EPITECH, selon leur niveau et les conditions d'admission.
+P2004: [plain]→ CONSULTER LE  [plain]GUIDE DU PARTENARIAT ESPIMA -  [plain]EPITECH
+P2006: [underline]EPSI
+P2007: [bold|underline]École d'ingénierie informatique
+P2008: [plain]Créée en 1961,  [plain]EPSI [plain] forme des professionnels du numérique dans les domaines du développement, des systèmes et réseaux, de l'intelligence artificielle, de la data, de la cybersécurité, du cloud et du DevOps. Sa pédagogie  [plain]Learning by Doing [plain] privilégie les projets et la mise en pratique. EPSI fait partie du  [plain]réseau d'écoles de FIGS Education [plain].
+P2009: [underline] Opportunités étudiants EBS [plain]La filière Informatique EBS bénéficie de possibilités de poursuite  [plain]après Bac+2 ou après la Licence [plain], vers des Bachelors spécialisés et des  [plain]parcours Expert de niveau Bac+5 [plain].
+P2010: [plain]→ CONSULTER LE GUIDE DU PARTENARIAT ESPIMA - EPSI
+P2012: [bold|underline]IDRAC Business School
+P2013: [bold|underline]Grande École de commerce et de management
+P2014: [plain]Fondée en 1965,  [plain]IDRAC Business School [plain] propose des formations en commerce, management, marketing, stratégie, international, innovation et supply chain. Elle délivre notamment un  [plain]Bachelor conférant le Grade de Licence [plain] et un Programme Grande École conférant le  [plain]Grade de Master [plain]. IDRAC fait partie du  [plain]réseau d'écoles de FIGS Education [plain].
+P2015: [underline] Opportunités étudiants EBS [plain]Des poursuites d'études sont possibles  [plain]après Bac+2 ou après la Licence [plain], notamment vers le Bachelor et différents programmes Bac+5, selon la filière suivie à EBS.
+P2016: [plain]→ CONSULTER LE GUIDE DU PARTENARIAT ESPIMA - IDRAC BUSINESS SCHOOL
+P2018: [bold|underline]IFAG
+P2019: [bold|underline]École de management et d'entrepreneuriat
+P2020: [plain]Créée en 1968,  [plain]IFAG [plain] est une école française de management spécialisée dans les domaines du commerce, des ressources humaines et de l'entrepreneuriat. Pionnière de l'alternance en France, elle propose des parcours professionnalisants du Bachelor au Bac+5. IFAG fait partie du  [plain]réseau d'écoles de FIGS Education [plain].
+P2021: [underline] Opportunités étudiants EBS [plain]Le partenariat permet notamment une poursuite après  [plain]Bac+2 vers le Bachelor [plain] et après une  [plain]Licence Management ou Marketing vers le Mastère [plain], selon les conditions d'admission.
+P2022: [plain]→ CONSULTER LE GUIDE DU PARTENARIAT ESPIMA - IFAG
+P2024: [bold|underline]SUP'DE COM
+P2025: [bold|underline]École spécialisée dans les métiers de la communication
+P2026: [plain]SUP'DE COM [plain] forme aux différents métiers de la communication : stratégie de communication, marketing digital, réseaux sociaux, création, événementiel, publicité et communication de marque. Sa pédagogie privilégie les projets, la créativité et l'expérience professionnelle. SUP'DE COM fait partie du  [plain]réseau d'écoles de FIGS Education [plain].
+P2027: [underline] Opportunités étudiants EBS [plain]Les étudiants peuvent poursuivre leurs études  [plain]après Bac+2 ou après une Licence Marketing [plain], notamment vers des programmes Bachelor et Bac+5 en communication et marketing.
+P2028: [plain]→ CONSULTER LE GUIDE DU PARTENARIAT ESPIMA - SUP'DE COM
+P2030: [bold|underline]IGEFI
+P2031: [bold|underline]École spécialisée en finance et expertise comptable
+P2032: [plain]IGEFI [plain] est une école [plain] supérieure [plain] française spécialisée dans les métiers de la finance d'entreprise, de la comptabilité, du contrôle de gestion et de l'expertise comptable. Elle propose des formations professionnalisantes ainsi que les diplômes d'État  [plain]DCG – Grade de Licence et DSCG – Grade de Master [plain]. IGEFI fait partie du  [plain]réseau d'écoles de FIGS Education [plain].
+P2033: [underline] Opportunités étudiants EBS [plain] 
+P2034: [plain]Le partenariat offre des possibilités de poursuite  [plain]après Bac+2 ou après la Licence Finance [plain], notamment vers des Bachelors, le  [plain]MBA Expert Financier [plain] et, selon les prérequis, le DSCG.
+P2035: [plain]→ CONSULTER LE GUIDE DU PARTENARIAT ESPIMA - IGEFI
+P2037: [bold|underline]RED-SUP
+P2038: [bold|underline]École spécialisée en informatique et cybersécurité
+P2039: [plain]RED-SUP [plain] est un établissement français d'enseignement supérieur spécialisé dans l'informatique, les réseaux, la sécurité informatique et la cybersécurité. Sa pédagogie associe enseignements techniques, projets appliqués et professionnalisation.
+P2040: [underline] Opportunités étudiants EBS [plain]Les titulaires de la  [plain]Licence Informatique – Génie Logiciel & Systèmes d'Information [plain] peuvent poursuivre vers le  [plain]Mastère Européen Expert IT en Cybersécurité [plain], sous réserve des conditions d'admission.
+P2041: [plain]→ CONSULTER LE GUIDE DU PARTENARIAT ESPIMA - RED-SUP
+P2043: [plain]CANADA
+P2044: [bold|underline]Université du Québec en Abitibi-Témiscamingue — UQAT
+P2045: [bold|underline]Université publique canadienne
+P2046: [plain]Membre du réseau de l'Université du Québec,  [plain]l'UQAT [plain] est une université publique canadienne proposant des formations et des activités de recherche dans plusieurs domaines, notamment la gestion et le management de projet.
+P2047: [underline] Opportunités étudiants EBS [plain]Le partenariat ouvre notamment l'accès à la  [plain]Maîtrise en gestion de projet – profil professionnel [plain] et à la  [plain]Maîtrise en gestion des organisations – profil recherche [plain], selon le parcours académique et les conditions d'admission.
+P2048: [plain]→ CONSULTER LE GUIDE DU PARTENARIAT ESPIMA - UQAT
+P2050: [plain]ITALIE
+P2051: [bold|underline]Link University — Rome
+P2052: [bold|underline]Université italienne à dimension internationale
+P2053: [plain]Située à Rome,  [plain]Link University [plain] propose des programmes internationaux en management, finance, économie, innovation, technologies digitales et communication, avec plusieurs cursus enseignés en anglais.
+P2054: [underline] Opportunités étudiants EBS [plain]Le partenariat permet différentes possibilités de poursuite :  [plain]Bachelor 2 après une année à EBS, Bachelor 3 après deux années [plain], ainsi qu'une poursuite en  [plain]Master après la Licence ou selon le niveau académique validé [plain].
+P2055: [plain]→ CONSULTER LE GUIDE DU PARTENARIAT ESPIMA - LINK UNIVERSITY
+P2057: [plain]OMAN
+P2058: [bold|underline]German University of Technology in Oman — GUtech
+P2059: [bold|underline]Université technologique internationale
+P2060: [plain]Fondée en 2007,  [plain]GUtech [plain] est une université technologique anglophone située dans le Sultanat d'Oman. Elle développe une collaboration académique étroite avec  [plain]RWTH Aachen University en Allemagne [plain] et propose notamment des programmes en  [plain]Computer Science, Artificial Intelligence et Cyber Security [plain].
+P2061: [underline] Opportunités étudiants EBS [plain]Le partenariat concerne particulièrement les étudiants de la  [plain]Licence Informatique – Génie Logiciel & Systèmes d'Information [plain] et favorise les poursuites d'études, projets académiques,  [plain]Summer Schools, mobilité, échanges d'expertise et certifications internationales [plain], selon les conditions applicables.
+P2062: [plain]→ CONSULTER LE GUIDE DU PARTENARIAT ESPIMA - GUTECH
+P2063: [underline]4 parcours pour poursuivre vos études à l'international
+P2064: [plain]Quel que soit votre niveau d’études, plusieurs possibilités permettent de construire progressivement votre parcours international.
+P2065: [plain]1
+P2066: [plain]1 année à EBS → Bachelor 2 en Italie
+P2067: [plain]Link University — Rome
+P2068: [plain]Après validation de la première année de Licence à EBS, possibilité de poursuivre en  [plain]2ᵉ année de Bachelor [plain] à Link University, selon le programme choisi et les conditions d’admission.
+P2070: [plain]2
+P2071: [plain]2 années à EBS → Bachelor 3 en France
+P2072: [plain]Écoles [plain] supérieures [plain] et Grandes Écoles partenaires
+P2073: [plain]Après deux années de Licence validées à EBS, possibilité d’intégrer la  [plain]3ᵉ année de certains Bachelors [plain] proposés par les établissements partenaires, selon la filière et les conditions d’admission.
+P2075: [plain]3
+P2076: [plain]Licence à EBS → Master à l'international
+P2077: [plain]France • Canada • Italie • Oman
+P2078: [plain]Après l’obtention de la Licence EBS, possibilité de poursuivre en  [plain]Master, MSc, Mastère, Programme Grande École, Maîtrise ou autre cursus Bac+5 [plain], selon l’établissement partenaire, la spécialité et les conditions d’admission.
+P2080: [plain]4
+P2081: [plain]Master 1 à EBS → poursuite d'études à l'international
+P2082: [plain]Établissements partenaires
+P2083: [plain]Après validation d’un Master 1 à EBS, une poursuite d’études peut être envisagée dans certains programmes de niveau Bac+5 ou en  [plain]Maîtrise au Canada [plain], selon le parcours académique et les conditions de l’établissement partenaire.
+P2085: [underline]En bref
+P2086: [plain]Les avantages du Parcours International EBS
+P2087: [plain]Un réseau de  [plain]14 partenaires académiques internationaux dans 4 pays [plain].
+P2088: [plain]Des possibilités de poursuite d’études  [plain]après 1 an, 2 ans, la Licence ou le Master 1 à EBS [plain], selon les partenariats.
+P2089: [plain]L’accès à des  [plain]Bachelors, Programmes Grande École, Masters, MSc, Mastères et Maîtrises [plain].
+P2090: [plain]Un accompagnement EBS pour préparer le  [plain]choix du parcours, la candidature et la mobilité internationale [plain].
+P2091: [plain]Le développement des compétences en  [plain]anglais, communication, management interculturel et Soft Skills [plain].
+P2092: [plain]Des possibilités de  [plain]Summer Schools, projets internationaux, conférences, séminaires et mobilité académique [plain] selon les partenariats.
+P2093: [plain]Des possibilités de  [plain]double diplomation [plain] lorsqu’elles sont expressément prévues par les accords concernés.
+P2094: [plain]Des possibilités de  [plain]stages et d’expériences professionnelles [plain] selon les programmes et les opportunités disponibles.
+P2096: [underline]Comment ça marche ?
+P2097: [underline]01 — Études à EBS
+P2098: [plain]Construisez votre parcours à EBS et validez le niveau académique nécessaire pour le programme international choisi.
+P2099: [underline]02 — Candidature
+P2100: [plain]Nos équipes vous accompagnent dans le  [plain]choix du partenaire et du programme [plain] ainsi que dans la préparation de votre dossier.
+P2101: [underline]03 — Admission
+P2102: [plain]Votre candidature est examinée selon votre  [plain]niveau d’études, votre spécialité, vos résultats académiques et les conditions d’admission de l’établissement partenaire [plain].
+P2103: [underline]04 — Visa
+P2104: [plain]EBS vous accompagne dans la préparation des démarches de mobilité :  [plain]Campus France, Universitaly, Canada ou autres procédures applicables selon le pays de destination [plain].
+P2105: [underline]05 — Installation et carrière
+P2106: [plain]Préparez votre départ et votre installation afin de réussir votre nouvelle expérience académique et de construire progressivement votre  [plain]projet professionnel à l’international [plain].
+P2108: [underline]Pourquoi choisir le Parcours International EBS ?
+P2109: [underline]Diplômes reconnus
+P2110: [plain]Accédez, selon les partenariats, à des  [plain]Bachelors, Programmes Grande École, Masters, MSc, Mastères, Maîtrises et autres diplômes reconnus [plain] délivrés par les établissements partenaires.
+P2111: [underline]Parcours sécurisé
+P2112: [plain]Construisez votre mobilité dans le cadre de  [plain]partenariats académiques établis par EBS [plain], avec des possibilités de poursuite d’études clairement identifiées.
+P2113: [underline]Opportunités internationales
+P2114: [plain]Étudiez en  [plain]France, au Canada, en Italie ou à Oman [plain] et développez une véritable expérience académique internationale.
+P2115: [plain]Réseau international
+P2116: [plain]Bénéficiez d’un réseau de  [plain]14 partenaires académiques [plain] réunissant universités, Grandes Écoles et écoles spécialisées.
+P2117: [plain]Employabilité renforcée
+P2118: [plain]Valorisez votre profil grâce à une  [plain]expérience internationale, des compétences linguistiques et une meilleure capacité à évoluer dans des environnements multiculturels [plain].
+P2119: [plain]Accompagnement personnalisé
+P2120: [plain]Bénéficiez de l’accompagnement d’EBS à chaque étape :  [plain]orientation, choix du partenaire, candidature, admission, démarches administratives et préparation au départ [plain].
+P2122: [underline]Besoin d'informations ?
+P2123: [plain]Notre équipe est à votre disposition pour répondre à toutes vos questions concernant le Parcours International.
+P2124: [plain]+216 55 582 843

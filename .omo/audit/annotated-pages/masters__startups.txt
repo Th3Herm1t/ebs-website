@@ -1,0 +1,180 @@
+P1496: [underline]Pré-inscription en Master
+P1497: [plain]Réponse sous 24 h • Gratuite • Sans engagement
+P1498: [plain]Coordonnées
+P1499: [plain]Profil
+P1500: [plain]Formation
+P1501: [plain]Prénom * [plain]Nom * [plain]E-mail * [plain]Téléphone / WhatsApp *
+P1503: [underline]Master · Bac+5 · 2 ans · Diplôme a [underline]ccrédité [underline] par l'État tunisien
+P1504: [underline]Master Management de Projets Innovants & Startups
+P1505: [underline]Concevez, pilotez et transformez des projets innovants en entreprises à fort potentiel.
+P1506: [plain]Le Master Management de Projets Innovants & Startups d'EBS prépare des professionnels capables de piloter des projets complexes, d'accompagner l'innovation et de créer des startups. Le programme associe management de projet, entrepreneuriat, Intelligence Artificielle, méthodes Agile et innovation afin de répondre aux nouveaux défis des entreprises.
+P1507: [plain]22+
+P1508: [highlight=yellow]Certifications incluses
+P1509: [plain]2 ans
+P1510: [plain]100 %
+P1511: [plain]Diplôme  [plain]habilité par le Ministère de l’Enseignement Supérieur et de la Recherche Scientifique
+P1512: [plain]Certifications incluses
+P1513: [plain]Télécharger la brochure
+P1515: [underline]Master Management de Projets Innovants & Startups — Présentation
+P1517: [underline]1. PRÉSENTATION GÉNÉRALE DU MASTER
+P1518: [plain]Intitulé du diplôme : [plain]  [bold]Master Professionnel en  [plain]Management de Projets Innovants & Startups [plain] 
+P1519: [plain]Diplôme : [plain]  [plain]Master habilité par le Ministère de l’Enseignement Supérieur et de la Recherche Scientifique
+P1520: [plain]Durée : [plain]  [plain]2 années universitaires (4 semestres – 120 crédits).
+P1521: [plain]Organisation : [plain]  [plain]Formation professionnalisante articulée autour de cours, études de cas, projets, certifications, stage de longue durée et mémoire (PFE) projet de fin d'études.
+P1522: [underline]Présentation [plain] : 
+P1523: [plain]Le  [plain]Master Management de Projets Innovants & Startups [plain] d'ESPIMA Business School est une formation de haut niveau conçue pour préparer les futurs managers, chefs de projet, entrepreneurs et porteurs d'innovation capables de piloter des projets complexes, d'accompagner la transformation des organisations et de créer des entreprises innovantes.
+P1524: [plain]Dans un environnement marqué par l'accélération des transformations technologiques, l'Intelligence Artificielle, l'économie numérique et l'innovation permanente, les organisations recherchent des profils capables de gérer efficacement les projets, de conduire le changement, de développer de nouveaux produits et services et de transformer une idée en véritable opportunité de création de valeur.
+P1525: [plain]Cette formation associe les fondamentaux du management de projet aux approches les plus récentes telles que l'Agilité, le Design Thinking, le Lean Startup, le Product Management, la Business Analysis, l'Innovation Management et l'Intelligence Artificielle appliquée au pilotage des projets. Elle s'appuie sur une pédagogie professionnalisante, des projets concrets, des certifications internationales et une immersion progressive en entreprise afin de développer des compétences immédiatement opérationnelles.
+P1526: [plain]Le programme prépare les diplômés à évoluer aussi bien dans les grandes entreprises que dans les PME, les cabinets de conseil, les startups, les organisations internationales ou à créer et développer leur propre entreprise innovante, tout en bénéficiant des opportunités offertes par les partenariats académiques internationaux d'ESPIMA Business School.
+P1528: [bold|underline]2. OBJECTIFS DE LA FORMATION
+P1529: [plain]Le Master Management de Projets Innovants & Startups a pour objectif de former des managers capables de piloter des projets complexes, d'accompagner l'innovation, de conduire la transformation des organisations et de développer des projets entrepreneuriaux à forte valeur ajoutée.
+P1530: [plain]À l'issue de la formation, les diplômés seront capables de :
+P1531: [plain]Définir, planifier, piloter et évaluer des projets selon les meilleures pratiques internationales du management de projet.
+P1532: [plain]Maîtriser les méthodes Agiles, le Lean Management, le Design Thinking et les approches d'innovation.
+P1533: [plain]Concevoir, développer et accompagner la création de startups et de nouveaux modèles d'affaires.
+P1534: [plain]Utiliser les outils de Business Analysis, de gestion des risques, de management de la qualité et de pilotage de la performance.
+P1535: [plain]Intégrer l'Intelligence Artificielle, l'automatisation et les technologies numériques dans la gestion et le suivi des projets.
+P1536: [plain]Développer des compétences en leadership, communication, négociation, conduite du changement et management d'équipes.
+P1537: [plain]Préparer les principales certifications professionnelles reconnues dans les domaines du management de projet, de l'innovation, de l'Agilité et de l'Intelligence Artificielle.
+P1538: [plain]Développer une vision stratégique permettant d'évoluer au sein des grandes entreprises, des cabinets de conseil, des organisations internationales ou de créer sa propre startup innovante.
+P1540: [bold|underline]3. PUBLIC CIBLE
+P1541: [plain]Le  [bold]Master Management de Projets Innovants & Startups [plain] s'adresse aux étudiants souhaitant développer une expertise en management de projet, innovation, entrepreneuriat et transformation des organisations, tout en acquérant des compétences immédiatement opérationnelles recherchées par les entreprises.
+P1542: [plain]Cette formation est particulièrement destinée aux :
+P1543: [plain]Titulaires d'une  [bold]Licence en Management [plain]. 
+P1544: [plain]Titulaires d'une  [bold]Licence en Marketing [plain]. 
+P1545: [plain]Titulaires d'une  [bold]Licence en Finance [plain]. 
+P1546: [plain]Titulaires d'une  [bold]Licence en Économie [plain]. 
+P1547: [plain]Titulaires d'une  [bold]formation universitaire Bac+3 ou plus à dominante technique [plain], dont la candidature est étudiée au cas par cas en fonction du parcours académique et professionnel. 
+P1548: [plain]Le Master accueille également les candidats motivés par l'innovation, l'entrepreneuriat, les nouvelles technologies, l'Intelligence Artificielle et le développement de projets innovants, souhaitant évoluer dans un environnement national ou international en constante transformation.
+P1550: [bold|underline]4. COMPÉTENCES DÉVELOPPÉES
+P1551: [plain]À l'issue de la formation, les diplômés développent des compétences leur permettant de piloter des projets innovants, d'accompagner la transformation des organisations et de créer de nouvelles opportunités de développement dans des environnements en constante évolution.
+P1552: [plain]Ils seront notamment capables de :
+P1553: [plain]Concevoir, planifier, piloter et évaluer des projets selon les meilleures pratiques internationales du management de projet.
+P1554: [plain]Utiliser les méthodes  [plain]Agiles [plain], le  [plain]Design Thinking [plain], le  [plain]Lean Startup [plain] et le  [plain]Product Management [plain] pour développer des projets innovants.
+P1555: [plain]Réaliser des analyses stratégiques, fonctionnelles et financières afin de faciliter la prise de décision et le pilotage des projets.
+P1556: [plain]Identifier, analyser et maîtriser les risques, les coûts, les délais, la qualité et la performance des projets.
+P1557: [plain]Intégrer l'Intelligence Artificielle, l'automatisation et les technologies numériques pour améliorer la gestion, le suivi et la performance des projets.
+P1558: [plain]Développer des compétences en leadership, communication, négociation, conduite du changement et management d'équipes pluridisciplinaires.
+P1559: [plain]Concevoir, lancer et accompagner le développement d'une startup, depuis l'idée jusqu'à la création d'un produit ou service innovant.
+P1560: [plain]Utiliser les principaux outils professionnels de gestion de projet, de collaboration, d'analyse de données et de pilotage afin de répondre aux exigences des entreprises et des organisations modernes.
+P1562: [bold|underline]5. LES ATOUTS DISTINCTIFS D'ESPIMA BUSINESS SCHOOL
+P1563: [plain]Le  [bold]Master Management de Projets Innovants & Startups [plain] d'ESPIMA Business School se distingue par une approche pédagogique innovante associant management de projet, entrepreneuriat, innovation, transformation digitale et Intelligence Artificielle afin de préparer les étudiants aux nouveaux défis des organisations.
+P1564: [plain]Les principaux atouts du programme sont :
+P1565: [plain]Un  [bold]Master accrédité par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique [plain].
+P1566: [plain]Une pédagogie professionnalisante fondée sur des projets concrets, des études de cas et des mises en situation réelles.
+P1567: [plain]Une formation intégrant les meilleures pratiques du management de projet, de l'Agilité, du Design Thinking, du Lean Startup, de la Business Analysis et de l'innovation.
+P1568: [plain]L'intégration de l' [bold]Intelligence Artificielle [plain] et des outils d'automatisation dans le management de projet et l'innovation.
+P1569: [plain]Un parcours certifiant comprenant des  [bold]certifications professionnelles internationales [plain] reconnues par les entreprises.
+P1570: [plain]Une immersion progressive en entreprise grâce aux projets, aux stages et aux partenariats avec le monde professionnel.
+P1571: [plain]Une ouverture à l'international grâce aux partenariats académiques d'ESPIMA Business School permettant une poursuite d'études en  [bold]France [plain],  [bold]Italie [plain] et  [bold]Canada [plain].
+P1573: [bold|underline]6. MODULES DU PROGRAMME
+P1574: [plain]Le programme est structuré autour de plusieurs modules complémentaires couvrant les différents domaines du management de projet, de l'innovation, de l'entrepreneuriat, de la transformation digitale et de l'Intelligence Artificielle.
+P1575: [bold]❖ [bold]  [bold]  [bold]Management de projet, leadership et pilotage de la performance
+P1576: [plain]Objectif : [plain]  [plain]Acquérir les fondamentaux du management de projet afin de planifier, organiser, piloter et réussir des projets dans différents secteurs d'activité.
+P1577: [bold]Contenu : [plain] Management de projet • Leadership • Organisation et planification • Gestion du temps • Communication professionnelle • Gestion des équipes • Gestion des coûts • Pilotage de la performance.
+P1579: [bold]❖ [bold]  [bold]  [bold]Innovation, entrepreneuriat et développement de Startups
+P1580: [bold]Objectif : [plain] Concevoir, développer et accompagner des projets innovants en appliquant les principales méthodes d'innovation et de création d'entreprise.
+P1581: [bold]Contenu : [plain] Innovation • Entrepreneuriat • Design Thinking • Lean Startup • Business Model • Validation de projets • Création de Startups • Développement de nouveaux produits et services.
+P1583: [bold]❖ [bold]  [bold]  [bold]Business Analysis, Data Analytics et Intelligence Artificielle
+P1584: [bold]Objectif : [plain] Exploiter les données, les outils d'analyse et l'Intelligence Artificielle afin d'améliorer la prise de décision, la planification et le pilotage des projets.
+P1585: [bold]Contenu : [plain] Business Analysis • Data Analytics • Business Intelligence • Intelligence Artificielle générative • Prompt Engineering • Analyse prédictive • Automatisation des processus • IA appliquée au management de projet.
+P1587: [bold]❖ [bold]  [bold]  [bold]Transformation digitale, gestion des risques et amélioration continue
+P1588: [bold]Objectif : [plain] Accompagner la transformation des organisations en maîtrisant les méthodes de gestion des risques, de la qualité et d'amélioration continue.
+P1589: [bold]Contenu : [plain] Transformation digitale • Gestion des risques • Management de la qualité • Lean Management • Six Sigma • Management des systèmes d'information • Conduite du changement • Innovation organisationnelle.
+P1591: [bold]❖ [bold]  [bold]  [bold]Product Management, Agilité et outils professionnels
+P1592: [bold]Objectif : [plain] Piloter le développement de produits et de projets innovants en utilisant les principales méthodes Agiles et les outils professionnels de gestion de projet.
+P1593: [bold]Contenu : [plain] Product Management • Méthodes Agiles • Scrum • MS Project • Gestion collaborative • Tableaux de bord • Product Roadmap • Pilotage de projets innovants.
+P1595: [bold]❖ [bold]  [bold]  [bold]Stage professionnel, mémoire et projet de fin d'études
+P1596: [plain]Mettre en pratique les compétences acquises à travers une immersion professionnelle en entreprise, la réalisation d'un projet de fin d'études ou d'un projet entrepreneurial, ainsi que la rédaction d'un mémoire, suivis d'une soutenance devant un jury.
+P1598: [bold]PROGRESSION PÉDAGOGIQUE
+P1599: [plain]Semestre
+P1600: [plain]Objectif principal
+P1601: [plain]Master 1 – S1
+P1602: [plain]Acquérir les fondamentaux du management de projet, de l'innovation, de la qualité, de l'analyse des données, du leadership et des méthodes de gestion.
+P1603: [plain]Master 1 – S2
+P1604: [plain]Développer les compétences en Business Analysis, gestion financière des projets, outils professionnels, management d'équipe et pilotage de projets.
+P1605: [plain]Master 2 – S3
+P1606: [plain]Approfondir le management de projets innovants, la transformation digitale, la gestion des risques, le Lean Management, l'IA et l'entrepreneuriat.
+P1607: [plain]Master 2 – S4
+P1608: [plain]Réaliser un stage professionnel de longue durée, conduire un projet de fin d'études ou un projet entrepreneurial et soutenir un mémoire devant un jury.
+P1610: [bold|underline]7. PARCOURS CERTIFIANT EBS
+P1611: [plain]Le  [plain]Master Management de Projets Innovants & Startups [plain] intègre un parcours certifiant permettant aux étudiants de renforcer leurs compétences en management de projet, innovation, Intelligence Artificielle, entrepreneuriat et transformation digitale grâce à des certifications internationales reconnues par les entreprises.
+P1612: [plain]Le parcours est organisé autour de plusieurs domaines complémentaires :
+P1613: [plain]❖ [plain]  [plain]  [plain]Management de projet, Agilité et amélioration continue
+P1614: [plain]Développer une maîtrise des principales méthodes de gestion de projet, des approches Agiles et de l'amélioration continue grâce à des certifications  [highlight=yellow]telles que  [plain]Google Project Management Certificate [highlight=yellow],  [plain]Disciplined Agile Essentials [highlight=yellow],  [plain]Lean Six Sigma White Belt Certification [highlight=yellow],  [plain]Scrum for Operations & DevOps Fundamentals Certified [highlight=yellow] et  [plain]Scrum with AI Certified (SAC™) [highlight=yellow].
+P1615: [plain]❖ [plain]  [plain] Innovation, entrepreneuriat et gestion de produits
+P1616: [plain]Renforcer les compétences en innovation, développement de produits, entrepreneuriat et création de startups grâce à des projets, simulations professionnelles et certifications adaptées aux nouveaux modèles d'affaires et au management de l'innovation.
+P1617: [plain]❖ [plain]  [plain]  [plain]Intelligence Artificielle et automatisation
+P1618: [plain]Exploiter l'Intelligence Artificielle pour améliorer la gestion de projet, automatiser les processus, développer des agents IA et optimiser la prise de décision grâce à des certifications  [highlight=yellow]telles que  [plain]Agentic AI in Practice [highlight=yellow],  [plain]Generative AI Fundamentals [highlight=yellow],  [plain]Using AI Agents in Workflows [highlight=yellow],  [plain]n8n Automation – Level One [highlight=yellow] et  [plain]Foundations & Applications of Generative AI [highlight=yellow].
+P1619: [plain]❖ [plain]  [plain]  [plain]Finance, Business Intelligence et outils professionnels
+P1620: [plain]Développer des compétences en analyse financière, Business Intelligence et outils de pilotage grâce à des certifications  [highlight=yellow]telles que  [plain]Bloomberg Market Concepts [highlight=yellow],  [plain]Bloomberg Finance Fundamentals [plain] et d'autres certifications professionnelles intégrées au parcours.
+P1622: [bold|underline]8. L'INTELLIGENCE ARTIFICIELLE AU CŒUR DU MASTER
+P1623: [plain]L'Intelligence Artificielle est intégrée progressivement dans l'ensemble du parcours afin de préparer les étudiants aux nouvelles pratiques du management de projet, de l'innovation, de l'entrepreneuriat et de la transformation des organisations.
+P1624: [plain]Les étudiants apprennent notamment à utiliser l'IA pour :
+P1625: [plain]améliorer la planification, le suivi et le pilotage des projets grâce à l'analyse prédictive et à l'aide à la décision ;
+P1626: [plain]automatiser les tâches de gestion de projet, les workflows et les processus collaboratifs ;
+P1627: [plain]développer des assistants intelligents et des agents IA pour optimiser la productivité des équipes projet ;
+P1628: [plain]accompagner l'innovation, le développement de produits et la création de startups grâce aux technologies d'IA générative ;
+P1629: [plain]analyser les données, identifier les risques et améliorer la performance des projets grâce à la Business Intelligence et à l'Intelligence Artificielle.
+P1630: [plain]Les étudiants mettent en pratique ces différentes applications grâce à l'utilisation de plateformes professionnelles telles que  [bold]ChatGPT [plain],  [bold]Microsoft Copilot [plain],  [bold]Google Gemini [plain],  [bold]IBM watsonx [plain],  [bold]n8n [plain] et d'autres outils d'Intelligence Artificielle utilisés pour développer des solutions innovantes en management de projet, automatisation, entrepreneuriat et transformation digitale.
+P1631: [plain]Grâce à cette approche, les étudiants développent une maîtrise des principales applications de l'Intelligence Artificielle au service du management de projet, de l'innovation, de la création de startups et de la performance des organisations.
+P1633: [bold|underline]9. PÉDAGOGIE
+P1634: [plain]Le Master privilégie une pédagogie active et professionnalisante associant enseignements académiques, études de cas, projets collaboratifs, ateliers pratiques, simulations, certifications internationales et immersion progressive en entreprise.
+P1635: [plain]Les étudiants travaillent sur des projets concrets inspirés des problématiques des organisations et développent des solutions innovantes en utilisant les principaux outils de management de projet, de Business Analysis, d'Intelligence Artificielle et de transformation digitale.
+P1636: [plain]Cette approche favorise le développement de compétences techniques, managériales et entrepreneuriales répondant aux attentes des entreprises, des cabinets de conseil, des startups et des organisations en transformation.
+P1638: [bold|underline]10. STAGE, MÉMOIRE ET PROJET PROFESSIONNEL
+P1639: [bold]*  [bold]Stage professionnel [plain] : une immersion de longue durée en entreprise pour mettre en pratique les compétences acquises et développer son expérience professionnelle. 
+P1640: [bold]*  [bold]Mémoire et projet de fin d’études [plain] : réalisation d’un projet basé sur une problématique réelle liée au management de projet, à l’innovation, à la transformation digitale, à l’entrepreneuriat ou à l’IA appliquée. 
+P1641: [bold]*  [bold]Soutenance [plain] : présentation du mémoire devant un jury d’enseignants et de professionnels, permettant de valoriser les compétences d’analyse, d’innovation et de conduite de projet.
+P1642: [bold|underline]11. DÉBOUCHÉS PROFESSIONNELS
+P1643: [plain]Le  [bold]Master Management de Projets Innovants & Startups [plain] prépare les diplômés à occuper des fonctions à responsabilité dans les entreprises, les cabinets de conseil, les organisations publiques et privées, les startups ou à développer leur propre activité entrepreneuriale.
+P1644: [plain]Les principaux débouchés sont notamment :
+P1645: [plain]Chef de Projet (Project Manager)
+P1646: [plain]Product Manager / Product Owner
+P1647: [plain]Scrum Master / Agile Project Manager
+P1648: [plain]Business Analyst
+P1649: [plain]Consultant en Management de Projet
+P1650: [plain]Consultant en Transformation Digitale
+P1651: [plain]Responsable PMO (Project Management Office)
+P1652: [plain]Business Development Manager
+P1653: [plain]Entrepreneur / Fondateur de Startup
+P1654: [plain]Responsable de Programmes
+P1655: [plain]Consultant en Organisation et Innovation.
+P1657: [bold|underline]12. POURSUITE D'ÉTUDES ET OUVERTURE INTERNATIONALE
+P1658: [bold|underline]Perspectives d'études à l'international
+P1659: [plain]Après la validation du  [plain]Master 1 [plain] à  [plain]ESPIMA Business School [plain], les étudiants peuvent poursuivre leurs études auprès de nos universités partenaires en  [plain]France [plain], en  [plain]Italie [plain] ou au  [plain]Canada [plain], sous réserve des conditions d'admission propres à chaque établissement.
+P1660: [underline]FRANCE
+P1661: [bold]  [plain]EM Normandie [bold] 
+P1662: [bold]Programme Grande École [plain] ou  [bold]Master of Science (MSc) [plain] dans des domaines tels que  [bold]l'Entrepreneuriat [plain],  [bold]l'Innovation [plain], le  [bold]Management de Projet [plain], la  [bold]Transformation des Organisations [plain] et le  [bold]Business Development [plain], selon les conditions d'admission et les programmes proposés.
+P1663: [bold] IDRAC Business School
+P1664: [bold]MBA (Bac+5) [plain] dans des domaines tels que le  [bold]Management [plain], le  [bold]Marketing [plain], la  [bold]Supply Chain [plain], le  [bold]Business [plain], la  [bold]Data [plain] et l' [bold]Intelligence Artificielle [plain], selon les conditions d'admission et les programmes proposés.
+P1665: [bold] IFAG
+P1666: [bold]Master Management / Business Unit [plain] –  [bold]Management [plain],  [bold]Entrepreneuriat [plain] et  [bold]Business Development [plain].
+P1667: [bold] Excelia Business School
+P1668: [bold]MSc Digital Transformation & Consulting [plain] –  [bold]Transformation digitale [plain],  [bold]Innovation [plain],  [bold]Conseil [plain],  [bold]Management des organisations [plain] et  [bold]Technologies numériques [plain].
+P1669: [bold] Paris School of Business
+P1670: [bold]Master in Management [plain] ou  [bold]Master of Science (MSc) [plain] dans des domaines tels que le  [bold]Management de Projet [plain], l' [bold]Innovation [plain], l' [bold]Entrepreneuriat [plain], le  [bold]Management Stratégique [plain], la  [bold]Transformation Digitale [plain] et la  [bold]Business Intelligence [plain], selon les conditions d'admission et les programmes proposés.
+P1671: [bold|underline]ITALIE
+P1672: [bold]  [bold|underline]Link University (Rome)
+P1673: [plain]Programmes de Master (Laurea Magistrale) dans les domaines de :
+P1674: [plain]Advanced Global Management
+P1676: [bold|underline]CANADA
+P1677: [bold]  [bold|underline]Université du Québec en Abitibi-Témiscamingue (UQAT)
+P1678: [plain]Les étudiants peuvent poursuivre leurs études dans le programme suivant :
+P1679: [bold]Maîtrise en gestion de projet (MGP) [plain]  [bold]– Profil professionnel [plain] – Gestion de projet, innovation et management. 
+P1680: [bold]Maîtrise en gestion des organisations (MGO) [plain]  [bold] – Profil avec mémoire [plain] – Management des organisations, recherche appliquée et poursuite éventuelle vers le doctorat.
+P1682: [plain]L'admission est réalisée conformément aux conditions prévues par l'UQAT.
+P1684: [bold|underline]13. LES ATOUTS DU MASTER
+P1685: [plain]Le  [bold]Master Management de Projets Innovants & Startups [plain] d'ESPIMA Business School constitue une formation professionnalisante conçue pour répondre aux nouveaux besoins des entreprises en matière de management de projet, d'innovation et d'entrepreneuriat.
+P1686: [plain]Le programme se distingue par :
+P1687: [plain]une formation habilitée par le Ministère de l'Enseignement Supérieur;
+P1688: [plain]une pédagogie active fondée sur des projets réels, des études de cas et des mises en situation professionnelles ;
+P1689: [plain]l'intégration de l'Intelligence Artificielle, de l'innovation et des technologies numériques dans l'ensemble du parcours ;
+P1690: [plain]un parcours certifiant comprenant des certifications professionnelles internationales reconnues ;
+P1691: [plain]une immersion progressive en entreprise à travers les projets, le stage et le mémoire de fin d'études ;
+P1692: [plain]une ouverture internationale grâce aux partenariats académiques d'ESPIMA Business School ;
+P1693: [plain]une préparation aux métiers du  [plain]management de projet, du Product Management, de l’innovation, des startups, de la transformation digitale, du conseil et de l’entrepreneuriat [plain].
+P1695: [underline]Prêt(e) à rejoindre le Master Management de Projets Innovants & Startups ?
+P1696: [plain]Les candidatures  [plain]2026/2027 [plain] sont ouvertes.
+P1697: [plain]Bénéficiez de nos avantages en cours.
+P1698: [plain]Réponse garantie sous 24 h.

@@ -1,0 +1,51 @@
+P418: [highlight=yellow]Bas du formulaire
+P419: [underline]Réseau des Diplômés
+P420: [plain]Des diplômés qui réussissent partout dans le monde.
+P421: [plain]Le réseau EBS Alumni accompagne le développement professionnel de nos diplômés et favorise les échanges, le mentorat ainsi que les opportunités de stages, d'emploi et de carrière.
+P422: [plain]8 [plain]0 %
+P423: [highlight=yellow]Embauchés en  [highlight=yellow]6 [highlight=yellow] mois
+P424: [plain]1 [plain]4
+P425: [plain]Pays représentés
+P426: [plain]8 [plain]00+
+P427: [plain]Diplômés
+P428: [plain]15
+P429: [plain]Secteurs d'activité
+P430: [underline]Rôle et missions du réseau EBS Alumni
+P431: [plain]Développer le sentiment d'appartenance à ESPIMA Business School. 
+P432: [plain]Favoriser les échanges et renforcer les liens entre les diplômés. 
+P433: [plain]Mettre en relation les étudiants avec les Alumni afin de partager leurs expériences et leurs conseils. 
+P434: [plain]Accompagner les diplômés dans leur évolution professionnelle grâce au partage d'expériences et au mentorat. 
+P435: [plain]Organiser des événements, conférences, ateliers et rencontres du réseau Alumni. 
+P436: [plain]Encourager les Alumni à contribuer au développement et au rayonnement d'ESPIMA Business School. 
+P437: [underline]EBS Alumni
+P438: [plain]Les Alumni à la une
+P440: [underline]Réseau Alumni
+P441: [plain]Nos diplômés dans le monde
+P442: [plain]Présents dans plus de 15 pays, nos diplômés développent leur carrière au sein d'entreprises, d'organisations internationales et de leurs propres projets entrepreneuriaux.
+P444: [underline]Secteurs d'activité de nos diplômés
+P445: [plain]Banque & Finance
+P446: [plain]Analystes financiers, auditeurs, contrôleurs de gestion, gestionnaires de portefeuille et spécialistes des marchés financiers.
+P447: [plain]Digital & Marketing
+P448: [plain]Responsables marketing digital, spécialistes SEO/SEA, growth marketers, CRM managers et experts en communication digitale.
+P449: [plain]Tech & IA
+P450: [plain]Développeurs, data analysts, data scientists, ingénieurs en Intelligence Artificielle et experts en cybersécurité.
+P451: [plain]Conseil
+P452: [plain]Consultants en stratégie, management, finance et transformation digitale au sein de cabinets de conseil.
+P453: [plain]Entrepreneuriat
+P454: [bold]Créateurs d'entreprise, fondateurs de startups et porteurs de projets innovants accompagnés par l'écosystème EBS.
+P455: [plain]Industrie 4.0
+P456: [plain]Professionnels contribuant à la transformation digitale, à l'innovation et à l'amélioration de la performance des entreprises industrielles.
+P458: [underline]Rejoignez-nous !
+P459: [plain]Mettez à jour votre profil
+P460: [plain]Vous êtes diplômé(e) EBS ? Tenez-nous informés de votre parcours et restez connecté(e) au réseau Alumni.
+P461: [plain]Mettre à jour mon profil → [plain] ????
+P462: [plain]Devenir mentor
+P463: [plain]Partagez votre expérience avec les étudiants EBS et accompagnez la nouvelle génération dans son parcours académique et professionnel.
+P464: [plain]Devenir mentor →
+P465: [plain]Rejoignez le réseau LinkedIn
+P466: [plain]Échangez avec les Alumni EBS du monde entier en rejoignant notre groupe LinkedIn.
+P467: [plain]Rejoindre le groupe →
+P469: [underline]Mentorat
+P470: [plain]Vous êtes diplômé(e) EBS ? Devenez mentor.
+P471: [plain]Partagez votre expérience, inspirez nos étudiants et contribuez à la réussite de la prochaine génération de diplômés.
+P472: [plain]Devenir mentor [plain]  [plain]→

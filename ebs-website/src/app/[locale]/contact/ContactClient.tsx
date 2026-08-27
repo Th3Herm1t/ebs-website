@@ -47,7 +47,7 @@ const quickActions = [
   {
     icon: <GraduationCap className="w-5 h-5" />,
     title: "Pré-inscription",
-    desc: "Candidatures 2026–2027 ouvertes. Early Bird jusqu'au 30 Juin.",
+    desc: "Candidatures 2026–2027 ouvertes. Effectuez votre préinscription dès maintenant.",
     href: "/preinscription",
     label: "Postuler",
   },

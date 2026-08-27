@@ -5,7 +5,7 @@ export const faqSchemaQuestions = [
   },
   {
     q: "Quand ouvrent les inscriptions pour 2026-2027 ?",
-    a: "Les candidatures pour l'année universitaire 2026-2027 sont ouvertes. Il est recommandé de postuler avant le 30 Juin pour bénéficier du tarif Early Bird.",
+    a: "Les candidatures pour l'année universitaire 2026-2027 sont ouvertes. Il est recommandé d'effectuer votre préinscription dès maintenant.",
   },
   {
     q: "Les certifications sont-elles vraiment gratuites ?",

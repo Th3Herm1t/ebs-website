@@ -1,0 +1,65 @@
+P729: [underline]Licence · Bac+3 · 3 ans · Diplôme a [underline]ccrédité [underline] par l'État tunisien
+P730: [underline]Licence en Finance
+P731: [plain]Maîtrisez la finance, les données et l'Intelligence Artificielle pour accompagner les décisions financières de demain.
+P732: [plain]La Licence en Finance d'EBS prépare des spécialistes capables d'évoluer dans les domaines de la finance d'entreprise, de la banque, des marchés financiers et de la FinTech. Grâce aux certifications Bloomberg, à l'analyse de données et à l'Intelligence Artificielle, vous développerez des compétences techniques et analytiques particulièrement recherchées par les entreprises et les institutions financières.
+P733: [plain]24+
+P734: [plain]Certifications incluses
+P735: [plain]3 ans
+P736: [plain]100 %
+P737: [plain]Diplôme agréé par l'État tunisien
+P738: [plain]Certifications incluses
+P739: [plain]Télécharger la brochure
+P741: [bold]Accueil
+P742: [bold]Licences
+P743: [bold]Licence en Finance
+P745: [underline]Licence en Finance — Présentation
+P746: [plain]Au-delà de la maîtrise des outils financiers, cette licence vous apprend à interpréter les données, anticiper les risques, évaluer les opportunités d'investissement et contribuer aux décisions stratégiques des organisations. Vous évoluerez dans un environnement d'apprentissage connecté aux transformations du secteur financier, où la digitalisation, la data et l'Intelligence Artificielle redéfinissent les métiers de la finance.
+P747: [plain]Public cible
+P748: [plain]Bacheliers toutes séries (sauf Lettres et Sport)
+P749: [plain]Futurs analystes financiers, banquiers, contrôleurs de gestion ou auditeurs
+P750: [plain]Passionnés de finance, d'économie et des marchés financiers
+P752: [plain]Modules du programme (11)
+P753: [bold]Le programme est structuré autour des principaux modules de formation suivants, répartis sur les six semestres de la Licence. Cette progression pédagogique permet aux étudiants d'ESPIMA de développer progressivement les compétences essentielles à leur spécialité.
+P754: [plain]1. Comptabilité générale et analytique
+P755: [plain]Comptabilité financière, comptabilité de gestion et analyse des coûts.
+P756: [plain]2. Mathématiques financières, statistiques et économétrie
+P757: [plain]Mathématiques, statistiques, économétrie et modélisation des données financières.
+P758: [plain]3. Analyse financière et diagnostic d'entreprise
+P759: [plain]Analyse des états financiers, diagnostic de la performance et prise de décision.
+P760: [plain]4. Marchés financiers et produits d'investissement
+P761: [plain]Marchés financiers, produits d'investissement et environnement bancaire.
+P762: [plain]5. Finance d'entreprise et évaluation (DCF, comparables)
+P763: [plain]Finance d'entreprise, politiques financières, ingénierie financière et valorisation des entreprises.
+P764: [plain]6. Contrôle de gestion et reporting financier
+P765: [plain]Pilotage de la performance, contrôle de gestion et tableaux de bord.
+P766: [plain]7. FinTech et finance numérique
+P767: [plain]Transformation digitale de la finance, FinTech et nouveaux services financiers.
+P768: [plain]8. ESG, finance durable et gestion des risques
+P769: [plain]Finance durable, analyse des risques, RSE et éthique des affaires.
+P770: [plain]9. Python appliqué à la finance
+P771: [plain]Analyse de données financières, automatisation et Business Analytics.
+P772: [plain]10. Utilisation du Terminal Bloomberg
+P773: [plain]Analyse des marchés, données financières et aide à la décision.
+P774: [plain]11. Stage professionnel et Projet de Fin d'Études (PFE)
+P775: [plain]Immersion en banque, cabinet ou entreprise, réalisation du PFE et préparation à l'insertion professionnelle.
+P777: [underline]Parcours certifiant EBS
+P778: [plain]Un parcours structuré entre socle commun et spécialisation.
+P779: [plain]Les certifications obligatoires constituent le socle de compétences attendu par EBS. Les certifications optionnelles permettent à chaque étudiant de renforcer son profil en fonction de son projet professionnel.
+P780: [plain](Conserver tout le catalogue des certifications sans modification.)
+P782: [underline]L'IA est obligatoire dans ce programme
+P783: [plain]Les compétences en Intelligence Artificielle constituent un socle commun obligatoire dans tous les parcours EBS. Voici quelques-unes des principales certifications IA intégrées à cette Licence.
+P785: [underline]Perspectives d'études à l'international
+P786: [plain]Ce programme permet de poursuivre vos études auprès de nos universités partenaires en France, au Canada et dans d'autres pays grâce aux accords de coopération conclus par EBS.
+P788: [underline]Débouchés professionnels
+P789: [plain]AI-Driven Financial Consultant
+P790: [plain]Analyste financier
+P791: [plain]Contrôleur de gestion
+P792: [plain]Chargé de clientèle bancaire
+P793: [plain]Auditeur junior
+P794: [plain]Conseiller en gestion de patrimoine
+P795: [plain]Responsable comptable
+P796: [plain]Analyste crédit
+P798: [plain]Prêt(e) à rejoindre la Licence en Finance ?
+P799: [plain]Les candidatures 2026/2027 sont ouvertes. 
+P800: [plain]Bénéficiez de nos avantages en cours.
+P801: [plain]Réponse garantie sous 24 h.

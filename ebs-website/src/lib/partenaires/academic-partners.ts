@@ -111,4 +111,6 @@ export const academicPartners = [
     logo: "/images/partenaires-academiques/gutech.webp",
     desc: "Fondée en 2007, GUtech est une université technologique anglophone située dans le Sultanat d'Oman, développant une collaboration avec RWTH Aachen University.",
   },
-];
+] as const;
+
+export type AcademicPartnerSlug = (typeof academicPartners)[number]["slug"];

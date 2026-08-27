@@ -1,0 +1,65 @@
+P249: [plain]Recrutement · Stage · Alternance · Partenariat
+P250: [underline]Recrutez les talents de demain, dès aujourd'hui.
+P251: [plain]EBS forme des diplômés répondant aux attentes des entreprises : certifiés, bilingues, maîtrisant l'Intelligence Artificielle et rapidement opérationnels. 
+P252: [plain]Vos futurs collaborateurs sont chez nous.
+P254: [plain]90 %+
+P255: [plain]Taux d'insertion
+P256: [plain]150+
+P257: [plain]Certifications internationales proposées
+P258: [plain]8
+P259: [plain]Filières ouvertes
+P260: [underline]Rentrée 2026-2027
+P261: [plain]1 [plain]2
+P262: [bold]Partenaires stratégiques
+P263: [plain]90 [plain]% [plain]  [plain]+
+P264: [bold]Insertion professionnelle
+P265: [plain]10+
+P266: [bold]Secteurs représentés
+P268: [underline]Ils nous font confiance
+P269: [plain]Nos partenaires économiques
+P270: [plain]Un écosystème d'entreprises leaders qui recrutent nos talents, accueillent nos étudiants en stage et collaborent avec EBS sur des projets concrets.
+P271: [underline]Pourquoi EBS ?
+P272: [plain]5 bonnes raisons de recruter chez nous
+P273: [plain]Un diplômé EBS n’est pas un profil parmi d’autres. C’est un talent certifié, préparé et immédiatement opérationnel, prêt à transformer ses compétences en impact concret.
+P274: [plain]Talents Certifiés
+P275: [plain]Vos futurs collaborateurs sont certifiés par Google, IBM, Harvard, Bloomberg, Cisco et d'autres leaders internationaux avant même l'obtention de leur diplôme.
+P276: [plain]Opérationnels Rapidement
+P277: [plain]Pédagogie par projets, simulations professionnelles Forage et études de cas réels permettent à nos étudiants de s'intégrer rapidement en entreprise.
+P278: [plain]IA-Native
+P279: [plain]Tous nos étudiants développent des compétences en IA générative, prompting et automatisation, désormais essentielles dans tous les métiers.
+P280: [plain]Bilingues & Internationaux
+P281: [plain]Anglais professionnel, partenariats internationaux et ouverture multiculturelle les préparent à évoluer dans des environnements internationaux.
+P282: [plain]Recrutement Sans Risque
+P283: [plain]Accueillez nos étudiants en stage de longue durée pour évaluer leurs compétences et préparer leur future intégration dans votre entreprise.
+P284: [underline]Collaborer avec EBS
+P285: [plain]Quatre façons de travailler avec nos talents
+P286: [plain]Chaque entreprise a des besoins différents. Choisissez la formule qui vous convient.
+P287: [plain]Stage
+P288: [plain]Le plus demandé
+P289: [plain]Des stagiaires motivés et opérationnels pour accompagner vos projets, quelle que soit votre activité.
+P290: [plain]Immersion en entreprise
+P291: [plain]Accueillez un étudiant en stage de longue durée, 3 à 4 jours par semaine dans votre entreprise, tout en poursuivant sa formation à EBS.
+P292: [plain]Recrutement
+P293: [plain]Accès privilégié à notre réseau de diplômés certifiés, avec un accompagnement personnalisé selon vos besoins.
+P294: [plain]Projet Réel
+P295: [plain]Confiez un projet à une équipe d'étudiants encadrée par nos enseignants et bénéficiez de solutions concrètes.
+P297: [underline]Profil type
+P298: [plain]Le profil du diplômé EBS
+P299: [plain]Voici ce que vous obtenez lorsque vous recrutez un diplômé EBS.
+P300: [bold|underline]Multi-certifié [bold] : [plain] Google, IBM, Harvard, Bloomberg, Cisco, HubSpot, PMI, ScrumStudy et plus de 15 autres organismes internationaux. 
+P301: [bold|underline]Maîtrise de l'IA [bold] : [plain] prompting, agents IA, automatisation et analyse de données augmentée appliqués à son métier. 
+P302: [bold|underline]Expérience pratique [bold] : [plain] simulations Forage (BCG, Goldman Sachs, JP Morgan, Mastercard, PwC, KPMG, EY) et projets concrets. 
+P303: [bold|underline]Rapidement opérationnel [plain] grâce à une pédagogie par projets, des études de cas et la maîtrise des outils professionnels. 
+P304: [bold|underline]Profil international [bold] : [plain] anglais professionnel, expérience multiculturelle et partenariats académiques internationaux. 
+P306: [underline]Processus
+P307: [plain]Comment devenir partenaire ?
+P308: [plain]Un processus simple en trois étapes pour rejoindre notre réseau.
+P310: [underline]Devenir Partenaire
+P311: [plain]Formulaire de partenariat
+P312: [plain]Remplissez ce formulaire et notre équipe vous contactera dans les meilleurs délais.
+P313: [plain]Prêt à collaborer ?
+P314: [plain]Contactez directement notre équipe pour échanger sur vos besoins en recrutement, en stages, en immersion en entreprise ou en partenariats.
+P315: [plain]+216 55 582 843
+P316: [plain]info@ebs.tn
+P317: [plain]Rejoignez notre réseau de partenaires économiques.
+P318: [plain]Accédez à des talents certifiés, formés à l'Intelligence Artificielle et préparés aux exigences du monde professionnel. Construisons ensemble l'avenir.

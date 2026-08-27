@@ -1,0 +1,69 @@
+P2129: [underline]Étudiants Internationaux
+P2130: [plain]Venez étudier en Tunisie avec EBS
+P2131: [plain]Rejoindre  [plain]ESPIMA Business School à Tunis [plain], c’est choisir une université privée agréée offrant un environnement académique ouvert sur l’international et des formations adaptées aux évolutions du monde professionnel.
+P2132: [plain]De votre première candidature jusqu’à votre installation en Tunisie, puis tout au long de vos études, notre équipe vous accompagne pour faciliter votre arrivée, votre intégration et votre réussite à EBS.
+P2133: [plain]Université privée agréée en Tunisie
+P2134: [plain]Accompagnement visa, séjour et installation
+P2135: [plain]Parcours internationaux et partenaires académiques à l’étranger
+P2137: [underline]Notre engagement
+P2138: [plain]Nous vous accompagnons à chaque étape de votre parcours.
+P2139: [plain]Étudier dans un nouveau pays représente un véritable projet de vie. Le service d’accompagnement international d’EBS facilite vos démarches et vous aide à préparer votre arrivée dans les meilleures conditions.
+P2140: [underline]Accueil personnalisé
+P2141: [plain]Une équipe disponible pour vous accompagner  [plain]avant votre départ, à votre arrivée à Tunis et pendant votre installation [plain], et répondre à vos principales questions pratiques.
+P2142: [underline]Démarches simplifiées
+P2143: [plain]Accompagnement pour préparer les principales formalités liées au  [plain]visa, au séjour en Tunisie, à l’assurance et aux documents administratifs nécessaires [plain].
+P2144: [underline]Communauté internationale
+P2145: [plain]Intégrez la communauté EBS, rencontrez des étudiants de différents horizons et participez à des  [plain]activités académiques, culturelles et associatives [plain] favorisant les échanges et l’intégration.
+P2147: [underline]Votre parcours
+P2148: [plain]De votre pays à EBS, étape par étape
+P2149: [underline]Avant votre arrivée
+P2150: [plain]Préparez votre projet d’études avec EBS :  [plain]choix du programme, candidature, admission et préparation des documents nécessaires à votre venue en Tunisie [plain].
+P2151: [underline]Votre arrivée en Tunisie
+P2152: [plain]À votre arrivée, notre équipe vous accompagne pour faciliter vos  [plain]premiers repères à Tunis [plain], rejoindre votre logement et préparer votre rentrée à EBS.
+P2153: [underline]Votre installation
+P2154: [plain]Nous vous aidons à organiser les principales étapes nécessaires pour commencer sereinement votre nouvelle vie étudiante.
+P2155: [plain]-  [underline]Assistance pour le séjour [plain]Accompagnement dans la préparation des documents et des principales démarches administratives applicables aux étudiants internationaux.
+P2156: [plain]-  [underline]Recherche de logement [plain]Orientation et assistance dans la recherche d’un logement adapté à vos besoins et situé à proximité du campus ou facilement accessible.
+P2157: [plain]-  [underline]Accompagnement personnalisé [plain]Une équipe dédiée reste disponible pour répondre à vos questions et faciliter votre  [plain]installation et votre intégration à EBS [plain].
+P2159: [underline]Depuis l'international
+P2160: [underline]Vous venez de loin.
+P2161: [underline]Votre avenir est ici.
+P2162: [plain]Commencez vos études à EBS en Tunisie et ouvrez-vous les portes de l’international en France, au Canada, en Italie et à Oman grâce à notre réseau de partenaires académiques.
+P2163: [underline]Canada
+P2164: [underline]UQAT
+P2165: [plain]✓ [plain] Poursuite d’études possible après un cursus à EBS [plain]✓ [plain] Maîtrises (Bac+5) accessibles selon le parcours académique [plain]✓ [plain] Expérience universitaire au Québec [plain]✓ [plain] Accompagnement dans le projet de mobilité
+P2167: [underline]France
+P2168: [underline]11 partenaires académiques
+P2169: [plain]✓ [plain] Écoles et Grandes Écoles partenaires [plain]✓ [plain] Bachelors, Masters, MSc et programmes Bac+5 [plain]✓ [plain] Nombreux campus et spécialisations [plain]✓ [plain] Accompagnement dans les démarches de mobilité
+P2171: [underline]Italie
+P2172: [underline]Link University — Rome
+P2173: [plain]✓ [plain] Mobilité possible dès les premières années à EBS [plain]✓ [plain] Bachelors et Masters accessibles selon le parcours [plain]✓ [plain] Programmes internationaux à Rome [plain]✓ [plain] Études en anglais selon le programme choisi
+P2175: [underline]Oman
+P2176: [underline]GUtech
+P2177: [plain]✓ [plain] Université technologique internationale anglophone [plain]✓ [plain] Collaboration académique avec RWTH Aachen University [plain]✓ [plain] Informatique, Intelligence Artificielle et Cybersécurité [plain]✓ [plain] Projets, Summer Schools et mobilité académique [plain] 
+P2178: [underline]Nos partenaires académiques internationaux
+P2179: [plain](Conserver les logos et la liste des 14 partenaires.)
+P2180: [plain]EBS développe des partenariats avec des  [plain]universités, Grandes Écoles et écoles spécialisées en France, au Canada, en Italie et à Oman [plain].
+P2181: [plain]Ces collaborations permettent, selon les accords, de développer des  [plain]poursuites d’études, mobilités, projets académiques, Summer Schools et autres expériences internationales [plain].
+P2182: [underline]→ DÉCOUVRIR NOS 14 PARTENAIRES ET LEURS GUIDES
+P2184: [highlight=yellow]« Grâce à EBS et à son partenariat avec l'UQAT, j'ai pu poursuivre mes études au Canada après ma Licence en Management. Aujourd'hui, je travaille à Montréal. L'accompagnement d'EBS a été un véritable atout dans mon parcours. »
+P2185: [plain]Sami GHARBI [highlight=yellow]Project Manager — Montréal, Canada [highlight=yellow]Promotion 2018 — Licence Management
+P2187: [underline]Comment ça marche ?
+P2188: [underline]01 — Choisissez votre programme
+P2189: [plain]Découvrez les  [plain]Licences et Masters d’EBS [plain] et choisissez la formation correspondant à votre projet académique et professionnel.
+P2190: [underline]02 — Déposez votre candidature
+P2191: [plain]Transmettez votre dossier d’admission. Notre équipe vous accompagne et vous informe sur les  [plain]documents nécessaires [plain].
+P2192: [underline]03 — Recevez votre admission
+P2193: [plain]Après étude de votre dossier et validation de votre candidature, vous recevez les documents nécessaires pour préparer votre  [plain]inscription et votre arrivée en Tunisie [plain].
+P2194: [underline]04 — Préparez votre arrivée
+P2195: [plain]Notre équipe vous accompagne dans la préparation de votre  [plain]visa, logement et principales démarches administratives [plain].
+P2196: [underline]05 — Commencez votre vie à EBS
+P2197: [plain]Rejoignez le campus, découvrez votre nouvel environnement et bénéficiez de notre accompagnement pour faciliter votre  [plain]intégration et votre réussite académique [plain].
+P2199: [underline]Rejoignez-nous !
+P2200: [plain]Votre parcours à EBS commence ici.
+P2201: [plain]Vous souhaitez venir étudier à Tunis ? Déposez votre candidature et notre équipe vous accompagne dans la préparation de votre projet,  [plain]de l’admission jusqu’à votre installation en Tunisie [plain].
+P2202: [plain]PRÉ-INSCRIPTION
+P2204: [underline]Une question sur votre venue en Tunisie ?
+P2205: [plain]Notre équipe internationale vous accompagne pour toute question concernant  [plain]l’admission, les programmes, le visa, le logement ou votre installation à Tunis [plain].
+P2206: [plain]Réponse sous 24 h.
+P2207: [plain]+216 55 582 [plain]  [plain]843

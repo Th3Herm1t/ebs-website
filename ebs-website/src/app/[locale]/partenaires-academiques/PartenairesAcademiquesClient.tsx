@@ -292,7 +292,7 @@ export default function PartenairesAcademiquesPage() {
               Pourquoi vous associer à EBS ?
             </h2>
             <p className="text-[16px] text-penn-body mt-3 max-w-[650px] mx-auto">
-              Un partenariat gagnant-gagnant pour votre institution et nos étudiants.
+              Un partenariat gagnant-gagnant au service de votre institution et de nos étudiants.
             </p>
           </motion.div>
 
@@ -357,7 +357,7 @@ export default function PartenairesAcademiquesPage() {
               Devenir partenaire académique
             </h2>
             <p className="text-[15px] text-penn-body/50 max-w-[480px] mx-auto">
-              Vous représentez une université ou une école internationale et
+              Vous représentez une université ou une école supérieure internationale et
               souhaitez établir un partenariat avec EBS ?
             </p>
           </motion.div>
@@ -498,8 +498,7 @@ export default function PartenairesAcademiquesPage() {
               Une question ?
             </h2>
             <p className="text-[16px] text-penn-body leading-relaxed mb-10 max-w-[600px] mx-auto">
-              Contactez directement notre équipe pour discuter d&apos;un
-              partenariat académique avec EBS.
+              Contactez directement notre équipe pour échanger sur votre projet de partenariat académique avec EBS.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[500px] mx-auto">

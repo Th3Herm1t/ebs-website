@@ -16,40 +16,40 @@ const piliers = [
   {
     icon: <Star className="w-7 h-7" />,
     title: "Qualité de l'Enseignement",
-    desc: "EBS est une business school moderne et dynamique, qui propose des parcours et des diplômes de qualité, en Licence et en Master, répondant aux standards internationaux. Les partenariats internationaux, les codiplômations et les certifications attestent de la qualité des études universitaires à EBS.",
+    desc: "EBS propose des formations de Licence et de Master reconnues pour leur qualité académique, enrichies par des certifications internationales, des partenariats universitaires et une ouverture vers l'international afin de répondre aux exigences du marché de l'emploi.",
     color: "#2B8FAB",
     image: "/images/campus/campus-2.jpg",
   },
   {
     icon: <Lightbulb className="w-7 h-7" />,
     title: "Pédagogie Innovante",
-    desc: "Notre université a mis en place un système d'enseignement utilisant les nouvelles technologies, avec une plateforme de E-Learning favorisant l'autonomie et l'interaction. EBS a mis l'accent sur le « learning by doing » dont les objectifs sont de développer la créativité, le travail en équipe, l'esprit d'analyse et le leadership.",
+    desc: "Notre pédagogie associe apprentissage par projets (« learning by doing »), intelligence artificielle, outils numériques et plateforme E-Learning afin de développer les compétences techniques, l'esprit d'analyse, la créativité et le travail en équipe.",
     color: "#2196F3",
     image: "/images/sections/pillar-tech.jpg",
   },
   {
     icon: <Heart className="w-7 h-7" />,
     title: "Développement Personnel et Professionnel",
-    desc: "Le développement personnel occupe une place très importante dans notre université. Notre objectif : développer la confiance en soi, l'ouverture d'esprit et la culture générale pour former des entrepreneurs, des managers et des hauts cadres ambitieux, efficaces et responsables.",
+    desc: "Le développement personnel et professionnel est au cœur de notre projet pédagogique. Nous accompagnons chaque étudiant dans le développement de ses soft skills, de son leadership, de son ouverture d'esprit et de sa capacité à évoluer dans un environnement international.",
     color: "#E91E8C",
     image: "/images/sections/features-group.jpg",
   },
   {
     icon: <Globe className="w-7 h-7" />,
     title: "Ouverture sur l'Environnement",
-    desc: "EBS est un pont d'échange entre le monde professionnel et le monde académique. Plusieurs conventions ont été signées avec des grands groupes pour offrir les meilleures opportunités de stages et d'emplois. Des accords de collaboration avec des universités étrangères favorisent la mobilité des étudiants et des enseignants.",
+    desc: "EBS entretient des partenariats étroits avec des entreprises et des universités internationales afin d'offrir à ses étudiants des stages, des projets, des opportunités de mobilité et des perspectives de carrière en Tunisie et à l'étranger.",
     color: "#FF9800",
     image: "/images/sections/pillar-partenaires.jpg",
   },
 ];
 
 const services = [
-  { icon: <Building2 className="w-5 h-5" />, title: "Career Center", desc: "Ateliers CV, simulations d'entretien, matching alternance, réseau employeurs. Accessible dès la L1.", color: "#2B8FAB" },
-  { icon: <Award className="w-5 h-5" />, title: "Centre de Certification", desc: "Salles dédiées au passage des certifications. Accès aux plateformes officielles Google, IBM, AWS, Cisco, etc.", color: "#2196F3" },
-  { icon: <Globe className="w-5 h-5" />, title: "Bureau International", desc: "Accompagnement visa, dossiers de candidature aux partenaires, préparation au départ à l'étranger.", color: "#E91E8C" },
-  { icon: <BookOpen className="w-5 h-5" />, title: "Bibliothèque & E-Learning", desc: "Accès aux ressources numériques, manuels, cours en ligne complémentaires et bases de données.", color: "#FF9800" },
-  { icon: <Users className="w-5 h-5" />, title: "Tutorat & Soutien", desc: "Séances de rattrapage, tutorat par les pairs, accompagnement individuel pour les étudiants en difficulté.", color: "#9C27B0" },
-  { icon: <Monitor className="w-5 h-5" />, title: "Espaces de détente", desc: "Zones de travail collaboratif, salles de projet, salle des jeux, buvette et espaces de détente.", color: "#00BCD4" },
+  { icon: <Building2 className="w-5 h-5" />, title: "Career Center", desc: "Accessible dès la 1re année de Licence : ateliers CV, simulations d'entretien, accompagnement personnalisé et stages longs en Master pour renforcer l'employabilité et favoriser la pré-embauche.", color: "#2B8FAB" },
+  { icon: <Award className="w-5 h-5" />, title: "Centre de Certification", desc: "Salles dédiées au passage des certifications. Accès aux plateformes officielles Google, IBM, AWS, Cisco, Microsoft, PMI, Fortinet et bien d'autres.", color: "#2196F3" },
+  { icon: <Globe className="w-5 h-5" />, title: "Bureau International", desc: "Accompagnement pour les candidatures, la préparation du dossier Campus France, les démarches auprès de nos universités partenaires, les départs à l'étranger et les procédures de visa.", color: "#E91E8C" },
+  { icon: <BookOpen className="w-5 h-5" />, title: "Bibliothèque & E-Learning", desc: "Accès aux ressources numériques, aux manuels, aux plateformes de cours en ligne et aux bases de données académiques.", color: "#FF9800" },
+  { icon: <Users className="w-5 h-5" />, title: "Tutorat & Soutien", desc: "Séances de rattrapage, tutorat, accompagnement pédagogique et suivi personnalisé pour les étudiants qui en ont besoin.", color: "#9C27B0" },
+  { icon: <Monitor className="w-5 h-5" />, title: "Vie étudiante", desc: "Espaces de travail collaboratif, salles de projet, salle de jeux, buvette, espaces de détente et clubs étudiants favorisant la vie universitaire et les activités associatives.", color: "#00BCD4" },
 ];
 
 
@@ -81,10 +81,10 @@ export default function QuiSommesNousPage() {
           </div>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex flex-wrap justify-center gap-4 md:gap-6">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">2013</p><p className="text-[13px] text-white/50 font-medium">Fondation</p></div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">7</p><p className="text-[13px] text-white/50 font-medium">Programmes</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">9</p><p className="text-[13px] text-white/50 font-medium">Programmes disponibles</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">150+</p><p className="text-[13px] text-white/50 font-medium">Certifications gratuites</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">95%</p><p className="text-[13px] text-white/50 font-medium">Taux de réussite</p></div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">16</p><p className="text-[13px] text-white/50 font-medium">Partenaires internationaux</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">14</p><p className="text-[13px] text-white/50 font-medium">Partenaires internationaux</p></div>
           </motion.div>
         </div>
         <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2" animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}><ChevronDown className="w-6 h-6 text-white/30" /></motion.div>
@@ -98,7 +98,7 @@ export default function QuiSommesNousPage() {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
               {/* Photo */}
-              <div className="w-full lg:w-1/2 shrink-0">
+              <div className="w-full lg:w-2/5 shrink-0">
                 <div className="relative h-full min-h-[300px]">
                   <div className="absolute -inset-3 bg-gradient-to-br from-[#2B8FAB]/20 via-[#2B8FAB]/5 to-transparent rounded-3xl blur-2xl" />
                   <div className="absolute -inset-1 bg-gradient-to-br from-[#2B8FAB]/40 to-transparent rounded-2xl opacity-50" />
@@ -115,7 +115,7 @@ export default function QuiSommesNousPage() {
               </div>
 
               {/* Text */}
-              <div className="w-full lg:w-1/2 flex flex-col justify-center">
+              <div className="w-full lg:w-3/5 flex flex-col justify-center">
                 <Quote className="w-10 h-10 text-[#2B8FAB]/30 mb-6" />
                 <h2 className="text-[28px] md:text-[36px] font-extrabold text-white mb-8 leading-tight">
                   Le mot du<br />
@@ -256,10 +256,10 @@ export default function QuiSommesNousPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {[
               { end: 2013, label: "Année de fondation", icon: <Building2 className="w-7 h-7" /> },
-              { end: 8, label: "Programmes disponibles", sublabel: "5 parcours Licence · 3 Masters", icon: <BookOpen className="w-7 h-7" /> },
+              { end: 9, label: "Programmes disponibles", sublabel: "3 Licences en Sciences de Gestion · 1 Licence en Informatique (2 options) · 4 Masters", icon: <BookOpen className="w-7 h-7" /> },
               { end: 150, suffix: "+", label: "Certifications gratuites", sublabel: "Google · IBM · Harvard · Bloomberg...", icon: <Award className="w-7 h-7" />, featured: true },
               { end: 95, suffix: "%", label: "Taux de réussite", icon: <TrendingUp className="w-7 h-7" />, featured: true },
-              { end: 16, label: "Partenaires internationaux", sublabel: "France · Canada · Italie · Oman", icon: <Globe className="w-7 h-7" /> },
+              { end: 14, label: "Partenaires internationaux", sublabel: "France · Canada · Italie · Oman", icon: <Globe className="w-7 h-7" /> },
               { end: 12, suffix: "+", label: "Années d'expérience", icon: <Star className="w-7 h-7" /> },
             ].map((stat, i) => (
               <motion.div key={stat.label} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.08 }} whileHover={{ y: -4, scale: 1.02 }}
@@ -287,10 +287,10 @@ export default function QuiSommesNousPage() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { icon: <ShieldCheck className="w-7 h-7" />, title: "Agrément d'État", text: "Université privée agréée par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique de la République Tunisienne. Agrément N°2013/02 — Diplômes reconnus par l'État tunisien.", color: "#2B8FAB" },
-              { icon: <Globe className="w-7 h-7" />, title: "Réseau International", text: "Membre du réseau de 16 institutions universitaires partenaires : UQAT (Canada), EM Normandie, PSB Paris, IDRAC, IFAG, IGEFI, Éklore, Epitech, EPSI, Excelia, FIGS Education, Sup'de Com, RedSup (France), Link University (Italie) et GUtech (Oman).", color: "#2196F3" },
-              { icon: <Building2 className="w-7 h-7" />, title: "Partenariats Entreprises", text: "Partenariats actifs avec des entreprises nationales et multinationales pour offrir à nos étudiants des stages, des alternances et des opportunités de recrutement dans des environnements professionnels réels.", color: "#E91E8C" },
-              { icon: <Award className="w-7 h-7" />, title: "Certifications Mondiales", text: "Partenariats avec Google, IBM, Harvard, Cisco, Bloomberg, Fortinet, HubSpot, DeepLearning.AI et 15+ fournisseurs mondiaux de certifications. 150+ certifications gratuites incluses dans chaque parcours.", color: "#FF9800" },
+              { icon: <ShieldCheck className="w-7 h-7" />, title: "Agrément d'État", text: "Université privée agréée par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique de la République Tunisienne. Agrément n°2013/02. Diplômes reconnus par l'État tunisien.", color: "#2B8FAB" },
+              { icon: <Globe className="w-7 h-7" />, title: "Réseau International", text: "Un réseau de 14 universités partenaires, dont UQAT (Canada), Link University (Italie) et GUtech (Oman), ainsi que plusieurs établissements en France : EM Normandie, Paris School of Business, IDRAC, IFAG, IGEFI, Éklore, Epitech, EPSI, Excelia, Groupe FIGS Education, Sup’ de Com et RedSup, favorisant la mobilité internationale, les doubles diplômes et les poursuites d’études.", color: "#2196F3" },
+              { icon: <Building2 className="w-7 h-7" />, title: "Partenariats Entreprises", text: "Partenariats actifs avec des entreprises nationales et multinationales pour offrir à nos étudiants des stages, des parcours en alternance, des projets en entreprise et des opportunités de recrutement dans des environnements professionnels réels.", color: "#E91E8C" },
+              { icon: <Award className="w-7 h-7" />, title: "Certifications Mondiales", text: "Des certifications proposées par Google, IBM, Harvard, Cisco, Bloomberg, Fortinet, HubSpot, DeepLearning.AI et plus de 15 autres organismes internationaux. Plus de 150 certifications internationales sont incluses gratuitement dans nos parcours.", color: "#FF9800" },
             ].map((acc, i) => (
               <motion.div key={acc.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ delay: i * 0.1 }} className="bg-white rounded-2xl p-8 border border-penn-border hover:border-[#2B8FAB]/30 transition-all duration-300 group">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{ backgroundColor: `${acc.color}12` }}><span style={{ color: acc.color }}>{acc.icon}</span></div>
@@ -327,7 +327,7 @@ export default function QuiSommesNousPage() {
         </div>
       </section>
 
-      <CtaSection title="Rejoignez la première université tunisienne avec l'IA intégrée." subtitle="Candidatures 2026–2027 ouvertes. Déposez votre dossier dès maintenant." primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }} secondaryCta={{ label: "Pré-inscription", href: "/preinscription" }} background="penn-green" />
+      <CtaSection title="Rejoignez la première université tunisienne avec l'IA intégrée." subtitle="Les candidatures pour l'année universitaire 2026/2027 sont ouvertes. Déposez votre dossier dès maintenant." primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }} secondaryCta={{ label: "Pré-inscription", href: "/preinscription" }} background="penn-green" />
     </>
   );
 }

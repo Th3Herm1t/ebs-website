@@ -73,7 +73,7 @@ const missions = [
 
 const pillars = [
   { icon: <Eye className="w-5 h-5" />, label: "Vision", text: "Notre ambition pour l'avenir" },
-  { icon: <Target className="w-5 h-5" />, label: "Mission", text: "Ce que nous faisons chaque jour" },
+  { icon: <Target className="w-5 h-5" />, label: "Mission", text: "Ce qui nous anime chaque jour" },
   { icon: <Award className="w-5 h-5" />, label: "Valeurs", text: "Ce qui nous définit" },
 ];
 
@@ -174,7 +174,7 @@ export default function VisionPage() {
               &ldquo;
             </span>
             <p className="text-[24px] md:text-[32px] lg:text-[38px] font-bold leading-snug text-white/90 italic relative z-10">
-              Être l&apos;université de référence en Tunisie pour la formation de professionnels compétitifs à l&apos;échelle internationale, maîtrisant l&apos;Intelligence Artificielle et certifiés par les plus grandes organisations mondiales.
+              Être une université de référence en Tunisie, reconnue pour la qualité de ses formations, son ouverture internationale et sa capacité à former des professionnels compétitifs, maîtrisant l&apos;Intelligence Artificielle et certifiés par les plus grandes organisations internationales.
             </p>
             <span className="absolute -bottom-12 -right-4 text-[120px] leading-none font-serif text-[#2B8FAB]/10 select-none pointer-events-none rotate-180">
               &ldquo;

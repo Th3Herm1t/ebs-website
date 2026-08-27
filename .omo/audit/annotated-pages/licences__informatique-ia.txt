@@ -1,0 +1,64 @@
+P806: [underline]Licence • Bac+3 • 3 ans • Diplôme a [underline]ccrédité [underline] par l'État tunisien
+P807: [bold|underline]Licence Informatique – Génie Logiciel et Systèmes d'Information (Option Intelligence Artificielle)
+P808: [bold|underline]Concevez les logiciels intelligents qui transformeront les entreprises de demain.
+P809: [plain]La  [plain]Licence Informatique – Génie Logiciel et Systèmes d'Information (option Intelligence Artificielle) [plain] d'EBS prépare des professionnels capables de concevoir, développer et déployer des  [plain]applications logicielles intégrant les technologies de l'Intelligence Artificielle. Le programme associe les fondamentaux du génie logiciel, des systèmes d'information, des bases de données et du Cloud avec une spécialisation progressive en Intelligence Artificielle afin de répondre aux besoins croissants des entreprises en compétences numériques. Cette formation intègre également des certifications internationales reconnues.
+P811: [highlight=yellow|bold]26+
+P812: [plain]Certifications incluses
+P813: [bold]3 ans
+P814: [bold]100 %
+P815: [plain]Diplôme a [plain]ccrédité [plain] par l'État tunisien
+P816: [plain]Certifications incluses
+P817: [plain]Télécharger la brochure
+P819: [bold|underline]Licence Informatique – Génie Logiciel et Systèmes d'Information (Opti [bold|underline]on Intelligence Artificielle) 
+P820: [bold]Présentation
+P821: [plain]La Licence Informatique – Génie Logiciel et Systèmes d'Information (option Intelligence Artificielle) forme des professionnels capables de développer des applications Web et mobiles, de concevoir et administrer des bases de données, d'intégrer des services d'Intelligence Artificielle et de participer à des projets de développement logiciel, de systèmes d'information et de transformation digitale. Grâce à une progression pédagogique cohérente, les étudiants acquièrent d'abord les fondamentaux du génie logiciel avant de se spécialiser progressivement en Intelligence Artificielle. Cette formation constitue également une base solide pour poursuivre des études en Master. Elle s'appuie sur les objectifs et l'organisation de la licence officielle.
+P823: [plain]Public cible
+P824: [plain]Bacheliers toutes séries (sauf Lettres et Sport)
+P825: [plain]Passionnés de programmation, de développement logiciel et d'Intelligence Artificielle
+P826: [plain]Futurs développeurs logiciels, ingénieurs en Intelligence Artificielle, développeurs d'applications ou spécialistes des systèmes d'information
+P828: [plain]Modules du programme (11)
+P829: [bold]Le programme est structuré autour des principaux modules de formation suivants, répartis sur les six semestres de la Licence. Cette progression pédagogique permet aux étudiants d'ESPIMA de développer progressivement les compétences essentielles à leur spécialité.
+P830: [plain]1. Mathématiques appliquées, algorithmique et programmation
+P831: [plain]Algèbre, analyse, algorithmique, structures de données, programmation Python et Java. 
+P832: [plain]2. Systèmes d'exploitation, architecture des ordinateurs et réseaux
+P833: [plain]Architecture des ordinateurs, systèmes d'exploitation, réseaux informatiques et services réseau. 
+P834: [plain]3. Bases de données et systèmes d'information
+P835: [plain]Bases de données relationnelles (SQL), ingénierie et administration des bases de données, systèmes d'information. 
+P836: [plain]4. Génie logiciel, programmation orientée objet et méthodes agiles
+P837: [plain]Ingénierie des exigences, UML, programmation orientée objet, développement logiciel et méthodes agiles. 
+P838: [plain]5. Développement Web, Mobile et Cloud
+P839: [plain]Technologies Web, développement mobile, Cloud Computing, DevOps et services Web. 
+P840: [plain]6. Intelligence Artificielle et Machine Learning
+P841: [plain]Fondements de l'Intelligence Artificielle, Machine Learning, Deep Learning et préparation aux certifications Microsoft AI et AWS AI. 
+P842: [plain]7. Data Engineering, Big Data et MLOps
+P843: [plain]Ingénierie des données, Big Data, MLOps et déploiement de modèles d'Intelligence Artificielle. 
+P844: [plain]8. Intelligence Artificielle générative et applications avancées
+P845: [plain]Traitement automatique du langage (NLP), Large Language Models (LLM), systèmes de recommandation, IA générative, agents IA et Computer Vision. 
+P846: [plain]9. Qualité logicielle, sécurité et tests
+P847: [plain]Tests logiciels, qualité logicielle, sécurité des applications et protection des systèmes d'information. 
+P848: [plain]10. Communication professionnelle, Soft Skills et entrepreneuriat
+P849: [plain]Communication en français et en anglais, compétences numériques, développement personnel, entrepreneuriat et préparation à la vie professionnelle. 
+P850: [plain]11. Projet de Fin d'Études (PFE)
+P851: [plain]Projet de fin d'études réalisé en entreprise sur une problématique réelle de développement logiciel ou d'Intelligence Artificielle.  [bold](Semestre 6)
+P853: [plain]Parcours de certifications EBS
+P854: [plain]Un parcours structuré entre socle commun et spécialisation.
+P855: [plain]Les certifications obligatoires constituent le socle de compétences attendu par EBS. Les certifications optionnelles permettent à chaque étudiant de renforcer son profil en fonction de son projet professionnel.
+P857: [plain]L'IA est obligatoire dans ce programme
+P858: [plain]Les compétences en Intelligence Artificielle constituent un socle commun obligatoire dans tous les parcours EBS. Cette option permet également d'approfondir les technologies de l'IA appliquées au génie logiciel et aux systèmes d'information.
+P860: [underline]Perspectives d'études à l'international
+P861: [plain]Ce programme permet de poursuivre vos études auprès de nos universités partenaires en France, au Canada et dans d'autres pays grâce aux accords de coopération conclus par EBS.
+P863: [underline]Débouchés professionnels
+P864: [plain]Je modifierais également cette partie afin qu'elle corresponde au référentiel officiel tout en valorisant l'option IA.
+P865: [plain]Développeur logiciel / applicatif
+P866: [plain]Développeur Web et Mobile
+P867: [plain]Développeur en Intelligence Artificielle
+P868: [plain]Gestionnaire de bases de données
+P869: [plain]Intégrateur de systèmes et solutions informatiques
+P870: [plain]Testeur logiciel / Assurance Qualité (QA)
+P871: [plain]Data Engineer Junior
+P872: [plain]Assistant Machine Learning Engineer
+P873: [plain]Ces débouchés sont beaucoup plus cohérents avec la Licence officielle  [plain]Génie Logiciel et Systèmes d'Information [plain], dont l'option IA constitue une spécialisation progressive.
+P875: [underline]Prêt(e) à rejoindre la Licence Informatique – (Option Intelligence Artificielle) ?
+P876: [plain]Les candidatures  [plain]2026/2027 [plain] sont ouvertes.
+P877: [plain]Bénéficiez de nos avantages en cours.
+P878: [plain]Réponse garantie sous 24 h.

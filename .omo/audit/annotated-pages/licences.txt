@@ -1,0 +1,39 @@
+P532: [underline]Licences
+P533: [plain]Nos Licences : 3 ans pour construire votre avenir.
+P534: [plain]4 Licences déclinées en 5 parcours • Intelligence Artificielle intégrée dans chaque filière • Plus de 25 certifications internationales offertes selon le programme • Diplôme agréé par l'État tunisien
+P535: [plain]150+ certifications [plain]Offertes
+P536: [plain]IA obligatoire [plain]Dans tous les parcours
+P537: [plain]4 Licences en 5 parcours [plain]Management • Marketing • Finance • Informatique (Génie Logiciel – option Intelligence Artificielle • Génie Logiciel – option Cybersécurité)
+P539: [plain]Pré-inscription en Licence
+P540: [plain]Réponse sous 24 h • Gratuite • Sans engagement
+P541: [plain]Coordonnées
+P542: [plain]Profil
+P543: [plain]Baccalauréat
+P544: [plain]Prénom * [plain]Nom * [plain]E-mail * [plain]Téléphone / WhatsApp *
+P546: [plain]25+ certifications
+P547: [bold]Licence en Management
+P548: [plain]Développez vos compétences en management, leadership, gestion de projets et pilotage des organisations dans un environnement en constante évolution. [plain]Découvrir le programme
+P549: [plain]28+ certifications
+P550: [bold]Licence en Marketing
+P551: [plain]Maîtrisez les fondamentaux du marketing, de la communication, du marketing digital et de la relation client pour répondre aux nouveaux enjeux des entreprises. [plain]Découvrir le programme
+P552: [plain]24+ certifications
+P553: [bold]Licence en Finance
+P554: [plain]Préparez une carrière en finance, banque et contrôle de gestion grâce à des certifications internationales, dont Bloomberg. [plain]Découvrir le programme
+P555: [plain]26+ certifications
+P556: [bold]Licence Informatique – Génie Logiciel (option Intelligence Artificielle)
+P557: [plain]Développez des compétences en génie logiciel, intelligence artificielle, data science et développement d'applications intelligentes. [plain]Découvrir le programme
+P558: [plain]26+ certifications
+P559: [bold]Licence Informatique – Génie Logiciel (option Cybersécurité)
+P560: [plain]Développez des compétences en génie logiciel, cybersécurité, sécurité des réseaux et protection des systèmes d'information. [plain]Découvrir le programme
+P561: [underline]Pourquoi choisir une Licence à EBS ?
+P562: [plain]IA intégrée
+P563: [plain]L'Intelligence Artificielle est intégrée à tous les parcours. Chaque étudiant développe des compétences en IA grâce à un ensemble de certifications adaptées à sa formation.
+P564: [plain]150+ certifications
+P565: [plain]Des certifications délivrées par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot et d'autres partenaires internationaux, offertes sans frais supplémentaires.
+P566: [plain]Partenariats internationaux
+P567: [plain]Poursuivez vos études en France, au Canada, en  [plain]Italie  [plain] ou à Oman grâce à nos  [plain]14 [plain] partenaires académiques.
+P568: [plain]Certifications incluses
+P569: [plain]En complément de votre diplôme agréé par l'État tunisien, obtenez des certifications internationales délivrées par Google, IBM, Harvard, Cisco, Bloomberg, Fortinet et d'autres organismes reconnus, sans frais supplémentaires.
+P571: [underline]Prêt(e) à choisir votre Licence ?
+P572: [plain]Les candidatures 2026/2027 sont ouvertes. 
+P573: [plain]Bénéficiez de nos avantages en cours en déposant votre candidature dès aujourd'hui.

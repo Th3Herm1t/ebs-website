@@ -1,0 +1,53 @@
+P88: [underline]Nos Fondamentaux
+P89: [highlight=yellow]Vision, Mission & Valeurs
+P90: [plain]Ce qui nous guide au quotidien pour former les talents de demain.
+P91: [plain]Vision
+P92: [plain]Notre ambition pour l'avenir
+P93: [plain]Mission
+P94: [plain]Ce qui nous anime chaque jour
+P95: [plain]Valeurs
+P96: [plain]Ce qui nous définit
+P97: [plain]Notre Vision
+P98: [plain]Être une université de référence en Tunisie, reconnue pour la qualité de ses formations, son ouverture internationale et sa capacité à former des professionnels compétitifs, maîtrisant l'Intelligence Artificielle et certifiés par les plus grandes organisations internationales.
+P99: [plain]Notre Mission
+P100: [highlight=yellow]Ce que nous faisons chaque jour
+P101: [plain]Espima Business School a pour mission de former les leaders qui façonneront le monde de demain.
+P102: [plain]01
+P103: [plain]Préparer les étudiants tunisiens à la vie professionnelle en leur proposant des formations diversifiées, innovantes et alignées sur les standards internationaux.
+P104: [plain]02
+P105: [plain]Former des managers, des entrepreneurs et des cadres supérieurs dotés d'un solide socle de connaissances théoriques et pratiques.
+P106: [plain]03
+P107: [plain]Intégrer les compétences en Intelligence Artificielle dans tous les parcours afin de préparer les étudiants aux métiers d'aujourd'hui et de demain.
+P108: [plain]04
+P109: [plain]Permettre à chaque étudiant d'obtenir des certifications internationales reconnues par les entreprises et les recruteurs du monde entier.
+P110: [plain]05
+P111: [plain]Ouvrir des perspectives d'études et de carrières à l'international grâce à nos partenariats stratégiques.
+P113: [underline]Nos Valeurs
+P114: [highlight=yellow]Les 5 piliers qui nous définissent
+P115: [plain]01
+P116: [underline]Excellence académique
+P117: [plain]Des programmes conçus selon les standards internationaux et régulièrement actualisés.
+P118: [plain]Concrètement chez EBS :
+P119: [plain]Corps enseignant qualifié · Programmes régulièrement mis à jour · Benchmarking international
+P120: [plain]02
+P121: [underline]Innovation pédagogique
+P122: [plain]L'Intelligence Artificielle, les certifications internationales et la pédagogie par projets sont au cœur de chaque parcours.
+P123: [plain]Concrètement chez EBS :
+P124: [plain]IA intégrée dans tous les programmes · 150+ certifications internationales · Pédagogie innovante
+P125: [plain]03
+P126: [underline]Ouverture internationale
+P127: [plain]Nos partenariats ouvrent des horizons sans frontières.
+P128: [plain]Concrètement chez EBS :
+P129: [plain]1 [plain]4 [plain] partenaires en France, au Canada, en Italie et à Oman • Mobilité étudiante • Reconnaissance automatique des années d'études effectuées à EBS pour la poursuite des études à l'international
+P130: [plain]04
+P131: [underline]Employabilité réelle
+P132: [plain]Tout est conçu pour faciliter votre insertion professionnelle.
+P133: [plain]Concrètement chez EBS :
+P134: [plain]Simulations Forage · Certifications reconnues à l'international · Stages et projets en entreprise
+P135: [plain]05
+P136: [underline]Proximité & Accompagnement
+P137: [plain]À EBS, chaque étudiant bénéficie d'un accompagnement personnalisé.
+P138: [plain]Concrètement chez EBS :
+P139: [plain]Accompagnement personnalisé • Administration à l'écoute et réactive • Encadrement individuel 
+P140: [underline]Rejoignez une université qui a une vision.
+P141: [plain]Découvrez nos programmes et construisez votre avenir avec nous.

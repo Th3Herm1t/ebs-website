@@ -1,0 +1,48 @@
+P475: [underline]Campus
+P476: [plain]10 Rue Socrate, Z.I. Kheireddine — Le Kram, Tunis
+P477: [plain]Un espace pensé pour votre réussite.
+P478: [plain]Bienvenue sur le campus d'ESPIMA Business School, un environnement moderne conçu pour favoriser l'apprentissage, l'innovation, la collaboration et l'épanouissement de nos étudiants.
+P479: [plain]08h00 – 17h00
+P480: [plain]Lundi – Vendredi
+P481: [plain]08h00 – 13h00
+P482: [plain]Samedi
+P483: [plain]Parking
+P484: [plain]Disponible
+P485: [plain]Bus + Métro
+P486: [plain]À proximité
+P488: [underline]Explorez le Campus
+P489: [plain]Salle Polyvalente → Galerie photos 
+P490: [plain]Salle Informatique → Galerie photos 
+P491: [plain]Espaces de Détente → Galerie photos 
+P492: [plain]Salle des Jeux → Galerie photos 
+P493: [plain]Buvette → Galerie photos 
+P494: [plain]Bibliothèque → Galerie photos 
+P495: [plain]Espaces Communs → Galerie photos 
+P497: [underline]Visite Virtuelle 360°
+P498: [plain]Explorez notre campus à distance grâce à une visite virtuelle immersive à 360° et découvrez nos espaces avant votre arrivée.
+P499: [plain]Bientôt disponible
+P501: [underline]Informations Pratiques
+P502: [plain]Adresse
+P503: [plain]10 Rue Socrate, Z.I. Kheireddine [plain]Le Kram (2015) — Tunis, Tunisie
+P504: [plain]Horaires d'ouverture
+P505: [plain]08h00 – 17h00, du lundi au vendredi
+P506: [plain]08h00 – 13h00, le samedi
+P508: [underline]Équipements
+P509: [plain]Salles de cours équipées
+P510: [plain]Vidéoprojecteurs, tableaux interactifs et équipements pédagogiques modernes.
+P511: [plain]Laboratoire informatique
+P512: [plain]Ordinateurs de dernière génération et logiciels professionnels.
+P513: [plain]Wi-Fi haut débit
+P514: [plain]Connexion fibre optique disponible sur l'ensemble du campus.
+P515: [plain]Espaces de détente
+P516: [plain]Cafétéria, salle de jeux et espaces de convivialité.
+P517: [plain]Transports & Accès
+P518: [plain]Accès facile en bus, métro léger et parking à proximité.
+P519: [plain]Logement à proximité
+P520: [plain]Résidences étudiantes et appartements situés à proximité du campus.
+P522: [bold]Lignes de bus
+P523: [bold]Parking
+P525: [underline]Visite du Campus
+P526: [plain]Venez découvrir notre campus !
+P527: [plain]Prenez rendez-vous pour une visite personnalisée et découvrez l'environnement d'ESPIMA Business School.
+P528: [plain]Prendre rendez-vous

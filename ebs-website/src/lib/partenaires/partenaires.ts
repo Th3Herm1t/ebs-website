@@ -1,3 +1,5 @@
+import type { AcademicPartnerSlug } from "./academic-partners";
+
 export interface PartnerData {
   slug: string;
   name: string;
@@ -22,57 +24,7 @@ export interface PartnerData {
   extraSections?: { title: string; body: string; }[];
 }
 
-export const partenaires: Record<string, PartnerData> = {
-  audencia: {
-    slug: "audencia",
-    name: "Audencia",
-    country: "🇫🇷 France",
-    countryCode: "FR",
-    logo: "/images/partenaires-academiques/logo-audencia.png",
-    heroImage: "/images/heroes/hero-alumni.webp",
-    type: "Grande École de Commerce — Triple accréditée EQUIS · AACSB · AMBA",
-    presentation: "Triplement accréditée (EQUIS, AACSB et AMBA), Audencia Business School est membre de la Conférence des Grandes Écoles. Classée 11ème meilleure école de commerce en France (Le Figaro Étudiant) et 6ème par l'Express-NextEdu, Audencia compte 11 campus dans le monde, 180 professeurs permanents et +900 entreprises partenaires. Fondée à Nantes, elle forme depuis plus d'un siècle des leaders responsables et audacieux.",
-    programmes: [
-      { nom: "Bachelor in Management", duree: "1 an (L3)", details: "Accès après avoir effectué les 2 premières années à EBS. Formation post-bac en 3 ans sur le campus de Nantes." },
-      { nom: "PGE — Programme Grande École (Grade de Master)", duree: "2 ans", details: "Accès après avoir obtenu la Licence à EBS. Programme visé Bac+5, classé 25ème Master in Management Monde (Financial Times). Spécialisations en finance, marketing, management, entrepreneuriat." },
-      { nom: "MSc — Master of Science (M1 ou M2)", duree: "1 ou 2 ans", details: "Inscription en M1 après la Licence EBS, ou en M2 après le M1 à EBS. Large choix de spécialisations en finance, marketing, management international, supply chain, data." },
-    ],
-    eligibilite: "Être inscrit à EBS. Avoir 12 de moyenne sur les années précédant celle de l'inscription. Avoir un bon niveau d'anglais et de français. Étude de dossier et entretien de sélection.",
-    avantages: [
-      "Triple accréditation EQUIS + AACSB + AMBA — top 1% mondial des écoles de commerce",
-      "Classée 11ème meilleure école de commerce en France (Le Figaro)",
-      "11 campus en France et à l'international (Nantes, Paris, Shenzhen,标志 Paulo, Sydney...)",
-      "180 professeurs permanents, +900 entreprises partenaires",
-      "90% des diplômés trouvent un emploi dans les 6 mois",
-      "+47 000 alumni dans le monde entier",
-      "Visa étudiant France facilité par la convention EBS — Audencia",
-      "Parcours en alternance possibles sur certains programmes",
-    ],
-    debouches: [
-      "Manager international / Chef de projet",
-      "Directeur marketing / Brand Manager",
-      "Analyste financier / Banquier d'affaires",
-      "Consultant en stratégie (MBB, Big 4)",
-      "Entrepreneur / Fondateur de startup",
-      "Supply Chain Manager / Responsable logistique",
-      "Data Analyst / Business Intelligence Manager",
-    ],
-    keyStats: [
-      { label: "Étudiants", value: "7 000+" },
-      { label: "Campus", value: "11" },
-      { label: "Entreprises", value: "900+" },
-      { label: "Alumni", value: "47 000+" },
-    ],
-    pricing: [
-      { label: "Bachelor & PGE", amount: "Tarif officiel", period: "", note: "Selon le cursus Audencia choisi" },
-    ],
-    accreditations: [
-      { label: "AACSB", description: "Accréditation mondiale de référence — seules 5% des écoles la détiennent", logo: "/images/partenaires-academiques/AACSB-logo-accredited-color-PMS_Website-1024x346.png" },
-      { label: "EQUIS", description: "Label d'excellence académique et internationale de l'EFMD", logo: "/images/partenaires-academiques/EFMD-Global-EQUIS-Accredited-Pantonelm.png" },
-      { label: "AMBA", description: "Accréditation de référence pour les programmes MBA et post-graduate", logo: "/images/partenaires-academiques/amba-logo-association-of-mba-accredited-1244274_copie-removebg-preview.png" },
-    ],
-  },
-
+const canonicalPartenaires = {
   uqat: {
     slug: "uqat",
     name: "UQAT",
@@ -619,29 +571,6 @@ export const partenaires: Record<string, PartnerData> = {
     ],
   },
 
-  figs: {
-    slug: "figs",
-    name: "FIGS Education",
-    country: "🇫🇷 France",
-    countryCode: "FR",
-    logo: "/images/partenaires-academiques/figs (2).webp",
-    type: "Groupe d'enseignement supérieur — Réseau d'écoles spécialisées",
-    presentation: "FIGS Education est un groupe d'enseignement supérieur regroupant plusieurs écoles spécialisées en France, dont IFAG, Éklore et d'autres établissements. Fort d'une expérience de plus de 50 ans dans la formation supérieure, FIGS Education couvre un large spectre de domaines : management, informatique, communication et finance.",
-    programmes: [
-      { nom: "Ensemble des programmes des écoles du réseau FIGS", duree: "Variable", details: "IFAG (Management) · Éklore (Management Innovation) · autres écoles FIGS selon disponibilité." },
-    ],
-    eligibilite: "Partenariat global EBS — FIGS Education donnant accès à l'ensemble des écoles du réseau FIGS selon le parcours EBS de l'étudiant.",
-    avantages: [
-      "Accès à un réseau d'écoles complémentaires via un seul partenariat",
-      "Large couverture géographique en France",
-      "Offres de formation diversifiées : management, communication, finance, tech",
-      "Visa étudiant France facilité via convention EBS — FIGS",
-    ],
-    debouches: [
-      "Selon l'école et la spécialisation choisies au sein du réseau FIGS Education",
-    ],
-  },
-
   "link-university": {
     slug: "link-university",
     name: "Link University",
@@ -820,4 +749,6 @@ export const partenaires: Record<string, PartnerData> = {
       }
     ],
   },
-};
+} satisfies Record<AcademicPartnerSlug, PartnerData>;
+
+export const partenaires: Readonly<Record<string, PartnerData>> = canonicalPartenaires;
