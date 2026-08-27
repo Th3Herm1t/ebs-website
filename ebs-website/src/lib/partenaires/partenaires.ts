@@ -480,40 +480,83 @@ const canonicalPartenaires = {
     countryCode: "FR",
     logo: "/images/partenaires-academiques/eklore.webp",
     type: "Grande École française de commerce — EFMD Accredited",
-    presentation: "EKLORE-ed, anciennement ESC Pau Business School, est une Grande École française de commerce. Elle propose des formations du Bachelor au Bac+5 dans les domaines du management, de la gestion d'entreprise, du commerce, du marketing, de la finance, des ressources humaines, de la logistique, ainsi que du sport management. Formations en initiale et alternance, sur les campus de Pau et Paris.",
+    presentation: "EKLORE-ed, anciennement ESC Pau Business School, est une Grande École française de commerce. Elle propose des formations du Bachelor au Bac+5 dans les domaines du management, de la gestion d’entreprise, du commerce, du marketing, de la finance, des ressources humaines, de la logistique, ainsi que du sport management.\nL’établissement propose des cursus en formation initiale et en alternance. Le partenariat avec ESPIMA Business School permet aux étudiants EBS de construire une poursuite d’études en France après Bac+2 ou après l’obtention de leur Licence, selon le programme choisi et les conditions d’admission.\nLes informations communiquées dans le cadre du partenariat mentionnent notamment des possibilités d’études sur les campus de Pau et de Paris, ainsi que des programmes en français et un parcours Master entièrement enseigné en anglais.",
     programmes: [
-      { nom: "Bachelor Business Management", duree: "1 an (L3)", details: "Diplôme Bac+3 • Grade de Licence • Reconnu par l'État (MESR) • RNCP 6. Accès après Bac+2 EBS / 120 ECTS." },
-      { nom: "Master en Management – Programme Grande École", duree: "2 ans", details: "Diplôme Bac+5 • Grade de Master • RNCP 7 • EFMD Accredited. Spécialisations : Finance, Marketing, Audit & Expertise Comptable, Management, Sport Management." },
-      { nom: "Management & International Business – Full English", duree: "2 ans", details: "Master Grande École • Bac+5 • Grade de Master • RNCP 7 • EFMD Accredited. Enseignement intégralement en anglais à Pau." },
+      {
+        nom: "Bachelor Business Management",
+        duree: "1 an",
+        details: "Diplôme Bac+3 • Grade de Licence • Reconnu par l’État (MESR) • RNCP 6. Accès après Bac+2 EBS / 120 ECTS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Diplôme Bac+3 • Grade de Licence • Reconnu par l’État (MESR) • RNCP 6",
+              "**Étudiants EBS concernés** : Après Bac+2 EBS / 120 ECTS",
+              "**Campus** : Pau pour l’entrée directe en B3",
+              "**Langue** : Français / Anglais selon parcours"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Master en Management – Programme Grande École",
+        duree: "2 ans",
+        details: "Diplôme Bac+5 • Grade de Master • RNCP 7 • EFMD Accredited. Titulaires d’une Licence EBS (Bac+3).",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Diplôme Bac+5 • Grade de Master • RNCP 7 • EFMD Accredited",
+              "**Spécialisations** : Finance • Marketing • Audit & Expertise Comptable • Management • Sport Management",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence EBS (Bac+3)",
+              "**Campus** : Pau • Saint-Denis, selon parcours",
+              "**Langue** : Français / Anglais selon parcours"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Management & International Business – Full English",
+        duree: "2 ans",
+        details: "Master Grande École • Bac+5 • Grade de Master • RNCP 7 • EFMD Accredited. Titulaires d’une Licence EBS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Master Grande École • Bac+5 • Grade de Master • RNCP 7 • EFMD Accredited",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence EBS, selon admission",
+              "**Campus** : Selon l’offre internationale EKLORE-ed",
+              "**Langue** : Anglais"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Être inscrit à ESPIMA Business School avec une moyenne minimale de 12/20. Pour le Bachelor : moyenne sur 1re et 2e année. Pour PGE : moyenne sur les 3 années de Licence. Bon niveau d'anglais et de français. Étude de dossier et entretien de sélection.",
+    eligibilite: "être inscrit à ESPIMA Business School\navoir une moyenne minimale de 12/20 sur les années précédant l’inscription\npour une candidature au Bachelor après Bac+2 : moyenne prise en compte sur la 1re et la 2e année\npour une candidature au Programme Grande École ou en M1 du Mastère Manager du développement commercial : moyenne prise en compte sur la 1re, la 2e et la 3e année\navoir un bon niveau d’anglais et de français\npasser l’étude du dossier et l’entretien de sélection.",
     avantages: [
-      "Accéder à des formations Bac+5 et à un large choix de spécialisations",
-      "Bénéficier d'un Master Full English en Management & International Business à Pau",
-      "Suivre un parcours Audit & Expertise Comptable, avec une dispense annoncée de 5 UE sur 7 du DSCG",
-      "Choisir, selon les programmes, entre formation initiale et alternance",
-      "Réduction de 10 % sur les frais de scolarité dans le cadre du partenariat avec ESPIMA",
+      "Intégrer un Bachelor après Bac+2 ou candidater au Programme Grande École après la Licence EBS.",
+      "Accéder à des formations Bac+5 et à un large choix de spécialisations : management, marketing & IA, finance, RH, achats, logistique et sport management.",
+      "Bénéficier d’un Master Full English en Management & International Business à Pau.",
+      "Suivre un parcours Audit & Expertise Comptable, avec une dispense annoncée de 5 UE sur 7 du DSCG.",
+      "Choisir, selon les programmes, entre formation initiale et alternance.",
+      "Construire un parcours académique international entre ESPIMA Business School et une Grande École française.",
+      "Réduction de 10 % sur les frais de scolarité dans le cadre du partenariat avec ESPIMA.",
     ],
-    debouches: [
-      "Manager / Chef de projet",
-      "Responsable Marketing",
-      "Directeur Financier / Auditeur (DSCG)",
-      "Manager Sportif",
-      "Supply Chain Manager",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Campus", value: "Pau, Paris" },
-      { label: "Domaines", value: "Management, Finance, Marketing, RH, Sport..." },
-      { label: "Formation", value: "Initiale et alternance" },
+      { label: "Nom de l’établissement", value: "EKLORE-ed (anciennement ESC Pau Business School)" },
+      { label: "Type d’établissement", value: "Grande École française de commerce" },
+      { label: "Campus concernés", value: "Pau • Paris, selon les programmes communiqués" },
+      { label: "Domaines", value: "Management • Gestion d’entreprise • Commerce • Marketing • Finance • Ressources Humaines • Achats & Logistique • Sport Management • Audit & Expertise Comptable" },
+      { label: "Niveaux", value: "Bachelor • Programme Grande École • Masters / formations Bac+5" },
+      { label: "Modes de formation", value: "Formation initiale et alternance selon les programmes" },
+      { label: "Langues", value: "Français et Anglais selon les programmes ; Master Full English à Pau" },
+      { label: "Partenariat avec ESPIMA", value: "Poursuite après Bac+2 et après Licence EBS, selon les parcours et conditions d’admission" },
     ],
     pricing: [
-      { label: "Bachelor & Master", amount: "Tarif officiel", period: "", note: "-10% de réduction EBS" },
-    ],
-    extraSections: [
-      {
-        title: "Parcours Audit & Expertise Comptable",
-        body: "EKLORE-ed propose de suivre un parcours Audit & Expertise Comptable, avec une dispense annoncée de **5 UE sur 7 du DSCG**."
-      }
+      { label: "Bachelor Business Management", amount: "Tarif officiel EKLORE", period: "" },
+      { label: "Master en Management – PGE", amount: "Tarif officiel EKLORE", period: "" },
+      { label: "Management & International Business", amount: "Tarif officiel EKLORE", period: "" },
     ],
   },
 
