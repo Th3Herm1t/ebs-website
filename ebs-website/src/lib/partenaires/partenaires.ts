@@ -630,43 +630,141 @@ const canonicalPartenaires = {
     countryCode: "FR",
     logo: "/images/partenaires-academiques/epsi.webp",
     type: "École d'ingénierie informatique — Titre RNCP Bac+5",
-    presentation: "Créée en 1961, EPSI est une école d'ingénierie informatique proposant des formations de Bac+2 à Bac+5 dans les domaines du développement, de la cybersécurité, de l'IA et de la gestion de projets IT. Elle fait partie du réseau FIGS Education.",
+    presentation: "Créée en 1961, EPSI est une école française spécialisée dans l’ingénierie informatique. Elle forme des professionnels du numérique du Bac+2 au Bac+5 dans les principaux domaines de l’informatique : développement, systèmes et réseaux, intelligence artificielle, data, cybersécurité, cloud et DevOps.\nLa pédagogie EPSI est fortement orientée vers la pratique et les projets. L’école met en avant une approche « Learning by Doing », avec une place importante accordée aux réalisations concrètes et à la proximité avec les entreprises.\nEPSI fait partie du réseau d’écoles de FIGS Education, qui réunit plusieurs établissements français d’enseignement supérieur spécialisés dans différents domaines et accompagne les étudiants, notamment internationaux, dans leurs projets d’études en France.\nLe partenariat entre ESPIMA Business School, FIGS Education et EPSI permet notamment aux étudiants de la filière Informatique d’ESPIMA de poursuivre leurs études en France après Bac+2 ou après l’obtention de leur Licence, selon les conditions prévues par la convention.",
     programmes: [
-      { nom: "Bachelor – Parcours spécialisés (Dev, IA, Systèmes & Réseaux)", duree: "1 an (Bac+3)", details: "Titre RNCP niveau 6. Accès après Bac+2 EBS Informatique." },
-      { nom: "Parcours Expert – Informatique et Système d'Information", duree: "2 ans (Bac+5)", details: "Titre RNCP niveau 7. Accès après Licence EBS." },
-      { nom: "Parcours Expert – IA & Data Sciences", duree: "2 ans (Bac+5)", details: "Titre RNCP niveau 7. Accès après Licence EBS." },
-      { nom: "Parcours Expert – DevOps", duree: "2 ans (Bac+5)", details: "Titre RNCP niveau 7. Accès après Licence EBS." },
-      { nom: "Parcours Expert – Architecte Virtualisation Cloud", duree: "2 ans (Bac+5)", details: "Titre RNCP niveau 7. Accès après Licence EBS." },
-      { nom: "Parcours Expert – Cybersécurité", duree: "2 ans (Bac+5)", details: "Titre RNCP niveau 7. Accès après Licence EBS." },
+      {
+        nom: "Bachelor – Parcours spécialisés",
+        duree: "1 an",
+        details: "Bac+3 • Titre RNCP 6. Étudiants EBS ayant validé Bac+2 en Informatique.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+3 • Titre RNCP 6",
+              "**Spécialisations** : Principales orientations : Développement Full Stack • Intelligence Artificielle • Systèmes & Réseaux",
+              "**Étudiants EBS concernés** : Étudiants EBS ayant validé Bac+2 en Informatique",
+              "**Campus** : Plusieurs campus EPSI",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Parcours Expert – Informatique et Système d’Information",
+        duree: "2 ans",
+        details: "Bac+5 • Titre RNCP 7. Titulaires de la Licence Informatique EBS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Titre RNCP 7",
+              "**Étudiants EBS concernés** : Titulaires de la Licence Informatique – Génie Logiciel & Systèmes d’Information EBS",
+              "**Campus** : Plusieurs campus EPSI",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Parcours Expert – IA & Data Sciences",
+        duree: "2 ans",
+        details: "Bac+5 • Titre RNCP 7. Titulaires de la Licence Informatique EBS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Titre RNCP 7",
+              "**Étudiants EBS concernés** : Titulaires de la Licence Informatique – Génie Logiciel & Systèmes d’Information EBS",
+              "**Campus** : Plusieurs campus EPSI",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Parcours Expert – DevOps",
+        duree: "2 ans",
+        details: "Bac+5 • Titre RNCP 7. Titulaires de la Licence Informatique EBS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Titre RNCP 7",
+              "**Étudiants EBS concernés** : Titulaires de la Licence Informatique – Génie Logiciel & Systèmes d’Information EBS",
+              "**Campus** : Plusieurs campus EPSI",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Parcours Expert – Architecte Virtualisation Cloud",
+        duree: "2 ans",
+        details: "Bac+5 • Titre RNCP 7. Titulaires de la Licence Informatique EBS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Titre RNCP 7",
+              "**Étudiants EBS concernés** : Titulaires de la Licence Informatique – Génie Logiciel & Systèmes d’Information EBS",
+              "**Campus** : Plusieurs campus EPSI",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Parcours Expert – Cybersécurité",
+        duree: "2 ans",
+        details: "Bac+5 • Titre RNCP 7. Titulaires de la Licence Informatique EBS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Titre RNCP 7",
+              "**Étudiants EBS concernés** : Titulaires de la Licence Informatique – Génie Logiciel & Systèmes d’Information EBS",
+              "**Campus** : Plusieurs campus EPSI",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Accès depuis la Licence Informatique (Génie Logiciel & SI) EBS. Convention EBS — EPSI / FIGS Education. Poursuite après Bac+2 (en Bachelor) ou après Licence (en Parcours Expert Bac+5).",
+    eligibilite: "du niveau académique validé à ESPIMA Business School ;\ndes diplômes et relevés de notes ;\nde la cohérence entre le parcours suivi à EBS et la spécialisation demandée à EPSI ;\ndu curriculum vitae et de la lettre de motivation ;\ndes tests de sélection et de l’entretien d’admission lorsque ceux-ci sont requis par EPSI ;\ndes exigences linguistiques applicables au programme choisi.",
     avantages: [
-      "Plus de 60 ans d'expertise dans l'informatique et le numérique",
-      "Pédagogie Learning by Doing fondée sur les projets et la pratique",
-      "Titres certifiés RNCP de niveaux 6 et 7",
-      "Réseau national de campus (Paris, Bordeaux, Lyon, Lille, Nantes, Toulouse...)",
-      "12 % de réduction sur les frais de scolarité pour les étudiants EBS",
-      "Accompagnement personnalisé dans les démarches Campus France et visa",
+      "Plus de 60 ans d’expertise dans la formation aux métiers de l’informatique et du numérique.",
+      "Une pédagogie Learning by Doing, fondée sur les projets, la pratique et les mises en situation professionnelles.",
+      "Des formations spécialisées dans les technologies recherchées par les entreprises : IA, Data, Cybersécurité, Cloud, DevOps, développement et systèmes d’information.",
+      "Des titres RNCP de niveaux 6 et 7, selon les programmes.",
+      "Un réseau de campus en France et une forte proximité avec les entreprises du numérique.",
+      "Des possibilités de poursuite pour les étudiants EBS après Bac+2 ou après la Licence Informatique, conformément au partenariat.",
+      "12 % de réduction sur les frais de scolarité pour les étudiants EBS.",
+      "Accompagnement personnalisé dans les démarches Campus France et visa."
     ],
-    debouches: [
-      "Ingénieur développement logiciel",
-      "Expert cybersécurité",
-      "Architecte systèmes et réseaux",
-      "Data Analyst / Data Engineer",
-      "Chef de projet IT",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Création", value: "1961" },
-      { label: "Réseau Campus", value: "Arras, Bordeaux, Lille, Lyon, Nantes, Paris..." },
-      { label: "Niveaux", value: "Bac+2, Bac+3, Bac+5" },
+      { label: "Nom de l’établissement", value: "EPSI" },
+      { label: "Type d’établissement", value: "École française d’ingénierie informatique" },
+      { label: "Année de création", value: "1961" },
+      { label: "Implantation", value: "Réseau de campus en France, notamment Arras, Auxerre, Bordeaux, Chartres, Grenoble, Lille, Lyon, Montpellier, Nantes, Paris-Courbevoie, Reims, Rennes, Saint-Étienne et Toulouse selon les programmes" },
+      { label: "Domaines de formation", value: "Développement • Systèmes & Réseaux • Intelligence Artificielle • Data • Cybersécurité • Cloud • DevOps • Systèmes d’information" },
+      { label: "Niveaux de formation", value: "Bac+2 • Bac+3 • Bac+5" },
+      { label: "Certifications", value: "Titres professionnels enregistrés au RNCP, notamment niveaux 6 et 7 selon les programmes" },
+      { label: "Pédagogie", value: "Learning by Doing • projets • mises en situation professionnelles • proximité avec les entreprises" },
+      { label: "Partenariat avec ESPIMA", value: "Poursuite d’études après Bac+2 et après Licence EBS en Informatique, conformément au partenariat FIGS Education" }
     ],
     pricing: [
-      { label: "Bachelor & Parcours Expert", amount: "Tarif officiel", period: "", note: "-12% de réduction EBS" },
+      { label: "Bachelor – Parcours spécialisés", amount: "Tarif officiel", period: "" },
+      { label: "Parcours Expert – Info & SI", amount: "Tarif officiel", period: "" },
+      { label: "Parcours Expert – IA & Data Sciences", amount: "Tarif officiel", period: "" },
+      { label: "Parcours Expert – DevOps", amount: "Tarif officiel", period: "" },
+      { label: "Parcours Expert – Architecte Cloud", amount: "Tarif officiel", period: "" },
+      { label: "Parcours Expert – Cybersécurité", amount: "Tarif officiel", period: "" },
     ],
     extraSections: [
       {
         title: "Conditions financières prévues par le partenariat",
-        body: "- **Réduction** : 12 % sur les frais de scolarité.\n- **Frais de candidature** : Exonération de 80 €.\n- **1er acompte** : 3 000 € à l'admission.\n- **2e acompte** : 3 000 € après obtention du visa.\n- **Solde** : Avant le 30 novembre (Fall) ou le 30 avril (Spring).\n- **Refus de visa** : Remboursement du premier acompte."
+        body: "- **Réduction** : 12 % sur les frais de scolarité\n- **Frais de candidature** : Exonération de 80 €\n- **1er acompte** : 3 000 € à l’admission\n- **2e acompte** : 3 000 € après obtention du visa\n- **Solde** : Avant le 30 novembre (Fall) ou le 30 avril (Spring)\n- **Refus de visa** : Remboursement du premier acompte conformément aux dispositions prévues par la convention"
       }
     ],
   },
