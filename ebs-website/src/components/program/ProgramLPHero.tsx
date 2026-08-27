@@ -59,6 +59,7 @@ export function ProgramLPHero({
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
+            className="lg:max-w-[550px] xl:max-w-[650px]"
           >
             <div className="flex flex-wrap items-center gap-3 mb-5">
               <Badge
