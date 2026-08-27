@@ -99,12 +99,12 @@ export default function AlumniPage() {
           <div className="max-w-[700px]">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
-                <div className="w-1 h-1 rounded-full bg-[#2B8FAB]" />
+                <div className="w-1 h-1 rounded-full bg-penn-green" />
                 Réseau des Diplômés
               </Badge>
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="text-[40px] md:text-[52px] lg:text-[64px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6">
-              Des diplômés qui réussissent<br /><span className="text-[#2B8FAB]">partout dans le monde</span>.
+              Des diplômés qui réussissent<br /><span className="text-penn-green">partout dans le monde</span>.
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[17px] md:text-[19px] text-white/60 leading-relaxed max-w-[550px]">
               Le réseau EBS Alumni accompagne le développement professionnel de nos diplômés et favorise les échanges, le mentorat ainsi que les opportunités de stages, d'emploi et de carrière.
@@ -118,7 +118,7 @@ export default function AlumniPage() {
               { value: "15", label: "Secteurs d'activité" },
             ].map((s) => (
               <div key={s.value + s.label} className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-5 text-center">
-                <p className={`text-[28px] md:text-[36px] font-extrabold leading-none mb-1 ${s.value === "800+" ? "text-[#2B8FAB]" : "text-white"}`}>{s.value}</p>
+                <p className={`text-[28px] md:text-[36px] font-extrabold leading-none mb-1 ${s.value === "800+" ? "text-penn-green" : "text-white"}`}>{s.value}</p>
                 <p className="text-[13px] text-white/40 font-medium">{s.label}</p>
               </div>
             ))}
@@ -131,16 +131,16 @@ export default function AlumniPage() {
         <div className="max-w-[1000px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}>
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center">
-                <HeartHandshake className="w-7 h-7 text-[#2B8FAB]" />
+              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center">
+                <HeartHandshake className="w-7 h-7 text-penn-green" />
               </div>
               <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy">Rôle et missions du réseau EBS Alumni</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {missions.map((m, i) => (
-                <motion.div key={m} initial={{ opacity: 0, x: -15 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.06 }} className="flex items-start gap-3 p-4 bg-penn-bg-light rounded-xl border border-penn-border hover:border-[#2B8FAB]/20 transition-all">
-                  <div className="w-6 h-6 rounded-full bg-[#2B8FAB]/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <span className="text-[11px] font-extrabold text-[#2B8FAB]">{i + 1}</span>
+                <motion.div key={m} initial={{ opacity: 0, x: -15 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.06 }} className="flex items-start gap-3 p-4 bg-penn-bg-light rounded-xl border border-penn-border hover:border-penn-green/20 transition-all">
+                  <div className="w-6 h-6 rounded-full bg-penn-green/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="text-[11px] font-extrabold text-penn-green">{i + 1}</span>
                   </div>
                   <p className="text-[14px] text-penn-body leading-snug">{m}</p>
                 </motion.div>
@@ -166,7 +166,7 @@ export default function AlumniPage() {
                   {p.img ? (
                     <Image src={p.img} alt={p.name} width={300} height={300} className="w-full h-full object-cover" />
                   ) : (
-                    <div className="w-full h-full bg-[#2B8FAB]/10 flex items-center justify-center text-white font-extrabold text-[32px]">{p.initials}</div>
+                    <div className="w-full h-full bg-penn-green/10 flex items-center justify-center text-white font-extrabold text-[32px]">{p.initials}</div>
                   )}
                 </div>
                 <p className="text-[14px] text-white/70 leading-relaxed p-5">
@@ -221,8 +221,8 @@ export default function AlumniPage() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {secteurs.map((s, i) => (
-              <motion.div key={s.nom} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.4, delay: i * 0.08 }} className="group bg-penn-bg-light rounded-2xl p-6 lg:p-8 border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-5 text-[#2B8FAB] group-hover:scale-110 transition-transform">{s.icon}</div>
+              <motion.div key={s.nom} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.4, delay: i * 0.08 }} className="group bg-penn-bg-light rounded-2xl p-6 lg:p-8 border border-penn-border hover:border-penn-green/30 hover:shadow-md transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-penn-green/10 flex items-center justify-center mb-5 text-penn-green group-hover:scale-110 transition-transform">{s.icon}</div>
                 <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">{s.nom}</h3>
                 <p className="text-[14px] text-penn-body leading-relaxed">{s.desc}</p>
               </motion.div>
@@ -237,16 +237,16 @@ export default function AlumniPage() {
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="text-[28px] md:text-[34px] font-extrabold text-penn-navy text-center mb-10">Rejoignez-nous !</motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-penn-border p-6 lg:p-8">
-              <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-4 text-[#2B8FAB]"><Send className="w-6 h-6" /></div>
+              <div className="w-12 h-12 rounded-xl bg-penn-green/10 flex items-center justify-center mb-4 text-penn-green"><Send className="w-6 h-6" /></div>
               <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">Mettez à jour votre profil</h3>
               <p className="text-[14px] text-penn-body mb-4">Vous êtes diplômé(e) EBS ? Tenez-nous informés de votre parcours et restez connecté(e) au réseau.</p>
-              <Link href="/contact" className="inline-flex items-center gap-2 text-[14px] font-bold text-[#2B8FAB] hover:text-penn-navy transition-colors">Mettre à jour mon profil →</Link>
+              <Link href="/contact" className="inline-flex items-center gap-2 text-[14px] font-bold text-penn-green hover:text-penn-navy transition-colors">Mettre à jour mon profil →</Link>
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-penn-border p-6 lg:p-8 cursor-pointer hover:border-[#2B8FAB]/30 hover:shadow-md transition-all" onClick={() => setMentorModalOpen(true)}>
-              <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-4 text-[#2B8FAB]"><GraduationCap className="w-6 h-6" /></div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-penn-border p-6 lg:p-8 cursor-pointer hover:border-penn-green/30 hover:shadow-md transition-all" onClick={() => setMentorModalOpen(true)}>
+              <div className="w-12 h-12 rounded-xl bg-penn-green/10 flex items-center justify-center mb-4 text-penn-green"><GraduationCap className="w-6 h-6" /></div>
               <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">Devenir mentor</h3>
               <p className="text-[14px] text-penn-body mb-4">Partagez votre expertise avec les étudiants EBS et contribuez à former la prochaine génération.</p>
-              <span className="inline-flex items-center gap-2 text-[14px] font-bold text-[#2B8FAB] hover:text-penn-navy transition-colors">Devenir mentor →</span>
+              <span className="inline-flex items-center gap-2 text-[14px] font-bold text-penn-green hover:text-penn-navy transition-colors">Devenir mentor →</span>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-penn-border p-6 lg:p-8">
               <div className="w-12 h-12 rounded-xl bg-[#0A66C2]/10 flex items-center justify-center mb-4 text-[#0A66C2]">
@@ -260,7 +260,7 @@ export default function AlumniPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-[#2B8FAB] relative overflow-hidden">
+      <section className="section-padding bg-penn-green relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_50%_50%,_white_0%,_transparent_70%)]" />
         <div className="relative z-10 max-w-[900px] mx-auto px-5 lg:px-12 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
@@ -271,7 +271,7 @@ export default function AlumniPage() {
             <p className="text-[16px] text-white/70 max-w-[550px] mx-auto mb-8 leading-relaxed">
               Partagez votre expérience avec nos étudiants et contribuez à former la prochaine génération de leaders.
             </p>
-            <button onClick={() => setMentorModalOpen(true)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-[#2B8FAB] font-bold text-[14px] hover:bg-white/90 transition-all shadow-lg shadow-white/20">
+            <button onClick={() => setMentorModalOpen(true)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-penn-green font-bold text-[14px] hover:bg-white/90 transition-all shadow-lg shadow-white/20">
               Devenir mentor
             </button>
           </motion.div>
@@ -292,7 +292,7 @@ export default function AlumniPage() {
             >
               <div className="sticky top-0 z-10 bg-white rounded-t-2xl border-b border-penn-border px-8 py-5 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center text-[#2B8FAB]"><GraduationCap className="w-5 h-5" /></div>
+                  <div className="w-10 h-10 rounded-xl bg-penn-green/10 flex items-center justify-center text-penn-green"><GraduationCap className="w-5 h-5" /></div>
                   <h3 className="text-[18px] font-extrabold text-penn-navy">Devenir mentor</h3>
                 </div>
                 <button onClick={() => setMentorModalOpen(false)} className="p-2 rounded-xl hover:bg-gray-100 transition-all"><X className="w-5 h-5 text-penn-body" /></button>
@@ -301,12 +301,12 @@ export default function AlumniPage() {
               <div className="p-8">
                 {formState === "sent" ? (
                   <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="py-12 text-center">
-                    <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-5">
-                      <Send className="w-8 h-8 text-[#2B8FAB]" />
+                    <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
+                      <Send className="w-8 h-8 text-penn-green" />
                     </div>
                     <h3 className="text-[22px] font-extrabold text-penn-navy mb-2">Merci !</h3>
                     <p className="text-[14px] text-penn-body/50 max-w-[350px] mx-auto">Votre candidature a bien été reçue. Notre équipe vous contactera rapidement.</p>
-                    <button onClick={() => { setMentorModalOpen(false); setFormState("idle"); }} className="mt-6 text-[#2B8FAB] font-bold text-[14px] hover:underline">Fermer</button>
+                    <button onClick={() => { setMentorModalOpen(false); setFormState("idle"); }} className="mt-6 text-penn-green font-bold text-[14px] hover:underline">Fermer</button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleMentorSubmit} className="space-y-5">
@@ -314,27 +314,27 @@ export default function AlumniPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Nom complet</label>
-                        <input name="name" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="Votre nom" />
+                        <input name="name" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all" placeholder="Votre nom" />
                       </div>
                       <div>
                         <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Email</label>
-                        <input name="email" type="email" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="email@exemple.com" />
+                        <input name="email" type="email" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all" placeholder="email@exemple.com" />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Téléphone</label>
-                        <input name="phone" type="tel" className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="+216 XX XXX XXX" />
+                        <input name="phone" type="tel" className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all" placeholder="+216 XX XXX XXX" />
                       </div>
                       <div>
                         <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Poste actuel / Entreprise</label>
-                        <input name="poste" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="Ex: Data Scientist @ Company" />
+                        <input name="poste" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all" placeholder="Ex: Data Scientist @ Company" />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Secteur d'expertise</label>
-                        <select name="secteur" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all appearance-none bg-white">
+                        <select name="secteur" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all appearance-none bg-white">
                           <option value="">Sélectionnez</option>
                           <option value="Banque & Finance">Banque & Finance</option>
                           <option value="Digital & Marketing">Digital & Marketing</option>
@@ -347,7 +347,7 @@ export default function AlumniPage() {
                       </div>
                       <div>
                         <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Années d'expérience</label>
-                        <select name="experience" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all appearance-none bg-white">
+                        <select name="experience" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all appearance-none bg-white">
                           <option value="">Sélectionnez</option>
                           <option value="1-3 ans">1–3 ans</option>
                           <option value="3-5 ans">3–5 ans</option>
@@ -358,9 +358,9 @@ export default function AlumniPage() {
                     </div>
                     <div>
                       <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Message / Motivation</label>
-                      <textarea name="message" rows={4} required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all resize-none" placeholder="Pourquoi souhaitez-vous devenir mentor ?" />
+                      <textarea name="message" rows={4} required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all resize-none" placeholder="Pourquoi souhaitez-vous devenir mentor ?" />
                     </div>
-                    <button type="submit" disabled={formState === "sending"} className="w-full py-4 rounded-xl bg-[#2B8FAB] text-white font-bold text-[15px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15 disabled:opacity-50 active:scale-[0.98]">
+                    <button type="submit" disabled={formState === "sending"} className="w-full py-4 rounded-xl bg-penn-green text-white font-bold text-[15px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-penn-green/15 disabled:opacity-50 active:scale-[0.98]">
                       {formState === "sending" ? "Envoi..." : <><Send className="w-5 h-5" /> Envoyer ma candidature</>}
                     </button>
                     {formState === "error" && <p className="text-[13px] text-red-500 text-center">Une erreur est survenue. Veuillez réessayer.</p>}

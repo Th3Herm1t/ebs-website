@@ -144,7 +144,7 @@ export default function CertificationsPage() {
               <h1 className="text-[42px] md:text-[60px] lg:text-[76px] font-extrabold text-white leading-[1.02] tracking-[-1.5px] mb-6">
                 Plus de {totalCerts} certifications.
                 <br />
-                <span className="text-[#2B8FAB]">Un parcours structuré.</span>
+                <span className="text-penn-green">Un parcours structuré.</span>
               </h1>
 
               <p className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[720px] mb-10">
@@ -152,7 +152,7 @@ export default function CertificationsPage() {
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
-                <Link href="#catalogue" className="inline-flex h-12 items-center gap-2 rounded-full bg-[#2B8FAB] px-7 text-[14px] font-extrabold uppercase tracking-wide text-white transition-transform hover:-translate-y-0.5">
+                <Link href="#catalogue" className="inline-flex h-12 items-center gap-2 rounded-full bg-penn-green px-7 text-[14px] font-extrabold uppercase tracking-wide text-white transition-transform hover:-translate-y-0.5">
                   Explorer le catalogue
                   <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -172,14 +172,14 @@ export default function CertificationsPage() {
             </motion.div>
 
             <motion.div variants={fadeUp} initial="hidden" animate="visible" transition={{ ...transitions.hero, delay: prefersReducedMotion ? 0 : 0.12 }} className="relative">
-              <div className="absolute -inset-4 rounded-[34px] bg-[#2B8FAB]/20 blur-3xl" />
+              <div className="absolute -inset-4 rounded-[34px] bg-penn-green/20 blur-3xl" />
               <div className="relative overflow-hidden rounded-[30px] border border-white/12 bg-white/[0.07] p-6 shadow-2xl backdrop-blur-xl">
                 <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
                   <div>
                     <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-white/45">Catalogue actif</p>
                     <p className="mt-1 text-[44px] font-extrabold leading-none text-white">{totalCerts}</p>
                   </div>
-                  <div className="h-14 w-14 rounded-2xl bg-[#2B8FAB]/15 flex items-center justify-center text-[#2B8FAB]">
+                  <div className="h-14 w-14 rounded-2xl bg-penn-green/15 flex items-center justify-center text-penn-green">
                     <Award className="w-7 h-7" />
                   </div>
                 </div>
@@ -190,7 +190,7 @@ export default function CertificationsPage() {
                     <p className="mt-2 text-[12px] font-bold text-white/50">Obligatoires</p>
                   </div>
                   <div className="rounded-2xl bg-white/[0.055] p-4">
-                    <p className="text-[28px] font-extrabold text-[#2B8FAB] leading-none">{optionalCount}</p>
+                    <p className="text-[28px] font-extrabold text-penn-green leading-none">{optionalCount}</p>
                     <p className="mt-2 text-[12px] font-bold text-white/50">Optionnelles</p>
                   </div>
                 </div>
@@ -202,7 +202,7 @@ export default function CertificationsPage() {
                     "Simulations Forage affichées par organisation",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3 text-[14px] font-bold text-white/75">
-                      <CheckCircle2 className="w-4 h-4 text-[#2B8FAB]" />
+                      <CheckCircle2 className="w-4 h-4 text-penn-green" />
                       {item}
                     </div>
                   ))}
@@ -248,7 +248,7 @@ export default function CertificationsPage() {
                     resetVisibleCount();
                   }}
                   placeholder="Rechercher Google, finance, M1..."
-                  className="h-12 w-full rounded-2xl border border-penn-border bg-penn-bg-light pl-11 pr-4 text-[14px] font-semibold text-penn-navy outline-none transition-colors focus:border-[#2B8FAB] focus:bg-white"
+                  className="h-12 w-full rounded-2xl border border-penn-border bg-penn-bg-light pl-11 pr-4 text-[14px] font-semibold text-penn-navy outline-none transition-colors focus:border-penn-green focus:bg-white"
                 />
               </label>
 
@@ -266,7 +266,7 @@ export default function CertificationsPage() {
                             setClassificationFilter(option.value);
                             resetVisibleCount();
                           }}
-                          className={`w-full rounded-2xl border px-4 py-3 text-left transition-all ${active ? "border-[#2B8FAB] bg-[#2B8FAB]/10 text-penn-navy" : "border-penn-border bg-white text-penn-body hover:border-[#2B8FAB]/35"}`}
+                          className={`w-full rounded-2xl border px-4 py-3 text-left transition-all ${active ? "border-penn-green bg-penn-green/10 text-penn-navy" : "border-penn-border bg-white text-penn-body hover:border-penn-green/35"}`}
                         >
                           <span className="block text-[14px] font-extrabold">{option.label}</span>
                           <span className="block text-[12px] text-penn-body/60">{option.help}</span>
@@ -310,10 +310,10 @@ export default function CertificationsPage() {
                       setClassificationFilter(stat.key);
                       resetVisibleCount();
                     }}
-                    className="group rounded-2xl border border-penn-border bg-white p-5 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#2B8FAB]/35 hover:shadow-md"
+                    className="group rounded-2xl border border-penn-border bg-white p-5 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-penn-green/35 hover:shadow-md"
                   >
                     <p className="text-[30px] font-extrabold text-penn-navy leading-none">{stat.count}</p>
-                    <p className="mt-2 text-[14px] font-extrabold text-penn-navy group-hover:text-[#2B8FAB]">{stat.label}</p>
+                    <p className="mt-2 text-[14px] font-extrabold text-penn-navy group-hover:text-penn-green">{stat.label}</p>
                     <p className="mt-1 text-[12px] text-penn-body/65 leading-relaxed">{stat.description}</p>
                   </button>
                 ))}
@@ -332,9 +332,9 @@ export default function CertificationsPage() {
                       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-40px" }}
                       transition={{ ...transitions.quick, delay: prefersReducedMotion ? 0 : staggerDelay(i, 0.16) }}
-                      className="group relative overflow-hidden rounded-[22px] border border-penn-border bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#2B8FAB]/35 hover:shadow-xl motion-reduce:hover:translate-y-0"
+                      className="group relative overflow-hidden rounded-[22px] border border-penn-border bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-penn-green/35 hover:shadow-xl motion-reduce:hover:translate-y-0"
                     >
-                      <div className={`absolute inset-x-0 top-0 h-1 ${certification.requirement === "mandatory" ? "bg-[#2B8FAB]" : "bg-penn-navy/18"}`} />
+                      <div className={`absolute inset-x-0 top-0 h-1 ${certification.requirement === "mandatory" ? "bg-penn-green" : "bg-penn-navy/18"}`} />
                       <div className="flex items-start justify-between gap-4 mb-5">
                         <div className="h-11 min-w-0 flex items-center">
                           {logo ? (
@@ -343,12 +343,12 @@ export default function CertificationsPage() {
                             <span className="text-[13px] font-extrabold text-penn-navy">{certification.displayProvider}</span>
                           )}
                         </div>
-                        <span className={`rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.08em] ${certification.requirement === "mandatory" ? "bg-[#2B8FAB]/10 text-[#2B8FAB]" : "bg-penn-bg-light text-penn-body"}`}>
+                        <span className={`rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.08em] ${certification.requirement === "mandatory" ? "bg-penn-green/10 text-penn-green" : "bg-penn-bg-light text-penn-body"}`}>
                           {requirementLabels[certification.requirement]}
                         </span>
                       </div>
 
-                      <h3 className="min-h-[54px] text-[16px] font-extrabold text-penn-navy leading-snug group-hover:text-[#2B8FAB] transition-colors">
+                      <h3 className="min-h-[54px] text-[16px] font-extrabold text-penn-navy leading-snug group-hover:text-penn-green transition-colors">
                         {certification.name}
                       </h3>
 
@@ -444,7 +444,7 @@ export default function CertificationsPage() {
                 transition={{ ...transitions.reveal, delay: prefersReducedMotion ? 0 : staggerDelay(i, 0.2) }}
                 className="rounded-2xl border border-white/[0.07] bg-white/[0.035] p-6 transition-all hover:bg-white/[0.055]"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2B8FAB]/10 text-[#2B8FAB]">{item.icon}</div>
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-penn-green/10 text-penn-green">{item.icon}</div>
                 <h3 className="text-[17px] font-extrabold text-white mb-2">{item.title}</h3>
                 <p className="text-[14px] text-white/50 leading-relaxed">{item.text}</p>
               </motion.div>
@@ -467,11 +467,11 @@ export default function CertificationsPage() {
               { icon: <Award className="w-6 h-6" />, title: "Pré-inscription", desc: "Les candidatures 2026/2027 sont ouvertes. Bénéficiez de nos avantages en cours en déposant votre candidature dès aujourd'hui.", href: "/preinscription", label: "Postuler" },
             ].map((card, i) => (
               <motion.div key={card.title} initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }} whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ ...transitions.quick, delay: prefersReducedMotion ? 0 : staggerDelay(i, 0.16) }}>
-                <Link href={card.href} className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#2B8FAB]/30">
-                  <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-4 text-[#2B8FAB] group-hover:scale-110 transition-transform">{card.icon}</div>
-                  <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-[#2B8FAB] transition-colors">{card.title}</h3>
+                <Link href={card.href} className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-penn-green/30">
+                  <div className="w-12 h-12 rounded-xl bg-penn-green/10 flex items-center justify-center mb-4 text-penn-green group-hover:scale-110 transition-transform">{card.icon}</div>
+                  <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-penn-green transition-colors">{card.title}</h3>
                   <p className="text-[14px] text-penn-body leading-relaxed mb-4 flex-1">{card.desc}</p>
-                  <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-[#2B8FAB]">
+                  <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-penn-green">
                     {card.label}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>

@@ -73,7 +73,7 @@ export default function QuiSommesNousPage() {
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="text-[42px] md:text-[58px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6">
               L'université qui prépare<br />
-              <span className="text-[#2B8FAB]">votre avenir</span>.
+              <span className="text-penn-green">votre avenir</span>.
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[650px] mb-12">
               EBS Tunisie – ESPIMA Business School est une université privée agréée par l'État tunisien. Notre mission est de former des diplômés compétents et ouverts sur le monde grâce à une pédagogie innovante associant diplôme agréé, certifications internationales, expérience en entreprise et parcours d'études à l'étranger. Grâce à son réseau d'universités partenaires de renom en France, au Canada, en Italie et à Oman, EBS ouvre à ses étudiants de nouvelles perspectives d'études et les prépare à construire une carrière ambitieuse.
@@ -82,7 +82,7 @@ export default function QuiSommesNousPage() {
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex flex-wrap justify-center gap-4 md:gap-6">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">2013</p><p className="text-[13px] text-white/50 font-medium">Fondation</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">9</p><p className="text-[13px] text-white/50 font-medium">Programmes disponibles</p></div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">150+</p><p className="text-[13px] text-white/50 font-medium">Certifications gratuites</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">150+</p><p className="text-[13px] text-white/50 font-medium">Certifications gratuites</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">95%</p><p className="text-[13px] text-white/50 font-medium">Taux de réussite</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">14</p><p className="text-[13px] text-white/50 font-medium">Partenaires internationaux</p></div>
           </motion.div>
@@ -116,10 +116,10 @@ export default function QuiSommesNousPage() {
 
               {/* Text */}
               <div className="w-full lg:w-3/5 flex flex-col justify-center">
-                <Quote className="w-10 h-10 text-[#2B8FAB]/30 mb-6" />
+                <Quote className="w-10 h-10 text-penn-green/30 mb-6" />
                 <h2 className="text-[28px] md:text-[36px] font-extrabold text-white mb-8 leading-tight">
                   Le mot du<br />
-                  <span className="text-[#2B8FAB]">Président Fondateur</span>
+                  <span className="text-penn-green">Président Fondateur</span>
                 </h2>
                 <div className="space-y-4 text-[15px] md:text-[16px] text-white/70 leading-relaxed">
                   <p>Espima Business School cultive, depuis sa création en 2013, un modèle spécifique fondé sur une identité et des valeurs fortes : l&apos;innovation, l&apos;ouverture, la responsabilité et l&apos;excellence. Notre pédagogie privilégie la mise en pratique des connaissances, le développement de la créativité, de l&apos;esprit critique et des compétences recherchées par les entreprises.</p>
@@ -135,7 +135,7 @@ export default function QuiSommesNousPage() {
                 <p className="text-[20px] font-extrabold text-white">Abderraouf NAJAR</p>
                 <p className="text-[14px] text-white/50 mt-1">Président — Espima Business School</p>
               </div>
-              <div className="hidden sm:block w-32 h-px bg-[#2B8FAB]/30" />
+              <div className="hidden sm:block w-32 h-px bg-penn-green/30" />
             </div>
           </motion.div>
         </div>
@@ -148,8 +148,8 @@ export default function QuiSommesNousPage() {
             {/* Text content */}
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }} className="w-full lg:w-1/2">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center shrink-0">
-                  <Building2 className="w-7 h-7 text-[#2B8FAB]" />
+                <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center shrink-0">
+                  <Building2 className="w-7 h-7 text-penn-green" />
                 </div>
                 <h2 className="text-[28px] md:text-[36px] font-extrabold text-penn-navy leading-tight">Un campus pensé pour votre réussite</h2>
               </div>
@@ -166,18 +166,18 @@ export default function QuiSommesNousPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-[4/5]">
-                    <img src="/images/campus/campus-1.jpg" alt="Campus EBS" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image fill src="/images/campus/campus-1.jpg" alt="Campus EBS" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                   <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-square">
-                    <img src="/images/sections/features-group.jpg" alt="Étudiants" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image fill src="/images/sections/features-group.jpg" alt="Étudiants" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                 </div>
                 <div className="space-y-4 pt-12">
                   <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-square">
-                    <img src="/images/campus/campus-2.jpg" alt="Salle de classe" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image fill src="/images/campus/campus-2.jpg" alt="Salle de classe" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                   <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-[4/5]">
-                    <img src="/images/campus/campus-3.jpg" alt="Cafétéria" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image fill src="/images/campus/campus-3.jpg" alt="Cafétéria" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                 </div>
               </div>
@@ -200,16 +200,16 @@ export default function QuiSommesNousPage() {
                 const isLeft = i % 2 === 0;
                 return (
                   <motion.div key={item.year} initial={{ opacity: 0, x: isLeft ? -40 : 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.6, delay: i * 0.1 }} className={`lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center ${isLeft ? "" : "lg:[direction:rtl]"} relative`}>
-                    <div className={`hidden lg:flex absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-[4px] z-10 ${item.highlight ? "border-[#2B8FAB] bg-white shadow-[0_0_15px_rgba(43,143,171,0.5)]" : "border-penn-border bg-white"}`} />
+                    <div className={`hidden lg:flex absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-[4px] z-10 ${item.highlight ? "border-penn-green bg-white shadow-[0_0_15px_rgba(43,143,171,0.5)]" : "border-penn-border bg-white"}`} />
                     <div className={isLeft ? "lg:[direction:ltr]" : "lg:[direction:ltr]"}>
-                      <div className={`bg-white rounded-2xl border p-6 lg:p-8 transition-all duration-300 ${item.highlight ? "border-[#2B8FAB]/30 shadow-[0_0_40px_rgba(43,143,171,0.1)]" : "border-penn-border hover:shadow-md"}`}>
-                        <span className={`inline-block text-[13px] font-extrabold uppercase tracking-widest mb-2 ${item.highlight ? "text-[#2B8FAB]" : "text-penn-body/60"}`}>{item.year}</span>
+                      <div className={`bg-white rounded-2xl border p-6 lg:p-8 transition-all duration-300 ${item.highlight ? "border-penn-green/30 shadow-[0_0_40px_rgba(43,143,171,0.1)]" : "border-penn-border hover:shadow-md"}`}>
+                        <span className={`inline-block text-[13px] font-extrabold uppercase tracking-widest mb-2 ${item.highlight ? "text-penn-green" : "text-penn-body/60"}`}>{item.year}</span>
                         <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">{item.title}</h3>
                         <p className="text-[15px] text-penn-body leading-relaxed">{item.text}</p>
                       </div>
                     </div>
                     <div className={`hidden lg:block relative rounded-2xl overflow-hidden shadow-lg h-[240px] ${isLeft ? "lg:[direction:ltr]" : "lg:[direction:ltr]"}`}>
-                      <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                      <Image fill src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
                     </div>
                   </motion.div>
                 );
@@ -230,7 +230,7 @@ export default function QuiSommesNousPage() {
             {piliers.map((p, i) => (
               <motion.div key={p.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group relative overflow-hidden rounded-3xl min-h-[380px] lg:min-h-[420px] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <div className="absolute inset-0 z-0">
-                  <img src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <Image fill src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
                 <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
                 <div className="relative z-10 flex flex-col h-full p-8 lg:p-10 justify-end">
@@ -263,11 +263,11 @@ export default function QuiSommesNousPage() {
               { end: 12, suffix: "+", label: "Années d'expérience", icon: <Star className="w-7 h-7" /> },
             ].map((stat, i) => (
               <motion.div key={stat.label} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.08 }} whileHover={{ y: -4, scale: 1.02 }}
-                className={`relative group bg-penn-bg-light border rounded-2xl p-6 lg:p-8 flex items-center gap-5 transition-all duration-300 ${stat.featured ? "border-[#2B8FAB]/20 shadow-[0_0_60px_rgba(43,143,171,0.08)]" : "border-penn-border hover:border-penn-border/80"}`}>
-                <div className={`shrink-0 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${stat.featured ? "w-16 h-16 lg:w-20 lg:h-20 bg-[#2B8FAB]/10 text-[#2B8FAB]" : "w-14 h-14 lg:w-16 lg:h-16 bg-penn-bg-light text-penn-navy/50"}`}>{stat.icon}</div>
+                className={`relative group bg-penn-bg-light border rounded-2xl p-6 lg:p-8 flex items-center gap-5 transition-all duration-300 ${stat.featured ? "border-penn-green/20 shadow-[0_0_60px_rgba(43,143,171,0.08)]" : "border-penn-border hover:border-penn-border/80"}`}>
+                <div className={`shrink-0 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${stat.featured ? "w-16 h-16 lg:w-20 lg:h-20 bg-penn-green/10 text-penn-green" : "w-14 h-14 lg:w-16 lg:h-16 bg-penn-bg-light text-penn-navy/50"}`}>{stat.icon}</div>
                 <div className="min-w-0">
                   <div className="flex items-baseline gap-1">
-                    <span className={`font-extrabold leading-none tracking-tight ${stat.featured ? "text-[38px] md:text-[48px] lg:text-[56px] text-[#2B8FAB]" : "text-[30px] md:text-[38px] lg:text-[44px] text-penn-navy"}`}>{stat.end}{stat.suffix ?? ""}</span>
+                    <span className={`font-extrabold leading-none tracking-tight ${stat.featured ? "text-[38px] md:text-[48px] lg:text-[56px] text-penn-green" : "text-[30px] md:text-[38px] lg:text-[44px] text-penn-navy"}`}>{stat.end}{stat.suffix ?? ""}</span>
                   </div>
                   <p className="text-[14px] lg:text-[15px] font-bold text-penn-navy leading-tight mt-1">{stat.label}</p>
                   {stat.sublabel && <p className="text-[11px] lg:text-[12px] text-penn-body/50 font-medium mt-0.5 leading-snug">{stat.sublabel}</p>}
@@ -292,7 +292,7 @@ export default function QuiSommesNousPage() {
               { icon: <Building2 className="w-7 h-7" />, title: "Partenariats Entreprises", text: "Partenariats actifs avec des entreprises nationales et multinationales pour offrir à nos étudiants des stages, des parcours en alternance, des projets en entreprise et des opportunités de recrutement dans des environnements professionnels réels.", color: "#E91E8C" },
               { icon: <Award className="w-7 h-7" />, title: "Certifications Mondiales", text: "Des certifications proposées par Google, IBM, Harvard, Cisco, Bloomberg, Fortinet, HubSpot, DeepLearning.AI et plus de 15 autres organismes internationaux. Plus de 150 certifications internationales sont incluses gratuitement dans nos parcours.", color: "#FF9800" },
             ].map((acc, i) => (
-              <motion.div key={acc.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ delay: i * 0.1 }} className="bg-white rounded-2xl p-8 border border-penn-border hover:border-[#2B8FAB]/30 transition-all duration-300 group">
+              <motion.div key={acc.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ delay: i * 0.1 }} className="bg-white rounded-2xl p-8 border border-penn-border hover:border-penn-green/30 transition-all duration-300 group">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{ backgroundColor: `${acc.color}12` }}><span style={{ color: acc.color }}>{acc.icon}</span></div>
                 <h3 className="text-[20px] font-extrabold text-penn-navy mb-3">{acc.title}</h3>
                 <p className="text-[15px] text-penn-body leading-relaxed">{acc.text}</p>
@@ -305,7 +305,7 @@ export default function QuiSommesNousPage() {
       {/* ═══════════ SERVICES ÉTUDIANTS ═══════════ */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/campus/campus-3.jpg" alt="" className="w-full h-full object-cover opacity-60" />
+          <Image fill src="/images/campus/campus-3.jpg" alt="" className="w-full h-full object-cover opacity-60" />
         </div>
         <div className="absolute inset-0 z-[1] bg-penn-navy/90" />
         <div className="absolute inset-0 z-[2] opacity-[0.03] bg-[radial-gradient(circle_at_50%_50%,_#2B8FAB_0%,_transparent_70%)]" />

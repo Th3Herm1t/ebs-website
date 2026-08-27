@@ -37,13 +37,13 @@ export default function RecruterNosEtudiantsPage() {
           <div className="max-w-[700px]">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
-                <div className="w-1 h-1 rounded-full bg-[#2B8FAB]" />
+                <div className="w-1 h-1 rounded-full bg-penn-green" />
                 Recrutement
               </Badge>
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="text-[44px] md:text-[56px] lg:text-[68px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6">
               Recruter nos<br />
-              <span className="text-[#2B8FAB]">Étudiants</span>
+              <span className="text-penn-green">Étudiants</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[17px] md:text-[19px] text-white/60 leading-relaxed max-w-[550px]">
               Trouvez les talents de demain parmi nos étudiants. Stages, alternance, premier emploi :
@@ -61,7 +61,7 @@ export default function RecruterNosEtudiantsPage() {
                 <Badge size="lg" className="mb-4">Pourquoi recruter chez EBS ?</Badge>
                 <h2 className="text-[26px] md:text-[32px] font-extrabold text-penn-navy mb-6 leading-tight">
                   Des talents<br />
-                  <span className="text-[#2B8FAB]">prêts à l&apos;emploi</span>
+                  <span className="text-penn-green">prêts à l&apos;emploi</span>
                 </h2>
                 <div className="space-y-4">
                   {[
@@ -70,9 +70,9 @@ export default function RecruterNosEtudiantsPage() {
                     { icon: <Search className="w-5 h-5" />, title: "Recrutement Simplifié", desc: "Nous diffusons vos offres directement à nos étudiants et organisons des événements de recrutement." },
                     { icon: <Users className="w-5 h-5" />, title: "Profil Adapté", desc: "Licence, Master, spécialisation — nous vous aidons à trouver le profil qui correspond à vos besoins." },
                   ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-penn-bg-light border border-penn-border/30 hover:border-[#2B8FAB]/20 transition-colors">
-                      <div className="w-10 h-10 rounded-lg bg-[#2B8FAB]/10 flex items-center justify-center shrink-0">
-                        <span className="text-[#2B8FAB]">{item.icon}</span>
+                    <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-penn-bg-light border border-penn-border/30 hover:border-penn-green/20 transition-colors">
+                      <div className="w-10 h-10 rounded-lg bg-penn-green/10 flex items-center justify-center shrink-0">
+                        <span className="text-penn-green">{item.icon}</span>
                       </div>
                       <div>
                         <h4 className="text-[14px] font-extrabold text-penn-navy mb-1">{item.title}</h4>
@@ -93,12 +93,12 @@ export default function RecruterNosEtudiantsPage() {
                   <AnimatePresence mode="wait">
                     {formState === "sent" ? (
                       <motion.div key="sent" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-6">
-                        <div className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-4">
-                          <Check className="w-7 h-7 text-[#2B8FAB]" />
+                        <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-4">
+                          <Check className="w-7 h-7 text-penn-green" />
                         </div>
                         <h4 className="text-[18px] font-extrabold text-penn-navy mb-2">Offre envoyée !</h4>
                         <p className="text-[14px] text-penn-body/60 mb-4">Notre Career Center diffusera votre offre et vous contactera rapidement.</p>
-                        <button onClick={() => setFormState("idle")} className="text-[#2B8FAB] font-bold text-[14px] hover:underline">
+                        <button onClick={() => setFormState("idle")} className="text-penn-green font-bold text-[14px] hover:underline">
                           Déposer une autre offre
                         </button>
                       </motion.div>
@@ -119,7 +119,7 @@ export default function RecruterNosEtudiantsPage() {
                         </div>
                         <div>
                           <label className="block text-[13px] font-bold text-penn-navy mb-2">Type d&apos;offre</label>
-                          <select name="type_offre" className="w-full px-4 py-3 rounded-xl border border-penn-border text-[14px] text-penn-navy bg-white focus:outline-none focus:border-[#2B8FAB] focus:ring-2 focus:ring-[#2B8FAB]/10 transition-all">
+                          <select name="type_offre" className="w-full px-4 py-3 rounded-xl border border-penn-border text-[14px] text-penn-navy bg-white focus:outline-none focus:border-penn-green focus:ring-2 focus:ring-penn-green/10 transition-all">
                             <option value="stage">Stage (PFE, initiation, perfectionnement)</option>
                             <option value="alternance">Alternance</option>
                             <option value="cdd">CDD</option>
@@ -129,7 +129,7 @@ export default function RecruterNosEtudiantsPage() {
                         </div>
                         <div>
                           <label className="block text-[13px] font-bold text-penn-navy mb-2">Profil recherché</label>
-                          <select name="profil" className="w-full px-4 py-3 rounded-xl border border-penn-border text-[14px] text-penn-navy bg-white focus:outline-none focus:border-[#2B8FAB] focus:ring-2 focus:ring-[#2B8FAB]/10 transition-all">
+                          <select name="profil" className="w-full px-4 py-3 rounded-xl border border-penn-border text-[14px] text-penn-navy bg-white focus:outline-none focus:border-penn-green focus:ring-2 focus:ring-penn-green/10 transition-all">
                             <option value="management">Management</option>
                             <option value="marketing">Marketing & Digital</option>
                             <option value="finance">Finance & Ingénierie Financière</option>
@@ -143,9 +143,9 @@ export default function RecruterNosEtudiantsPage() {
                         </div>
                         <div>
                           <label className="block text-[13px] font-bold text-penn-navy mb-2">Intitulé du poste / Description</label>
-                          <textarea name="message" rows={4} className="w-full px-4 py-3 rounded-xl border border-penn-border text-[14px] text-penn-navy placeholder:text-penn-body/30 focus:outline-none focus:border-[#2B8FAB] focus:ring-2 focus:ring-[#2B8FAB]/10 transition-all resize-none" placeholder="Décrivez le poste, les missions et les compétences recherchées..." />
+                          <textarea name="message" rows={4} className="w-full px-4 py-3 rounded-xl border border-penn-border text-[14px] text-penn-navy placeholder:text-penn-body/30 focus:outline-none focus:border-penn-green focus:ring-2 focus:ring-penn-green/10 transition-all resize-none" placeholder="Décrivez le poste, les missions et les compétences recherchées..." />
                         </div>
-                        <button type="submit" disabled={formState === "sending"} className="w-full py-3.5 rounded-xl bg-[#2B8FAB] text-white font-bold text-[14px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15 disabled:opacity-60">
+                        <button type="submit" disabled={formState === "sending"} className="w-full py-3.5 rounded-xl bg-penn-green text-white font-bold text-[14px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-penn-green/15 disabled:opacity-60">
                           {formState === "sending" ? "Envoi en cours..." : <><Send className="w-4 h-4" /> Déposer l&apos;offre</>}
                         </button>
                         {formState === "error" && <p className="text-[13px] text-red-500 text-center">Erreur. Veuillez réessayer.</p>}
@@ -173,7 +173,7 @@ function Field({ label, name, type = "text", placeholder, required }: { label: s
   return (
     <div>
       <label className="block text-[13px] font-bold text-penn-navy mb-2">{label}</label>
-      <input type={type} name={name} required={required} className="w-full px-4 py-3 rounded-xl border border-penn-border text-[14px] text-penn-navy placeholder:text-penn-body/30 focus:outline-none focus:border-[#2B8FAB] focus:ring-2 focus:ring-[#2B8FAB]/10 transition-all" placeholder={placeholder} />
+      <input type={type} name={name} required={required} className="w-full px-4 py-3 rounded-xl border border-penn-border text-[14px] text-penn-navy placeholder:text-penn-body/30 focus:outline-none focus:border-penn-green focus:ring-2 focus:ring-penn-green/10 transition-all" placeholder={placeholder} />
     </div>
   );
 }

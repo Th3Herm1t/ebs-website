@@ -44,7 +44,7 @@ type ArticleTag =
   | "Clubs";
 
 const tagColors: Record<ArticleTag, { bg: string; text: string; border: string }> = {
-  Partenariat: { bg: "bg-[#2B8FAB]/10", text: "text-[#2B8FAB]", border: "border-[#2B8FAB]/20" },
+  Partenariat: { bg: "bg-penn-green/10", text: "text-penn-green", border: "border-penn-green/20" },
   International: { bg: "bg-[#1E88E5]/10", text: "text-[#1E88E5]", border: "border-[#1E88E5]/20" },
   Technologie: { bg: "bg-[#FF5722]/10", text: "text-[#FF5722]", border: "border-[#FF5722]/20" },
   IA: { bg: "bg-[#9C27B0]/10", text: "text-[#9C27B0]", border: "border-[#9C27B0]/20" },
@@ -59,7 +59,7 @@ const tagColors: Record<ArticleTag, { bg: string; text: string; border: string }
   Orientation: { bg: "bg-[#43A047]/10", text: "text-[#43A047]", border: "border-[#43A047]/20" },
   Digitalisation: { bg: "bg-[#FF5722]/10", text: "text-[#FF5722]", border: "border-[#FF5722]/20" },
   "Data Science": { bg: "bg-[#9C27B0]/10", text: "text-[#9C27B0]", border: "border-[#9C27B0]/20" },
-  Alumni: { bg: "bg-[#2B8FAB]/10", text: "text-[#2B8FAB]", border: "border-[#2B8FAB]/20" },
+  Alumni: { bg: "bg-penn-green/10", text: "text-penn-green", border: "border-penn-green/20" },
   Clubs: { bg: "bg-[#FF9800]/10", text: "text-[#FF9800]", border: "border-[#FF9800]/20" },
 };
 
@@ -382,7 +382,7 @@ export default function ActualitesPage() {
           <div className="max-w-[700px]">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
-                <div className="w-1 h-1 rounded-full bg-[#2B8FAB]" />
+                <div className="w-1 h-1 rounded-full bg-penn-green" />
                 Restez Informés
               </Badge>
             </motion.div>
@@ -393,7 +393,7 @@ export default function ActualitesPage() {
               className="text-[44px] md:text-[56px] lg:text-[68px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
             >
               Actualités<br />
-              <span className="text-[#2B8FAB]">EBS</span>.
+              <span className="text-penn-green">EBS</span>.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -450,7 +450,7 @@ export default function ActualitesPage() {
                 whileTap={{ scale: 0.97 }}
                 className={`group relative inline-flex flex-col items-center gap-1 px-6 py-4 rounded-2xl text-[14px] font-bold transition-all duration-300 ${
                   activeTab === tab.key
-                    ? "bg-[#2B8FAB] text-white shadow-lg shadow-[#2B8FAB]/20"
+                    ? "bg-penn-green text-white shadow-lg shadow-penn-green/20"
                     : "bg-gray-50 text-penn-navy/50 hover:bg-gray-100 hover:text-penn-navy/80"
                 }`}
               >
@@ -528,7 +528,7 @@ export default function ActualitesPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-penn-navy/40 to-transparent lg:bg-gradient-to-r" />
                       <div className="absolute top-5 left-5">
-                        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#2B8FAB] text-white text-[12px] font-bold shadow-lg">
+                        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-penn-green text-white text-[12px] font-bold shadow-lg">
                           <Sparkles className="w-3 h-3" /> À la Une
                         </span>
                       </div>
@@ -543,13 +543,13 @@ export default function ActualitesPage() {
                           {articleAlaUne.date}
                         </div>
                       </div>
-                      <h2 className="text-[22px] md:text-[28px] font-extrabold text-penn-navy mb-4 leading-tight group-hover:text-[#2B8FAB] transition-colors">
+                      <h2 className="text-[22px] md:text-[28px] font-extrabold text-penn-navy mb-4 leading-tight group-hover:text-penn-green transition-colors">
                         {articleAlaUne.title}
                       </h2>
                       <p className="text-[15px] text-penn-body/70 leading-relaxed mb-6">
                         {articleAlaUne.description}
                       </p>
-                      <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-[#2B8FAB] group-hover:gap-2.5 transition-all">
+                      <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-penn-green group-hover:gap-2.5 transition-all">
                         Lire l&apos;article complet <ChevronRight className="w-4 h-4" />
                       </span>
                     </div>
@@ -564,7 +564,7 @@ export default function ActualitesPage() {
                     <div className="text-center py-20">
                       <Megaphone className="w-12 h-12 text-penn-border mx-auto mb-4" />
                       <p className="text-penn-body/50 font-medium">Aucun article trouvé pour cette catégorie.</p>
-                      <button onClick={() => setActiveTag(null)} className="mt-4 text-[#2B8FAB] font-bold text-[14px] hover:underline">
+                      <button onClick={() => setActiveTag(null)} className="mt-4 text-penn-green font-bold text-[14px] hover:underline">
                         Voir tous les articles
                       </button>
                     </div>
@@ -576,7 +576,7 @@ export default function ActualitesPage() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.4, delay: idx * 0.05 }}
-                          className="bg-white rounded-2xl border border-penn-border/80 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#2B8FAB]/20 transition-all duration-400 group cursor-pointer flex flex-col"
+                          className="bg-white rounded-2xl border border-penn-border/80 overflow-hidden shadow-sm hover:shadow-xl hover:border-penn-green/20 transition-all duration-400 group cursor-pointer flex flex-col"
                           onClick={() => setModalArticle(article)}
                         >
                           {article.image ? (
@@ -602,7 +602,7 @@ export default function ActualitesPage() {
                             </div>
                           ) : (
                             <div className="relative h-[220px] bg-gradient-to-br from-[#2B8FAB]/8 via-penn-bg-light to-[#2B8FAB]/4 flex items-center justify-center">
-                              <Megaphone className="w-10 h-10 text-[#2B8FAB]/15" />
+                              <Megaphone className="w-10 h-10 text-penn-green/15" />
                               <div className="absolute top-3 left-3">
                                 <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${tagColors[article.tag].bg} ${tagColors[article.tag].text} ${tagColors[article.tag].border}`}>
                                   {article.tag}
@@ -615,13 +615,13 @@ export default function ActualitesPage() {
                               <Calendar className="w-3.5 h-3.5" />
                               <span className="font-medium">{article.date}</span>
                             </div>
-                            <h3 className="text-[16px] font-extrabold text-penn-navy mb-2.5 group-hover:text-[#2B8FAB] transition-colors line-clamp-2 leading-snug">
+                            <h3 className="text-[16px] font-extrabold text-penn-navy mb-2.5 group-hover:text-penn-green transition-colors line-clamp-2 leading-snug">
                               {article.title}
                             </h3>
                             <p className="text-[13px] text-penn-body/60 leading-relaxed line-clamp-3 flex-1">
                               {article.description}
                             </p>
-                            <span className="inline-flex items-center gap-1.5 text-[12px] font-bold text-[#2B8FAB] mt-4 group-hover:gap-2 transition-all">
+                            <span className="inline-flex items-center gap-1.5 text-[12px] font-bold text-penn-green mt-4 group-hover:gap-2 transition-all">
                               Lire la suite <ChevronRight className="w-3.5 h-3.5" />
                             </span>
                           </div>
@@ -641,7 +641,7 @@ export default function ActualitesPage() {
                 >
                   <button
                     onClick={() => setVisibleCount((prev) => prev + 9)}
-                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-[#2B8FAB] text-[#2B8FAB] font-bold text-[14px] hover:bg-[#2B8FAB] hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#2B8FAB]/20"
+                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-penn-green text-penn-green font-bold text-[14px] hover:bg-penn-green hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-penn-green/20"
                   >
                     Afficher plus d&apos;articles
                     <ArrowDown className="w-4 h-4" />
@@ -683,11 +683,11 @@ export default function ActualitesPage() {
                 type="email"
                 required
                 placeholder="Votre adresse e-mail"
-                className="flex-1 px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-[#2B8FAB] text-[14px]"
+                className="flex-1 px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-penn-green text-[14px]"
               />
               <button
                 type="submit"
-                className="px-8 py-3.5 rounded-xl bg-[#2B8FAB] text-white font-bold text-[14px] hover:bg-[#2B8FAB]/90 transition-all shrink-0"
+                className="px-8 py-3.5 rounded-xl bg-penn-green text-white font-bold text-[14px] hover:bg-penn-green/90 transition-all shrink-0"
               >
                 S'abonner
               </button>
@@ -707,8 +707,8 @@ export default function ActualitesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
           >
-            <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6">
-              <Megaphone className="w-8 h-8 text-[#2B8FAB]" />
+            <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-6">
+              <Megaphone className="w-8 h-8 text-penn-green" />
             </div>
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">
               Une question ?
@@ -720,16 +720,16 @@ export default function ActualitesPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[500px] mx-auto mb-10">
               <a
                 href="tel:+216 55 582 843"
-                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
+                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-penn-green/30 hover:shadow-md transition-all duration-300"
               >
-                <Phone className="w-5 h-5 text-[#2B8FAB]" />
+                <Phone className="w-5 h-5 text-penn-green" />
                 <span className="text-[15px] font-bold text-penn-navy">+216 55 582 843</span>
               </a>
               <a
                 href="mailto:info@ebs.tn"
-                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
+                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-penn-green/30 hover:shadow-md transition-all duration-300"
               >
-                <Mail className="w-5 h-5 text-[#2B8FAB]" />
+                <Mail className="w-5 h-5 text-penn-green" />
                 <span className="text-[15px] font-bold text-penn-navy">info@ebs.tn</span>
               </a>
             </div>
@@ -790,7 +790,7 @@ export default function ActualitesPage() {
                     {modalArticle.tag}
                   </div>
                   <div className="flex items-center gap-1.5 text-[14px] text-penn-body/50">
-                    <Calendar className="w-4 h-4 text-[#2B8FAB]" />
+                    <Calendar className="w-4 h-4 text-penn-green" />
                     {modalArticle.date}
                   </div>
                 </div>
@@ -812,13 +812,13 @@ export default function ActualitesPage() {
                 <div className="mt-8 pt-6 border-t border-penn-border flex flex-wrap gap-4">
                   <Link
                     href="/preinscription"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#2B8FAB] text-white text-[13px] font-bold hover:bg-[#2B8FAB]/90 transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-penn-green text-white text-[13px] font-bold hover:bg-penn-green/90 transition-all"
                   >
                     Rejoindre EBS <ChevronRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/nos-programmes"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-penn-border text-penn-navy text-[13px] font-bold hover:border-[#2B8FAB]/30 hover:text-[#2B8FAB] transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-penn-border text-penn-navy text-[13px] font-bold hover:border-penn-green/30 hover:text-penn-green transition-all"
                   >
                     Voir les formations
                   </Link>

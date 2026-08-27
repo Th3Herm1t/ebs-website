@@ -215,7 +215,7 @@ function Field({ label, name, type = "text", placeholder, icon, required }: {
           type={type}
           name={name}
           required={required}
-          className={`w-full py-3 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all ${icon ? "pl-11 pr-4" : "px-4"}`}
+          className={`w-full py-3 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all ${icon ? "pl-11 pr-4" : "px-4"}`}
           placeholder={placeholder}
         />
       </div>
@@ -294,7 +294,7 @@ export default function PartenairesEconomiquesPage() {
           >
             Recrutez les talents
             <br />
-            <span className="text-[#2B8FAB]">de demain</span>, aujourd&apos;hui<span className="text-[#2B8FAB]">.</span>
+            <span className="text-penn-green">de demain</span>, aujourd&apos;hui<span className="text-penn-green">.</span>
           </motion.h1>
 
           <motion.p
@@ -317,7 +317,7 @@ export default function PartenairesEconomiquesPage() {
               <p className="text-[12px] text-white/50 font-medium">Taux d&apos;insertion</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">150+</p>
+              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">150+</p>
               <p className="text-[12px] text-white/50 font-medium">Certifications internationales proposées</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
@@ -325,7 +325,7 @@ export default function PartenairesEconomiquesPage() {
               <p className="text-[12px] text-white/50 font-medium">Filières ouvertes</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <GraduationCap className="w-10 h-10 md:w-14 md:h-14 text-[#2B8FAB] mx-auto mb-1" />
+              <GraduationCap className="w-10 h-10 md:w-14 md:h-14 text-penn-green mx-auto mb-1" />
               <p className="text-[12px] text-white/50 font-medium">Rentrée 2026-2027</p>
             </div>
           </motion.div>
@@ -409,10 +409,10 @@ export default function PartenairesEconomiquesPage() {
                   />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-[16px] font-extrabold text-penn-navy mb-1.5 group-hover:text-[#2B8FAB] transition-colors">
+                  <h4 className="text-[16px] font-extrabold text-penn-navy mb-1.5 group-hover:text-penn-green transition-colors">
                     {partner.name}
                   </h4>
-                  <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#2B8FAB] bg-[#2B8FAB]/8 px-2.5 py-1 rounded-full mb-3">
+                  <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-penn-green bg-penn-green/8 px-2.5 py-1 rounded-full mb-3">
                     {partner.sector}
                   </span>
                   <p className="text-[13px] text-penn-body/55 leading-relaxed">
@@ -625,15 +625,15 @@ export default function PartenairesEconomiquesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: i * 0.1 }}
-                className="relative bg-white rounded-2xl border border-penn-border/60 p-6 text-center hover:shadow-lg hover:border-[#2B8FAB]/30 transition-all group"
+                className="relative bg-white rounded-2xl border border-penn-border/60 p-6 text-center hover:shadow-lg hover:border-penn-green/30 transition-all group"
               >
                 {i < 2 && (
                   <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-penn-border/30 z-0">
                     <div className="absolute right-0 -top-1 w-2 h-2 border-t-2 border-r-2 border-penn-border/30 rotate-45" />
                   </div>
                 )}
-                <div className="w-12 h-12 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-[#2B8FAB]/20 transition-colors">
-                  <span className="text-[16px] font-extrabold text-[#2B8FAB]">{s.step}</span>
+                <div className="w-12 h-12 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-penn-green/20 transition-colors">
+                  <span className="text-[16px] font-extrabold text-penn-green">{s.step}</span>
                 </div>
                 <h4 className="text-[15px] font-extrabold text-penn-navy mb-2">{s.title}</h4>
                 <p className="text-[13px] text-penn-body/55 leading-relaxed">{s.desc}</p>
@@ -674,9 +674,9 @@ export default function PartenairesEconomiquesPage() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-5"
+                    className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5"
                   >
-                    <Check className="w-8 h-8 text-[#2B8FAB]" />
+                    <Check className="w-8 h-8 text-penn-green" />
                   </motion.div>
                   <h3 className="text-[22px] font-extrabold text-penn-navy mb-2">Demande envoyée !</h3>
                   <p className="text-[14px] text-penn-body/50 max-w-[350px] mx-auto">
@@ -684,7 +684,7 @@ export default function PartenairesEconomiquesPage() {
                   </p>
                   <button
                     onClick={() => setFormState("idle")}
-                    className="mt-6 text-[#2B8FAB] font-bold text-[14px] hover:underline"
+                    className="mt-6 text-penn-green font-bold text-[14px] hover:underline"
                   >
                     Envoyer une autre demande
                   </button>
@@ -697,8 +697,8 @@ export default function PartenairesEconomiquesPage() {
                     {/* Entreprise */}
                     <div>
                       <div className="flex items-center gap-3 mb-5">
-                        <div className="w-8 h-8 rounded-lg bg-[#2B8FAB]/10 flex items-center justify-center">
-                          <Building2 className="w-4 h-4 text-[#2B8FAB]" />
+                        <div className="w-8 h-8 rounded-lg bg-penn-green/10 flex items-center justify-center">
+                          <Building2 className="w-4 h-4 text-penn-green" />
                         </div>
                         <h4 className="text-[15px] font-extrabold text-penn-navy">Votre entreprise</h4>
                       </div>
@@ -748,11 +748,11 @@ export default function PartenairesEconomiquesPage() {
                             <label
                               key={opt.value}
                               className={`flex flex-col items-center gap-2 py-4 px-3 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
-                                active ? "border-[#2B8FAB] bg-[#2B8FAB]/5 shadow-sm" : "border-penn-border/30 hover:border-penn-border/60 hover:bg-penn-bg-light"
+                                active ? "border-penn-green bg-penn-green/5 shadow-sm" : "border-penn-border/30 hover:border-penn-border/60 hover:bg-penn-bg-light"
                               }`}
                             >
                               <input type="radio" name="type_partenariat" value={opt.value} checked={active} onChange={() => setSelectedType(opt.value)} className="sr-only" />
-                              <span className={active ? "text-[#2B8FAB]" : "text-penn-body/30"}>{opt.icon}</span>
+                              <span className={active ? "text-penn-green" : "text-penn-body/30"}>{opt.icon}</span>
                               <span className={`text-[12px] font-bold leading-tight text-center ${active ? "text-penn-navy" : "text-penn-body/50"}`}>{opt.label}</span>
                             </label>
                           );
@@ -771,7 +771,7 @@ export default function PartenairesEconomiquesPage() {
                       <textarea
                         name="message"
                         rows={5}
-                        className="w-full px-4 py-3.5 rounded-xl border-2 border-penn-border/30 text-[14px] text-penn-navy placeholder:text-penn-body/25 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all resize-none"
+                        className="w-full px-4 py-3.5 rounded-xl border-2 border-penn-border/30 text-[14px] text-penn-navy placeholder:text-penn-body/25 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all resize-none"
                         placeholder="Décrivez votre projet de partenariat, vos besoins et vos attentes..."
                       />
                     </div>
@@ -780,7 +780,7 @@ export default function PartenairesEconomiquesPage() {
                   <button
                     type="submit"
                     disabled={formState === "sending"}
-                    className="w-full mt-8 py-4 rounded-xl bg-[#2B8FAB] text-white font-bold text-[15px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15 disabled:opacity-50 active:scale-[0.98]"
+                    className="w-full mt-8 py-4 rounded-xl bg-penn-green text-white font-bold text-[15px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-penn-green/15 disabled:opacity-50 active:scale-[0.98]"
                   >
                     {formState === "sending" ? "Envoi..." : <><Send className="w-5 h-5" /> Envoyer ma demande</>}
                   </button>
@@ -802,8 +802,8 @@ export default function PartenairesEconomiquesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
           >
-            <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6">
-              <Handshake className="w-8 h-8 text-[#2B8FAB]" />
+            <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-6">
+              <Handshake className="w-8 h-8 text-penn-green" />
             </div>
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">
               Prêt à collaborer ?
@@ -815,21 +815,21 @@ export default function PartenairesEconomiquesPage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
               <a
                 href="tel:+216 55 582 843"
-                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
+                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-penn-green/30 hover:shadow-md transition-all duration-300"
               >
-                <Phone className="w-5 h-5 text-[#2B8FAB]" />
+                <Phone className="w-5 h-5 text-penn-green" />
                 <span className="text-[15px] font-bold text-penn-navy">+216 55 582 843</span>
               </a>
               <a
                 href="mailto:info@ebs.tn"
-                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
+                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-penn-green/30 hover:shadow-md transition-all duration-300"
               >
-                <Mail className="w-5 h-5 text-[#2B8FAB]" />
+                <Mail className="w-5 h-5 text-penn-green" />
                 <span className="text-[15px] font-bold text-penn-navy">info@ebs.tn</span>
               </a>
               <a
                 href="#formulaire-partenariat"
-                className="flex items-center gap-3 justify-center p-4 bg-[#2B8FAB] text-white rounded-xl hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20"
+                className="flex items-center gap-3 justify-center p-4 bg-penn-green text-white rounded-xl hover:bg-penn-green/90 transition-all duration-300 shadow-lg shadow-penn-green/20"
               >
                 <Building2 className="w-5 h-5" />
                 <span className="text-[15px] font-bold">Formulaire de partenariat</span>

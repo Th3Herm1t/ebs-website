@@ -50,7 +50,7 @@ export default function AboutSection() {
             {/* Mission card */}
             <ScrollReveal initialY={30} delay={0.2}>
               <div className="mb-[30px] bg-white p-[25px] lg:p-[30px] rounded-[10px] border border-[#eee] transition-all duration-300 hover:border-l-4 hover:border-l-[#2B8FAB] shadow-sm hover:shadow-md">
-                <span className="bg-[#2B8FAB]/10 rounded-full float-left mr-5 block w-[60px] h-[60px] lg:w-[70px] lg:h-[70px] text-[#2B8FAB] leading-[60px] lg:leading-[70px] text-center text-[26px]">
+                <span className="bg-penn-green/10 rounded-full float-left mr-5 block w-[60px] h-[60px] lg:w-[70px] lg:h-[70px] text-penn-green leading-[60px] lg:leading-[70px] text-center text-[26px]">
                   <Brain className="w-6 h-6 lg:w-7 lg:h-7 mx-auto mt-4 lg:mt-5" />
                 </span>
                 <h4 className="font-extrabold overflow-hidden mb-2.5 text-[18px] lg:text-[20px] text-[#264653]">{t('f1Title')}</h4>
@@ -61,7 +61,7 @@ export default function AboutSection() {
             {/* Vision card */}
             <ScrollReveal initialY={30} delay={0.3}>
               <div className="mb-[30px] bg-white p-[25px] lg:p-[30px] rounded-[10px] border border-[#eee] transition-all duration-300 hover:border-l-4 hover:border-l-[#2B8FAB] shadow-sm hover:shadow-md">
-                <span className="bg-[#2B8FAB]/10 rounded-full float-left mr-5 block w-[60px] h-[60px] lg:w-[70px] lg:h-[70px] text-[#2B8FAB] leading-[60px] lg:leading-[70px] text-center text-[26px]">
+                <span className="bg-penn-green/10 rounded-full float-left mr-5 block w-[60px] h-[60px] lg:w-[70px] lg:h-[70px] text-penn-green leading-[60px] lg:leading-[70px] text-center text-[26px]">
                   <Award className="w-6 h-6 lg:w-7 lg:h-7 mx-auto mt-4 lg:mt-5" />
                 </span>
                 <h4 className="font-extrabold overflow-hidden mb-2.5 text-[18px] lg:text-[20px] text-[#264653]">{t('f2Title')}</h4>
@@ -72,7 +72,7 @@ export default function AboutSection() {
             <ScrollReveal initialY={30} delay={0.4}>
               <Link
                 href="/ia-et-certifications"
-                className="bg-[#2B8FAB] text-white py-[10px] px-[30px] font-bold rounded-full text-[15px] inline-block transition-all relative overflow-hidden shadow-[10px_15px_18px_rgba(23,23,36,0.1)] group"
+                className="bg-penn-green text-white py-[10px] px-[30px] font-bold rounded-full text-[15px] inline-block transition-all relative overflow-hidden shadow-[10px_15px_18px_rgba(23,23,36,0.1)] group"
               >
                 <span className="relative z-10">{t('btn')}</span>
                 <span className="absolute inset-0 bg-[#232434] rounded-full transform scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />

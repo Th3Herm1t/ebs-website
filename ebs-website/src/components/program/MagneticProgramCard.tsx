@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import Link from "next/link";
 import { useReducedMotion } from "motion/react";
@@ -72,7 +73,7 @@ export function MagneticProgramCard({
 
         {image && (
           <div className={cn("relative overflow-hidden w-full shrink-0 z-0", isFeatured ? "lg:w-[40%] h-[200px] lg:h-auto" : "h-[180px]")}>
-            <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <Image fill src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className={cn("absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent", isFeatured && "lg:bg-gradient-to-r lg:from-black/60")} />
           </div>
         )}

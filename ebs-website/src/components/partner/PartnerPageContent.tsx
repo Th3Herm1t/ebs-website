@@ -90,7 +90,7 @@ export function PartnerPageContent({ data }: { data: PartnerData }) {
           <PartnerSection icon={<Check />} title="Avantages & Facilités" accent={accent}>
             <div className="flex flex-wrap justify-center gap-3">
               {data.avantages.map((a) => (
-                <div key={a} className="flex items-start gap-3 p-4 bg-penn-bg-light rounded-xl border border-penn-border hover:border-[#2B8FAB]/20 transition-colors w-full sm:w-[calc(50%-6px)]">
+                <div key={a} className="flex items-start gap-3 p-4 bg-penn-bg-light rounded-xl border border-penn-border hover:border-penn-green/20 transition-colors w-full sm:w-[calc(50%-6px)]">
                   <Check className="w-4 h-4 shrink-0 mt-0.5" style={{ color: accent }} />
                   <p className="text-[14px] text-penn-body leading-relaxed">{a}</p>
                 </div>
@@ -101,7 +101,7 @@ export function PartnerPageContent({ data }: { data: PartnerData }) {
           <PartnerSection icon={<ArrowRight />} title="Débouchés" accent={accent}>
             <div className="flex flex-wrap justify-center gap-3">
               {data.debouches.map((d) => (
-                <div key={d} className="flex items-center gap-3 px-4 py-3 bg-penn-bg-light rounded-lg border border-penn-border text-[14px] font-semibold text-penn-navy hover:border-[#2B8FAB]/30 transition-colors w-full sm:w-[calc(50%-6px)]"
+                <div key={d} className="flex items-center gap-3 px-4 py-3 bg-penn-bg-light rounded-lg border border-penn-border text-[14px] font-semibold text-penn-navy hover:border-penn-green/30 transition-colors w-full sm:w-[calc(50%-6px)]"
                   style={{ borderLeftWidth: "3px", borderLeftColor: accent }}>
                   <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: accent }} />
                   {d}

@@ -191,8 +191,8 @@ export default function ProgrammeFinder() {
             onClick={() => setTab("quiz")}
             className={`flex items-center gap-2 px-6 py-3 text-sm font-bold rounded-full transition-all duration-300 ${
               tab === "quiz"
-                ? "bg-[#2B8FAB] text-white shadow-lg shadow-[#2B8FAB]/20"
-                : "bg-white border border-penn-border text-penn-body hover:text-[#2B8FAB] hover:border-[#2B8FAB]/30"
+                ? "bg-penn-green text-white shadow-lg shadow-penn-green/20"
+                : "bg-white border border-penn-border text-penn-body hover:text-penn-green hover:border-penn-green/30"
             }`}
           >
             <HelpCircle className="w-4 h-4" />
@@ -202,8 +202,8 @@ export default function ProgrammeFinder() {
             onClick={() => setTab("compare")}
             className={`flex items-center gap-2 px-6 py-3 text-sm font-bold rounded-full transition-all duration-300 ${
               tab === "compare"
-                ? "bg-[#2B8FAB] text-white shadow-lg shadow-[#2B8FAB]/20"
-                : "bg-white border border-penn-border text-penn-body hover:text-[#2B8FAB] hover:border-[#2B8FAB]/30"
+                ? "bg-penn-green text-white shadow-lg shadow-penn-green/20"
+                : "bg-white border border-penn-border text-penn-body hover:text-penn-green hover:border-penn-green/30"
             }`}
           >
             <BarChartHorizontal className="w-4 h-4" />
@@ -233,7 +233,7 @@ export default function ProgrammeFinder() {
                         {currentQ > 0 && !result && (
                           <button
                             onClick={handleBack}
-                            className="w-6 h-6 rounded-full bg-penn-bg-light border border-penn-border flex items-center justify-center hover:bg-[#2B8FAB] hover:text-white hover:border-[#2B8FAB] transition-all"
+                            className="w-6 h-6 rounded-full bg-penn-bg-light border border-penn-border flex items-center justify-center hover:bg-penn-green hover:text-white hover:border-penn-green transition-all"
                           >
                             <ArrowLeft className="w-3 h-3" />
                           </button>
@@ -246,7 +246,7 @@ export default function ProgrammeFinder() {
                     </div>
                     <div className="w-full h-1.5 bg-penn-border rounded-full overflow-hidden">
                       <motion.div
-                        className="h-full bg-[#2B8FAB] rounded-full"
+                        className="h-full bg-penn-green rounded-full"
                         animate={{ width: `${progress}%` }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
                       />
@@ -260,7 +260,7 @@ export default function ProgrammeFinder() {
                       animate={{ opacity: 1, scale: 1 }}
                       className="text-center py-4"
                     >
-                      <span className="text-[#2B8FAB] text-xs font-bold uppercase tracking-wider block mb-3">
+                      <span className="text-penn-green text-xs font-bold uppercase tracking-wider block mb-3">
                         Ton programme idéal
                       </span>
                       <h3 className="text-2xl font-extrabold text-penn-navy mb-3">
@@ -275,7 +275,7 @@ export default function ProgrammeFinder() {
                       <div className="flex flex-col sm:flex-row gap-3 justify-center">
                         <Link
                           href={`/${result.slug}`}
-                          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2B8FAB] text-white font-bold text-sm rounded-full hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20"
+                          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-penn-green text-white font-bold text-sm rounded-full hover:bg-penn-green/90 transition-all duration-300 shadow-lg shadow-penn-green/20"
                         >
                           Voir le programme
                           <span>→</span>
@@ -307,7 +307,7 @@ export default function ProgrammeFinder() {
                             <button
                               key={opt.val}
                               onClick={() => handleAnswer(opt.val)}
-                              className="group flex items-center gap-3 text-left px-5 py-4 border border-penn-border rounded-xl text-penn-navy font-medium text-sm hover:bg-[#2B8FAB] hover:text-white hover:border-[#2B8FAB] transition-all duration-200"
+                              className="group flex items-center gap-3 text-left px-5 py-4 border border-penn-border rounded-xl text-penn-navy font-medium text-sm hover:bg-penn-green hover:text-white hover:border-penn-green transition-all duration-200"
                             >
                               <span className="w-9 h-9 rounded-lg bg-penn-bg-light flex items-center justify-center shrink-0 group-hover:bg-white/20 group-hover:text-white text-penn-navy">
                                 {opt.icon}
@@ -343,7 +343,7 @@ export default function ProgrammeFinder() {
                     className={`px-4 py-2.5 border rounded-full text-sm font-semibold transition-all duration-200 ${
                       selected.has(p.key)
                         ? "text-white shadow-md"
-                        : "border-penn-border bg-white text-penn-body hover:text-[#2B8FAB] hover:border-[#2B8FAB]/30"
+                        : "border-penn-border bg-white text-penn-body hover:text-penn-green hover:border-penn-green/30"
                     }`}
                     style={
                       selected.has(p.key)
@@ -365,7 +365,7 @@ export default function ProgrammeFinder() {
                 >
                   <table className="w-full text-sm border-collapse">
                     <thead>
-                      <tr className="border-b-2 border-[#2B8FAB]">
+                      <tr className="border-b-2 border-penn-green">
                         <th className="text-left py-4 px-4 font-bold text-penn-body/50 text-xs uppercase tracking-wider w-36" />
                         {selectedProgrammes.map((p) => (
                           <th

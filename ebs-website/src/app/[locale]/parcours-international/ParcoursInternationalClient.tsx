@@ -94,7 +94,7 @@ export default function InternationalPage() {
               >
                 Votre passeport vers
                 <br />
-                <span className="text-[#2B8FAB]">le Canada, la France{" "}
+                <span className="text-penn-green">le Canada, la France{" "}
                   <span className="whitespace-nowrap">et l&apos;Italie</span>
                 </span>
                 .
@@ -137,8 +137,8 @@ export default function InternationalPage() {
               style={{ backgroundColor: "#2B8FAB" }}
             />
             <div className="flex items-start gap-5">
-              <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center shrink-0">
-                <Globe className="w-6 h-6 text-[#2B8FAB]" />
+              <div className="w-12 h-12 rounded-xl bg-penn-green/10 flex items-center justify-center shrink-0">
+                <Globe className="w-6 h-6 text-penn-green" />
               </div>
               <div>
                 <h3 className="text-[19px] font-extrabold text-penn-navy mb-3">
@@ -198,10 +198,10 @@ export default function InternationalPage() {
                       />
                       <CountryFlag code={partner.code} />
                     </div>
-                    <h4 className="text-[16px] font-extrabold text-penn-navy mb-1.5 group-hover:text-[#2B8FAB] transition-colors">
+                    <h4 className="text-[16px] font-extrabold text-penn-navy mb-1.5 group-hover:text-penn-green transition-colors">
                       {partner.name}
                     </h4>
-                    <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#2B8FAB] bg-[#2B8FAB]/8 px-2.5 py-1 rounded-full mb-3 w-fit">
+                    <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-penn-green bg-penn-green/8 px-2.5 py-1 rounded-full mb-3 w-fit">
                       {partner.pays}
                     </span>
                     <p className="text-[13px] text-penn-body/55 leading-relaxed flex-1">
@@ -249,7 +249,7 @@ export default function InternationalPage() {
 
                 <div className="flex items-baseline gap-2 mb-2 flex-wrap">
                   <span className="text-[15px] font-bold text-penn-navy">{s.step}</span>
-                  <span className="text-[#2B8FAB] font-bold">{s.arrow}</span>
+                  <span className="text-penn-green font-bold">{s.arrow}</span>
                   <span className="text-[15px] font-extrabold text-penn-navy">{s.dest}</span>
                 </div>
 
@@ -295,7 +295,7 @@ export default function InternationalPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="flex items-start gap-4 p-5 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/20 hover:shadow-sm transition-all duration-300 group w-full md:w-[calc(50%-8px)]"
+                className="flex items-start gap-4 p-5 bg-white rounded-xl border border-penn-border hover:border-penn-green/20 hover:shadow-sm transition-all duration-300 group w-full md:w-[calc(50%-8px)]"
               >
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110"
@@ -387,7 +387,7 @@ export default function InternationalPage() {
                 transition={{ duration: 0.3, delay: i * 0.06 }}
                 className="flex items-start gap-4 p-5 bg-white/[0.03] border border-white/[0.06] rounded-xl hover:bg-white/[0.05] transition-colors"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#2B8FAB]/10 flex items-center justify-center text-[#2B8FAB] shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-penn-green/10 flex items-center justify-center text-penn-green shrink-0">
                   {item.icon}
                 </div>
                 <div>

@@ -73,7 +73,7 @@ function Field({ label, name, type = "text", placeholder, icon, required }: {
           type={type}
           name={name}
           required={required}
-          className={`w-full py-3 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all ${icon ? "pl-11 pr-4" : "px-4"}`}
+          className={`w-full py-3 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all ${icon ? "pl-11 pr-4" : "px-4"}`}
           placeholder={placeholder}
         />
       </div>
@@ -142,7 +142,7 @@ export default function PartenairesAcademiquesPage() {
           >
             Notre réseau
             <br />
-            <span className="text-[#2B8FAB]">universitaire</span> international<span className="text-[#2B8FAB]">.</span>
+            <span className="text-penn-green">universitaire</span> international<span className="text-penn-green">.</span>
           </motion.h1>
 
           <motion.p
@@ -165,7 +165,7 @@ export default function PartenairesAcademiquesPage() {
               <p className="text-[12px] text-white/50 font-medium">Universités partenaires</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">4</p>
+              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">4</p>
               <p className="text-[12px] text-white/50 font-medium">Pays</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
@@ -173,7 +173,7 @@ export default function PartenairesAcademiquesPage() {
               <p className="text-[12px] text-white/50 font-medium">En France</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center flex flex-col justify-center h-full">
-              <Building2 className="w-10 h-10 md:w-[44px] md:h-[44px] text-[#2B8FAB] mx-auto mb-1" />
+              <Building2 className="w-10 h-10 md:w-[44px] md:h-[44px] text-penn-green mx-auto mb-1" />
               <p className="text-[12px] text-white/50 font-medium">Grandes Écoles</p>
             </div>
           </motion.div>
@@ -261,10 +261,10 @@ export default function PartenairesAcademiquesPage() {
                       />
                       <CountryFlag code={partner.code} />
                     </div>
-                    <h4 className="text-[16px] font-extrabold text-penn-navy mb-1.5 group-hover:text-[#2B8FAB] transition-colors">
+                    <h4 className="text-[16px] font-extrabold text-penn-navy mb-1.5 group-hover:text-penn-green transition-colors">
                       {partner.name}
                     </h4>
-                    <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-[#2B8FAB] bg-[#2B8FAB]/8 px-2.5 py-1 rounded-full mb-3 w-fit">
+                    <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-penn-green bg-penn-green/8 px-2.5 py-1 rounded-full mb-3 w-fit">
                       {partner.pays}
                     </span>
                     <p className="text-[13px] text-penn-body/55 leading-relaxed flex-1">
@@ -375,9 +375,9 @@ export default function PartenairesAcademiquesPage() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-5"
+                    className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5"
                   >
-                    <Check className="w-8 h-8 text-[#2B8FAB]" />
+                    <Check className="w-8 h-8 text-penn-green" />
                   </motion.div>
                   <h3 className="text-[22px] font-extrabold text-penn-navy mb-2">Candidature envoyée !</h3>
                   <p className="text-[14px] text-penn-body/50 max-w-[350px] mx-auto">
@@ -385,7 +385,7 @@ export default function PartenairesAcademiquesPage() {
                   </p>
                   <button
                     onClick={() => setFormState("idle")}
-                    className="mt-6 text-[#2B8FAB] font-bold text-[14px] hover:underline"
+                    className="mt-6 text-penn-green font-bold text-[14px] hover:underline"
                   >
                     Envoyer une autre candidature
                   </button>
@@ -398,8 +398,8 @@ export default function PartenairesAcademiquesPage() {
                     {/* Institution */}
                     <div>
                       <div className="flex items-center gap-3 mb-5">
-                        <div className="w-8 h-8 rounded-lg bg-[#2B8FAB]/10 flex items-center justify-center">
-                          <Building2 className="w-4 h-4 text-[#2B8FAB]" />
+                        <div className="w-8 h-8 rounded-lg bg-penn-green/10 flex items-center justify-center">
+                          <Building2 className="w-4 h-4 text-penn-green" />
                         </div>
                         <h4 className="text-[15px] font-extrabold text-penn-navy">Votre institution</h4>
                       </div>
@@ -438,7 +438,7 @@ export default function PartenairesAcademiquesPage() {
                       <div>
                         <select
                           name="type_partenariat"
-                          className="w-full px-4 py-3 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy bg-white focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all"
+                          className="w-full px-4 py-3 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy bg-white focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all"
                         >
                           <option value="echange">Échange d'étudiants</option>
                           <option value="double">Double diplôme</option>
@@ -460,7 +460,7 @@ export default function PartenairesAcademiquesPage() {
                       <textarea
                         name="message"
                         rows={5}
-                        className="w-full px-4 py-3.5 rounded-xl border-2 border-penn-border/30 text-[14px] text-penn-navy placeholder:text-penn-body/25 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all resize-none"
+                        className="w-full px-4 py-3.5 rounded-xl border-2 border-penn-border/30 text-[14px] text-penn-navy placeholder:text-penn-body/25 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all resize-none"
                         placeholder="Décrivez votre projet de partenariat académique, vos attentes et les synergies envisagées..."
                       />
                     </div>
@@ -469,7 +469,7 @@ export default function PartenairesAcademiquesPage() {
                   <button
                     type="submit"
                     disabled={formState === "sending"}
-                    className="w-full mt-8 py-4 rounded-xl bg-[#2B8FAB] text-white font-bold text-[15px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15 disabled:opacity-50 active:scale-[0.98]"
+                    className="w-full mt-8 py-4 rounded-xl bg-penn-green text-white font-bold text-[15px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-penn-green/15 disabled:opacity-50 active:scale-[0.98]"
                   >
                     {formState === "sending" ? "Envoi..." : <><Send className="w-5 h-5" /> Envoyer</>}
                   </button>
@@ -491,8 +491,8 @@ export default function PartenairesAcademiquesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
           >
-            <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6">
-              <Handshake className="w-8 h-8 text-[#2B8FAB]" />
+            <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-6">
+              <Handshake className="w-8 h-8 text-penn-green" />
             </div>
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">
               Une question ?
@@ -504,16 +504,16 @@ export default function PartenairesAcademiquesPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[500px] mx-auto">
               <a
                 href="tel:+216 55 582 843"
-                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
+                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-penn-green/30 hover:shadow-md transition-all duration-300"
               >
-                <Phone className="w-5 h-5 text-[#2B8FAB]" />
+                <Phone className="w-5 h-5 text-penn-green" />
                 <span className="text-[15px] font-bold text-penn-navy">+216 55 582 843</span>
               </a>
               <a
                 href="mailto:info@ebs.tn"
-                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
+                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-penn-green/30 hover:shadow-md transition-all duration-300"
               >
-                <Mail className="w-5 h-5 text-[#2B8FAB]" />
+                <Mail className="w-5 h-5 text-penn-green" />
                 <span className="text-[15px] font-bold text-penn-navy">info@ebs.tn</span>
               </a>
             </div>

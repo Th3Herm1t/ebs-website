@@ -27,7 +27,7 @@ export default function CorpsEnseignantPage() {
               transition={{ duration: 0.6 }}
             >
               <Badge variant="outline" size="lg" className="mb-8 border-white/20 text-white/80">
-                <div className="w-1 h-1 rounded-full bg-[#2B8FAB]" />
+                <div className="w-1 h-1 rounded-full bg-penn-green" />
                 Corps Enseignant
               </Badge>
             </motion.div>
@@ -40,7 +40,7 @@ export default function CorpsEnseignantPage() {
             >
               Un corps enseignant d&apos;excellence,
               <br />
-              <span className="text-[#2B8FAB]">au croisement de l&apos;académie et de l&apos;entreprise</span>.
+              <span className="text-penn-green">au croisement de l&apos;académie et de l&apos;entreprise</span>.
             </motion.h1>
 
             <motion.p

@@ -86,7 +86,7 @@ export default function EtudiantsInternationauxPage() {
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="text-[42px] md:text-[56px] lg:text-[64px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6">
               Venez étudier<br />
-              <span className="text-[#2B8FAB]">en Tunisie</span> avec EBS<span className="text-[#2B8FAB]">.</span>
+              <span className="text-penn-green">en Tunisie</span> avec EBS<span className="text-penn-green">.</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[16px] md:text-[18px] text-white/60 leading-relaxed max-w-[550px] mb-8">
               Rejoindre ESPIMA Business School à Tunis, c'est choisir une université privée agréée offrant un environnement académique ouvert sur l'international et des formations adaptées aux évolutions du monde professionnel. De votre première candidature jusqu'à votre installation en Tunisie, puis tout au long de vos études, notre équipe vous accompagne pour faciliter votre arrivée, votre intégration et votre réussite à EBS.
@@ -98,7 +98,7 @@ export default function EtudiantsInternationauxPage() {
                 { icon: <Globe className="w-4 h-4" />, text: "Parcours et partenaires à l'étranger" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2 text-[13px] font-semibold text-white/50">
-                  <span className="text-[#2B8FAB]">{item.icon}</span> {item.text}
+                  <span className="text-penn-green">{item.icon}</span> {item.text}
                 </div>
               ))}
             </motion.div>
@@ -136,7 +136,7 @@ export default function EtudiantsInternationauxPage() {
                 <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">
                   Nous vous accompagnons à chaque
                   <br />
-                  <span className="text-[#2B8FAB]">étape de votre parcours.</span>
+                  <span className="text-penn-green">étape de votre parcours.</span>
                 </h2>
                 <p className="text-[16px] text-penn-body mt-4">
                   Étudier dans un nouveau pays représente un véritable projet de vie. Le service d’accompagnement international d’EBS facilite vos démarches et vous aide à préparer votre arrivée dans les meilleures conditions.
@@ -176,7 +176,7 @@ export default function EtudiantsInternationauxPage() {
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-white leading-[1.1]">
               De votre pays à votre diplôme,
               <br />
-              <span className="text-[#2B8FAB]">étape par étape</span>
+              <span className="text-penn-green">étape par étape</span>
             </h2>
           </motion.div>
 
@@ -236,7 +236,7 @@ export default function EtudiantsInternationauxPage() {
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="text-center mb-14">
             <Badge variant="default" size="lg" className="mb-4">Depuis l&apos;international</Badge>
-            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">Vous venez de loin.<br />Votre avenir est <span className="text-[#2B8FAB]">ici</span>.</h2>
+            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15] mb-4">Vous venez de loin.<br />Votre avenir est <span className="text-penn-green">ici</span>.</h2>
             <p className="text-[16px] text-penn-body max-w-[700px] mx-auto">
               Commencez vos études à EBS en Tunisie et ouvrez-vous les portes de l'international en France, au Canada, en Italie et à Oman grâce à notre réseau de partenaires académiques.
             </p>
@@ -284,12 +284,12 @@ export default function EtudiantsInternationauxPage() {
         <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_30%_50%,_#2B8FAB_0%,_transparent_50%)]" />
         <div className="relative z-10 max-w-[900px] mx-auto px-5 lg:px-12 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
-            <Quote className="w-8 h-8 text-[#2B8FAB]/20 mx-auto mb-6" />
+            <Quote className="w-8 h-8 text-penn-green/20 mx-auto mb-6" />
             <blockquote className="text-[20px] md:text-[26px] font-bold text-white/80 leading-relaxed italic mb-8">
               &ldquo;Grâce à EBS et à son partenariat avec l'UQAT, j'ai pu poursuivre mes études au Canada après ma Licence en Management. Aujourd'hui, je travaille à Montréal. L'accompagnement d'EBS a été un véritable atout dans mon parcours.&rdquo;
             </blockquote>
             <div className="flex items-center justify-center gap-4">
-              <div className="w-11 h-11 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center text-[#2B8FAB] font-extrabold text-[15px] border border-[#2B8FAB]/10">SG</div>
+              <div className="w-11 h-11 rounded-xl bg-penn-green/10 flex items-center justify-center text-penn-green font-extrabold text-[15px] border border-penn-green/10">SG</div>
               <div className="text-left">
                 <p className="text-[15px] font-extrabold text-white">Sami GHARBI</p>
                 <p className="text-[13px] text-white/50">Project Manager — Montréal, Canada</p>
@@ -323,14 +323,14 @@ export default function EtudiantsInternationauxPage() {
       <section className="section-padding bg-penn-bg-light">
         <div className="max-w-[700px] mx-auto px-5 lg:px-12 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
-            <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6">
-              <GraduationCap className="w-8 h-8 text-[#2B8FAB]" />
+            <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-6">
+              <GraduationCap className="w-8 h-8 text-penn-green" />
             </div>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-penn-navy leading-[1.15] mb-4">Rejoignez-nous !<br/>Votre parcours à EBS commence ici.</h2>
             <p className="text-[16px] text-penn-body leading-relaxed mb-10 max-w-[500px] mx-auto">
               Vous souhaitez venir étudier à Tunis ? Déposez votre candidature et notre équipe vous accompagne dans la préparation de votre projet, de l’admission jusqu’à votre installation en Tunisie.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#2B8FAB] text-white font-bold text-[16px] py-4 px-10 rounded-full hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20 hover:shadow-xl hover:-translate-y-0.5">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-penn-green text-white font-bold text-[16px] py-4 px-10 rounded-full hover:bg-penn-green/90 transition-all duration-300 shadow-lg shadow-penn-green/20 hover:shadow-xl hover:-translate-y-0.5">
               Préinscription <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>

@@ -151,8 +151,8 @@ export default function AlumniWorldMap({ locale = "fr" }: { locale?: string }) {
               transition={{ duration: 0.3, delay: i * 0.04 }}
               className={`flex items-center gap-2.5 px-4 py-3 rounded-xl border transition-all w-[calc(50%-6px)] sm:w-[calc(33.33%-8px)] md:w-[calc(20%-9.6px)] ${
                 loc.highlight
-                  ? "border-[#2B8FAB]/30 bg-[#2B8FAB]/5"
-                  : "border-penn-border bg-penn-bg-light hover:border-[#2B8FAB]/20"
+                  ? "border-penn-green/30 bg-penn-green/5"
+                  : "border-penn-border bg-penn-bg-light hover:border-penn-green/20"
               }`}
             >
               <CountryFlag code={loc.code} className="w-6 h-4" />

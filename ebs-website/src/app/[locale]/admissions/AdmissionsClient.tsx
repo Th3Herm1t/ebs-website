@@ -204,7 +204,7 @@ export default function AdmissionsPage() {
           >
             Votre admission,
             <br />
-            <span className="text-[#2B8FAB]">étape par étape</span>.
+            <span className="text-penn-green">étape par étape</span>.
           </motion.h1>
 
           <motion.p
@@ -224,7 +224,7 @@ export default function AdmissionsPage() {
           >
             <Link
               href="/preinscription"
-              className="inline-flex items-center gap-2 bg-[#2B8FAB] text-white font-bold text-[15px] py-3.5 px-8 rounded-full hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20"
+              className="inline-flex items-center gap-2 bg-penn-green text-white font-bold text-[15px] py-3.5 px-8 rounded-full hover:bg-penn-green/90 transition-all duration-300 shadow-lg shadow-penn-green/20"
             >
               Commencer ma pré-inscription
               <ArrowRight className="w-4 h-4" />
@@ -351,12 +351,12 @@ export default function AdmissionsPage() {
             >
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center text-[#2B8FAB]">
+                  <div className="w-12 h-12 rounded-2xl bg-penn-green/10 flex items-center justify-center text-penn-green">
                     <GraduationCap className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="text-[22px] font-extrabold text-penn-navy">Licence</h3>
-                    <p className="text-[12px] font-bold text-[#2B8FAB] uppercase tracking-wider">
+                    <p className="text-[12px] font-bold text-penn-green uppercase tracking-wider">
                       Baccalauréat accepté : toutes sections sauf Lettres et Sport
                     </p>
                   </div>
@@ -365,7 +365,7 @@ export default function AdmissionsPage() {
                 <div className="space-y-3 mt-6">
                   {requirementsLicence.map((req) => (
                     <div key={req} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#2B8FAB]/10 flex items-center justify-center text-[#2B8FAB] shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded-full bg-penn-green/10 flex items-center justify-center text-penn-green shrink-0 mt-0.5">
                         <Check className="w-3.5 h-3.5" />
                       </div>
                       <p className="text-[14px] text-penn-body font-medium">{req}</p>
@@ -377,7 +377,7 @@ export default function AdmissionsPage() {
               <div className="mt-8 pt-6 border-t border-penn-border/60">
                 <Link
                   href="/licences"
-                  className="inline-flex items-center gap-2 text-[14px] font-bold text-[#2B8FAB] hover:underline"
+                  className="inline-flex items-center gap-2 text-[14px] font-bold text-penn-green hover:underline"
                 >
                   Voir les parcours Licence <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -457,7 +457,7 @@ export default function AdmissionsPage() {
                   Parcours Général
                 </span>
                 <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">Licence</h3>
-                <p className="text-[26px] font-extrabold text-[#2B8FAB] mb-4">7 500 DT <span className="text-[14px] text-penn-body font-normal">/ an</span></p>
+                <p className="text-[26px] font-extrabold text-penn-green mb-4">7 500 DT <span className="text-[14px] text-penn-body font-normal">/ an</span></p>
                 <div className="space-y-2 text-[13px] text-penn-body mb-6">
                   <p className="font-bold text-penn-navy">4 Licences et 5 parcours :</p>
                   <p>• Management</p>
@@ -467,22 +467,22 @@ export default function AdmissionsPage() {
                   <p className="pt-2 font-medium text-penn-body/60">3 ans • Bac+3 • 6 semestres</p>
                 </div>
               </div>
-              <Link href="/licences" className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-penn-bg-light text-penn-navy font-bold text-[13px] hover:bg-[#2B8FAB] hover:text-white transition-all">
+              <Link href="/licences" className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-penn-bg-light text-penn-navy font-bold text-[13px] hover:bg-penn-green hover:text-white transition-all">
                 Voir les parcours
               </Link>
             </div>
 
             {/* Card 2: Parcours International */}
-            <div className="bg-white rounded-2xl p-7 border border-[#2B8FAB]/30 shadow-md flex flex-col justify-between relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-[#2B8FAB] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-xl">
+            <div className="bg-white rounded-2xl p-7 border border-penn-green/30 shadow-md flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-penn-green text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-xl">
                 International
               </div>
               <div>
-                <span className="text-[12px] font-bold uppercase tracking-wider text-[#2B8FAB] block mb-1">
+                <span className="text-[12px] font-bold uppercase tracking-wider text-penn-green block mb-1">
                   Parcours International
                 </span>
                 <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">Licence (toutes spécialités)</h3>
-                <p className="text-[26px] font-extrabold text-[#2B8FAB] mb-4">9 500 DT <span className="text-[14px] text-penn-body font-normal">/ an</span></p>
+                <p className="text-[26px] font-extrabold text-penn-green mb-4">9 500 DT <span className="text-[14px] text-penn-body font-normal">/ an</span></p>
                 <div className="space-y-2 text-[13px] text-penn-body mb-6">
                   <p className="font-bold text-penn-navy">3 destinations :</p>
                   <p>• L1 en Tunisie → Bachelor 2 ou Bachelor 3 en Italie</p>
@@ -491,7 +491,7 @@ export default function AdmissionsPage() {
                   <p className="pt-2 font-medium text-penn-body/60">3 ans • Mobilité internationale</p>
                 </div>
               </div>
-              <Link href="/parcours-international" className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#2B8FAB] text-white font-bold text-[13px] hover:bg-[#2B8FAB]/90 transition-all">
+              <Link href="/parcours-international" className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-penn-green text-white font-bold text-[13px] hover:bg-penn-green/90 transition-all">
                 Voir les destinations
               </Link>
             </div>
@@ -555,7 +555,7 @@ export default function AdmissionsPage() {
             </div>
             <a
               href="tel:+21655582843"
-              className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#2B8FAB] text-white font-bold text-[14px] hover:bg-[#2B8FAB]/90 transition-all shrink-0"
+              className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-penn-green text-white font-bold text-[14px] hover:bg-penn-green/90 transition-all shrink-0"
             >
               <Phone className="w-4 h-4" />
               +216 55 582 843
@@ -579,7 +579,7 @@ export default function AdmissionsPage() {
 
               <div className="space-y-4">
                 <div className="p-5 rounded-2xl bg-penn-bg-light border border-penn-border">
-                  <span className="text-[12px] font-bold text-[#2B8FAB] uppercase tracking-wider block mb-1">
+                  <span className="text-[12px] font-bold text-penn-green uppercase tracking-wider block mb-1">
                     Rentrée principale
                   </span>
                   <p className="text-[20px] font-extrabold text-penn-navy">Octobre 2026</p>
@@ -587,7 +587,7 @@ export default function AdmissionsPage() {
                 </div>
 
                 <div className="p-5 rounded-2xl bg-penn-bg-light border border-penn-border">
-                  <span className="text-[12px] font-bold text-[#2B8FAB] uppercase tracking-wider block mb-1">
+                  <span className="text-[12px] font-bold text-penn-green uppercase tracking-wider block mb-1">
                     Places disponibles
                   </span>
                   <p className="text-[20px] font-extrabold text-penn-navy">Environ 30 places par filière</p>
@@ -595,7 +595,7 @@ export default function AdmissionsPage() {
                 </div>
 
                 <div className="p-5 rounded-2xl bg-penn-bg-light border border-penn-border">
-                  <span className="text-[12px] font-bold text-[#2B8FAB] uppercase tracking-wider block mb-1">
+                  <span className="text-[12px] font-bold text-penn-green uppercase tracking-wider block mb-1">
                     Date limite
                   </span>
                   <p className="text-[20px] font-extrabold text-penn-navy">30 septembre 2026</p>
@@ -608,11 +608,11 @@ export default function AdmissionsPage() {
             <div className="space-y-4">
               {calendarEvents.map((evt, i) => (
                 <div key={evt.period} className="p-6 rounded-2xl border border-penn-border bg-white shadow-sm flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center text-[#2B8FAB] font-extrabold text-[14px] shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-penn-green/10 flex items-center justify-center text-penn-green font-extrabold text-[14px] shrink-0">
                     {i + 1}
                   </div>
                   <div>
-                    <span className="text-[12px] font-extrabold text-[#2B8FAB] uppercase tracking-wider">
+                    <span className="text-[12px] font-extrabold text-penn-green uppercase tracking-wider">
                       {evt.period}
                     </span>
                     <h4 className="text-[17px] font-extrabold text-penn-navy mb-1">{evt.label}</h4>
@@ -647,9 +647,9 @@ export default function AdmissionsPage() {
               <AccordionItem
                 key={index}
                 value={`faq-${index}`}
-                className="bg-white border border-penn-border rounded-2xl px-6 data-[state=open]:border-[#2B8FAB]/40 transition-colors"
+                className="bg-white border border-penn-border rounded-2xl px-6 data-[state=open]:border-penn-green/40 transition-colors"
               >
-                <AccordionTrigger className="text-[16px] md:text-[17px] font-bold text-penn-navy py-5 hover:no-underline hover:text-[#2B8FAB]">
+                <AccordionTrigger className="text-[16px] md:text-[17px] font-bold text-penn-navy py-5 hover:no-underline hover:text-penn-green">
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-[15px] text-penn-body leading-relaxed pb-5">

@@ -90,7 +90,7 @@ export default function ContactPage() {
   };
 
   const inputClasses =
-    "w-full px-5 py-3.5 bg-penn-bg-light border border-penn-border rounded-xl text-[15px] text-penn-navy placeholder:text-penn-body/40 focus:outline-none focus:border-[#2B8FAB] focus:bg-white focus:shadow-md transition-all duration-300";
+    "w-full px-5 py-3.5 bg-penn-bg-light border border-penn-border rounded-xl text-[15px] text-penn-navy placeholder:text-penn-body/40 focus:outline-none focus:border-penn-green focus:bg-white focus:shadow-md transition-all duration-300";
 
   return (
     <>
@@ -128,7 +128,7 @@ export default function ContactPage() {
           >
             Parlons de votre
             <br />
-            <span className="text-[#2B8FAB]">avenir</span>.
+            <span className="text-penn-green">avenir</span>.
           </motion.h1>
 
           <motion.p
@@ -184,7 +184,7 @@ export default function ContactPage() {
                 ))}
                 <a
                   href={card.action.href}
-                  className="inline-flex items-center gap-1.5 mt-5 text-[14px] font-bold text-[#2B8FAB] hover:underline"
+                  className="inline-flex items-center gap-1.5 mt-5 text-[14px] font-bold text-penn-green hover:underline"
                 >
                   {card.action.label}
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -246,8 +246,8 @@ export default function ContactPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-12"
               >
-                <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6">
-                  <Send className="w-8 h-8 text-[#2B8FAB]" />
+                <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-6">
+                  <Send className="w-8 h-8 text-penn-green" />
                 </div>
                 <h3 className="text-[24px] font-extrabold text-penn-navy mb-3">
                   Message envoyé !
@@ -356,7 +356,7 @@ export default function ContactPage() {
                 <div className="text-center pt-2">
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 bg-[#2B8FAB] text-white font-bold text-[15px] py-3.5 px-10 rounded-full hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20 hover:shadow-xl hover:-translate-y-0.5"
+                    className="inline-flex items-center gap-2 bg-penn-green text-white font-bold text-[15px] py-3.5 px-10 rounded-full hover:bg-penn-green/90 transition-all duration-300 shadow-lg shadow-penn-green/20 hover:shadow-xl hover:-translate-y-0.5"
                   >
                     Envoyer le message
                     <Send className="w-4 h-4" />
@@ -406,18 +406,18 @@ export default function ContactPage() {
               >
                 <Link
                   href={action.href}
-                  className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#2B8FAB]/30"
+                  className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-penn-green/30"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-4 text-[#2B8FAB] group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-penn-green/10 flex items-center justify-center mb-4 text-penn-green group-hover:scale-110 transition-transform">
                     {action.icon}
                   </div>
-                  <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-[#2B8FAB] transition-colors">
+                  <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-penn-green transition-colors">
                     {action.title}
                   </h3>
                   <p className="text-[14px] text-penn-body leading-relaxed mb-4 flex-1">
                     {action.desc}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-[#2B8FAB]">
+                  <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-penn-green">
                     {action.label}
                     <span className="group-hover:translate-x-1 transition-transform">
                       →
@@ -438,8 +438,8 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
           >
-            <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-4">
-              <Clock className="w-6 h-6 text-[#2B8FAB]" />
+            <div className="w-12 h-12 rounded-xl bg-penn-green/10 flex items-center justify-center mx-auto mb-4">
+              <Clock className="w-6 h-6 text-penn-green" />
             </div>
             <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">
               Horaires d&apos;ouverture

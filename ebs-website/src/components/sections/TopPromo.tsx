@@ -21,7 +21,7 @@ export default async function TopPromo() {
       title: t('p2.title'),
       desc: t('p2.desc'),
       ctaText: t('p2.btn'),
-      bgColor: "bg-[#2B8FAB]",
+      bgColor: "bg-penn-green",
       link: "",
       image: "/images/toppromo/candidature.jpg",
     },

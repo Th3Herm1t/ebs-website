@@ -77,7 +77,7 @@ export default function CampusPage() {
             >
               Un espace pensé pour
               <br />
-              <span className="text-[#2B8FAB]">votre réussite</span>.
+              <span className="text-penn-green">votre réussite</span>.
             </motion.h1>
 
             <motion.p
@@ -104,7 +104,7 @@ export default function CampusPage() {
               { value: "Bus + Métro", label: "À proximité", icon: <Bus className="w-4 h-4" /> },
             ].map((s) => (
               <div key={s.label} className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-4 flex items-center gap-3">
-                <div className="text-[#2B8FAB]/50 shrink-0">{s.icon}</div>
+                <div className="text-penn-green/50 shrink-0">{s.icon}</div>
                 <div>
                   <p className="text-[15px] font-extrabold text-white leading-tight">{s.value}</p>
                   <p className="text-[12px] text-white/40">{s.label}</p>
@@ -193,8 +193,8 @@ export default function CampusPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
           >
-            <div className="w-20 h-20 rounded-full bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6 border border-[#2B8FAB]/20">
-              <Camera className="w-9 h-9 text-[#2B8FAB]" />
+            <div className="w-20 h-20 rounded-full bg-penn-green/10 flex items-center justify-center mx-auto mb-6 border border-penn-green/20">
+              <Camera className="w-9 h-9 text-penn-green" />
             </div>
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-white leading-[1.15] mb-4">
               Visite Virtuelle 360°
@@ -224,8 +224,8 @@ export default function CampusPage() {
 
                 {/* Address */}
                 <div className="flex items-start gap-4 p-5 bg-penn-bg-light rounded-2xl border border-penn-border mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-[#2B8FAB]" />
+                  <div className="w-10 h-10 rounded-xl bg-penn-green/10 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-penn-green" />
                   </div>
                   <div>
                     <p className="text-[15px] font-extrabold text-penn-navy mb-1">Adresse</p>
@@ -237,8 +237,8 @@ export default function CampusPage() {
 
                 {/* Hours */}
                 <div className="flex items-start gap-4 p-5 bg-penn-bg-light rounded-2xl border border-penn-border mb-8">
-                  <div className="w-10 h-10 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center shrink-0">
-                    <Clock className="w-5 h-5 text-[#2B8FAB]" />
+                  <div className="w-10 h-10 rounded-xl bg-penn-green/10 flex items-center justify-center shrink-0">
+                    <Clock className="w-5 h-5 text-penn-green" />
                   </div>
                   <div>
                     <p className="text-[15px] font-extrabold text-penn-navy mb-1">Horaires d&apos;ouverture</p>
@@ -257,9 +257,9 @@ export default function CampusPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-20px" }}
                       transition={{ duration: 0.3, delay: i * 0.06 }}
-                      className="flex items-start gap-3 p-4 bg-penn-bg-light rounded-xl border border-penn-border hover:border-[#2B8FAB]/20 transition-colors"
+                      className="flex items-start gap-3 p-4 bg-penn-bg-light rounded-xl border border-penn-border hover:border-penn-green/20 transition-colors"
                     >
-                      <span className="text-[#2B8FAB] shrink-0 mt-0.5">{e.icon}</span>
+                      <span className="text-penn-green shrink-0 mt-0.5">{e.icon}</span>
                       <div>
                         <p className="text-[14px] font-bold text-penn-navy">{e.label}</p>
                         <p className="text-[12px] text-penn-body/70">{e.desc}</p>
@@ -306,7 +306,7 @@ export default function CampusPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-[#2B8FAB] relative overflow-hidden">
+      <section className="section-padding bg-penn-green relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_50%_50%,_white_0%,_transparent_70%)]" />
         <div className="relative z-10 max-w-[900px] mx-auto px-5 lg:px-12 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
@@ -317,7 +317,7 @@ export default function CampusPage() {
             <p className="text-[16px] text-white/70 max-w-[550px] mx-auto mb-8 leading-relaxed">
               Prenez rendez-vous pour une visite personnalisée et découvrez l'environnement d'ESPIMA Business School.
             </p>
-            <button onClick={() => setModalOpen(true)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-[#2B8FAB] font-bold text-[14px] hover:bg-white/90 transition-all shadow-lg shadow-white/20">
+            <button onClick={() => setModalOpen(true)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-penn-green font-bold text-[14px] hover:bg-white/90 transition-all shadow-lg shadow-white/20">
               <CalendarDays className="w-5 h-5" /> Prendre rendez-vous
             </button>
           </motion.div>
@@ -338,7 +338,7 @@ export default function CampusPage() {
             >
               <div className="sticky top-0 z-10 bg-white rounded-t-2xl border-b border-penn-border px-8 py-5 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center text-[#2B8FAB]"><CalendarDays className="w-5 h-5" /></div>
+                  <div className="w-10 h-10 rounded-xl bg-penn-green/10 flex items-center justify-center text-penn-green"><CalendarDays className="w-5 h-5" /></div>
                   <h3 className="text-[18px] font-extrabold text-penn-navy">Prendre rendez-vous</h3>
                 </div>
                 <button onClick={() => setModalOpen(false)} className="p-2 rounded-xl hover:bg-gray-100 transition-all"><X className="w-5 h-5 text-penn-body" /></button>
@@ -347,12 +347,12 @@ export default function CampusPage() {
               <div className="p-8">
                 {formState === "sent" ? (
                   <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="py-12 text-center">
-                    <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-5">
-                      <Send className="w-8 h-8 text-[#2B8FAB]" />
+                    <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
+                      <Send className="w-8 h-8 text-penn-green" />
                     </div>
                     <h3 className="text-[22px] font-extrabold text-penn-navy mb-2">Merci !</h3>
                     <p className="text-[14px] text-penn-body/50 max-w-[350px] mx-auto">Votre demande de visite a bien été reçue. Notre équipe vous contactera sous 48h pour confirmer le rendez-vous.</p>
-                    <button onClick={() => { setModalOpen(false); setFormState("idle"); }} className="mt-6 text-[#2B8FAB] font-bold text-[14px] hover:underline">Fermer</button>
+                    <button onClick={() => { setModalOpen(false); setFormState("idle"); }} className="mt-6 text-penn-green font-bold text-[14px] hover:underline">Fermer</button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
@@ -360,26 +360,26 @@ export default function CampusPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Nom complet</label>
-                        <input name="name" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="Votre nom" />
+                        <input name="name" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all" placeholder="Votre nom" />
                       </div>
                       <div>
                         <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Email</label>
-                        <input name="email" type="email" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="email@exemple.com" />
+                        <input name="email" type="email" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all" placeholder="email@exemple.com" />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Téléphone</label>
-                        <input name="phone" type="tel" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" placeholder="+216 XX XXX XXX" />
+                        <input name="phone" type="tel" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all" placeholder="+216 XX XXX XXX" />
                       </div>
                       <div>
                         <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Date souhaitée</label>
-                        <input name="date" type="date" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all" />
+                        <input name="date" type="date" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all" />
                       </div>
                     </div>
                     <div>
                       <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Créneau horaire souhaité</label>
-                      <select name="creneau" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all appearance-none bg-white">
+                      <select name="creneau" required className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all appearance-none bg-white">
                         <option value="">Sélectionnez un créneau</option>
                         <option value="09:00-10:00">09:00 – 10:00</option>
                         <option value="10:00-11:00">10:00 – 11:00</option>
@@ -390,9 +390,9 @@ export default function CampusPage() {
                     </div>
                     <div>
                       <label className="block text-[12px] font-bold uppercase tracking-wider text-penn-body/40 mb-2">Message (optionnel)</label>
-                      <textarea name="message" rows={3} className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-[#2B8FAB] focus:ring-4 focus:ring-[#2B8FAB]/5 transition-all resize-none" placeholder="Une question particulière ? Un programme qui vous intéresse ?" />
+                      <textarea name="message" rows={3} className="w-full py-3 px-4 rounded-xl border-2 border-penn-border/30 text-[14px] font-medium text-penn-navy placeholder:text-penn-body/20 focus:outline-none focus:border-penn-green focus:ring-4 focus:ring-penn-green/5 transition-all resize-none" placeholder="Une question particulière ? Un programme qui vous intéresse ?" />
                     </div>
-                    <button type="submit" disabled={formState === "sending"} className="w-full py-4 rounded-xl bg-[#2B8FAB] text-white font-bold text-[15px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15 disabled:opacity-50 active:scale-[0.98]">
+                    <button type="submit" disabled={formState === "sending"} className="w-full py-4 rounded-xl bg-penn-green text-white font-bold text-[15px] hover:bg-[#1e7a94] transition-all flex items-center justify-center gap-2 shadow-lg shadow-penn-green/15 disabled:opacity-50 active:scale-[0.98]">
                       {formState === "sending" ? "Envoi..." : <><Send className="w-5 h-5" /> Envoyer ma demande</>}
                     </button>
                     {formState === "error" && <p className="text-[13px] text-red-500 text-center">Une erreur est survenue. Veuillez réessayer.</p>}

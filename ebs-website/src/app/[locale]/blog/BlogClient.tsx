@@ -138,7 +138,7 @@ export default function BlogPage() {
           >
             Le blog qui prépare
             <br />
-            <span className="text-[#2B8FAB]">votre avenir</span>.
+            <span className="text-penn-green">votre avenir</span>.
           </motion.h1>
 
           <motion.p
@@ -199,7 +199,7 @@ export default function BlogPage() {
                 >
                   <span style={{ color: cat.color }}>{cat.icon}</span>
                 </div>
-                <h3 className="text-[18px] font-extrabold text-penn-navy mb-2 group-hover:text-[#2B8FAB] transition-colors">
+                <h3 className="text-[18px] font-extrabold text-penn-navy mb-2 group-hover:text-penn-green transition-colors">
                   {cat.title}
                 </h3>
                 <p className="text-[14px] text-penn-body leading-relaxed mb-4">
@@ -299,8 +299,8 @@ export default function BlogPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
           >
-            <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6">
-              <Send className="w-8 h-8 text-[#2B8FAB]" />
+            <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-6">
+              <Send className="w-8 h-8 text-penn-green" />
             </div>
             <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy mb-4">
               Soyez les premiers informés
@@ -334,12 +334,12 @@ export default function BlogPage() {
                   placeholder="votre@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-5 py-3.5 bg-penn-bg-light border border-penn-border rounded-xl text-[15px] text-penn-navy placeholder:text-penn-body/40 focus:outline-none focus:border-[#2B8FAB] focus:bg-white focus:shadow-md transition-all duration-300"
+                  className="flex-1 px-5 py-3.5 bg-penn-bg-light border border-penn-border rounded-xl text-[15px] text-penn-navy placeholder:text-penn-body/40 focus:outline-none focus:border-penn-green focus:bg-white focus:shadow-md transition-all duration-300"
                   required
                 />
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 bg-[#2B8FAB] text-white font-bold text-[15px] py-3.5 px-6 rounded-xl hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20 whitespace-nowrap"
+                  className="inline-flex items-center gap-2 bg-penn-green text-white font-bold text-[15px] py-3.5 px-6 rounded-xl hover:bg-penn-green/90 transition-all duration-300 shadow-lg shadow-penn-green/20 whitespace-nowrap"
                 >
                   S&apos;inscrire
                   <Send className="w-4 h-4" />
@@ -402,18 +402,18 @@ export default function BlogPage() {
               >
                 <Link
                   href={link.href}
-                  className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#2B8FAB]/30"
+                  className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-penn-green/30"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center mb-4 text-[#2B8FAB] group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-penn-green/10 flex items-center justify-center mb-4 text-penn-green group-hover:scale-110 transition-transform">
                     {link.icon}
                   </div>
-                  <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-[#2B8FAB] transition-colors">
+                  <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-penn-green transition-colors">
                     {link.title}
                   </h3>
                   <p className="text-[14px] text-penn-body leading-relaxed mb-4 flex-1">
                     {link.desc}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-[#2B8FAB]">
+                  <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-penn-green">
                     {link.label}
                     <span className="group-hover:translate-x-1 transition-transform">
                       →

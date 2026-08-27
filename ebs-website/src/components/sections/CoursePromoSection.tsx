@@ -55,7 +55,7 @@ export default function CoursePromoSection() {
             <ScrollReveal key={pathKey} initialY={30} duration={0.8} delay={0.2 + idx * 0.15}>
               <ul className="mb-[30px]">
                 {t.raw(pathKey).map((item: string, i: number) => (
-                  <li key={i} className={`flex items-center gap-4 mb-3 font-semibold text-[17px] ${i === 0 ? 'text-[#2B8FAB] text-[18px]' : 'text-penn-navy'}`}>
+                  <li key={i} className={`flex items-center gap-4 mb-3 font-semibold text-[17px] ${i === 0 ? 'text-penn-green text-[18px]' : 'text-penn-navy'}`}>
                     <span className="flex items-center justify-center w-[25px] h-[25px] bg-penn-green text-white rounded-[2px] flex-shrink-0">
                       <Check className="w-4 h-4" strokeWidth={3} />
                     </span>
@@ -72,7 +72,7 @@ export default function CoursePromoSection() {
           <div className="flex justify-center mt-12">
             <Link
               href="/parcours-international"
-              className="inline-flex items-center gap-3 bg-[#2B8FAB] text-white font-bold text-[16px] py-4 px-10 rounded-full hover:bg-penn-navy transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20 hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center gap-3 bg-penn-green text-white font-bold text-[16px] py-4 px-10 rounded-full hover:bg-penn-navy transition-all duration-300 shadow-lg shadow-penn-green/20 hover:shadow-xl hover:-translate-y-0.5"
             >
               J&apos;opte pour le parcours international
               <ArrowRight className="w-5 h-5" />

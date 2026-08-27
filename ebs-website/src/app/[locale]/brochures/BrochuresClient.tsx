@@ -94,13 +94,13 @@ export default function BrochuresPage() {
           <div className="max-w-[700px]">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
-                <div className="w-1 h-1 rounded-full bg-[#2B8FAB]" />
+                <div className="w-1 h-1 rounded-full bg-penn-green" />
                 Documentation
               </Badge>
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="text-[44px] md:text-[56px] lg:text-[68px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6">
               Brochures<br />
-              <span className="text-[#2B8FAB]">EBS</span>
+              <span className="text-penn-green">EBS</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="text-[17px] md:text-[19px] text-white/60 leading-relaxed max-w-[550px]">
               Parcourez et téléchargez les brochures de nos programmes. Retrouvez toutes les informations sur les cursus, certifications, débouchés et partenariats.
@@ -141,7 +141,7 @@ export default function BrochuresPage() {
                   <div className="absolute top-0 left-0 w-1 h-full" style={{ backgroundColor: brochure.color }} />
                 </div>
                 <div className="p-5 flex flex-col flex-1">
-                  <h3 className="text-[16px] font-extrabold text-penn-navy mb-2 group-hover:text-[#2B8FAB] transition-colors leading-snug">
+                  <h3 className="text-[16px] font-extrabold text-penn-navy mb-2 group-hover:text-penn-green transition-colors leading-snug">
                     {brochure.title}
                   </h3>
                   <p className="text-[13px] text-penn-body/60 leading-relaxed mb-4 flex-1 line-clamp-3">
@@ -185,10 +185,10 @@ export default function BrochuresPage() {
               Contactez notre équipe pédagogique pour obtenir la brochure du programme qui vous intéresse.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#2B8FAB] text-white font-bold text-[14px] hover:bg-[#2B8FAB]/90 transition-all shadow-lg shadow-[#2B8FAB]/20">
+              <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-penn-green text-white font-bold text-[14px] hover:bg-penn-green/90 transition-all shadow-lg shadow-penn-green/20">
                 Nous contacter <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link href="/preinscription" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-[#2B8FAB] text-[#2B8FAB] font-bold text-[14px] hover:bg-[#2B8FAB] hover:text-white transition-all">
+              <Link href="/preinscription" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-penn-green text-penn-green font-bold text-[14px] hover:bg-penn-green hover:text-white transition-all">
                 Préinscription
               </Link>
             </div>

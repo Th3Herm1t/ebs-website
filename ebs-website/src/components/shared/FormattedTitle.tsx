@@ -10,7 +10,7 @@ export function FormattedTitle({ text }: FormattedTitleProps) {
     return (
       <>
         {textWithoutPeriod}
-        <span className="text-[#2B8FAB]">.</span>
+        <span className="text-penn-green">.</span>
       </>
     );
   }

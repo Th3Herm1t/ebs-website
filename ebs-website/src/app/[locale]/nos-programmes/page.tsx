@@ -178,18 +178,18 @@ export default function NosProgrammesPage() {
             </div>
             <div className="relative z-10 lg:w-1/2 w-full grid grid-cols-2 gap-4">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center flex flex-col justify-center items-center">
-                <Globe className="w-8 h-8 text-[#2B8FAB] mb-3" />
+                <Globe className="w-8 h-8 text-penn-green mb-3" />
                 <p className="text-[36px] font-extrabold text-white leading-none mb-1">16</p>
                 <p className="text-[14px] text-white/60 font-medium uppercase tracking-wider">Partenaires</p>
               </div>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center flex flex-col justify-center items-center">
-                <Plane className="w-8 h-8 text-[#2B8FAB] mb-3" />
+                <Plane className="w-8 h-8 text-penn-green mb-3" />
                 <p className="text-[36px] font-extrabold text-white leading-none mb-1">4</p>
                 <p className="text-[14px] text-white/60 font-medium uppercase tracking-wider">Pays</p>
               </div>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 col-span-2">
                 <h4 className="text-[18px] font-bold text-white mb-4 flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-[#2B8FAB]" /> Nos Destinations
+                  <CheckCircle2 className="w-5 h-5 text-penn-green" /> Nos Destinations
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-white/40"/> <span className="text-white/80 text-[15px]">France (12)</span></div>

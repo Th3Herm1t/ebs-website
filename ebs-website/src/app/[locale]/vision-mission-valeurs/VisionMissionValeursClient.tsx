@@ -110,7 +110,7 @@ export default function VisionPage() {
             >
               Vision, Mission
               <br />
-              <span className="text-[#2B8FAB]">&amp; Valeurs</span>
+              <span className="text-penn-green">&amp; Valeurs</span>
             </motion.h1>
 
             <motion.p
@@ -135,7 +135,7 @@ export default function VisionPage() {
                 key={p.label}
                 className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6 flex items-center gap-4 hover:bg-white/[0.06] transition-colors"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#2B8FAB]/10 flex items-center justify-center text-[#2B8FAB] shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-penn-green/10 flex items-center justify-center text-penn-green shrink-0">
                   {p.icon}
                 </div>
                 <div>
@@ -170,13 +170,13 @@ export default function VisionPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <span className="absolute -top-8 -left-4 text-[120px] leading-none font-serif text-[#2B8FAB]/10 select-none pointer-events-none">
+            <span className="absolute -top-8 -left-4 text-[120px] leading-none font-serif text-penn-green/10 select-none pointer-events-none">
               &ldquo;
             </span>
             <p className="text-[24px] md:text-[32px] lg:text-[38px] font-bold leading-snug text-white/90 italic relative z-10">
               Être une université de référence en Tunisie, reconnue pour la qualité de ses formations, son ouverture internationale et sa capacité à former des professionnels compétitifs, maîtrisant l&apos;Intelligence Artificielle et certifiés par les plus grandes organisations internationales.
             </p>
-            <span className="absolute -bottom-12 -right-4 text-[120px] leading-none font-serif text-[#2B8FAB]/10 select-none pointer-events-none rotate-180">
+            <span className="absolute -bottom-12 -right-4 text-[120px] leading-none font-serif text-penn-green/10 select-none pointer-events-none rotate-180">
               &ldquo;
             </span>
           </motion.blockquote>
@@ -227,7 +227,7 @@ export default function VisionPage() {
                     <span className="text-[13px] font-extrabold text-penn-navy">{m.number}</span>
                   </div>
 
-                  <div className="bg-penn-bg-light rounded-2xl border border-penn-border p-6 flex-1 hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300">
+                  <div className="bg-penn-bg-light rounded-2xl border border-penn-border p-6 flex-1 hover:border-penn-green/30 hover:shadow-md transition-all duration-300">
                     <p className="text-[15px] md:text-[16px] text-penn-navy leading-relaxed font-medium">
                       {m.text}
                     </p>

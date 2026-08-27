@@ -3,7 +3,7 @@ version: '3.8'
 services:
   web:
     build:
-      context: .
+      context: ./ebs-website
       dockerfile: Dockerfile
     container_name: ebs-website
     restart: unless-stopped

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import Link from "next/link";
 import {
@@ -125,7 +126,7 @@ export default function FaqPage() {
           >
             Des questions ?
             <br />
-            <span className="text-[#2B8FAB]">On a les réponses</span>.
+            <span className="text-penn-green">On a les réponses</span>.
           </motion.h1>
 
           <motion.p
@@ -162,7 +163,7 @@ export default function FaqPage() {
               className="w-full lg:w-5/12 lg:sticky lg:top-32 self-start hidden lg:block"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[600px]">
-                <img src="/images/sections/features-group.jpg" alt="Étudiants EBS" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
+                <Image fill src="/images/sections/features-group.jpg" alt="Étudiants EBS" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2B8FAB]/90 via-[#2B8FAB]/20 to-transparent" />
                 <div className="absolute bottom-10 left-10 right-10 text-white">
                   <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center mb-6">
@@ -187,8 +188,8 @@ export default function FaqPage() {
                   transition={{ duration: 0.5, delay: catIndex * 0.1 }}
                 >
                   <div className="flex items-center gap-4 mb-8">
-                    <div className="w-12 h-12 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center">
-                      <category.icon className="w-6 h-6 text-[#2B8FAB]" />
+                    <div className="w-12 h-12 rounded-2xl bg-penn-green/10 flex items-center justify-center">
+                      <category.icon className="w-6 h-6 text-penn-green" />
                     </div>
                     <h2 className="text-[28px] md:text-[32px] font-extrabold text-penn-navy">
                       {category.title}
@@ -200,9 +201,9 @@ export default function FaqPage() {
                       <AccordionItem
                         key={i}
                         value={`${catIndex}-${i}`}
-                        className="bg-white border border-penn-border rounded-2xl px-6 hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
+                        className="bg-white border border-penn-border rounded-2xl px-6 hover:border-penn-green/30 hover:shadow-md transition-all duration-300"
                       >
-                        <AccordionTrigger className="text-left text-[16px] font-bold text-penn-navy hover:text-[#2B8FAB] hover:no-underline transition-colors py-6 leading-tight">
+                        <AccordionTrigger className="text-left text-[16px] font-bold text-penn-navy hover:text-penn-green hover:no-underline transition-colors py-6 leading-tight">
                           {faq.q}
                         </AccordionTrigger>
                         <AccordionContent className="text-[15px] text-penn-body leading-relaxed pb-6 pr-4">
@@ -226,8 +227,8 @@ export default function FaqPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
           >
-            <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6">
-              <HelpCircle className="w-8 h-8 text-[#2B8FAB]" />
+            <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-6">
+              <HelpCircle className="w-8 h-8 text-penn-green" />
             </div>
             <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy mb-4">
               Vous n&apos;avez pas trouvé votre réponse ?
@@ -240,25 +241,25 @@ export default function FaqPage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <a
                 href="tel:+21629582835"
-                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
+                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-penn-green/30 hover:shadow-md transition-all duration-300"
               >
-                <Phone className="w-5 h-5 text-[#2B8FAB]" />
+                <Phone className="w-5 h-5 text-penn-green" />
                 <span className="text-[14px] font-bold text-penn-navy">
                   +216 55 582 843
                 </span>
               </a>
               <a
                 href="mailto:info@ebs.tn"
-                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-[#2B8FAB]/30 hover:shadow-md transition-all duration-300"
+                className="flex items-center gap-3 justify-center p-4 bg-white rounded-xl border border-penn-border hover:border-penn-green/30 hover:shadow-md transition-all duration-300"
               >
-                <Mail className="w-5 h-5 text-[#2B8FAB]" />
+                <Mail className="w-5 h-5 text-penn-green" />
                 <span className="text-[14px] font-bold text-penn-navy">
                   info@ebs.tn
                 </span>
               </a>
               <Link
                 href="/contact"
-                className="flex items-center gap-3 justify-center p-4 bg-[#2B8FAB] text-white rounded-xl hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20"
+                className="flex items-center gap-3 justify-center p-4 bg-penn-green text-white rounded-xl hover:bg-penn-green/90 transition-all duration-300 shadow-lg shadow-penn-green/20"
               >
                 <MessageCircle className="w-5 h-5" />
                 <span className="text-[14px] font-bold">Formulaire de contact</span>

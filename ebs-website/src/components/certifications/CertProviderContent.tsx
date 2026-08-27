@@ -85,7 +85,7 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
             className="text-[42px] md:text-[56px] lg:text-[64px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
           >
             Certifications{" "}
-            <span className="text-[#2B8FAB]">{data.name}</span>
+            <span className="text-penn-green">{data.name}</span>
           </motion.h1>
 
           <motion.p
@@ -112,13 +112,13 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
               </p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-48px)/3)]">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">
+              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">
                 {data.categories.length}
               </p>
               <p className="text-[12px] text-white/50 font-medium">Domaines</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-48px)/3)]">
-              <Award className="w-6 h-6 text-[#2B8FAB] mx-auto mb-1" />
+              <Award className="w-6 h-6 text-penn-green mx-auto mb-1" />
               <p className="text-[12px] text-white/50 font-medium">
                 100% incluses dans votre formation
               </p>
@@ -145,8 +145,8 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6 }}
             >
-              <div className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mb-6">
-                <BookOpen className="w-7 h-7 text-[#2B8FAB]" />
+              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mb-6">
+                <BookOpen className="w-7 h-7 text-penn-green" />
               </div>
               <h2 className="text-[28px] font-extrabold text-penn-navy mb-4">
                 Présentation
@@ -162,13 +162,13 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              <div className="w-14 h-14 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mb-6">
-                <Target className="w-7 h-7 text-[#2B8FAB]" />
+              <div className="w-14 h-14 rounded-2xl bg-penn-green/10 flex items-center justify-center mb-6">
+                <Target className="w-7 h-7 text-penn-green" />
               </div>
               <h2 className="text-[28px] font-extrabold text-penn-navy mb-4">
                 Pourquoi ces certifications comptent
               </h2>
-              <div className="bg-penn-navy/5 rounded-2xl border border-[#2B8FAB]/10 p-6">
+              <div className="bg-penn-navy/5 rounded-2xl border border-penn-green/10 p-6">
                 <p className="text-[15px] md:text-[16px] text-penn-body leading-relaxed">
                   {data.pourquoi}
                 </p>

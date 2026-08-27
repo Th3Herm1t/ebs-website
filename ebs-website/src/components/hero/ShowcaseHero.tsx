@@ -91,7 +91,7 @@ export function ShowcaseHero({ badge, title, subtitle, cards }: ShowcaseHeroProp
                       {displayWord}
                     </motion.span>
                     {hasDot && (
-                      <span className="text-[#2B8FAB]">.</span>
+                      <span className="text-penn-green">.</span>
                     )}
                   </span>
                 );

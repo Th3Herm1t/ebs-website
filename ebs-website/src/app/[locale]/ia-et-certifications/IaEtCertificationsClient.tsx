@@ -218,7 +218,7 @@ export default function IAEtCertificationsPage() {
       <section className="relative pt-40 pb-28 overflow-hidden bg-[#070B18]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(43,143,171,0.28),transparent_34%),radial-gradient(circle_at_82%_12%,rgba(156,39,176,0.18),transparent_30%),linear-gradient(135deg,#070B18_0%,#111A31_52%,#071521_100%)]" />
         <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(rgba(255,255,255,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.14)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_72%,transparent)]" />
-        <div className="absolute -right-32 top-20 hidden h-[420px] w-[420px] rounded-full border border-[#2B8FAB]/15 lg:block" />
+        <div className="absolute -right-32 top-20 hidden h-[420px] w-[420px] rounded-full border border-penn-green/15 lg:block" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#070B18] to-transparent" />
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
@@ -244,7 +244,7 @@ export default function IAEtCertificationsPage() {
             className="text-[42px] md:text-[58px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
           >
             L&apos;IA n&apos;est plus une{" "}
-            <span className="text-[#2B8FAB]">option</span>.
+            <span className="text-penn-green">option</span>.
             <br />
             C&apos;est une{" "}
             <span className="bg-gradient-to-r from-[#9C27B0] to-[#2B8FAB] bg-clip-text text-transparent">
@@ -288,7 +288,7 @@ export default function IAEtCertificationsPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-[#2B8FAB] leading-none mb-1">
+              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">
                 {aiStats.mandatory}
               </p>
               <p className="text-[12px] text-white/50 font-medium">
@@ -383,7 +383,7 @@ export default function IAEtCertificationsPage() {
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-white leading-[1.1]">
               Les 5 compétences IA que maîtrisent
               <br />
-              <span className="text-[#2B8FAB]">TOUS</span> les étudiants EBS
+              <span className="text-penn-green">TOUS</span> les étudiants EBS
             </h2>
           </motion.div>
 
@@ -477,7 +477,7 @@ export default function IAEtCertificationsPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-20px" }}
                         transition={{ duration: 0.35, delay: Math.min(i * 0.025, 0.18) }}
-                        className="group flex items-center gap-4 rounded-2xl border border-penn-border bg-white px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#2B8FAB]/30 hover:shadow-md"
+                        className="group flex items-center gap-4 rounded-2xl border border-penn-border bg-white px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-penn-green/30 hover:shadow-md"
                       >
                         <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-penn-border/50 bg-white p-1.5 shadow-sm">
                           {logo ? (
@@ -487,7 +487,7 @@ export default function IAEtCertificationsPage() {
                           )}
                         </div>
                         <div className="min-w-0">
-                          <p className="text-[13px] font-extrabold leading-snug text-penn-navy group-hover:text-[#2B8FAB]">
+                          <p className="text-[13px] font-extrabold leading-snug text-penn-navy group-hover:text-penn-green">
                             {cert.name}
                           </p>
                           <p className="mt-1 text-[11px] font-medium text-penn-body/60">
@@ -510,7 +510,7 @@ export default function IAEtCertificationsPage() {
           >
             <Link
               href="/certifications"
-              className="inline-flex items-center gap-2 text-[15px] font-bold text-[#2B8FAB] hover:underline"
+              className="inline-flex items-center gap-2 text-[15px] font-bold text-penn-green hover:underline"
             >
               Voir toutes les certifications ({totalCertifications}+)
               <ArrowRight className="w-4 h-4" />
@@ -551,7 +551,7 @@ export default function IAEtCertificationsPage() {
               >
                 <Link
                   href={p.href}
-                  className="group flex items-center gap-4 lg:gap-6 p-4 lg:p-5 bg-white rounded-2xl border border-penn-border hover:shadow-lg hover:border-[#2B8FAB]/20 transition-all duration-300"
+                  className="group flex items-center gap-4 lg:gap-6 p-4 lg:p-5 bg-white rounded-2xl border border-penn-border hover:shadow-lg hover:border-penn-green/20 transition-all duration-300"
                 >
                   <div
                     className="w-2 h-12 rounded-full shrink-0"
@@ -559,7 +559,7 @@ export default function IAEtCertificationsPage() {
                   />
 
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-[16px] lg:text-[17px] font-extrabold text-penn-navy group-hover:text-[#2B8FAB] transition-colors">
+                    <h3 className="text-[16px] lg:text-[17px] font-extrabold text-penn-navy group-hover:text-penn-green transition-colors">
                       {p.programme}
                     </h3>
                     <p className="text-[13px] text-penn-body/60 mt-0.5">
@@ -576,7 +576,7 @@ export default function IAEtCertificationsPage() {
                     </p>
                   </div>
 
-                  <ArrowRight className="w-5 h-5 text-[#2B8FAB] shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                  <ArrowRight className="w-5 h-5 text-penn-green shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </Link>
               </motion.div>
             ))}
@@ -641,13 +641,13 @@ export default function IAEtCertificationsPage() {
                   <div className="w-12 h-12 rounded-xl bg-[#9C27B0]/10 flex items-center justify-center mb-4 text-[#9C27B0] group-hover:scale-110 transition-transform">
                     {card.icon}
                   </div>
-                  <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-[#2B8FAB] transition-colors">
+                  <h3 className="text-[17px] font-extrabold text-penn-navy mb-2 group-hover:text-penn-green transition-colors">
                     {card.title}
                   </h3>
                   <p className="text-[14px] text-penn-body leading-relaxed mb-4 flex-1">
                     {card.desc}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-[#2B8FAB]">
+                  <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-penn-green">
                     {card.label}
                     <span className="group-hover:translate-x-1 transition-transform">
                       →

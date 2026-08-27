@@ -48,7 +48,7 @@ export default function HeroBackgroundVariant3() {
         <m.div
           animate={{ y: [0, 15, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-          className="absolute bottom-[30%] left-[40%] w-[18px] h-[18px] rounded-full border-[2px] border-[#2B8FAB]/50 pointer-events-none"
+          className="absolute bottom-[30%] left-[40%] w-[18px] h-[18px] rounded-full border-[2px] border-penn-green/50 pointer-events-none"
         />
       </div>
     </LazyMotion>

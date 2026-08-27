@@ -17,7 +17,7 @@ export default function HeroBackground() {
       />
 
       <div className="absolute -top-[10%] -left-[10%] w-[600px] h-[600px] rounded-full border-[1.5px] border-white/60 opacity-80" />
-      <div className="absolute top-[58%] left-[7%] w-[16px] h-[16px] rounded-full border-[2px] border-[#2B8FAB]/50" />
+      <div className="absolute top-[58%] left-[7%] w-[16px] h-[16px] rounded-full border-[2px] border-penn-green/50" />
       <div className="absolute top-[25%] left-[48%] w-[10px] h-[10px] rounded-full bg-[#f4a261]/80" />
       <div className="absolute top-[25%] right-[15%] w-[400px] h-[400px] rounded-full bg-[#f4a261]" />
       <div className="absolute top-[32%] right-[8%] w-[18px] h-[18px] rounded-full border-[2px] border-[#e9c46a]/60" />

@@ -37,7 +37,7 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
           <Building2 className="w-16 h-16 text-penn-border mx-auto mb-4" />
           <h1 className="text-2xl font-extrabold text-penn-navy mb-2">Partenaire introuvable</h1>
           <p className="text-penn-body/60 mb-6">Ce partenaire n&apos;existe pas ou a été déplacé.</p>
-          <Link href="/parcours-international" className="text-[#2B8FAB] font-bold hover:underline">Voir tous les partenaires →</Link>
+          <Link href="/parcours-international" className="text-penn-green font-bold hover:underline">Voir tous les partenaires →</Link>
         </div>
       </main>
     );
@@ -87,7 +87,7 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
               <div>
                 <p className="text-[13px] text-white/40 font-medium uppercase tracking-wider mb-1">{partner.type}</p>
                 <h1 className="text-[40px] md:text-[52px] lg:text-[64px] font-extrabold text-white leading-[1.05] tracking-[-1px]">
-                  Partenariat<br /><span className="text-[#2B8FAB]">EBS — {partner.name}</span>
+                  Partenariat<br /><span className="text-penn-green">EBS — {partner.name}</span>
                 </h1>
               </div>
             </motion.div>
@@ -226,7 +226,7 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
                     <Image src={prof.img} alt={prof.nom} fill sizes="(max-width: 640px) 50vw, 20vw" className="object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { (e.target as HTMLElement).style.display = "none"; }} />
                     <div className="absolute inset-0 bg-gradient-to-t from-penn-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <p className="text-[13px] font-extrabold text-penn-navy mt-2.5 text-center leading-tight group-hover:text-[#2B8FAB] transition-colors">{prof.nom}</p>
+                  <p className="text-[13px] font-extrabold text-penn-navy mt-2.5 text-center leading-tight group-hover:text-penn-green transition-colors">{prof.nom}</p>
                 </motion.div>
               ))}
             </div>

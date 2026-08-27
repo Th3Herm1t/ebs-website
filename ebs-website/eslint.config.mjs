@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     "fix*.js",
     "refactor_layout.js",
     "scratch*.js",
+    "scratch/**",
+    "scripts/**"
   ]),
   {
     rules: {

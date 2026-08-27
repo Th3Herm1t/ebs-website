@@ -152,7 +152,7 @@ export default function PreinscriptionPage() {
   };
 
   const inputClasses =
-    "w-full h-12 px-4 bg-white border border-penn-border rounded-xl text-[15px] text-penn-navy placeholder:text-penn-body/40 focus:outline-none focus:border-[#2B8FAB] focus:bg-white focus:shadow-md transition-all duration-300";
+    "w-full h-12 px-4 bg-white border border-penn-border rounded-xl text-[15px] text-penn-navy placeholder:text-penn-body/40 focus:outline-none focus:border-penn-green focus:bg-white focus:shadow-md transition-all duration-300";
   const errorClasses = "border-red-400 focus:border-red-400";
 
   const selectedProgramme = allProgrammes.find(
@@ -195,7 +195,7 @@ export default function PreinscriptionPage() {
           >
             Préinscription
             <br />
-            <span className="text-[#2B8FAB]">en ligne</span>.
+            <span className="text-penn-green">en ligne</span>.
           </motion.h1>
 
           <motion.p
@@ -232,7 +232,7 @@ export default function PreinscriptionPage() {
                   <span
                     className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-extrabold transition-all duration-300 ${
                       i <= step
-                        ? "bg-[#2B8FAB] text-white"
+                        ? "bg-penn-green text-white"
                         : "bg-penn-navy/10 text-penn-body"
                     }`}
                   >
@@ -249,7 +249,7 @@ export default function PreinscriptionPage() {
             </div>
             <div className="h-1.5 bg-penn-navy/10 rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-[#2B8FAB] rounded-full"
+                className="h-full bg-penn-green rounded-full"
                 animate={{ width: `${((step + 1) / 4) * 100}%` }}
                 transition={{ duration: 0.3 }}
               />
@@ -268,8 +268,8 @@ export default function PreinscriptionPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-12"
               >
-                <div className="w-20 h-20 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-10 h-10 text-[#2B8FAB]" />
+                <div className="w-20 h-20 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle className="w-10 h-10 text-penn-green" />
                 </div>
                 <h2 className="text-[28px] font-extrabold text-penn-navy mb-4">
                   Préinscription envoyée !
@@ -283,14 +283,14 @@ export default function PreinscriptionPage() {
                     href="https://wa.me/21629582835"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-[14px] font-bold text-[#2B8FAB] hover:underline"
+                    className="inline-flex items-center gap-2 text-[14px] font-bold text-penn-green hover:underline"
                   >
                     Nous contacter sur WhatsApp
                     <span>→</span>
                   </a>
                   <Link
                     href="/nos-programmes"
-                    className="inline-flex items-center gap-2 text-[14px] font-bold text-penn-navy hover:text-[#2B8FAB] transition-colors"
+                    className="inline-flex items-center gap-2 text-[14px] font-bold text-penn-navy hover:text-penn-green transition-colors"
                   >
                     Retour aux programmes
                     <span>→</span>
@@ -315,7 +315,7 @@ export default function PreinscriptionPage() {
                       <div className="space-y-5">
                         <div>
                           <label className="block text-[14px] font-bold text-penn-navy mb-2">
-                            Nom <span className="text-[#2B8FAB]">*</span>
+                            Nom <span className="text-penn-green">*</span>
                           </label>
                           <input
                             type="text"
@@ -333,7 +333,7 @@ export default function PreinscriptionPage() {
                         </div>
                         <div>
                           <label className="block text-[14px] font-bold text-penn-navy mb-2">
-                            Prénom <span className="text-[#2B8FAB]">*</span>
+                            Prénom <span className="text-penn-green">*</span>
                           </label>
                           <input
                             type="text"
@@ -353,7 +353,7 @@ export default function PreinscriptionPage() {
                         </div>
                         <div>
                           <label className="block text-[14px] font-bold text-penn-navy mb-2">
-                            Email <span className="text-[#2B8FAB]">*</span>
+                            Email <span className="text-penn-green">*</span>
                           </label>
                           <input
                             type="email"
@@ -373,7 +373,7 @@ export default function PreinscriptionPage() {
                         </div>
                         <div>
                           <label className="block text-[14px] font-bold text-penn-navy mb-2">
-                            Téléphone <span className="text-[#2B8FAB]">*</span>
+                            Téléphone <span className="text-penn-green">*</span>
                           </label>
                           <input
                             type="tel"
@@ -413,8 +413,8 @@ export default function PreinscriptionPage() {
                             key={prog.slug}
                             className={`flex items-start gap-4 p-4 rounded-xl border cursor-pointer transition-all duration-200 ${
                               formData.programme === prog.slug
-                                ? "border-[#2B8FAB] bg-[#2B8FAB]/5 shadow-sm"
-                                : "border-penn-border hover:border-[#2B8FAB]/30"
+                                ? "border-penn-green bg-penn-green/5 shadow-sm"
+                                : "border-penn-border hover:border-penn-green/30"
                             }`}
                           >
                             <input
@@ -425,7 +425,7 @@ export default function PreinscriptionPage() {
                               onChange={(e) =>
                                 updateField("programme", e.target.value)
                               }
-                              className="mt-1 accent-[#2B8FAB]"
+                              className="mt-1 accent-penn-green"
                             />
                             <div className="flex-1">
                               <span className="font-bold text-[15px] text-penn-navy">
@@ -567,8 +567,8 @@ export default function PreinscriptionPage() {
                       transition={{ duration: 0.25 }}
                     >
                       <div className="text-center mb-8">
-                        <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-5">
-                          <Check className="w-8 h-8 text-[#2B8FAB]" />
+                        <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
+                          <Check className="w-8 h-8 text-penn-green" />
                         </div>
                         <h2 className="text-[22px] font-extrabold text-penn-navy mb-3">
                           Récapitulatif
@@ -624,7 +624,7 @@ export default function PreinscriptionPage() {
                       <button
                         type="button"
                         onClick={goNext}
-                        className="inline-flex items-center gap-2 bg-[#2B8FAB] text-white font-bold text-[14px] py-3 px-8 rounded-full hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20"
+                        className="inline-flex items-center gap-2 bg-penn-green text-white font-bold text-[14px] py-3 px-8 rounded-full hover:bg-penn-green/90 transition-all duration-300 shadow-lg shadow-penn-green/20"
                       >
                         Suivant
                         <ArrowRight className="w-4 h-4" />
@@ -633,7 +633,7 @@ export default function PreinscriptionPage() {
                       <button
                         type="submit"
                         disabled={submitting}
-                        className="inline-flex items-center gap-2 bg-[#2B8FAB] text-white font-bold text-[14px] py-3 px-8 rounded-full hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20 disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="inline-flex items-center gap-2 bg-penn-green text-white font-bold text-[14px] py-3 px-8 rounded-full hover:bg-penn-green/90 transition-all duration-300 shadow-lg shadow-penn-green/20 disabled:opacity-60 disabled:cursor-not-allowed"
                       >
                         {submitting ? (
                           <>

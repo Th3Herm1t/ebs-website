@@ -139,8 +139,8 @@ function FormView({
               error
                 ? "border-red-400 focus:border-red-400 focus:ring-red-400/10 bg-red-50/30"
                 : isValid
-                  ? "border-[#2B8FAB] focus:border-[#2B8FAB] focus:ring-[#2B8FAB]/5 bg-[#2B8FAB]/[0.03]"
-                  : "border-penn-border/40 focus:border-[#2B8FAB] focus:ring-[#2B8FAB]/5"
+                  ? "border-penn-green focus:border-penn-green focus:ring-penn-green/5 bg-penn-green/[0.03]"
+                  : "border-penn-border/40 focus:border-penn-green focus:ring-penn-green/5"
             }`}
           />
           {error && (
@@ -161,7 +161,7 @@ function FormView({
                   onClick={() => setSelectedSlot(slot.value)}
                   className={`relative flex flex-col items-center gap-1 py-4 px-2 rounded-xl border-2 transition-all duration-200 ${
                     active
-                      ? "border-[#2B8FAB] bg-[#2B8FAB] text-white shadow-lg shadow-[#2B8FAB]/20 scale-[1.02]"
+                      ? "border-penn-green bg-penn-green text-white shadow-lg shadow-penn-green/20 scale-[1.02]"
                       : "border-penn-border/30 bg-white hover:border-penn-border/60 hover:bg-penn-bg-light hover:scale-[1.01]"
                   }`}
                 >
@@ -170,7 +170,7 @@ function FormView({
                   <span className={`text-[10px] font-semibold ${active ? "text-white/60" : "text-penn-body/30"}`}>{slot.sub}</span>
                   {active && (
                     <div className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-white flex items-center justify-center shadow">
-                      <Check className="w-2.5 h-2.5 text-[#2B8FAB]" />
+                      <Check className="w-2.5 h-2.5 text-penn-green" />
                     </div>
                   )}
                 </button>
@@ -183,7 +183,7 @@ function FormView({
           <button
             onClick={() => onSubmit(false)}
             disabled={formState === "sending" || !phone.trim() || !selectedSlot || !!error}
-            className="flex-1 py-3 rounded-xl bg-[#2B8FAB] text-white font-bold text-[14px] hover:bg-[#1e7a94] transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-[#2B8FAB]/15 active:scale-[0.98]"
+            className="flex-1 py-3 rounded-xl bg-penn-green text-white font-bold text-[14px] hover:bg-[#1e7a94] transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-penn-green/15 active:scale-[0.98]"
           >
             {formState === "sending" ? "..." : <><Send className="w-4 h-4" /> Être rappelé</>}
           </button>
@@ -203,8 +203,8 @@ function FormView({
 function SuccessView({ phone, onClose }: { phone: string; onClose: () => void }) {
   return (
     <div className="p-8 text-center">
-      <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-5">
-        <Check className="w-8 h-8 text-[#2B8FAB]" />
+      <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-5">
+        <Check className="w-8 h-8 text-penn-green" />
       </div>
       <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">C&apos;est noté !</h3>
       <p className="text-[14px] text-penn-body/50 leading-relaxed max-w-[280px] mx-auto">

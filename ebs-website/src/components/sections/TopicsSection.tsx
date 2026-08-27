@@ -28,7 +28,7 @@ export default function TopicsSection() {
     <section className="section-padding relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
+        <Image fill 
           src="/images/sections/certifications-bg.jpg" 
           alt="" 
           className="w-full h-full object-cover opacity-60"
@@ -56,7 +56,7 @@ export default function TopicsSection() {
               delay={i * 0.05}
               className="w-full sm:w-[calc(50%-15px)] md:w-[calc((100%-60px)/3)] lg:w-[calc((100%-120px)/5)]"
             >
-              <div className="flex flex-col items-center justify-center gap-[15px] p-[20px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-[16px] transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-white/10 hover:border-[#2B8FAB]/50 hover:shadow-[0_20px_40px_rgba(43,143,171,0.15)] h-full group">
+              <div className="flex flex-col items-center justify-center gap-[15px] p-[20px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-[16px] transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-white/10 hover:border-penn-green/50 hover:shadow-[0_20px_40px_rgba(43,143,171,0.15)] h-full group">
                 <div className="w-[60px] h-[60px] bg-white rounded-xl flex items-center justify-center p-2 shadow-sm group-hover:scale-110 transition-transform duration-300">
                   <Image src={cert.icon} alt={cert.title} width={45} height={45} className="object-contain" style={{ width: 45, height: 45 }} />
                 </div>

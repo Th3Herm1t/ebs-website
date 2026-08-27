@@ -115,7 +115,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className="text-[#232434] font-semibold text-[14px] xl:text-[15px] capitalize py-2 px-2 xl:px-3 block transition-colors hover:text-[#2B8FAB] whitespace-nowrap"
+                  className="text-[#232434] font-semibold text-[14px] xl:text-[15px] capitalize py-2 px-2 xl:px-3 block transition-colors hover:text-penn-green whitespace-nowrap"
                 >
                   {tNav(item.key)}
                   {item.children && (
@@ -148,14 +148,14 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-4 xl:gap-6">
             <a 
               href="tel:+216 55 582 843" 
-              className="text-[#2B8FAB] hover:text-[#2B8FAB]/80 transition-colors font-bold text-[14px] xl:text-[16px] whitespace-nowrap"
+              className="text-penn-green hover:text-penn-green/80 transition-colors font-bold text-[14px] xl:text-[16px] whitespace-nowrap"
             >
               <span className="font-light mr-1.5">{t('call')}</span> +216 55 582 843
             </a>
             {!isProgramPage && (
               <Link
                 href="/preinscription"
-                className="bg-[#2B8FAB] text-white border border-[#2B8FAB] py-2 xl:py-2.5 px-6 xl:px-10 font-bold rounded-full text-[13px] xl:text-[14px] inline-flex items-center justify-center transition-all hover:bg-white hover:text-[#2B8FAB] hover:border-[#2B8FAB] whitespace-nowrap"
+                className="bg-penn-green text-white border border-penn-green py-2 xl:py-2.5 px-6 xl:px-10 font-bold rounded-full text-[13px] xl:text-[14px] inline-flex items-center justify-center transition-all hover:bg-white hover:text-penn-green hover:border-penn-green whitespace-nowrap"
               >
                 {t('postuler')}
               </Link>
@@ -164,7 +164,7 @@ export default function Header() {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden bg-[#2B8FAB] text-white p-2 rounded ml-4"
+            className="lg:hidden bg-penn-green text-white p-2 rounded ml-4"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

@@ -53,7 +53,7 @@ export default function TarifsClient() {
             className="text-[42px] md:text-[58px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
           >
             Nos formations &<br />
-            <span className="text-[#2B8FAB]">tarifs</span>.
+            <span className="text-penn-green">tarifs</span>.
           </motion.h1>
 
           <motion.p
@@ -80,17 +80,17 @@ export default function TarifsClient() {
             >
               <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
                 <div className="relative w-full h-[180px] lg:h-[220px] overflow-hidden">
-                  <img src="/images/campus/campus-2.jpg" alt="Parcours Général" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image fill src="/images/campus/campus-2.jpg" alt="Parcours Général" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-6 lg:left-7">
-                    <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-[#2B8FAB] px-3 py-1 rounded-full shadow-md">
+                    <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-penn-green px-3 py-1 rounded-full shadow-md">
                       Parcours Général
                     </span>
                   </div>
                 </div>
                 <div className="px-6 lg:px-7 pt-6 lg:pt-7 pb-4 border-b border-penn-border/50">
                   <h3 className="text-[24px] font-extrabold text-penn-navy mb-1">Licence</h3>
-                  <p className="text-[28px] font-extrabold text-[#2B8FAB] leading-none">
+                  <p className="text-[28px] font-extrabold text-penn-green leading-none">
                     7 500 <span className="text-[15px] font-bold text-penn-body/50">DT / An</span>
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export default function TarifsClient() {
                       "Option : Cybersécurité",
                     ].map((p) => (
                       <li key={p} className="flex items-start gap-2.5 text-[14px] text-penn-navy/75">
-                        <Check className="w-[15px] h-[15px] text-[#2B8FAB] shrink-0 mt-0.5" />
+                        <Check className="w-[15px] h-[15px] text-penn-green shrink-0 mt-0.5" />
                         <span className="leading-snug">{p}</span>
                       </li>
                     ))}
@@ -123,7 +123,7 @@ export default function TarifsClient() {
                   </div>
                   <Link
                     href="/licences"
-                    className="inline-flex items-center gap-1.5 text-[13px] font-bold text-[#2B8FAB] group-hover:gap-2 transition-all"
+                    className="inline-flex items-center gap-1.5 text-[13px] font-bold text-penn-green group-hover:gap-2 transition-all"
                   >
                     Voir les parcours
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -141,7 +141,7 @@ export default function TarifsClient() {
             >
               <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
                 <div className="relative w-full h-[180px] lg:h-[220px] overflow-hidden">
-                  <img src="/images/sections/pillar-mobilite.jpg" alt="Parcours International" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image fill src="/images/sections/pillar-mobilite.jpg" alt="Parcours International" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-6 lg:left-7">
                     <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-[#FF9800] px-3 py-1 rounded-full shadow-md">
@@ -207,7 +207,7 @@ export default function TarifsClient() {
             >
               <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
                 <div className="relative w-full h-[180px] lg:h-[220px] overflow-hidden">
-                  <img src="/images/sections/pillar-tech.jpg" alt="Masters" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image fill src="/images/sections/pillar-tech.jpg" alt="Masters" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-6 lg:left-7">
                     <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-[#9C27B0] px-3 py-1 rounded-full shadow-md">
@@ -277,7 +277,7 @@ export default function TarifsClient() {
             >
               <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
                 <div className="relative w-full h-[180px] lg:h-[220px] overflow-hidden">
-                  <img src="/images/sections/pro-student.jpg" alt="Master pour les professionnels" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image fill src="/images/sections/pro-student.jpg" alt="Master pour les professionnels" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-6 lg:left-7">
                     <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-[#1E88E5] px-3 py-1 rounded-full shadow-md">
@@ -348,8 +348,8 @@ export default function TarifsClient() {
       <section className="section-padding bg-white border-t border-penn-border/50">
         <div className="max-w-[800px] mx-auto px-5 lg:px-12 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
-            <div className="w-16 h-16 rounded-2xl bg-[#2B8FAB]/10 flex items-center justify-center mx-auto mb-6">
-              <MessageSquare className="w-8 h-8 text-[#2B8FAB]" />
+            <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-6">
+              <MessageSquare className="w-8 h-8 text-penn-green" />
             </div>
             <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy mb-4">
               Obtenez toutes les informations sur nos tarifs
@@ -358,10 +358,10 @@ export default function TarifsClient() {
               Notre équipe vous répond sous 24 h et vous informe sur les frais de scolarité, réductions disponibles et facilités de paiement selon le programme choisi.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 bg-[#2B8FAB] text-white font-bold text-[15px] py-3.5 px-8 rounded-full hover:bg-[#2B8FAB]/90 transition-all duration-300 shadow-lg shadow-[#2B8FAB]/20">
+              <Link href="/contact" className="inline-flex items-center gap-2 bg-penn-green text-white font-bold text-[15px] py-3.5 px-8 rounded-full hover:bg-penn-green/90 transition-all duration-300 shadow-lg shadow-penn-green/20">
                 Nous contacter <ArrowRight className="w-4 h-4" />
               </Link>
-              <a href="tel:+216 55 582 843" className="inline-flex items-center gap-2 font-bold text-[15px] text-penn-navy hover:text-[#2B8FAB] transition-colors bg-gray-50 border border-gray-200 py-3.5 px-8 rounded-full">
+              <a href="tel:+216 55 582 843" className="inline-flex items-center gap-2 font-bold text-[15px] text-penn-navy hover:text-penn-green transition-colors bg-gray-50 border border-gray-200 py-3.5 px-8 rounded-full">
                 <Phone className="w-4 h-4" /> +216 55 582 843
               </a>
             </div>
