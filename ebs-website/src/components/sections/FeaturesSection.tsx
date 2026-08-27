@@ -63,7 +63,7 @@ function BentoCard({
                 transparent 80%
               )
             `,
-          } as React.CSSProperties}
+          }}
         />
       )}
 
