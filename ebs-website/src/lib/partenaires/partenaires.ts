@@ -1047,39 +1047,88 @@ const canonicalPartenaires = {
     countryCode: "FR",
     logo: "/images/partenaires-academiques/supdecom.webp",
     type: "École française spécialisée dans les métiers de la communication — Groupe FIGS Education",
-    presentation: "SUP'DE COM est une École Supérieure française spécialisée dans les métiers de la communication. Elle forme des professionnels capables de concevoir, piloter et évaluer des stratégies de communication adaptées aux marques, aux organisations et aux nouveaux usages numériques. Elle fait partie du réseau FIGS Education.",
+    presentation: "SUP'DE COM est une École Supérieure française spécialisée dans les métiers de la communication. Elle forme des professionnels capables de concevoir, piloter et évaluer des stratégies de communication adaptées aux marques, aux organisations et aux nouveaux usages numériques.\nSa pédagogie professionnalisante repose sur les projets, les mises en situation, la créativité, le digital, l'événementiel et la proximité avec les entreprises. Les formations sont proposées en initial et/ou en alternance selon le programme et le campus.\nSUP'DE COM fait partie du réseau d'écoles de FIGS Education, qui réunit plusieurs établissements français d'enseignement supérieur spécialisés et accompagne notamment les étudiants internationaux dans leurs projets d'études en France.\nLe partenariat entre ESPIMA Business School, FIGS Education et SUP'DE COM permet notamment aux étudiants EBS de poursuivre leurs études en France après Bac+2 ou après l'obtention de leur Licence, selon les passerelles et conditions prévues par le partenariat.",
     programmes: [
-      { nom: "Bachelor – Chargé de Communication", duree: "1 an (Bac+3)", details: "Titre RNCP 6. Accès après Bac+2 EBS." },
-      { nom: "Bachelor – Chargé de Marketing et Communication Digitale", duree: "1 an (Bac+3)", details: "Titre RNCP 6. Accès après Bac+2 EBS en 3e année." },
-      { nom: "Manager de la stratégie marketing / communication", duree: "2 ans (Bac+5)", details: "Titre RNCP 7. Accès après Licence EBS Marketing ou Management." },
+      {
+        nom: "Bachelor – Chargé de Communication",
+        duree: "1 an",
+        details: "Bac+3 • Titre RNCP 6. Étudiants EBS ayant validé Bac+2.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+3 • Titre RNCP 6",
+              "**Étudiants EBS concernés** : Étudiants EBS ayant validé Bac+2, sous réserve de la compatibilité du parcours",
+              "**Campus** : Plusieurs campus SUP'DE COM",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Bachelor – Chargé de Marketing et Communication Digitale",
+        duree: "1 an",
+        details: "Bac+3 • Titre RNCP 6. Étudiants EBS ayant validé Bac+2.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+3 • Titre RNCP 6",
+              "**Étudiants EBS concernés** : Étudiants EBS ayant validé Bac+2 – admission en 3e année selon les conditions du programme",
+              "**Campus** : Plusieurs campus SUP'DE COM",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Parcours : “Manager de la stratégie marketing / communication”",
+        duree: "2 ans",
+        details: "Bac+5 • Titre RNCP 7. Titulaires de la Licence EBS Marketing ou Management.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Titre RNCP 7",
+              "**Étudiants EBS concernés** : Titulaires de la Licence EBS Marketing ou Management",
+              "**Campus** : Plusieurs campus SUP'DE COM",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Accès après Bac+2 ou Licence EBS (Marketing/Management). Admission sur étude de dossier, examen et/ou entretien. Après un M1 EBS, admission en 2e année de certains Bac+5 possible.",
+    eligibilite: "du niveau académique validé à ESPIMA Business School ;\ndes diplômes et relevés de notes ;\nde la cohérence entre le parcours suivi à EBS et le programme demandé ;\ndu curriculum vitae et de la lettre de motivation ;\nde l’examen et/ou de l’entretien d’admission lorsque requis par SUP'DE COM ;\ndes conditions particulières applicables au campus et au programme choisis.\n\nAprès un Master 1 EBS : une admission en 2e année de certains programmes Bac+5 de SUP'DE COM peut être envisagée, sous réserve de la compatibilité du parcours, de la validation des acquis académiques et de la décision finale d’admission de SUP'DE COM.",
     avantages: [
-      "École spécialisée : communication globale, digital, création, événementiel, stratégie de marque",
-      "Réseau de campus dans plusieurs grandes villes françaises",
-      "Pédagogie fondée sur les projets, la créativité et les mises en situation",
-      "Formation aux nouveaux enjeux : data, IA, réseaux sociaux, communication omnicanale",
-      "12 % de réduction sur les frais de scolarité pour les étudiants EBS",
-      "Accompagnement personnalisé dans les démarches Campus France et visa",
+      "École spécialisée dans les métiers de la communication, avec une expertise couvrant la communication globale, le digital, la création, l'événementiel et la stratégie de marque.",
+      "Formations professionnalisantes du Bac+3 au Bac+5, avec des titres enregistrés au RNCP selon les programmes.",
+      "Pédagogie concrète fondée sur les projets, la créativité et les mises en situation professionnelles.",
+      "Formation aux nouveaux enjeux de la communication : digital, réseaux sociaux, data, intelligence artificielle et communication omnicanale.",
+      "Important réseau de campus en France et proximité avec les entreprises.",
+      "Possibilité pour les étudiants EBS de poursuivre leurs études après Bac+2 ou après la Licence Marketing, selon le programme.",
+      "12 % de réduction sur les frais de scolarité pour les étudiants EBS.",
+      "Accompagnement personnalisé dans les démarches Campus France et visa."
     ],
-    debouches: [
-      "Chargé de communication / marketing digital",
-      "Manager de la stratégie marketing et communication",
-      "Social Media Manager",
-      "Chef de projet événementiel",
-      "Directeur artistique / création",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Domaines", value: "Communication, Digital, Événementiel, Stratégie" },
-      { label: "Niveaux", value: "Bac+3, Bac+5" },
+      { label: "Nom de l’établissement", value: "SUP'DE COM" },
+      { label: "Type d’établissement", value: "École française spécialisée dans les métiers de la communication" },
+      { label: "Réseau de campus", value: "Réseau de campus en France, selon les programmes et les niveaux d’intégration" },
+      { label: "Domaines de formation", value: "Communication • Marketing digital • Stratégie de marque • Réseaux sociaux • Événementiel • Publicité • Création • Communication corporate" },
+      { label: "Niveaux de formation", value: "Bac+3 • Bac+5" },
+      { label: "Certifications", value: "Titres et certifications professionnelles enregistrés au RNCP, notamment niveaux 6 et 7 selon les programmes" },
+      { label: "Pédagogie", value: "Projets • mises en situation • création • digital • professionnalisation • alternance selon les parcours" },
+      { label: "Partenariat avec ESPIMA", value: "Poursuite d’études après Bac+2 et après Licence EBS, conformément au partenariat FIGS Education" }
     ],
     pricing: [
-      { label: "Bachelor & Bac+5", amount: "Tarif officiel", period: "", note: "-12% de réduction EBS" },
+      { label: "Bachelor – Chargé de Communication", amount: "Tarif officiel", period: "" },
+      { label: "Bachelor – Chargé de Marketing", amount: "Tarif officiel", period: "" },
+      { label: "Manager de la stratégie marketing", amount: "Tarif officiel", period: "" }
     ],
     extraSections: [
       {
         title: "Conditions financières prévues par le partenariat",
-        body: "- **Réduction** : 12 % sur les frais de scolarité.\n- **Frais de candidature** : Exonération de 80 €.\n- **1er acompte** : 3 000 € à l'admission.\n- **2e acompte** : 3 000 € après obtention du visa.\n- **Solde** : Avant le 30 novembre (Fall) ou le 30 avril (Spring).\n- **Refus de visa** : Remboursement du premier acompte."
+        body: "- **Réduction** : 12 % sur les frais de scolarité\n- **Frais de candidature** : Exonération de 80 €\n- **1er acompte** : 3 000 € à l’admission\n- **2e acompte** : 3 000 € après obtention du visa\n- **Solde** : Avant le 30 novembre (Fall) ou le 30 avril (Spring)\n- **Refus de visa** : Remboursement du premier acompte conformément aux dispositions prévues par la convention"
       }
     ],
   },
