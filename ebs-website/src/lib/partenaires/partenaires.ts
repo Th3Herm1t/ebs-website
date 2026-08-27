@@ -534,40 +534,109 @@ const canonicalPartenaires = {
     countryCode: "FR",
     logo: "/images/partenaires-academiques/igefi.webp",
     type: "École des métiers de la finance d'entreprise et de l'expertise comptable",
-    presentation: "IGEFI est une École Supérieure française spécialisée dans les métiers de la finance d'entreprise, de la comptabilité, du contrôle de gestion, de la paie et de l'expertise comptable. Son offre s'étend du Bac+2 au Bac+5. Elle fait partie du réseau FIGS Education.",
+    presentation: "IGEFI est une École Supérieure française spécialisée dans les métiers de la finance d’entreprise, de la comptabilité, du contrôle de gestion, de la paie et de l’expertise comptable. Son offre s’étend du Bac+2 au Bac+5 et associe diplômes d’État, Grades de Licence et de Master pour les cursus concernés, et certifications professionnelles enregistrées au RNCP.\nL’école structure notamment son offre autour de deux grands parcours : l’expertise comptable, avec les diplômes d’État DCG et DSCG, et la comptabilité-gestion-finance, avec des formations professionnalisantes préparant aux métiers du chiffre, du contrôle de gestion et du pilotage financier.\nIGEFI fait partie du réseau d’écoles de FIGS Education, qui réunit plusieurs établissements français d’enseignement supérieur spécialisés et accompagne notamment les étudiants internationaux dans leurs projets d’études en France. Le partenariat entre ESPIMA Business School, FIGS Education et IGEFI permet aux étudiants EBS de poursuivre leurs études en France après Bac+2 ou après l’obtention de leur Licence Finance, selon les passerelles et conditions prévues par le partenariat.",
     programmes: [
-      { nom: "Bachelor – Chargé de gestion comptable et financière", duree: "1 an (Bac+3)", details: "Titre RNCP 6. Campus : Bordeaux, Lille. Accès après Bac+2 EBS." },
-      { nom: "Bachelor – Contrôleur de Gestion", duree: "1 an (Bac+3)", details: "Titre RNCP 6. Campus : Lyon, Nantes, Paris-Courbevoie. Accès après Bac+2 EBS." },
-      { nom: "MBA – Expert Financier (Finance d'entreprise)", duree: "2 ans (Bac+5)", details: "Titre RNCP 7. Campus : Bordeaux, Lille, Lyon, Nantes, Paris. Accès après Licence Finance EBS." },
-      { nom: "DSCG – Diplôme Supérieur de Comptabilité et de Gestion", duree: "2 ans (Bac+5)", details: "Titre RNCP 7 / Grade de Master. Campus : Paris-Courbevoie. Accès après Licence EBS compatible." },
+      {
+        nom: "Bachelor – Chargé de gestion comptable et financière",
+        duree: "1 an",
+        details: "Bac+3 • Titre RNCP 6. Étudiants EBS ayant validé Bac+2 dans un domaine compatible.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+3 • Titre RNCP 6",
+              "**Étudiants EBS concernés** : Étudiants EBS ayant validé Bac+2 dans un domaine compatible",
+              "**Campus** : Bordeaux • Lille",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Bachelor – Contrôleur de Gestion",
+        duree: "1 an",
+        details: "Bac+3 • Titre RNCP 6. Étudiants EBS ayant validé Bac+2 dans un domaine compatible.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+3 • Titre RNCP 6",
+              "**Étudiants EBS concernés** : Étudiants EBS ayant validé Bac+2 dans un domaine compatible",
+              "**Campus** : Lyon • Nantes • Paris-Courbevoie",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "MBA – Expert Financier",
+        duree: "2 ans",
+        details: "Bac+5 • Titre RNCP 7. Spécialisation en finance d’entreprise. Titulaires de la Licence Finance EBS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Spécialisation** : Spécialisation en finance d’entreprise",
+              "**Reconnaissance** : Bac+5 • Titre RNCP 7",
+              "**Étudiants EBS concernés** : Titulaires de la Licence Finance EBS",
+              "**Campus** : Bordeaux • Lille • Lyon • Nantes • Paris",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "DSCG – Diplôme Supérieur de Comptabilité et de Gestion",
+        duree: "2 ans",
+        details: "Bac+5 • Titre RNCP 7. Titulaires d’une Licence EBS compatible.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Titre RNCP 7",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence EBS compatible, sous réserve des prérequis du DSCG.",
+              "**Campus** : Paris-Courbevoie",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Accès depuis la Licence Finance EBS. Validation de 120 ECTS (pour Bac+3) ou Bac+3 pour le cursus Expert Financier. Dossier, tests en ligne et entretien de motivation.",
+    eligibilite: "du niveau académique validé à ESPIMA Business School ;\ndes diplômes et relevés de notes ;\nde la cohérence entre la formation EBS et le programme IGEFI demandé ;\ndes prérequis spécifiques du programme, notamment 120 ECTS pour les formations Bac+3 accessibles après Bac+2 et un niveau Bac+3 pour le cursus Expert Financier ;\ndu dossier de candidature, des tests en ligne et de l’entretien de motivation selon la procédure actuelle de l’école IGEFI ;\ndes conditions particulières applicables au campus et au programme choisis.\n\nAprès un Master 1 EBS : une admission en 2ᵉ année de certains programmes Bac+5 d’IGEFI peut être envisagée, sous réserve de la compatibilité du parcours, de la validation des acquis académiques, des prérequis du programme et de la décision finale d’admission d’IGEFI.",
     avantages: [
-      "Spécialisation dans les métiers de la finance d'entreprise et expertise comptable",
-      "Diplômes d'État (DCG, DSCG) et titres RNCP de niveaux 6 et 7",
-      "Six campus en France (Bordeaux, Lille, Lyon, Nantes, Paris, Toulouse)",
-      "Intégration d'outils professionnels, de la data et de l'IA dans certaines formations",
-      "12 % de réduction sur les frais de scolarité pour les étudiants EBS",
-      "Accompagnement personnalisé pour le visa et Campus France",
+      "École spécialisée dans les métiers de la finance d’entreprise, de la comptabilité et de l’expertise comptable.",
+      "Une expertise historique dans les métiers du chiffre et des parcours professionnalisants du Bac+2 au Bac+5.",
+      "Diplômes d’État DCG et DSCG, avec Grade de Licence pour le DCG et Grade de Master pour le DSCG.",
+      "Titres professionnels RNCP de niveaux 6 et 7 selon les programmes.",
+      "Formations en finance d’entreprise, contrôle de gestion, comptabilité, audit et expertise financière.",
+      "Intégration d’outils professionnels, de la data et de l’intelligence artificielle dans certaines formations.",
+      "Six campus en France : Bordeaux, Lille, Lyon, Nantes, Paris et Toulouse.",
+      "Possibilité pour les étudiants EBS de poursuivre leurs études après Bac+2 ou après la Licence Finance, selon le programme.",
+      "12 % de réduction sur les frais de scolarité pour les étudiants EBS.",
+      "Accompagnement personnalisé dans les démarches Campus France et visa."
     ],
-    debouches: [
-      "Chargé de gestion comptable et financière",
-      "Contrôleur de gestion",
-      "Expert financier en entreprise",
-      "Analyste financier",
-      "Auditeur / Expert-comptable (trajectoire DSCG)",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Campus", value: "Bordeaux, Lille, Lyon, Nantes, Paris, Toulouse" },
-      { label: "Domaines", value: "Finance, Comptabilité, Audit, Gestion, Paie" },
+      { label: "Nom de l’établissement", value: "IGEFI" },
+      { label: "Type d’établissement", value: "École française des métiers de la finance d’entreprise, de la comptabilité et de l’expertise comptable" },
+      { label: "Campus", value: "Bordeaux • Lille • Lyon • Nantes • Paris • Toulouse" },
+      { label: "Domaines de formation", value: "Finance d’entreprise • Comptabilité • Contrôle de gestion • Audit • Expertise comptable • Gestion • Paie" },
+      { label: "Niveaux de formation", value: "Bac+2 • Bac+3 • Bac+5" },
+      { label: "Diplômes / certifications", value: "BTS • DCG (Grade de Licence) • DSCG (Grade de Master) • Titres RNCP niveaux 6 et 7 selon les programmes" },
+      { label: "Parcours", value: "Expertise comptable • Comptabilité / Gestion / Finance • Paie" },
+      { label: "Pédagogie", value: "Professionnalisation • cas pratiques • outils métiers • alternance et initial selon les formations" },
+      { label: "Partenariat avec ESPIMA", value: "Poursuite d’études après Bac+2 et après Licence Finance EBS, conformément au partenariat FIGS Education" }
     ],
     pricing: [
-      { label: "Bachelor, MBA & DSCG", amount: "Tarif officiel", period: "", note: "-12% de réduction EBS" },
+      { label: "Bachelor – Chargé de gestion comptable", amount: "Tarif officiel", period: "" },
+      { label: "Bachelor – Contrôleur de Gestion", amount: "Tarif officiel", period: "" },
+      { label: "MBA – Expert Financier", amount: "Tarif officiel", period: "" },
+      { label: "DSCG – Diplôme Supérieur", amount: "Tarif officiel", period: "" }
     ],
     extraSections: [
       {
         title: "Conditions financières prévues par le partenariat",
-        body: "- **Réduction** : 12 % sur les frais de scolarité.\n- **Frais de candidature** : Exonération de 80 €.\n- **1er acompte** : 3 000 € à l'admission.\n- **2e acompte** : 3 000 € après obtention du visa.\n- **Solde** : Avant le 30 novembre (Fall) ou le 30 avril (Spring).\n- **Refus de visa** : Remboursement du premier acompte."
+        body: "- **Réduction** : 12 % sur les frais de scolarité\n- **Frais de candidature** : Exonération de 80 €\n- **1er acompte** : 3 000 € à l’admission\n- **2e acompte** : 3 000 € après obtention du visa\n- **Solde** : Avant le 30 novembre (Fall) ou le 30 avril (Spring)\n- **Refus de visa** : Remboursement du premier acompte conformément aux dispositions prévues par la convention"
       }
     ],
   },
