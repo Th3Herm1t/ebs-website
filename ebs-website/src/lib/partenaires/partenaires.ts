@@ -124,57 +124,86 @@ const canonicalPartenaires = {
     presentation: "Fondée en 1871, EM Normandie Business School est l'une des plus anciennes Grandes Écoles de Management françaises. Membre de la Conférence des Grandes Écoles (CGE), elle fait partie du cercle très restreint des Business Schools titulaires de la Triple Couronne internationale (AACSB, EQUIS et AMBA). Elle accueille plus de 6 600 étudiants sur 6 campus internationaux : Le Havre, Caen, Paris, Oxford, Dublin et Dubaï.",
     programmes: [
       {
-        nom: "Bachelor in Management",
-        duree: "1 an (L3)",
-        details: "Accès après avoir effectué les 2 premières années à EBS (120 ECTS). Formation visée Bac+3 en management, marketing et commerce international.",
-      },
-      {
         nom: "Master in Management (Programme Grande École)",
         duree: "2 ans",
-        details: "Accès après avoir obtenu la Licence à EBS (Bac+3). Diplôme visé conférant le Grade de Master (Bac+5). Spécialisations : Management, Marketing, Finance, Supply Chain, Digital & IA, Entrepreneuriat. Campus : Le Havre, Caen, Paris, Oxford, Dublin, Dubaï.",
+        details: "Programme Grande École • Diplôme visé • Grade de Master. Accès après une Licence EBS (Bac+3).",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Programme Grande École • Diplôme visé • Grade de Master",
+              "**Étudiants concernés** : Titulaires d'une Licence (Bac+3)",
+              "**Campus** : Le Havre • Caen • Paris • Oxford • Dublin • Dubaï (selon le parcours choisi)",
+              "**Langue** : Français / Anglais",
+              "**Spécialisations** : Management • Marketing • Finance • Supply Chain • Digital & IA • Entrepreneuriat"
+            ]
+          }
+        ]
       },
       {
         nom: "Master of Science (MSc)",
         duree: "1 ou 2 ans",
-        details: "Titulaires d'un Bac+4 minimum (ou après M1 EBS). Label MSc de la CGE. Spécialisations : Supply Chain, Finance, Marketing, Data Science, ESG, Digital Strategy, Luxury, Events, Creative Industries.",
+        details: "Label MSc (selon le programme). Accès pour les titulaires d'un Bac+4 minimum.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Label MSc (selon le programme)",
+              "**Étudiants concernés** : Titulaires d'un Bac+4 minimum",
+              "**Campus** : Le Havre • Caen • Paris • Oxford • Dublin (selon le MSc choisi)",
+              "**Langue** : Principalement Anglais",
+              "**Spécialisations** : Supply Chain • Finance • Marketing • Data Science • ESG • Digital Strategy • Luxury • Events • Creative Industries"
+            ]
+          }
+        ]
       },
       {
         nom: "Mastère Spécialisé (MS)",
-        duree: "1 an (Bac+6)",
-        details: "Titulaires d'un Bac+5 (Master EBS). Label MS – CGE. Marketing, Communication et Ingénierie des Produits Agroalimentaires (UniLaSalle Rouen).",
-      },
+        duree: "1 an",
+        details: "Label MS – Conférence des Grandes Écoles. Accès pour les titulaires d'un Bac+5.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Label MS – Conférence des Grandes Écoles",
+              "**Étudiants concernés** : Titulaires d'un Bac+5",
+              "**Campus** : Rouen (UniLaSalle)",
+              "**Langue** : Français",
+              "**Spécialisations** : Marketing, Communication et Ingénierie des Produits Agroalimentaires"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Être inscrit à EBS. Moyenne minimale de 12/20. Recommandation d'ESPIMA Business School. Dossier de candidature et entretien d'admission. Score TOEIC 750 (programme en anglais) ou TOEIC 600 (programme en français), ou équivalent TOEFL / IELTS.",
+    eligibilite: "Moyenne minimale : 12/20\nRecommandation d'ESPIMA Business School\nDossier de candidature\nEntretien d'admission\nTOEIC 750 (programme en anglais) ou TOEIC 600 (programme en français), ou équivalent TOEFL / IELTS",
     avantages: [
-      "Grande École reconnue par l'État, membre de la Conférence des Grandes Écoles",
-      "Triple Couronne internationale AACSB · EQUIS · AMBA (top 1% mondial)",
-      "6 campus internationaux : Le Havre, Caen, Paris, Oxford, Dublin, Dubaï",
-      "Plus de 6 600 étudiants, plus de 100 nationalités représentées",
-      "Réseau de plus de 20 000 Alumni et 200 universités partenaires",
-      "Réductions tarifaires exclusives cumulables pour les étudiants EBS",
-      "Frais de dossier exonérés et visa étudiant France facilité",
+      "Grande École reconnue par l'État",
+      "Membre de la Conférence des Grandes Écoles",
+      "Triple Couronne AACSB • EQUIS • AMBA",
+      "Diplôme visé",
+      "Grade de Master",
+      "Plus de 6 600 étudiants",
+      "Plus de 100 nationalités",
+      "6 campus internationaux",
+      "Réseau de plus de 20 000 Alumni",
+      "Réseau international d'universités partenaires",
       "Accompagnement personnalisé des étudiants internationaux",
     ],
-    debouches: [
-      "Manager international / Chef de projet",
-      "Directeur marketing / CMO",
-      "Analyste financier / Banquier d'affaires (M&A, FinTech)",
-      "Consultant en stratégie & organisation",
-      "Entrepreneur / Fondateur de startup",
-      "Supply Chain & Logistics Manager",
-      "Expert Luxury & Lifestyle Management",
-      "Data Analyst & Digital Project Leader",
-    ],
+    debouches: [],
     keyStats: [
       { label: "Création", value: "1871" },
-      { label: "Étudiants", value: "6 600+" },
-      { label: "Campus", value: "6" },
-      { label: "Alumni", value: "20 000+" },
+      { label: "Campus", value: "Le Havre • Caen • Paris • Oxford • Dublin • Dubaï" },
+      { label: "Étudiants", value: "Plus de 6 600" },
+      { label: "Nationalités", value: "Plus de 100" },
+      { label: "Alumni", value: "Plus de 20 000" },
+      { label: "Partenaires", value: "Plus de 200" },
+      { label: "Domaines de formation", value: "Management • Marketing • Finance • Supply Chain • Logistique • Commerce international • Data • Digital • RH • Entrepreneuriat" },
+      { label: "Langues d'enseignement", value: "Français et Anglais" },
     ],
     pricing: [
-      { label: "Programme Grande École (PGE)", amount: "13 750", period: "€/an", note: "Diplôme visé • Grade de Master" },
-      { label: "Master of Science (MSc)", amount: "15 500", period: "€/an", note: "10 spécialisations disponibles (16 500 £ Oxford)" },
-      { label: "Mastère Spécialisé (MS)", amount: "12 500", period: "€", note: "Label MS CGE • UniLaSalle Rouen" },
+      { label: "Master in Management (PGE)", amount: "13 750", period: "€/an" },
+      { label: "Master of Science (MSc)", amount: "15 500", period: "€", note: "16 500 £ pour Oxford" },
+      { label: "Mastère Spécialisé (MS)", amount: "12 500", period: "€" },
     ],
     imageSection: { src: "/images/ebs-tn/img-page-em-presentiel.webp" },
     accreditations: [

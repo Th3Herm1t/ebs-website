@@ -26,6 +26,26 @@ import { siteConfig } from "@/lib/config";
 const fallbackHero = "/images/heroes/hero-alumni.webp";
 const accentMap: Record<string, string> = { CA: "#E53935", FR: "#1E88E5", IT: "#43A047", OM: "#FB8C00" };
 
+// Parse links [url|text] and **bold** text
+const parseRichText = (text: string, accent: string) => {
+  const parts = text.split(/(\[https?:\/\/[^\s\]]+\|[^\]]+\]|\*\*.*?\*\*)/g);
+  return parts.map((part, i) => {
+    const linkMatch = part.match(/\[(https?:\/\/[^\s\]]+)\|([^\]]+)\]/);
+    if (linkMatch) {
+      return (
+        <a key={i} href={linkMatch[1]} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-bold hover:underline" style={{ color: accent }}>
+          {linkMatch[2]} <ArrowRight className="w-3 h-3" />
+        </a>
+      );
+    }
+    const boldMatch = part.match(/\*\*(.*?)\*\*/);
+    if (boldMatch) {
+      return <strong key={i} className="text-penn-navy font-extrabold">{boldMatch[1]}</strong>;
+    }
+    return <span key={i}>{part}</span>;
+  });
+};
+
 export default function PartenaireDetailClient({ slug }: { slug: string }) {
   const partner: PartnerData | undefined = partenaires[slug];
   const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -495,7 +515,7 @@ function ProgramCard({ accent, programme, index, total }: { accent: string; prog
                     {block.items.map((item, ii) => (
                       <div key={ii} className="flex items-start gap-2.5 text-[13px] text-penn-body/65">
                         <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: accent }} />
-                        <span className="leading-snug">{item}</span>
+                        <span className="leading-snug">{parseRichText(item, accent)}</span>
                       </div>
                     ))}
                   </div>
@@ -505,7 +525,7 @@ function ProgramCard({ accent, programme, index, total }: { accent: string; prog
                     {block.items.map((item, ii) => (
                       <div key={ii} className="flex items-start gap-1.5 text-[13px] text-penn-body/65">
                         <Check className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: accent }} />
-                        <span className="leading-snug">{item}</span>
+                        <span className="leading-snug">{parseRichText(item, accent)}</span>
                       </div>
                     ))}
                   </div>
@@ -557,26 +577,6 @@ function ProgramCard({ accent, programme, index, total }: { accent: string; prog
 function RichSection({ section, accent, index }: { section: { title: string; body: string }; accent: string; index: number }) {
   const isList = section.body.startsWith("---LISTE");
   const cleanBody = isList ? section.body.replace("---LISTE\n", "") : section.body;
-
-  // Parse links [url|text] and **bold** text
-  const parseRichText = (text: string) => {
-    const parts = text.split(/(\[https?:\/\/[^\s\]]+\|[^\]]+\]|\*\*.*?\*\*)/g);
-    return parts.map((part, i) => {
-      const linkMatch = part.match(/\[(https?:\/\/[^\s\]]+)\|([^\]]+)\]/);
-      if (linkMatch) {
-        return (
-          <a key={i} href={linkMatch[1]} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-bold hover:underline" style={{ color: accent }}>
-            {linkMatch[2]} <ArrowRight className="w-3 h-3" />
-          </a>
-        );
-      }
-      const boldMatch = part.match(/\*\*(.*?)\*\*/);
-      if (boldMatch) {
-        return <strong key={i} className="text-penn-navy font-extrabold">{boldMatch[1]}</strong>;
-      }
-      return <span key={i}>{part}</span>;
-    });
-  };
 
   // Parse MSc list items
   const mscItems: { num: string; name: string; campus: string }[] = [];
@@ -630,13 +630,13 @@ function RichSection({ section, accent, index }: { section: { title: string; bod
             ))}
           </div>
           {extraText && (
-            <div className="text-[14px] text-penn-body/60 leading-relaxed space-y-3 whitespace-pre-wrap break-words">{parseRichText(extraText)}</div>
+            <div className="text-[14px] text-penn-body/60 leading-relaxed space-y-3 whitespace-pre-wrap break-words">{parseRichText(extraText, accent)}</div>
           )}
         </>
       )}
 
       {!isList && (
-        <div className="text-[15px] text-penn-body/70 leading-relaxed space-y-4 whitespace-pre-wrap break-words">{parseRichText(cleanBody)}</div>
+        <div className="text-[15px] text-penn-body/70 leading-relaxed space-y-4 whitespace-pre-wrap break-words">{parseRichText(cleanBody, accent)}</div>
       )}
     </motion.div>
   );
