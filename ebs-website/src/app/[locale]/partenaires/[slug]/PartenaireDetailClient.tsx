@@ -123,11 +123,11 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
                   </div>
                 )}
                 {partner.keyStats && (
-                  <div className={`grid gap-2 ${partner.keyStats.length <= 4 ? "grid-cols-4" : "grid-cols-2 md:grid-cols-4"}`}>
+                  <div className="flex flex-wrap gap-2">
                     {partner.keyStats.map((stat) => (
-                      <div key={stat.label} className="text-center bg-penn-bg-light rounded-lg p-2.5 border border-penn-border/30">
-                        <p className="text-[16px] font-extrabold text-penn-navy leading-none mb-0.5">{stat.value}</p>
-                        <p className="text-[10px] font-semibold text-penn-body/40 uppercase tracking-wide">{stat.label}</p>
+                      <div key={stat.label} className="flex-1 min-w-[120px] text-center bg-penn-bg-light rounded-lg p-3 border border-penn-border/30 break-words">
+                        <p className="text-[16px] font-extrabold text-penn-navy leading-snug mb-1">{stat.value}</p>
+                        <p className="text-[10px] font-semibold text-penn-body/50 uppercase tracking-wide">{stat.label}</p>
                       </div>
                     ))}
                   </div>
@@ -189,7 +189,7 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
             <h2 className="text-[30px] md:text-[38px] font-extrabold text-penn-navy mb-3">Programmes accessibles</h2>
             <p className="text-[15px] text-penn-body/50 max-w-[550px] mx-auto">{partner.programmes.length} programme{partner.programmes.length > 1 ? "s" : ""} accessible{partner.programmes.length > 1 ? "s" : ""} via le partenariat EBS — {partner.name}.</p>
           </div>
-          <div className={`flex flex-wrap justify-center items-start gap-6 ${partner.programmes.length === 1 ? "max-w-[550px] mx-auto" : ""}`}>
+          <div className={`grid gap-6 items-stretch ${partner.programmes.length === 1 ? "grid-cols-1 max-w-[550px] mx-auto" : partner.programmes.length === 2 ? "grid-cols-1 md:grid-cols-2 lg:max-w-[800px] lg:mx-auto" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}>
             {partner.programmes.map((prog, i) => (
               <ProgramCard key={i} accent={accent} programme={prog} index={i} total={partner.programmes.length} />
             ))}
@@ -289,7 +289,7 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
             <Badge size="lg" className="mb-4">Investissement</Badge>
             <h2 className="text-[28px] md:text-[36px] font-extrabold text-penn-navy mb-3">Frais de scolarité</h2>
             <p className="text-[15px] text-penn-body/50 max-w-[500px] mx-auto mb-12">Tarifs indicatifs pour les programmes de {partner.name}.</p>
-            <div className={`grid gap-5 ${partner.pricing.length <= 3 ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}>
+            <div className={`grid gap-5 items-stretch ${partner.pricing.length === 1 ? "grid-cols-1 max-w-[450px] mx-auto" : partner.pricing.length === 2 ? "grid-cols-1 md:grid-cols-2 max-w-[800px] mx-auto" : "grid-cols-1 md:grid-cols-3"}`}>
               {partner.pricing.map((card, i) => (
                 <motion.div key={card.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.08 }}
                   className={`relative rounded-2xl p-7 text-center shadow-sm border ${card.featured ? "text-white shadow-lg" : "bg-white border-penn-border"}`}
@@ -453,13 +453,7 @@ function ProgramCard({ accent, programme, index, total }: { accent: string; prog
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ delay: index * 0.08 }}
-      className={`bg-white rounded-2xl border border-penn-border overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col ${
-        total === 1
-          ? "w-full"
-          : total === 2
-          ? "w-full lg:w-[calc(50%-12px)]"
-          : "w-full md:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]"
-      }`}
+      className={`bg-white rounded-2xl border border-penn-border overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col h-full`}
     >
       <div className="p-6 flex flex-col flex-1">
         <div className="flex items-start gap-4 mb-4">
