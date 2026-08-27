@@ -34,7 +34,7 @@ const parseRichText = (text: string, accent: string) => {
     if (linkMatch) {
       return (
         <a key={i} href={linkMatch[1]} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-bold hover:underline" style={{ color: accent }}>
-          {linkMatch[2]} <ArrowRight className="w-3 h-3" />
+          {linkMatch[2]} <ArrowRight className="w-3.5 h-3.5" />
         </a>
       );
     }
@@ -45,6 +45,29 @@ const parseRichText = (text: string, accent: string) => {
     return <span key={i}>{part}</span>;
   });
 };
+
+function RichTextContent({ text, accent, className = "" }: { text: string; accent: string; className?: string }) {
+  if (!text) return null;
+  const lines = text.split('\n').filter(l => l.trim() !== "");
+  
+  return (
+    <div className={`space-y-4 ${className}`}>
+      {lines.map((line, i) => {
+        const isBullet = /^[•-]\s+/.test(line);
+        if (isBullet) {
+          const cleanLine = line.replace(/^[•-]\s+/, "");
+          return (
+            <div key={i} className="flex items-start gap-3">
+              <Check className="w-5 h-5 shrink-0 mt-0.5" style={{ color: accent }} />
+              <span className="leading-relaxed">{parseRichText(cleanLine, accent)}</span>
+            </div>
+          );
+        }
+        return <p key={i} className="leading-relaxed whitespace-pre-wrap">{parseRichText(line, accent)}</p>;
+      })}
+    </div>
+  );
+}
 
 export default function PartenaireDetailClient({ slug }: { slug: string }) {
   const partner: PartnerData | undefined = partenaires[slug];
@@ -79,7 +102,7 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
   return (
     <main className="min-h-screen">
       {/* ═══════════ HERO ═══════════ */}
-      <section className="relative pt-44 pb-24 overflow-hidden">
+      <section className="relative pt-48 pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           {partner.heroImage ? (
             <Image src={partner.heroImage} alt="" fill className="object-cover" priority sizes="100vw" />
@@ -87,27 +110,28 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
             <Image src={fallbackHero} alt="" fill className="object-cover" priority sizes="100vw" />
           )}
         </div>
-        <div className="absolute inset-0 z-[1] bg-gradient-to-br from-penn-navy/70 via-[#1a2035]/60 to-penn-navy/70" />
-        <div className="absolute inset-0 z-[1] opacity-[0.03] bg-[radial-gradient(circle_at_50%_70%,_#2B8FAB_0%,_transparent_50%)]" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1a2035]/80 via-[#1a2035]/60 to-[#1a2035]/90" />
+        <div className="absolute inset-0 z-[1] opacity-20" style={{ backgroundImage: `radial-gradient(circle at 50% 50%, ${accent} 0%, transparent 50%)` }} />
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
-              <CountryFlag code={partner.countryCode || "CA"} className="w-5 h-3.5" />
+            <Badge variant="outline" size="lg" className="mb-8 border-white/20 text-white/90 shadow-sm backdrop-blur-md bg-white/5">
+              <CountryFlag code={partner.countryCode || "CA"} className="w-5 h-3.5 shadow-sm" />
               {partner.country.replace(/^[^\s]+\s/, "")}
             </Badge>
           </motion.div>
-          <div className="max-w-[750px]">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 }} className="flex items-center gap-5 mb-6">
+          <div className="max-w-[850px]">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 }} className="flex flex-col md:flex-row md:items-center gap-8 mb-6">
               {partner.logo && (
-                <div className="w-28 h-28 rounded-2xl bg-white/90 backdrop-blur-sm border border-white/40 flex items-center justify-center p-3 shrink-0 shadow-lg">
-                  <Image src={partner.logo} alt={partner.name} width={112} height={112} className="max-w-full max-h-full object-contain" />
+                <div className="w-32 h-32 rounded-3xl bg-white/95 backdrop-blur-md border border-white flex items-center justify-center p-4 shrink-0 shadow-2xl relative">
+                  <div className="absolute inset-0 rounded-3xl blur-xl opacity-30 -z-10" style={{ backgroundColor: accent }} />
+                  <Image src={partner.logo} alt={partner.name} width={128} height={128} className="max-w-full max-h-full object-contain" />
                 </div>
               )}
               <div>
-                <p className="text-[13px] text-white/40 font-medium uppercase tracking-wider mb-1">{partner.type}</p>
-                <h1 className="text-[40px] md:text-[52px] lg:text-[64px] font-extrabold text-white leading-[1.05] tracking-[-1px]">
-                  Partenariat<br /><span className="text-penn-green">EBS — {partner.name}</span>
+                <p className="text-[14px] text-white/50 font-bold uppercase tracking-widest mb-3" style={{ color: accent }}>{partner.type}</p>
+                <h1 className="text-[42px] md:text-[56px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-1.5px]">
+                  Partenariat<br /><span className="text-white">EBS — {partner.name}</span>
                 </h1>
               </div>
             </motion.div>
@@ -120,41 +144,49 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
       </div>
 
       {/* ═══════════ PRÉSENTATION + STATS ═══════════ */}
-      <section className="relative z-20 py-6 bg-white">
-        <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-penn-border shadow-xl p-8 md:p-10">
-            <div className="flex items-center gap-3 mb-6">
-              <Badge size="lg">À propos</Badge>
-              <div className="flex-1 h-px bg-gradient-to-r from-penn-border to-transparent" />
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-              <div className="lg:col-span-7 space-y-4 text-[15px] text-penn-body/70 leading-relaxed">
-                <p className="text-[16px] text-penn-navy font-semibold">{partner.presentation}</p>
+      <section className="relative z-20 py-12 bg-white">
+        <div className="max-w-[1200px] mx-auto px-5 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="lg:col-span-7 space-y-6">
+              <div className="flex items-center gap-3 mb-8">
+                <Badge size="lg">À propos</Badge>
+                <div className="flex-1 h-px bg-gradient-to-r from-penn-border to-transparent" />
               </div>
-              <div className="lg:col-span-5">
-                {partner.imageSection && (
-                  <div className="relative rounded-xl overflow-hidden shadow-md border border-penn-border/50 mb-5">
-                    <Image src={partner.imageSection.src} alt={partner.imageSection.caption || ""} width={500} height={320} className="w-full h-auto" />
-                    {partner.imageSection.caption && (
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-penn-navy/80 to-transparent p-4">
-                        <div className="flex items-center gap-2 text-white"><MapPin className="w-4 h-4" /><span className="text-[13px] font-bold">{partner.imageSection.caption}</span></div>
-                      </div>
-                    )}
-                  </div>
-                )}
-                {partner.keyStats && (
-                  <div className="flex flex-wrap gap-2">
+              <div className="text-[16px] md:text-[17px] text-penn-body/80 leading-relaxed font-medium">
+                <RichTextContent text={partner.presentation} accent={accent} />
+              </div>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ delay: 0.1 }} className="lg:col-span-5 space-y-8">
+              {partner.imageSection && (
+                <div className="relative rounded-2xl overflow-hidden shadow-xl border border-penn-border/50 group">
+                  <Image src={partner.imageSection.src} alt={partner.imageSection.caption || ""} width={600} height={400} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+                  {partner.imageSection.caption && (
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1a2035]/90 via-[#1a2035]/50 to-transparent p-5 pt-12">
+                      <div className="flex items-center gap-2.5 text-white"><MapPin className="w-5 h-5" style={{ color: accent }} /><span className="text-[14px] font-bold tracking-wide">{partner.imageSection.caption}</span></div>
+                    </div>
+                  )}
+                </div>
+              )}
+              
+              {partner.keyStats && (
+                <div className="bg-penn-bg-light rounded-2xl border border-penn-border/60 p-6 shadow-sm">
+                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-5 flex items-center gap-2">
+                    <Building2 className="w-5 h-5" style={{ color: accent }} />
+                    Fiche d&apos;identité
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {partner.keyStats.map((stat) => (
-                      <div key={stat.label} className="flex-1 min-w-[120px] text-center bg-penn-bg-light rounded-lg p-3 border border-penn-border/30 break-words">
-                        <p className="text-[16px] font-extrabold text-penn-navy leading-snug mb-1">{stat.value}</p>
-                        <p className="text-[10px] font-semibold text-penn-body/50 uppercase tracking-wide">{stat.label}</p>
+                      <div key={stat.label} className="bg-white rounded-xl p-4 border border-penn-border/40 shadow-sm flex flex-col justify-center min-h-[90px]">
+                        <p className="text-[11px] font-bold text-penn-body/50 uppercase tracking-widest mb-1">{stat.label}</p>
+                        <p className="text-[14px] font-extrabold text-penn-navy leading-snug break-words">{stat.value}</p>
                       </div>
                     ))}
                   </div>
-                )}
-              </div>
-            </div>
-          </motion.div>
+                </div>
+              )}
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -255,22 +287,24 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
       )}
 
       {/* ═══════════ ADMISSION ═══════════ */}
-      <section className={`section-padding ${partner.extraSections?.length ? "bg-white" : "bg-penn-bg-light"}`}>
+      <section className={`section-padding py-24 ${partner.extraSections?.length ? "bg-white" : "bg-penn-bg-light"}`}>
         <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
-          <div className="text-center mb-10">
+          <div className="text-center mb-12">
             <Badge size="lg" className="mb-4">Admission</Badge>
-            <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy mb-3">Conditions d&apos;accès</h2>
-            <p className="text-[15px] text-penn-body/50 max-w-[550px] mx-auto">
-              Les prérequis pour intégrer les programmes de {partner.name} via le partenariat EBS.
+            <h2 className="text-[32px] md:text-[40px] font-extrabold text-penn-navy mb-4">Conditions d&apos;accès</h2>
+            <p className="text-[16px] text-penn-body/60 max-w-[600px] mx-auto">
+              Les prérequis et procédures pour intégrer les programmes de {partner.name} via le partenariat EBS.
             </p>
           </div>
-          <div className="max-w-[800px] mx-auto">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-penn-border shadow-sm p-8 md:p-10">
-              <div className="text-[15px] text-penn-body/70 leading-relaxed space-y-3">
+          <div className="max-w-[900px] mx-auto">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-3xl border border-penn-border/60 shadow-lg p-8 md:p-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                 {partner.eligibilite.split(/;\s*|\n+/).filter(Boolean).map((line, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 shrink-0 mt-0.5" style={{ color: accent }} />
-                    <span className="break-words">{line.trim()}</span>
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ backgroundColor: `${accent}15` }}>
+                      <Check className="w-4 h-4" style={{ color: accent }} />
+                    </div>
+                    <span className="text-[15px] text-penn-body/80 leading-relaxed font-medium break-words">{line.replace(/^[•-]\s+/, "").trim()}</span>
                   </div>
                 ))}
               </div>
@@ -280,22 +314,24 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
       </section>
 
       {/* ═══════════ AVANTAGES ═══════════ */}
-      <section className="section-padding bg-penn-navy relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_50%_50%,_#2B8FAB_0%,_transparent_70%)]" />
-        <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(43,143,171,0.06) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-        <div className="relative z-10 max-w-[1100px] mx-auto px-5 lg:px-12">
-          <div className="text-center mb-12">
-            <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80"><Sparkles className="w-3 h-3" />Avantages</Badge>
-            <h2 className="text-[28px] md:text-[36px] font-extrabold text-white mb-3">
-              Pourquoi <span style={{ color: accent }}>{partner.name}</span> ?
+      <section className="py-24 bg-[#0a1128] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `radial-gradient(circle at 50% 0%, ${accent} 0%, transparent 70%)` }} />
+        <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+        <div className="relative z-10 max-w-[1200px] mx-auto px-5 lg:px-12">
+          <div className="text-center mb-16">
+            <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white shadow-sm backdrop-blur-md bg-white/5"><Sparkles className="w-3.5 h-3.5" /> Avantages exclusifs</Badge>
+            <h2 className="text-[32px] md:text-[44px] font-extrabold text-white mb-4">
+              Pourquoi choisir <span style={{ color: accent }}>{partner.name}</span> ?
             </h2>
-            <p className="text-[15px] text-white/45 max-w-[550px] mx-auto">{partner.avantages.length} avantages du partenariat EBS — {partner.name}.</p>
+            <p className="text-[16px] text-white/60 max-w-[600px] mx-auto font-medium">Les bénéfices directs offerts aux étudiants d'ESPIMA Business School.</p>
           </div>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {partner.avantages.map((avantage, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.05 }} className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300 w-full md:w-[calc(50%-8px)] lg:w-[calc((100%-32px)/3)]">
-                <Check className="w-4 h-4 mb-3" style={{ color: accent }} />
-                <p className="text-[14px] text-white/65 leading-relaxed">{avantage}</p>
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.05 }} className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-6 hover:bg-white/[0.06] hover:border-white/[0.2] transition-all duration-300 group">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110" style={{ backgroundColor: `${accent}20` }}>
+                  <Check className="w-5 h-5" style={{ color: accent }} />
+                </div>
+                <p className="text-[15px] text-white/80 leading-relaxed font-medium">{avantage.replace(/^[✓•-]\s*/, "")}</p>
               </motion.div>
             ))}
           </div>
@@ -304,28 +340,28 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
 
       {/* ═══════════ TARIFS ═══════════ */}
       {partner.pricing && partner.pricing.length > 0 && (
-        <section className="section-padding bg-white">
-          <div className="max-w-[900px] mx-auto px-5 lg:px-12 text-center">
+        <section className="section-padding bg-penn-bg-light py-24">
+          <div className="max-w-[1000px] mx-auto px-5 lg:px-12 text-center">
             <Badge size="lg" className="mb-4">Investissement</Badge>
-            <h2 className="text-[28px] md:text-[36px] font-extrabold text-penn-navy mb-3">Frais de scolarité</h2>
-            <p className="text-[15px] text-penn-body/50 max-w-[500px] mx-auto mb-12">Tarifs indicatifs pour les programmes de {partner.name}.</p>
-            <div className={`grid gap-5 items-stretch ${partner.pricing.length === 1 ? "grid-cols-1 max-w-[450px] mx-auto" : partner.pricing.length === 2 ? "grid-cols-1 md:grid-cols-2 max-w-[800px] mx-auto" : "grid-cols-1 md:grid-cols-3"}`}>
+            <h2 className="text-[32px] md:text-[40px] font-extrabold text-penn-navy mb-4">Frais de scolarité</h2>
+            <p className="text-[16px] text-penn-body/60 max-w-[600px] mx-auto mb-16">Tarifs indicatifs pour les programmes de {partner.name}.</p>
+            <div className={`grid gap-6 items-stretch ${partner.pricing.length === 1 ? "grid-cols-1 max-w-[450px] mx-auto" : partner.pricing.length === 2 ? "grid-cols-1 md:grid-cols-2 max-w-[800px] mx-auto" : "grid-cols-1 md:grid-cols-3"}`}>
               {partner.pricing.map((card, i) => (
                 <motion.div key={card.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.08 }}
-                  className={`relative rounded-2xl p-7 text-center shadow-sm border ${card.featured ? "text-white shadow-lg" : "bg-white border-penn-border"}`}
+                  className={`relative rounded-3xl p-8 text-center shadow-lg border transition-transform hover:-translate-y-1 ${card.featured ? "text-white" : "bg-white border-penn-border/60"}`}
                   style={card.featured ? { backgroundColor: accent, borderColor: accent } : {}}
                 >
                   {card.featured && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FF9800] text-white text-[11px] font-extrabold px-4 py-1 rounded-full shadow-md uppercase tracking-wider whitespace-nowrap">Recommandé</div>
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FF9800] text-white text-[11px] font-extrabold px-4 py-1.5 rounded-full shadow-md uppercase tracking-wider whitespace-nowrap">Recommandé</div>
                   )}
-                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center mx-auto mb-4 ${card.featured ? "bg-white/20" : ""}`} style={card.featured ? {} : { backgroundColor: `${accent}10` }}>
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5 ${card.featured ? "bg-white/20" : ""}`} style={card.featured ? {} : { backgroundColor: `${accent}15` }}>
                     <GraduationCap className="w-5 h-5" style={{ color: card.featured ? "white" : accent }} />
                   </div>
-                  <p className={`text-[12px] font-bold uppercase tracking-wider mb-2 ${card.featured ? "text-white/60" : "text-penn-body/40"}`}>{card.label}</p>
-                  <p className={`text-[28px] font-extrabold leading-none mb-1 ${card.featured ? "text-white" : "text-penn-navy"}`}>{card.amount}<span className={`text-[14px] ${card.featured ? "text-white/50" : "text-penn-body/30"}`}> {card.period}</span></p>
+                  <p className={`text-[13px] font-bold uppercase tracking-widest mb-3 ${card.featured ? "text-white/70" : "text-penn-body/50"}`}>{card.label}</p>
+                  <p className={`text-[32px] font-extrabold leading-none mb-2 ${card.featured ? "text-white" : "text-penn-navy"}`}>{card.amount}<span className={`text-[15px] font-bold ${card.featured ? "text-white/60" : "text-penn-body/40"}`}> {card.period}</span></p>
                   {card.note && (
-                    <div className={`pt-4 mt-4 border-t ${card.featured ? "border-white/15" : "border-penn-border"}`}>
-                      <p className={`text-[12px] ${card.featured ? "text-white/50" : "text-penn-body/40"}`}>{card.note}</p>
+                    <div className={`pt-5 mt-5 border-t ${card.featured ? "border-white/20" : "border-penn-border/60"}`}>
+                      <p className={`text-[14px] font-medium ${card.featured ? "text-white/70" : "text-penn-body/60"}`}>{card.note}</p>
                     </div>
                   )}
                 </motion.div>
@@ -473,92 +509,92 @@ function ProgramCard({ accent, programme, index, total }: { accent: string; prog
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ delay: index * 0.08 }}
-      className={`bg-white rounded-2xl border border-penn-border overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col h-full`}
+      className={`bg-white rounded-3xl border border-penn-border/60 overflow-hidden shadow-sm hover:shadow-lg hover:border-penn-border transition-all flex flex-col h-full`}
     >
-      <div className="p-6 flex flex-col flex-1">
-        <div className="flex items-start gap-4 mb-4">
-          <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${accent}15` }}>
+      <div className="p-8 flex flex-col flex-1">
+        <div className="flex items-start gap-4 mb-5">
+          <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${accent}15` }}>
             <Briefcase className="w-5 h-5" style={{ color: accent }} />
           </div>
           <div className="flex-1">
-            <div className="flex items-center gap-2 mb-1.5">
-              <div className="flex items-center gap-1.5 text-[12px] font-bold px-2 py-0.5 rounded-full" style={{ color: accent, backgroundColor: `${accent}12` }}>
-                <Clock className="w-3 h-3" /> {programme.duree}
+            <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-1.5 text-[12px] font-bold px-2.5 py-1 rounded-md" style={{ color: accent, backgroundColor: `${accent}12` }}>
+                <Clock className="w-3.5 h-3.5" /> {programme.duree}
               </div>
             </div>
-            <h3 className="text-[17px] font-extrabold text-penn-navy leading-snug">{programme.nom}</h3>
+            <h3 className="text-[18px] md:text-[20px] font-extrabold text-penn-navy leading-snug">{programme.nom}</h3>
           </div>
         </div>
-        <p className="text-[14px] text-penn-body/60 leading-relaxed mb-4 line-clamp-3">{programme.details}</p>
+        <p className="text-[15px] text-penn-body/70 font-medium leading-relaxed mb-6 line-clamp-3">{programme.details}</p>
         <button
           onClick={() => setExpanded(!expanded)}
-          className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl text-[13px] font-bold border transition-all hover:bg-penn-bg-light"
-          style={{ color: accent, borderColor: `${accent}20` }}
+          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-[14px] font-bold border transition-all hover:bg-penn-bg-light mt-auto"
+          style={{ color: accent, borderColor: `${accent}25` }}
         >
           {expanded ? "Réduire" : "Voir les détails"}
           <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`} />
         </button>
       </div>
       <div className={`overflow-hidden transition-all duration-400 ${expanded ? "max-h-[3000px] opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="px-6 pb-6 border-t border-penn-navy/10 pt-5 space-y-5 bg-gradient-to-b from-penn-navy/[0.02] to-transparent">
+        <div className="px-8 pb-8 border-t border-penn-border/30 pt-6 space-y-6 bg-gradient-to-b from-penn-navy/[0.01] to-transparent">
           {programme.richExpanded ? (
             programme.richExpanded.map((block, bi) => (
               <div key={bi}>
                 {block.extra && (
-                  <h4 className="text-[13px] font-extrabold uppercase tracking-wider mb-3 flex items-center gap-2" style={{ color: accent }}>
-                    <div className="w-1 h-4 rounded-full" style={{ backgroundColor: accent }} />
+                  <h4 className="text-[14px] font-extrabold uppercase tracking-widest mb-4 flex items-center gap-2" style={{ color: accent }}>
+                    <div className="w-1.5 h-4 rounded-full" style={{ backgroundColor: accent }} />
                     {block.extra}
                   </h4>
                 )}
                 {block.type === "bullets" && block.items && (
-                  <div className="space-y-2 bg-white rounded-xl p-4 border border-penn-border/40 shadow-sm">
+                  <div className="space-y-3 bg-white rounded-2xl p-5 border border-penn-border/40 shadow-sm">
                     {block.items.map((item, ii) => (
-                      <div key={ii} className="flex items-start gap-2.5 text-[13px] text-penn-body/65">
+                      <div key={ii} className="flex items-start gap-3 text-[14px] font-medium text-penn-body/80">
                         <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: accent }} />
-                        <span className="leading-snug">{parseRichText(item, accent)}</span>
+                        <span className="leading-relaxed">{parseRichText(item.replace(/^[•-]\s+/, ""), accent)}</span>
                       </div>
                     ))}
                   </div>
                 )}
                 {block.type === "grid" && block.items && (
-                  <div className="grid grid-cols-2 gap-2 bg-white rounded-xl p-4 border border-penn-border/40 shadow-sm">
+                  <div className="grid grid-cols-2 gap-3 bg-white rounded-2xl p-5 border border-penn-border/40 shadow-sm">
                     {block.items.map((item, ii) => (
-                      <div key={ii} className="flex items-start gap-1.5 text-[13px] text-penn-body/65">
+                      <div key={ii} className="flex items-start gap-2 text-[14px] font-medium text-penn-body/80">
                         <Check className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: accent }} />
-                        <span className="leading-snug">{parseRichText(item, accent)}</span>
+                        <span className="leading-relaxed">{parseRichText(item.replace(/^[•-]\s+/, ""), accent)}</span>
                       </div>
                     ))}
                   </div>
                 )}
                 {block.bourse && (
-                  <div className="rounded-xl p-4 border-2 shadow-sm" style={{ borderColor: accent, backgroundColor: `${accent}08` }}>
-                    <p className="text-[13px] font-bold mb-1 flex items-center gap-1.5" style={{ color: accent }}>
-                      <Sparkles className="w-3.5 h-3.5" /> Bourse d&apos;accueil
+                  <div className="rounded-2xl p-5 border-2 shadow-sm" style={{ borderColor: accent, backgroundColor: `${accent}08` }}>
+                    <p className="text-[14px] font-extrabold mb-1.5 flex items-center gap-2" style={{ color: accent }}>
+                      <Sparkles className="w-4 h-4" /> Bourse d&apos;accueil
                     </p>
-                    <p className="text-[13px] text-penn-navy/70 font-medium">{block.bourse}</p>
+                    <p className="text-[14px] text-penn-navy/80 font-medium leading-relaxed">{block.bourse}</p>
                   </div>
                 )}
                 {block.testimonial && (
-                  <div className="bg-gradient-to-br from-penn-bg-light to-white rounded-xl p-4 border-2" style={{ borderColor: `${accent}20` }}>
-                    <Quote className="w-6 h-6 mb-2" style={{ color: `${accent}15` }} />
-                    <p className="text-[13px] text-penn-body/65 leading-relaxed italic mb-3">&ldquo;{block.testimonial.quote}&rdquo;</p>
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-9 h-9 rounded-full overflow-hidden bg-gray-200 shrink-0 border-2 border-white shadow-sm">
-                        <Image src={block.testimonial.photo} alt={block.testimonial.name} fill sizes="36px" className="object-cover" onError={(e) => { (e.target as HTMLElement).style.display = "none"; }} />
+                  <div className="bg-gradient-to-br from-penn-bg-light to-white rounded-2xl p-6 border-2" style={{ borderColor: `${accent}20` }}>
+                    <Quote className="w-6 h-6 mb-3" style={{ color: `${accent}15` }} />
+                    <p className="text-[14px] text-penn-body/80 font-medium leading-relaxed italic mb-4">&ldquo;{block.testimonial.quote}&rdquo;</p>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-200 shrink-0 border-2 border-white shadow-sm relative">
+                        <Image src={block.testimonial.photo} alt={block.testimonial.name} fill sizes="40px" className="object-cover" onError={(e) => { (e.target as HTMLElement).style.display = "none"; }} />
                       </div>
                       <div>
-                        <p className="text-[12px] font-extrabold text-penn-navy">{block.testimonial.name}</p>
-                        <p className="text-[10px] text-penn-body/40">{block.testimonial.role}</p>
+                        <p className="text-[13px] font-extrabold text-penn-navy">{block.testimonial.name}</p>
+                        <p className="text-[11px] text-penn-body/50 font-bold uppercase tracking-wider">{block.testimonial.role}</p>
                       </div>
                     </div>
                   </div>
                 )}
                 {block.type === "thesis" && block.thesisProjects && (
-                  <div className="space-y-2 bg-white rounded-xl p-4 border border-penn-border/40 shadow-sm">
+                  <div className="space-y-3 bg-white rounded-2xl p-5 border border-penn-border/40 shadow-sm">
                     {block.thesisProjects.map((p, pi) => (
-                      <div key={pi} className="flex items-start gap-2.5 text-[12px] text-penn-body/55 bg-penn-bg-light border border-penn-border/20 rounded-lg p-2.5">
-                        <span className="font-bold shrink-0 px-1.5 py-0.5 rounded text-[11px]" style={{ backgroundColor: `${accent}15`, color: accent }}>{p.year}</span>
-                        <div><span className="font-semibold text-penn-navy">{p.author}</span><span className="mx-1">—</span><span>{p.topic}</span></div>
+                      <div key={pi} className="flex items-start gap-3 text-[13px] font-medium text-penn-body/70 bg-penn-bg-light border border-penn-border/30 rounded-xl p-3">
+                        <span className="font-extrabold shrink-0 px-2 py-1 rounded-md text-[12px]" style={{ backgroundColor: `${accent}15`, color: accent }}>{p.year}</span>
+                        <div className="leading-relaxed"><span className="font-extrabold text-penn-navy">{p.author}</span><span className="mx-1.5 text-penn-border">—</span><span>{p.topic}</span></div>
                       </div>
                     ))}
                   </div>
@@ -566,7 +602,7 @@ function ProgramCard({ accent, programme, index, total }: { accent: string; prog
               </div>
             ))
           ) : (
-            <p className="text-[14px] text-penn-body/60 leading-relaxed">{programme.details}</p>
+            <RichTextContent text={programme.details} accent={accent} className="text-[14px] text-penn-body/80 font-medium" />
           )}
         </div>
       </div>
@@ -578,7 +614,7 @@ function RichSection({ section, accent, index }: { section: { title: string; bod
   const isList = section.body.startsWith("---LISTE");
   const cleanBody = isList ? section.body.replace("---LISTE\n", "") : section.body;
 
-  // Parse MSc list items
+  // Parse MSc list items (legacy format)
   const mscItems: { num: string; name: string; campus: string }[] = [];
   if (isList) {
     const lines = cleanBody.split(/\n(?=\d+\.)/).filter((l) => l.trim());
@@ -601,42 +637,42 @@ function RichSection({ section, accent, index }: { section: { title: string; bod
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ delay: index * 0.1 }}
-      className="bg-white rounded-2xl border border-penn-border shadow-sm p-8 md:p-10"
+      className="bg-white rounded-3xl border border-penn-border/60 shadow-lg p-8 md:p-12"
     >
-      <div className="flex items-center gap-3 mb-6">
+      <div className="flex items-center gap-3 mb-8">
         <Badge size="lg" variant="penn-navy">{isList ? "Spécialisations" : "À savoir"}</Badge>
         <div className="flex-1 h-px bg-gradient-to-r from-penn-border to-transparent" />
       </div>
-      <h3 className="text-[22px] md:text-[26px] font-extrabold text-penn-navy mb-6">{section.title}</h3>
+      <h3 className="text-[24px] md:text-[30px] font-extrabold text-penn-navy mb-8">{section.title}</h3>
 
       {isList && mscItems.length > 0 && (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             {mscItems.map((item) => (
-              <div key={item.num} className="flex items-start gap-3 p-3.5 rounded-xl border border-penn-border/60 hover:border-opacity-100 hover:shadow-sm transition-all"
-                style={{ ["--hover-color" as string]: `${accent}20` } as React.CSSProperties}
+              <div key={item.num} className="flex items-start gap-4 p-5 rounded-2xl border border-penn-border/60 hover:shadow-md transition-all group"
+                style={{ ["--hover-border" as string]: `${accent}30` } as React.CSSProperties}
               >
-                <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: `${accent}15` }}>
-                  <span className="text-[12px] font-extrabold" style={{ color: accent }}>{item.num}</span>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform" style={{ backgroundColor: `${accent}15` }}>
+                  <span className="text-[14px] font-extrabold" style={{ color: accent }}>{item.num}</span>
                 </div>
                 <div>
-                  <p className="text-[14px] font-bold text-penn-navy leading-snug">{item.name}</p>
-                  <p className="text-[12px] text-penn-body/40 mt-0.5 flex items-center gap-1">
-                    <MapPin className="w-3 h-3" style={{ color: accent }} />
+                  <p className="text-[16px] font-extrabold text-penn-navy leading-snug mb-1">{item.name}</p>
+                  <p className="text-[13px] text-penn-body/60 font-medium flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5" style={{ color: accent }} />
                     {item.campus}
                   </p>
                 </div>
               </div>
             ))}
           </div>
-          {extraText && (
-            <div className="text-[14px] text-penn-body/60 leading-relaxed space-y-3 whitespace-pre-wrap break-words">{parseRichText(extraText, accent)}</div>
-          )}
+          {extraText && <RichTextContent text={extraText} accent={accent} className="text-[15px] text-penn-body/80 font-medium" />}
         </>
       )}
 
       {!isList && (
-        <div className="text-[15px] text-penn-body/70 leading-relaxed space-y-4 whitespace-pre-wrap break-words">{parseRichText(cleanBody, accent)}</div>
+        <div className="text-[15px] md:text-[16px] text-penn-body/80 font-medium">
+          <RichTextContent text={cleanBody} accent={accent} />
+        </div>
       )}
     </motion.div>
   );
