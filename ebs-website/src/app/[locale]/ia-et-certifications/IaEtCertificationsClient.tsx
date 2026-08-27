@@ -75,8 +75,8 @@ const totalCertifications = getPublicCertificationCount();
 const aiStats = {
   literacy: 15,
   applied: 45,
-  mandatory: 20,
-  optional: 40,
+  mandatory: 71,
+  optional: 85,
 };
 
 const aiClassificationLabels: Record<CertificationClassification, string> = {
@@ -292,7 +292,7 @@ export default function IAEtCertificationsPage() {
                 {aiStats.mandatory}
               </p>
               <p className="text-[12px] text-white/50 font-medium">
-                Modules obligatoires IA
+                Certifications obligatoires
               </p>
             </div>
             <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
@@ -300,7 +300,7 @@ export default function IAEtCertificationsPage() {
                 {aiStats.optional}
               </p>
               <p className="text-[12px] text-white/50 font-medium mt-1">
-                Modules optionnels IA
+                Certifications optionnelles
               </p>
             </div>
           </motion.div>
