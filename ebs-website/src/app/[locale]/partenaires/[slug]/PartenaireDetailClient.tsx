@@ -374,16 +374,18 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
           </div>
           <div className="max-w-[900px] mx-auto">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-3xl border border-penn-border/60 shadow-lg p-8 md:p-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                {partner.eligibilite.split(/;\s*|\n+/).filter(Boolean).map((line, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ backgroundColor: `${accent}15` }}>
-                      <Check className="w-4 h-4" style={{ color: accent }} />
-                    </div>
-                    <span className="text-[15px] text-penn-body/80 leading-relaxed font-medium break-words">{line.replace(/^[•-]\s+/, "").trim()}</span>
-                  </div>
-                ))}
-              </div>
+              <RichTextContent 
+                text={partner.eligibilite.split('\n').map(l => {
+                  const t = l.trim();
+                  if (!t) return "";
+                  if (t.startsWith('•') || t.startsWith('-')) return t;
+                  if (t.endsWith(':')) return `**${t}**`;
+                  if (t.endsWith('.')) return t;
+                  return `• ${t.replace(/;$/, '')}`;
+                }).join('\n')} 
+                accent={accent} 
+                className="text-[15px] text-penn-body/80 font-medium" 
+              />
             </motion.div>
           </div>
         </div>
