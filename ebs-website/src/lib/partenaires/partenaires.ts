@@ -232,42 +232,104 @@ const canonicalPartenaires = {
     countryCode: "FR",
     logo: "/images/partenaires-academiques/psb.webp",
     type: "Grande École de Commerce — Triple accréditée AACSB · EQUIS · AMBA — Membre CGE",
-    presentation: "Paris School of Business (PSB) est une Grande École française de management reconnue pour l'excellence de ses formations, son ouverture internationale et sa proximité avec les entreprises. Membre de la Conférence des Grandes Écoles (CGE), triple accréditée AACSB, EQUIS et AMBA. Fondée en 1974, elle compte 4 000+ étudiants, 20 000+ alumni et un campus au cœur de Paris (Campus Nation).",
+    presentation: "Paris School of Business (PSB) est une Grande École française de management reconnue pour l'excellence de ses formations, son ouverture internationale et sa proximité avec les entreprises. Membre de la Conférence des Grandes Écoles (CGE), l'école propose des formations allant du Bachelor au Programme Grande École conférant le Grade de Master, ainsi que des Masters of Science (MSc) dans plusieurs domaines du management.\nSituée à Paris, PSB accueille des étudiants de nombreuses nationalités et développe une pédagogie fondée sur l'innovation, les projets, l'expérience internationale et le développement des compétences professionnelles.\nLe partenariat entre ESPIMA Business School et Paris School of Business permet aux étudiants d'ESPIMA de poursuivre leurs études en France dans le cadre d'un parcours académique international, tout en bénéficiant d'un accompagnement personnalisé et des avantages prévus par la convention de partenariat.",
     programmes: [
-      { nom: "Bachelor", duree: "1 an (Bac+3)", details: "Diplôme visé • Grade de Licence. Spécialisations : Marketing Digital, Banking & Finance, Audit & Contrôle de Gestion, International Business, Entrepreneuriat. Accès après Bac+2 EBS en Bachelor 3." },
-      { nom: "Programme Grande École (PGE)", duree: "2 ans (Bac+5)", details: "Diplôme visé • Grade de Master • RNCP 7. Spécialisations : Marketing & Data, Digital Business, International Business, Audit & Contrôle de Gestion, Achats & Supply Chain, Data Management, RH, Entrepreneuriat. Accès après Licence EBS." },
-      { nom: "Master of Science (MSc)", duree: "1 ou 2 ans (Bac+5)", details: "Label MSc de la CGE (selon programme). Accès après Licence ou M1 EBS." },
-      { nom: "MBA et programmes spécialisés", duree: "Variable (Bac+5)", details: "Titre RNCP / reconnaissance selon le programme. Accès selon le niveau académique requis." },
+      {
+        nom: "Bachelor",
+        duree: "1 an",
+        details: "Diplôme visé • Grade de Licence – Bac+3 • Reconnu par l’État. Après Bac+2 EBS – admission en Bachelor 3.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Diplôme visé • Grade de Licence – Bac+3 • Reconnu par l’État",
+              "**Étudiants EBS concernés** : Après Bac+2 EBS – admission en Bachelor 3",
+              "**Principales spécialisations** : Marketing Digital • Banking & Finance • Audit & Contrôle de Gestion • International Business • Entrepreneuriat & Business Development",
+              "**Campus** : Paris",
+              "**Langue** : Français / Anglais selon parcours"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Programme Grande École (PGE)",
+        duree: "2 ans",
+        details: "Diplôme visé • Grade de Master – Bac+5 • RNCP 7 • EQUIS • AACSB • AMBA. Titulaires d’une Licence EBS (Bac+3).",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Diplôme visé • Grade de Master – Bac+5 • RNCP 7 • EQUIS • AACSB • AMBA",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence EBS (Bac+3)",
+              "**Principales spécialisations** : Marketing & Data • Digital Business • International Business • Audit & Contrôle de Gestion • Achats & Supply Chain • Data Management • Ressources Humaines • Entrepreneuriat & Business Development…",
+              "**Campus** : Paris",
+              "**Langue** : Français / Anglais selon parcours"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Master of Science (MSc)",
+        duree: "1 an",
+        details: "Bac+5 • Label MSc de la Conférence des Grandes Écoles (CGE), selon le programme. Titulaires d’une Licence ou d’un M1 EBS, selon le MSc et le niveau d’entrée.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Label MSc de la Conférence des Grandes Écoles (CGE), selon le programme",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence ou d’un M1 EBS, selon le MSc et le niveau d’entrée",
+              "**Principales spécialisations** : MSc proposés par PSB selon l’offre de la rentrée concernée",
+              "**Campus** : Paris",
+              "**Langue** : Principalement anglais / selon MSc"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "MBA et programmes spécialisés",
+        duree: "Variable",
+        details: "Bac+5 • Titre RNCP / reconnaissance selon le programme. Selon le niveau académique requis.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Titre RNCP / reconnaissance selon le programme",
+              "**Étudiants EBS concernés** : Selon le niveau académique requis",
+              "**Principales spécialisations** : Selon le MBA ou programme spécialisé choisi",
+              "**Campus** : Paris",
+              "**Langue** : Français / Anglais selon programme"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Être inscrit à EBS. Étude de dossier (parcours, relevés de notes, CV, lettre de motivation). Entretien individuel d'admission. Niveau de langue requis selon le programme choisi.",
+    eligibilite: "du parcours académique du candidat ;\ndes diplômes et relevés de notes ;\ndu curriculum vitae et de la lettre de motivation ;\nd'un entretien individuel d'admission ;\ndu niveau de langue lorsque celui-ci est exigé par le programme choisi.",
     avantages: [
-      "Grande École française reconnue, membre de la Conférence des Grandes Écoles (CGE)",
-      "Triple accréditation internationale : AACSB, EQUIS et AMBA (top 1% mondial)",
-      "Programme Grande École conférant le Grade de Master et large choix de spécialisations",
-      "Pédagogie orientée vers les projets, l'innovation et l'expérience professionnelle",
-      "Forte dimension internationale et réseau important d'entreprises partenaires",
-      "Campus moderne situé à Paris (Campus Nation)",
-      "Passerelles après Bac+2, Licence ou M1 selon le programme",
-      "Accompagnement personnalisé des étudiants EBS dans le cadre du partenariat",
+      "Grande École française reconnue, membre de la Conférence des Grandes Écoles (CGE).",
+      "Triple accréditation internationale : AACSB, EQUIS et AMBA.",
+      "Programme Grande École conférant le Grade de Master et large choix de spécialisations en Bachelor et Bac+5.",
+      "Pédagogie orientée vers les projets, l’innovation et l’expérience professionnelle.",
+      "Forte dimension internationale et réseau important d’entreprises partenaires.",
+      "Campus situé à Paris, au cœur d’un environnement économique et professionnel international.",
+      "Possibilité pour les étudiants EBS de poursuivre leurs études à PSB après Bac+2, après la Licence ou après un M1, selon le programme choisi.",
+      "Accompagnement des étudiants EBS dans leurs démarches de poursuite d’études dans le cadre du partenariat.",
     ],
-    debouches: [
-      "Manager international / Business Developer",
-      "Analyste financier / Contrôleur de gestion",
-      "Digital Marketing Manager",
-      "Consultant en stratégie",
-      "Chef de produit / Product Manager",
-      "Responsable Supply Chain",
-      "Entrepreneur / Fondateur de startup",
-      "Data Analyst / Business Intelligence",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Création", value: "1974" },
-      { label: "Étudiants", value: "4 000+" },
-      { label: "Alumni", value: "20 000+" },
-      { label: "Accréditations", value: "3 (AACSB, EQUIS, AMBA)" },
+      { label: "Nom de l’établissement", value: "Paris School of Business (PSB)" },
+      { label: "Type d’établissement", value: "Grande École française de management" },
+      { label: "Année de création", value: "1974" },
+      { label: "Campus", value: "Paris (Campus Nation – Paris)" },
+      { label: "Domaines de formation", value: "Management • Marketing • Finance • International Business • Entrepreneuriat • Innovation • Data • Intelligence Artificielle • Digital • Supply Chain • Luxe • Ressources Humaines • Communication • Management de projets" },
+      { label: "Langues d’enseignement", value: "Français et Anglais (selon les programmes)" },
+      { label: "Reconnaissances et accréditations", value: "École reconnue par l'État français • Membre de la Conférence des Grandes Écoles (CGE) • Programme Grande École visé conférant le Grade de Master • Triple accréditation internationale AACSB • EQUIS • AMBA" },
+      { label: "Partenariat avec ESPIMA", value: "Poursuite d'études des étudiants d'ESPIMA Business School dans les programmes de Paris School of Business conformément à la convention de partenariat." }
     ],
     pricing: [
-      { label: "Bachelor, PGE & MSc", amount: "Tarif officiel", period: "", note: "Selon le cursus PSB choisi" },
+      { label: "Bachelor", amount: "Tarif officiel PSB", period: "" },
+      { label: "Programme Grande École (PGE)", amount: "Tarif officiel PSB", period: "" },
+      { label: "Master of Science (MSc)", amount: "Tarif officiel PSB", period: "" },
+      { label: "MBA et programmes spécialisés", amount: "Tarif officiel PSB", period: "" },
     ],
     accreditations: [
       { label: "AACSB", description: "Accréditation mondiale de référence en management", logo: "/images/partenaires-academiques/AACSB-logo-accredited-color-PMS_Website-1024x346.png" },
