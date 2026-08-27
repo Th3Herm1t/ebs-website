@@ -144,58 +144,68 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
       </div>
 
       {/* ═══════════ PRÉSENTATION + STATS ═══════════ */}
-      <section className="relative z-20 py-12 bg-white">
-        <div className="max-w-[1200px] mx-auto px-5 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="lg:col-span-7 space-y-6">
-              <div className="flex items-center gap-3 mb-8">
-                <Badge size="lg">À propos</Badge>
+      <section className="relative z-20 pt-16 pb-24 bg-white overflow-hidden">
+        <div className="max-w-[1200px] mx-auto px-5 lg:px-12 space-y-24">
+          
+          {/* FICHE D'IDENTITÉ (Full width Dashboard) */}
+          {partner.keyStats && (
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-gradient-to-br from-penn-bg-light to-white rounded-3xl border border-penn-border/60 p-8 md:p-10 shadow-lg">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm" style={{ backgroundColor: `${accent}15` }}>
+                  <Building2 className="w-6 h-6" style={{ color: accent }} />
+                </div>
+                <h3 className="text-[22px] md:text-[26px] font-extrabold text-penn-navy">Fiche d&apos;identité</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {partner.keyStats.map((stat) => (
+                  <div key={stat.label} className="bg-white rounded-2xl p-6 border border-penn-border/40 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-start">
+                    <p className="text-[12px] font-bold text-penn-body/50 uppercase tracking-widest mb-3">{stat.label}</p>
+                    {stat.value.includes(" • ") ? (
+                      <div className="flex flex-wrap gap-2">
+                        {stat.value.split(" • ").map((pill, idx) => (
+                          <span key={idx} className="text-[13px] font-bold px-3 py-1.5 rounded-lg" style={{ color: accent, backgroundColor: `${accent}12` }}>
+                            {pill.trim()}
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-[16px] font-extrabold text-penn-navy leading-snug break-words">{stat.value}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
+          {/* À PROPOS & IMAGE */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className={`space-y-8 ${partner.imageSection ? 'lg:col-span-7' : 'lg:col-span-10 lg:col-start-2'}`}>
+              <div className="flex items-center gap-4">
+                <Badge size="lg" className="px-5 py-2 text-[14px]">À propos</Badge>
                 <div className="flex-1 h-px bg-gradient-to-r from-penn-border to-transparent" />
               </div>
-              <div className="text-[16px] md:text-[17px] text-penn-body/80 leading-relaxed font-medium">
+              <div className="text-[17px] md:text-[19px] text-penn-body/80 leading-relaxed font-medium pl-4 md:pl-6 border-l-[4px]" style={{ borderColor: accent }}>
                 <RichTextContent text={partner.presentation} accent={accent} />
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ delay: 0.1 }} className="lg:col-span-5 space-y-8">
-              {partner.imageSection && (
-                <div className="relative rounded-2xl overflow-hidden shadow-xl border border-penn-border/50 group">
-                  <Image src={partner.imageSection.src} alt={partner.imageSection.caption || ""} width={600} height={400} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+            {partner.imageSection && (
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ delay: 0.1 }} className="lg:col-span-5 relative">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-penn-border/50 group">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-penn-navy/10 to-transparent mix-blend-overlay z-10" />
+                  <Image src={partner.imageSection.src} alt={partner.imageSection.caption || ""} width={600} height={800} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
                   {partner.imageSection.caption && (
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1a2035]/90 via-[#1a2035]/50 to-transparent p-5 pt-12">
-                      <div className="flex items-center gap-2.5 text-white"><MapPin className="w-5 h-5" style={{ color: accent }} /><span className="text-[14px] font-bold tracking-wide">{partner.imageSection.caption}</span></div>
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1a2035]/95 via-[#1a2035]/60 to-transparent p-6 pt-16 z-20">
+                      <div className="flex items-start gap-3 text-white">
+                        <MapPin className="w-5 h-5 shrink-0 mt-0.5" style={{ color: accent }} />
+                        <span className="text-[15px] font-bold tracking-wide leading-tight">{partner.imageSection.caption}</span>
+                      </div>
                     </div>
                   )}
                 </div>
-              )}
-              
-              {partner.keyStats && (
-                <div className="bg-penn-bg-light rounded-2xl border border-penn-border/60 p-6 shadow-sm">
-                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-5 flex items-center gap-2">
-                    <Building2 className="w-5 h-5" style={{ color: accent }} />
-                    Fiche d&apos;identité
-                  </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {partner.keyStats.map((stat) => (
-                      <div key={stat.label} className="bg-white rounded-xl p-4 border border-penn-border/40 shadow-sm flex flex-col justify-start">
-                        <p className="text-[11px] font-bold text-penn-body/50 uppercase tracking-widest mb-2">{stat.label}</p>
-                        {stat.value.includes(" • ") ? (
-                          <div className="flex flex-wrap gap-1.5">
-                            {stat.value.split(" • ").map((pill, idx) => (
-                              <span key={idx} className="text-[12px] font-bold px-2.5 py-1 rounded-md" style={{ color: accent, backgroundColor: `${accent}15` }}>
-                                {pill.trim()}
-                              </span>
-                            ))}
-                          </div>
-                        ) : (
-                          <p className="text-[14px] font-extrabold text-penn-navy leading-snug break-words">{stat.value}</p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </motion.div>
+                <div className="absolute -bottom-8 -right-8 w-64 h-64 rounded-full blur-3xl opacity-20 -z-10" style={{ backgroundColor: accent }} />
+              </motion.div>
+            )}
           </div>
         </div>
       </section>
