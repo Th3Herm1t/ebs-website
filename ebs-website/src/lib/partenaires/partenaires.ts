@@ -567,41 +567,58 @@ const canonicalPartenaires = {
     countryCode: "FR",
     logo: "/images/partenaires-academiques/epitech.webp",
     type: "Grande École Informatique — Expert Tech & Innovation",
-    presentation: "Epitech (École pour l'Informatique et les Nouvelles Technologies), fondée en 1999, est une Grande École française de référence spécialisée dans l'informatique, les technologies numériques et l'innovation. Reconnue pour sa pédagogie par projets (« Learning by doing ») et sa proximité avec les entreprises, elle forme des experts capables de concevoir et piloter les solutions technologiques de demain.",
+    presentation: "EPITECH (École pour l'Informatique et les Nouvelles Technologies) est une Grande École française spécialisée dans l'informatique, les technologies numériques et l'innovation. Fondée en 1999, elle est reconnue pour sa pédagogie innovante basée sur les projets, l'apprentissage par la pratique et une forte proximité avec les entreprises.\nEPITECH forme des experts dans les domaines de l'intelligence artificielle, de la cybersécurité, du cloud computing, de la data, du développement logiciel et de la transformation numérique.\nGrâce au partenariat conclu avec ESPIMA Business School, les étudiants titulaires d'une Licence en Informatique peuvent poursuivre leurs études en France en intégrant le Master in IT d'EPITECH, tout en bénéficiant d'un accompagnement personnalisé et d'avantages financiers prévus par la convention.",
     programmes: [
-      { nom: "Master in IT (Expert en Systèmes d'Information)", duree: "2 ans (Bac+5)", details: "Titre RNCP niveau 7 (Bac+5). Programme international en anglais sur le campus de Paris. Spécialisations : Intelligence Artificielle · Cybersécurité · Cloud Computing · Big Data · Développement Logiciel · IoT · Réalité Virtuelle · Transformation Digitale." },
-      { nom: "Global Bachelor of Technology (mobilité)", duree: "1 an", details: "Année de mobilité internationale dans l'un des campus Epitech à l'étranger (Barcelone, Berlin, Bruxelles, Porto...)." },
+      {
+        nom: "Master in IT",
+        duree: "2 ans",
+        details: "Titre RNCP niveau 7 (Bac+5). Programme international en anglais sur le campus de Paris. Accès pour la Licence en Informatique.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Titre RNCP niveau 7 (Bac+5)",
+              "**Spécialisations** : Intelligence Artificielle • Cybersécurité • Cloud Computing • Big Data • Développement Logiciel • Internet of Things (IoT) • Réalité Virtuelle (VR) • Transformation Digitale",
+              "**Étudiants EBS concernés** : Licence en Informatique – Génie Logiciel & SI (ESPIMA)",
+              "**Conditions d'admission** : Recommandation d'ESPIMA • Dossier complet • Respect des conditions d'admission EPITECH • Décision finale d'admission par EPITECH",
+              "**Campus** : Paris (programme international)",
+              "**Langue** : Anglais"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Titulaires d'une Licence en Informatique (Génie Logiciel & Systèmes d'Information) d'ESPIMA. Recommandation d'ESPIMA Business School. Date limite de dépôt de dossier : 15 mai.",
+    eligibilite: "Les candidats doivent satisfaire aux conditions d'admission définies par EPITECH.\nÊtre recommandé par ESPIMA Business School.\nÊtre titulaire d'une Licence en Informatique ou d'un diplôme équivalent.\nDéposer un dossier de candidature complet conformément à la procédure EPITECH.\nRespecter les exigences académiques et linguistiques du programme.\nLa décision finale d'admission relève exclusivement d'EPITECH.\nCalendrier - Date limite de dépôt du dossier : 15 mai.\nEPITECH peut modifier cette date et en informe ESPIMA Business School.",
     avantages: [
-      "Grande École française de référence dans les métiers de l'informatique et du numérique",
-      "Diplôme Bac+5 visé et Titre certifié RNCP niveau 7",
-      "Pédagogie innovante par projets (Learning by doing)",
-      "Formations orientées IA, Cybersécurité, Cloud, Big Data, VR et IoT",
-      "15 campus en France et 5 campus à l'international",
-      "10 % de réduction sur les frais de scolarité dans le cadre du partenariat EBS",
-      "Accompagnement personnalisé des étudiants internationaux et visa étudiant France facilité",
+      "Grande École française de référence dans les métiers de l'informatique et du numérique.",
+      "Diplôme Bac+5 reconnu par l'État français.",
+      "Titre RNCP niveau 7.",
+      "Pédagogie innovante fondée sur les projets et la pratique.",
+      "Formation orientée vers les métiers d'avenir : Intelligence Artificielle, Cybersécurité, Cloud, Big Data, Développement Logiciel, IoT et Réalité Virtuelle.",
+      "Forte proximité avec les entreprises et excellente employabilité.",
+      "Accompagnement des étudiants internationaux.",
+      "Réduction de 10 % sur les frais de scolarité dans le cadre du partenariat avec ESPIMA.",
     ],
-    debouches: [
-      "Ingénieur logiciel / Développeur fullstack",
-      "Expert en intelligence artificielle & Machine Learning",
-      "Expert en cybersécurité / Pentester",
-      "Architecte Cloud & DevOps Engineer",
-      "Data Engineer / Big Data Specialist",
-      "CTO / Fondateur de startup tech",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Création", value: "1999" },
-      { label: "Campus", value: "15 en France, 5 à l'international" },
-      { label: "Certification", value: "Titre RNCP niveau 7 (Bac+5)" },
+      { label: "Nom de l'établissement", value: "EPITECH – École pour l'Informatique et les Nouvelles Technologies" },
+      { label: "Type d'établissement", value: "Grande École française spécialisée en informatique" },
+      { label: "Année de création", value: "1999" },
+      { label: "Campus", value: "Paris • Lyon • Lille • Bordeaux • Toulouse • Nantes • Rennes • Strasbourg • Montpellier • Nice • Marseille • Nancy • Mulhouse" },
+      { label: "Reconnaissance officielle", value: "Diplôme Bac+5 visé par le ministère français de l'Enseignement supérieur et de la Recherche" },
+      { label: "Certification RNCP", value: "Titre certifié de niveau 7 (Bac+5) enregistré au RNCP" },
+      { label: "Pédagogie", value: "Apprentissage par projets, innovation, immersion en entreprise et ouverture internationale" },
+      { label: "Domaines de formation", value: "Informatique • Intelligence artificielle • Cybersécurité • Cloud • Big Data • Développement logiciel • Réalité virtuelle • IoT • Transformation numérique" },
+      { label: "Langues d'enseignement", value: "Français et Anglais (selon les programmes)" },
+      { label: "Partenariat avec ESPIMA", value: "Poursuite d'études après une Licence en Informatique" }
     ],
     pricing: [
-      { label: "Master in IT", amount: "Tarif officiel", period: "", note: "-10% de réduction EBS" },
+      { label: "Master in IT", amount: "Tarif officiel", period: "" },
     ],
     extraSections: [
       {
         title: "Conditions financières du partenariat",
-        body: "- **Réduction** : 10 % de réduction sur les frais de scolarité standard.\n- **Acompte à l'admission** : 3 500 € à régler lors de la confirmation d'admission.\n- **Solde** : Payable au plus tard le jour de la rentrée académique.\n- **Refus de visa** : L'acompte est intégralement remboursé si EPITECH est informée dans un délai de 10 jours ouvrables."
+        body: "- **Réduction sur les frais de scolarité** : 10 % de réduction sur les frais de scolarité standard.\n- **Acompte à l'admission** : 3 500 € à régler lors de la confirmation d'admission.\n- **Paiement du solde** : Le solde des frais de scolarité est payable au plus tard le jour de la rentrée académique.\n- **Refus de visa** : L'acompte est intégralement remboursé si EPITECH est informée du refus de visa dans un délai de 10 jours ouvrables suivant sa réception.\n- **Autres frais** : La CVEC, l'assurance, le logement, les transports et les dépenses personnelles restent à la charge de l'étudiant."
       }
     ],
   },
