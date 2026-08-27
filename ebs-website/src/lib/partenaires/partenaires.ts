@@ -31,6 +31,7 @@ const canonicalPartenaires = {
     country: "🇨🇦 Canada",
     countryCode: "CA",
     logo: "/images/partenaires-academiques/uqat.webp",
+    type: "Université publique québécoise",
     presentation: "L'Université du Québec en Abitibi-Témiscamingue (UQAT) est une université publique canadienne membre du réseau de l'Université du Québec, reconnue pour la qualité de son enseignement, son accompagnement personnalisé et son ouverture à l'international. Elle accueille chaque année des étudiants de nombreux pays et offre des formations de cycles supérieurs dans des domaines répondant aux besoins du marché de l'emploi, notamment la gestion de projet, la gestion des organisations, les sciences, l'ingénierie, l'éducation et les technologies. Grâce à un environnement d'études à taille humaine et à un encadrement de proximité, l'UQAT favorise la réussite académique, l'intégration et le développement professionnel de ses étudiants internationaux.",
     programmes: [
       {
@@ -1064,43 +1065,129 @@ const canonicalPartenaires = {
     countryCode: "IT",
     logo: "/images/partenaires-academiques/udl.webp",
     type: "Université privée italienne reconnue par l'État italien — Campus Rome",
-    presentation: "Link University (Università degli Studi Link) est une université privée italienne reconnue par le Ministère italien de l'Université et de la Recherche (MUR) et accréditée par l'ANVUR. Située à Rome, elle propose des formations en management, économie, finance, communication, marketing, digital, innovation, sport management et relations internationales. Les diplômes sont reconnus dans l'Espace européen de l'enseignement supérieur grâce au système ECTS.",
+    presentation: "Link University (Università degli Studi Link) est une université privée italienne reconnue par le Ministère italien de l'Université et de la Recherche (MUR) et accréditée par l'ANVUR, l'autorité nationale chargée de l'assurance qualité des établissements d'enseignement supérieur en Italie. Située à Rome, elle propose des formations en management, économie, finance, communication, marketing, digital, innovation, sport management et relations internationales. Les diplômes délivrés sont reconnus en Italie et dans l'ensemble de l'Espace européen de l'enseignement supérieur grâce au système ECTS.\nLe partenariat avec ESPIMA Business School permet de poursuivre des études à Link University après une ou deux années validées à ESPIMA, ainsi qu'en Master après l'obtention de la Licence ou la validation d'un M1, selon les conditions d'admission. Les étudiants bénéficient de la reconnaissance des crédits ECTS et des avantages prévus par le partenariat.",
     programmes: [
-      { nom: "BA in Global Management – International Management and Finance", duree: "2 ans (L2+L3)", details: "Bachelor's Degree. Accès après 1ʳᵉ année EBS (en L2) ou Bac+2 EBS (en L3). En anglais." },
-      { nom: "BA in Innovative Technologies for Digital Communication", duree: "2 ans (L2+L3)", details: "Bachelor's Degree. Accès après 1ʳᵉ année EBS (en L2) ou Bac+2 EBS (en L3). En anglais." },
-      { nom: "MA in Economics of Innovation and Sustainable Globalization", duree: "2 ans", details: "Master's Degree. Accès après Licence EBS ou M1 EBS. En anglais." },
-      { nom: "MA in Advanced Global Management", duree: "2 ans", details: "Master's Degree. Accès après Licence EBS ou M1 EBS. En anglais." },
-      { nom: "MA in Technologies and Languages of Communications", duree: "2 ans", details: "Master's Degree. Accès après Licence EBS ou M1 EBS. En anglais." },
+      {
+        nom: "BA in Global Management – International Management and Finance",
+        duree: "2 à 3 ans",
+        details: "Bachelor’s Degree. 2ᵉ année après Bac+1 EBS • 3ᵉ année après Bac+2 EBS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Diplôme préparé** : Bachelor’s Degree",
+              "**Étudiants EBS concernés** : Après 1ʳᵉ année EBS ou Bac+2 EBS",
+              "**Niveau d’intégration** : 2ᵉ année après Bac+1 • 3ᵉ année après Bac+2",
+              "**Campus** : Rome",
+              "**Langue** : Anglais"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "BA in Innovative Technologies for Digital Communication",
+        duree: "2 à 3 ans",
+        details: "Bachelor’s Degree. 2ᵉ année après Bac+1 EBS • 3ᵉ année après Bac+2 EBS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Diplôme préparé** : Bachelor’s Degree",
+              "**Étudiants EBS concernés** : Après 1ʳᵉ année EBS ou Bac+2 EBS",
+              "**Niveau d’intégration** : 2ᵉ année après Bac+1 • 3ᵉ année après Bac+2",
+              "**Campus** : Rome",
+              "**Langue** : Anglais"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "MA in Economics of Innovation and Sustainable Globalization",
+        duree: "2 ans",
+        details: "Master’s Degree. Titulaires d’une Licence EBS ou étudiants ayant validé un M1.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Diplôme préparé** : Master’s Degree",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence EBS ou étudiants ayant validé un M1",
+              "**Niveau d’intégration** : Admission en Master, selon le niveau académique et les conditions d’admission",
+              "**Campus** : Rome",
+              "**Langue** : Anglais"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "MA in Advanced Global Management",
+        duree: "2 ans",
+        details: "Master’s Degree. Titulaires d’une Licence EBS ou étudiants ayant validé un M1.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Diplôme préparé** : Master’s Degree",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence EBS ou étudiants ayant validé un M1",
+              "**Niveau d’intégration** : Admission en Master, selon le niveau académique et les conditions d’admission",
+              "**Campus** : Rome",
+              "**Langue** : Anglais"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "MA in Technologies and Languages of Communications",
+        duree: "2 ans",
+        details: "Master’s Degree. Titulaires d’une Licence EBS ou étudiants ayant validé un M1.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Diplôme préparé** : Master’s Degree",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence EBS ou étudiants ayant validé un M1",
+              "**Niveau d’intégration** : Admission en Master, selon le niveau académique et les conditions d’admission",
+              "**Campus** : Rome",
+              "**Langue** : Anglais"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Accès privilégié depuis toutes les Licences EBS. Admission selon niveau (Bac+1, Bac+2, Licence, M1). Validation des crédits ECTS, présélection par ESPIMA, puis admission selon les conditions de Link University.",
+    eligibilite: "• Validation des études effectuées à ESPIMA Business School ou obtention de la Licence, selon le niveau d’entrée souhaité. \n• Validation des crédits ECTS et étude du parcours académique. \n• Présélection des candidats par ESPIMA Business School, puis admission selon les conditions de Link University. \n• Justification du niveau linguistique requis et, si nécessaire, préparation académique ou linguistique complémentaire. \n• Inscription administrative et paiement des frais de scolarité directement auprès de Link University. \n• Accompagnement dans les démarches de visa et la recherche de logement. \n• Accès aux bibliothèques, plateformes numériques, laboratoires et services universitaires de Link University. \n• Les frais de transport, logement, restauration, assurance et dépenses personnelles restent à la charge de l’étudiant.",
     avantages: [
-      "Université reconnue par le MUR et accréditée ANVUR",
-      "Diplômes reconnus dans toute l'Europe (système ECTS)",
-      "Campus situé au cœur de Rome",
-      "Enseignement en italien ou en anglais",
-      "Passerelles dès Bac+1/Bac+2 et poursuite en Master après Licence ou M1",
-      "De 15 % à 20 % de réduction sur les frais de scolarité",
-      "Accompagnement personnalisé pour visa et installation en Italie",
+      "✓ Université italienne reconnue par le MUR.",
+      "✓ Accréditation nationale ANVUR.",
+      "✓ Diplômes reconnus dans toute l'Europe (système ECTS).",
+      "✓ Campus situé au cœur de Rome.",
+      "✓ Enseignement en italien ou en anglais.",
+      "✓ Passerelles Bac+1/Bac+2 et poursuite en Master après Licence ou M1.",
+      "✓ Réduction de 15% à 20 % sur les frais de scolarité.",
+      "✓ Accompagnement personnalisé jusqu'à l'installation en Italie."
     ],
-    debouches: [
-      "Manager international",
-      "Spécialiste de la communication digitale",
-      "Responsable de l'innovation",
-      "Économiste de la mondialisation durable",
-      "Dirigeant d'entreprise",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Lieu", value: "Rome, Italie" },
-      { label: "Reconnaissance", value: "MUR, ANVUR, ECTS" },
-      { label: "Langues", value: "Italien, Anglais" },
+      { label: "Nom", value: "Link University (Università degli Studi Link)" },
+      { label: "Type d'établissement", value: "Université privée italienne reconnue" },
+      { label: "Pays", value: "Italie" },
+      { label: "Ville", value: "Rome" },
+      { label: "Reconnaissance", value: "Ministère italien de l'Université et de la Recherche (MUR)" },
+      { label: "Assurance qualité", value: "ANVUR" },
+      { label: "Système européen", value: "ECTS" },
+      { label: "Diplômes", value: "Laurea (Bachelor) • Laurea Magistrale (Master)" },
+      { label: "Langues d'enseignement", value: "Italien • Anglais" },
+      { label: "Partenariat avec ESPIMA", value: "Passerelles après Bac+1 et Bac+2 • Poursuite en Master après Licence ou M1" }
     ],
     pricing: [
-      { label: "BA & MA", amount: "Tarif officiel", period: "", note: "-15% à -20% de réduction EBS" },
+      { label: "BA in Global Management", amount: "Tarif officiel", period: "" },
+      { label: "BA in Innovative Technologies", amount: "Tarif officiel", period: "" },
+      { label: "MA in Economics of Innovation", amount: "Tarif officiel", period: "" },
+      { label: "MA in Advanced Global Management", amount: "Tarif officiel", period: "" },
+      { label: "MA in Technologies and Languages", amount: "Tarif officiel", period: "" }
     ],
     extraSections: [
       {
         title: "Conditions financières du partenariat",
-        body: "- **Réduction** : De 15 % à 20 % sur le tarif officiel des programmes.\n- **Paiement** : Directement auprès de Link University.\n- **En cas de refus de visa** : possibilité de reporter l'admission, de poursuivre les études à ESPIMA ou de bénéficier du remboursement."
+        body: "- **Réduction sur les frais de scolarité** : De 15% à 20 % sur le tarif officiel des programmes.\n- **Paiement** : Directement auprès de Link University.\n- **Autres frais** : Visa, assurance, logement, transport et dépenses personnelles à la charge de l'étudiant.\n\nEn cas de refus de visa : possibilité de reporter l’admission, de poursuivre les études à ESPIMA ou de bénéficier du remboursement des sommes versées, conformément aux dispositions prévues par la convention."
       }
     ],
   },
