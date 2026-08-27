@@ -11,6 +11,7 @@ import {
   Check,
   ChevronDown,
   Clock,
+  Globe2,
   GraduationCap,
   Home,
   MapPin,
@@ -102,7 +103,7 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
   return (
     <main className="min-h-screen">
       {/* ═══════════ HERO ═══════════ */}
-      <section className="relative pt-48 pb-32 overflow-hidden">
+      <section className="relative pt-40 pb-48 lg:pt-48 lg:pb-56 overflow-hidden">
         <div className="absolute inset-0 z-0">
           {partner.heroImage ? (
             <Image src={partner.heroImage} alt="" fill className="object-cover" priority sizes="100vw" />
@@ -110,34 +111,99 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
             <Image src={fallbackHero} alt="" fill className="object-cover" priority sizes="100vw" />
           )}
         </div>
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1a2035]/80 via-[#1a2035]/60 to-[#1a2035]/90" />
-        <div className="absolute inset-0 z-[1] opacity-20" style={{ backgroundImage: `radial-gradient(circle at 50% 50%, ${accent} 0%, transparent 50%)` }} />
+        <div className="absolute inset-0 z-[1] bg-[#0a1128]/85 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 z-[1] opacity-30 mix-blend-screen" style={{ backgroundImage: `radial-gradient(circle at 70% 30%, ${accent} 0%, transparent 60%)` }} />
+        <div className="absolute inset-0 z-[1] opacity-20" style={{ backgroundImage: "url('/noise.png')", backgroundRepeat: "repeat" }} />
 
-        <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <Badge variant="outline" size="lg" className="mb-8 border-white/20 text-white/90 shadow-sm backdrop-blur-md bg-white/5">
+        <div className="relative z-10 max-w-[1100px] mx-auto px-5 lg:px-12 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="flex flex-col items-center">
+            
+            <Badge variant="outline" size="lg" className="mb-10 border-white/15 text-white/90 shadow-sm backdrop-blur-md bg-white/[0.03]">
               <CountryFlag code={partner.countryCode || "CA"} className="w-5 h-3.5 shadow-sm" />
               {partner.country.replace(/^[^\s]+\s/, "")}
             </Badge>
-          </motion.div>
-          <div className="max-w-[850px]">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 }} className="flex flex-col md:flex-row md:items-center gap-8 mb-6">
-              {partner.logo && (
-                <div className="w-32 h-32 rounded-3xl bg-white/95 backdrop-blur-md border border-white flex items-center justify-center p-4 shrink-0 shadow-2xl relative">
-                  <div className="absolute inset-0 rounded-3xl blur-xl opacity-30 -z-10" style={{ backgroundColor: accent }} />
-                  <Image src={partner.logo} alt={partner.name} width={128} height={128} className="max-w-full max-h-full object-contain" />
+
+            <div className="flex items-center gap-4 md:gap-6 mb-8">
+              <div className="w-20 h-20 md:w-28 md:h-28 rounded-2xl md:rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center p-3 shadow-2xl relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <span className="text-white font-extrabold text-[28px] md:text-[36px] tracking-tighter">EBS</span>
+              </div>
+              
+              <div className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+                <span className="text-white/50 text-[14px] md:text-[16px] font-black">X</span>
+              </div>
+
+              {partner.logo ? (
+                <div className="w-20 h-20 md:w-28 md:h-28 rounded-2xl md:rounded-3xl bg-white/95 backdrop-blur-xl border border-white flex items-center justify-center p-4 shrink-0 shadow-2xl relative group">
+                   <div className="absolute inset-0 rounded-2xl md:rounded-3xl blur-xl opacity-40 -z-10 group-hover:opacity-70 transition-opacity" style={{ backgroundColor: accent }} />
+                  <Image src={partner.logo} alt={partner.name} width={100} height={100} className="max-w-full max-h-full object-contain drop-shadow-sm" />
+                </div>
+              ) : (
+                <div className="w-20 h-20 md:w-28 md:h-28 rounded-2xl md:rounded-3xl bg-white/95 backdrop-blur-xl border border-white flex items-center justify-center p-3 shrink-0 shadow-2xl relative group">
+                  <div className="absolute inset-0 rounded-2xl md:rounded-3xl blur-xl opacity-40 -z-10 group-hover:opacity-70 transition-opacity" style={{ backgroundColor: accent }} />
+                  <span className="text-penn-navy font-extrabold text-[16px] text-center leading-tight tracking-tight">{partner.name.substring(0, 8)}</span>
                 </div>
               )}
-              <div>
-                <p className="text-[14px] text-white/50 font-bold uppercase tracking-widest mb-3" style={{ color: accent }}>{partner.type}</p>
-                <h1 className="text-[42px] md:text-[56px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-1.5px]">
-                  Partenariat<br /><span className="text-white">EBS — {partner.name}</span>
-                </h1>
-              </div>
-            </motion.div>
-          </div>
+            </div>
+
+            <div className="mb-12">
+              <p className="text-[13px] md:text-[15px] text-white/60 font-extrabold uppercase tracking-[0.25em] mb-4">Partenariat Académique d&apos;Excellence</p>
+              <h1 className="text-[44px] md:text-[72px] lg:text-[88px] font-black text-transparent bg-clip-text leading-[1.05] tracking-[-0.03em] drop-shadow-sm" style={{ backgroundImage: `linear-gradient(135deg, #ffffff 30%, ${accent} 100%)` }}>
+                {partner.name}
+              </h1>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+               <a href="#admission" className="px-8 py-4 rounded-xl text-white font-extrabold text-[15px] transition-all hover:scale-105 shadow-[0_0_40px_-10px] hover:shadow-[0_0_60px_-10px] backdrop-blur-sm" style={{ backgroundColor: accent, shadowColor: accent }}>
+                 Comment l&apos;intégrer
+               </a>
+               <a href="#programmes" className="px-8 py-4 rounded-xl text-white/90 font-extrabold text-[15px] transition-all hover:bg-white/10 border border-white/20 backdrop-blur-md">
+                 Découvrir les programmes
+               </a>
+            </div>
+
+          </motion.div>
         </div>
       </section>
+
+      {/* ═══════════ FLOATING INFOBAR ═══════════ */}
+      <div className="relative z-20 max-w-[1000px] mx-auto px-5 lg:px-12 -mt-20 mb-16">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="bg-white/90 backdrop-blur-xl border border-white shadow-xl rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-12">
+           <div className="flex items-center gap-5 w-full md:w-auto">
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${accent}15` }}>
+                <Globe2 className="w-6 h-6" style={{ color: accent }} />
+              </div>
+              <div>
+                <p className="text-[12px] font-bold text-penn-body/50 uppercase tracking-widest mb-1">Destination</p>
+                <p className="text-[16px] font-extrabold text-penn-navy">{partner.country}</p>
+              </div>
+           </div>
+           <div className="hidden md:block w-px h-12 bg-penn-border/60 shrink-0" />
+           <div className="flex items-center gap-5 w-full md:w-auto">
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${accent}15` }}>
+                <Building2 className="w-6 h-6" style={{ color: accent }} />
+              </div>
+              <div>
+                <p className="text-[12px] font-bold text-penn-body/50 uppercase tracking-widest mb-1">Type d&apos;établissement</p>
+                <p className="text-[16px] font-extrabold text-penn-navy line-clamp-2 leading-snug">{partner.type}</p>
+              </div>
+           </div>
+           {partner.keyStats?.[0] && (
+            <>
+              <div className="hidden md:block w-px h-12 bg-penn-border/60 shrink-0" />
+              <div className="flex items-center gap-5 w-full md:w-auto">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${accent}15` }}>
+                    <Sparkles className="w-6 h-6" style={{ color: accent }} />
+                  </div>
+                  <div>
+                    <p className="text-[12px] font-bold text-penn-body/50 uppercase tracking-widest mb-1">{partner.keyStats[0].label}</p>
+                    <p className="text-[16px] font-extrabold text-penn-navy leading-snug">{partner.keyStats[0].value.split(" • ")[0]}</p>
+                  </div>
+              </div>
+            </>
+           )}
+        </motion.div>
+      </div>
 
       <div className="max-w-[1280px] mx-auto px-5 lg:px-12 py-5 bg-white">
         <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Partenaires", href: "/partenaires" }, { label: partner.name }]} />
