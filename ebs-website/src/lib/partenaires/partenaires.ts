@@ -121,7 +121,7 @@ const canonicalPartenaires = {
     countryCode: "FR",
     logo: "/images/ebs-tn/EM_Normandie-Logo.png",
     type: "Grande École de Commerce — Triple accréditée EQUIS · AACSB · AMBA",
-    presentation: "Fondée en 1871, EM Normandie Business School est l'une des plus anciennes Grandes Écoles de Management françaises. Membre de la Conférence des Grandes Écoles (CGE), elle fait partie du cercle très restreint des Business Schools titulaires de la Triple Couronne internationale (AACSB, EQUIS et AMBA). Elle accueille plus de 6 600 étudiants sur 6 campus internationaux : Le Havre, Caen, Paris, Oxford, Dublin et Dubaï.",
+    presentation: "Fondée en 1871, EM Normandie Business School est l'une des plus anciennes Grandes Écoles de Management françaises. Reconnue pour son excellence académique et son ouverture internationale, elle accueille plus de 6 600 étudiants de plus de 100 nationalités sur 6 campus internationaux. Membre de la Conférence des Grandes Écoles (CGE), elle fait également partie du cercle très restreint des Business Schools titulaires de la Triple Couronne internationale (AACSB, EQUIS et AMBA), une distinction détenue par moins de 1 % des écoles de management dans le monde.",
     programmes: [
       {
         nom: "Master in Management (Programme Grande École)",
@@ -207,19 +207,20 @@ const canonicalPartenaires = {
     ],
     imageSection: { src: "/images/ebs-tn/img-page-em-presentiel.webp" },
     accreditations: [
-      { label: "AACSB", description: "Accréditation internationale garantissant l'excellence académique des écoles de management" },
-      { label: "EQUIS", description: "Accréditation européenne délivrée par l'EFMD, reconnaissant la qualité globale et l'ouverture internationale" },
-      { label: "AMBA", description: "Accréditation internationale attribuée au Programme Grande École (Master in Management)" },
+      { label: "AACSB", description: "Accréditation internationale garantissant l'excellence académique des écoles de management." },
+      { label: "EQUIS", description: "Accréditation européenne délivrée par l'EFMD, reconnaissant la qualité de l'école et son ouverture internationale." },
+      { label: "AMBA", description: "Accréditation internationale attribuée au Programme Grande École (Master in Management)." },
+      { label: "Triple Couronne", description: "Moins de 1 % des Business Schools dans le monde possèdent simultanément les accréditations AACSB, EQUIS et AMBA." },
+      { label: "Conférence des Grandes Écoles (CGE)", description: "EM Normandie est membre de la Conférence des Grandes Écoles." },
+      { label: "Programme Grande École", description: "Diplôme visé par l'État conférant le Grade de Master." },
+      { label: "Master of Science (MSc)", description: "Plusieurs MSc bénéficient du label MSc de la CGE selon les programmes." },
+      { label: "Mastère Spécialisé (MS)", description: "Diplôme labellisé Mastère Spécialisé® (MS) par la Conférence des Grandes Écoles, lorsque le programme est concerné." },
     ],
     accreditationImage: "/images/ebs-tn/Calque-2-2.png",
     extraSections: [
       {
-        title: "Avantages financiers du partenariat EM Normandie",
-        body: "- **Réduction EM Normandie** : 10 % sur les frais de scolarité.\n- **Réduction ESPIMA** : 5 % supplémentaires.\n- **Réduction anticipée** : 10 % supplémentaires pour une candidature déposée avant le 30 avril.\n- **Frais de dossier** : Exonérés.\n- **Acompte** : 3 000 € à régler lors de l'admission.\n- **Refus de visa** : Remboursement de l'acompte selon les dispositions de la convention."
-      },
-      {
-        title: "10 MSc — Masters of Science accessibles",
-        body: "---LISTE\n1. MSc Financial Data Management — Paris (+Le Havre)\n2. MSc International Events Management — Paris (+Le Havre)\n3. MSc International Logistics & Port Management — Le Havre\n4. MSc International Marketing & Business Development — Caen (+Le Havre)\n5. MSc Marketing & Digital in Luxury & Lifestyle — Paris (+Le Havre)\n6. MSc Banking, Finance & FinTech — Oxford (+Le Havre)\n7. MSc Supply Chain Management — Le Havre\n8. MSc Sustainable Business & Strategy — Paris (+Le Havre)\n9. MSc Digital Strategy & Innovation — Paris (+Le Havre)\n10. MSc Digital Marketing & Sales — Dublin (+Le Havre)\n\nAccès en 1ère année (2 ans) ou 2ème année (1 an) selon le profil. Certaines spécialisations sont disponibles en alternance.\n\n[https://www.em-normandie.com/fr/mastere-specialise-master-of-science|Voir tous les MSc sur le site EM Normandie →]"
+        title: "Avantages financiers du partenariat",
+        body: "- **Réduction EM Normandie** : 10 % sur les frais de scolarité\n- **Réduction ESPIMA** : 5 % supplémentaires\n- **Réduction anticipée** : 10 % supplémentaires pour une candidature déposée avant le 30 avril\n- **Frais de dossier** : Exonérés\n- **Acompte** : 3 000 €\n- **Refus de visa** : Remboursement de l'acompte selon les dispositions prévues par la convention"
       }
     ],
   },
