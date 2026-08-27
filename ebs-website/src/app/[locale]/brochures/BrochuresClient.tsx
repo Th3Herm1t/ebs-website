@@ -12,55 +12,71 @@ const brochures = [
     desc: "Découvrez le programme complet de la Licence en Management : cursus, certifications, débouchés et mobilité internationale.",
     image: "/images/all-img/hero.webp",
     color: "#2196F3",
+    slug: "management"
   },
   {
     title: "Licence en Marketing",
     desc: "Tout savoir sur la Licence en Marketing : spécialisations digitales, projets professionnels et partenariats.",
     image: "/images/all-img/hero.webp",
     color: "#E91E8C",
+    slug: "marketing"
   },
   {
     title: "Licence en Finance",
     desc: "Le parcours Finance en détail : ingénierie financière, certifications Bloomberg, stages en entreprise.",
     image: "/images/all-img/hero.webp",
     color: "#00BCD4",
+    slug: "finance"
   },
   {
     title: "Licence en Informatique — Standard",
     desc: "Cursus Génie Logiciel : développement, bases de données, réseaux et certifications IT.",
     image: "/images/all-img/hero.webp",
     color: "#FF5722",
+    slug: "informatique-standard"
   },
   {
     title: "Licence en Informatique — IA",
     desc: "Parcours Intelligence Artificielle : machine learning, deep learning, data science et projets IA.",
     image: "/images/all-img/hero.webp",
     color: "#9C27B0",
+    slug: "informatique-ia"
   },
   {
     title: "Licence en Informatique — Cybersécurité",
     desc: "Sécurité informatique, ethical hacking, pentesting et certifications cyber reconnues.",
     image: "/images/all-img/hero.webp",
     color: "#FF9800",
+    slug: "cybersecurite"
   },
   {
     title: "Master en CRM & Transformation Digitale",
     desc: "Maîtrisez la relation client et la transformation digitale : CRM, data analytics, stratégie omnicanale.",
     image: "/images/all-img/hero.webp",
     color: "#E91E63",
+    slug: "crm"
   },
   {
     title: "Master en Projets Innovants & Startups",
     desc: "De l'idée au projet : design thinking, lean startup, levée de fonds et incubation.",
     image: "/images/all-img/hero.webp",
     color: "#5E35B1",
+    slug: "startups"
   },
   {
     title: "Master en Ingénierie Financière",
     desc: "Finance de marché, M&A, gestion de portefeuille et certifications avancées.",
     image: "/images/all-img/hero.webp",
     color: "#00897B",
+    slug: "ingenierie-financiere"
   },
+  {
+    title: "Master Marketing Digital & IA",
+    desc: "Marketing digital, data science, intelligence artificielle, et stratégie d'acquisition.",
+    image: "/images/all-img/hero.webp",
+    color: "#FF5722",
+    slug: "marketing-digital-ia"
+  }
 ];
 
 export default function BrochuresPage() {
@@ -132,16 +148,23 @@ export default function BrochuresPage() {
                     {brochure.desc}
                   </p>
                   <div className="flex items-center gap-3 pt-4 border-t border-penn-border/50">
-                    <button className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-[13px] font-bold border-2 transition-all hover:bg-penn-bg-light"
+                    <a 
+                      href={`/brochures/${brochure.slug}.pdf`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-[13px] font-bold border-2 transition-all hover:bg-penn-bg-light"
                       style={{ borderColor: `${brochure.color}40`, color: brochure.color }}
                     >
                       <FileText className="w-4 h-4" /> Aperçu
-                    </button>
-                    <button className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-[13px] font-bold text-white transition-all hover:opacity-90"
+                    </a>
+                    <a 
+                      href={`/brochures/${brochure.slug}.pdf`}
+                      download
+                      className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-[13px] font-bold text-white transition-all hover:opacity-90"
                       style={{ backgroundColor: brochure.color }}
                     >
                       <Download className="w-4 h-4" /> Télécharger
-                    </button>
+                    </a>
                   </div>
                 </div>
               </motion.div>
