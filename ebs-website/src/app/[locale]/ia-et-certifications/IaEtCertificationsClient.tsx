@@ -540,46 +540,82 @@ export default function IAEtCertificationsPage() {
             </p>
           </motion.div>
 
-          <div className="space-y-3">
-            {programmeBreakdown.map((p, i) => (
-              <motion.div
-                key={p.programme}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-20px" }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-              >
-                <Link
-                  href={p.href}
-                  className="group flex items-center gap-4 lg:gap-6 p-4 lg:p-5 bg-white rounded-2xl border border-penn-border hover:shadow-lg hover:border-penn-green/20 transition-all duration-300"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programmeBreakdown.map((p, i) => {
+              const tags = p.highlights.split("·").map(t => t.trim()).filter(Boolean);
+              
+              return (
+                <motion.div
+                  key={p.programme}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-20px" }}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  className="h-full"
                 >
-                  <div
-                    className="w-2 h-12 rounded-full shrink-0"
-                    style={{ backgroundColor: p.color }}
-                  />
+                  <Link
+                    href={p.href}
+                    className="group relative flex flex-col h-full p-6 lg:p-8 bg-white rounded-[24px] border border-penn-border hover:shadow-xl transition-all duration-500 overflow-hidden"
+                  >
+                    {/* Hover Glow Effect */}
+                    <div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      style={{ background: `radial-gradient(circle at 100% 0%, ${p.color}15 0%, transparent 60%)` }}
+                    />
+                    
+                    <div className="relative z-10 flex flex-col h-full">
+                      {/* Top section: Color indicator & Arrow */}
+                      <div className="flex items-start justify-between mb-6">
+                        <div 
+                          className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+                          style={{ backgroundColor: `${p.color}15`, color: p.color }}
+                        >
+                          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                          </svg>
+                        </div>
+                        <div 
+                          className="w-10 h-10 rounded-full bg-penn-bg-light flex items-center justify-center group-hover:bg-penn-navy group-hover:text-white transition-colors duration-300"
+                        >
+                          <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                        </div>
+                      </div>
 
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-[16px] lg:text-[17px] font-extrabold text-penn-navy group-hover:text-penn-green transition-colors">
-                      {p.programme}
-                    </h3>
-                    <p className="text-[13px] text-penn-body/60 mt-0.5">
-                      {p.highlights}
-                    </p>
-                  </div>
+                      {/* Middle: Title & Tags */}
+                      <div className="mb-8">
+                        <h3 className="text-[20px] font-extrabold text-penn-navy leading-tight mb-4 group-hover:text-penn-green transition-colors duration-300">
+                          {p.programme}
+                        </h3>
+                        
+                        <div className="flex flex-wrap gap-2">
+                          {tags.map((tag, idx) => (
+                            <span 
+                              key={idx}
+                              className="inline-flex px-3 py-1 text-[12px] font-bold rounded-lg border bg-white shadow-sm"
+                              style={{ color: p.color, borderColor: `${p.color}30` }}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
 
-                  <div className="text-right shrink-0">
-                    <p className="text-[24px] lg:text-[28px] font-extrabold text-penn-navy leading-none">
-                      {p.total}
-                    </p>
-                    <p className="text-[11px] text-penn-body/50 font-medium uppercase tracking-wide">
-                      certifications
-                    </p>
-                  </div>
-
-                  <ArrowRight className="w-5 h-5 text-penn-green shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </Link>
-              </motion.div>
-            ))}
+                      {/* Bottom: Total Metric */}
+                      <div className="mt-auto pt-6 border-t border-penn-border flex items-end justify-between">
+                        <div>
+                          <p className="text-[12px] font-bold text-penn-body uppercase tracking-wider mb-1">
+                            Certifications intégrées
+                          </p>
+                          <p className="text-[32px] font-extrabold leading-none" style={{ color: p.color }}>
+                            {p.total}+
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
