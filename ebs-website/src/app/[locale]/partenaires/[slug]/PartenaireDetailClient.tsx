@@ -154,7 +154,7 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-               <a href="#admission" className="px-8 py-4 rounded-xl text-white font-extrabold text-[15px] transition-all hover:scale-105 shadow-[0_0_40px_-10px] hover:shadow-[0_0_60px_-10px] backdrop-blur-sm" style={{ backgroundColor: accent, shadowColor: accent }}>
+               <a href="#admission" className="px-8 py-4 rounded-xl text-white font-extrabold text-[15px] transition-all hover:scale-105 shadow-[0_0_40px_-10px] hover:shadow-[0_0_60px_-10px] backdrop-blur-sm" style={{ backgroundColor: accent, ["--tw-shadow-color" as string]: accent } as React.CSSProperties}>
                  Comment l&apos;intégrer
                </a>
                <a href="#programmes" className="px-8 py-4 rounded-xl text-white/90 font-extrabold text-[15px] transition-all hover:bg-white/10 border border-white/20 backdrop-blur-md">
