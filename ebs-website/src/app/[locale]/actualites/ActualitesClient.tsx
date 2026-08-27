@@ -326,16 +326,16 @@ const evenements: Article[] = [
 ];
 
 const tabs: { key: Tab; label: string; icon: React.ReactNode; desc: string }[] = [
-  { key: "actualites", label: "Actualités", icon: <Newspaper className="w-4 h-4" />, desc: "26 articles — partenariats, salons, conférences" },
-  { key: "evenements", label: "Événements", icon: <Calendar className="w-4 h-4" />, desc: "21 événements — challenges, cérémonies, intégrations" },
-  { key: "alaune", label: "À la Une", icon: <Sparkles className="w-4 h-4" />, desc: "L'article phare qui fait l'actualité d'EBS" },
+  { key: "actualites", label: "Actualités", icon: <Newspaper className="w-4 h-4" />, desc: "26 articles : partenariats, salons, conférences et vie académique." },
+  { key: "evenements", label: "Événements", icon: <Calendar className="w-4 h-4" />, desc: "21 événements : conférences, challenges, cérémonies et intégration." },
+  { key: "alaune", label: "À la Une", icon: <Sparkles className="w-4 h-4" />, desc: "L'article phare de l'actualité EBS" },
 ];
 
 const stats = [
-  { icon: <Users className="w-5 h-5" />, label: "", value: "Vie Étudiante", accent: "#2B8FAB" },
-  { icon: <Megaphone className="w-5 h-5" />, label: "", value: "Conférences", accent: "#FF9800" },
-  { icon: <Handshake className="w-5 h-5" />, label: "", value: "Partenariats", accent: "#9C27B0" },
-  { icon: <GraduationCap className="w-5 h-5" />, label: "", value: "Alumni", accent: "#2196F3" },
+  { icon: <Newspaper className="w-5 h-5" />, label: "Articles", value: "27", accent: "#2B8FAB" },
+  { icon: <Calendar className="w-5 h-5" />, label: "Événements", value: "21", accent: "#FF9800" },
+  { icon: <Sparkles className="w-5 h-5" />, label: "Thématiques", value: "17", accent: "#9C27B0" },
+  { icon: <Timer className="w-5 h-5" />, label: "Années couvertes", value: "4+", accent: "#2196F3" },
 ];
 
 export default function ActualitesPage() {
@@ -383,7 +383,7 @@ export default function ActualitesPage() {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
                 <div className="w-1 h-1 rounded-full bg-[#2B8FAB]" />
-                Restez connecté à la vie de notre campus et à notre communauté.
+                Restez Informés
               </Badge>
             </motion.div>
             <motion.h1
@@ -392,16 +392,16 @@ export default function ActualitesPage() {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="text-[44px] md:text-[56px] lg:text-[68px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
             >
-              Actualités &<br />
-              <span className="text-[#2B8FAB]">Événements</span>.
+              Actualités<br />
+              <span className="text-[#2B8FAB]">EBS</span>.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="text-[17px] md:text-[19px] text-white/60 leading-relaxed max-w-[550px]"
+              className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[550px]"
             >
-              Découvrez les dernières actualités d&apos;EBS, les événements à venir, les témoignages de nos étudiants et les succès de nos diplômés.
+              Partenariats, événements, conférences et vie étudiante. Découvrez toute l'actualité d'ESPIMA Business School.
             </motion.p>
           </div>
         </div>
@@ -424,7 +424,8 @@ export default function ActualitesPage() {
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ backgroundColor: `${stat.accent}15` }}>
                     <div style={{ color: stat.accent }}>{stat.icon}</div>
                   </div>
-                  <p className="text-[16px] md:text-[20px] font-extrabold text-penn-navy leading-none mb-1 text-center">{stat.value}</p>
+                  <p className="text-[28px] md:text-[34px] font-extrabold text-penn-navy leading-none mb-1 text-center">{stat.value}</p>
+                  <p className="text-[12px] text-penn-body/60 font-medium text-center">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -652,6 +653,49 @@ export default function ActualitesPage() {
               )}
             </motion.div>
           </AnimatePresence>
+        </div>
+      </section>
+
+      {/* ─────────── NEWSLETTER EBS ─────────── */}
+      <section className="section-padding bg-penn-navy relative overflow-hidden text-center">
+        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_50%_50%,_#2B8FAB_0%,_transparent_70%)]" />
+        <div className="relative z-10 max-w-[800px] mx-auto px-5 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+          >
+            <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80">Newsletter EBS</Badge>
+            <h2 className="text-[34px] md:text-[44px] font-extrabold text-white leading-[1.15] mb-4">
+              Restez connecté à notre actualité
+            </h2>
+            <p className="text-[16px] text-white/70 leading-relaxed mb-8 max-w-[620px] mx-auto">
+              Recevez les dernières actualités, les événements et les opportunités d'ESPIMA Business School directement dans votre boîte mail.
+            </p>
+
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+              }}
+              className="flex flex-col sm:flex-row gap-3 max-w-[500px] mx-auto mb-3"
+            >
+              <input
+                type="email"
+                required
+                placeholder="Votre adresse e-mail"
+                className="flex-1 px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-[#2B8FAB] text-[14px]"
+              />
+              <button
+                type="submit"
+                className="px-8 py-3.5 rounded-xl bg-[#2B8FAB] text-white font-bold text-[14px] hover:bg-[#2B8FAB]/90 transition-all shrink-0"
+              >
+                S'abonner
+              </button>
+            </form>
+            <p className="text-[12px] text-white/40">
+              Aucun spam. Désabonnement possible à tout moment.
+            </p>
+          </motion.div>
         </div>
       </section>
 

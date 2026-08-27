@@ -98,17 +98,17 @@ export default function QuiSommesNousPage() {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
               {/* Photo */}
-              <div className="w-full lg:w-2/5 shrink-0">
-                <div className="relative h-full min-h-[300px]">
+              <div className="w-full max-w-[280px] lg:max-w-[300px] mx-auto lg:mx-0 shrink-0">
+                <div className="relative aspect-[3/4] w-full">
                   <div className="absolute -inset-3 bg-gradient-to-br from-[#2B8FAB]/20 via-[#2B8FAB]/5 to-transparent rounded-3xl blur-2xl" />
                   <div className="absolute -inset-1 bg-gradient-to-br from-[#2B8FAB]/40 to-transparent rounded-2xl opacity-50" />
-                  <div className="relative h-full rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-black/30">
+                  <div className="relative h-full w-full rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-black/30">
                     <Image
                       src="/images/ebs-tn/PHOTO-PRESIDENT-DE-LEBS.jpg"
                       alt="Abderraouf NAJAR"
                       fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover"
+                      sizes="(max-width: 1024px) 280px, 300px"
+                      className="object-cover object-top"
                     />
                   </div>
                 </div>

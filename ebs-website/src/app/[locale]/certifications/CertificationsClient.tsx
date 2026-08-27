@@ -138,7 +138,7 @@ export default function CertificationsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 lg:gap-16 items-center">
             <motion.div variants={fadeUp} initial="hidden" animate="visible" transition={transitions.hero}>
               <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
-                AI Passport EBS · Catalogue international géré
+                AI Passport EBS · Catalogue international de certifications
               </Badge>
 
               <h1 className="text-[42px] md:text-[60px] lg:text-[76px] font-extrabold text-white leading-[1.02] tracking-[-1.5px] mb-6">
@@ -422,9 +422,9 @@ export default function CertificationsPage() {
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} className="text-center mb-14">
             <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80">Pourquoi EBS ?</Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-white leading-[1.1]">
-              Un système de preuve,
+              Un système de reconnaissance des compétences,
               <br />
-              pas une collection de badges.
+              bien plus qu'une collection de badges.
             </h2>
           </motion.div>
 
