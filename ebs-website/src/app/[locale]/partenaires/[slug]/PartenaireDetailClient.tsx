@@ -372,36 +372,46 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
       )}
 
       {/* ═══════════ DÉBOUCHÉS ═══════════ */}
-      <section className={`section-padding ${partner.pricing ? "bg-penn-bg-light" : "bg-white"}`}>
-        <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
-          <div className="text-center mb-10">
-            <Badge size="lg" className="mb-4">Carrières</Badge>
-            <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy mb-3">Débouchés professionnels</h2>
-            <p className="text-[15px] text-penn-body/50 max-w-[500px] mx-auto">Après votre diplôme {partner.name}, en France et à l&apos;international.</p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-4 max-w-[900px] mx-auto">
-            {partner.debouches.map((metier, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.06 }} className="bg-white rounded-xl border border-penn-border p-4 flex items-center gap-3 hover:border-opacity-100 hover:shadow-md transition-all group w-full md:w-[calc(50%-8px)] lg:w-[calc((100%-32px)/3)]"
-                style={{ ["--hover-border" as string]: `${accent}30` } as React.CSSProperties}
-              >
-                <Briefcase className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" style={{ color: accent }} />
-                <span className="text-[14px] font-bold text-penn-navy group-hover:opacity-80 transition-colors">{metier}</span>
-              </motion.div>
-            ))}
-          </div>
-          {partner.residencyBadge && (
-            <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} className="mt-8 text-center">
-              <div className="inline-flex items-center gap-3 bg-white border px-4 py-3.5 rounded-xl shadow-sm" style={{ borderColor: `${accent}30` }}>
-                <Home className="w-5 h-5" style={{ color: accent }} />
-                <div className="text-left">
-                  <p className="text-[14px] font-extrabold text-penn-navy">{partner.residencyBadge.text}</p>
-                  <p className="text-[12px] text-penn-body/40">{partner.residencyBadge.sub}</p>
+      {(partner.debouches?.length > 0 || partner.residencyBadge) && (
+        <section className={`section-padding py-24 ${partner.pricing ? "bg-penn-bg-light" : "bg-white"}`}>
+          <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
+            {partner.debouches?.length > 0 && (
+              <>
+                <div className="text-center mb-12">
+                  <Badge size="lg" className="mb-4">Carrières</Badge>
+                  <h2 className="text-[32px] md:text-[40px] font-extrabold text-penn-navy mb-4">Débouchés professionnels</h2>
+                  <p className="text-[16px] text-penn-body/60 max-w-[600px] mx-auto">Après votre diplôme {partner.name}, en France et à l&apos;international.</p>
                 </div>
-              </div>
-            </motion.div>
-          )}
-        </div>
-      </section>
+                <div className="flex flex-wrap justify-center gap-4 max-w-[900px] mx-auto">
+                  {partner.debouches.map((metier, i) => (
+                    <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.06 }} className="bg-white rounded-xl border border-penn-border/60 p-4 flex items-center gap-4 hover:shadow-md transition-all group w-full md:w-[calc(50%-8px)] lg:w-[calc((100%-32px)/3)]"
+                      style={{ ["--hover-border" as string]: `${accent}40` } as React.CSSProperties}
+                    >
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform" style={{ backgroundColor: `${accent}15` }}>
+                        <Briefcase className="w-4 h-4" style={{ color: accent }} />
+                      </div>
+                      <span className="text-[14px] font-bold text-penn-navy group-hover:text-penn-navy/80 transition-colors leading-snug">{metier}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </>
+            )}
+            {partner.residencyBadge && (
+              <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} className={`text-center ${partner.debouches?.length > 0 ? "mt-12" : ""}`}>
+                <div className="inline-flex items-center gap-4 bg-white border px-6 py-5 rounded-2xl shadow-sm" style={{ borderColor: `${accent}30` }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${accent}15` }}>
+                    <Home className="w-5 h-5" style={{ color: accent }} />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[15px] font-extrabold text-penn-navy leading-snug mb-0.5">{partner.residencyBadge.text}</p>
+                    <p className="text-[13px] font-medium text-penn-body/60">{partner.residencyBadge.sub}</p>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* ═══════════ TESTIMONIALS (UQAT-specific) ═══════════ */}
       {partner.testimonials && partner.testimonials.length > 0 && (
