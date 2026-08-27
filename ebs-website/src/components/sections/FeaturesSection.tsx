@@ -70,10 +70,10 @@ function BentoCard({
       {/* Hero Card specific backgrounds */}
       {isHero && feature.image && (
         <>
-          <div className="absolute inset-0 z-0">
-            <Image src={feature.image} alt={feature.title} fill className="object-cover opacity-30 transition-transform duration-700 group-hover:scale-105" />
+          <div className="absolute inset-0 z-0 bg-penn-navy/20">
+            <Image src={feature.image} alt={feature.title} fill className="object-cover opacity-60 transition-transform duration-700 group-hover:scale-105 mix-blend-overlay" />
           </div>
-          <div className="absolute inset-0 z-0 bg-gradient-to-t from-penn-navy via-penn-navy/80 to-transparent" />
+          <div className="absolute inset-0 z-0 bg-gradient-to-t from-penn-navy/90 via-penn-navy/40 to-transparent pointer-events-none" />
         </>
       )}
 
@@ -154,13 +154,13 @@ export default function FeaturesSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-12 lg:mt-16 auto-rows-[240px]"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-12 lg:mt-16"
         >
           {/* Card 0: The Hero Card (Spans 2x2) */}
           <BentoCard 
             feature={{...rawFeatures[0], image: "/images/sections/features-group.jpg"}} 
             isHero={true}
-            className="md:col-span-2 md:row-span-2" 
+            className="md:col-span-2 md:row-span-2 min-h-[350px] lg:min-h-[500px]" 
           />
           
           {/* Card 1: AI (Spans 2 cols) */}
