@@ -100,7 +100,7 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
       </div>
 
       {/* ═══════════ PRÉSENTATION + STATS ═══════════ */}
-      <section className="relative z-20 -mt-16 pb-0">
+      <section className="relative z-20 py-6 bg-white">
         <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-penn-border shadow-xl p-8 md:p-10">
             <div className="flex items-center gap-3 mb-6">
@@ -172,8 +172,8 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
                       <Image src={acc.logo} alt={acc.label} width={180} height={64} className="max-h-full max-w-[180px] object-contain mx-auto" onError={(e) => { (e.target as HTMLElement).style.display = "none"; }} />
                     </div>
                   )}
-                  <h3 className="text-[15px] font-extrabold text-penn-navy mb-2">{acc.label}</h3>
-                  <p className="text-[13px] text-penn-body/50 leading-relaxed">{acc.description}</p>
+                  <h3 className="text-[18px] md:text-[20px] font-extrabold text-penn-navy mb-3">{acc.label}</h3>
+                  <p className="text-[15px] md:text-[16px] text-penn-body/70 leading-relaxed">{acc.description}</p>
                 </motion.div>
               ))}
             </div>
