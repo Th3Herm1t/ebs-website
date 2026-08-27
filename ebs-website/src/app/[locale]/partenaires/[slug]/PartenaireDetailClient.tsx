@@ -178,8 +178,18 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {partner.keyStats.map((stat) => (
                       <div key={stat.label} className="bg-white rounded-xl p-4 border border-penn-border/40 shadow-sm flex flex-col justify-center min-h-[90px]">
-                        <p className="text-[11px] font-bold text-penn-body/50 uppercase tracking-widest mb-1">{stat.label}</p>
-                        <p className="text-[14px] font-extrabold text-penn-navy leading-snug break-words">{stat.value}</p>
+                        <p className="text-[11px] font-bold text-penn-body/50 uppercase tracking-widest mb-2">{stat.label}</p>
+                        {stat.value.includes(" • ") ? (
+                          <div className="flex flex-wrap gap-1.5 mt-auto">
+                            {stat.value.split(" • ").map((pill, idx) => (
+                              <span key={idx} className="text-[12px] font-bold px-2.5 py-1 rounded-md" style={{ color: accent, backgroundColor: `${accent}15` }}>
+                                {pill.trim()}
+                              </span>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-[14px] font-extrabold text-penn-navy leading-snug break-words mt-auto">{stat.value}</p>
+                        )}
                       </div>
                     ))}
                   </div>
