@@ -345,42 +345,106 @@ const canonicalPartenaires = {
     countryCode: "FR",
     logo: "/images/partenaires-academiques/idrac.webp",
     type: "Grande École française de commerce et de management — 8 campus en France",
-    presentation: "Fondée en 1965, IDRAC Business School est une Grande École française de commerce et de management, membre de l'Union des Grandes Écoles Indépendantes (UGEI). Implantée sur 8 campus en France (Bordeaux, Grenoble, Lyon, Montpellier, Nantes, Nice, Paris, Toulouse), elle propose des formations de Bac à Bac+5 avec des reconnaissances officielles de l'État français, notamment le Grade de Licence et le Grade de Master.",
+    presentation: "Fondée en 1965, IDRAC Business School est une Grande École française de commerce et de management, membre de l’Union des Grandes Écoles Indépendantes (UGEI). Implantée dans plusieurs grandes villes françaises, elle propose des formations de Bac à Bac+5 dans les domaines du commerce, du marketing, du management, de la stratégie, de l’international, de la finance, de l’innovation et de la supply chain.\nSes formations bénéficient de reconnaissances officielles de l’État français, notamment le Grade de Licence pour le Bachelor Marketing & Business et le Grade de Master pour son Programme Grande École. L’école développe une pédagogie professionnalisante fondée sur les projets, l’expérience en entreprise, l’entrepreneuriat et l’ouverture internationale.\nIDRAC Business School fait partie du réseau d’écoles de FIGS Education, qui rassemble plusieurs établissements français d’enseignement supérieur spécialisés et accompagne notamment les étudiants internationaux dans leurs projets d’études en France. IDRAC bénéficie également d’une forte dimension internationale, avec des programmes en anglais et des collaborations académiques à l’étranger.\nLe partenariat entre ESPIMA Business School, FIGS Education et IDRAC Business School permet aux étudiants d’ESPIMA de poursuivre leurs études en France après Bac+2 ou après l’obtention de leur Licence, selon leur parcours académique et les conditions prévues par la convention.",
     programmes: [
-      { nom: "Bachelor Marketing & Business", duree: "1 an (L3)", details: "Diplôme visé par l'État (Bac+3). Accès après Bac+2 EBS / 120 ECTS en 3e année (parcours 2+1)." },
-      { nom: "MBA Supply Chain, Achats & RSE", duree: "2 ans", details: "Titre RNCP niveau 7 (Bac+5). Accès après Licence EBS Management. Campus : Grenoble, Lyon." },
-      { nom: "MBA Manager de l'innovation stratégique", duree: "2 ans", details: "Titre RNCP niveau 7 (Bac+5). Accès après Licence EBS." },
-      { nom: "MBA International Project Management", duree: "2 ans", details: "Titre RNCP niveau 7 (Bac+5). En anglais. Campus : Montpellier, Nantes, Toulouse." },
+      {
+        nom: "Bachelor Marketing & Business",
+        duree: "1 an",
+        details: "Bac+3 • Diplôme visé par l’État. Après Bac+2 EBS / 120 ECTS – admission en 3e année dans le cadre du parcours 2+1.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+3 • Diplôme visé par l’État",
+              "**Étudiants EBS concernés** : Après Bac+2 EBS / 120 ECTS – admission en 3e année dans le cadre du parcours 2+1",
+              "**Campus** : Bordeaux • Grenoble • Lyon • Montpellier • Nantes • Nice • Paris • Toulouse",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "MBA Supply Chain, Achats & RSE",
+        duree: "2 ans",
+        details: "Bac+5 • Titre RNCP 7. Titulaires de la Licence EBS Management EBS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Titre RNCP 7",
+              "**Étudiants EBS concernés** : Titulaires de la Licence EBS Management EBS, conformément au partenariat et sous réserve d’admission",
+              "**Campus** : Grenoble • Lyon",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "MBA Manager de l’innovation stratégique",
+        duree: "2 ans",
+        details: "Bac+5 • Titre RNCP 7. Titulaires d’une Licence EBS compatible.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Titre RNCP 7",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence EBS compatible, sous réserve de correspondance avec les parcours prévus par le partenariat",
+              "**Campus** : Bordeaux • Grenoble • Lyon • Montpellier • Nantes • Nice • Paris • Toulouse",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "MBA International Project Management",
+        duree: "2 ans",
+        details: "Bac+5 • Titre RNCP 7. Titulaires d’une Licence EBS compatible.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Titre RNCP 7",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence EBS compatible, sous réserve des dispositions du partenariat et d’admission",
+              "**Campus** : Montpellier • Nantes • Toulouse",
+              "**Langue** : Anglais"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Accès depuis les Licences EBS. 120 ECTS pour poursuite après Bac+2 ou 180 ECTS après Licence. Niveau B2 en français et anglais selon le programme. Étude de dossier et entretien d'admission.",
+    eligibilite: "Modèles académiques prévus par le partenariat :\n• Modèle 2+1 : deux années d’études validées à ESPIMA, puis une 3e année à IDRAC Business School.\n• Modèle 3+1 : Licence obtenue à ESPIMA Business School, puis poursuite dans un programme MBA accessible dans le cadre du partenariat.\n• Après un Master 1 EBS : une admission en 2ᵉ année de certains programmes Bac+5 d’IDRAC Business School peut être envisagée, sous réserve de la compatibilité du parcours, de la validation des acquis académiques et de la décision d’admission d’IDRAC Business School.\n\nConditions générales d’admission :\nL’admission des étudiants d’ESPIMA Business School est examinée par IDRAC Business School conformément à la convention de partenariat FIGS Education et aux procédures d’admission applicables au programme choisi.\nLe dossier de candidature est évalué notamment sur la base :\n• du parcours académique du candidat et de la validation des années d’études à ESPIMA ;\n• des diplômes et relevés de notes ;\n• de la validation de 120 ECTS pour une poursuite après Bac+2 ou de 180 ECTS après Licence ;\n• du curriculum vitae et de la lettre de motivation ;\n• d’un entretien d’admission lorsque celui-ci est demandé ;\n• du niveau linguistique requis : Français B2 et Anglais B2 selon les conditions prévues par le partenariat et le programme choisi.\nImportant : les intitulés des programmes et les campus d’affectation peuvent évoluer. L’admission définitive dépend du programme choisi, de l’étude du dossier et des conditions en vigueur au moment de la candidature.",
     avantages: [
-      "Grande École française de commerce fondée en 1965",
-      "Diplômes reconnus par l'État (Grade Licence / Grade Master / RNCP 7)",
-      "8 campus en France — Bordeaux, Grenoble, Lyon, Montpellier, Nantes, Nice, Paris, Toulouse",
-      "Pédagogie professionnalisante : projets, expérience en entreprise, entrepreneuriat",
-      "Membre du réseau FIGS Education",
-      "12 % de réduction sur les frais de scolarité dans le cadre du partenariat",
-      "Accompagnement personnalisé Campus France et visa",
+      "Grande École française de commerce et de management, fondée en 1965.",
+      "Des diplômes reconnus par l’État français, avec notamment le Grade de Licence pour le Bachelor Marketing & Business et le Grade de Master pour le Programme Grande École.",
+      "Un réseau de huit campus en France : Bordeaux, Grenoble, Lyon, Montpellier, Nantes, Nice, Paris et Toulouse.",
+      "Une pédagogie professionnalisante associant projets, expérience en entreprise, entrepreneuriat et ouverture internationale.",
+      "Des formations couvrant notamment le management, marketing, commerce, international, innovation et supply chain.",
+      "Possibilité pour les étudiants EBS de poursuivre leurs études en France après Bac+2 ou après la Licence, selon leur filière et le programme choisi.",
+      "12 % de réduction sur les frais de scolarité dans le cadre du partenariat.",
+      "Accompagnement personnalisé dans les démarches Campus France et visa.",
     ],
-    debouches: [
-      "Responsable commercial / Manager des ventes",
-      "Chargé de marketing et communication",
-      "Responsable achats / Supply Chain",
-      "Chef de projet international",
-      "Manager de l'innovation stratégique",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Création", value: "1965" },
-      { label: "Campus", value: "8 en France" },
-      { label: "Niveaux", value: "Bac+3, Bac+5" },
+      { label: "Nom de l’établissement", value: "IDRAC Business School" },
+      { label: "Type d’établissement", value: "École française de commerce et de management" },
+      { label: "Année de création", value: "1965" },
+      { label: "Campus en France", value: "Bordeaux • Grenoble • Lyon • Montpellier • Nantes • Nice • Paris • Toulouse" },
+      { label: "Domaines de formation", value: "Commerce • Management • Marketing • International Business • Finance • Entrepreneuriat • Innovation • Achats • Supply Chain • Digital" },
+      { label: "Langues d’enseignement", value: "Français et Anglais selon les programmes et parcours" },
+      { label: "Reconnaissances", value: "Bachelor Marketing & Business : diplôme visé Bac+3 • Programme Grande École : diplôme visé Bac+5 conférant le Grade de Master • Titres RNCP niveau 7 selon les MBA spécialisés" },
+      { label: "Dimension internationale", value: "Réseau de partenaires académiques internationaux et possibilités de mobilité selon les programmes" },
+      { label: "Partenariat avec ESPIMA", value: "Poursuite d’études après Bac+2 et après Licence EBS, conformément à la convention FIGS Education" }
     ],
     pricing: [
-      { label: "Bachelor & MBA", amount: "Tarif officiel", period: "", note: "-12% de réduction EBS" },
+      { label: "Bachelor Marketing & Business", amount: "Tarif officiel IDRAC", period: "" },
+      { label: "MBA Supply Chain, Achats & RSE", amount: "Tarif officiel IDRAC", period: "" },
+      { label: "MBA Manager de l’innovation stratégique", amount: "Tarif officiel IDRAC", period: "" },
+      { label: "MBA International Project Management", amount: "Tarif officiel IDRAC", period: "" },
     ],
     extraSections: [
       {
         title: "Conditions financières prévues par le partenariat",
-        body: "- **Réduction** : 12 % sur les frais de scolarité.\n- **Frais de candidature** : Exonération de 80 €.\n- **1er acompte** : 3 000 € à l'admission.\n- **2e acompte** : 3 000 € après obtention du visa.\n- **Solde** : Avant le 30 novembre (Fall) ou le 30 avril (Spring).\n- **Refus de visa** : Remboursement du premier acompte."
+        body: "- **Réduction** : 12 % sur les frais de scolarité\n- **Frais de candidature** : Exonération de 80 €\n- **1er acompte** : 3 000 € à l’admission\n- **2e acompte** : 3 000 € après obtention du visa\n- **Solde** : Avant le 30 novembre (Fall) ou le 30 avril (Spring)\n- **Refus de visa** : Remboursement du premier acompte conformément aux dispositions prévues par la convention"
       }
     ],
   },
