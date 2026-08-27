@@ -189,7 +189,7 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
             <h2 className="text-[30px] md:text-[38px] font-extrabold text-penn-navy mb-3">Programmes accessibles</h2>
             <p className="text-[15px] text-penn-body/50 max-w-[550px] mx-auto">{partner.programmes.length} programme{partner.programmes.length > 1 ? "s" : ""} accessible{partner.programmes.length > 1 ? "s" : ""} via le partenariat EBS — {partner.name}.</p>
           </div>
-          <div className={`flex flex-wrap justify-center gap-6 ${partner.programmes.length === 1 ? "max-w-[550px] mx-auto" : ""}`}>
+          <div className={`flex flex-wrap justify-center items-start gap-6 ${partner.programmes.length === 1 ? "max-w-[550px] mx-auto" : ""}`}>
             {partner.programmes.map((prog, i) => (
               <ProgramCard key={i} accent={accent} programme={prog} index={i} total={partner.programmes.length} />
             ))}
@@ -246,7 +246,14 @@ export default function PartenaireDetailClient({ slug }: { slug: string }) {
           </div>
           <div className="max-w-[800px] mx-auto">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} className="bg-white rounded-2xl border border-penn-border shadow-sm p-8 md:p-10">
-              <div className="text-[15px] text-penn-body/70 leading-relaxed space-y-4 whitespace-pre-line">{partner.eligibilite}</div>
+              <div className="text-[15px] text-penn-body/70 leading-relaxed space-y-3">
+                {partner.eligibilite.split(/;\s*|\n+/).filter(Boolean).map((line, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 shrink-0 mt-0.5" style={{ color: accent }} />
+                    <span className="break-words">{line.trim()}</span>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>
@@ -625,13 +632,13 @@ function RichSection({ section, accent, index }: { section: { title: string; bod
             ))}
           </div>
           {extraText && (
-            <div className="text-[14px] text-penn-body/60 leading-relaxed space-y-3 whitespace-pre-line">{parseLinks(extraText)}</div>
+            <div className="text-[14px] text-penn-body/60 leading-relaxed space-y-3 whitespace-pre-wrap break-words">{parseLinks(extraText)}</div>
           )}
         </>
       )}
 
       {!isList && (
-        <div className="text-[15px] text-penn-body/70 leading-relaxed space-y-4 whitespace-pre-line">{parseLinks(cleanBody)}</div>
+        <div className="text-[15px] text-penn-body/70 leading-relaxed space-y-4 whitespace-pre-wrap break-words">{parseLinks(cleanBody)}</div>
       )}
     </motion.div>
   );
