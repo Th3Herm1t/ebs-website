@@ -456,38 +456,73 @@ const canonicalPartenaires = {
     countryCode: "FR",
     logo: "/images/partenaires-academiques/ifag.webp",
     type: "École de management — Depuis 1968 — Groupe FIGS Education",
-    presentation: "Créée en 1968, l'IFAG est une École Supérieure française de management spécialisée dans les domaines du commerce, des ressources humaines et de l'entrepreneuriat. Pionnière de l'alternance en France, elle forme des étudiants du Bac+2 au Bac+5. Elle fait partie du réseau FIGS Education.",
+    presentation: "Créée en 1968, l’IFAG est une École Supérieure française de management spécialisée dans les domaines du commerce, des ressources humaines et de l’entrepreneuriat. Pionnière de l’alternance en France, elle forme des étudiants du Bac+2 au Bac+5 et s’appuie sur un important réseau de campus.\nSa pédagogie professionnalisante est orientée vers l’action, les projets et l’expérience en entreprise. Elle prépare des managers opérationnels capables de développer l’activité commerciale, piloter un centre de profit, accompagner les équipes et conduire des projets.\nL’IFAG fait partie du réseau d’écoles de FIGS Education, service international d’un regroupement d’écoles privées françaises, qui accompagne notamment les étudiants internationaux dans leurs projets d’études en France.\nLe partenariat entre ESPIMA Business School, FIGS Education et l’IFAG permet aux étudiants EBS de poursuivre leurs études en France après Bac+2 ou après l’obtention de leur Licence, selon leur spécialité et les conditions prévues par la convention.",
     programmes: [
-      { nom: "Bachelor – Responsable d'Agence et de Commerce", duree: "1 an (Bac+3)", details: "Titre RNCP 6. Accès après Bac+2 EBS." },
-      { nom: "Mastère – Manager de Commerce et de Centre de Profit", duree: "2 ans (Bac+5)", details: "Titre RNCP 7. Accès après Licence EBS en Management ou Marketing." },
+      {
+        nom: "Bachelor – Responsable d’Agence et de Commerce",
+        duree: "1 an",
+        details: "Bac+3 • Titre RNCP 6. Étudiants EBS ayant validé Bac+2.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+3 • Titre RNCP 6",
+              "**Étudiants EBS concernés** : Étudiants EBS ayant validé Bac+2",
+              "**Campus** : Plusieurs campus IFAG",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Mastère – Manager de Commerce et de Centre de Profit",
+        duree: "2 ans",
+        details: "Bac+5 • Titre RNCP 7. Titulaires d’une Licence EBS en Management ou Marketing.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Bac+5 • Titre RNCP 7",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence EBS en Management ou Marketing",
+              "**Campus** : Plusieurs campus IFAG",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Accès depuis les Licences EBS (Management, Marketing). Admission examinée selon niveau académique, diplômes, CV, lettre de motivation, concours et/ou entretien.",
+    eligibilite: "du niveau académique validé à ESPIMA Business School ;\ndes diplômes et relevés de notes ;\nde la cohérence entre la filière suivie à EBS et le programme demandé ;\ndu curriculum vitae et de la lettre de motivation ;\ndu concours et/ou de l’entretien d’admission lorsque requis par l’IFAG ;\ndes conditions particulières applicables au campus et au programme choisis.\nAprès un Master 1 EBS : une admission en 2ᵉ année de certains programmes Bac+5 de l’IFAG peut être envisagée, sous réserve de la compatibilité du parcours, de la validation des acquis académiques et de la décision finale d’admission de l’IFAG.",
     avantages: [
-      "55+ ans d'expertise dans le management, le commerce et les RH",
-      "Pionnière de l'alternance en France",
-      "Vaste réseau de campus (25+) avec 18 000 diplômés",
-      "Pédagogie orientée vers l'action, l'entrepreneuriat et les projets",
-      "12 % de réduction sur les frais de scolarité pour les étudiants EBS",
-      "Accompagnement personnalisé dans les démarches Campus France et visa",
+      "Plus de 50 ans d’expertise dans la formation aux métiers du management, du commerce et des ressources humaines.",
+      "École pionnière de l’alternance en France, avec une pédagogie fortement professionnalisante et orientée vers l’action.",
+      "Des formations du Bac au Bac+5 et des titres RNCP de niveaux 6 et 7 selon les programmes.",
+      "Un vaste réseau de campus et une forte proximité avec les entreprises.",
+      "Une place importante accordée à l’entrepreneuriat et au développement de projets.",
+      "Des possibilités de poursuite pour les étudiants EBS après Bac+2 ou après la Licence, conformément au partenariat.",
+      "12 % de réduction sur les frais de scolarité pour les étudiants EBS.",
+      "Accompagnement personnalisé dans les démarches Campus France et visa."
     ],
-    debouches: [
-      "Manager de commerce / Directeur de centre de profit",
-      "Responsable d'agence",
-      "Business Developer / Développeur commercial",
-      "Entrepreneur / Créateur d'entreprise",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Création", value: "1968" },
-      { label: "Réseau", value: "25 campus" },
-      { label: "Alumni", value: "18 000" },
+      { label: "Nom de l’établissement", value: "IFAG" },
+      { label: "Type d’établissement", value: "École française de management des métiers du commerce et des ressources humaines" },
+      { label: "Année de création", value: "1968" },
+      { label: "Réseau", value: "25 campus en France et à l’étranger selon l’offre actuelle de l’école" },
+      { label: "Domaines de formation", value: "Management • Commerce • Développement commercial • Ressources humaines • Entrepreneuriat • Pilotage de centre de profit" },
+      { label: "Niveaux de formation", value: "Bac+2 • Bac+3 • Bac+5" },
+      { label: "Certifications", value: "Titres professionnels enregistrés au RNCP, notamment niveaux 6 et 7 selon les programmes" },
+      { label: "Pédagogie", value: "Alternance • professionnalisation • projets • entrepreneuriat • proximité avec les entreprises" },
+      { label: "Réseau Alumni", value: "18 000 diplômés annoncés par l’école" },
+      { label: "Partenariat avec ESPIMA", value: "Poursuite d’études après Bac+2 et après Licence EBS, conformément au partenariat FIGS Education" }
     ],
     pricing: [
-      { label: "Bachelor & Mastère", amount: "Tarif officiel", period: "", note: "-12% de réduction EBS" },
+      { label: "Bachelor – Responsable d’Agence", amount: "Tarif officiel", period: "" },
+      { label: "Mastère – Manager de Commerce", amount: "Tarif officiel", period: "" },
     ],
     extraSections: [
       {
         title: "Conditions financières prévues par le partenariat",
-        body: "- **Réduction** : 12 % sur les frais de scolarité.\n- **Frais de candidature** : Exonération de 80 €.\n- **1er acompte** : 3 000 € à l'admission.\n- **2e acompte** : 3 000 € après obtention du visa.\n- **Solde** : Avant le 30 novembre (Fall) ou le 30 avril (Spring).\n- **Refus de visa** : Remboursement du premier acompte."
+        body: "- **Réduction** : 12 % sur les frais de scolarité\n- **Frais de candidature** : Exonération de 80 €\n- **1er acompte** : 3 000 € à l’admission\n- **2e acompte** : 3 000 € après obtention du visa\n- **Solde** : Avant le 30 novembre (Fall) ou le 30 avril (Spring)\n- **Refus de visa** : Remboursement du premier acompte conformément aux dispositions prévues par la convention"
       }
     ],
   },
