@@ -564,17 +564,21 @@ function RichSection({ section, accent, index }: { section: { title: string; bod
   const isList = section.body.startsWith("---LISTE");
   const cleanBody = isList ? section.body.replace("---LISTE\n", "") : section.body;
 
-  // Parse links [url|text]
-  const parseLinks = (text: string) => {
-    const parts = text.split(/(\[https?:\/\/[^\s\]]+\|[^\]]+\])/g);
+  // Parse links [url|text] and **bold** text
+  const parseRichText = (text: string) => {
+    const parts = text.split(/(\[https?:\/\/[^\s\]]+\|[^\]]+\]|\*\*.*?\*\*)/g);
     return parts.map((part, i) => {
-      const match = part.match(/\[(https?:\/\/[^\s\]]+)\|([^\]]+)\]/);
-      if (match) {
+      const linkMatch = part.match(/\[(https?:\/\/[^\s\]]+)\|([^\]]+)\]/);
+      if (linkMatch) {
         return (
-          <a key={i} href={match[1]} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-bold hover:underline" style={{ color: accent }}>
-            {match[2]} <ArrowRight className="w-3 h-3" />
+          <a key={i} href={linkMatch[1]} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-bold hover:underline" style={{ color: accent }}>
+            {linkMatch[2]} <ArrowRight className="w-3 h-3" />
           </a>
         );
+      }
+      const boldMatch = part.match(/\*\*(.*?)\*\*/);
+      if (boldMatch) {
+        return <strong key={i} className="text-penn-navy font-extrabold">{boldMatch[1]}</strong>;
       }
       return <span key={i}>{part}</span>;
     });
@@ -632,13 +636,13 @@ function RichSection({ section, accent, index }: { section: { title: string; bod
             ))}
           </div>
           {extraText && (
-            <div className="text-[14px] text-penn-body/60 leading-relaxed space-y-3 whitespace-pre-wrap break-words">{parseLinks(extraText)}</div>
+            <div className="text-[14px] text-penn-body/60 leading-relaxed space-y-3 whitespace-pre-wrap break-words">{parseRichText(extraText)}</div>
           )}
         </>
       )}
 
       {!isList && (
-        <div className="text-[15px] text-penn-body/70 leading-relaxed space-y-4 whitespace-pre-wrap break-words">{parseLinks(cleanBody)}</div>
+        <div className="text-[15px] text-penn-body/70 leading-relaxed space-y-4 whitespace-pre-wrap break-words">{parseRichText(cleanBody)}</div>
       )}
     </motion.div>
   );
