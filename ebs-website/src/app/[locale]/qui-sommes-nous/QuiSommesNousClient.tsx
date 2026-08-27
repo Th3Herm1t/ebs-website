@@ -307,7 +307,7 @@ export default function QuiSommesNousPage() {
         <div className="absolute inset-0 z-0">
           <Image fill src="/images/campus/campus-3.jpg" alt="" className="w-full h-full object-cover opacity-60" />
         </div>
-        <div className="absolute inset-0 z-[1] bg-penn-navy/90" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-penn-navy/90 via-penn-navy/60 to-penn-navy/90" />
         <div className="absolute inset-0 z-[2] opacity-[0.03] bg-[radial-gradient(circle_at_50%_50%,_#2B8FAB_0%,_transparent_70%)]" />
         
         <div className="relative z-10 max-w-[1160px] mx-auto px-5 lg:px-12">
