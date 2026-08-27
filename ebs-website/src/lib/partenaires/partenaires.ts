@@ -1255,36 +1255,56 @@ const canonicalPartenaires = {
     countryCode: "FR",
     logo: "/images/partenaires-academiques/redsup.webp",
     type: "Établissement spécialisé en informatique et cybersécurité",
-    presentation: "RED-SUP est un établissement français d'enseignement supérieur privé spécialisé dans l'informatique et la cybersécurité. Ses formations couvrent notamment les réseaux, la sécurité informatique et la cybersécurité, avec des cursus de niveau Bac+3 et Bac+5.",
+    presentation: "RED-SUP est un établissement français d’enseignement supérieur privé spécialisé dans l’informatique et la cybersécurité. Ses formations couvrent notamment les réseaux, la sécurité informatique et la cybersécurité, avec des cursus de niveau Bac+3 et Bac+5.\nSa pédagogie est orientée vers la pratique, les projets appliqués et la professionnalisation. Dans un contexte marqué par le développement de l’intelligence artificielle et l’augmentation des enjeux de cybersécurité, RED-SUP forme des profils capables d’évoluer dans les métiers techniques de l’informatique et de la sécurité numérique.\nLe partenariat entre ESPIMA Business School et RED-SUP permet aux titulaires d’une Licence EBS en Informatique de poursuivre leurs études en France dans une formation Bac+5 spécialisée en cybersécurité. La convention prévoit également des actions de coopération pédagogique, de mobilité académique et de rapprochement avec l’environnement professionnel.",
     programmes: [
-      { nom: "Mastère Européen – Expert IT en Cybersécurité", duree: "2 ans (Bac+5)", details: "Titre RNCP niveau 7. Accès pour les titulaires d'une Licence EBS : Génie Logiciel & Systèmes d'Information." },
+      {
+        nom: "Mastère Européen – Expert IT en Cybersécurité",
+        duree: "2 ans",
+        details: "Titre RNCP niveau 7. Titulaires d’une Licence EBS : Génie Logiciel & Systèmes d’Information.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Titre RNCP niveau 7, conformément aux termes de la convention",
+              "**Étudiants EBS concernés** : Titulaires d’une Licence EBS : Génie Logiciel & Systèmes d’Information",
+              "**Campus** : Paris France",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Être titulaire d'une Licence EBS en informatique, génie logiciel, systèmes d'information, réseaux ou discipline connexe. Admission soumise à l'étude du dossier et à la décision de RED-SUP.",
+    eligibilite: "L’admission est prononcée par RED-SUP après validation du niveau académique par ESPIMA et étude du dossier de candidature.\n• être titulaire d’un diplôme de Licence ou équivalent ;\n• avoir suivi une spécialité compatible : informatique, génie logiciel, systèmes d’information, réseaux ou discipline connexe ;\n• faire valider le diplôme et les prérequis académiques par ESPIMA ;\n• soumettre le dossier de candidature à RED-SUP ;\n• obtenir une décision favorable d’admission de RED-SUP.",
     avantages: [
-      "Établissement français spécialisé dans l'informatique et la cybersécurité",
-      "Formation Bac+5 orientée vers l'expertise IT et la sécurité des systèmes",
-      "Pédagogie professionnalisante : projets appliqués et expérience professionnelle",
-      "Passerelle dédiée aux titulaires d'une Licence EBS (informatique)",
-      "15 % de réduction sur les frais de scolarité pour les étudiants EBS",
-      "Accompagnement académique par ESPIMA et documents requis pour le visa",
+      "Établissement supérieur français spécialisé dans l’informatique et la cybersécurité.",
+      "Formation Bac+5 orientée vers l’expertise IT, la sécurité des systèmes et la cybersécurité.",
+      "Mastère Européen Expert IT en Cybersécurité, avec titre RNCP niveau 7 selon les termes de la convention.",
+      "Pédagogie professionnalisante associant enseignements, projets appliqués et expérience professionnelle.",
+      "Possibilité de stages ou d’alternance selon les modalités en vigueur.",
+      "Passerelle dédiée aux titulaires d’une Licence EBS dans une spécialité informatique compatible.",
+      "15 % de réduction sur les frais de scolarité, selon les conditions et modalités définies par RED-SUP.",
+      "Accompagnement académique par ESPIMA et délivrance par RED-SUP des documents nécessaires aux démarches administratives, notamment pour le visa étudiant.",
+      "Accès à un environnement professionnel lié aux formations."
     ],
-    debouches: [
-      "Expert en Cybersécurité",
-      "Consultant en sécurité des systèmes d'information",
-      "Architecte réseau et sécurité",
-      "Analyste cybersécurité",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Campus", value: "Paris (Clichy)" },
-      { label: "Domaines", value: "Cybersécurité, Réseaux, Informatique" },
+      { label: "Nom de l’établissement", value: "RED-SUP" },
+      { label: "Type d’établissement", value: "Établissement d’enseignement supérieur privé spécialisé en informatique et cybersécurité" },
+      { label: "Pays", value: "France" },
+      { label: "Adresse", value: "98 boulevard Victor Hugo, 92110 Clichy, France" },
+      { label: "Domaines", value: "Informatique • Réseaux • Sécurité informatique • Cybersécurité" },
+      { label: "Niveaux", value: "Bac+3 • Bac+5" },
+      { label: "Programme Bac+5 prévu par la convention", value: "Mastère Européen Expert IT en Cybersécurité • Titre RNCP niveau 7, selon les termes de la convention" },
+      { label: "Modalités pédagogiques", value: "Présentiel • projets appliqués • stages ou alternance selon les modalités en vigueur" },
+      { label: "Partenariat avec ESPIMA", value: "Poursuite d’études en Bac+5 après une Licence en informatique à EBS" }
     ],
     pricing: [
-      { label: "Mastère", amount: "Tarif officiel", period: "", note: "-15% de réduction EBS" },
+      { label: "Mastère Européen", amount: "Tarif officiel RED-SUP", period: "" },
     ],
     extraSections: [
       {
-        title: "Conditions financières",
-        body: "- **Réduction** : 15 % sur les frais de scolarité selon les conditions et modalités définies par RED-SUP.\n- RED-SUP délivre aux étudiants admis les attestations et documents académiques requis, notamment pour le visa."
+        title: "Conditions financières et accompagnement",
+        body: "- **Réduction** : 15 % sur les frais de scolarité selon les conditions et modalités définies par RED-SUP\n- **Documents administratifs** : RED-SUP délivre aux étudiants admis les attestations et documents académiques requis, notamment pour le visa\n- **Accompagnement ESPIMA** : Vérification des prérequis et accompagnement dans la constitution et le suivi du dossier\n- **Stages / activités pratiques** : Possibilité de stages, projets appliqués et ateliers ; chaque stage fait l’objet d’une convention tripartite distincte"
       }
     ],
   },
