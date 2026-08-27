@@ -556,47 +556,119 @@ const canonicalPartenaires = {
     countryCode: "FR",
     logo: "/images/partenaires-academiques/excelia.webp",
     type: "Grande École de Commerce — Triple accréditée AACSB · EQUIS · AMBA",
-    presentation: "Excelia Business School est une grande école de commerce triplement accréditée AACSB, EQUIS et AMBA, implantée à La Rochelle, Tours, Orléans et Paris. Reconnue pour son excellence académique et son ouverture internationale, elle propose des programmes en management, tourisme, digital et supply chain avec une forte dimension RSE.",
+    presentation: "Excelia Business School est une Grande École de Management française reconnue par l'État, membre de la Conférence des Grandes Écoles (CGE) et appartenant au cercle très restreint des Business Schools titulaires de la Triple Couronne internationale (AACSB, EQUIS et AMBA), une distinction détenue par moins de 1 % des écoles de management dans le monde.\nElle propose des formations du Bachelor au Programme Grande École et aux Master of Science (MSc) dans les domaines du management, de la finance, du marketing, du digital, de la supply chain, de la communication, de l'entrepreneuriat et du développement durable.\nGrâce au partenariat conclu avec ESPIMA, les étudiants peuvent poursuivre leurs études en France après un Bac+2 ou une Licence, dans des conditions académiques et financières privilégiées.",
     programmes: [
-      { nom: "Programme Grande École", duree: "2 ans", details: "Grade de Master. Spécialisations : Management, Marketing, Finance, Digital, Supply Chain, Entrepreneuriat." },
-      { nom: "Master of Science (MSc)", duree: "1 an", details: "Label MSc (CGE) ou Titre RNCP niveau 7. Marketing, Finance, Data, Supply Chain, Luxury, Sustainable Management." },
-      { nom: "Bachelor Business (3e année)", duree: "1 an", details: "Diplôme visé, Grade de Licence. Accès depuis Licence 2 EBS." },
-      { nom: "BBA International", duree: "1-2 ans", details: "Diplôme visé. Accès depuis Licence 2 EBS." },
+      {
+        nom: "Bachelor Business (3e année)",
+        duree: "1 an",
+        details: "Diplôme visé • Grade de Licence. Accès après un Bac+2 validé.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Diplôme visé • Grade de Licence",
+              "**Étudiants concernés** : Bac+2 validé",
+              "**Conditions d'admission** : Moyenne ≥ 12/20 • Recommandation EBS • Entretien • Français B2",
+              "**Campus** : La Rochelle • Tours • Orléans",
+              "**Langue** : Français"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "BBA International",
+        duree: "1 ou 2 ans",
+        details: "Diplôme visé. Accès après un Bac+2 validé.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Diplôme visé",
+              "**Étudiants concernés** : Bac+2 validé",
+              "**Conditions d'admission** : Moyenne ≥ 12/20 • Entretien • Anglais B2 (TOEIC / TOEFL / IELTS selon le programme)",
+              "**Campus** : La Rochelle • Paris",
+              "**Langue** : Français / Anglais"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Programme Grande École",
+        duree: "2 ans",
+        details: "Programme Grande École • Diplôme visé • Grade de Master. Accès après une Licence EBS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Programme Grande École • Diplôme visé • Grade de Master",
+              "**Spécialisations** : Management • Marketing • Finance • Digital • Supply Chain • Entrepreneuriat",
+              "**Étudiants concernés** : Licence EBS",
+              "**Conditions d'admission** : Moyenne ≥ 12/20 • Entretien • Français B2 ou Anglais B2",
+              "**Campus** : La Rochelle • Tours • Paris",
+              "**Langue** : Français / Anglais"
+            ]
+          }
+        ]
+      },
+      {
+        nom: "Master of Science (MSc)",
+        duree: "1 an",
+        details: "Label MSc (CGE) ou Titre RNCP niveau 7 selon le programme. Accès après une Licence EBS.",
+        richExpanded: [
+          {
+            type: "bullets",
+            items: [
+              "**Reconnaissance** : Label MSc (CGE) ou Titre RNCP niveau 7 selon le programme",
+              "**Spécialisations** : Marketing • Finance • Data • Supply Chain • Luxury • Sustainable Management",
+              "**Étudiants concernés** : Licence EBS",
+              "**Conditions d'admission** : Moyenne ≥ 12/20 • Entretien • Anglais B2/C1",
+              "**Campus** : Selon le MSc",
+              "**Langue** : Français / Anglais"
+            ]
+          }
+        ]
+      }
     ],
-    eligibilite: "Accès depuis les Licences EBS Management, Marketing et Finance. Convention EBS — Excelia pour admission facilitée. Moyenne ≥ 12/20.",
+    eligibilite: "Validation du niveau d'études requis à ESPIMA Business School.\nMoyenne générale minimale de 12/20.\nRecommandation officielle d'ESPIMA Business School.\nDossier complet (CV, lettre de motivation, relevés de notes, diplôme, passeport…).\nEntretien d'admission organisé par Excelia.\nNiveau Français B2 pour les formations en français.\nNiveau TOEIC, TOEFL, IELTS ou équivalent pour les formations dispensées en anglais.",
     avantages: [
-      "Triple accréditation AACSB + EQUIS + AMBA",
-      "Campus à La Rochelle, Tours, Orléans, Paris",
-      "Forte dimension RSE et durabilité — en phase avec enjeux ESG",
-      "Réseau international : 80+ partenaires universitaires dans le monde",
-      "Visa étudiant France facilité",
+      "Grande École française reconnue par l'État.",
+      "Membre de la Conférence des Grandes Écoles (CGE).",
+      "Triple accréditation internationale : AACSB • EQUIS • AMBA.",
+      "Programme Grande École conférant le Grade de Master.",
+      "Diplômes visés par l'État et formations reconnues en France et à l'international.",
+      "Plusieurs campus en France et un environnement d'études international.",
+      "Accompagnement des étudiants internationaux tout au long de leur parcours.",
     ],
-    debouches: [
-      "Supply Chain Manager / Responsable logistique",
-      "Responsable RSE & Développement Durable",
-      "Digital Project Manager",
-      "Manager international / Export Manager",
-      "Consultant en transformation durable",
-    ],
+    debouches: [],
     keyStats: [
-      { label: "Campus", value: "La Rochelle, Tours, Orléans, Paris" },
-      { label: "Accréditations", value: "Triple Couronne (AACSB, EQUIS, AMBA)" },
+      { label: "Campus", value: "La Rochelle • Tours • Orléans • Paris" },
+      { label: "Accréditations internationales", value: "AACSB • EQUIS • AMBA (Triple Couronne)" },
+      { label: "Conférence des Grandes Écoles", value: "Oui" },
+      { label: "Programme Grande École", value: "Diplôme visé conférant le Grade de Master" },
+      { label: "Domaines de formation", value: "Management • Marketing • Finance • Digital • Supply Chain • Communication • Tourisme • Entrepreneuriat • Développement durable" },
+      { label: "Langues d'enseignement", value: "Français / Anglais" },
+      { label: "Partenariat avec ESPIMA", value: "Poursuite d'études après Bac+2 et après Licence" },
     ],
     accreditations: [
       { label: "AACSB", description: "Accréditation internationale garantissant l'excellence académique." },
       { label: "EQUIS", description: "Accréditation européenne délivrée par l'EFMD." },
       { label: "AMBA", description: "Accréditation internationale des programmes de management." },
+      { label: "Triple Couronne", description: "Excelia fait partie de moins de 1 % des Business Schools dans le monde titulaires simultanément des accréditations AACSB, EQUIS et AMBA." },
+      { label: "Conférence des Grandes Écoles (CGE)", description: "Membre de la Conférence des Grandes Écoles." },
+      { label: "Programme Grande École", description: "Diplôme visé par l'État conférant le Grade de Master." },
+      { label: "Bachelor", description: "Diplômes visés selon les programmes." },
+      { label: "Master of Science (MSc)", description: "Label MSc de la CGE ou titre RNCP niveau 7 selon le programme." },
     ],
     pricing: [
-      { label: "Programme Grande École", amount: "14 000 à 15 900", period: "€/an" },
-      { label: "Master of Science (MSc)", amount: "13 500", period: "€/an" },
-      { label: "Bachelor Business", amount: "9 700", period: "€/an" },
-      { label: "BBA International", amount: "12 400", period: "€/an" },
+      { label: "Bachelor Business (3e année)", amount: "9 700", period: "€ / an" },
+      { label: "BBA International", amount: "12 400", period: "€ / an" },
+      { label: "Programme Grande École", amount: "14 000 à 15 900", period: "€ / an" },
+      { label: "Master of Science (MSc)", amount: "13 500", period: "€ / an" },
     ],
     extraSections: [
       {
         title: "Conditions financières du partenariat",
-        body: "- **Réduction** : 10 % de réduction sur les frais de scolarité applicables aux étudiants internationaux (hors Union européenne), valable uniquement pendant la première année d'études."
+        body: "- **Réduction sur les frais de scolarité** : 10 % de réduction sur les frais de scolarité applicables aux étudiants internationaux (hors Union européenne), valable uniquement pendant la première année d'études.\n- **Paiement des frais** : Les frais de scolarité sont réglés directement auprès d'Excelia Business School.\n- **Autres frais** : La CVEC, l'assurance, le logement, le transport et les autres dépenses personnelles restent à la charge de l'étudiant."
       }
     ],
   },
