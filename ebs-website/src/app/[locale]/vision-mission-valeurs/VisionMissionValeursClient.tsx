@@ -19,7 +19,7 @@ const valeurs = [
     icon: <Lightbulb className="w-5 h-5" />,
     nom: "Innovation pédagogique",
     description: "L'Intelligence Artificielle, les certifications internationales et la pédagogie par projets sont au cœur de chaque parcours.",
-    concret: "IA intégrée dans tous les programmes · 150+ certifications internationales · Pédagogie innovante",
+    concret: "IA intégrée dans tous les programmes · 131 certifications internationales · Pédagogie innovante",
     color: "#9C27B0",
   },
   {

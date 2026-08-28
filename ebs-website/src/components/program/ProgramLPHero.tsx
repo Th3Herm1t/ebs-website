@@ -38,7 +38,7 @@ export function ProgramLPHero({
   const typeLabel = type === "licence" ? "Licence" : "Master";
 
   const statItems = [
-    { label: "certifications incluses", value: `${totalCerts}+` },
+    { label: "certifications affichées", value: `${totalCerts}` },
     { label: "", value: duree },
     { label: "Accrédité État Tunisien", value: "100%" },
   ];

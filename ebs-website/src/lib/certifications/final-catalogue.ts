@@ -32,6 +32,8 @@ export interface FinalCertification {
   externalUrl?: string;
   isForageSimulation?: boolean;
   publicNote?: string;
+  pathwayLabel: string;
+  depthLabel: string;
   publicVisible: boolean;
   sourceNote?: string;
 }

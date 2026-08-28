@@ -11,7 +11,7 @@ export const masters: Record<string, ProgramLPData> = {
     niveau: "Bac+5",
     duree: "2 ans",
     semestres: 4,
-    totalCerts: 24,
+    totalCerts: 12,
     publicCible: [
       "Titulaires d'une Licence en Marketing, Management ou disciplines associées",
       "Étudiants souhaitant se spécialiser en CRM, relation client et transformation digitale",
@@ -69,7 +69,7 @@ export const masters: Record<string, ProgramLPData> = {
     niveau: "Bac+5",
     duree: "2 ans",
     semestres: 4,
-    totalCerts: 22,
+    totalCerts: 11,
     publicCible: [
       "Titulaires d'une Licence en Management, Marketing, Finance ou Économie",
       "Titulaires d'une formation Bac+3 à dominante technique",
@@ -128,7 +128,7 @@ export const masters: Record<string, ProgramLPData> = {
     niveau: "Bac+5",
     duree: "2 ans",
     semestres: 4,
-    totalCerts: 20,
+    totalCerts: 15,
     publicCible: [
       "Titulaires d'une Licence en Finance ou en Économie",
       "Titulaires d'une Licence dans des disciplines en lien avec la finance",
@@ -186,7 +186,7 @@ export const masters: Record<string, ProgramLPData> = {
     niveau: "Bac+5",
     duree: "2 ans",
     semestres: 4,
-    totalCerts: 23,
+    totalCerts: 11,
     publicCible: [
       "Titulaires d'une Licence en Marketing, Management ou disciplines associées",
       "Étudiants souhaitant se spécialiser en marketing digital et Intelligence Artificielle",

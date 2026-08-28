@@ -194,8 +194,8 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
               {totalCerts}+ certifications disponibles
             </h2>
             <p className="text-[16px] text-penn-body mt-3 max-w-[600px] mx-auto">
-              Toutes ces certifications sont gratuites pour nos étudiants et
-              incluses dans leur parcours de formation.
+              Ces ressources sont présentées selon leur statut d'accès et leur
+              intégration dans les parcours EBS.
             </p>
           </motion.div>
 

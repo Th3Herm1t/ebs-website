@@ -73,10 +73,10 @@ const iaCertList = finalCertificationCatalogue.filter(
 
 const totalCertifications = getPublicCertificationCount();
 const aiStats = {
-  literacy: 15,
-  applied: 45,
-  mandatory: 71,
-  optional: 85,
+  literacy: iaCertList.filter((certification) => certification.classification === "ai-literacy").length,
+  applied: iaCertList.filter((certification) => certification.classification === "applied-ai").length,
+  mandatory: iaCertList.filter((certification) => certification.requirement === "mandatory").length,
+  optional: iaCertList.filter((certification) => certification.requirement === "optional").length,
 };
 
 const aiClassificationLabels: Record<CertificationClassification, string> = {

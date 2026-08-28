@@ -27,7 +27,7 @@ const routeMeta = {
   },
   "ia-et-certifications": {
     title: "IA et certifications internationales chez EBS",
-    description: "EBS intègre l'intelligence artificielle et 150+ certifications internationales gratuites dans ses Licences et Masters.",
+    description: "EBS intègre l'intelligence artificielle et 131 certifications internationales affichées dans ses Licences et Masters.",
   },
   "parcours-international": {
     title: "Parcours international EBS : France, Canada, Italie, Oman",
@@ -58,7 +58,7 @@ const routeMeta = {
     description: "Téléchargez les brochures des Licences, Masters, certifications et parcours internationaux proposés par Espima Business School.",
   },
   certifications: {
-    title: "Certifications internationales gratuites incluses chez EBS",
+    title: "Certifications internationales incluses chez EBS",
     description: "Google, IBM, Harvard, Cisco, Bloomberg, HubSpot, SEMrush et plus : découvrez les certifications internationales incluses dans les programmes EBS.",
   },
   "qui-sommes-nous": {

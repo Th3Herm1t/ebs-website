@@ -24,6 +24,19 @@ const outputPath = path.join(repoRoot, "src", "lib", "certifications", "public-t
 const { resources, assignments } = loadTsModule(dataPath);
 const resourceById = new Map(resources.map((resource) => [resource.id, resource]));
 
+const pathwayLabels = {
+  "core-competency": "Socle commun",
+  "approved-pathway": "Parcours certifiant",
+  onboarding: "Mise à niveau",
+  enrichment: "Approfondissement",
+};
+
+const depthLabels = {
+  "ai-user": "Usage IA",
+  "ai-practitioner": "IA appliquée",
+  "ai-builder": "Construction IA",
+};
+
 const publicCertifications = assignments.flatMap((assignment) => {
   if (assignment.releaseState !== "approved") return [];
 
@@ -33,8 +46,6 @@ const publicCertifications = assignments.flatMap((assignment) => {
   return [
     {
       id: assignment.id,
-      resourceId: resource.id,
-      sourceRowId: assignment.sourceRowId,
       name: resource.canonicalTitle,
       provider: resource.provider,
       displayProvider: resource.provider,
@@ -46,16 +57,8 @@ const publicCertifications = assignments.flatMap((assignment) => {
       deliveryPlatform: resource.deliveryPlatform ?? undefined,
       externalUrl: resource.canonicalUrl ?? resource.sourceUrl ?? undefined,
       publicVisible: true,
-      curriculumRole: assignment.curriculumRole,
-      depthProfile: assignment.depthProfile,
-      credential: resource.credential,
-      access: resource.access,
-      verification: resource.verification,
-      release: resource.release,
-      sourceNote:
-        resource.verification.status === "APPROVED_WITH_LABEL"
-          ? resource.credential.publicClaim ?? undefined
-          : undefined,
+      pathwayLabel: pathwayLabels[assignment.curriculumRole] ?? "Parcours EBS",
+      depthLabel: depthLabels[assignment.depthProfile] ?? "Compétence professionnelle",
     },
   ];
 });

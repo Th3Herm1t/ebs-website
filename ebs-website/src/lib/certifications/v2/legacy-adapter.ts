@@ -13,9 +13,24 @@ export interface LegacyCertification {
   externalUrl?: string;
   displayProvider: string;
   deliveryPlatform?: string;
+  pathwayLabel: string;
+  depthLabel: string;
   publicVisible: boolean;
   sourceNote?: string;
 }
+
+const pathwayLabels: Record<string, string> = {
+  "core-competency": "Socle commun",
+  "approved-pathway": "Parcours certifiant",
+  onboarding: "Mise à niveau",
+  enrichment: "Approfondissement",
+};
+
+const depthLabels: Record<string, string> = {
+  "ai-user": "Usage IA",
+  "ai-practitioner": "IA appliquée",
+  "ai-builder": "Construction IA",
+};
 
 /**
  * Compatibility bridge for existing UI code.
@@ -54,6 +69,8 @@ export function getLegacyCatalogue(options?: {
       externalUrl: resource.canonicalUrl ?? resource.sourceUrl ?? undefined,
       displayProvider: resource.provider,
       deliveryPlatform: resource.deliveryPlatform ?? undefined,
+      pathwayLabel: pathwayLabels[assignment.curriculumRole] ?? "Parcours EBS",
+      depthLabel: depthLabels[assignment.depthProfile] ?? "Compétence professionnelle",
       publicVisible: assignment.releaseState !== "blocked",
       sourceNote:
         resource.verification.status === "APPROVED_WITH_LABEL"

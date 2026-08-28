@@ -27,8 +27,8 @@ const overview = [
 const mastersCards = [
   {
     icon: <Award className="w-6 h-6" />,
-    title: "150+",
-    subtitle: "Certifications offertes",
+    title: "131",
+    subtitle: "Certifications affichées",
     color: "#2B8FAB",
     offsetY: -80,
     parallaxSpeed: 1,
@@ -78,7 +78,7 @@ export default async function MastersPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <ShowcaseHero
         title="Nos Masters : 2 ans pour atteindre l'excellence."
-        subtitle="4 Masters professionnels · Intelligence Artificielle intégrée dans chaque parcours · Plus de 20 certifications professionnelles internationales selon le programme · Diplôme accrédité par l'État tunisien."
+        subtitle="4 Masters professionnels · Intelligence Artificielle intégrée dans chaque parcours · Jusqu'à 15 certifications professionnelles internationales affichées selon le programme · Diplôme accrédité par l'État tunisien."
         badge="Masters"
         cards={mastersCards}
       />
@@ -198,7 +198,7 @@ export default async function MastersPage({
             Certifications incluses
           </Badge>
           <p className="text-[19px] md:text-[22px] font-bold text-penn-navy leading-relaxed max-w-[800px] mx-auto">
-            En complément de votre diplôme agréé par l'État tunisien, obtenez des certifications délivrées par Google, IBM, Harvard, Bloomberg, HubSpot, PMI, DeepLearning.AI et d'autres organismes internationaux, sans frais supplémentaires.
+            En complément de votre diplôme agréé par l'État tunisien, préparez des certifications délivrées par Google, IBM, Harvard, Bloomberg, HubSpot, PMI, DeepLearning.AI et d'autres organismes internationaux, selon leur statut validé.
           </p>
         </div>
       </section>

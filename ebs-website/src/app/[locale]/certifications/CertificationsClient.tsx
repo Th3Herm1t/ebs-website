@@ -329,8 +329,7 @@ export default function CertificationsPage() {
                     <motion.article
                       key={certification.id}
                       initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
-                      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-40px" }}
+                      animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
                       transition={{ ...transitions.quick, delay: prefersReducedMotion ? 0 : staggerDelay(i, 0.16) }}
                       className="group relative overflow-hidden rounded-[22px] border border-penn-border bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-penn-green/35 hover:shadow-xl motion-reduce:hover:translate-y-0"
                     >
@@ -355,6 +354,8 @@ export default function CertificationsPage() {
                       <div className="mt-4 flex flex-wrap gap-2">
                         <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[11px] font-bold text-penn-body">{classificationLabels[certification.classification]}</span>
                         <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[11px] font-bold text-penn-body">{certification.recommendedYear}</span>
+                        <span className="rounded-full bg-penn-green/10 px-3 py-1 text-[11px] font-bold text-penn-green">{certification.pathwayLabel}</span>
+                        <span className="rounded-full bg-penn-navy/5 px-3 py-1 text-[11px] font-bold text-penn-navy/70">{certification.depthLabel}</span>
                         {certification.publicNote && <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[11px] font-bold text-penn-body">{certification.publicNote}</span>}
                       </div>
 

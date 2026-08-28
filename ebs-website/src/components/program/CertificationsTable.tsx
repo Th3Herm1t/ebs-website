@@ -228,6 +228,8 @@ function CertificationCard({ cert, accentColor }: { cert: FinalCertification; ac
 
       <div className="mt-4 flex flex-wrap gap-2">
         <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[11px] font-bold text-penn-body">{cert.recommendedYear}</span>
+        <span className="rounded-full px-3 py-1 text-[11px] font-bold" style={{ backgroundColor: `${accentColor}12`, color: accentColor }}>{cert.pathwayLabel}</span>
+        <span className="rounded-full bg-penn-navy/5 px-3 py-1 text-[11px] font-bold text-penn-navy/70">{cert.depthLabel}</span>
         {cert.publicNote && <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[11px] font-bold italic text-penn-body">{cert.publicNote}</span>}
       </div>
 

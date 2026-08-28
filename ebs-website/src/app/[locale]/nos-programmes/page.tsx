@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   return pageMetadata({
     title: "Programmes EBS : Licences, Masters, IA et international",
-    description: "Comparez tous les programmes EBS : Licences, Masters, certifications gratuites, IA intégrée et parcours internationaux en France, Canada, Italie et Oman.",
+    description: "Comparez tous les programmes EBS : Licences, Masters, certifications internationales, IA intégrée et parcours internationaux en France, Canada, Italie et Oman.",
     path: `/${locale}/nos-programmes`,
   });
 }
@@ -35,7 +35,7 @@ const allMasters = [
 const nosProgrammesCards = [
   {
     icon: <Award className="w-6 h-6" />,
-    title: "150+ Certs",
+    title: "131 Certs",
     subtitle: "Incluses gratuitement",
     color: "#2B8FAB",
     offsetY: -80,
@@ -84,7 +84,7 @@ export default function NosProgrammesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <ShowcaseHero
         title="Nos Programmes : Formez-vous aux métiers de demain."
-        subtitle="Découvrez nos Licences, Masters et Parcours Internationaux. IA intégrée dans chaque filière, certifications internationales gratuites et diplômes reconnus par l'État tunisien."
+        subtitle="Découvrez nos Licences, Masters et Parcours Internationaux. IA intégrée dans chaque filière, certifications internationales affichées et diplômes reconnus par l'État tunisien."
         badge="Nos Programmes"
         cards={nosProgrammesCards}
       />
