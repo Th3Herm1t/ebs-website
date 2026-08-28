@@ -160,9 +160,9 @@ export default async function LicencesPage({
                   <Award className="w-7 h-7 text-penn-green" />
                 </div>
                 <div>
-                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">Catalogue v3 vérifié</h3>
+                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">Certifications vérifiées</h3>
                   <p className="text-[15px] text-penn-body leading-relaxed">
-                    Des ressources et credentials gratuits délivrés par Google, IBM, Harvard, Cisco, HubSpot et d'autres acteurs internationaux, affichés selon leur tier CORE, RECOMMENDED ou DISCOVERY.
+                    Des certifications gratuites délivrées par Google, IBM, Harvard, Cisco, HubSpot et d'autres acteurs internationaux, réparties entre socle essentiel, recommandé et explorer.
                   </p>
                 </div>
               </div>

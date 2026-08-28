@@ -97,15 +97,15 @@ export function getCatalogueV3Opportunities(
 }
 
 export const tierLabels: Record<OpportunityTier, string> = {
-  CORE: "Core",
+  CORE: "Essentiel",
   RECOMMENDED: "Recommandé",
-  DISCOVERY: "Discovery",
+  DISCOVERY: "Explorer",
 };
 
 export const tierHelp: Record<OpportunityTier, string> = {
-  CORE: "Exigence EBS à satisfaire par une option gratuite vérifiée.",
-  RECOMMENDED: "Opportunité prioritaire pour renforcer le profil programme.",
-  DISCOVERY: "Marketplace gratuite pour explorer et se différencier.",
+  CORE: "Un objectif de compétence à valider, avec plusieurs formations au choix.",
+  RECOMMENDED: "Les formations prioritaires pour renforcer le profil du programme.",
+  DISCOVERY: "Un espace libre pour explorer et se différencier.",
 };
 
 export const credentialTypeLabels: Record<CredentialType, string> = {

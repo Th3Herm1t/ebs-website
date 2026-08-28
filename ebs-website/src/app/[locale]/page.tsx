@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   return pageMetadata({
     title: "Université privée en Tunisie tournée vers l'IA",
-    description: "Espima Business School propose des Licences, Masters, parcours internationaux et un catalogue v3 de ressources et credentials gratuits vérifiés en management, finance, marketing, informatique, IA et cybersécurité.",
+    description: "Espima Business School propose des Licences, Masters, parcours internationaux et un catalogue de certifications internationales gratuites et vérifiées en management, finance, marketing, informatique, IA et cybersécurité.",
     path: `/${locale}`,
   });
 }

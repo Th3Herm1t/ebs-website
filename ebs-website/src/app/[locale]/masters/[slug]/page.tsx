@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageParams) {
   const certifications = getCatalogueV3Opportunities({ programmeId: slug });
   return pageMetadata({
     title: `${data.title} en Tunisie`,
-    description: `${data.tagline} ${certifications.length} opportunités v3 gratuites vérifiées, IA appliquée et débouchés internationaux chez EBS Tunis.`,
+    description: `${data.tagline} ${certifications.length} certifications gratuites vérifiées, IA appliquée et débouchés internationaux chez EBS Tunis.`,
     path: `/${locale}/masters/${slug}`,
   });
 }

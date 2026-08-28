@@ -445,7 +445,7 @@ export default function AdmissionsPage() {
               Licences & Masters
             </h2>
             <p className="text-[16px] text-penn-body max-w-[650px] mx-auto">
-              Des formations professionnalisantes, avec des diplômes agréés par l'État tunisien et un catalogue v3 de ressources et credentials gratuits vérifiés.
+              Des formations professionnalisantes, avec des diplômes agréés par l'État tunisien et un catalogue de certifications internationales gratuites et vérifiées.
             </p>
           </motion.div>
 

@@ -66,7 +66,7 @@ export default function RecruterNosEtudiantsPage() {
                 <div className="space-y-4">
                   {[
                     { icon: <GraduationCap className="w-5 h-5" />, title: "Formation d'Excellence", desc: "Nos étudiants sont formés aux standards internationaux avec des certifications reconnues (Google, IBM, Bloomberg...)." },
-                    { icon: <Star className="w-5 h-5" />, title: "Compétences Certifiées", desc: "Catalogue v3 vérifié : IA, data, cybersécurité, finance, marketing digital et credentials gratuits." },
+                    { icon: <Star className="w-5 h-5" />, title: "Compétences Certifiées", desc: "Catalogue vérifié : IA, data, cybersécurité, finance, marketing digital et certifications gratuites." },
                     { icon: <Search className="w-5 h-5" />, title: "Recrutement Simplifié", desc: "Nous diffusons vos offres directement à nos étudiants et organisons des événements de recrutement." },
                     { icon: <Users className="w-5 h-5" />, title: "Profil Adapté", desc: "Licence, Master, spécialisation — nous vous aidons à trouver le profil qui correspond à vos besoins." },
                   ].map((item, i) => (

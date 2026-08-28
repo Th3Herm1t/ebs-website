@@ -263,10 +263,9 @@ export default function IAEtCertificationsPage() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[700px] mb-12"
           >
-            À partir du catalogue v3, EBS distingue les exigences CORE, les
-            opportunités recommandées et la marketplace discovery. Chaque
-            étudiant avance sur des ressources IA gratuites, vérifiées et reliées
-            à un justificatif clair.
+            EBS distingue un socle essentiel, des formations recommandées et
+            un espace d'exploration. Chaque étudiant avance sur des formations
+            IA gratuites, vérifiées et reliées à un justificatif clair.
           </motion.p>
 
           <motion.div
@@ -296,7 +295,7 @@ export default function IAEtCertificationsPage() {
                 {aiStats.core}
               </p>
               <p className="text-[12px] text-white/50 font-medium">
-                mappings CORE
+                formations du socle
               </p>
             </div>
             <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
@@ -304,7 +303,7 @@ export default function IAEtCertificationsPage() {
                 {aiStats.marketplace}
               </p>
               <p className="text-[12px] text-white/50 font-medium mt-1">
-                mappings marketplace
+                recommandées & explorer
               </p>
             </div>
           </motion.div>
@@ -439,10 +438,10 @@ export default function IAEtCertificationsPage() {
               Certifications IA
             </Badge>
               <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
-              {iaResources.length} ressources IA vérifiées
+              {iaResources.length} formations IA vérifiées
             </h2>
             <p className="text-[16px] text-penn-body mt-3 max-w-[700px] mx-auto">
-              Chaque ressource publique est gratuite de bout en bout et conserve son type exact de credential : certification, badge, achievement ou certificat d&apos;achèvement.
+              Chaque formation est gratuite de bout en bout et conserve son type exact de justificatif : certification, badge, achievement ou certificat d&apos;achèvement.
             </p>
           </motion.div>
 
@@ -463,10 +462,10 @@ export default function IAEtCertificationsPage() {
                   </div>
                   <div className="flex gap-2">
                     <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold text-penn-navy">
-                      {group.opportunities.filter((opportunity) => opportunity.mapping.tier === "CORE").length} CORE
+                      {group.opportunities.filter((opportunity) => opportunity.mapping.tier === "CORE").length} essentiel
                     </span>
                     <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold text-penn-body">
-                      {group.opportunities.filter((opportunity) => opportunity.mapping.tier !== "CORE").length} marketplace
+                      {group.opportunities.filter((opportunity) => opportunity.mapping.tier !== "CORE").length} recommandé/explorer
                     </span>
                   </div>
                 </div>
@@ -486,7 +485,7 @@ export default function IAEtCertificationsPage() {
                       >
                         <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-penn-border/50 bg-white p-1.5 shadow-sm">
                           {logo ? (
-                            <Image src={logo} alt={opportunity.provider?.name ?? "Provider"} width={72} height={32} className="max-h-8 w-auto object-contain" unoptimized />
+                            <Image src={logo} alt={opportunity.provider?.name ?? "Organisme"} width={72} height={32} className="max-h-8 w-auto object-contain" unoptimized />
                           ) : (
                             getProviderLogo(opportunity.provider?.name ?? "")
                           )}
@@ -496,7 +495,7 @@ export default function IAEtCertificationsPage() {
                             {opportunity.resource.title}
                           </p>
                           <p className="mt-1 text-[11px] font-medium text-penn-body/60">
-                            {opportunity.provider?.name} · {opportunity.mapping.year} · {tier} · {opportunity.credential ? credentialTypeLabels[opportunity.credential.type] : "Credential"}
+                            {opportunity.provider?.name} · {opportunity.mapping.year} · {tier} · {opportunity.credential ? credentialTypeLabels[opportunity.credential.type] : "Justificatif"}
                           </p>
                         </div>
                       </motion.div>
@@ -505,7 +504,7 @@ export default function IAEtCertificationsPage() {
                 </div>
                 {group.opportunities.length > 18 && (
                   <p className="mt-4 text-center text-[12px] font-bold text-penn-body/55">
-                    +{group.opportunities.length - 18} mappings IA disponibles dans le catalogue complet.
+                    +{group.opportunities.length - 18} formations IA disponibles dans le catalogue complet.
                   </p>
                 )}
               </div>
@@ -522,7 +521,7 @@ export default function IAEtCertificationsPage() {
               href="/certifications"
               className="inline-flex items-center gap-2 text-[15px] font-bold text-penn-green hover:underline"
             >
-              Voir tout le catalogue ({totalCertifications} credentials)
+              Voir tout le catalogue ({totalCertifications} justificatifs)
               <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
@@ -552,7 +551,7 @@ export default function IAEtCertificationsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programmeBreakdown.map((p, i) => {
-              const tags = [`CORE ${p.core}`, `REC ${p.recommended}`, `DISC ${p.discovery}`];
+              const tags = [`Essentiel ${p.core}`, `Recommandé ${p.recommended}`, `Explorer ${p.discovery}`];
 
               return (
                 <motion.div
@@ -614,7 +613,7 @@ export default function IAEtCertificationsPage() {
                       <div className="mt-auto pt-6 border-t border-penn-border flex items-end justify-between">
                         <div>
                           <p className="text-[12px] font-bold text-penn-body uppercase tracking-wider mb-1">
-                            Mappings v3
+                            Formations rattachées
                           </p>
                           <p className="text-[32px] font-extrabold leading-none" style={{ color: p.color }}>
                             {p.total}
@@ -622,7 +621,7 @@ export default function IAEtCertificationsPage() {
                         </div>
                         <div className="text-right">
                           <p className="text-[12px] font-bold text-penn-body uppercase tracking-wider mb-1">
-                            Exigences CORE
+                            Exigences du socle
                           </p>
                           <p className="text-[24px] font-extrabold leading-none text-penn-navy">
                             {p.requirements}
@@ -662,7 +661,7 @@ export default function IAEtCertificationsPage() {
               {
                 icon: <Award className="w-6 h-6" />,
                 title: "Certifications",
-                desc: `${totalCertifications} credentials gratuits vérifiés.`,
+                desc: `${totalCertifications} certifications gratuites vérifiées.`,
                 href: "/certifications",
                 label: "Découvrir",
               },

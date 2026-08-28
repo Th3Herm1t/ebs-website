@@ -91,21 +91,21 @@ export function CertificationsTable({ certs, color, limit, className }: Certific
           <div>
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-[12px] font-extrabold uppercase tracking-[0.12em] text-white/70">
               <Award className="h-4 w-4" style={{ color: accentColor }} />
-              Catalogue v3 vérifié zero-cost
+              Certifications gratuites vérifiées
             </div>
             <h4 className="text-[28px] font-extrabold leading-tight text-white md:text-[36px]">
-              <FormattedTitle text="Des exigences CORE et une marketplace gratuite." />
+              <FormattedTitle text="Un socle essentiel et des formations au choix." />
             </h4>
             <p className="mt-4 max-w-[720px] text-[15px] leading-relaxed text-white/60">
-              Le CORE désigne une compétence EBS à satisfaire, pas un vendor imposé. RECOMMENDED et DISCOVERY enrichissent le profil avec des ressources et credentials gratuits vérifiés.
+              Le socle désigne une compétence à valider, avec plusieurs formations au choix. Les niveaux recommandé et explorer enrichissent le profil avec des certifications gratuites vérifiées.
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-2 lg:grid-cols-1">
-            <StatPill label="Mappings" value={displayed.length} color="#ffffff" />
-            <StatPill label="CORE" value={stats.byTier.CORE} color={accentColor} />
+            <StatPill label="Formations" value={displayed.length} color="#ffffff" />
+            <StatPill label="Essentiel" value={stats.byTier.CORE} color={accentColor} />
             <StatPill label="Recommandés" value={stats.byTier.RECOMMENDED} color="#94A3B8" />
-            <StatPill label="Discovery" value={stats.byTier.DISCOVERY} color="#CBD5E1" />
+            <StatPill label="Explorer" value={stats.byTier.DISCOVERY} color="#CBD5E1" />
           </div>
         </div>
       </div>
@@ -131,9 +131,9 @@ export function CertificationsTable({ certs, color, limit, className }: Certific
         <div className="flex flex-wrap gap-2">
           {([
             { value: "all", label: "Tout", count: displayed.length },
-            { value: "CORE", label: "CORE", count: stats.byTier.CORE },
+            { value: "CORE", label: "Essentiel", count: stats.byTier.CORE },
             { value: "RECOMMENDED", label: "Recommandé", count: stats.byTier.RECOMMENDED },
-            { value: "DISCOVERY", label: "Discovery", count: stats.byTier.DISCOVERY },
+            { value: "DISCOVERY", label: "Explorer", count: stats.byTier.DISCOVERY },
           ] as Array<{ value: Filter; label: string; count: number }>).map((option) => {
             const active = filter === option.value;
             return (
@@ -203,7 +203,7 @@ function CertificationCard({ entry, accentColor }: { entry: JoinedProgrammeOppor
       <div className="mb-4 flex items-start justify-between gap-4">
         <div className="flex h-12 min-w-0 items-center">
           {logo ? (
-            <Image src={logo} alt={entry.provider?.name ?? "Provider"} width={132} height={42} className="h-9 w-auto max-w-[132px] object-contain opacity-80 transition-opacity group-hover:opacity-100" unoptimized />
+            <Image src={logo} alt={entry.provider?.name ?? "Organisme"} width={132} height={42} className="h-9 w-auto max-w-[132px] object-contain opacity-80 transition-opacity group-hover:opacity-100" unoptimized />
           ) : (
             <span className="text-[13px] font-extrabold text-penn-navy">{entry.provider?.name}</span>
           )}
@@ -230,14 +230,14 @@ function CertificationCard({ entry, accentColor }: { entry: JoinedProgrammeOppor
       {entry.credential && (
         <div className="mt-4 space-y-1 border-t border-penn-border pt-3 text-[12px] font-bold text-penn-body/65">
           <p>{credentialStrengthLabels[entry.credential.strength]} · {assessmentRigorLabels[entry.credential.assessmentRigor]}</p>
-          <p>{entry.resource.launch.mode === "direct" ? "Lien direct" : "Recherche dans le catalogue provider"}</p>
+          <p>{entry.resource.launch.mode === "direct" ? "Lien direct" : "Recherche dans le catalogue de l'organisme"}</p>
         </div>
       )}
 
       {isCore && (
         <div className="mt-4 flex items-center gap-2 border-t border-penn-border pt-3 text-[12px] font-bold text-penn-body/65">
           <CheckCircle2 className="h-4 w-4" style={{ color: accentColor }} />
-          Option valide pour une exigence CORE
+          Formation valide pour une exigence du socle
         </div>
       )}
     </article>

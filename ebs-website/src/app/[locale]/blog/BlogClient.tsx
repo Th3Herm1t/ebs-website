@@ -381,7 +381,7 @@ export default function BlogPage() {
               {
                 icon: <Award className="w-6 h-6" />,
                 title: "Certifications",
-                desc: "Catalogue v3 zero-cost.",
+                desc: "Certifications gratuites vérifiées.",
                 href: "/certifications",
                 label: "Découvrir",
               },

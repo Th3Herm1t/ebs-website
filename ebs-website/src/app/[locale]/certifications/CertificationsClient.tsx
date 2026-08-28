@@ -49,9 +49,9 @@ const programmeLabels = Object.fromEntries(
 
 const tierOptions: Array<{ value: TierFilter; label: string; help: string }> = [
   { value: "all", label: "Tout", help: "Catalogue public complet" },
-  { value: "CORE", label: "Core", help: tierHelp.CORE },
+  { value: "CORE", label: "Essentiel", help: tierHelp.CORE },
   { value: "RECOMMENDED", label: "Recommandé", help: tierHelp.RECOMMENDED },
-  { value: "DISCOVERY", label: "Discovery", help: tierHelp.DISCOVERY },
+  { value: "DISCOVERY", label: "Explorer", help: tierHelp.DISCOVERY },
 ];
 
 const classificationOptions: Array<{ value: ClassificationFilter; label: string; help: string }> = [
@@ -136,7 +136,7 @@ export default function CertificationsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_430px] gap-12 lg:gap-16 items-center">
             <motion.div variants={fadeUp} initial="hidden" animate="visible" transition={transitions.hero}>
               <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
-                Catalogue v{catalogueV3.release.version} · {catalogueV3.release.policy}
+                Catalogue international de certifications gratuites
               </Badge>
 
               <h1 className="text-[42px] md:text-[60px] lg:text-[76px] font-extrabold text-white leading-[1.02] tracking-[-1.5px] mb-6">
@@ -146,7 +146,7 @@ export default function CertificationsPage() {
               </h1>
 
               <p className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[720px] mb-10">
-                Le catalogue v3 sépare les ressources, les credentials et les exigences EBS. Chaque carte publique est vérifiée à coût zéro pour l'apprentissage, l'évaluation, le justificatif et les accès nécessaires.
+                Un catalogue structuré par programme. Chaque certification est vérifiée gratuite de bout en bout : apprentissage, évaluation, justificatif et accès requis.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
@@ -174,9 +174,9 @@ export default function CertificationsPage() {
               <div className="relative overflow-hidden rounded-[30px] border border-white/12 bg-white/[0.07] p-6 shadow-2xl backdrop-blur-xl">
                 <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
                   <div>
-                    <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-white/45">Release candidate</p>
+                    <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-white/45">Certifications vérifiées</p>
                     <p className="mt-1 text-[44px] font-extrabold leading-none text-white">{uniqueCredentialCount}</p>
-                    <p className="mt-2 text-[13px] font-bold text-white/50">credentials exacts, sans tout appeler certification</p>
+                    <p className="mt-2 text-[13px] font-bold text-white/50">des justificatifs précis : certification, badge, certificat</p>
                   </div>
                   <div className="h-14 w-14 rounded-2xl bg-penn-green/15 flex items-center justify-center text-penn-green">
                     <ShieldCheck className="w-7 h-7" />
@@ -185,16 +185,16 @@ export default function CertificationsPage() {
 
                 <div className="grid grid-cols-2 gap-3 py-5">
                   <Metric label="Programmes" value={catalogueV3.programmes.length} />
-                  <Metric label="Providers" value={catalogueV3.providers.length} accent />
+                  <Metric label="Organismes" value={catalogueV3.providers.length} accent />
                   <Metric label="Plateformes" value={catalogueV3.platforms.length} />
-                  <Metric label="Exigences core" value={catalogueV3.release.counts.coreRequirementGroups} accent />
+                  <Metric label="Exigences du socle" value={catalogueV3.release.counts.coreRequirementGroups} accent />
                 </div>
 
                 <div className="space-y-3">
                   {[
-                    "Badge public : 100 % gratuit",
-                    "CORE = exigence de compétence, pas fournisseur imposé",
-                    "Fallback statique prêt avant API Frappe",
+                    "100 % gratuit, de bout en bout",
+                    "Un socle, plusieurs parcours au choix",
+                    "Aucun achat caché, aucun accès payant",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3 text-[14px] font-bold text-white/75">
                       <CheckCircle2 className="w-4 h-4 text-penn-green" />
@@ -216,14 +216,14 @@ export default function CertificationsPage() {
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} className="mb-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
-              <Badge variant="default" size="lg" className="mb-4">Catalogue public v3</Badge>
+              <Badge variant="default" size="lg" className="mb-4">Notre catalogue de certifications</Badge>
               <h2 className="text-[34px] md:text-[48px] font-extrabold text-penn-navy leading-[1.08] tracking-[-0.5px]">
-                Core, recommandé, discovery.
+                Essentiel, recommandé, explorer.
                 <br />
-                Des choix gratuits et traçables.
+                Des choix gratuits et vérifiés.
               </h2>
               <p className="text-[16px] text-penn-body mt-4 max-w-[690px] leading-relaxed">
-                Filtrez par programme, tier, famille de compétence ou provider. Les résultats affichent le type exact de credential, le niveau de validation et le comportement de lancement.
+                Filtrez par programme, niveau de parcours ou famille de compétence. Chaque résultat affiche le type de justificatif, le niveau de validation et le mode d'accès.
               </p>
             </div>
             <div className="rounded-2xl border border-penn-border bg-white px-5 py-4 shadow-sm">
@@ -239,7 +239,7 @@ export default function CertificationsPage() {
                 <input
                   value={searchTerm}
                   onChange={(event) => setFilter(setSearchTerm, event.target.value, resetVisibleCount)}
-                  placeholder="Rechercher provider, topic, M1..."
+                  placeholder="Rechercher une certification, un thème, M1..."
                   className="h-12 w-full rounded-2xl border border-penn-border bg-penn-bg-light pl-11 pr-4 text-[14px] font-semibold text-penn-navy outline-none transition-colors focus:border-penn-green focus:bg-white"
                 />
               </label>
@@ -253,13 +253,13 @@ export default function CertificationsPage() {
                 </select>
               </FilterGroup>
 
-              <FilterGroup title="Tier">
+              <FilterGroup title="Niveau de parcours">
                 {tierOptions.map((option) => (
                   <FilterButton key={option.value} active={tierFilter === option.value} label={option.label} help={option.help} onClick={() => setFilter(setTierFilter, option.value, resetVisibleCount)} />
                 ))}
               </FilterGroup>
 
-              <FilterGroup title="Classification">
+              <FilterGroup title="Famille de compétence">
                 {classificationOptions.map((option) => (
                   <FilterButton key={option.value} active={classificationFilter === option.value} label={option.label} help={option.help} onClick={() => setFilter(setClassificationFilter, option.value, resetVisibleCount)} />
                 ))}
@@ -272,7 +272,7 @@ export default function CertificationsPage() {
                   <button key={stat.classification} type="button" onClick={() => setFilter(setClassificationFilter, stat.classification, resetVisibleCount)} className="group rounded-2xl border border-penn-border bg-white p-5 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-penn-green/35 hover:shadow-md">
                     <p className="text-[30px] font-extrabold text-penn-navy leading-none">{stat.count}</p>
                     <p className="mt-2 text-[14px] font-extrabold text-penn-navy group-hover:text-penn-green">{classificationLabels[stat.classification]}</p>
-                    <p className="mt-1 text-[12px] text-penn-body/65 leading-relaxed">Ressources publiques vérifiées à coût zéro.</p>
+                    <p className="mt-1 text-[12px] text-penn-body/65 leading-relaxed">Certifications gratuites et vérifiées.</p>
                   </button>
                 ))}
               </div>
@@ -306,12 +306,12 @@ export default function CertificationsPage() {
         <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-center">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce}>
-              <Badge variant="default" size="lg" className="mb-4">Providers vérifiés</Badge>
+              <Badge variant="default" size="lg" className="mb-4">Organismes de certification</Badge>
               <h2 className="text-[34px] md:text-[46px] font-extrabold text-penn-navy leading-[1.1]">
-                36 sources, un seul standard public.
+                36 organismes, un seul standard de gratuité.
               </h2>
               <p className="mt-4 text-[16px] text-penn-body leading-relaxed">
-                Le catalogue v3 retient uniquement les ressources dont le parcours, l'évaluation, le justificatif et les prérequis logiciels sont vérifiés gratuits.
+                Notre catalogue ne retient que les formations dont le parcours, l'évaluation, le justificatif et les accès requis sont vérifiés gratuits.
               </p>
             </motion.div>
 
@@ -334,9 +334,9 @@ export default function CertificationsPage() {
         <div className="absolute inset-0 opacity-[0.035]" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, #2B8FAB 0%, transparent 70%)" }} />
         <div className="relative z-10 max-w-[1280px] mx-auto px-5 lg:px-12">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportOnce} className="text-center mb-14">
-            <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80">Pourquoi v3 ?</Badge>
+            <Badge variant="outline" size="lg" className="mb-4 border-white/20 text-white/80">Notre approche</Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-white leading-[1.1]">
-              Un catalogue gouverné,
+              Un catalogue rigoureux,
               <br />
               pas une promesse marketing.
             </h2>
@@ -344,12 +344,12 @@ export default function CertificationsPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {[
-              { icon: <Trophy className="w-6 h-6" />, title: "Credential exact", text: "Certification, certificat, badge, superbadge ou achievement : le type est affiché sans le normaliser." },
-              { icon: <ShieldCheck className="w-6 h-6" />, title: "Zéro coût vérifié", text: "Le public ne voit que des opportunités gratuites de bout en bout. Unknown n'est pas traité comme free." },
-              { icon: <BookOpen className="w-6 h-6" />, title: "Core flexible", text: "Une exigence CORE peut proposer plusieurs options acceptées au lieu d'imposer un vendor." },
-              { icon: <Sparkles className="w-6 h-6" />, title: "Marketplace", text: "RECOMMENDED et DISCOVERY permettent de construire un profil différenciant sans achat caché." },
-              { icon: <BadgeCheck className="w-6 h-6" />, title: "Frappe-ready", text: "La snapshot statique sert de fallback avant que Frappe devienne source de vérité." },
-              { icon: <GraduationCap className="w-6 h-6" />, title: "Programme-aware", text: "Chaque mapping conserve le programme, l'année, le tier et les requirements associés." },
+              { icon: <Trophy className="w-6 h-6" />, title: "Justificatifs transparents", text: "Certification, certificat d'achèvement, badge ou achievement : le type réel est affiché tel quel, sans exagération." },
+              { icon: <ShieldCheck className="w-6 h-6" />, title: "Gratuité vérifiée", text: "Seules les formations gratuites de bout en bout sont affichées. Une formation au coût incertain n'est jamais présentée comme gratuite." },
+              { icon: <BookOpen className="w-6 h-6" />, title: "Socle flexible", text: "Un objectif de compétence peut être atteint via plusieurs formations au choix, sans organisme imposé." },
+              { icon: <Sparkles className="w-6 h-6" />, title: "Parcours personnalisé", text: "Les niveaux recommandé et explorer permettent de construire un profil différenciant, sans achat caché." },
+              { icon: <BadgeCheck className="w-6 h-6" />, title: "Fiabilité contrôlée", text: "Chaque opportunité est contrôlée avant publication, et retirée si son accès devient payant." },
+              { icon: <GraduationCap className="w-6 h-6" />, title: "Adapté à chaque filière", text: "Chaque certification est rattachée au programme, à l'année et au niveau qui la concernent." },
             ].map((item, i) => (
               <motion.div key={item.title} initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }} whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ ...transitions.reveal, delay: prefersReducedMotion ? 0 : staggerDelay(i, 0.2) }} className="rounded-2xl border border-white/[0.07] bg-white/[0.035] p-6 transition-all hover:bg-white/[0.055]">
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-penn-green/10 text-penn-green">{item.icon}</div>
@@ -363,7 +363,7 @@ export default function CertificationsPage() {
 
       <CtaSection
         title="Construisez un profil de compétences vérifié, gratuit et lisible."
-        subtitle="Le catalogue v3 devient le socle public pendant que Frappe prend le relais comme source de vérité."
+        subtitle="Des opportunités gratuites et vérifiées, pour construire un profil qui vous ressemble."
         primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         secondaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"
@@ -402,8 +402,8 @@ function FilterButton({ active, label, help, onClick }: { active: boolean; label
 function OpportunityCard({ opportunity, index, prefersReducedMotion }: { opportunity: JoinedProgrammeOpportunity; index: number; prefersReducedMotion: boolean }) {
   const logo = getCatalogueV3ProviderLogo(opportunity.resource.providerId);
   const tier = opportunity.mapping.tier;
-  const launchLabel = opportunity.resource.launch.mode === "direct" ? "Accès direct" : "Recherche provider";
-  const credentialType = opportunity.credential ? credentialTypeLabels[opportunity.credential.type] : "Credential";
+  const launchLabel = opportunity.resource.launch.mode === "direct" ? "Accès direct" : "Recherche organisme";
+  const credentialType = opportunity.credential ? credentialTypeLabels[opportunity.credential.type] : "Justificatif";
 
   return (
     <motion.article
@@ -415,7 +415,7 @@ function OpportunityCard({ opportunity, index, prefersReducedMotion }: { opportu
       <div className={`absolute inset-x-0 top-0 h-1 ${tier === "CORE" ? "bg-penn-green" : tier === "RECOMMENDED" ? "bg-penn-navy" : "bg-penn-navy/18"}`} />
       <div className="flex items-start justify-between gap-4 mb-5">
         <div className="h-11 min-w-0 flex items-center">
-          {logo ? <Image src={logo} alt={opportunity.provider?.name ?? "Provider"} width={126} height={40} className="h-9 w-auto max-w-[126px] object-contain opacity-80 transition-opacity group-hover:opacity-100" unoptimized /> : <span className="text-[13px] font-extrabold text-penn-navy">{opportunity.provider?.name}</span>}
+          {logo ? <Image src={logo} alt={opportunity.provider?.name ?? "Organisme"} width={126} height={40} className="h-9 w-auto max-w-[126px] object-contain opacity-80 transition-opacity group-hover:opacity-100" unoptimized /> : <span className="text-[13px] font-extrabold text-penn-navy">{opportunity.provider?.name}</span>}
         </div>
         <span className={`rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.08em] ${tier === "CORE" ? "bg-penn-green/10 text-penn-green" : "bg-penn-bg-light text-penn-body"}`}>
           {tierLabels[tier]}
