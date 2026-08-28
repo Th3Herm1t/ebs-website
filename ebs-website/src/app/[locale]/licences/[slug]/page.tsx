@@ -3,10 +3,7 @@ import { ProgramLPHero, ProgramPresentation, PublicCible, ModulesAccordion, Cert
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { Breadcrumb, CtaSection } from "@/components/shared";
 import { licences } from "@/lib/programmes/licences";
-import {
-  getCertificationsByProgramme,
-  type CertificationProgrammeSlug,
-} from "@/lib/certifications/final-catalogue";
+import { getCatalogueV3Opportunities } from "@/lib/certifications/v3";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 interface PageParams {
@@ -25,10 +22,10 @@ export async function generateMetadata({ params }: PageParams) {
   const { slug, locale } = await params;
   const data = licences[slug];
   if (!data) return {};
-  const certifications = getCertificationsByProgramme(slug as CertificationProgrammeSlug);
+  const certifications = getCatalogueV3Opportunities({ programmeId: slug });
   return pageMetadata({
     title: `${data.title} en Tunisie`,
-    description: `${data.tagline} ${certifications.length} certifications intégrées, IA intégrée et parcours international chez EBS Tunis.`,
+    description: `${data.tagline} ${certifications.length} opportunités v3 gratuites vérifiées, IA intégrée et parcours international chez EBS Tunis.`,
     path: `/${locale}/licences/${slug}`,
   });
 }
@@ -37,7 +34,7 @@ export default async function LicenceLPPage({ params }: PageParams) {
   const { slug } = await params;
   const data = licences[slug];
   if (!data) notFound();
-  const certifications = getCertificationsByProgramme(slug as CertificationProgrammeSlug);
+  const certifications = getCatalogueV3Opportunities({ programmeId: slug });
 
   const courseJsonLd = {
     "@context": "https://schema.org",

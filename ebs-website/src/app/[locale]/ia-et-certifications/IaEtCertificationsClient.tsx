@@ -19,13 +19,15 @@ import {
 } from "lucide-react";
 import { Badge, CtaSection } from "@/components/shared";
 import {
-  finalCertificationCatalogue,
-  getCertificationsByProgramme,
-  getCertificationLogo,
-  getPublicCertificationCount,
-  type CertificationClassification,
-  type CertificationProgrammeSlug,
-} from "@/lib/certifications/final-catalogue";
+  catalogueV3,
+  credentialTypeLabels,
+  getCatalogueV3Opportunities,
+  getCatalogueV3ProgrammeSummary,
+  getCatalogueV3ProviderLogo,
+  tierLabels,
+  type OpportunityTier,
+  type Resource,
+} from "@/lib/certifications/v3";
 
 const iaCompetences = [
   {
@@ -65,21 +67,23 @@ const iaCompetences = [
   },
 ];
 
-const iaCertList = finalCertificationCatalogue.filter(
-  (certification) =>
-    certification.publicVisible &&
-    (certification.classification === "ai-literacy" || certification.classification === "applied-ai")
+const iaOpportunities = getCatalogueV3Opportunities().filter(
+  (opportunity) =>
+    opportunity.resource.classification === "ai-literacy" || opportunity.resource.classification === "applied-ai"
 );
 
-const totalCertifications = getPublicCertificationCount();
+const aiResourceIds = new Set(iaOpportunities.map((opportunity) => opportunity.resource.id));
+const iaResources = catalogueV3.resources.filter((resource) => aiResourceIds.has(resource.id));
+
+const totalCertifications = catalogueV3.release.counts.publicCredentials;
 const aiStats = {
-  literacy: iaCertList.filter((certification) => certification.classification === "ai-literacy").length,
-  applied: iaCertList.filter((certification) => certification.classification === "applied-ai").length,
-  mandatory: iaCertList.filter((certification) => certification.requirement === "mandatory").length,
-  optional: iaCertList.filter((certification) => certification.requirement === "optional").length,
+  literacy: iaResources.filter((resource) => resource.classification === "ai-literacy").length,
+  applied: iaResources.filter((resource) => resource.classification === "applied-ai").length,
+  core: iaOpportunities.filter((opportunity) => opportunity.mapping.tier === "CORE").length,
+  marketplace: iaOpportunities.filter((opportunity) => opportunity.mapping.tier !== "CORE").length,
 };
 
-const aiClassificationLabels: Record<CertificationClassification, string> = {
+const aiClassificationLabels: Record<Resource["classification"], string> = {
   "ai-literacy": "Culture IA",
   "applied-ai": "IA appliquée",
   "non-ai": "Métier & outils",
@@ -92,11 +96,11 @@ const aiClassificationText: Record<"ai-literacy" | "applied-ai", string> = {
 
 const groupedAiCertifications = (["ai-literacy", "applied-ai"] as const).map((classification) => ({
   classification,
-  certifications: iaCertList.filter((certification) => certification.classification === classification),
+  opportunities: iaOpportunities.filter((opportunity) => opportunity.resource.classification === classification),
 }));
 
 const programmeMeta: Array<{
-  slug: CertificationProgrammeSlug;
+  slug: string;
   programme: string;
   href: string;
   highlights: string;
@@ -169,7 +173,7 @@ const programmeMeta: Array<{
 
 const programmeBreakdown = programmeMeta.map((programme) => ({
   ...programme,
-  total: getCertificationsByProgramme(programme.slug).length,
+  ...getCatalogueV3ProgrammeSummary(programme.slug),
 }));
 
 const getProviderLogo = (provider: string) => {
@@ -244,12 +248,12 @@ export default function IAEtCertificationsPage() {
             className="text-[42px] md:text-[58px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
           >
             L&apos;IA n&apos;est plus une{" "}
-            <span className="text-penn-green">option</span>.
+            <span className="text-penn-green">promesse</span>.
             <br />
             C&apos;est une{" "}
-            <span className="bg-gradient-to-r from-[#9C27B0] to-[#2B8FAB] bg-clip-text text-transparent">
-              obligation
-            </span>
+              <span className="bg-gradient-to-r from-[#9C27B0] to-[#2B8FAB] bg-clip-text text-transparent">
+                preuve
+              </span>
             .
           </motion.h1>
 
@@ -259,10 +263,10 @@ export default function IAEtCertificationsPage() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[700px] mb-12"
           >
-            À partir de 2026, EBS intègre l&apos;Intelligence Artificielle comme
-            socle commun dans tous ses programmes. Une approche innovante en
-            Tunisie : chaque étudiant, quel que soit son parcours, développe
-            des compétences en IA et peut obtenir des certifications internationales reconnues.
+            À partir du catalogue v3, EBS distingue les exigences CORE, les
+            opportunités recommandées et la marketplace discovery. Chaque
+            étudiant avance sur des ressources IA gratuites, vérifiées et reliées
+            à un justificatif clair.
           </motion.p>
 
           <motion.div
@@ -289,18 +293,18 @@ export default function IAEtCertificationsPage() {
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
               <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">
-                {aiStats.mandatory}
+                {aiStats.core}
               </p>
               <p className="text-[12px] text-white/50 font-medium">
-                Certifications obligatoires
+                mappings CORE
               </p>
             </div>
             <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
               <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">
-                {aiStats.optional}
+                {aiStats.marketplace}
               </p>
               <p className="text-[12px] text-white/50 font-medium mt-1">
-                Certifications optionnelles
+                mappings marketplace
               </p>
             </div>
           </motion.div>
@@ -434,11 +438,11 @@ export default function IAEtCertificationsPage() {
             <Badge variant="default" size="lg" className="mb-4">
               Certifications IA
             </Badge>
-            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
-              60+ certifications IA disponibles
+              <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
+              {iaResources.length} ressources IA vérifiées
             </h2>
             <p className="text-[16px] text-penn-body mt-3 max-w-[700px] mx-auto">
-              Toutes sont incluses dans votre formation et reconnues par les entreprises et les recruteurs à l&apos;international.
+              Chaque ressource publique est gratuite de bout en bout et conserve son type exact de credential : certification, badge, achievement ou certificat d&apos;achèvement.
             </p>
           </motion.div>
 
@@ -448,7 +452,7 @@ export default function IAEtCertificationsPage() {
                 <div className="mb-5 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
                   <div>
                     <p className="text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#9C27B0]">
-                      {group.certifications.length} certification{group.certifications.length > 1 ? "s" : ""}
+                      {new Set(group.opportunities.map((opportunity) => opportunity.resource.id)).size} ressource{new Set(group.opportunities.map((opportunity) => opportunity.resource.id)).size > 1 ? "s" : ""}
                     </p>
                     <h3 className="mt-1 text-[24px] font-extrabold text-penn-navy">
                       {aiClassificationLabels[group.classification]}
@@ -459,20 +463,21 @@ export default function IAEtCertificationsPage() {
                   </div>
                   <div className="flex gap-2">
                     <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold text-penn-navy">
-                      {group.certifications.filter((cert) => cert.requirement === "mandatory").length} obligatoires
+                      {group.opportunities.filter((opportunity) => opportunity.mapping.tier === "CORE").length} CORE
                     </span>
                     <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold text-penn-body">
-                      {group.certifications.filter((cert) => cert.requirement === "optional").length} options
+                      {group.opportunities.filter((opportunity) => opportunity.mapping.tier !== "CORE").length} marketplace
                     </span>
                   </div>
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                  {group.certifications.map((cert, i) => {
-                    const logo = getCertificationLogo(cert);
+                  {group.opportunities.slice(0, 18).map((opportunity, i) => {
+                    const logo = getCatalogueV3ProviderLogo(opportunity.resource.providerId);
+                    const tier = tierLabels[opportunity.mapping.tier as OpportunityTier];
                     return (
                       <motion.div
-                        key={cert.id}
+                        key={`${opportunity.resource.id}-${opportunity.mapping.programmeId}-${opportunity.mapping.year}-${opportunity.mapping.tier}`}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-20px" }}
@@ -481,23 +486,28 @@ export default function IAEtCertificationsPage() {
                       >
                         <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-penn-border/50 bg-white p-1.5 shadow-sm">
                           {logo ? (
-                            <Image src={logo} alt={cert.displayProvider} width={72} height={32} className="max-h-8 w-auto object-contain" unoptimized />
+                            <Image src={logo} alt={opportunity.provider?.name ?? "Provider"} width={72} height={32} className="max-h-8 w-auto object-contain" unoptimized />
                           ) : (
-                            getProviderLogo(cert.displayProvider)
+                            getProviderLogo(opportunity.provider?.name ?? "")
                           )}
                         </div>
                         <div className="min-w-0">
                           <p className="text-[13px] font-extrabold leading-snug text-penn-navy group-hover:text-penn-green">
-                            {cert.name}
+                            {opportunity.resource.title}
                           </p>
                           <p className="mt-1 text-[11px] font-medium text-penn-body/60">
-                            {cert.displayProvider} · {cert.recommendedYear} · {cert.requirement === "mandatory" ? "Obligatoire" : "Optionnel"}
+                            {opportunity.provider?.name} · {opportunity.mapping.year} · {tier} · {opportunity.credential ? credentialTypeLabels[opportunity.credential.type] : "Credential"}
                           </p>
                         </div>
                       </motion.div>
                     );
                   })}
                 </div>
+                {group.opportunities.length > 18 && (
+                  <p className="mt-4 text-center text-[12px] font-bold text-penn-body/55">
+                    +{group.opportunities.length - 18} mappings IA disponibles dans le catalogue complet.
+                  </p>
+                )}
               </div>
             ))}
           </div>
@@ -512,7 +522,7 @@ export default function IAEtCertificationsPage() {
               href="/certifications"
               className="inline-flex items-center gap-2 text-[15px] font-bold text-penn-green hover:underline"
             >
-              Voir toutes les certifications ({totalCertifications}+)
+              Voir tout le catalogue ({totalCertifications} credentials)
               <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
@@ -542,8 +552,8 @@ export default function IAEtCertificationsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programmeBreakdown.map((p, i) => {
-              const tags = p.highlights.split("·").map(t => t.trim()).filter(Boolean);
-              
+              const tags = [`CORE ${p.core}`, `REC ${p.recommended}`, `DISC ${p.discovery}`];
+
               return (
                 <motion.div
                   key={p.programme}
@@ -604,10 +614,18 @@ export default function IAEtCertificationsPage() {
                       <div className="mt-auto pt-6 border-t border-penn-border flex items-end justify-between">
                         <div>
                           <p className="text-[12px] font-bold text-penn-body uppercase tracking-wider mb-1">
-                            Certifications intégrées
+                            Mappings v3
                           </p>
                           <p className="text-[32px] font-extrabold leading-none" style={{ color: p.color }}>
-                            {p.total}+
+                            {p.total}
+                          </p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-[12px] font-bold text-penn-body uppercase tracking-wider mb-1">
+                            Exigences CORE
+                          </p>
+                          <p className="text-[24px] font-extrabold leading-none text-penn-navy">
+                            {p.requirements}
                           </p>
                         </div>
                       </div>
@@ -644,7 +662,7 @@ export default function IAEtCertificationsPage() {
               {
                 icon: <Award className="w-6 h-6" />,
                 title: "Certifications",
-                desc: `${totalCertifications}+ certifications incluses.`,
+                desc: `${totalCertifications} credentials gratuits vérifiés.`,
                 href: "/certifications",
                 label: "Découvrir",
               },

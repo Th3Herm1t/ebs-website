@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify:catalogue:v3": "node scripts/verify-certification-v3-snapshot.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",

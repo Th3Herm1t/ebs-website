@@ -9,7 +9,7 @@ export const faqSchemaQuestions = [
   },
   {
     q: "Les certifications sont-elles vraiment gratuites ?",
-    a: "Oui. Les certifications Google, IBM, Harvard, Bloomberg, Cisco, Fortinet, HubSpot et autres sont incluses dans les frais de scolarité des étudiants EBS.",
+    a: "Oui. Le catalogue public v3 ne retient que des ressources dont l'apprentissage, l'évaluation, le justificatif et les accès requis sont vérifiés à coût zéro.",
   },
   {
     q: "Puis-je étudier à l'étranger pendant mon cursus ?",
