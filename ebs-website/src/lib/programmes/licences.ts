@@ -3,6 +3,7 @@ import type { ProgramLPData } from "@/components/program";
 export const licences: Record<string, ProgramLPData> = {
   management: {
     slug: "management",
+    catalogueId: "licence-management",
     type: "licence",
     title: "Licence en Management",
     tagline: "Devenez un manager augmenté par l'Intelligence Artificielle, prêt à relever les défis des entreprises de demain.",
@@ -59,6 +60,7 @@ export const licences: Record<string, ProgramLPData> = {
 
   marketing: {
     slug: "marketing",
+    catalogueId: "licence-marketing",
     type: "licence",
     title: "Licence en Marketing",
     tagline: "Alliez vision stratégique, maîtrise du digital et intelligence artificielle pour relever les défis du marketing de demain.",
@@ -118,6 +120,7 @@ export const licences: Record<string, ProgramLPData> = {
 
   finance: {
     slug: "finance",
+    catalogueId: "licence-finance",
     type: "licence",
     title: "Licence en Finance",
     tagline: "Maîtrisez la finance, les données et l'Intelligence Artificielle pour accompagner les décisions financières de demain.",
@@ -175,6 +178,7 @@ export const licences: Record<string, ProgramLPData> = {
 
   "informatique-ia": {
     slug: "informatique-ia",
+    catalogueId: "licence-informatique-ia",
     type: "licence",
     title: "Licence Informatique — Option IA",
     tagline: "Concevez les logiciels intelligents qui transformeront les entreprises de demain.",
@@ -231,6 +235,7 @@ export const licences: Record<string, ProgramLPData> = {
 
   cybersecurite: {
     slug: "cybersecurite",
+    catalogueId: "licence-cybersecurite",
     type: "licence",
     title: "Licence Informatique — Option Cybersécurité",
     tagline: "Développez des logiciels sécurisés et protégez les systèmes d'information de demain.",

@@ -19,12 +19,13 @@ import {
 } from "lucide-react";
 import { Badge, CtaSection } from "@/components/shared";
 import {
-  catalogueV3,
+  aiProfileLabels,
   credentialTypeLabels,
   getCatalogueV3Opportunities,
   getCatalogueV3ProgrammeSummary,
   getCatalogueV3ProviderLogo,
   tierLabels,
+  type CatalogueV3PublicSnapshot,
   type OpportunityTier,
   type Resource,
 } from "@/lib/certifications/v3";
@@ -67,22 +68,6 @@ const iaCompetences = [
   },
 ];
 
-const iaOpportunities = getCatalogueV3Opportunities().filter(
-  (opportunity) =>
-    opportunity.resource.classification === "ai-literacy" || opportunity.resource.classification === "applied-ai"
-);
-
-const aiResourceIds = new Set(iaOpportunities.map((opportunity) => opportunity.resource.id));
-const iaResources = catalogueV3.resources.filter((resource) => aiResourceIds.has(resource.id));
-
-const totalCertifications = catalogueV3.release.counts.publicCredentials;
-const aiStats = {
-  literacy: iaResources.filter((resource) => resource.classification === "ai-literacy").length,
-  applied: iaResources.filter((resource) => resource.classification === "applied-ai").length,
-  core: iaOpportunities.filter((opportunity) => opportunity.mapping.tier === "CORE").length,
-  marketplace: iaOpportunities.filter((opportunity) => opportunity.mapping.tier !== "CORE").length,
-};
-
 const aiClassificationLabels: Record<Resource["classification"], string> = {
   "ai-literacy": "Culture IA",
   "applied-ai": "IA appliquée",
@@ -94,87 +79,77 @@ const aiClassificationText: Record<"ai-literacy" | "applied-ai", string> = {
   "applied-ai": "Les usages métiers : marketing, finance, data, cyber, CRM, automatisation et productivité avancée.",
 };
 
-const groupedAiCertifications = (["ai-literacy", "applied-ai"] as const).map((classification) => ({
-  classification,
-  opportunities: iaOpportunities.filter((opportunity) => opportunity.resource.classification === classification),
-}));
-
 const programmeMeta: Array<{
-  slug: string;
   programme: string;
+  catalogueId: string;
   href: string;
   highlights: string;
   color: string;
 }> = [
   {
-    slug: "management",
     programme: "Licence Management",
+    catalogueId: "licence-management",
     href: "/licences/management",
     highlights: "Google PM · Scrum SFC™ · IBM Business Analyst",
     color: "#2196F3",
   },
   {
-    slug: "marketing",
     programme: "Licence Marketing",
+    catalogueId: "licence-marketing",
     href: "/licences/marketing",
     highlights: "Google Digital Mktg · HubSpot Digital · SEMrush SEO AI",
     color: "#E91E8C",
   },
   {
-    slug: "finance",
     programme: "Licence Finance",
+    catalogueId: "licence-finance",
     href: "/licences/finance",
     highlights: "Bloomberg BMC · Bloomberg ESG · Goldman Sachs Forage",
     color: "#00BCD4",
   },
   {
-    slug: "marketing-digital-ia",
     programme: "Master Marketing & IA",
+    catalogueId: "master-marketing-digital-ia",
     href: "/masters/marketing-digital-ia",
     highlights: "Google Advanced Data · HubSpot Marketing · Databricks",
     color: "#E91E8C",
   },
   {
-    slug: "informatique-ia",
     programme: "Licence Info — IA",
+    catalogueId: "licence-informatique-ia",
     href: "/licences/informatique-ia",
     highlights: "Harvard CS50 AI · DeepLearning.AI ML/DL · Databricks GenAI",
     color: "#9C27B0",
   },
   {
-    slug: "cybersecurite",
     programme: "Licence Info — Cybersécurité",
+    catalogueId: "licence-cybersecurite",
     href: "/licences/cybersecurite",
     highlights: "Google Cyber · Cisco Ethical Hacker · Fortinet FCF/FCA",
     color: "#FF9800",
   },
   {
-    slug: "crm",
     programme: "Master CRM Digital",
+    catalogueId: "master-crm-revops",
     href: "/masters/crm",
     highlights: "HubSpot CRM · n8n Automation · IBM Watsonx",
     color: "#E91E63",
   },
   {
-    slug: "startups",
     programme: "Master Startups",
+    catalogueId: "master-startups-entrepreneuriat",
     href: "/masters/startups",
     highlights: "PMI · Google PM · Scrum SAC™ · IBM DevOps",
     color: "#5E35B1",
   },
   {
-    slug: "ingenierie-financiere",
     programme: "Master Ingénierie Fin.",
+    catalogueId: "master-ingenierie-financiere",
     href: "/masters/ingenierie-financiere",
     highlights: "Bloomberg BMC/ESG · JP Morgan Quant · Goldman Sachs IB",
     color: "#00897B",
   },
 ];
-
-const programmeBreakdown = programmeMeta.map((programme) => ({
-  ...programme,
-  ...getCatalogueV3ProgrammeSummary(programme.slug),
-}));
 
 const getProviderLogo = (provider: string) => {
   switch (provider.toLowerCase()) {
@@ -215,7 +190,33 @@ const getProviderLogo = (provider: string) => {
   }
 };
 
-export default function IAEtCertificationsPage() {
+export default function IAEtCertificationsPage({ catalogue }: { catalogue: CatalogueV3PublicSnapshot }) {
+  const iaOpportunities = getCatalogueV3Opportunities({}, catalogue).filter(
+    (opportunity) =>
+      opportunity.resource.classification === "ai-literacy" || opportunity.resource.classification === "applied-ai"
+  );
+  const aiResourceIds = new Set(iaOpportunities.map((opportunity) => opportunity.resource.id));
+  const iaResources = catalogue.resources.filter((resource) => aiResourceIds.has(resource.id));
+  const totalCertifications = catalogue.release.counts.publicCredentials;
+  const aiStats = {
+    literacy: iaResources.filter((resource) => resource.classification === "ai-literacy").length,
+    applied: iaResources.filter((resource) => resource.classification === "applied-ai").length,
+    requiredCompetencies: catalogue.coreRequirements.filter((requirement) => requirement.requiredCapability !== "ENGINEER").length,
+    marketplace: iaOpportunities.length,
+  };
+  const groupedAiCertifications = (["ai-literacy", "applied-ai"] as const).map((classification) => ({
+    classification,
+    opportunities: iaOpportunities.filter((opportunity) => opportunity.resource.classification === classification),
+  }));
+  const programmeBreakdown = programmeMeta.map((programme) => {
+    const catalogueProgramme = catalogue.programmes.find((entry) => entry.id === programme.catalogueId);
+    return {
+      ...programme,
+      programme: catalogueProgramme?.name.fr ?? programme.programme,
+      profile: catalogueProgramme?.profile,
+      ...getCatalogueV3ProgrammeSummary(programme.catalogueId, catalogue),
+    };
+  });
   return (
     <>
       {/* ═══════════ IMMERSIVE HERO ═══════════ */}
@@ -292,10 +293,10 @@ export default function IAEtCertificationsPage() {
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
               <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">
-                {aiStats.core}
+                {aiStats.requiredCompetencies}
               </p>
               <p className="text-[12px] text-white/50 font-medium">
-                formations du socle
+                compétences requises
               </p>
             </div>
             <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
@@ -462,17 +463,17 @@ export default function IAEtCertificationsPage() {
                   </div>
                   <div className="flex gap-2">
                     <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold text-penn-navy">
-                      {group.opportunities.filter((opportunity) => opportunity.mapping.tier === "CORE").length} essentiel
+                      {group.opportunities.filter((opportunity) => opportunity.mapping.tier === "RECOMMENDED").length} recommandé
                     </span>
                     <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold text-penn-body">
-                      {group.opportunities.filter((opportunity) => opportunity.mapping.tier !== "CORE").length} recommandé/explorer
+                      {group.opportunities.filter((opportunity) => opportunity.mapping.tier === "DISCOVERY").length} explorer
                     </span>
                   </div>
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {group.opportunities.slice(0, 18).map((opportunity, i) => {
-                    const logo = getCatalogueV3ProviderLogo(opportunity.resource.providerId);
+                    const logo = getCatalogueV3ProviderLogo(opportunity.resource.providerId, catalogue);
                     const tier = tierLabels[opportunity.mapping.tier as OpportunityTier];
                     return (
                       <motion.div
@@ -551,7 +552,7 @@ export default function IAEtCertificationsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programmeBreakdown.map((p, i) => {
-              const tags = [`Essentiel ${p.core}`, `Recommandé ${p.recommended}`, `Explorer ${p.discovery}`];
+              const tags = [`${aiProfileLabels[p.profile ?? "AI_ENABLED"]}`, `Recommandé ${p.recommended}`, `Explorer ${p.discovery}`];
 
               return (
                 <motion.div
@@ -621,7 +622,7 @@ export default function IAEtCertificationsPage() {
                         </div>
                         <div className="text-right">
                           <p className="text-[12px] font-bold text-penn-body uppercase tracking-wider mb-1">
-                            Exigences du socle
+                            Compétences requises
                           </p>
                           <p className="text-[24px] font-extrabold leading-none text-penn-navy">
                             {p.requirements}

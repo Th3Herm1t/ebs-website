@@ -6,6 +6,8 @@ import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { masters } from "@/lib/programmes/masters";
+import { aiProfileLabels, getCatalogueV3Programme, getCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
+import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -17,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-const overview = [
+const overviewBase = [
   { ...masters.crm, subtitle: "CRM, marketing automation, Intelligence Artificielle et transformation digitale avec HubSpot, n8n et des outils professionnels reconnus.", featured: true, image: "/images/sections/pro-student.jpg" },
   { ...masters["marketing-digital-ia"], subtitle: "Marketing digital, analyse des données, Intelligence Artificielle et automatisation des campagnes marketing.", featured: true, image: "/images/sections/pillar-tech.jpg" },
   { ...masters.startups, subtitle: "Management de projet, innovation, entrepreneuriat, méthodes Agile, PMI® et Scrum.", featured: false, image: "/images/programs/management.jpg" },
@@ -27,7 +29,7 @@ const overview = [
 const mastersCards = [
   {
     icon: <Award className="w-6 h-6" />,
-    title: "131",
+    title: "4",
     subtitle: "Certifications affichées",
     color: "#2B8FAB",
     offsetY: -80,
@@ -57,6 +59,18 @@ export default async function MastersPage({
   searchParams: Promise<{ program?: string }>;
 }) {
   const { program } = await searchParams;
+  const catalogue = await getCatalogueV3Snapshot();
+  const overview = overviewBase.map((entry) => {
+    const programme = getCatalogueV3Programme(entry.catalogueId, catalogue);
+    const summary = getCatalogueV3ProgrammeSummary(entry.catalogueId, catalogue);
+    const profile = programme ? aiProfileLabels[programme.profile] : "AI-Enabled";
+    return {
+      ...entry,
+      title: programme?.name.fr ?? entry.title,
+      subtitle: `${profile} · ${summary.requirements} compétences requises · ${summary.recommended} recommandées · ${summary.discovery} explorer. ${entry.subtitle}`,
+      totalCerts: summary.requirements + summary.total,
+    };
+  });
   const filteredOverview = program
     ? overview.filter(p => p.slug === program)
     : overview;
@@ -78,7 +92,7 @@ export default async function MastersPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <ShowcaseHero
         title="Nos Masters : 2 ans pour atteindre l'excellence."
-        subtitle="4 Masters professionnels · Intelligence Artificielle intégrée dans chaque parcours · Jusqu'à 15 certifications professionnelles internationales affichées selon le programme · Diplôme accrédité par l'État tunisien."
+        subtitle="4 Masters professionnels · Intelligence Artificielle intégrée dans chaque parcours · Ressources et justificatifs professionnels selon le programme · Diplôme accrédité par l'État tunisien."
         badge="Masters"
         cards={mastersCards}
       />

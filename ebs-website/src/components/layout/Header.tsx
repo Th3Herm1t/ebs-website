@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "@/i18n/routing";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useTranslations } from 'next-intl';
 
@@ -147,7 +147,7 @@ export default function Header() {
         <div className="flex items-center justify-end shrink-0">
           <div className="hidden md:flex items-center gap-4 xl:gap-6">
             <a 
-              href="tel:+216 55 582 843" 
+              href="tel:+21655582843"
               className="text-penn-green hover:text-penn-green/80 transition-colors font-bold text-[14px] xl:text-[16px] whitespace-nowrap"
             >
               <span className="font-light mr-1.5">{t('call')}</span> +216 55 582 843

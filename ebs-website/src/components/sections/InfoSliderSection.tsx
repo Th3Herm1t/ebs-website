@@ -29,7 +29,7 @@ export default function InfoSliderSection() {
       title: t('s1.title'),
       text: t('s1.desc'),
       button: t('s1.btn'),
-      link: "#"
+       link: "/ia-et-certifications"
     },
     {
       id: 2,
@@ -38,7 +38,7 @@ export default function InfoSliderSection() {
       title: t('s2.title'),
       text: t('s2.desc'),
       button: t('s2.btn'),
-      link: "#"
+       link: "/certifications"
     },
     {
       id: 3,

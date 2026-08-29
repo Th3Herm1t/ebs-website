@@ -24,7 +24,7 @@
       "titleHighlight": "Business School",
       "title2": "Focused on The Future",
       "desc1": "Train for the world of tomorrow",
-      "desc2": "Business · Finance · Technology · Artificial Intelligence · Cybersecurity · Recognized Bachelor's and Master's degrees with 150+ free international certifications available",
+      "desc2": "Business · Finance · Technology · Artificial Intelligence · Cybersecurity · Recognized Bachelor's and Master's degrees with verified professional resources available",
       "sliderTitle": "Find the path that suits you",
       "categories": {
         "Licence": "Bachelor's",
@@ -88,8 +88,8 @@
       },
       "s2": {
         "badge": "★ EXCLUSIVE",
-        "title": "Integration of 150+ International Certifications in our various programs",
-        "desc": "EBS integrates over 150 recognized international certifications into its various training programs to strengthen academic skills through concrete professional validations. These certifications cover various fields such as management, finance, marketing, artificial intelligence, project management, cybersecurity, and digital technologies. This approach allows students to enrich their profiles, highlight their achievements, and prepare for international market standards and requirements.",
+        "title": "Professional resources integrated into our programs",
+        "desc": "EBS integrates recognized professional resources into its various training programs to strengthen academic skills through concrete validation. They cover management, finance, marketing, artificial intelligence, project management, cybersecurity, and digital technologies.",
         "btn": "Learn more"
       },
       "s3": {
@@ -165,31 +165,31 @@
           "cat": "Management",
           "title": "National Bachelor in Management Sciences - Marketing Option",
           "detail1": "6 Semesters - On Campus",
-          "detail2": "Integrated AI - 35 Certifications"
+          "detail2": "Integrated AI - verified resources"
         },
         {
           "cat": "Marketing",
           "title": "National Bachelor in Management Sciences - Marketing Option",
           "detail1": "6 Semesters - On Campus",
-          "detail2": "Integrated AI - 57 Certifications"
+          "detail2": "Integrated AI - verified resources"
         },
         {
           "cat": "Finance",
           "title": "National Bachelor in Management Sciences - Finance Option",
           "detail1": "6 Semesters - On Campus",
-          "detail2": "Integrated AI - 19 Certifications"
+          "detail2": "Integrated AI - verified resources"
         },
         {
           "cat": "Computer Science",
           "title": "National Bachelor in Software Engineering - AI Option",
           "detail1": "6 Semesters - On Campus",
-          "detail2": "75 Certifications Available"
+          "detail2": "Verified resources available"
         },
         {
           "cat": "Computer Science",
           "title": "National Bachelor in Software Engineering - Cybersecurity Option",
           "detail1": "6 Semesters - On Campus",
-          "detail2": "52 Certifications Available"
+          "detail2": "Verified resources available"
         }
       ],
       "masters": [
@@ -197,25 +197,25 @@
           "cat": "Advanced Finance",
           "title": "Master in Financial Engineering",
           "detail1": "4 Semesters - On Campus",
-          "detail2": "Integrated AI - 15 Certifications"
+          "detail2": "Integrated AI - verified resources"
         },
         {
           "cat": "Marketing 5.0",
           "title": "Master in CRM - Marketing & Digital Transformation",
           "detail1": "4 Semesters - On Campus",
-          "detail2": "Integrated AI - 49 Certifications"
+          "detail2": "Integrated AI - verified resources"
         },
         {
           "cat": "Project Management",
           "title": "Master in Innovative Projects & Startups Management",
           "detail1": "4 Semesters - On Campus",
-          "detail2": "Integrated AI - 22 Certifications"
+          "detail2": "Integrated AI - verified resources"
         },
         {
           "cat": "Digital & Data",
           "title": "Master in Digital Marketing & AI",
           "detail1": "4 Semesters - On Campus",
-          "detail2": "Integrated AI - 81 Certifications"
+          "detail2": "Integrated AI - verified resources"
         }
       ]
     },

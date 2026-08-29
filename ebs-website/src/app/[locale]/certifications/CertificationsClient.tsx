@@ -20,13 +20,13 @@ import { Badge, CtaSection } from "@/components/shared";
 import { fadeUp, staggerDelay, transitions, viewportOnce } from "@/lib/animation";
 import {
   assessmentRigorLabels,
-  catalogueV3,
   credentialStrengthLabels,
   credentialTypeLabels,
   getCatalogueV3Opportunities,
   getCatalogueV3ProviderLogo,
   tierHelp,
   tierLabels,
+  type CatalogueV3PublicSnapshot,
   type JoinedProgrammeOpportunity,
   type OpportunityTier,
   type Resource,
@@ -43,13 +43,8 @@ const classificationLabels: Record<Resource["classification"], string> = {
   "non-ai": "Métier & outils",
 };
 
-const programmeLabels = Object.fromEntries(
-  catalogueV3.programmes.map((programme) => [programme.id, programme.name.fr]),
-);
-
 const tierOptions: Array<{ value: TierFilter; label: string; help: string }> = [
   { value: "all", label: "Tout", help: "Catalogue public complet" },
-  { value: "CORE", label: "Essentiel", help: tierHelp.CORE },
   { value: "RECOMMENDED", label: "Recommandé", help: tierHelp.RECOMMENDED },
   { value: "DISCOVERY", label: "Explorer", help: tierHelp.DISCOVERY },
 ];
@@ -61,29 +56,6 @@ const classificationOptions: Array<{ value: ClassificationFilter; label: string;
   { value: "non-ai", label: "Métier", help: "Finance, marketing, CRM, cyber, data" },
 ];
 
-const allOpportunities = getCatalogueV3Opportunities();
-const uniqueResourceCount = catalogueV3.release.counts.publicResources;
-const uniqueCredentialCount = catalogueV3.release.counts.publicCredentials;
-
-const tierStats = (["CORE", "RECOMMENDED", "DISCOVERY"] as OpportunityTier[]).map((tier) => ({
-  tier,
-  count: allOpportunities.filter((opportunity) => opportunity.mapping.tier === tier).length,
-}));
-
-const classificationStats = (["ai-literacy", "applied-ai", "non-ai"] as Resource["classification"][]).map((classification) => ({
-  classification,
-  count: catalogueV3.resources.filter((resource) => resource.classification === classification).length,
-}));
-
-const providerStats = catalogueV3.providers
-  .map((provider) => ({
-    provider,
-    count: catalogueV3.resources.filter((resource) => resource.providerId === provider.id).length,
-  }))
-  .filter((entry) => entry.count > 0)
-  .sort((a, b) => b.count - a.count)
-  .slice(0, 12);
-
 function setFilter<T>(setter: (value: T) => void, value: T, resetVisibleCount: () => void) {
   startTransition(() => {
     setter(value);
@@ -91,7 +63,7 @@ function setFilter<T>(setter: (value: T) => void, value: T, resetVisibleCount: (
   });
 }
 
-export default function CertificationsPage() {
+export default function CertificationsPage({ catalogue }: { catalogue: CatalogueV3PublicSnapshot }) {
   const [tierFilter, setTierFilter] = useState<TierFilter>("all");
   const [classificationFilter, setClassificationFilter] = useState<ClassificationFilter>("all");
   const [programmeFilter, setProgrammeFilter] = useState("all");
@@ -99,6 +71,28 @@ export default function CertificationsPage() {
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
   const deferredSearchTerm = useDeferredValue(searchTerm.trim().toLowerCase());
   const prefersReducedMotion = false;
+  const allOpportunities = getCatalogueV3Opportunities({}, catalogue);
+  const programmeLabels = Object.fromEntries(
+    catalogue.programmes.map((programme) => [programme.id, programme.name.fr]),
+  );
+  const uniqueResourceCount = catalogue.release.counts.publicResources;
+  const uniqueCredentialCount = catalogue.release.counts.publicCredentials;
+  const tierStats = (["RECOMMENDED", "DISCOVERY"] as OpportunityTier[]).map((tier) => ({
+    tier,
+    count: allOpportunities.filter((opportunity) => opportunity.mapping.tier === tier).length,
+  }));
+  const classificationStats = (["ai-literacy", "applied-ai", "non-ai"] as Resource["classification"][]).map((classification) => ({
+    classification,
+    count: catalogue.resources.filter((resource) => resource.classification === classification).length,
+  }));
+  const providerStats = catalogue.providers
+    .map((provider) => ({
+      provider,
+      count: catalogue.resources.filter((resource) => resource.providerId === provider.id).length,
+    }))
+    .filter((entry) => entry.count > 0)
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 12);
 
   const filteredOpportunities = allOpportunities.filter((opportunity) => {
     const matchesTier = tierFilter === "all" || opportunity.mapping.tier === tierFilter;
@@ -184,10 +178,10 @@ export default function CertificationsPage() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 py-5">
-                  <Metric label="Programmes" value={catalogueV3.programmes.length} />
-                  <Metric label="Organismes" value={catalogueV3.providers.length} accent />
-                  <Metric label="Plateformes" value={catalogueV3.platforms.length} />
-                  <Metric label="Exigences du socle" value={catalogueV3.release.counts.coreRequirementGroups} accent />
+                  <Metric label="Programmes" value={catalogue.programmes.length} />
+                  <Metric label="Organismes" value={catalogue.providers.length} accent />
+                  <Metric label="Plateformes" value={catalogue.platforms.length} />
+                  <Metric label="Compétences requises" value={catalogue.release.counts.coreRequirements} accent />
                 </div>
 
                 <div className="space-y-3">
@@ -247,7 +241,7 @@ export default function CertificationsPage() {
               <FilterGroup title="Programme">
                 <select value={programmeFilter} onChange={(event) => setFilter(setProgrammeFilter, event.target.value, resetVisibleCount)} className="h-12 w-full rounded-2xl border border-penn-border bg-penn-bg-light px-4 text-[14px] font-extrabold text-penn-navy outline-none focus:border-penn-green">
                   <option value="all">Tous les programmes</option>
-                  {catalogueV3.programmes.map((programme) => (
+                  {catalogue.programmes.map((programme) => (
                     <option key={programme.id} value={programme.id}>{programme.name.fr}</option>
                   ))}
                 </select>
@@ -279,7 +273,7 @@ export default function CertificationsPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                 {displayedOpportunities.map((opportunity, i) => (
-                  <OpportunityCard key={`${opportunity.resource.id}-${opportunity.mapping.programmeId}-${opportunity.mapping.year}-${opportunity.mapping.tier}`} opportunity={opportunity} index={i} prefersReducedMotion={Boolean(prefersReducedMotion)} />
+                  <OpportunityCard key={`${opportunity.resource.id}-${opportunity.mapping.programmeId}-${opportunity.mapping.year}-${opportunity.mapping.tier}`} opportunity={opportunity} programmeLabel={programmeLabels[opportunity.mapping.programmeId]} index={i} prefersReducedMotion={Boolean(prefersReducedMotion)} />
                 ))}
               </div>
 
@@ -317,7 +311,7 @@ export default function CertificationsPage() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {providerStats.map(({ provider, count }, i) => {
-                const logo = getCatalogueV3ProviderLogo(provider.id);
+                const logo = getCatalogueV3ProviderLogo(provider.id, catalogue);
                 return (
                   <motion.div key={provider.id} initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.98 }} whileInView={prefersReducedMotion ? undefined : { opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-40px" }} transition={{ ...transitions.quick, delay: prefersReducedMotion ? 0 : staggerDelay(i, 0.16) }} className="flex h-28 flex-col items-center justify-center rounded-2xl border border-penn-border bg-penn-bg-light p-4 text-center">
                     {logo ? <Image src={logo} alt={provider.name} width={112} height={34} className="max-h-8 w-auto object-contain opacity-75" unoptimized /> : <p className="text-[13px] font-extrabold text-penn-navy">{provider.name}</p>}
@@ -399,7 +393,7 @@ function FilterButton({ active, label, help, onClick }: { active: boolean; label
   );
 }
 
-function OpportunityCard({ opportunity, index, prefersReducedMotion }: { opportunity: JoinedProgrammeOpportunity; index: number; prefersReducedMotion: boolean }) {
+function OpportunityCard({ opportunity, programmeLabel, index, prefersReducedMotion }: { opportunity: JoinedProgrammeOpportunity; programmeLabel?: string; index: number; prefersReducedMotion: boolean }) {
   const logo = getCatalogueV3ProviderLogo(opportunity.resource.providerId);
   const tier = opportunity.mapping.tier;
   const launchLabel = opportunity.resource.launch.mode === "direct" ? "Accès direct" : "Recherche organisme";
@@ -412,12 +406,12 @@ function OpportunityCard({ opportunity, index, prefersReducedMotion }: { opportu
       transition={{ ...transitions.quick, delay: prefersReducedMotion ? 0 : staggerDelay(index, 0.16) }}
       className="group relative overflow-hidden rounded-[22px] border border-penn-border bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-penn-green/35 hover:shadow-xl motion-reduce:hover:translate-y-0"
     >
-      <div className={`absolute inset-x-0 top-0 h-1 ${tier === "CORE" ? "bg-penn-green" : tier === "RECOMMENDED" ? "bg-penn-navy" : "bg-penn-navy/18"}`} />
+      <div className={`absolute inset-x-0 top-0 h-1 ${tier === "RECOMMENDED" ? "bg-penn-navy" : "bg-penn-navy/18"}`} />
       <div className="flex items-start justify-between gap-4 mb-5">
         <div className="h-11 min-w-0 flex items-center">
           {logo ? <Image src={logo} alt={opportunity.provider?.name ?? "Organisme"} width={126} height={40} className="h-9 w-auto max-w-[126px] object-contain opacity-80 transition-opacity group-hover:opacity-100" unoptimized /> : <span className="text-[13px] font-extrabold text-penn-navy">{opportunity.provider?.name}</span>}
         </div>
-        <span className={`rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.08em] ${tier === "CORE" ? "bg-penn-green/10 text-penn-green" : "bg-penn-bg-light text-penn-body"}`}>
+        <span className="rounded-full bg-penn-bg-light px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.08em] text-penn-body">
           {tierLabels[tier]}
         </span>
       </div>
@@ -434,7 +428,7 @@ function OpportunityCard({ opportunity, index, prefersReducedMotion }: { opportu
       </div>
 
       <div className="mt-5 space-y-2 border-t border-penn-border pt-4 text-[12px] font-bold text-penn-body/65">
-        <p>{programmeLabels[opportunity.mapping.programmeId]} · {opportunity.provider?.name}</p>
+        <p>{programmeLabel} · {opportunity.provider?.name}</p>
         {opportunity.credential && (
           <p>{credentialStrengthLabels[opportunity.credential.strength]} · {assessmentRigorLabels[opportunity.credential.assessmentRigor]}</p>
         )}

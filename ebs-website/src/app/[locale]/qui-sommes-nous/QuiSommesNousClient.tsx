@@ -82,7 +82,7 @@ export default function QuiSommesNousPage() {
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex flex-wrap justify-center gap-4 md:gap-6">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">2013</p><p className="text-[13px] text-white/50 font-medium">Fondation</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">9</p><p className="text-[13px] text-white/50 font-medium">Programmes disponibles</p></div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">131</p><p className="text-[13px] text-white/50 font-medium">Certifications affichées</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">v3.1</p><p className="text-[13px] text-white/50 font-medium">Catalogue vérifié</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">95%</p><p className="text-[13px] text-white/50 font-medium">Taux de réussite</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">14</p><p className="text-[13px] text-white/50 font-medium">Partenaires internationaux</p></div>
           </motion.div>
@@ -257,7 +257,7 @@ export default function QuiSommesNousPage() {
             {[
               { end: 2013, label: "Année de fondation", icon: <Building2 className="w-7 h-7" /> },
               { end: 9, label: "Programmes disponibles", sublabel: "3 Licences en Sciences de Gestion · 1 Licence en Informatique (2 options) · 4 Masters", icon: <BookOpen className="w-7 h-7" /> },
-              { end: 131, label: "Certifications affichées", sublabel: "Google · IBM · Harvard · Bloomberg...", icon: <Award className="w-7 h-7" />, featured: true },
+              { end: 199, label: "Ressources vérifiées", sublabel: "Google · IBM · Harvard · Bloomberg...", icon: <Award className="w-7 h-7" />, featured: true },
               { end: 95, suffix: "%", label: "Taux de réussite", icon: <TrendingUp className="w-7 h-7" />, featured: true },
               { end: 14, label: "Partenaires internationaux", sublabel: "France · Canada · Italie · Oman", icon: <Globe className="w-7 h-7" /> },
               { end: 12, suffix: "+", label: "Années d'expérience", icon: <Star className="w-7 h-7" /> },

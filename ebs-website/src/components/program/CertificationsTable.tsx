@@ -3,7 +3,7 @@
 import { useMemo, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, Brain, BriefcaseBusiness, CheckCircle2, Layers3, Sparkles } from "lucide-react";
+import { ArrowRight, Award, Brain, BriefcaseBusiness, Layers3, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FormattedTitle } from "@/components/shared/FormattedTitle";
 import {
@@ -13,6 +13,7 @@ import {
   getCatalogueV3ProviderLogo,
   tierHelp,
   tierLabels,
+  type JoinedCoreRequirement,
   type JoinedProgrammeOpportunity,
   type OpportunityTier,
   type Resource,
@@ -20,6 +21,8 @@ import {
 
 interface CertificationsTableProps {
   certs: JoinedProgrammeOpportunity[];
+  requirements?: JoinedCoreRequirement[];
+  profileLabel?: string;
   color?: string;
   limit?: number;
   className?: string;
@@ -49,7 +52,7 @@ const classificationMeta: Record<Resource["classification"], { icon: ReactNode; 
 };
 
 function sortOpportunities(a: JoinedProgrammeOpportunity, b: JoinedProgrammeOpportunity) {
-  const tierWeight: Record<OpportunityTier, number> = { CORE: 0, RECOMMENDED: 1, DISCOVERY: 2 };
+  const tierWeight: Record<OpportunityTier, number> = { RECOMMENDED: 0, DISCOVERY: 1 };
   const tierDiff = tierWeight[a.mapping.tier] - tierWeight[b.mapping.tier];
   if (tierDiff !== 0) return tierDiff;
   const yearDiff = a.mapping.year.localeCompare(b.mapping.year);
@@ -57,14 +60,13 @@ function sortOpportunities(a: JoinedProgrammeOpportunity, b: JoinedProgrammeOppo
   return a.resource.title.localeCompare(b.resource.title);
 }
 
-export function CertificationsTable({ certs, color, limit, className }: CertificationsTableProps) {
+export function CertificationsTable({ certs, requirements = [], profileLabel, color, limit, className }: CertificationsTableProps) {
   const accentColor = color ?? "#2B8FAB";
   const [filter, setFilter] = useState<Filter>("all");
   const displayed = limit ? [...certs].sort(sortOpportunities).slice(0, limit) : [...certs].sort(sortOpportunities);
 
   const stats = useMemo(() => {
     const byTier = {
-      CORE: displayed.filter((entry) => entry.mapping.tier === "CORE").length,
       RECOMMENDED: displayed.filter((entry) => entry.mapping.tier === "RECOMMENDED").length,
       DISCOVERY: displayed.filter((entry) => entry.mapping.tier === "DISCOVERY").length,
     };
@@ -77,7 +79,7 @@ export function CertificationsTable({ certs, color, limit, className }: Certific
   }, [displayed]);
 
   const filtered = displayed.filter((entry) => filter === "all" || entry.mapping.tier === filter);
-  const grouped = (["CORE", "RECOMMENDED", "DISCOVERY"] as OpportunityTier[])
+  const grouped = (["RECOMMENDED", "DISCOVERY"] as OpportunityTier[])
     .map((tier) => ({ tier, entries: filtered.filter((entry) => entry.mapping.tier === tier) }))
     .filter((group) => group.entries.length > 0);
 
@@ -91,24 +93,58 @@ export function CertificationsTable({ certs, color, limit, className }: Certific
           <div>
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-[12px] font-extrabold uppercase tracking-[0.12em] text-white/70">
               <Award className="h-4 w-4" style={{ color: accentColor }} />
-              Certifications gratuites vérifiées
+              AI & Professional Skills
             </div>
             <h4 className="text-[28px] font-extrabold leading-tight text-white md:text-[36px]">
-              <FormattedTitle text="Un socle essentiel et des formations au choix." />
+              <FormattedTitle text="Des compétences requises, plusieurs preuves possibles." />
             </h4>
             <p className="mt-4 max-w-[720px] text-[15px] leading-relaxed text-white/60">
-              Le socle désigne une compétence à valider, avec plusieurs formations au choix. Les niveaux recommandé et explorer enrichissent le profil avec des certifications gratuites vérifiées.
+              Le programme définit les compétences à valider. Les formations externes sont des preuves acceptées ou des opportunités recommandées, jamais des cours imposés.
             </p>
+            {profileLabel && (
+              <span className="mt-5 inline-flex rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-[12px] font-extrabold uppercase tracking-[0.12em]" style={{ color: accentColor }}>
+                {profileLabel}
+              </span>
+            )}
           </div>
 
           <div className="grid grid-cols-2 gap-2 lg:grid-cols-1">
-            <StatPill label="Formations" value={displayed.length} color="#ffffff" />
-            <StatPill label="Essentiel" value={stats.byTier.CORE} color={accentColor} />
+            <StatPill label="Compétences" value={requirements.length} color="#ffffff" />
             <StatPill label="Recommandés" value={stats.byTier.RECOMMENDED} color="#94A3B8" />
             <StatPill label="Explorer" value={stats.byTier.DISCOVERY} color="#CBD5E1" />
           </div>
         </div>
       </div>
+
+      {requirements.length > 0 && (
+        <div className="border-b border-penn-border bg-white p-4 lg:p-6">
+          <div className="mb-4 flex items-center justify-between gap-4">
+            <h5 className="text-[16px] font-extrabold text-penn-navy">Compétences requises et preuves acceptées</h5>
+            <span className="text-[12px] font-bold text-penn-body/55">Une preuve suffit par compétence</span>
+          </div>
+          <div className="grid gap-3 md:grid-cols-2">
+            {requirements.slice(0, 8).map((requirement) => (
+              <div key={requirement.id} className="rounded-2xl border border-penn-border bg-penn-bg-light p-4">
+                <div className="mb-3 flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-[12px] font-extrabold uppercase tracking-wide" style={{ color: accentColor }}>{requirement.year}</p>
+                    <p className="mt-1 text-[15px] font-extrabold text-penn-navy">{requirement.title.fr}</p>
+                  </div>
+                  <span className="rounded-full bg-white px-3 py-1 text-[11px] font-bold text-penn-body">{requirement.requiredCapability}</span>
+                </div>
+                <div className="space-y-2">
+                  {requirement.evidence.slice(0, 3).map((evidence) => (
+                    <div key={evidence.path.id} className="flex items-center justify-between gap-3 rounded-xl bg-white px-3 py-2 text-[12px] font-bold text-penn-body/70">
+                      <span>{evidence.resource?.title ?? evidence.path.label.fr}</span>
+                      <span className="shrink-0 text-penn-green">{evidence.path.type === "EBS_ASSESSMENT" ? "EBS" : evidence.provider?.name ?? "Preuve"}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="grid gap-5 border-b border-penn-border bg-penn-bg-light p-4 md:grid-cols-3 lg:p-6">
         {(["ai-literacy", "applied-ai", "non-ai"] as Resource["classification"][]).map((classification) => (
@@ -131,7 +167,6 @@ export function CertificationsTable({ certs, color, limit, className }: Certific
         <div className="flex flex-wrap gap-2">
           {([
             { value: "all", label: "Tout", count: displayed.length },
-            { value: "CORE", label: "Essentiel", count: stats.byTier.CORE },
             { value: "RECOMMENDED", label: "Recommandé", count: stats.byTier.RECOMMENDED },
             { value: "DISCOVERY", label: "Explorer", count: stats.byTier.DISCOVERY },
           ] as Array<{ value: Filter; label: string; count: number }>).map((option) => {
@@ -145,7 +180,7 @@ export function CertificationsTable({ certs, color, limit, className }: Certific
                   "rounded-full border px-4 py-2 text-[13px] font-extrabold transition-all",
                   active ? "text-white" : "border-penn-border bg-white text-penn-body hover:border-penn-navy/25"
                 )}
-                style={active ? { backgroundColor: option.value === "CORE" ? accentColor : "#232434", borderColor: option.value === "CORE" ? accentColor : "#232434" } : undefined}
+                style={active ? { backgroundColor: option.value === "RECOMMENDED" ? accentColor : "#232434", borderColor: option.value === "RECOMMENDED" ? accentColor : "#232434" } : undefined}
               >
                 {option.label} · {option.count}
               </button>
@@ -194,12 +229,11 @@ function StatPill({ label, value, color }: { label: string; value: number; color
 
 function CertificationCard({ entry, accentColor }: { entry: JoinedProgrammeOpportunity; accentColor: string }) {
   const logo = getCatalogueV3ProviderLogo(entry.resource.providerId);
-  const isCore = entry.mapping.tier === "CORE";
   const credentialType = entry.credential ? credentialTypeLabels[entry.credential.type] : "Credential";
 
   return (
     <article className="group relative overflow-hidden rounded-2xl border border-penn-border bg-white p-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
-      <div className="absolute inset-x-0 top-0 h-1" style={{ backgroundColor: isCore ? accentColor : "rgba(35,36,52,0.16)" }} />
+      <div className="absolute inset-x-0 top-0 h-1" style={{ backgroundColor: entry.mapping.tier === "RECOMMENDED" ? accentColor : "rgba(35,36,52,0.16)" }} />
       <div className="mb-4 flex items-start justify-between gap-4">
         <div className="flex h-12 min-w-0 items-center">
           {logo ? (
@@ -210,7 +244,7 @@ function CertificationCard({ entry, accentColor }: { entry: JoinedProgrammeOppor
         </div>
         <span
           className="rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.08em]"
-          style={{ backgroundColor: isCore ? `${accentColor}12` : "#F1F5F9", color: isCore ? accentColor : "#64748B" }}
+          style={{ backgroundColor: entry.mapping.tier === "RECOMMENDED" ? `${accentColor}12` : "#F1F5F9", color: entry.mapping.tier === "RECOMMENDED" ? accentColor : "#64748B" }}
         >
           {tierLabels[entry.mapping.tier]}
         </span>
@@ -231,13 +265,6 @@ function CertificationCard({ entry, accentColor }: { entry: JoinedProgrammeOppor
         <div className="mt-4 space-y-1 border-t border-penn-border pt-3 text-[12px] font-bold text-penn-body/65">
           <p>{credentialStrengthLabels[entry.credential.strength]} · {assessmentRigorLabels[entry.credential.assessmentRigor]}</p>
           <p>{entry.resource.launch.mode === "direct" ? "Lien direct" : "Recherche dans le catalogue de l'organisme"}</p>
-        </div>
-      )}
-
-      {isCore && (
-        <div className="mt-4 flex items-center gap-2 border-t border-penn-border pt-3 text-[12px] font-bold text-penn-body/65">
-          <CheckCircle2 className="h-4 w-4" style={{ color: accentColor }} />
-          Formation valide pour une exigence du socle
         </div>
       )}
     </article>

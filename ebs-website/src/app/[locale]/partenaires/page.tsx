@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 
-export default function PartenairesPage() {
-  redirect("/parcours-international");
+export default async function PartenairesPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  redirect(`/${locale}/parcours-international`);
 }

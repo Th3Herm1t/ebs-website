@@ -35,7 +35,7 @@ const allMasters = [
 const nosProgrammesCards = [
   {
     icon: <Award className="w-6 h-6" />,
-    title: "131 Certs",
+    title: "Catalogue v3.1",
     subtitle: "Incluses gratuitement",
     color: "#2B8FAB",
     offsetY: -80,

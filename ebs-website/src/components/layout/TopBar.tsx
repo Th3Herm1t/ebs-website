@@ -46,11 +46,11 @@ function LinkedinIcon({ className }: { className?: string }) {
 }
 
 const socials = [
-  { icon: FacebookIcon, hoverBg: "hover:bg-[#3B5998]" },
-  { icon: InstagramIcon, hoverBg: "hover:bg-[#FF5252]" },
-  { icon: TiktokIcon, hoverBg: "hover:bg-black" },
-  { icon: YoutubeIcon, hoverBg: "hover:bg-[#FF0000]" },
-  { icon: LinkedinIcon, hoverBg: "hover:bg-[#0e76a8]" },
+  { icon: FacebookIcon, hoverBg: "hover:bg-[#3B5998]", href: "https://www.facebook.com/espimabs" },
+  { icon: InstagramIcon, hoverBg: "hover:bg-[#FF5252]", href: "https://www.instagram.com/espimabusinessschool/" },
+  { icon: TiktokIcon, hoverBg: "hover:bg-black", href: "https://www.tiktok.com/@espimabusinessschool" },
+  { icon: YoutubeIcon, hoverBg: "hover:bg-[#FF0000]", href: "https://www.youtube.com/@espimabusinessschool" },
+  { icon: LinkedinIcon, hoverBg: "hover:bg-[#0e76a8]", href: "https://www.linkedin.com/school/espima-business-school/" },
 ];
 
 export default function TopBar() {
@@ -79,10 +79,12 @@ export default function TopBar() {
         <div className="flex items-center gap-4">
           <span className="text-[#42474c] text-[13px] font-medium opacity-80">{t('follow')}</span>
           <ul className="flex items-center gap-1">
-            {socials.map(({ icon: Icon, hoverBg }, i) => (
+             {socials.map(({ icon: Icon, hoverBg, href }, i) => (
               <li key={i}>
                 <a
-                  href="#"
+                   href={href}
+                   target="_blank"
+                   rel="noopener noreferrer"
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" }),
                     "w-8 h-8 rounded-full text-[#42474c] transition-colors duration-300",

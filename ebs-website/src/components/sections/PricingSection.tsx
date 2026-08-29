@@ -98,7 +98,7 @@ export default function PricingSection() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="#" className="price_btn inline-block w-full h-[50px] leading-[48px] bg-white border-2 border-penn-green text-penn-green font-bold text-[14px] uppercase rounded-[30px] transition-all duration-300 group-hover:bg-penn-green group-hover:text-white">
+                  <Link href="/preinscription" className="price_btn inline-block w-full h-[50px] leading-[48px] bg-white border-2 border-penn-green text-penn-green font-bold text-[14px] uppercase rounded-[30px] transition-all duration-300 group-hover:bg-penn-green group-hover:text-white">
                     {plan.buttonText}
                   </Link>
                 </div>

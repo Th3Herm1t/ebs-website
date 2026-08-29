@@ -21,11 +21,11 @@ function LinkedinIcon({ className }: { className?: string }) {
 }
 
 const socials = [
-  { icon: FacebookIcon, hoverBg: "hover:bg-[#3B5998]", href: "#" },
-  { icon: InstagramIcon, hoverBg: "hover:bg-[#FF5252]", href: "#" },
-  { icon: TiktokIcon, hoverBg: "hover:bg-black", href: "#" },
-  { icon: YoutubeIcon, hoverBg: "hover:bg-[#FF0000]", href: "#" },
-  { icon: LinkedinIcon, hoverBg: "hover:bg-[#0e76a8]", href: "#" },
+  { icon: FacebookIcon, hoverBg: "hover:bg-[#3B5998]", href: "https://www.facebook.com/espimabs" },
+  { icon: InstagramIcon, hoverBg: "hover:bg-[#FF5252]", href: "https://www.instagram.com/espimabusinessschool/" },
+  { icon: TiktokIcon, hoverBg: "hover:bg-black", href: "https://www.tiktok.com/@espimabusinessschool" },
+  { icon: YoutubeIcon, hoverBg: "hover:bg-[#FF0000]", href: "https://www.youtube.com/@espimabusinessschool" },
+  { icon: LinkedinIcon, hoverBg: "hover:bg-[#0e76a8]", href: "https://www.linkedin.com/school/espima-business-school/" },
 ];
 
 const FooterLink = ({ href, children, isBold }: { href: string, children: React.ReactNode, isBold?: boolean }) => (
@@ -74,8 +74,10 @@ export default function Footer() {
             <ul className="flex gap-3">
               {socials.map(({ icon: Icon, hoverBg, href }, i) => (
                 <li key={i}>
-                  <a 
-                    href={href} 
+                   <a
+                     href={href}
+                     target="_blank"
+                     rel="noopener noreferrer"
                     className={cn(
                       "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 transition-all duration-300",
                       hoverBg,
@@ -148,7 +150,7 @@ export default function Footer() {
                   <Phone className="w-5 h-5 text-penn-green group-hover:text-white transition-colors" />
                 </div>
                 <div className="flex flex-col text-white/80 text-[15px]">
-                  <a href="tel:+216 55 582 843" className="hover:text-penn-green transition-colors">+216 55 582 843</a>
+                   <a href="tel:+21655582843" className="hover:text-penn-green transition-colors">+216 55 582 843</a>
                   <a href="tel:+21671182625" className="hover:text-penn-green transition-colors">+216 71 18 26 25</a>
                 </div>
               </li>
@@ -170,8 +172,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} ESPIMA Business School. Tous droits réservés.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-white/50 hover:text-white text-sm transition-colors">Mentions Légales</Link>
-            <Link href="#" className="text-white/50 hover:text-white text-sm transition-colors">Politique de Confidentialité</Link>
+             <a href="https://ebs.tn/mentions-legales" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white text-sm transition-colors">Mentions Légales</a>
+             <a href="https://ebs.tn/politique-de-confidentialite" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white text-sm transition-colors">Politique de Confidentialité</a>
           </div>
         </div>
       </div>

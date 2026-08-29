@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { FileText, Users } from "lucide-react";
@@ -85,12 +86,12 @@ export default function TeamSection() {
                 <ul className="flex justify-center gap-2">
                   {socialIcons.map((Icon, j) => (
                     <li key={j}>
-                      <a
-                        href="#"
+                      <Link
+                        href="/corps-enseignant"
                         className="w-9 h-9 rounded-full border border-penn-border flex items-center justify-center text-penn-navy transition-all hover:bg-penn-green hover:border-penn-green hover:text-white"
                       >
                         <Icon className="w-4 h-4" />
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function TopicsSection() {
   const t = useTranslations('HomePage.topics');
@@ -11,13 +10,10 @@ export default function TopicsSection() {
     { icon: "/images/icon/microsoft.svg", title: "Microsoft" },
     { icon: "/images/icon/ibm.svg", title: "IBM" },
     { icon: "/images/icon/cisco-2.svg", title: "Cisco" },
-    { icon: "/images/icon/aws-2.svg", title: "AWS" },
     { icon: "/images/icon/hubspot.svg", title: "Hubspot" },
     { icon: "/images/icon/Asset 1ahrefs.svg", title: "Ahrefs" },
     { icon: "/images/icon/Asset 1bloomberg.svg", title: "Bloomberg" },
-    { icon: "/images/icon/deeplearning.ai.svg", title: "DeepLearning.AI" },
     { icon: "/images/icon/fortinet.png", title: "Fortinet" },
-    { icon: "/images/icon/meta.png", title: "Meta" },
     { icon: "/images/icon/n8n.png", title: "n8n" },
     { icon: "/images/icon/pwc.png", title: "PwC" },
     { icon: "/images/icon/semrush.svg", title: "Semrush" },
@@ -71,5 +67,3 @@ export default function TopicsSection() {
     </section>
   );
 }
-
-

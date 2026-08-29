@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -70,9 +71,9 @@ export default function PartnerLogos() {
           >
             <div className="inline-flex items-center gap-16 w-max">
               {[...logos, ...logos, ...logos, ...logos].map((logo, i) => (
-                <a key={i} href="#" className="inline-block flex-shrink-0">
+                <Link key={i} href="/partenaires-academiques" className="inline-block flex-shrink-0">
                   <Image src={`/images/partenaires/${logo.file}`} alt={logo.name} width={180} height={90} className="h-[90px] w-auto object-contain" style={{ width: "auto" }} />
-                </a>
+                </Link>
               ))}
             </div>
           </div>

@@ -40,10 +40,10 @@ export default function HeroSection2() {
             </div>
             <div className="home_tag text-white text-[15px]">
               <span className="font-bold mr-[10px]">Popular Topic:</span>
-              <Link href="#" className="text-white hover:text-penn-green transition-colors">Design, </Link>
-              <Link href="#" className="text-white hover:text-penn-green transition-colors">Development, </Link>
-              <Link href="#" className="text-white hover:text-penn-green transition-colors">Graphics, </Link>
-              <Link href="#" className="text-white hover:text-penn-green transition-colors">Marketing </Link>
+              <Link href="/nos-programmes" className="text-white hover:text-penn-green transition-colors">Design, </Link>
+              <Link href="/nos-programmes" className="text-white hover:text-penn-green transition-colors">Development, </Link>
+              <Link href="/nos-programmes" className="text-white hover:text-penn-green transition-colors">Graphics, </Link>
+              <Link href="/nos-programmes" className="text-white hover:text-penn-green transition-colors">Marketing </Link>
             </div>		  
           </div>
         </div>			

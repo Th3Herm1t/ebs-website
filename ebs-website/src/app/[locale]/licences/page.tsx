@@ -6,6 +6,8 @@ import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { licences } from "@/lib/programmes/licences";
+import { aiProfileLabels, getCatalogueV3Programme, getCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
+import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -17,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-const allPrograms = [
+const allProgramsBase = [
   { ...licences.management, subtitle: "Développez vos compétences en management, leadership, gestion de projets et pilotage des organisations dans un environnement en constante évolution.", image: "/images/programs/management.jpg" },
   { ...licences.marketing, subtitle: "Maîtrisez les fondamentaux du marketing, de la communication, du marketing digital et de la relation client pour répondre aux nouveaux enjeux des entreprises.", image: "/images/sections/pro-student.jpg" },
   { ...licences.finance, subtitle: "Préparez une carrière en finance, banque et contrôle de gestion grâce à des certifications internationales, dont Bloomberg.", image: "/images/programs/finance.jpg" },
@@ -29,7 +31,7 @@ const allPrograms = [
 const licencesCards = [
   {
     icon: <Award className="w-6 h-6" />,
-    title: "131",
+    title: "5",
     subtitle: "Certifications affichées",
     color: "#2B8FAB",
     offsetY: -80,
@@ -59,6 +61,18 @@ export default async function LicencesPage({
   searchParams: Promise<{ program?: string }>;
 }) {
   const { program } = await searchParams;
+  const catalogue = await getCatalogueV3Snapshot();
+  const allPrograms = allProgramsBase.map((entry) => {
+    const programme = getCatalogueV3Programme(entry.catalogueId, catalogue);
+    const summary = getCatalogueV3ProgrammeSummary(entry.catalogueId, catalogue);
+    const profile = programme ? aiProfileLabels[programme.profile] : "AI-Enabled";
+    return {
+      ...entry,
+      title: programme?.name.fr ?? entry.title,
+      subtitle: `${profile} · ${summary.requirements} compétences requises · ${summary.recommended} recommandées · ${summary.discovery} explorer. ${entry.subtitle}`,
+      totalCerts: summary.requirements + summary.total,
+    };
+  });
   const filteredPrograms = program
     ? allPrograms.filter(p => p.slug === program)
     : allPrograms;
@@ -80,7 +94,7 @@ export default async function LicencesPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <ShowcaseHero
         title="Nos Licences : 3 ans pour construire votre avenir."
-        subtitle="4 Licences déclinées en 5 parcours · Intelligence Artificielle intégrée dans chaque filière · Jusqu'à 24 certifications internationales affichées selon le programme · Diplôme agréé par l'État tunisien."
+        subtitle="5 Licences et parcours spécialisés · Intelligence Artificielle intégrée dans chaque filière · Ressources et justificatifs professionnels selon le programme · Diplôme agréé par l'État tunisien."
         badge="Licences"
         cards={licencesCards}
       />

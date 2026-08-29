@@ -25,6 +25,7 @@ import {
 import { Badge } from "@/components/shared";
 import { licences } from "@/lib/programmes/licences";
 import { masters } from "@/lib/programmes/masters";
+import { catalogueV3, getCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
 
 /* ── Programme data for both quiz & compare ── */
 const allProgrammes = [
@@ -37,7 +38,11 @@ const allProgrammes = [
   { key: "mkt-ia", name: "Master Marketing Digital & IA", degree: "Master", slug: "masters/marketing-digital-ia", color: "#E91E8C", certs: 81, duration: "2 ans", level: "Bac+3", intl: "EM Normandie (FR) · Sup'de Com (FR)", employment: "90%+", careers: "Directeur Marketing Digital, Growth Hacker", data: masters["marketing-digital-ia"] },
   { key: "startups", name: "Master Projets Innovants", degree: "Master", slug: "masters/startups", color: "#5E35B1", certs: 59, duration: "2 ans", level: "Bac+3", intl: "UQAT (CA) · EM Normandie (FR)", employment: "90%+", careers: "Chef de projet, Product Owner, Entrepreneur", data: masters.startups },
   { key: "ing-fin", name: "Master Ingénierie Financière", degree: "Master", slug: "masters/ingenierie-financiere", color: "#00897B", certs: 64, duration: "2 ans", level: "Bac+3", intl: "IGEFI (FR) · PSB (FR) · UQAT (CA)", employment: "90%+", careers: "Analyste M&A, Risk Manager, CFO", data: masters["ingenierie-financiere"] },
-];
+].map((programme) => ({
+  ...programme,
+  name: catalogueV3.programmes.find((entry) => entry.id === programme.data.catalogueId)?.name.fr ?? programme.name,
+  certs: getCatalogueV3ProgrammeSummary(programme.data.catalogueId).total,
+}));
 
 /* ── Quiz logic ── */
 type Tab = "quiz" | "compare";
@@ -62,7 +67,7 @@ const questions = [
   {
     q: "Qu'est-ce qui compte le plus pour toi ?",
     options: [
-      { val: "certs", label: "Les certifications", icon: <Sparkles className="w-5 h-5" /> },
+      { val: "certs", label: "Les compétences vérifiées", icon: <Sparkles className="w-5 h-5" /> },
       { val: "intl", label: "L'international", icon: <Globe className="w-5 h-5" /> },
       { val: "job", label: "L'employabilité rapide", icon: <TrendingUp className="w-5 h-5" /> },
       { val: "salary", label: "Le salaire élevé", icon: <LineChart className="w-5 h-5" /> },
@@ -112,7 +117,7 @@ const compareRows = [
   { label: "Niveau", key: "degree" as const },
   { label: "Durée", key: "duration" as const },
   { label: "Prérequis", key: "level" as const },
-  { label: "Certifications", key: "certs" as const, highlight: true },
+  { label: "Ressources vérifiées", key: "certs" as const, highlight: true },
   { label: "International", key: "intl" as const },
   { label: "Taux d'emploi", key: "employment" as const },
   { label: "Débouchés", key: "careers" as const },
@@ -267,7 +272,7 @@ export default function ProgrammeFinder() {
                         {result.name}
                       </h3>
                       <p className="text-sm text-penn-body/70 mb-2">
-                        {result.duration} · {result.certs}+ certifications · {result.degree}
+                        {result.duration} · {result.certs} opportunités vérifiées · {result.degree}
                       </p>
                       <p className="text-sm text-penn-body leading-relaxed mb-8 max-w-md mx-auto">
                         {result.data.tagline}

@@ -3,12 +3,13 @@ import { useTranslations } from "next-intl";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import AnimatedCounter from "./AnimatedCounter";
 import SectionHeading from "@/components/ui/SectionHeading";
+import { catalogueV3 } from "@/lib/certifications/v3";
 
 export default function CounterSection() {
   const t = useTranslations("HomePage.counters");
 
   const counters = [
-    { icon: Award, end: 150, suffix: "+", label: t("c1"), color: "#4154f1" },
+    { icon: Award, end: catalogueV3.release.counts.publicResources, suffix: "", label: t("c1"), color: "#4154f1" },
     { icon: GraduationCap, end: 7, suffix: "", label: t("c2"), color: "#ee6c20" },
     { icon: Globe, end: 10, suffix: "+", label: t("c3"), color: "#15be56" },
     { icon: TrendingUp, end: 93, suffix: "%", label: t("c4"), color: "#bb0852" },

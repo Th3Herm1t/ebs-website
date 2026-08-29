@@ -1,4 +1,16 @@
-export type OpportunityTier = "CORE" | "RECOMMENDED" | "DISCOVERY";
+export type AIProfile = "AI_ENABLED" | "AI_BUILDER";
+
+export type Capability =
+  | "UNDERSTAND"
+  | "APPLY"
+  | "EVALUATE"
+  | "ORCHESTRATE"
+  | "GOVERN"
+  | "ENGINEER";
+
+export type OpportunityTier = "RECOMMENDED" | "DISCOVERY";
+
+export type EvidencePathType = "EBS_ASSESSMENT" | "EXTERNAL_CREDENTIAL" | "PRIOR_LEARNING";
 
 export type CredentialType =
   | "certification"
@@ -36,11 +48,46 @@ export interface LaunchTarget {
   externalSearchTitle: string | null;
 }
 
-export interface ProgrammeMapping {
+export interface Programme {
+  id: string;
+  level: "LICENCE" | "MASTER";
+  profile: AIProfile;
+  name: LocalizedText;
+}
+
+export interface ProgrammeCompetency {
+  id: string;
   programmeId: string;
   year: string;
-  tier: OpportunityTier;
-  requirementGroupIds: string[];
+  sequence: number;
+  competencyId: string;
+  targetCapability: Capability;
+  required: boolean;
+  assessmentTemplateId: string | null;
+  status: "ACTIVE";
+}
+
+export interface EvidencePath {
+  id: string;
+  type: EvidencePathType;
+  assessmentTemplateId: string | null;
+  resourceId: string | null;
+  credentialId: string | null;
+  label: LocalizedText;
+}
+
+export interface CoreRequirement {
+  id: string;
+  programmeCompetencyId: string;
+  programmeId: string;
+  year: string;
+  competencyId: string;
+  title: LocalizedText;
+  requiredCapability: Capability;
+  satisfactionRule: "ANY_ONE_PATH";
+  minimumPaths: number;
+  waivable: boolean;
+  evidencePaths: EvidencePath[];
 }
 
 export interface Resource {
@@ -55,9 +102,14 @@ export interface Resource {
   languages: string[];
   estimatedHours: number | null;
   launch: LaunchTarget;
-  zeroCost: true;
-  credentialIds: string[];
-  programmeMappings: ProgrammeMapping[];
+  costPolicy: {
+    eligibility: "VERIFIED_ZERO_COST";
+    learningAccess: "ZERO_COST";
+    assessment: "ZERO_COST";
+    credentialIssue: "ZERO_COST";
+    requiredSoftware: "ZERO_COST" | "ZERO_COST_OR_FREE_SANDBOX";
+    hiddenPurchase: false;
+  };
 }
 
 export interface Credential {
@@ -68,56 +120,74 @@ export interface Credential {
   type: CredentialType;
   strength: CredentialStrength;
   assessmentRigor: AssessmentRigor;
+  costEligibility: "VERIFIED_ZERO_COST";
   shareable: boolean;
   validity: string | null;
   verificationUrl: string | null;
-  zeroCost: true;
+  evidenceIds: string[];
 }
 
-export interface RequirementGroup {
+export interface OpportunityAssignment {
   id: string;
   programmeId: string;
+  resourceId: string;
   year: string;
-  competencyId: string;
-  title: LocalizedText;
-  satisfactionRule: "ALL" | "ANY_N";
-  minComplete: number;
-  options: Array<{
-    resourceId: string;
-    credentialId: string;
-  }>;
+  tier: OpportunityTier;
   status: "ACTIVE";
+  source: string;
+  rationale: string;
+  coreRequirementIds: string[];
 }
 
 export interface CatalogueV3PublicSnapshot {
-  schemaVersion: "3.0.0";
+  schemaVersion: "3.1.0";
   release: {
     version: string;
+    schemaVersion: "3.1.0";
     releasedAt: string;
     status: string;
+    curriculumModel: "COMPETENCY_FIRST";
+    profiles: AIProfile[];
+    zeroCostPolicy: "STRICT_VERIFIED_ZERO_COST";
     counts: Record<string, number>;
-    policy: string;
   };
+  profiles: Array<Record<string, unknown>>;
+  programmes: Programme[];
+  competencies: Array<Record<string, unknown>>;
+  programmeCompetencies: ProgrammeCompetency[];
+  assessmentTemplates: Array<Record<string, unknown>>;
+  coreRequirements: CoreRequirement[];
   providers: Array<{ id: string; name: string; status: string }>;
   platforms: Array<{ id: string; name: string; status: string }>;
-  programmes: Array<{
-    id: string;
-    name: LocalizedText;
-    studyLevel: "licence" | "master";
-    depthProfile: string;
-  }>;
-  competencies: Array<Record<string, unknown>>;
-  requirementGroups: RequirementGroup[];
   resources: Resource[];
   credentials: Credential[];
+  opportunityAssignments: OpportunityAssignment[];
 }
 
 export interface JoinedProgrammeOpportunity {
+  assignment: OpportunityAssignment;
   resource: Resource;
   credential: Credential | undefined;
   provider: { id: string; name: string; status: string } | undefined;
   platform: { id: string; name: string; status: string } | undefined;
-  mapping: ProgrammeMapping;
+  mapping: {
+    programmeId: string;
+    year: string;
+    tier: OpportunityTier;
+    requirementGroupIds: string[];
+  };
+}
+
+export interface JoinedEvidencePath {
+  path: EvidencePath;
+  resource: Resource | undefined;
+  credential: Credential | undefined;
+  provider: { id: string; name: string; status: string } | undefined;
+  platform: { id: string; name: string; status: string } | undefined;
+}
+
+export interface JoinedCoreRequirement extends CoreRequirement {
+  evidence: JoinedEvidencePath[];
 }
 
 export interface CatalogueV3Query {

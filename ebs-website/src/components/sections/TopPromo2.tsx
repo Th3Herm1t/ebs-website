@@ -2,11 +2,12 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
+import Link from "next/link";
 
 const promos = [
-  { title: "Quality Education", desc: "Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore." },
-  { title: "Experienced Teachers", desc: "Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore." },
-  { title: "Life Time Support", desc: "Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore." },
+  { title: "Formation professionnalisante", desc: "Des parcours reconnus, construits autour de compétences directement mobilisables en entreprise." },
+  { title: "Encadrement expert", desc: "Des enseignants et intervenants professionnels accompagnent chaque étape de votre parcours." },
+  { title: "Accompagnement durable", desc: "Un suivi qui relie formation, mobilité internationale, insertion et évolution professionnelle." },
 ];
 
 export default function TopPromo2() {
@@ -29,13 +30,13 @@ export default function TopPromo2() {
                 {promo.title}
               </h3>
               <p className="mb-10 text-penn-body text-[15px] leading-[26px]">{promo.desc}</p>
-              <a href="#" className="cta mx-auto justify-center text-penn-green hover:text-penn-navy">
-                <span className="font-bold text-[14px] uppercase tracking-wider relative z-10 transition-colors">Explore</span>
+               <Link href="/nos-programmes" className="cta mx-auto justify-center text-penn-green hover:text-penn-navy">
+                <span className="font-bold text-[14px] uppercase tracking-wider relative z-10 transition-colors">Découvrir</span>
                 <svg width="13px" height="10px" viewBox="0 0 13 10" className="ml-[10px] transform transition-transform group-hover:translate-x-1">
                   <path d="M1,5 L11,5" stroke="currentColor" strokeWidth="2" fill="none" />
                   <polyline points="8 1 12 5 8 9" stroke="currentColor" strokeWidth="2" fill="none" />
                 </svg>
-              </a>
+               </Link>
             </motion.div>
           ))}
         </div>

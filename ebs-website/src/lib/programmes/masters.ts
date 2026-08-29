@@ -3,6 +3,7 @@ import type { ProgramLPData } from "@/components/program";
 export const masters: Record<string, ProgramLPData> = {
   crm: {
     slug: "crm",
+    catalogueId: "master-crm-revops",
     type: "master",
     title: "Master CRM Marketing & Transformation Digitale",
     tagline: "Pilotez la relation client et la transformation digitale grâce à l'Intelligence Artificielle.",
@@ -61,6 +62,7 @@ export const masters: Record<string, ProgramLPData> = {
 
   startups: {
     slug: "startups",
+    catalogueId: "master-startups-entrepreneuriat",
     type: "master",
     title: "Master Management de Projets Innovants & Startups",
     tagline: "Concevez, pilotez et transformez des projets innovants en entreprises à fort potentiel.",
@@ -120,6 +122,7 @@ export const masters: Record<string, ProgramLPData> = {
 
   "ingenierie-financiere": {
     slug: "ingenierie-financiere",
+    catalogueId: "master-ingenierie-financiere",
     type: "master",
     title: "Master Ingénierie Financière",
     tagline: "Maîtrisez les techniques de la finance moderne pour accompagner les décisions stratégiques des entreprises et des marchés.",
@@ -178,6 +181,7 @@ export const masters: Record<string, ProgramLPData> = {
 
   "marketing-digital-ia": {
     slug: "marketing-digital-ia",
+    catalogueId: "master-marketing-digital-ia",
     type: "master",
     title: "Master Marketing Digital & IA",
     tagline: "Développez des stratégies marketing innovantes grâce à l'Intelligence Artificielle et aux technologies digitales.",

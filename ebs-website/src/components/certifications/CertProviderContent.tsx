@@ -58,7 +58,7 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
               size="lg"
               className="mb-6 border-white/20 text-white/80"
             >
-              Fournisseur de certifications · Partenaire EBS
+               Organisme référencé · Catalogue EBS
             </Badge>
           </motion.div>
 
@@ -68,14 +68,16 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-6"
           >
-            <Image
-              src={data.logo}
-              alt={data.name}
-              width={160}
-              height={56}
-              className="object-contain h-12 w-auto max-w-[160px]"
-              unoptimized
-            />
+            {data.logo ? (
+              <Image
+                src={data.logo}
+                alt={data.name}
+                width={160}
+                height={56}
+                className="object-contain h-12 w-auto max-w-[160px]"
+                unoptimized
+              />
+            ) : <span className="text-2xl font-extrabold text-white">{data.name}</span>}
           </motion.div>
 
           <motion.h1
@@ -84,7 +86,7 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-[42px] md:text-[56px] lg:text-[64px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
           >
-            Certifications{" "}
+             Ressources{" "}
             <span className="text-penn-green">{data.name}</span>
           </motion.h1>
 
@@ -108,7 +110,7 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
                 {totalCerts}+
               </p>
               <p className="text-[12px] text-white/50 font-medium">
-                Certifications disponibles
+                 ressources publiées
               </p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-48px)/3)]">
@@ -120,7 +122,7 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-48px)/3)]">
               <Award className="w-6 h-6 text-penn-green mx-auto mb-1" />
               <p className="text-[12px] text-white/50 font-medium">
-                100% incluses dans votre formation
+                 Gratuité vérifiée avant publication
               </p>
             </div>
           </motion.div>
@@ -166,7 +168,7 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
                 <Target className="w-7 h-7 text-penn-green" />
               </div>
               <h2 className="text-[28px] font-extrabold text-penn-navy mb-4">
-                Pourquoi ces certifications comptent
+                 Pourquoi ces ressources comptent
               </h2>
               <div className="bg-penn-navy/5 rounded-2xl border border-penn-green/10 p-6">
                 <p className="text-[15px] md:text-[16px] text-penn-body leading-relaxed">
@@ -191,7 +193,7 @@ export function CertProviderContent({ data }: { data: CertProviderData }) {
               Catalogue complet
             </Badge>
             <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
-              {totalCerts}+ certifications disponibles
+               {totalCerts} ressources et justificatifs publiés
             </h2>
             <p className="text-[16px] text-penn-body mt-3 max-w-[600px] mx-auto">
               Ces ressources sont présentées selon leur statut d'accès et leur

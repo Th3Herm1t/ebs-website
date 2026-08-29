@@ -317,8 +317,8 @@ export default function PartenairesEconomiquesPage() {
               <p className="text-[12px] text-white/50 font-medium">Taux d&apos;insertion</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">131</p>
-              <p className="text-[12px] text-white/50 font-medium">Certifications internationales proposées</p>
+              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">v3.1</p>
+              <p className="text-[12px] text-white/50 font-medium">Catalogue de compétences vérifié</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
               <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">8</p>

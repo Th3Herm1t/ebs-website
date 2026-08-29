@@ -33,6 +33,8 @@ export const routing = defineRouting({
     '/contact': '/contact',
     '/actualites': '/actualites',
     '/brochures': '/brochures',
+    '/tarifs': '/tarifs',
+    '/recruter-nos-etudiants': '/recruter-nos-etudiants',
   }
 });
 

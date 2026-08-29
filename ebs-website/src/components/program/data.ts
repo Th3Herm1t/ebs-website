@@ -18,6 +18,7 @@ export interface PathwayItem {
 
 export interface ProgramLPData {
   slug: string;
+  catalogueId: string;
   type: "licence" | "master";
   title: string;
   tagline: string;

@@ -3,7 +3,8 @@ import { ProgramLPHero, ProgramPresentation, PublicCible, ModulesAccordion, Cert
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { Breadcrumb, CtaSection } from "@/components/shared";
 import { masters } from "@/lib/programmes/masters";
-import { getCatalogueV3Opportunities } from "@/lib/certifications/v3";
+import { aiProfileLabels, getCatalogueV3Opportunities, getCatalogueV3Programme, getCatalogueV3RequirementGroups } from "@/lib/certifications/v3";
+import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 interface PageParams {
@@ -22,9 +23,11 @@ export async function generateMetadata({ params }: PageParams) {
   const { slug, locale } = await params;
   const data = masters[slug];
   if (!data) return {};
-  const certifications = getCatalogueV3Opportunities({ programmeId: slug });
+  const catalogue = await getCatalogueV3Snapshot();
+  const certifications = getCatalogueV3Opportunities({ programmeId: data.catalogueId }, catalogue);
+  const programme = getCatalogueV3Programme(data.catalogueId, catalogue);
   return pageMetadata({
-    title: `${data.title} en Tunisie`,
+    title: `${programme?.name.fr ?? data.title} en Tunisie`,
     description: `${data.tagline} ${certifications.length} certifications gratuites vérifiées, IA appliquée et débouchés internationaux chez EBS Tunis.`,
     path: `/${locale}/masters/${slug}`,
   });
@@ -34,12 +37,17 @@ export default async function MasterLPPage({ params }: PageParams) {
   const { slug } = await params;
   const data = masters[slug];
   if (!data) notFound();
-  const certifications = getCatalogueV3Opportunities({ programmeId: slug });
+  const catalogue = await getCatalogueV3Snapshot();
+  const catalogueProgramme = getCatalogueV3Programme(data.catalogueId, catalogue);
+  const certifications = getCatalogueV3Opportunities({ programmeId: data.catalogueId }, catalogue);
+  const requirements = getCatalogueV3RequirementGroups(data.catalogueId, catalogue);
+  const programmeTitle = catalogueProgramme?.name.fr ?? data.title;
+  const profileLabel = catalogueProgramme ? aiProfileLabels[catalogueProgramme.profile] : undefined;
 
   const courseJsonLd = {
     "@context": "https://schema.org",
     "@type": "Course",
-    name: data.title,
+      name: programmeTitle,
     description: data.pitch,
     provider: {
       "@type": "CollegeOrUniversity",
@@ -73,18 +81,18 @@ export default async function MasterLPPage({ params }: PageParams) {
 
         <ProgramLPHero
           type={data.type}
-          title={data.title}
+          title={programmeTitle}
           tagline={data.tagline}
           pitch={data.pitch}
           color={data.color}
           niveau={data.niveau}
           duree={data.duree}
-          totalCerts={certifications.length}
+          totalCerts={certifications.length + requirements.length}
           slug={data.slug}
         />
 
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12 py-5 bg-white">
-          <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Masters", href: "/masters" }, { label: data.title }]} />
+          <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Masters", href: "/masters" }, { label: programmeTitle }]} />
         </div>
 
       <section className="section-padding bg-penn-bg-light relative z-10">
@@ -93,7 +101,7 @@ export default async function MasterLPPage({ params }: PageParams) {
             <div className="space-y-16">
           <ProgramPresentation
             surtitre={`Master · Espima Business School`}
-            title={`${data.title} — Présentation`}
+            title={`${programmeTitle} — Présentation`}
           >
             <p>{data.pitch}</p>
           </ProgramPresentation>
@@ -111,7 +119,7 @@ export default async function MasterLPPage({ params }: PageParams) {
           </div>
 
           <div id="certifications">
-            <CertificationsTable certs={certifications} color={data.color} />
+            <CertificationsTable certs={certifications} requirements={requirements} profileLabel={profileLabel} color={data.color} />
           </div>
 
           <IACompetences color={data.color} />
@@ -127,7 +135,7 @@ export default async function MasterLPPage({ params }: PageParams) {
       </div>
 
       <CtaSection
-        title={`Prêt(e) à rejoindre le programme ${data.title} ?`}
+        title={`Prêt(e) à rejoindre le programme ${programmeTitle} ?`}
         subtitle="Candidatures 2026–2027 ouvertes. Effectuez votre préinscription dès maintenant. Réponse garantie sous 24h."
         primaryCta={{ label: "Télécharger la brochure", href: `/brochures/${data.slug}.pdf` }}
         whatsapp="+216 55 582 843"

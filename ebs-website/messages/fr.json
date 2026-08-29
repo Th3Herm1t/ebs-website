@@ -24,7 +24,7 @@
       "titleHighlight": "Business School",
       "title2": "Tournée vers le Futur",
       "desc1": "Formez-vous pour le monde de demain",
-      "desc2": "Business · Finance · Technologie · Intelligence Artificielle · Cybersécurité · Licences et Masters reconnus avec +150 certifications internationales disponibles pour nos étudiants.",
+      "desc2": "Business · Finance · Technologie · Intelligence Artificielle · Cybersécurité · Licences et Masters reconnus avec des ressources professionnelles vérifiées disponibles pour nos étudiants.",
       "sliderTitle": "Trouver le parcours qui vous convient",
       "categories": {
         "Licence": "Licence",
@@ -88,8 +88,8 @@
       },
       "s2": {
         "badge": "★ EXCLUSIF",
-        "title": "Intégration de +150 Certifications Internationales dans nos différents cursus",
-        "desc": "EBS intègre plus de 150 certifications internationales reconnues dans ses différents programmes de formation afin de renforcer les compétences académiques par des validations professionnelles concrètes. Ces certifications couvrent des domaines variés tels que le management, la finance, le marketing, l’intelligence artificielle, la gestion de projets, la cybersécurité et les technologies numériques. Cette approche permet aux étudiants d’enrichir leur profil, de valoriser leurs acquis et de se préparer aux standards et exigences du marché international.",
+        "title": "Des ressources professionnelles intégrées à nos cursus",
+        "desc": "EBS intègre des ressources professionnelles reconnues dans ses différents programmes afin de renforcer les compétences académiques par des validations concrètes. Elles couvrent le management, la finance, le marketing, l’intelligence artificielle, la gestion de projets, la cybersécurité et les technologies numériques.",
         "btn": "En savoir plus"
       },
       "s3": {
@@ -165,32 +165,32 @@
           "cat": "Management",
           "title": "Licence Nationale en Sciences de Gestion - Option Management",
           "detail1": "6 Semestres - Présentiel",
-          "detail2": "IA Intégrée - 35 Certifications"
+          "detail2": "IA intégrée - ressources vérifiées"
         },
         {
           "cat": "Marketing",
           "title": "Licence Nationale en Sciences de Gestion - Option Marketing",
           "detail1": "6 Semestres - Présentiel",
-          "detail2": "IA Intégrée - 57 Certifications"
+          "detail2": "IA intégrée - ressources vérifiées"
         },
         {
           "cat": "Finance",
           "title": "Licence Nationale en Sciences de Gestion - Option Finance",
           "detail1": "6 Semestres - Présentiel",
-          "detail2": "IA Intégrée - 19 Certifications"
+          "detail2": "IA intégrée - ressources vérifiées"
         },
 
         {
           "cat": "Intelligence Artificielle",
           "title": "Licence Nationale en Génie Logiciel - Option IA",
           "detail1": "6 Semestres - Présentiel",
-          "detail2": "75 Certifications Disponibles"
+          "detail2": "Ressources vérifiées disponibles"
         },
         {
           "cat": "Cybersécurité",
           "title": "Licence Nationale en Génie Logiciel - Option Cybersécurité",
           "detail1": "6 Semestres - Présentiel",
-          "detail2": "52 Certifications Disponibles"
+          "detail2": "Ressources vérifiées disponibles"
         }
       ],
       "masters": [
@@ -198,25 +198,25 @@
           "cat": "Finance Avancée",
           "title": "Master en Ingénierie Financière",
           "detail1": "4 Semestres - Présentiel",
-          "detail2": "IA Intégrée - 15 Certifications"
+          "detail2": "IA intégrée - ressources vérifiées"
         },
         {
           "cat": "Marketing 5.0",
           "title": "Master en CRM - Marketing & Transformation Digitale",
           "detail1": "4 Semestres - Présentiel",
-          "detail2": "IA Intégrée - 49 Certifications"
+          "detail2": "IA intégrée - ressources vérifiées"
         },
         {
           "cat": "Project Management",
           "title": "Master en Management des Projets Innovants & Startups",
           "detail1": "4 Semestres - Présentiel",
-          "detail2": "IA Intégrée - 22 Certifications"
+          "detail2": "IA intégrée - ressources vérifiées"
         },
         {
           "cat": "Digital & Data",
           "title": "Master Marketing Digital & IA",
           "detail1": "4 Semestres - Présentiel",
-          "detail2": "IA Intégrée - 81 Certifications"
+          "detail2": "IA intégrée - ressources vérifiées"
         }
       ]
     },
