@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
@@ -26,9 +27,11 @@ import {
   getCatalogueV3ProviderLogo,
   tierLabels,
   type CatalogueV3PublicSnapshot,
+  type JoinedProgrammeOpportunity,
   type OpportunityTier,
   type Resource,
 } from "@/lib/certifications/v3";
+import { CertificationDetailDrawer } from "@/components/certifications/CertificationDetailDrawer";
 
 const iaCompetences = [
   {
@@ -191,6 +194,7 @@ const getProviderLogo = (provider: string) => {
 };
 
 export default function IAEtCertificationsPage({ catalogue }: { catalogue: CatalogueV3PublicSnapshot }) {
+  const [selectedOpportunity, setSelectedOpportunity] = useState<JoinedProgrammeOpportunity | null>(null);
   const iaOpportunities = getCatalogueV3Opportunities({}, catalogue).filter(
     (opportunity) =>
       opportunity.resource.classification === "ai-literacy" || opportunity.resource.classification === "applied-ai"
@@ -482,7 +486,8 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-20px" }}
                         transition={{ duration: 0.35, delay: Math.min(i * 0.025, 0.18) }}
-                        className="group flex items-center gap-4 rounded-2xl border border-penn-border bg-white px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-penn-green/30 hover:shadow-md"
+                        onClick={() => setSelectedOpportunity(opportunity)}
+                        className="group flex cursor-pointer items-center gap-4 rounded-2xl border border-penn-border bg-white px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-penn-green/40 hover:shadow-md"
                       >
                         <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-penn-border/50 bg-white p-1.5 shadow-sm">
                           {logo ? (
@@ -720,6 +725,11 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
         primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         secondaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"
+      />
+
+      <CertificationDetailDrawer
+        opportunity={selectedOpportunity}
+        onClose={() => setSelectedOpportunity(null)}
       />
     </>
   );

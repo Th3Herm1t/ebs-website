@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { providers } from "@/lib/certifications/providers";
+import { catalogueV3 } from "@/lib/certifications/v3";
 import { partenaires } from "@/lib/partenaires/partenaires";
 import { licences } from "@/lib/programmes/licences";
 import { masters } from "@/lib/programmes/masters";
@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const dynamicRoutes = [
     ...Object.keys(licences).map((slug) => `/licences/${slug}`),
     ...Object.keys(masters).map((slug) => `/masters/${slug}`),
-    ...Object.keys(providers).map((slug) => `/certifications/${slug}`),
+    ...catalogueV3.providers.map((provider) => `/certifications/${provider.id.replace(/^provider-/, "")}`),
     ...Object.keys(partenaires).map((slug) => `/partenaires/${slug}`),
   ];
 

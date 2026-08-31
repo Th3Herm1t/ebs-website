@@ -494,48 +494,102 @@ export const providers: Record<string, CertProviderData> = {
   },
 };
 
-export const providerLogos: Record<string, string> = Object.fromEntries(
-  Object.values(providers).map((p) => [p.name, p.logo])
-);
+export const providerLogos: Record<string, string> = {
+  ...Object.fromEntries(Object.values(providers).map((p) => [p.name, p.logo])),
+  "Ahrefs": "/images/icon/Ahrefs.svg",
+  "Bank of America": "/images/icon/bank-of-america.svg",
+  "BCG": "/images/icon/bcg.svg",
+  "Cisco": "/images/icon/cisco-2.svg",
+  "Citi": "/images/icon/citi.svg",
+  "Commonwealth Bank": "/images/icon/bank-of-america.svg",
+  "Databricks": "/images/icon/databricks.svg",
+  "Datacom": "/images/icon/laptop.svg",
+  "Deloitte Australia": "/images/icon/deloitte.svg",
+  "EAB": "/images/icon/file2.svg",
+  "freeCodeCamp": "/images/icon/freecodecamp.svg",
+  "Goldman Sachs": "/images/icon/goldman-sachs.svg",
+  "Google": "/images/icon/google.svg",
+  "Harvard": "/images/icon/harvard.png",
+  "HP LIFE": "/images/icon/hp-life.svg",
+  "HubSpot": "/images/icon/hubspot.svg",
+  "Hugging Face": "/images/icon/hugging-face.svg",
+  "IBM": "/images/icon/ibm.svg",
+  "IBM Cognitive Class": "/images/icon/ibm.svg",
+  "IBM SkillsBuild": "/images/icon/ibm.svg",
+  "JPMorgan Chase": "/images/icon/jpmorgan.svg",
+  "LinkedIn": "/images/icon/linkedin.svg",
+  "Mastercard": "/images/icon/mastercard.svg",
+  "Mayer Brown": "/images/icon/file2.svg",
+  "Microsoft": "/images/icon/microsoft.svg",
+  "MSI": "/images/icon/ct1.svg",
+  "PMI": "/images/icon/pmi.svg",
+  "PwC UK": "/images/icon/pwc.png",
+  "PwC US": "/images/icon/pwc.png",
+  "Salesforce": "/images/icon/salesforce-2.svg",
+  "ScrumStudy": "/images/icon/scrumstudy.svg",
+  "SEMrush": "/images/icon/semrush.svg",
+  "Siemens Mobility": "/images/icon/ct3.svg",
+  "Skyscanner": "/images/icon/ct2.svg",
+  "Walmart USA": "/images/icon/ct4.svg",
+  "Wells Fargo": "/images/icon/wells-fargo.svg",
+};
 
 const PROVIDER_ALIASES: Record<string, string> = {
-  google: "google",
-  ibm: "ibm",
-  "ibm cognitive class": "ibm",
-  "ibm cognitive": "ibm",
-  "ibm skillsbuild": "ibm",
-  harvard: "harvard",
-  "harvard university": "harvard",
-  cisco: "cisco",
-  "cisco netacad": "cisco",
-  bloomberg: "bloomberg",
-  fortinet: "fortinet",
-  hubspot: "hubspot",
-  "hubspot academy": "hubspot",
-  semrush: "semrush",
-  "semrush academy": "semrush",
-  aws: "aws",
-  "amazon web services": "aws",
-  deeplearning: "deeplearning-ai",
-  "deeplearning.ai": "deeplearning-ai",
-  pmi: "autres-fournisseurs",
-  scrumstudy: "autres-fournisseurs",
-  forage: "autres-fournisseurs",
-  linkedin: "autres-fournisseurs",
-  databricks: "autres-fournisseurs",
-  microsoft: "autres-fournisseurs",
-  n8n: "autres-fournisseurs",
-  "n8n automation": "autres-fournisseurs",
+  google: "/images/icon/google.svg",
+  ibm: "/images/icon/ibm.svg",
+  "ibm cognitive class": "/images/icon/ibm.svg",
+  "ibm cognitive": "/images/icon/ibm.svg",
+  "ibm skillsbuild": "/images/icon/ibm.svg",
+  harvard: "/images/icon/harvard.png",
+  "harvard university": "/images/icon/harvard.png",
+  cisco: "/images/icon/cisco-2.svg",
+  "cisco netacad": "/images/icon/cisco-2.svg",
+  bloomberg: "/images/icon/Bloomberg.svg",
+  fortinet: "/images/icon/fortinet.png",
+  hubspot: "/images/icon/hubspot.svg",
+  "hubspot academy": "/images/icon/hubspot.svg",
+  semrush: "/images/icon/semrush.svg",
+  "semrush academy": "/images/icon/semrush.svg",
+  aws: "/images/icon/aws-2.svg",
+  "amazon web services": "/images/icon/aws-2.svg",
+  deeplearning: "/images/icon/deeplearning.ai.svg",
+  "deeplearning.ai": "/images/icon/deeplearning.ai.svg",
+  bcg: "/images/icon/bcg.svg",
+  "boston consulting group": "/images/icon/bcg.svg",
+  "goldman sachs": "/images/icon/goldman-sachs.svg",
+  "jpmorgan chase": "/images/icon/jpmorgan.svg",
+  "jp morgan": "/images/icon/jpmorgan.svg",
+  jpmorgan: "/images/icon/jpmorgan.svg",
+  citi: "/images/icon/citi.svg",
+  mastercard: "/images/icon/mastercard.svg",
+  databricks: "/images/icon/databricks.svg",
+  microsoft: "/images/icon/microsoft.svg",
+  salesforce: "/images/icon/salesforce-2.svg",
+  freecodecamp: "/images/icon/freecodecamp.svg",
+  "hugging face": "/images/icon/hugging-face.svg",
+  "hp life": "/images/icon/hp-life.svg",
+  deloitte: "/images/icon/deloitte.svg",
+  "deloitte australia": "/images/icon/deloitte.svg",
+  "bank of america": "/images/icon/bank-of-america.svg",
+  "wells fargo": "/images/icon/wells-fargo.svg",
+  pmi: "/images/icon/pmi.svg",
+  scrumstudy: "/images/icon/scrumstudy.svg",
+  linkedin: "/images/icon/linkedin.svg",
+  ahrefs: "/images/icon/Ahrefs.svg",
+  pwc: "/images/icon/pwc.png",
+  "pwc uk": "/images/icon/pwc.png",
+  "pwc us": "/images/icon/pwc.png",
+  n8n: "/images/icon/n8n.png",
+  "n8n automation": "/images/icon/n8n.png",
 };
 
 export function getProviderLogo(providerName: string): string | undefined {
+  if (!providerName) return undefined;
+  if (providerLogos[providerName]) return providerLogos[providerName];
   const key = providerName.toLowerCase().trim();
-  const slug = PROVIDER_ALIASES[key];
-  if (slug && providers[slug]) return providers[slug].logo;
-  const direct = providerLogos[providerName];
-  if (direct) return direct;
-  const slugByExact = Object.values(providers).find(
-    (p) => p.name.toLowerCase() === key
-  );
-  return slugByExact?.logo;
+  if (PROVIDER_ALIASES[key]) return PROVIDER_ALIASES[key];
+  const cleanKey = key.replace(/^provider-/, "").replace(/-/g, " ");
+  if (PROVIDER_ALIASES[cleanKey]) return PROVIDER_ALIASES[cleanKey];
+  const found = Object.entries(providerLogos).find(([k]) => k.toLowerCase() === key || k.toLowerCase() === cleanKey);
+  return found?.[1];
 }

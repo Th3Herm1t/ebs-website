@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <text x="10" y="42" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="36" fill="#006A4E" letter-spacing="-1">BCG</text>
+  <text x="96" y="26" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="10" fill="#232434" letter-spacing="1.5">BOSTON</text>
+  <text x="96" y="38" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="10" fill="#232434" letter-spacing="1.5">CONSULTING</text>
+  <text x="96" y="50" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="10" fill="#232434" letter-spacing="1.5">GROUP</text>
+</svg>
