@@ -80,7 +80,7 @@ export default function TarifsClient() {
             >
               <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
                 <div className="relative w-full h-[180px] lg:h-[220px] overflow-hidden">
-                  <Image fill src="/images/campus/campus-2.jpg" alt="Parcours Général" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image fill src="/images/campus/campus-2.jpg" alt="Parcours Général" sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-6 lg:left-7">
                     <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-penn-green px-3 py-1 rounded-full shadow-md">
@@ -141,7 +141,7 @@ export default function TarifsClient() {
             >
               <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
                 <div className="relative w-full h-[180px] lg:h-[220px] overflow-hidden">
-                  <Image fill src="/images/sections/pillar-mobilite.jpg" alt="Parcours International" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image fill src="/images/sections/pillar-mobilite.jpg" alt="Parcours International" sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-6 lg:left-7">
                     <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-[#FF9800] px-3 py-1 rounded-full shadow-md">
@@ -207,7 +207,7 @@ export default function TarifsClient() {
             >
               <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
                 <div className="relative w-full h-[180px] lg:h-[220px] overflow-hidden">
-                  <Image fill src="/images/sections/pillar-tech.jpg" alt="Masters" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image fill src="/images/sections/pillar-tech.jpg" alt="Masters" sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-6 lg:left-7">
                     <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-[#9C27B0] px-3 py-1 rounded-full shadow-md">
@@ -277,7 +277,7 @@ export default function TarifsClient() {
             >
               <div className="bg-white rounded-2xl border border-penn-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col group">
                 <div className="relative w-full h-[180px] lg:h-[220px] overflow-hidden">
-                  <Image fill src="/images/sections/pro-student.jpg" alt="Master pour les professionnels" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image fill src="/images/sections/pro-student.jpg" alt="Master pour les professionnels" sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-6 lg:left-7">
                     <span className="inline-block text-[11px] font-extrabold uppercase tracking-[2px] text-white bg-[#1E88E5] px-3 py-1 rounded-full shadow-md">

@@ -71,7 +71,7 @@ function BentoCard({
       {isHero && feature.image && (
         <>
           <div className="absolute inset-0 z-0 bg-penn-navy/20">
-            <Image src={feature.image} alt={feature.title} fill className="object-cover opacity-60 transition-transform duration-700 group-hover:scale-105 mix-blend-overlay" />
+            <Image src={feature.image} alt={feature.title} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover opacity-60 transition-transform duration-700 group-hover:scale-105 mix-blend-overlay" />
           </div>
           <div className="absolute inset-0 z-0 bg-gradient-to-t from-penn-navy/90 via-penn-navy/40 to-transparent pointer-events-none" />
         </>

@@ -163,7 +163,7 @@ export default function FaqPage() {
               className="w-full lg:w-5/12 lg:sticky lg:top-32 self-start hidden lg:block"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[600px]">
-                <Image fill src="/images/sections/features-group.jpg" alt="Étudiants EBS" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
+                <Image fill src="/images/sections/features-group.jpg" alt="Étudiants EBS" sizes="(max-width: 1024px) 100vw, 42vw" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2B8FAB]/90 via-[#2B8FAB]/20 to-transparent" />
                 <div className="absolute bottom-10 left-10 right-10 text-white">
                   <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center mb-6">

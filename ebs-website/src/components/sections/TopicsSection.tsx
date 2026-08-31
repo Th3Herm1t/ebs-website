@@ -24,9 +24,11 @@ export default function TopicsSection() {
     <section className="section-padding relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image fill 
+        <Image
+          fill 
           src="/images/sections/certifications-bg.jpg" 
           alt="" 
+          sizes="100vw"
           className="w-full h-full object-cover opacity-60"
         />
       </div>

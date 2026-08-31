@@ -73,7 +73,7 @@ export function MagneticProgramCard({
 
         {image && (
           <div className={cn("relative overflow-hidden w-full shrink-0 z-0", isFeatured ? "lg:w-[40%] h-[200px] lg:h-auto" : "h-[180px]")}>
-            <Image fill src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <Image fill src={image} alt={title} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className={cn("absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent", isFeatured && "lg:bg-gradient-to-r lg:from-black/60")} />
           </div>
         )}

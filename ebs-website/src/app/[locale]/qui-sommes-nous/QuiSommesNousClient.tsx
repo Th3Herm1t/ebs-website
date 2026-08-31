@@ -166,18 +166,18 @@ export default function QuiSommesNousPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-[4/5]">
-                    <Image fill src="/images/campus/campus-1.jpg" alt="Campus EBS" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image fill src="/images/campus/campus-1.jpg" alt="Campus EBS" sizes="(max-width: 1024px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                   <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-square">
-                    <Image fill src="/images/sections/features-group.jpg" alt="Étudiants" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image fill src="/images/sections/features-group.jpg" alt="Étudiants" sizes="(max-width: 1024px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                 </div>
                 <div className="space-y-4 pt-12">
                   <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-square">
-                    <Image fill src="/images/campus/campus-2.jpg" alt="Salle de classe" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image fill src="/images/campus/campus-2.jpg" alt="Salle de classe" sizes="(max-width: 1024px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                   <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-[4/5]">
-                    <Image fill src="/images/campus/campus-3.jpg" alt="Cafétéria" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image fill src="/images/campus/campus-3.jpg" alt="Cafétéria" sizes="(max-width: 1024px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                 </div>
               </div>
@@ -209,7 +209,7 @@ export default function QuiSommesNousPage() {
                       </div>
                     </div>
                     <div className={`hidden lg:block relative rounded-2xl overflow-hidden shadow-lg h-[240px] ${isLeft ? "lg:[direction:ltr]" : "lg:[direction:ltr]"}`}>
-                      <Image fill src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                      <Image fill src={item.image} alt={item.title} sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
                     </div>
                   </motion.div>
                 );
@@ -230,7 +230,7 @@ export default function QuiSommesNousPage() {
             {piliers.map((p, i) => (
               <motion.div key={p.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: i * 0.1 }} className="group relative overflow-hidden rounded-3xl min-h-[380px] lg:min-h-[420px] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <div className="absolute inset-0 z-0">
-                  <Image fill src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <Image fill src={p.image} alt={p.title} sizes="(max-width: 768px) 100vw, 50vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
                 <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
                 <div className="relative z-10 flex flex-col h-full p-8 lg:p-10 justify-end">
@@ -305,7 +305,7 @@ export default function QuiSommesNousPage() {
       {/* ═══════════ SERVICES ÉTUDIANTS ═══════════ */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image fill src="/images/campus/campus-3.jpg" alt="" className="w-full h-full object-cover opacity-60" />
+          <Image fill src="/images/campus/campus-3.jpg" alt="" sizes="100vw" className="w-full h-full object-cover opacity-60" />
         </div>
         <div className="absolute inset-0 z-[1] bg-gradient-to-b from-penn-navy/90 via-penn-navy/60 to-penn-navy/90" />
         <div className="absolute inset-0 z-[2] opacity-[0.03] bg-[radial-gradient(circle_at_50%_50%,_#2B8FAB_0%,_transparent_70%)]" />

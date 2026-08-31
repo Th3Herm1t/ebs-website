@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
+import { Link } from "@/i18n/routing";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function PillarsSection() {
@@ -52,9 +53,11 @@ export default function PillarsSection() {
         >
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
-            <Image fill 
+            <Image
+              fill 
               src={pillar.bgImage} 
               alt="" 
+              sizes="(max-width: 1024px) 100vw, 33vw"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
@@ -84,12 +87,12 @@ export default function PillarsSection() {
               {pillar.p2}
             </p>
             <div className="mt-auto pt-4">
-              <a 
+              <Link 
                 href={pillar.link} 
                 className={`inline-block font-bold text-[13px] uppercase tracking-wider transition-opacity hover:opacity-70 border-white border-b-2 pb-1`}
               >
                 {pillar.cta}
-              </a>
+              </Link>
             </div>
           </div>
         </ScrollReveal>
