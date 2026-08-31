@@ -1,6 +1,6 @@
 import snapshot from "../src/lib/certifications/v3/public-snapshot.json" with { type: "json" };
 
-const { release, programmes, resources, credentials, coreRequirements, opportunityAssignments } = snapshot;
+const { release, programmes, resources, credentials, academicRequirements, opportunities } = snapshot;
 
 const nonZeroCostResources = resources.filter(
   (resource) =>
@@ -16,13 +16,13 @@ const nonZeroCostCredentials = credentials.filter(
 
 const aiBuilderProgrammes = programmes.filter((programme) => programme.profile === "AI_BUILDER");
 const masterFinance = programmes.find((programme) => programme.id === "master-ingenierie-financiere");
-const marketingAiCulture = coreRequirements.find(
+const marketingAiCulture = academicRequirements.find(
   (requirement) =>
     requirement.programmeId === "licence-marketing" &&
     requirement.year === "L1" &&
     requirement.title?.fr === "Culture IA",
 );
-const invalidAiEnabledEngineerRequirements = coreRequirements.filter((requirement) => {
+const invalidAiEnabledEngineerRequirements = academicRequirements.filter((requirement) => {
   const programme = programmes.find((entry) => entry.id === requirement.programmeId);
   return programme?.profile === "AI_ENABLED" && requirement.requiredCapability === "ENGINEER";
 });
@@ -31,8 +31,8 @@ console.log(`EBS catalogue v${release.version} (${release.status})`);
 console.log(`programmes=${programmes.length}`);
 console.log(`resources=${resources.length}`);
 console.log(`credentials=${credentials.length}`);
-console.log(`coreRequirements=${coreRequirements.length}`);
-console.log(`opportunityAssignments=${opportunityAssignments.length}`);
+console.log(`academicRequirements=${academicRequirements.length}`);
+console.log(`opportunities=${opportunities.length}`);
 
 if (resources.length !== release.counts.publicResources) {
   throw new Error(`Resource count mismatch: ${resources.length} != ${release.counts.publicResources}`);
@@ -46,20 +46,20 @@ if (programmes.length !== release.counts.programmes) {
   throw new Error(`Programme count mismatch: ${programmes.length} != ${release.counts.programmes}`);
 }
 
-if (coreRequirements.length !== release.counts.coreRequirements) {
-  throw new Error(`Core requirement count mismatch: ${coreRequirements.length} != ${release.counts.coreRequirements}`);
+if (academicRequirements.length !== release.counts.academicRequirements) {
+  throw new Error(`Academic requirement count mismatch: ${academicRequirements.length} != ${release.counts.academicRequirements}`);
 }
 
-if (opportunityAssignments.length !== release.counts.opportunityAssignments) {
-  throw new Error(`Opportunity assignment count mismatch: ${opportunityAssignments.length} != ${release.counts.opportunityAssignments}`);
+if (opportunities.length !== release.counts.opportunities) {
+  throw new Error(`Opportunity count mismatch: ${opportunities.length} != ${release.counts.opportunities}`);
 }
 
 if (nonZeroCostResources.length > 0 || nonZeroCostCredentials.length > 0) {
   throw new Error("Public snapshot contains non-zero-cost entries");
 }
 
-if (snapshot.schemaVersion !== "3.1.0" || release.schemaVersion !== "3.1.0") {
-  throw new Error("Snapshot is not a v3.1 release");
+if (snapshot.schemaVersion !== "3.2.0" || release.schemaVersion !== "3.2.0") {
+  throw new Error("Snapshot is not a v3.2 release");
 }
 
 if (aiBuilderProgrammes.length !== 2) {

@@ -3,7 +3,7 @@ import { ProgramLPHero, ProgramPresentation, PublicCible, ModulesAccordion, Cert
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { Breadcrumb, CtaSection } from "@/components/shared";
 import { masters } from "@/lib/programmes/masters";
-import { aiProfileLabels, getCatalogueV3Opportunities, getCatalogueV3Programme, getCatalogueV3RequirementGroups } from "@/lib/certifications/v3";
+import { aiProfileLabels, getCatalogueV3Opportunities, getCatalogueV3Programme, getCatalogueV3AcademicRequirements } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
@@ -40,7 +40,7 @@ export default async function MasterLPPage({ params }: PageParams) {
   const catalogue = await getCatalogueV3Snapshot();
   const catalogueProgramme = getCatalogueV3Programme(data.catalogueId, catalogue);
   const certifications = getCatalogueV3Opportunities({ programmeId: data.catalogueId }, catalogue);
-  const requirements = getCatalogueV3RequirementGroups(data.catalogueId, catalogue);
+  const requirements = getCatalogueV3AcademicRequirements(data.catalogueId, catalogue);
   const programmeTitle = catalogueProgramme?.name.fr ?? data.title;
   const profileLabel = catalogueProgramme ? aiProfileLabels[catalogueProgramme.profile] : undefined;
 

@@ -194,7 +194,7 @@ export function CertificationDetailDrawer({ opportunity, onClose, programmeLabel
                   {opportunity.credential ? assessmentRigorLabels[opportunity.credential.assessmentRigor] : "Validation continue"}
                 </p>
                 <p className="text-[11px] text-penn-body/70 mt-0.5">
-                  {opportunity.resource.level ? `Niveau ${opportunity.resource.level}` : "Tous niveaux"}
+                  {opportunity.resource.difficulty ? `Difficulté ${opportunity.resource.difficulty}` : "Tous niveaux"}
                 </p>
               </div>
 

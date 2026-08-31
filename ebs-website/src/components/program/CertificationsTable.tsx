@@ -13,7 +13,7 @@ import {
   getCatalogueV3ProviderLogo,
   tierHelp,
   tierLabels,
-  type JoinedCoreRequirement,
+  type JoinedAcademicRequirement,
   type JoinedProgrammeOpportunity,
   type OpportunityTier,
   type Resource,
@@ -22,7 +22,7 @@ import { CertificationDetailDrawer } from "@/components/certifications/Certifica
 
 interface CertificationsTableProps {
   certs: JoinedProgrammeOpportunity[];
-  requirements?: JoinedCoreRequirement[];
+  requirements?: JoinedAcademicRequirement[];
   profileLabel?: string;
   color?: string;
   limit?: number;

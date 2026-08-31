@@ -7,7 +7,7 @@ import type {
   CatalogueV3Query,
   Credential,
   CredentialType,
-  JoinedCoreRequirement,
+  JoinedAcademicRequirement,
   JoinedEvidencePath,
   JoinedProgrammeOpportunity,
   OpportunityTier,
@@ -86,13 +86,13 @@ function joinEvidencePath(
   };
 }
 
-export function getCatalogueV3RequirementGroups(programmeId?: string, catalogue = catalogueV3) {
+export function getCatalogueV3AcademicRequirements(programmeId?: string, catalogue = catalogueV3) {
   const requirements = programmeId
-    ? catalogue.coreRequirements.filter((requirement) => requirement.programmeId === programmeId)
-    : catalogue.coreRequirements;
+    ? catalogue.academicRequirements.filter((requirement) => requirement.programmeId === programmeId)
+    : catalogue.academicRequirements;
 
   return requirements
-    .map<JoinedCoreRequirement>((requirement) => ({
+    .map<JoinedAcademicRequirement>((requirement) => ({
       ...requirement,
       evidence: requirement.evidencePaths.map((path) => joinEvidencePath(path, catalogue)),
     }))
@@ -107,11 +107,11 @@ export function getCatalogueV3ProgrammeCompetencies(programmeId: string, catalog
 
 export function getCatalogueV3ProgrammeSummary(programmeId: string, catalogue = catalogueV3) {
   const opportunities = getCatalogueV3Opportunities({ programmeId }, catalogue);
-  const requirements = getCatalogueV3RequirementGroups(programmeId, catalogue);
+  const requirements = getCatalogueV3AcademicRequirements(programmeId, catalogue);
   return {
     total: opportunities.length,
-    recommended: opportunities.filter((opportunity) => opportunity.assignment.tier === "RECOMMENDED").length,
-    discovery: opportunities.filter((opportunity) => opportunity.assignment.tier === "DISCOVERY").length,
+    recommended: opportunities.filter((opportunity) => opportunity.opportunity.tier === "RECOMMENDED").length,
+    discovery: opportunities.filter((opportunity) => opportunity.opportunity.tier === "DISCOVERY").length,
     requirements: requirements.length,
     externalEvidencePaths: requirements.reduce(
       (total, requirement) =>
@@ -127,12 +127,12 @@ export function getCatalogueV3Opportunities(
 ): JoinedProgrammeOpportunity[] {
   const { platformById, providerById, resourceById } = createCatalogueIndexes(catalogue);
 
-  return catalogue.opportunityAssignments.flatMap((assignment) => {
-    if (query.programmeId && assignment.programmeId !== query.programmeId) return [];
-    if (query.year && assignment.year !== query.year) return [];
-    if (query.tier && assignment.tier !== query.tier) return [];
+  return catalogue.opportunities.flatMap((opportunity) => {
+    if (query.programmeId && opportunity.programmeId !== query.programmeId) return [];
+    if (query.year && opportunity.year !== query.year) return [];
+    if (query.tier && opportunity.tier !== query.tier) return [];
 
-    const resource = resourceById.get(assignment.resourceId);
+    const resource = resourceById.get(opportunity.resourceId);
     if (!resource) return [];
 
     const credential = getCatalogueV3CredentialForResource(resource.id, catalogue);
@@ -145,16 +145,16 @@ export function getCatalogueV3Opportunities(
 
     return [
       {
-        assignment,
+        opportunity,
         resource,
         credential,
         provider: providerById.get(resource.providerId),
         platform: platformById.get(resource.platformId),
         mapping: {
-          programmeId: assignment.programmeId,
-          year: assignment.year,
-          tier: assignment.tier,
-          requirementGroupIds: assignment.coreRequirementIds,
+          programmeId: opportunity.programmeId,
+          year: opportunity.year,
+          tier: opportunity.tier,
+          academicRequirementIds: opportunity.academicRequirementIds,
         },
       },
     ];

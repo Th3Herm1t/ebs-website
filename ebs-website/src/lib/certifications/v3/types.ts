@@ -76,7 +76,7 @@ export interface EvidencePath {
   label: LocalizedText;
 }
 
-export interface CoreRequirement {
+export interface AcademicRequirement {
   id: string;
   programmeCompetencyId: string;
   programmeId: string;
@@ -85,7 +85,7 @@ export interface CoreRequirement {
   title: LocalizedText;
   requiredCapability: Capability;
   satisfactionRule: "ANY_ONE_PATH";
-  minimumPaths: number;
+  minimumCredentials: number;
   waivable: boolean;
   evidencePaths: EvidencePath[];
 }
@@ -98,7 +98,7 @@ export interface Resource {
   resourceKind: string;
   classification: "ai-literacy" | "applied-ai" | "non-ai";
   topics: string[];
-  level: "introductory" | "intermediate" | "advanced";
+  difficulty: "introductory" | "intermediate" | "advanced";
   languages: string[];
   estimatedHours: number | null;
   launch: LaunchTarget;
@@ -127,7 +127,7 @@ export interface Credential {
   evidenceIds: string[];
 }
 
-export interface OpportunityAssignment {
+export interface Opportunity {
   id: string;
   programmeId: string;
   resourceId: string;
@@ -136,14 +136,14 @@ export interface OpportunityAssignment {
   status: "ACTIVE";
   source: string;
   rationale: string;
-  coreRequirementIds: string[];
+  academicRequirementIds: string[];
 }
 
 export interface CatalogueV3PublicSnapshot {
-  schemaVersion: "3.1.0";
+  schemaVersion: "3.2.0";
   release: {
     version: string;
-    schemaVersion: "3.1.0";
+    schemaVersion: "3.2.0";
     releasedAt: string;
     status: string;
     curriculumModel: "COMPETENCY_FIRST";
@@ -156,16 +156,16 @@ export interface CatalogueV3PublicSnapshot {
   competencies: Array<Record<string, unknown>>;
   programmeCompetencies: ProgrammeCompetency[];
   assessmentTemplates: Array<Record<string, unknown>>;
-  coreRequirements: CoreRequirement[];
+  academicRequirements: AcademicRequirement[];
   providers: Array<{ id: string; name: string; status: string }>;
   platforms: Array<{ id: string; name: string; status: string }>;
   resources: Resource[];
   credentials: Credential[];
-  opportunityAssignments: OpportunityAssignment[];
+  opportunities: Opportunity[];
 }
 
 export interface JoinedProgrammeOpportunity {
-  assignment: OpportunityAssignment;
+  opportunity: Opportunity;
   resource: Resource;
   credential: Credential | undefined;
   provider: { id: string; name: string; status: string } | undefined;
@@ -174,7 +174,7 @@ export interface JoinedProgrammeOpportunity {
     programmeId: string;
     year: string;
     tier: OpportunityTier;
-    requirementGroupIds: string[];
+    academicRequirementIds: string[];
   };
 }
 
@@ -186,7 +186,7 @@ export interface JoinedEvidencePath {
   platform: { id: string; name: string; status: string } | undefined;
 }
 
-export interface JoinedCoreRequirement extends CoreRequirement {
+export interface JoinedAcademicRequirement extends AcademicRequirement {
   evidence: JoinedEvidencePath[];
 }
 

@@ -11,10 +11,11 @@ function isCatalogueSnapshot(value: unknown): value is CatalogueV3PublicSnapshot
     Array.isArray(candidate.providers) &&
     Array.isArray(candidate.platforms) &&
     Array.isArray(candidate.programmes) &&
-    Array.isArray(candidate.coreRequirements) &&
+    candidate.schemaVersion === "3.2.0" &&
+    Array.isArray(candidate.academicRequirements) &&
     Array.isArray(candidate.resources) &&
     Array.isArray(candidate.credentials) &&
-    Array.isArray(candidate.opportunityAssignments) &&
+    Array.isArray(candidate.opportunities) &&
     Boolean(candidate.release)
   );
 }

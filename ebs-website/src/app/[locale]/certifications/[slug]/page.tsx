@@ -104,7 +104,7 @@ function providerPageData(slug: string) {
       .filter((resource) => resource.classification === classification)
       .map((resource) => ({
         name: resource.title,
-        level: resource.level,
+        level: resource.difficulty,
         credential: credentials.get(resource.id),
       }));
     return entries.length > 0

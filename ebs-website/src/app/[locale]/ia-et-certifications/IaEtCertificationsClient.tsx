@@ -205,7 +205,7 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
   const aiStats = {
     literacy: iaResources.filter((resource) => resource.classification === "ai-literacy").length,
     applied: iaResources.filter((resource) => resource.classification === "applied-ai").length,
-    requiredCompetencies: catalogue.coreRequirements.filter((requirement) => requirement.requiredCapability !== "ENGINEER").length,
+    requiredCompetencies: catalogue.academicRequirements.filter((requirement) => requirement.requiredCapability !== "ENGINEER").length,
     marketplace: iaOpportunities.length,
   };
   const groupedAiCertifications = (["ai-literacy", "applied-ai"] as const).map((classification) => ({
