@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Sparkles, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/shared";
@@ -78,7 +79,7 @@ export default function InfoSliderSection() {
                     <div className="relative w-full rounded shadow-[0_20px_60px_rgba(0,0,0,0.15)] min-h-[300px] lg:min-h-[400px] h-full">
                       <Image
                         src={slide.image}
-                        alt="EBS Info"
+                        alt={slide.title}
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover rounded"
@@ -117,17 +118,13 @@ export default function InfoSliderSection() {
                         {slide.text}
                       </p>
                       
-                      <motion.a
+                      <Link
                         href={slide.link}
-                        initial={{ opacity: 0, scale: 0.6 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.5, ease: "backOut", delay: 0.6 }}
                         className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-penn-green text-white font-bold text-[14px] uppercase tracking-wider transition-colors duration-300 hover:bg-penn-navy hover:shadow-lg rounded-sm"
                       >
                         {slide.button || "En savoir plus"}
                         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </motion.a>
+                      </Link>
                     </motion.div>
                   </div>
                 </div>
