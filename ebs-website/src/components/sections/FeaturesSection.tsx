@@ -70,10 +70,17 @@ function BentoCard({
       {/* Hero Card specific backgrounds */}
       {isHero && feature.image && (
         <>
-          <div className="absolute inset-0 z-0 bg-penn-navy/20">
-            <Image src={feature.image} alt={feature.title} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover opacity-60 transition-transform duration-700 group-hover:scale-105 mix-blend-overlay" />
+          <div className="absolute inset-0 z-0">
+            <Image
+              src={feature.image}
+              alt={feature.title}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+            />
           </div>
-          <div className="absolute inset-0 z-0 bg-gradient-to-t from-penn-navy/90 via-penn-navy/40 to-transparent pointer-events-none" />
+          {/* Smooth gradient overlay to ensure high contrast for text while keeping photo clear and vibrant */}
+          <div className="absolute inset-0 z-0 bg-gradient-to-t from-penn-navy/95 via-penn-navy/60 to-black/20 pointer-events-none" />
         </>
       )}
 
@@ -82,7 +89,7 @@ function BentoCard({
         <div 
           className={cn(
             "flex items-center justify-center rounded-2xl mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3",
-            isHero ? "w-16 h-16 bg-white/10 backdrop-blur-md text-white mb-auto" : "w-12 h-12"
+            isHero ? "w-16 h-16 bg-white/15 backdrop-blur-md text-white border border-white/20 mb-auto" : "w-12 h-12"
           )}
           style={!isHero ? { backgroundColor: `${feature.color}15`, color: feature.color } : {}}
         >
@@ -90,15 +97,15 @@ function BentoCard({
         </div>
         
         <h3 className={cn(
-          "font-extrabold leading-tight tracking-tight mb-3 transition-colors duration-300",
-          isHero ? "text-[26px] lg:text-[32px] text-white" : "text-[18px] lg:text-[20px] text-penn-navy group-hover:text-penn-green"
+          "font-extrabold tracking-tight transition-colors duration-300",
+          isHero ? "text-[24px] sm:text-[28px] lg:text-[32px] text-white leading-[1.3] lg:leading-[1.35] mb-4 lg:mb-5" : "text-[18px] lg:text-[20px] text-penn-navy group-hover:text-penn-green leading-snug mb-3"
         )}>
           {feature.title}
         </h3>
         
         <p className={cn(
           "leading-relaxed",
-          isHero ? "text-[15px] lg:text-[17px] text-white/80 max-w-[90%]" : "text-[14px] lg:text-[15px] text-penn-body/80"
+          isHero ? "text-[15px] lg:text-[16px] text-white/90 max-w-[95%] font-medium leading-[1.6]" : "text-[14px] lg:text-[15px] text-penn-body/85 leading-normal"
         )}>
           {feature.description}
         </p>
