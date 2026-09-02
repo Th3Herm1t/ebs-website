@@ -114,8 +114,14 @@ export default function HeroSection() {
                       ))}
                     </CarouselContent>
                     <div className="hidden md:block">
-                      <CarouselPrevious className="border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" />
-                      <CarouselNext className="border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" />
+                      <CarouselPrevious 
+                        aria-label="Catégorie précédente"
+                        className="border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" 
+                      />
+                      <CarouselNext 
+                        aria-label="Catégorie suivante"
+                        className="border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" 
+                      />
                     </div>
                   </Carousel>
                 </div>
@@ -132,10 +138,11 @@ export default function HeroSection() {
               className="relative inline-block w-full max-w-[500px] lg:max-w-[700px]"
             >
               <Image
-                src="/images/all-img/hero-gemini-batch6.png"
-                alt="EBS Student"
+                src="/images/all-img/hero-gemini-batch6.webp"
+                alt="Étudiant EBS - Université Privée IA & Management à Tunis"
                 width={800}
                 height={900}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
                 className="relative z-10 object-contain w-full h-auto"
                 priority
               />

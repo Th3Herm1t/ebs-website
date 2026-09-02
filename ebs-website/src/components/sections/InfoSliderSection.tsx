@@ -25,7 +25,7 @@ export default function InfoSliderSection() {
     const slides = [
       {
         id: 1,
-        image: "/images/heroes/ia-students.jpg",
+        image: "/images/heroes/ia-students.webp",
         subtitle: t('s1.badge'),
       title: t('s1.title'),
       text: t('s1.desc'),
@@ -134,8 +134,14 @@ export default function InfoSliderSection() {
           
           {/* Navigation Controls */}
           <div className="hidden lg:block">
-            <CarouselPrevious className="-left-16 lg:-left-20 xl:-left-24 w-12 h-12 border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" />
-            <CarouselNext className="-right-16 lg:-right-20 xl:-right-24 w-12 h-12 border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" />
+            <CarouselPrevious 
+              aria-label="Slide précédente"
+              className="-left-16 lg:-left-20 xl:-left-24 w-12 h-12 border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" 
+            />
+            <CarouselNext 
+              aria-label="Slide suivante"
+              className="-right-16 lg:-right-20 xl:-right-24 w-12 h-12 border-2 border-penn-green bg-transparent text-penn-green hover:bg-penn-green hover:text-white transition-all duration-300" 
+            />
           </div>
         </Carousel>
       </div>

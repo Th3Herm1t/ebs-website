@@ -21,11 +21,11 @@ function LinkedinIcon({ className }: { className?: string }) {
 }
 
 const socials = [
-  { icon: FacebookIcon, hoverBg: "hover:bg-[#3B5998]", href: "https://www.facebook.com/espimabs" },
-  { icon: InstagramIcon, hoverBg: "hover:bg-[#FF5252]", href: "https://www.instagram.com/espimabusinessschool/" },
-  { icon: TiktokIcon, hoverBg: "hover:bg-black", href: "https://www.tiktok.com/@espimabusinessschool" },
-  { icon: YoutubeIcon, hoverBg: "hover:bg-[#FF0000]", href: "https://www.youtube.com/@espimabusinessschool" },
-  { icon: LinkedinIcon, hoverBg: "hover:bg-[#0e76a8]", href: "https://www.linkedin.com/school/espima-business-school/" },
+  { name: "Facebook EBS", icon: FacebookIcon, hoverBg: "hover:bg-[#3B5998]", href: "https://www.facebook.com/espimabs" },
+  { name: "Instagram EBS", icon: InstagramIcon, hoverBg: "hover:bg-[#FF5252]", href: "https://www.instagram.com/espimabusinessschool/" },
+  { name: "TikTok EBS", icon: TiktokIcon, hoverBg: "hover:bg-black", href: "https://www.tiktok.com/@espimabusinessschool" },
+  { name: "YouTube EBS", icon: YoutubeIcon, hoverBg: "hover:bg-[#FF0000]", href: "https://www.youtube.com/@espimabusinessschool" },
+  { name: "LinkedIn EBS", icon: LinkedinIcon, hoverBg: "hover:bg-[#0e76a8]", href: "https://www.linkedin.com/school/espima-business-school/" },
 ];
 
 const FooterLink = ({ href, children, isBold }: { href: string, children: React.ReactNode, isBold?: boolean }) => (
@@ -72,12 +72,13 @@ export default function Footer() {
               {t('desc')}
             </p>
             <ul className="flex gap-3">
-              {socials.map(({ icon: Icon, hoverBg, href }, i) => (
+              {socials.map(({ name, icon: Icon, hoverBg, href }, i) => (
                 <li key={i}>
                    <a
                      href={href}
                      target="_blank"
                      rel="noopener noreferrer"
+                     aria-label={name}
                     className={cn(
                       "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 transition-all duration-300",
                       hoverBg,
