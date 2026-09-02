@@ -243,7 +243,7 @@ export default function BlogPage() {
             <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] items-center">
               <div className="relative aspect-[16/10] lg:aspect-auto lg:h-full min-h-[260px] bg-penn-navy overflow-hidden">
                 <Image
-                  src="/images/heroes/hero-parcours-international.jpg"
+                  src="/images/heroes/hero-parcours-internationaux.webp"
                   alt="Reconnaissance des diplômes français"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"

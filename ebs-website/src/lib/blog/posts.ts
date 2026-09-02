@@ -29,9 +29,9 @@ export const blogPosts: Record<string, BlogPost> = {
     author: {
       name: "Direction des Relations Internationales",
       role: "ESPIMA Business School",
-      avatar: "/images/heroes/hero-parcours-international.jpg",
+      avatar: "/images/heroes/hero-parcours-internationaux.webp",
     },
-    featuredImage: "/images/heroes/hero-parcours-international.jpg",
+    featuredImage: "/images/heroes/hero-parcours-internationaux.webp",
     tags: ["Études en France", "Reconnaissance des diplômes", "Grade de Master", "RNCP", "Grandes Écoles", "AACSB", "Campus France"],
   },
 };
