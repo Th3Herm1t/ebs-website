@@ -15,7 +15,6 @@ const CareerSection = dynamic(() => import("@/components/sections/CareerSection"
 const CoursesSection = dynamic(() => import("@/components/sections/CoursesSection"));
 const CoursePromoSection = dynamic(() => import("@/components/sections/CoursePromoSection"));
 const NewsletterSection = dynamic(() => import("@/components/sections/NewsletterSection"));
-const TopicsSection = dynamic(() => import("@/components/sections/TopicsSection"));
 const EventsSection = dynamic(() => import("@/components/sections/EventsSection"));
 const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"));
 
@@ -57,7 +56,6 @@ export default function Home() {
       <PartnerLogos />
       <CoursesSection />
       <FeaturesSection />
-      <TopicsSection />
       <EventsSection />
       <TestimonialsSection />
       <NewsletterSection />

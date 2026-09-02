@@ -31,8 +31,8 @@ const allProgramsBase = [
 const licencesCards = [
   {
     icon: <Award className="w-6 h-6" />,
-    title: "5",
-    subtitle: "Certifications affichées",
+    title: "199",
+    subtitle: "Certifications vérifiées",
     color: "#2B8FAB",
     offsetY: -80,
     parallaxSpeed: 1,
@@ -94,7 +94,7 @@ export default async function LicencesPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <ShowcaseHero
         title="Nos Licences : 3 ans pour construire votre avenir."
-        subtitle="5 Licences et parcours spécialisés · Intelligence Artificielle intégrée dans chaque filière · Ressources et justificatifs professionnels selon le programme · Diplôme agréé par l'État tunisien."
+        subtitle="4 Licences déclinées en 5 parcours • Intelligence Artificielle intégrée dans chaque filière • Catalogue de 199 certifications et justificatifs internationaux vérifiés gratuits • Diplôme agréé par l'État tunisien."
         badge="Licences"
         cards={licencesCards}
       />
@@ -174,9 +174,9 @@ export default async function LicencesPage({
                   <Award className="w-7 h-7 text-penn-green" />
                 </div>
                 <div>
-                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">Certifications vérifiées</h3>
+                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">199 certifications vérifiées</h3>
                   <p className="text-[15px] text-penn-body leading-relaxed">
-                    Des certifications gratuites délivrées par Google, IBM, Harvard, Cisco, HubSpot et d'autres acteurs internationaux, réparties entre socle essentiel, recommandé et explorer.
+                    Des certifications délivrées par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot, Databricks et plus de 30 partenaires internationaux, offertes et vérifiées gratuites sans frais supplémentaires.
                   </p>
                 </div>
               </div>
@@ -204,7 +204,7 @@ export default async function LicencesPage({
             Certifications incluses
           </Badge>
           <p className="text-[19px] md:text-[22px] font-bold text-penn-navy leading-relaxed max-w-[800px] mx-auto">
-            En complément de votre diplôme agréé par l'État tunisien, préparez des certifications internationales délivrées par Google, IBM, Harvard, Cisco, Bloomberg, Fortinet et d'autres organismes reconnus, selon leur statut validé.
+            En complément de votre diplôme agréé par l'État tunisien, obtenez des certifications internationales délivrées par Google, IBM, Harvard, Cisco, Bloomberg, Fortinet et d'autres organismes reconnus, sans frais supplémentaires.
           </p>
         </div>
       </section>

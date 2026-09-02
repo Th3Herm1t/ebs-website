@@ -761,7 +761,7 @@ export default function ActualitesPage() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
               className="relative bg-white rounded-2xl max-w-[760px] w-full max-h-[85vh] overflow-y-auto shadow-2xl"
             >
               <button

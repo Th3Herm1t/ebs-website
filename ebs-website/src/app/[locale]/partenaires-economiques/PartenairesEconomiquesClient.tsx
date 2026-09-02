@@ -292,9 +292,9 @@ export default function PartenairesEconomiquesPage() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-[42px] md:text-[58px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
           >
-            Recrutez les talents
+            Recrutez les talents de demain,
             <br />
-            <span className="text-penn-green">de demain</span>, aujourd&apos;hui<span className="text-penn-green">.</span>
+            <span className="text-penn-green">dès aujourd&apos;hui</span>.
           </motion.h1>
 
           <motion.p
@@ -317,8 +317,8 @@ export default function PartenairesEconomiquesPage() {
               <p className="text-[12px] text-white/50 font-medium">Taux d&apos;insertion</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">v3.1</p>
-              <p className="text-[12px] text-white/50 font-medium">Catalogue de compétences vérifié</p>
+              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">199</p>
+              <p className="text-[12px] text-white/50 font-medium">Certifications vérifiées</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
               <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">8</p>

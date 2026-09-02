@@ -9,7 +9,7 @@ const timeline = [
   { year: "2013", title: "Fondation d'EBS", text: "Création d'Espima Business School à Tunis. Agrément n° 2013/02 délivré par Ministère de l'Enseignement Supérieur et de la Recherche Scientifique. Dès sa création, une conviction forte : offrir en Tunisie des formations universitaires répondant aux standards internationaux.", highlight: false, image: "/images/campus/campus-1.jpg" },
   { year: "2016", title: "Premiers partenariats", text: "Signature des premières conventions avec des universités françaises. Lancement des Licences en Management, Marketing, Finance et Informatique.", highlight: false, image: "/images/campus/campus-2.jpg" },
   { year: "2020", title: "Expansion internationale", text: "Le réseau de partenaires s'élargit avec l'UQAT (Canada), EM Normandie, Excelia et Paris School of Business (PSB). Développement des parcours internationaux et lancement des Masters professionnels.", highlight: false, image: "/images/sections/pillar-mobilite.jpg" },
-  { year: "2026", title: "Le virage de l'IA", text: "EBS intègre l'intelligence artificielle comme compétence transversale dans tous ses cursus et publie un catalogue de certifications internationales gratuites et vérifiées, avec Google, IBM, Harvard, Cisco, HubSpot et d'autres acteurs internationaux.", highlight: true, image: "/images/sections/pillar-tech.jpg" },
+  { year: "2026", title: "Le virage de l'IA", text: "EBS devient la première université tunisienne à intégrer l'intelligence artificielle comme compétence transversale obligatoire dans tous ses cursus. Un catalogue de 199 certifications et justificatifs internationaux vérifiés gratuits, en partenariat avec Google, IBM, Harvard, Bloomberg, Microsoft, Cisco et plus de 30 partenaires technologiques internationaux.", highlight: true, image: "/images/sections/pillar-tech.jpg" },
 ];
 
 const piliers = [
@@ -80,9 +80,9 @@ export default function QuiSommesNousPage() {
             </motion.p>
           </div>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex flex-wrap justify-center gap-4 md:gap-6">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">2013</p><p className="text-[13px] text-white/50 font-medium">Fondation</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">2013</p><p className="text-[13px] text-white/50 font-medium">Année de fondation</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">9</p><p className="text-[13px] text-white/50 font-medium">Programmes disponibles</p></div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">v3.1</p><p className="text-[13px] text-white/50 font-medium">Catalogue vérifié</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">199</p><p className="text-[13px] text-white/50 font-medium">Certifications vérifiées</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">95%</p><p className="text-[13px] text-white/50 font-medium">Taux de réussite</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">14</p><p className="text-[13px] text-white/50 font-medium">Partenaires internationaux</p></div>
           </motion.div>
@@ -118,24 +118,24 @@ export default function QuiSommesNousPage() {
               <div className="w-full lg:w-3/5 flex flex-col justify-center">
                 <Quote className="w-10 h-10 text-penn-green/30 mb-6" />
                 <h2 className="text-[28px] md:text-[36px] font-extrabold text-white mb-8 leading-tight">
-                  Le mot du<br />
-                  <span className="text-penn-green">Président Fondateur</span>
+                  Le mot du Président Fondateur
                 </h2>
-                <div className="space-y-4 text-[15px] md:text-[16px] text-white/70 leading-relaxed">
-                  <p>Espima Business School cultive, depuis sa création en 2013, un modèle spécifique fondé sur une identité et des valeurs fortes : l&apos;innovation, l&apos;ouverture, la responsabilité et l&apos;excellence. Notre pédagogie privilégie la mise en pratique des connaissances, le développement de la créativité, de l&apos;esprit critique et des compétences recherchées par les entreprises.</p>
-                  <p>Le développement d&apos;EBS repose sur une vision claire, des équipes engagées et des moyens adaptés pour former des diplômés compétents, innovants, maîtrisant les outils de l&apos;Intelligence Artificielle et capables de répondre aux évolutions rapides du monde professionnel.</p>
-                  <p>À taille humaine, EBS offre un environnement dynamique où se conjuguent excellence académique, vie étudiante, innovation, ouverture internationale et proximité avec les entreprises.</p>
+                <div className="space-y-5 text-[16px] text-white/75 leading-relaxed">
+                  <p>
+                    Espima Business School cultive, depuis sa création en 2013, un modèle spécifique fondé sur une identité et des valeurs fortes : l'innovation, l'ouverture, la responsabilité et l'excellence. Notre pédagogie privilégie la mise en pratique des connaissances, le développement de la créativité, de l'esprit critique et des compétences recherchées par les entreprises.
+                  </p>
+                  <p>
+                    Le développement d'EBS repose sur une vision claire, des équipes engagées et des moyens adaptés pour former des diplômés compétents, innovants, maîtrisant les outils de l'Intelligence Artificielle et capables de répondre aux évolutions rapides du monde professionnel.
+                  </p>
+                  <p>
+                    À taille humaine, EBS offre un environnement dynamique où se conjuguent excellence académique, vie étudiante, innovation, ouverture internationale et proximité avec les entreprises.
+                  </p>
+                </div>
+                <div className="mt-8 pt-6 border-t border-white/10">
+                  <p className="text-[17px] font-bold text-white">Abderraouf NAJAR</p>
+                  <p className="text-[14px] text-penn-green font-medium">Président Fondateur — EBS</p>
                 </div>
               </div>
-            </div>
-
-            {/* Signature */}
-            <div className="mt-10 pt-10 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
-              <div>
-                <p className="text-[20px] font-extrabold text-white">Abderraouf NAJAR</p>
-                <p className="text-[14px] text-white/50 mt-1">Président — Espima Business School</p>
-              </div>
-              <div className="hidden sm:block w-32 h-px bg-penn-green/30" />
             </div>
           </motion.div>
         </div>
@@ -256,11 +256,11 @@ export default function QuiSommesNousPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {[
               { end: 2013, label: "Année de fondation", icon: <Building2 className="w-7 h-7" /> },
-              { end: 9, label: "Programmes disponibles", sublabel: "3 Licences en Sciences de Gestion · 1 Licence en Informatique (2 options) · 4 Masters", icon: <BookOpen className="w-7 h-7" /> },
-              { end: 199, label: "Ressources vérifiées", sublabel: "Google · IBM · Harvard · Bloomberg...", icon: <Award className="w-7 h-7" />, featured: true },
+              { end: 12, suffix: "+", label: "Années d'expérience", icon: <Star className="w-7 h-7" /> },
+              { end: 9, label: "Programmes disponibles", sublabel: "3 Licences en Sciences de Gestion · 1 Licence en Informatique (2 Options) · 4 Masters", icon: <BookOpen className="w-7 h-7" /> },
+              { end: 199, label: "Certifications vérifiées", sublabel: "Google · IBM · Harvard · Bloomberg · Cisco...", icon: <Award className="w-7 h-7" />, featured: true },
               { end: 95, suffix: "%", label: "Taux de réussite", icon: <TrendingUp className="w-7 h-7" />, featured: true },
               { end: 14, label: "Partenaires internationaux", sublabel: "France · Canada · Italie · Oman", icon: <Globe className="w-7 h-7" /> },
-              { end: 12, suffix: "+", label: "Années d'expérience", icon: <Star className="w-7 h-7" /> },
             ].map((stat, i) => (
               <motion.div key={stat.label} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.08 }} whileHover={{ y: -4, scale: 1.02 }}
                 className={`relative group bg-penn-bg-light border rounded-2xl p-6 lg:p-8 flex items-center gap-5 transition-all duration-300 ${stat.featured ? "border-penn-green/20 shadow-[0_0_60px_rgba(43,143,171,0.08)]" : "border-penn-border hover:border-penn-border/80"}`}>
@@ -290,7 +290,7 @@ export default function QuiSommesNousPage() {
               { icon: <ShieldCheck className="w-7 h-7" />, title: "Agrément d'État", text: "Université privée agréée par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique de la République Tunisienne. Agrément n°2013/02. Diplômes reconnus par l'État tunisien.", color: "#2B8FAB" },
               { icon: <Globe className="w-7 h-7" />, title: "Réseau International", text: "Un réseau de 14 universités partenaires, dont UQAT (Canada), Link University (Italie) et GUtech (Oman), ainsi que plusieurs établissements en France : EM Normandie, Paris School of Business, IDRAC, IFAG, IGEFI, Éklore, Epitech, EPSI, Excelia, Groupe FIGS Education, Sup’ de Com et RedSup, favorisant la mobilité internationale, les doubles diplômes et les poursuites d’études.", color: "#2196F3" },
               { icon: <Building2 className="w-7 h-7" />, title: "Partenariats Entreprises", text: "Partenariats actifs avec des entreprises nationales et multinationales pour offrir à nos étudiants des stages, des parcours en alternance, des projets en entreprise et des opportunités de recrutement dans des environnements professionnels réels.", color: "#E91E8C" },
-              { icon: <Award className="w-7 h-7" />, title: "Certifications mondiales", text: "Des certifications, badges, achievements et certificats proposés par Google, IBM, Harvard, Cisco, HubSpot, DeepLearning.AI et d'autres organismes internationaux, tous vérifiés gratuits avant publication.", color: "#FF9800" },
+              { icon: <Award className="w-7 h-7" />, title: "Certifications Mondiales", text: "Des certifications et badges proposés par Google, IBM, Harvard, Cisco, Bloomberg, Microsoft, Fortinet, HubSpot, DeepLearning.AI et plus de 30 autres organismes internationaux. 199 certifications et justificatifs sont vérifiés gratuits et intégrés dans nos parcours.", color: "#FF9800" },
             ].map((acc, i) => (
               <motion.div key={acc.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ delay: i * 0.1 }} className="bg-white rounded-2xl p-8 border border-penn-border hover:border-penn-green/30 transition-all duration-300 group">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{ backgroundColor: `${acc.color}12` }}><span style={{ color: acc.color }}>{acc.icon}</span></div>

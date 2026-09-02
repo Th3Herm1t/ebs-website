@@ -218,7 +218,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
             <motion.div variants={fadeUp} initial="hidden" animate="visible" transition={transitions.hero}>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3.5 py-1 text-[11px] font-extrabold uppercase tracking-[0.14em] text-white/85 backdrop-blur-md mb-5">
                 <Sparkles className="h-3.5 w-3.5 text-penn-green" />
-                Catalogue Certifications EBS 2026-2027
+                AI Passport EBS · Catalogue international de certifications
               </div>
 
               <h1 className="text-[36px] md:text-[52px] lg:text-[60px] font-extrabold text-white leading-[1.08] tracking-[-1px] mb-4">
@@ -229,7 +229,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
               </h1>
 
               <p className="text-[16px] md:text-[18px] text-white/70 leading-relaxed max-w-[660px] mb-8">
-                Chaque licence et master intègre jusqu'à 14 certifications reconnues mondialement (Google, IBM, Harvard, Goldman Sachs, BCG, Microsoft) sans aucun frais additionnel.
+                Un catalogue structuré par programme, associant des certifications obligatoires constituant le socle EBS et des certifications optionnelles délivrées par Google, IBM, Harvard, Bloomberg, Cisco, Microsoft, Goldman Sachs, BCG et plus de 30 leaders mondiaux.
               </p>
 
               {/* Verified Trust Stats */}

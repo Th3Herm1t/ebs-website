@@ -253,12 +253,12 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
             className="text-[42px] md:text-[58px] lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
           >
             L&apos;IA n&apos;est plus une{" "}
-            <span className="text-penn-green">promesse</span>.
+            <span className="text-penn-green">option</span>.
             <br />
             C&apos;est une{" "}
-              <span className="bg-gradient-to-r from-[#9C27B0] to-[#2B8FAB] bg-clip-text text-transparent">
-                preuve
-              </span>
+            <span className="bg-gradient-to-r from-[#9C27B0] to-[#2B8FAB] bg-clip-text text-transparent">
+              obligation
+            </span>
             .
           </motion.h1>
 
@@ -268,9 +268,11 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
             transition={{ duration: 0.6, delay: 0.35 }}
             className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[700px] mb-12"
           >
-            EBS distingue un socle essentiel, des formations recommandées et
-            un espace d'exploration. Chaque étudiant avance sur des formations
-            IA gratuites, vérifiées et reliées à un justificatif clair.
+            À partir de 2026, EBS intègre l&apos;Intelligence Artificielle comme
+            socle commun dans tous ses programmes. Une approche innovante en
+            Tunisie : chaque étudiant, quel que soit son parcours, développe des
+            compétences en IA et peut obtenir des certifications internationales
+            reconnues.
           </motion.p>
 
           <motion.div

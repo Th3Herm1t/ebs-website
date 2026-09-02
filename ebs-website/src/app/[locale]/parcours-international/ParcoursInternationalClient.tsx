@@ -94,10 +94,7 @@ export default function InternationalPage() {
               >
                 Votre passeport vers
                 <br />
-                <span className="text-penn-green">le Canada, la France{" "}
-                  <span className="whitespace-nowrap">et l&apos;Italie</span>
-                </span>
-                .
+                <span className="text-penn-green">le Canada, la France, l&apos;Italie et Oman</span>.
               </motion.h1>
 
               <motion.p

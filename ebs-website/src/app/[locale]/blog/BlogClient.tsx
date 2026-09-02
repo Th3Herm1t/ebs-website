@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { motion } from "motion/react";
 import {
@@ -9,6 +10,7 @@ import {
   Briefcase,
   Calendar,
   ChevronDown,
+  Clock,
   Globe,
   GraduationCap,
   Lightbulb,
@@ -220,6 +222,77 @@ export default function BlogPage() {
         </div>
       </section>
 
+      {/* ═══════════ FEATURED LIVE ARTICLE ═══════════ */}
+      <section className="section-padding bg-penn-bg-light">
+        <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
+          <div className="flex items-center justify-between gap-4 mb-8">
+            <div>
+              <Badge variant="default" size="lg" className="mb-2">
+                Article à la une
+              </Badge>
+              <h2 className="text-[28px] md:text-[36px] font-extrabold text-penn-navy">
+                Dernières publications
+              </h2>
+            </div>
+          </div>
+
+          <Link
+            href="/blog/reconnaissance-diplomes-enseignement-superieur-francais"
+            className="group block bg-white rounded-3xl border border-penn-border hover:border-penn-green/40 hover:shadow-2xl transition-all duration-300 overflow-hidden"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] items-center">
+              <div className="relative aspect-[16/10] lg:aspect-auto lg:h-full min-h-[260px] bg-penn-navy overflow-hidden">
+                <Image
+                  src="/images/heroes/hero-parcours-international.jpg"
+                  alt="Reconnaissance des diplômes français"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-penn-green text-white px-3 py-1 text-[11px] font-bold uppercase tracking-wider shadow-md">
+                    <Globe className="w-3.5 h-3.5" />
+                    International & Mobilité
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-8 lg:p-10 flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex flex-wrap items-center gap-4 text-[13px] text-penn-body/60 font-medium mb-3">
+                    <span className="flex items-center gap-1.5">
+                      <Calendar className="w-4 h-4 text-penn-green" />
+                      24 Août 2026
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <Clock className="w-4 h-4 text-penn-green" />
+                      7 min de lecture
+                    </span>
+                  </div>
+
+                  <h3 className="text-[22px] md:text-[26px] font-extrabold text-penn-navy group-hover:text-penn-green transition-colors leading-tight mb-3">
+                    Les principales reconnaissances des diplômes de l&apos;enseignement supérieur français : le guide complet
+                  </h3>
+
+                  <p className="text-[15px] text-penn-body leading-relaxed mb-6 line-clamp-3">
+                    Comprendre les visas d&apos;État, Grades de Licence et Master, Titres RNCP (Niveaux 6 & 7), labels CGE et accréditations internationales (AACSB, EQUIS, AMBA) pour sécuriser votre poursuite d&apos;études en France depuis EBS Tunis.
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-between pt-4 border-t border-penn-border">
+                  <span className="text-[13px] font-bold text-penn-navy">
+                    Par la Direction des Relations Internationales EBS
+                  </span>
+                  <span className="inline-flex items-center gap-2 text-[14px] font-bold text-penn-green group-hover:translate-x-1 transition-transform">
+                    Lire le guide complet →
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* ═══════════ FEATURED TOPICS ═══════════ */}
       <section className="section-padding bg-penn-navy relative overflow-hidden">
         <div
@@ -249,7 +322,7 @@ export default function BlogPage() {
                 À venir
               </Badge>
             <h2 className="text-[34px] md:text-[48px] font-extrabold text-white leading-[1.1]">
-              Premiers articles en préparation
+              Prochains articles en préparation
             </h2>
             <p className="text-[16px] text-white/50 mt-3 max-w-[600px] mx-auto">
               Notre équipe travaille sur une série d&apos;articles de fond pour
