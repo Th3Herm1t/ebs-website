@@ -175,7 +175,7 @@ export default function ProgrammeFinder({ programmes = allProgrammes }: { progra
   const progress = result ? 100 : Math.round((currentQ / questions.length) * 100);
 
   return (
-    <section className="overflow-hidden bg-penn-bg-light py-16 lg:py-24">
+    <section className="relative overflow-hidden border-t-8 border-white bg-penn-bg-light py-16 lg:py-24">
       <div className="mx-auto grid max-w-[1400px] items-start gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-12">
         <div className="pt-2 lg:sticky lg:top-28">
           <Badge variant="default" size="lg" className="mb-5">Orientation</Badge>
@@ -194,23 +194,8 @@ export default function ProgrammeFinder({ programmes = allProgrammes }: { progra
         </div>
 
         <div className="min-w-0">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          className="text-center mb-10"
-        >
-          <Badge variant="default" size="lg" className="mb-4">
-            Orientation
-          </Badge>
-          <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
-            Trouve ton programme
-          </h2>
-        </motion.div>
-
         {/* Tab switcher */}
-        <div className="flex items-center justify-center gap-2 mb-10">
+        <div className="flex items-center justify-center gap-2 mb-8">
           <button
             onClick={() => setTab("quiz")}
             className={`flex items-center gap-2 px-6 py-3 text-sm font-bold rounded-full transition-all duration-300 ${

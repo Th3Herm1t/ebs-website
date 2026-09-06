@@ -113,7 +113,7 @@ export default function CoursesSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden pt-16 bg-[#fdfdfd]">
+    <section className="relative overflow-hidden bg-[#fdfdfd] pb-24 pt-16 lg:pb-32">
       <HeroBackgroundVariant1 />
       <div className="relative z-10 max-w-[1200px] mx-auto px-4">
         <ProgramGrid title={t('title')} subtitle={t('licencesSubtitle')} programs={licences} type="licence" />
