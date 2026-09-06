@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import HeroSection from "@/components/sections/HeroSection";
 import TopPromo from "@/components/sections/TopPromo";
 import HomeCertificationsSection from "@/components/sections/HomeCertificationsSection";
+import OrientationSection from "@/components/sections/OrientationSection";
 import { pageMetadata } from "@/lib/seo";
 
 // Lazy-loaded components below the fold
@@ -56,8 +57,9 @@ export default function Home() {
 
       <CareerSection />
       <PartnerLogos />
-      <CoursesSection />
-      <FeaturesSection />
+       <CoursesSection />
+       <OrientationSection />
+       <FeaturesSection />
       <EventsSection />
       <TestimonialsSection />
       <NewsletterSection />

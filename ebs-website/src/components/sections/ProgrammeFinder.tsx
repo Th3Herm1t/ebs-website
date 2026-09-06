@@ -44,6 +44,8 @@ const allProgrammes = [
   certs: getCatalogueV3ProgrammeSummary(programme.data.catalogueId).total,
 }));
 
+export type OrientationProgramme = (typeof allProgrammes)[number];
+
 /* ── Quiz logic ── */
 type Tab = "quiz" | "compare";
 
@@ -93,9 +95,9 @@ const questions = [
   },
 ] as const;
 
-function recommend(answers: string[]): (typeof allProgrammes)[number] {
+function recommend(answers: string[], programmes: OrientationProgramme[]): OrientationProgramme {
   const [field, level, , work, goal] = answers;
-  const get = (k: string) => allProgrammes.find(p => p.key === k) || allProgrammes[0];
+  const get = (k: string) => programmes.find(p => p.key === k) || programmes[0];
   
   if (level === "bac3") {
     if (field === "tech" || goal === "dev") return get("startups");
@@ -123,13 +125,13 @@ const compareRows = [
   { label: "Débouchés", key: "careers" as const },
 ];
 
-export default function ProgrammeFinder() {
+export default function ProgrammeFinder({ programmes = allProgrammes }: { programmes?: OrientationProgramme[] }) {
   const [tab, setTab] = useState<Tab>("quiz");
 
   /* Quiz state */
   const [answers, setAnswers] = useState<string[]>([]);
   const [currentQ, setCurrentQ] = useState(0);
-  const [result, setResult] = useState<(typeof allProgrammes)[number] | null>(null);
+  const [result, setResult] = useState<OrientationProgramme | null>(null);
 
   /* Compare state */
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -138,7 +140,7 @@ export default function ProgrammeFinder() {
     const newAnswers = [...answers, val];
     setAnswers(newAnswers);
     if (currentQ + 1 >= questions.length) {
-      setResult(recommend(newAnswers));
+      setResult(recommend(newAnswers, programmes));
     } else {
       setCurrentQ(currentQ + 1);
     }
@@ -169,12 +171,29 @@ export default function ProgrammeFinder() {
     });
   };
 
-  const selectedProgrammes = allProgrammes.filter((p) => selected.has(p.key));
+  const selectedProgrammes = programmes.filter((p) => selected.has(p.key));
   const progress = result ? 100 : Math.round((currentQ / questions.length) * 100);
 
   return (
-    <section className="py-20 lg:py-28 bg-penn-bg-light overflow-hidden">
-      <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+    <section className="overflow-hidden bg-penn-bg-light py-16 lg:py-24">
+      <div className="mx-auto grid max-w-[1400px] items-start gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-12">
+        <div className="pt-2 lg:sticky lg:top-28">
+          <Badge variant="default" size="lg" className="mb-5">Orientation</Badge>
+          <h2 className="max-w-[520px] text-[36px] font-extrabold leading-[1.08] text-penn-navy md:text-[50px]">
+            Trouvez la formation qui vous ressemble<span className="text-penn-green">.</span>
+          </h2>
+          <p className="mt-6 max-w-[500px] text-[16px] leading-relaxed text-penn-body">
+            Répondez à cinq questions pour identifier le parcours EBS le plus cohérent avec votre profil, vos ambitions et le domaine qui vous attire.
+          </p>
+          <div className="mt-8 grid max-w-[500px] grid-cols-3 gap-3 border-y border-penn-border py-5">
+            <div><p className="text-[26px] font-extrabold text-penn-green">{programmes.length}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-penn-body/55">Parcours</p></div>
+            <div><p className="text-[26px] font-extrabold text-penn-green">{programmes.filter((p) => p.degree === "Licence").length}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-penn-body/55">Licences</p></div>
+            <div><p className="text-[26px] font-extrabold text-penn-green">{programmes.filter((p) => p.degree === "Master").length}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-penn-body/55">Masters</p></div>
+          </div>
+          <p className="mt-6 text-[13px] font-bold text-penn-body/60">Un conseil personnalisé, en une minute.</p>
+        </div>
+
+        <div className="min-w-0">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -341,7 +360,7 @@ export default function ProgrammeFinder() {
 
               {/* Selectors */}
               <div className="flex flex-wrap justify-center gap-2 mb-10">
-                {allProgrammes.map((p) => (
+                {programmes.map((p) => (
                   <button
                     key={p.key}
                     onClick={() => toggleCompare(p.key)}
@@ -432,6 +451,7 @@ export default function ProgrammeFinder() {
             </motion.div>
           )}
         </AnimatePresence>
+        </div>
       </div>
     </section>
   );
