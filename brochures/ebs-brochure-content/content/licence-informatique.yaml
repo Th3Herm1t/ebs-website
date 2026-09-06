@@ -1,0 +1,529 @@
+schema_version: "1.0"
+id: licence-informatique
+language: fr
+source:
+  filename: BROCHURE LICENCE INFORMATIQUE - 2026.pdf
+  sha256: 3d728be57d8c83fd19f38650bc6fa443d535089be50bb5b7b6878db21125be3f
+  page_count: 4
+programme:
+  name_source: LICENCE INFORMATIQUE
+  level: licence
+  duration_years: 3
+  qualification_source: Bac+3
+  identity_source_pages:
+    - 1
+  duration_source_pages:
+    - 1
+  semester_count: 6
+  semester_count_source_pages:
+    - 2
+  name_normalized: Licence Informatique
+  name_normalization: Case only; no change to source programme scope.
+  curriculum_structure: common_core_and_options
+  admission_requirements: null
+  admission_requirements_note: Non détaillées pour l’entrée à EBS dans ces
+    brochures. Les conditions des passerelles internationales sont conservées
+    dans leurs sections.
+sections:
+  brand:
+    source_pages:
+      - 1
+    text: EBS — ESPIMA BUSINESS SCHOOL
+    source_text_status: visually_transcribed
+    review_required: false
+  duration:
+    source_pages:
+      - 1
+    text: BAC+3 | 3 ANS
+    source_text_status: visually_transcribed
+    review_required: false
+  accreditation:
+    source_pages:
+      - 1
+    text: DIPLÔME ACCRÉDITÉ PAR L’ÉTAT TUNISIEN
+    review_issue_ids: []
+    source_text_status: visually_transcribed
+    review_required: false
+  positioning:
+    source_pages:
+      - 1
+    heading: IMAGINEZ. CODEZ. INNOVEZ. | CONSTRUISEZ LE NUMÉRIQUE DE DEMAIN.
+    text: Une formation complète pour concevoir des solutions logicielles
+      performantes, intelligentes et sécurisées, et construire votre expertise
+      dans les métiers du numérique de demain.
+    subheading: GÉNIE LOGICIEL & SYSTÈMES D’INFORMATION
+    source_text_status: visually_transcribed
+    review_required: false
+  cover_specialisations:
+    source_pages:
+      - 1
+    heading: DEUX OPTIONS POUR CONSTRUIRE VOTRE SPÉCIALISATION
+    items:
+      - INTELLIGENCE ARTIFICIELLE
+      - CYBERSÉCURITÉ
+    source_text_status: visually_transcribed
+    review_required: false
+  cover_benefits:
+    source_pages:
+      - 1
+    items:
+      - OUVERTURE INTERNATIONALE
+      - CERTIFICATIONS INCLUSES
+    source_text_status: visually_transcribed
+    review_required: false
+  contacts_cover:
+    source_pages:
+      - 1
+    items:
+      - www.ebs.tn
+      - UN PROGRAMME TOURNÉ VERS L’AVENIR
+      - +216 71182625
+    source_text_status: visually_transcribed
+    review_required: false
+    review_issue_ids: []
+  curriculum_intro:
+    source_pages:
+      - 2
+    heading: UN PROGRAMME COMPLET POUR MAÎTRISER LES TECHNOLOGIES DU NUMÉRIQUE
+    text: Le programme est structuré autour des principaux modules de formation,
+      répartis progressivement sur les six semestres de la Licence.
+    subheading: PROGRAMME SUR 6 SEMESTRES
+    source_text_status: visually_transcribed
+    review_required: false
+  curriculum_core:
+    source_pages:
+      - 2
+    heading: SOCLE COMMUN
+    text: Des compétences fondamentales solides pour construire votre expertise en
+      informatique.
+    items:
+      - heading: Programmation & Algorithmique
+        text: Maîtriser la programmation et la logique algorithmique.
+      - heading: Développement Web
+        text: Développer des applications web modernes.
+      - heading: Bases de données
+        text: Concevoir et gérer des bases de données.
+      - heading: Génie logiciel
+        text: Concevoir et développer des solutions logicielles robustes.
+      - heading: Systèmes d’information
+        text: Comprendre et gérer les systèmes d’information des organisations.
+      - heading: Réseaux & Systèmes
+        text: Administrer et sécuriser les réseaux et systèmes informatiques.
+      - heading: Développement Mobile
+        text: Créer des applications mobiles performantes et intuitives.
+      - heading: Cloud & Technologies Web
+        text: Explorer le cloud et les technologies web pour des solutions évolutives.
+      - heading: Data & Intelligence Artificielle
+        text: Découvrir la data et l’IA pour analyser et prévoir les tendances.
+    source_text_status: visually_transcribed
+    review_required: false
+  specialisation_choice:
+    source_pages:
+      - 2
+    text: CHOISISSEZ VOTRE SPÉCIALISATION À PARTIR DU SEMESTRE 3
+    source_text_status: visually_transcribed
+    review_required: false
+  specialisation_ai:
+    source_pages:
+      - 2
+    heading: OPTION INTELLIGENCE ARTIFICIELLE
+    text: Devenez acteur de l’innovation grâce à l’IA et au Machine Learning.
+    items:
+      - IA avancée & algorithmes
+      - Mathématiques pour l’IA
+      - Apprentissage automatique
+      - Deep Learning
+      - Traitement du langage naturel (NLP)
+      - Vision par ordinateur
+      - Data Mining & Big Data
+      - IA générative & Prompt Engineering
+    source_text_status: visually_transcribed
+    review_required: false
+  specialisation_cybersecurity:
+    source_pages:
+      - 2
+    heading: OPTION CYBERSÉCURITÉ
+    text: Protégez les systèmes, les données et les organisations face aux menaces
+      numériques.
+    items:
+      - Fondamentaux de la cybersécurité
+      - Réseaux & sécurité des systèmes
+      - Cryptographie
+      - Sécurité des applications web
+      - Sécurité des systèmes & administration
+      - Tests d’intrusion & pentesting
+      - Analyse forensique numérique
+      - Sécurité cloud & DevSecOps
+    source_text_status: visually_transcribed
+    review_required: false
+  certifications:
+    source_pages:
+      - 2
+    heading: CERTIFICATIONS INCLUSES
+    text: Sans frais supplémentaires
+    items:
+      - issuer_source: Harvard University
+        credential_source: CS50’s Introduction to Programming with Python
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: DeepLearning.AI
+        credential_source: Machine Learning Specialization
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: Harvard University
+        credential_source: CS50’s Introduction to Cybersecurity
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: Cisco
+        credential_source: Cybersecurity Essentials
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: Cisco
+        credential_source: Linux Essentials
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: Harvard University
+        credential_source: CS50’s Introduction to Databases with SQL
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: DeepLearning.AI
+        credential_source: Mathematics for ML and Data Science
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: IBM
+        credential_source: Python pour la Science des Données, IA & Développement
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: Fortinet
+        credential_source: Fortinet Certified Fundamentals Cybersecurity (FCF)
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: Google
+        credential_source: Google Prompting Essentials
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+    review_issue_ids: []
+    source_text_status: visually_transcribed
+    review_required: false
+  professional_experience:
+    source_pages:
+      - 2
+    heading: PRATIQUE, PROJETS & STAGE EN ENTREPRISE
+    items:
+      - heading: Projets concrets
+        text: Projets pratiques à chaque semestre pour développer vos compétences et
+          votre portfolio.
+      - heading: Travail en équipe
+        text: Apprentissage par projets pour renforcer l’esprit d’équipe et résoudre des
+          problèmes réels.
+      - heading: Stage en entreprise
+        text: Stage en entreprise d’une durée minimale de 4 mois pour une immersion
+          professionnelle et opérationnelle.
+    source_text_status: visually_transcribed
+    review_required: false
+  footer:
+    source_pages:
+      - 2
+      - 3
+    text: www.ebs.tn | UN PROGRAMME TOURNÉ VERS L’AVENIR
+    source_text_status: visually_transcribed
+    review_required: false
+  skills_intro:
+    source_pages:
+      - 3
+    heading: POURQUOI CHOISIR LA LICENCE INFORMATIQUE DE L’EBS ?
+    text: Une formation de référence qui développe les compétences techniques et les
+      qualités essentielles pour réussir dans les métiers du numérique.
+      L’Intelligence Artificielle et la Cybersécurité sont au cœur de la
+      formation. Vous pouvez choisir de vous spécialiser dans l’un de ces deux
+      parcours en fonction de vos ambitions et de votre projet professionnel.
+    source_text_status: visually_transcribed
+    review_required: false
+  transversal_skills:
+    source_pages:
+      - 3
+    items:
+      - heading: PENSER & RÉSOUDRE
+        text: Développer une approche logique et méthodique pour analyser des problèmes
+          complexes et proposer des solutions efficaces.
+      - heading: INNOVER & CRÉER
+        text: Imaginer, concevoir et transformer une idée en solution numérique
+          innovante grâce à l’expérimentation.
+      - heading: ÊTRE AUTONOME & AGILE
+        text: Apprendre en continu, s’adapter aux nouvelles technologies et évoluer dans
+          un environnement en constante transformation.
+      - heading: COLLABORER & PARTAGER
+        text: Travailler en équipe, organiser les tâches et contribuer à la réussite de
+          projets collaboratifs.
+      - heading: COMMUNIQUER & PRÉSENTER
+        text: Exprimer ses idées, présenter ses choix techniques et valoriser ses
+          réalisations avec professionnalisme.
+      - heading: S’OUVRIR AU MONDE
+        text: Renforcer ses compétences en français et en anglais pour évoluer dans un
+          environnement académique et professionnel international.
+    source_text_status: visually_transcribed
+    review_required: false
+  ai_learning:
+    source_pages:
+      - 3
+    heading: L’INTELLIGENCE ARTIFICIELLE, UN MOTEUR D’INNOVATION
+    text: L’IA transforme tous les secteurs et redéfinit les métiers de demain. À
+      EBS, elle est intégrée au cœur du parcours pour vous permettre de
+      comprendre, concevoir et exploiter des solutions intelligentes.
+    items:
+      - Apprendre les concepts de l’IA et du Machine Learning.
+      - Utiliser des outils et frameworks modernes.
+      - Réaliser des projets intelligents concrets à fort impact.
+    source_text_status: visually_transcribed
+    review_required: false
+  cybersecurity_learning:
+    source_pages:
+      - 3
+    heading: LA CYBERSÉCURITÉ, UNE PRIORITÉ MONDIALE
+    text: Face à la recrudescence des cybermenaces, la cybersécurité est devenue
+      essentielle. Notre formation vous prépare à protéger les systèmes, les
+      données et les utilisateurs.
+    items:
+      - Comprendre les risques et les fondamentaux de la sécurité.
+      - Détecter, analyser et prévenir les vulnérabilités.
+      - Développer et appliquer des solutions de sécurité efficaces.
+    source_text_status: visually_transcribed
+    review_required: false
+  career_outcomes:
+    source_pages:
+      - 3
+    heading: DÉBOUCHÉS
+    text: Des métiers d’avenir dans des domaines en pleine expansion.
+    groups:
+      - heading: DÉVELOPPEMENT & GÉNIE LOGICIEL
+        items:
+          - Développeur logiciel / applicatif
+          - Développeur Web et Mobile
+          - Ingénieur logiciel junior
+          - Intégrateur de solutions informatiques
+          - Testeur logiciel / QA
+      - heading: INTELLIGENCE ARTIFICIELLE & DATA
+        items:
+          - Data Engineer Junior
+          - Assistant Machine Learning Engineer
+          - Développeur en Intelligence Artificielle
+      - heading: CYBERSÉCURITÉ
+        items:
+          - Analyste cybersécurité junior
+          - Administrateur sécurité des systèmes
+          - Consultant cybersécurité junior
+    callout: VOTRE FUTUR DANS LE NUMÉRIQUE
+    source_text_status: visually_transcribed
+    review_required: false
+  closing:
+    source_pages:
+      - 4
+    heading: L’EXCELLENCE ACADÉMIQUE AU SERVICE DE VOTRE AVENIR
+    text: Un parcours structuré et progressif qui vous permet d’acquérir les
+      compétences essentielles pour construire votre avenir et réaliser vos
+      ambitions.
+    source_text_status: visually_transcribed
+    review_required: false
+  closing_benefits:
+    source_pages:
+      - 4
+    items:
+      - heading: DIPLÔME
+        text: Une formation académique reconnue et alignée sur les exigences du monde
+          professionnel.
+      - heading: EXPÉRIENCE
+        text: Des projets concrets, des mises en situation et des activités qui
+          développent vos compétences et votre confiance.
+      - heading: CARRIÈRE
+        text: Un accompagnement personnalisé pour vous aider à atteindre vos objectifs
+          et réussir votre insertion professionnelle.
+    source_text_status: visually_transcribed
+    review_required: false
+  international_pathways:
+    source_pages:
+      - 4
+    heading: POURSUITE D’ÉTUDES À L’INTERNATIONAL
+    text: Grâce à nos partenariats avec des établissements reconnus, poursuivez
+      votre parcours et spécialisez-vous dans des domaines d’avenir.
+    items:
+      - partner: EPITECH.
+        country: FRANCE
+        entry_source: APRÈS LICENCE (BAC+3)
+        qualification_source: Poursuite en Master (Bac+5)
+        recognition_source: Diplôme reconnu par l’État français | Titre RNCP 7
+        options_heading: SPÉCIALITÉS POSSIBLES
+        options:
+          - Intelligence Artificielle
+          - Cybersécurité
+          - Cloud Computing
+          - Développement Logiciel
+      - partner: epsi
+        country: FRANCE
+        entry_source: APRÈS BAC+2 OU APRÈS LICENCE
+        qualification_source: Poursuite en Parcours Expert (Bac+5)
+        recognition_source: Diplôme reconnu par l’État français | Titre RNCP 7
+        options_heading: DOMAINES POSSIBLES
+        options:
+          - Développement
+          - Systèmes & Réseaux
+          - Intelligence Artificielle
+          - Cybersécurité
+      - partner: REDSUP — L’EXPERTISE DE DEMAIN
+        country: FRANCE
+        entry_source: APRÈS LICENCE (BAC+3)
+        qualification_source: Mastère Européen Expert IT en Cybersécurité (Bac+5)
+        recognition_source: Diplôme reconnu par l’État français | Titre RNCP 7
+        options_heading: DOMAINES POSSIBLES
+        options:
+          - Cybersécurité
+          - Sécurité informatique
+          - Réseaux
+          - Technologies de l’information
+      - partner: UQAT
+        country: CANADA
+        entry_source: APRÈS LICENCE (BAC+3)
+        qualification_source: Poursuite en Maîtrise (Master)
+        recognition_source: Université publique canadienne | diplôme niveau bac+5
+        options_heading: OPTIONS POSSIBLES
+        options:
+          - Maîtrise en gestion de projet (MGP)
+          - Maîtrise en gestion des organisations (MGO)
+      - partner: LINK UNIVERSITY ROME
+        country: ITALIE
+        entry_source: APRÈS LICENCE (BAC+3)
+        qualification_source: Possibilité MASTER | MA in Technologies and Languages of Communications
+        options_heading: DOMAINES POSSIBLES
+        options:
+          - Technologies de l’information
+          - Communications numériques
+          - Langages et médias
+          - Innovation technologique
+    review_issue_ids: []
+    source_text_status: visually_transcribed
+    review_required: false
+  international_support:
+    source_pages:
+      - 4
+    heading: UN ACCOMPAGNEMENT SUR MESURE
+    text: "ESPIMA Business School vous accompagne à chaque étape : choix du
+      programme, préparation du dossier, démarches administratives et suivi
+      personnalisé."
+    source_text_status: visually_transcribed
+    review_required: false
+  contacts_back:
+    source_pages:
+      - 4
+    items:
+      - +216 71 182 625
+      - info@ebs.tn
+      - Les Berges du Lac 3 – Tunis
+      - www.ebs.tn
+    source_text_status: visually_transcribed
+    review_required: false
+    review_issue_ids: []
+review_issue_ids: []
+extraction:
+  method: manual_visual_transcription_of_all_pages;
+    sparse_text_layer_as_secondary_evidence
+  wording_policy: Original wording retained; layout line breaks merged;
+    apostrophes, spacing and superscript ordinals standardized. No factual
+    updating.
+  verification_scope: Source transcription only; no external validation of
+    accreditation, partners, credentials, prices or access.
+  excluded: Decorative stock-image UI text/numbers, incidental signage already
+    represented elsewhere, illegible logo microprint; no original visual assets
+    recreated.
+normalized_contacts:
+  - type: website
+    source_text: www.ebs.tn
+    normalized_value: www.ebs.tn
+    source_pages:
+      - 1
+    review_required: false
+  - type: phone
+    source_text: +216 71182625
+    normalized_value: "+21671182625"
+    source_pages:
+      - 1
+    review_required: false
+  - type: phone
+    source_text: +216 71 182 625
+    normalized_value: "+21671182625"
+    source_pages:
+      - 4
+    review_required: false
+  - type: email
+    source_text: info@ebs.tn
+    normalized_value: info@ebs.tn
+    source_pages:
+      - 4
+    review_required: false
+  - type: address
+    source_text: Les Berges du Lac 3 – Tunis
+    normalized_value: Les Berges du Lac 3 – Tunis
+    source_pages:
+      - 4
+    review_required: false
+  - type: website
+    source_text: www.ebs.tn
+    normalized_value: www.ebs.tn
+    source_pages:
+      - 4
+    review_required: false
+page_coverage:
+  - page: 1
+    visual_review_completed: true
+    section_ids:
+      - brand
+      - duration
+      - accreditation
+      - positioning
+      - cover_specialisations
+      - cover_benefits
+      - contacts_cover
+    evidence_image: evidence/licence-informatique/page-01.jpg
+  - page: 2
+    visual_review_completed: true
+    section_ids:
+      - curriculum_intro
+      - curriculum_core
+      - specialisation_choice
+      - specialisation_ai
+      - specialisation_cybersecurity
+      - certifications
+      - professional_experience
+      - footer
+    evidence_image: evidence/licence-informatique/page-02.jpg
+  - page: 3
+    visual_review_completed: true
+    section_ids:
+      - footer
+      - skills_intro
+      - transversal_skills
+      - ai_learning
+      - cybersecurity_learning
+      - career_outcomes
+    evidence_image: evidence/licence-informatique/page-03.jpg
+  - page: 4
+    visual_review_completed: true
+    section_ids:
+      - closing
+      - closing_benefits
+      - international_pathways
+      - international_support
+      - contacts_back
+    evidence_image: evidence/licence-informatique/page-04.jpg
+shared_block_refs:
+  accreditation: accreditation
+  closing: closing
+  closing_benefits: closing_benefits

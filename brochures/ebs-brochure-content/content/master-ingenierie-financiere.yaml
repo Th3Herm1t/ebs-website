@@ -1,0 +1,501 @@
+schema_version: "1.0"
+id: master-ingenierie-financiere
+language: fr
+source:
+  filename: BROCHURE MASTER INGENIERIE FINANCIERE - 2026.pdf
+  sha256: 7e8fed3fc126be1da93ee0ee553c3fefc76c4f507c4b4f25bcec22228b27e2ad
+  page_count: 4
+programme:
+  name_source: MASTER EN INGÉNIERIE FINANCIÈRE
+  level: master
+  duration_years: 2
+  qualification_source: null
+  identity_source_pages:
+    - 1
+  duration_source_pages:
+    - 2
+  semester_count: 4
+  semester_count_source_pages:
+    - 2
+  name_normalized: Master en Ingénierie Financière
+  name_normalization: Case only; no change to source programme scope.
+  curriculum_structure: competency_blocks
+  admission_requirements: null
+  admission_requirements_note: Non détaillées pour l’entrée à EBS dans ces
+    brochures. Les conditions des passerelles internationales sont conservées
+    dans leurs sections.
+sections:
+  brand:
+    source_pages:
+      - 1
+    items:
+      - EBS — ESPIMA BUSINESS SCHOOL
+      - PENSEZ CARRIÈRE
+      - INNOVER | FORMER | RÉUSSIR
+    source_text_status: visually_transcribed
+    review_required: false
+  accreditation:
+    source_pages:
+      - 1
+    text: MASTER ACCRÉDITÉ par l’État Tunisien
+    review_issue_ids: []
+    source_text_status: visually_transcribed
+    review_required: false
+  positioning:
+    source_pages:
+      - 1
+    heading: PRÉPAREZ-VOUS À DEVENIR UN EXPERT DE LA FINANCE, DE L’ANALYSE
+      FINANCIÈRE ET DE L’INGÉNIERIE DES MARCHÉS.
+    text: Ce Master d’excellence d’ESPIMA Business School forme des spécialistes
+      capables d’accompagner les entreprises et les institutions financières
+      dans leurs décisions stratégiques. Il associe finance d’entreprise,
+      marchés financiers, gestion des risques, Business Intelligence,
+      Intelligence Artificielle et technologies financières afin de répondre aux
+      nouvelles exigences du secteur financier.
+    source_text_status: visually_transcribed
+    review_required: false
+  cover_themes:
+    source_pages:
+      - 1
+    heading: FINANCE
+    items:
+      - ANALYSER
+      - DÉCIDER
+      - INVESTIR
+      - INNOVER
+    source_text_status: visually_transcribed
+    review_required: false
+  cover_benefits:
+    source_pages:
+      - 1
+    items:
+      - Finance d’entreprise
+      - IA intégrée
+      - Marchés financiers
+      - Ouverture internationale
+      - Certifications professionnelles
+      - Enseignants experts métiers
+    source_text_status: visually_transcribed
+    review_required: false
+  contacts_cover:
+    source_pages:
+      - 1
+    items:
+      - Votre avenir commence ici
+      - www.ebs.tn
+      - +216 71 18 26 25
+    source_text_status: visually_transcribed
+    review_required: false
+  curriculum_intro:
+    source_pages:
+      - 2
+    heading: UN PROGRAMME COMPLET ET OPÉRATIONNEL SUR 2 ANNÉES
+    text: Un parcours progressif en 4 semestres qui combine finance d’entreprise,
+      ingénierie financière, marchés financiers, gestion des risques, Business
+      Intelligence et Intelligence Artificielle pour développer des compétences
+      recherchées par les entreprises et les institutions financières.
+    programme_title_source: MASTER EN INGÉNIERIE FINANCIÈRE
+    source_text_status: visually_transcribed
+    review_required: false
+  curriculum_blocks:
+    source_pages:
+      - 2
+    heading: LE PROGRAMME EN 5 GRANDS BLOCS DE COMPÉTENCES
+    groups:
+      - heading: FINANCE D’ENTREPRISE & INGÉNIERIE FINANCIÈRE
+        items:
+          - Finance d’entreprise
+          - Diagnostic financier
+          - Décision d’investissement
+          - Évaluation d’entreprise
+          - Restructuration financière
+          - Ingénierie financière
+      - heading: ANALYSE FINANCIÈRE & DÉCISION
+        items:
+          - Analyse financière
+          - Modélisation financière
+          - Tableaux de bord
+          - Contrôle de gestion
+          - Performance financière
+          - Décision stratégique
+      - heading: MARCHÉS FINANCIERS & GESTION DES RISQUES
+        items:
+          - Marchés financiers
+          - Gestion de portefeuille
+          - Produits financiers
+          - Gestion des risques
+          - Finance internationale
+          - Réglementation financière
+      - heading: BUSINESS INTELLIGENCE & INTELLIGENCE ARTIFICIELLE
+        items:
+          - Business Intelligence
+          - Data Analytics
+          - IA appliquée à la finance
+          - Analyse prédictive
+          - Tableaux de bord avancés
+          - FinTech
+      - heading: PROFESSIONNALISATION & EXPERTISE
+        items:
+          - Études de cas
+          - Projets réels d’entreprise
+          - Audit & Conseil
+          - Soft Skills
+          - Mémoire de fin d’études
+          - Stage obligatoire de longue durée
+    source_text_status: visually_transcribed
+    review_required: false
+  career_outcomes:
+    source_pages:
+      - 2
+    heading: DÉBOUCHÉS PROFESSIONNELS
+    items:
+      - Analyste financier
+      - Ingénieur financier
+      - Risk Manager
+      - Gestionnaire de portefeuille
+      - Consultant Finance
+      - Auditeur financier
+      - Analyste ESG
+      - DAF
+      - CFO
+      - Expert FinTech
+    source_text_status: visually_transcribed
+    review_required: false
+  professional_experience:
+    source_pages:
+      - 2
+    heading: STAGE & IMMERSION PROFESSIONNELLE
+    text: Un stage obligatoire en entreprise pour valoriser vos compétences,
+      participer activement à des projets concrets et développer durablement
+      votre réseau professionnel.
+    items:
+      - Expérience professionnelle obligatoire en entreprise
+      - Accompagnement personnalisé pour votre recherche d’emploi
+      - Renforcement de votre employabilité professionnelle
+    source_text_status: visually_transcribed
+    review_required: false
+  footer_2:
+    source_pages:
+      - 2
+    text: www.ebs.tn | L’EXCELLENCE ACADÉMIQUE AU SERVICE DE VOTRE AVENIR | Votre
+      avenir commence ici
+    source_text_status: visually_transcribed
+    review_required: false
+  reasons_intro:
+    source_pages:
+      - 3
+    heading: 6 RAISONS DE CHOISIR L’EXCELLENCE POUR CONSTRUIRE VOTRE AVENIR
+    text: Un Master conçu pour développer des compétences recherchées, vous rendre
+      opérationnel dès demain et vous ouvrir les portes d’une carrière solide et
+      internationale dans la finance.
+    programme_title_source: MASTER EN INGÉNIERIE FINANCIÈRE
+    source_text_status: visually_transcribed
+    review_required: false
+  reasons_to_choose:
+    source_pages:
+      - 3
+    items:
+      - heading: IA INTÉGRÉE DANS TOUS LES CURSUS
+        text: L’intelligence artificielle est intégrée dans tous les modules pour vous
+          donner une longueur d’avance et vous préparer aux métiers de demain.
+      - heading: 20+ CERTIFICATIONS INTERNATIONALES
+        text: Obtenez des certifications reconnues par les entreprises et valorisées par
+          les recruteurs pour renforcer vos compétences et votre employabilité.
+      - heading: PROJETS RÉELS & ÉTUDES DE CAS
+        text: Apprenez en agissant sur des projets concrets d’entreprises et des études
+          de cas réels pour développer votre sens de l’analyse et votre impact.
+      - heading: OUTILS & LOGICIELS PROFESSIONNELS
+        text: Maîtrisez les outils financiers et logiciels les plus utilisés par les
+          professionnels (Bloomberg, Excel avancé, Power BI, EViews...).
+      - heading: OUVERTURE INTERNATIONALE
+        text: Partenariats prestigieux et possibilités de poursuite d’études en France,
+          en Italie et au Canada pour construire une carrière sans frontières.
+      - heading: ACCOMPAGNEMENT VERS LA RÉUSSITE
+        text: "Un accompagnement personnalisé vers l’emploi : coaching, ateliers, job
+          dating et suivi de votre insertion professionnelle."
+    review_issue_ids: []
+    source_text_status: visually_transcribed
+    review_required: false
+  certifications:
+    source_pages:
+      - 3
+    heading: DES CERTIFICATIONS RECONNUES POUR VALORISER VOTRE PROFIL
+    items:
+      - issuer_source: Citi
+        credential_source: Markets Quantitative Analysis
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: Bloomberg
+        credential_source: Bloomberg Market Concepts
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: Databricks
+        credential_source: Bring AI to Your Data
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: Goldman Sachs
+        credential_source: Goldman Sachs – Risk
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: DeepLearning.AI
+        credential_source: Mathematics for ML and Data Science
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: JPMorganChase
+        credential_source: Quantitative Research
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: Harvard University
+        credential_source: "Data Science : Capstone"
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: Bloomberg
+        credential_source: Bloomberg Finance Fundamentals
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+    review_issue_ids: []
+    source_text_status: visually_transcribed
+    review_required: false
+  skills:
+    source_pages:
+      - 3
+    heading: DÉVELOPPEZ LES COMPÉTENCES CLÉS DE DEMAIN
+    items:
+      - Analyse financière avancée
+      - Ingénierie financière
+      - Gestion des risques
+      - Finance quantitative
+      - IA appliquée à la finance
+      - Business Intelligence
+      - Décision stratégique
+      - Finance internationale
+    source_text_status: visually_transcribed
+    review_required: false
+  footer_3:
+    source_pages:
+      - 3
+    text: Votre avenir commence ici.
+    extraction_note: Fragment visible dans la bande de pied ; aucun début de phrase ajouté.
+    review_issue_ids: []
+    source_text_status: visually_transcribed
+    review_required: false
+  closing:
+    source_pages:
+      - 4
+    heading: VOTRE AVENIR, NOTRE ENGAGEMENT.
+    text: À EBS, nous formons les experts financiers capables de relever les défis
+      d’aujourd’hui et de demain. Grâce à notre réseau académique international
+      et à nos partenaires entreprises, nous vous offrons des opportunités
+      concrètes et un avenir sans frontières.
+    programme_title_source: MASTER EN INGÉNIERIE FINANCIÈRE
+    source_text_status: visually_transcribed
+    review_required: false
+  closing_values:
+    source_pages:
+      - 4
+    items:
+      - heading: EXCELLENCE
+        text: Une formation d’excellence alignée sur les standards internationaux.
+      - heading: OUVERTURE
+        text: Un réseau académique international pour élargir vos horizons.
+      - heading: EMPLOYABILITÉ
+        text: Des partenariats solides avec les entreprises pour construire votre
+          carrière.
+    source_text_status: visually_transcribed
+    review_required: false
+  academic_partners:
+    source_pages:
+      - 4
+    heading: NOS PARTENAIRES ACADÉMIQUES INTERNATIONAUX
+    text: Des universités et écoles de renom en France, en Italie et au Canada vous
+      ouvrent les portes d’une poursuite d’études d’excellence.
+    groups:
+      - country: FRANCE
+        partners:
+          - EM NORMANDIE BUSINESS SCHOOL
+          - excelia BUSINESS SCHOOL
+          - IGEFI
+          - IDRAC BUSINESS SCHOOL
+          - EPITECH.
+          - Paris School of Business
+      - country: ITALIE
+        partners:
+          - LINK UNIVERSITY ROME
+      - country: CANADA
+        partners:
+          - UQAT — UNIVERSITÉ DU QUÉBEC EN ABITIBI-TÉMISCAMINGUE
+    conditions_source: Poursuite d’études possible après le Master 1 ou après
+      l’obtention du diplôme selon les accords conclus avec nos partenaires.
+    source_text_status: visually_transcribed
+    review_required: false
+  enterprise_partners:
+    source_pages:
+      - 4
+    heading: NOS PARTENAIRES ENTREPRISES
+    text: Des entreprises leaders qui collaborent avec EBS pour votre employabilité
+      et votre réussite professionnelle.
+    items:
+      - STB BANK
+      - ASTEELFLASH — YOUR EMS PARTNER
+      - ARFORGHE
+      - ATB — البنك العربي لتونس
+      - Audita — Audit & Conseil
+      - TMI
+      - sopra hr SOFTWARE
+    source_text_status: visually_transcribed
+    review_required: false
+  student_journey:
+    source_pages:
+      - 4
+    heading: VOTRE PARCOURS À EBS
+    items:
+      - heading: ADMISSION
+        text: Étude de votre dossier et entretien de motivation.
+      - heading: FORMATION
+        text: Cours, séminaires et cas pratiques par des experts.
+      - heading: CERTIFICATIONS
+        text: Obtenez des certifications reconnues.
+      - heading: STAGE
+        text: Expérience en entreprise pour appliquer vos acquis.
+      - heading: DIPLÔME
+        text: Validation du Master et ouverture vers de nouvelles opportunités..
+      - heading: CARRIÈRE
+        text: Accompagnement vers l’emploi et évolution professionnelle.
+    review_issue_ids:
+      - EBS-013
+    source_text_status: visually_transcribed
+    review_required: true
+  contacts_back:
+    source_pages:
+      - 4
+    heading: CONTACTEZ-NOUS
+    items:
+      - (+216) 71 182 625
+      - info@ebs.tn
+      - www.ebs.tn
+      - Lac3-Tunis, Tunisie
+    source_text_status: visually_transcribed
+    review_required: false
+  cta:
+    source_pages:
+      - 4
+    heading: PRÊT À PASSER À L’ACTION ?
+    text: Rejoignez EBS et construisez votre avenir !
+    qr_present: true
+    review_issue_ids: []
+    source_text_status: visually_transcribed
+    review_required: false
+    qr:
+      source_page: 4
+      payload: https://ebs.tn/fr/masters/ingenierie-financiere
+      status: resolved
+      evidence_image: evidence/master-ingenierie-financiere/page-04.jpg
+  footer_4:
+    source_pages:
+      - 4
+    text: EBS ESPIMA BUSINESS SCHOOL | L’EXCELLENCE ACADÉMIQUE AU SERVICE DE VOTRE
+      AVENIR | Votre avenir commence ici
+    source_text_status: visually_transcribed
+    review_required: false
+review_issue_ids: []
+extraction:
+  method: manual_visual_transcription_of_all_pages;
+    sparse_text_layer_as_secondary_evidence
+  wording_policy: Original wording retained; layout line breaks merged;
+    apostrophes, spacing and superscript ordinals standardized. No factual
+    updating.
+  verification_scope: Source transcription only; no external validation of
+    accreditation, partners, credentials, prices or access.
+  excluded: Decorative stock-image UI text/numbers, incidental signage already
+    represented elsewhere, illegible logo microprint; no original visual assets
+    recreated.
+normalized_contacts:
+  - type: website
+    source_text: www.ebs.tn
+    normalized_value: www.ebs.tn
+    source_pages:
+      - 1
+    review_required: false
+  - type: phone
+    source_text: +216 71 18 26 25
+    normalized_value: "+21671182625"
+    source_pages:
+      - 1
+    review_required: false
+  - type: phone
+    source_text: (+216) 71 182 625
+    normalized_value: "+21671182625"
+    source_pages:
+      - 4
+    review_required: false
+  - type: email
+    source_text: info@ebs.tn
+    normalized_value: info@ebs.tn
+    source_pages:
+      - 4
+    review_required: false
+  - type: website
+    source_text: www.ebs.tn
+    normalized_value: www.ebs.tn
+    source_pages:
+      - 4
+    review_required: false
+  - type: address
+    source_text: Lac3-Tunis, Tunisie
+    normalized_value: Lac3-Tunis, Tunisie
+    source_pages:
+      - 4
+    review_required: false
+page_coverage:
+  - page: 1
+    visual_review_completed: true
+    section_ids:
+      - brand
+      - accreditation
+      - positioning
+      - cover_themes
+      - cover_benefits
+      - contacts_cover
+    evidence_image: evidence/master-ingenierie-financiere/page-01.jpg
+  - page: 2
+    visual_review_completed: true
+    section_ids:
+      - curriculum_intro
+      - curriculum_blocks
+      - career_outcomes
+      - professional_experience
+      - footer_2
+    evidence_image: evidence/master-ingenierie-financiere/page-02.jpg
+  - page: 3
+    visual_review_completed: true
+    section_ids:
+      - reasons_intro
+      - reasons_to_choose
+      - certifications
+      - skills
+      - footer_3
+    evidence_image: evidence/master-ingenierie-financiere/page-03.jpg
+  - page: 4
+    visual_review_completed: true
+    section_ids:
+      - closing
+      - closing_values
+      - academic_partners
+      - enterprise_partners
+      - student_journey
+      - contacts_back
+      - cta
+      - footer_4
+    evidence_image: evidence/master-ingenierie-financiere/page-04.jpg
+shared_block_refs:
+  accreditation: accreditation_variant_2
+  professional_experience: professional_experience_variant_2
+  closing_values: closing_values

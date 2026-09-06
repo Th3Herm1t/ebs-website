@@ -1,0 +1,492 @@
+schema_version: "1.0"
+id: master-management-projets
+language: fr
+source:
+  filename: BROCHURE MASTER MANAGEMENT DE PROJETS - 2026.pdf
+  sha256: bfea43310bd0b3038e7bb5f45d67c9771da2f55792cc08066b49048d8d1cd8b5
+  page_count: 4
+programme:
+  name_source: MASTER EN MANAGEMENT DE PROJETS INNOVANTS & STARTUPS
+  level: master
+  duration_years: 2
+  qualification_source: null
+  identity_source_pages:
+    - 1
+  duration_source_pages:
+    - 2
+  semester_count: 4
+  semester_count_source_pages:
+    - 2
+  name_normalized: Master en Management de Projets Innovants & Startups
+  name_normalization: Case only; no change to source programme scope.
+  curriculum_structure: semesters
+  admission_requirements: null
+  admission_requirements_note: Non détaillées pour l’entrée à EBS dans ces
+    brochures. Les conditions des passerelles internationales sont conservées
+    dans leurs sections.
+sections:
+  brand:
+    source_pages:
+      - 1
+    items:
+      - EBS — ESPIMA BUSINESS SCHOOL
+      - PENSEZ
+      - INNOVER
+      - RÉUSSIR
+    source_text_status: visually_transcribed
+    review_required: false
+  accreditation:
+    source_pages:
+      - 1
+    text: MASTER ACCRÉDITÉ PAR L’ÉTAT TUNISIEN
+    review_issue_ids: []
+    source_text_status: visually_transcribed
+    review_required: false
+  positioning:
+    source_pages:
+      - 1
+    heading: PILOTEZ LES PROJETS. TRANSFORMEZ LES IDÉES. CRÉEZ L’AVENIR.
+    source_text_status: visually_transcribed
+    review_required: false
+  cover_themes:
+    source_pages:
+      - 1
+    items:
+      - MANAGEMENT DE PROJET
+      - INNOVATION & STARTUPS
+      - AGILITÉ & LEAN
+      - BUSINESS ANALYSIS & IA
+      - IA APPLIQUÉE AU MANAGEMENT
+      - ENTREPRENEURIAT & IMPACT
+    source_text_status: visually_transcribed
+    review_required: false
+  cover_description:
+    source_pages:
+      - 1
+    heading: DEVENEZ LE MANAGER QUI TRANSFORME LES IDÉES EN PROJETS À SUCCÈS
+    text: Grâce à l’IA et à l’innovation, développez les compétences clés pour
+      piloter, innover et entreprendre.
+    source_text_status: visually_transcribed
+    review_required: false
+  contacts_cover:
+    source_pages:
+      - 1
+    items:
+      - www.ebs.tn
+      - +216 71 18 26 25
+      - L’excellence académique au service de votre avenir
+    source_text_status: visually_transcribed
+    review_required: false
+  curriculum_intro:
+    source_pages:
+      - 2
+    heading: MASTER MANAGEMENT DE PROJETS INNOVANTS & STARTUPS
+    text: Devenez un leader de projets innovants et startups à l’ère de l’IA. Ce
+      Master vous prépare à concevoir, piloter et réussir des projets innovants
+      et des startups performantes grâce à l’innovation, l’agilité et la
+      transformation digitale.
+    source_text_status: visually_transcribed
+    review_required: false
+  curriculum_semesters:
+    source_pages:
+      - 2
+    heading: UN PROGRAMME COMPLET ET OPÉRATIONNEL SUR 2 ANNÉES
+    groups:
+      - semester: 1
+        heading: FONDAMENTAUX DU MANAGEMENT ET DE L’INNOVATION
+        items:
+          - Management de projet
+          - Fondamentaux du management
+          - Marketing de l’innovation
+          - Comprendre les données avec l’IA
+          - Outils collaboratifs & digitaux
+          - Analyse professionnelle
+      - semester: 2
+        heading: MÉTHODES ET OUTILS AGILES & STARTUP
+        items:
+          - Gestion financière de projet
+          - Méthodes agiles & Lean Startup
+          - Design Thinking
+          - Business Intelligence
+          - Intelligence artificielle appliquée
+          - Soft skills
+      - semester: 3
+        heading: RISQUES, STRATÉGIE ET FINANCEMENT
+        items:
+          - Gestion des risques
+          - Modélisation économique
+          - Droit des affaires
+          - Startup Management
+          - Financement de l’innovation
+      - semester: 4
+        heading: LEADERSHIP, CROISSANCE ET INCUBATION
+        items:
+          - Stratégie & croissance
+          - Management d’équipe & leadership
+          - Éthique & responsabilité
+          - Projet de fin d’études (PFE)
+          - Accompagnement startup / Incubation
+    review_issue_ids: []
+    source_text_status: visually_transcribed
+    review_required: false
+  career_outcomes:
+    source_pages:
+      - 2
+    heading: DÉBOUCHÉS PROFESSIONNELS
+    items:
+      - Chef de projet innovant
+      - Product Owner / Scrum Master
+      - Consultant en innovation et transformation
+      - Entrepreneur / Fondateur de startup
+      - Responsable incubation ou accélération
+    source_text_status: visually_transcribed
+    review_required: false
+  professional_experience:
+    source_pages:
+      - 2
+    heading: STAGE & PROJET DE FIN D’ÉTUDES
+    text: Mise en pratique en entreprise à travers un stage professionnalisant et la
+      réalisation d’un projet de fin d’études innovant ou entrepreneurial.
+    source_text_status: visually_transcribed
+    review_required: false
+  footer:
+    source_pages:
+      - 2
+      - 3
+    text: www.ebs.tn | L’excellence académique au service de votre avenir
+    source_text_status: visually_transcribed
+    review_required: false
+  reasons_intro:
+    source_pages:
+      - 3
+    heading: 6 RAISONS DE CHOISIR CE MASTER POUR CONSTRUIRE VOTRE AVENIR
+    text: Ce Master vous donne les clés pour devenir un leader capable de concevoir,
+      piloter et réussir des projets innovants et des startups à fort impact.
+    source_text_status: visually_transcribed
+    review_required: false
+  reasons_to_choose:
+    source_pages:
+      - 3
+    groups:
+      - heading: UNE APPROCHE ORIENTÉE RÉSULTATS
+        items:
+          - Pédagogie active basée sur des projets concrets.
+          - Résolution de problématiques réelles d’entreprises et de startups.
+          - Développement d’une vision stratégique et opérationnelle.
+      - heading: DES COMPÉTENCES RECONNUES
+        items:
+          - Certifications internationales incluses.
+          - Maîtrise des méthodes et outils du management de projets.
+          - Employabilité renforcée sur le marché du travail.
+      - heading: DES PROJETS CONCRETS
+        items:
+          - Travaillez sur des projets innovants.
+          - Business cases et études de cas réels.
+          - Mise en pratique des acquis dès le premier semestre.
+      - heading: DES OUTILS ET PLATEFORMES PROFESSIONNELS
+        items:
+          - Utilisation des meilleurs outils du marché.
+          - Plateformes collaboratives et digitales.
+          - Préparation aux environnements de travail modernes.
+      - heading: OUVERTURE INTERNATIONALE
+        items:
+          - Partenariats académiques internationaux.
+          - Opportunités d’échanges et de mobilité.
+          - Perspectives de carrière à l’international.
+      - heading: ACCOMPAGNEMENT PERSONNALISÉ
+        items:
+          - Coaching et suivi par des professionnels et experts.
+          - Développement du leadership et de l’esprit entrepreneurial.
+          - Réseau alumni et opportunités professionnelles.
+    source_text_status: visually_transcribed
+    review_required: false
+  certifications:
+    source_pages:
+      - 3
+    heading: CERTIFICATIONS INCLUSES DANS LE PARCOURS
+    items:
+      - issuer_source: Google
+        credential_source: Google Project Management Certificate
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: PMI — Project Management Institute
+        credential_source: Disciplined Agile Essentials
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: MSI / 6SigmaStudy
+        credential_source: Lean Six Sigma White Belt Certification
+        independent_verification: not_performed
+        issuer_evidence: verified_owner_msi
+        credential_status: source_label_unverified
+      - issuer_source: SCRUMstudy
+        credential_source: Scrum for Operations & DevOps Fundamentals Certified
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: SCRUMstudy
+        credential_source: Scrum with AI Certified (SAC™)
+        independent_verification: not_performed
+        issuer_evidence: verified_owner_scrumstudy
+        credential_status: source_label_unverified
+      - issuer_source: IBM
+        credential_source: Agentic AI in Practice
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: IBM
+        credential_source: Generative AI Fundamentals
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+      - issuer_source: null
+        credential_source: Power BI
+        independent_verification: not_performed
+        issuer_evidence: not_explicit_or_uncertain
+        credential_status: source_label_unverified
+      - issuer_source: n8n
+        credential_source: n8n Automation
+        independent_verification: not_performed
+        issuer_evidence: visible_logo
+        credential_status: source_label_unverified
+    callout: Certifications obligatoires et optionnelles intégrées gratuitement dans
+      le programme.
+    extraction_note: Le badge White Belt ne permet pas d’identifier sûrement
+      l’émetteur. Power BI est un libellé de produit sans titre d’examen.
+    review_issue_ids: []
+    source_text_status: visually_transcribed
+    review_required: false
+  skills:
+    source_pages:
+      - 3
+    heading: DES COMPÉTENCES CLÉS POUR RÉUSSIR
+    items:
+      - Gestion de projet avancée
+      - Méthodes agiles et Lean Startup
+      - Analyse de données et Business Intelligence
+      - Leadership et management d’équipe
+      - Innovation et design thinking
+      - Entrepreneuriat et création de valeur
+      - Finance et gestion de l’innovation
+      - Communication et négociation
+    source_text_status: visually_transcribed
+    review_required: false
+  quote:
+    source_pages:
+      - 3
+    text: Un Master pour devenir un leader capable de transformer vos idées en
+      projets et vos projets en succès durables.
+    source_text_status: visually_transcribed
+    review_required: false
+  closing:
+    source_pages:
+      - 4
+    heading: VOTRE AVENIR, NOTRE ENGAGEMENT.
+    text: À EBS, nous formons des leaders capables de concevoir, piloter et
+      transformer des idées en projets à fort impact et des startups
+      performantes. Grâce à notre réseau académique international et à nos
+      partenaires entreprises, nous vous ouvrons les portes d’une carrière riche
+      en opportunités.
+    programme_title_source: MASTER EN MANAGEMENT DE PROJETS INNOVANTS & STARTUPS
+    source_text_status: visually_transcribed
+    review_required: false
+  closing_visual_labels:
+    source_pages:
+      - 4
+    items:
+      - PROJET RÉUSSI
+      - STRATÉGIE
+      - INNOVATION
+      - COLLABORATION
+      - LEADERSHIP
+      - PERFORMANCE
+      - AGILITÉ
+    source_text_status: visually_transcribed
+    review_required: false
+  academic_partners:
+    source_pages:
+      - 4
+    heading: NOS PARTENAIRES ACADÉMIQUES INTERNATIONAUX
+    text: Des universités et écoles de renom en France, en Italie et au Canada vous
+      ouvrent les portes d’une poursuite d’études d’excellence.
+    groups:
+      - country: FRANCE
+        partners:
+          - EM NORMANDIE BUSINESS SCHOOL
+          - excelia BUSINESS SCHOOL
+          - IFAG — École de management
+          - IDRAC BUSINESS SCHOOL
+          - Paris School of Business
+      - country: ITALIE
+        partners:
+          - UNIVERSITÀ DEGLI STUDI LINK
+      - country: CANADA
+        partners:
+          - UQAT — UNIVERSITÉ DU QUÉBEC EN ABITIBI-TÉMISCAMINGUE
+    conditions_source: Poursuite d’études possible après le Master 1 ou après
+      l’obtention du diplôme selon les accords conclus avec nos partenaires.
+    source_text_status: visually_transcribed
+    review_required: false
+  enterprise_partners:
+    source_pages:
+      - 4
+    heading: NOS PARTENAIRES ENTREPRISES
+    text: Des entreprises leaders qui collaborent avec EBS pour votre employabilité
+      et votre réussite professionnelle.
+    items:
+      - satem
+      - TMI
+      - sopra hr SOFTWARE
+      - ARFORGHE — Association des Responsables de Formation et de Gestion
+        Humaine dans les Entreprises
+      - ASTEELFLASH — YOUR EMS PARTNER
+      - ATB — البنك العربي لتونس
+    source_text_status: visually_transcribed
+    review_required: false
+  student_journey:
+    source_pages:
+      - 4
+    heading: VOTRE PARCOURS À EBS
+    text: Vous intégrez un parcours structuré et professionnalisant alliant
+      management de projet, innovation, IA, entrepreneuriat et transformation
+      digitale. Des projets réels, des certifications internationales et des
+      stages en entreprise afin de développer vos compétences et accélérer votre
+      carrière.
+    items:
+      - ADMISSION
+      - FORMATION
+      - CERTIFICATIONS
+      - STAGE
+      - DIPLÔME
+      - CARRIÈRE
+    source_text_status: visually_transcribed
+    review_required: false
+  contacts_back:
+    source_pages:
+      - 4
+    heading: PRÊT À PASSER À L’ACTION ?
+    text: Rejoignez EBS et construisez votre avenir !
+    items:
+      - (+216) 71 18 26 25
+      - info@ebs.tn
+      - www.ebs.tn
+      - Lac 3 - Tunis, Tunisie
+    qr_present: true
+    qr_caption: SCANNEZ-MOI POUR PLUS D’INFORMATIONS
+    review_issue_ids: []
+    source_text_status: visually_transcribed
+    review_required: false
+    qr:
+      source_page: 4
+      payload: https://ebs.tn/fr/masters/startups
+      status: resolved
+      evidence_image: evidence/master-management-projets/page-04.jpg
+  closing_values:
+    source_pages:
+      - 4
+    items:
+      - EXCELLENCE
+      - OUVERTURE
+      - EMPLOYABILITÉ
+    source_text_status: visually_transcribed
+    review_required: false
+  footer_4:
+    source_pages:
+      - 4
+    text: L’excellence académique au service de votre avenir
+    source_text_status: visually_transcribed
+    review_required: false
+review_issue_ids: []
+extraction:
+  method: manual_visual_transcription_of_all_pages;
+    sparse_text_layer_as_secondary_evidence
+  wording_policy: Original wording retained; layout line breaks merged;
+    apostrophes, spacing and superscript ordinals standardized. No factual
+    updating.
+  verification_scope: Source transcription only; no external validation of
+    accreditation, partners, credentials, prices or access.
+  excluded: Decorative stock-image UI text/numbers, incidental signage already
+    represented elsewhere, illegible logo microprint; no original visual assets
+    recreated.
+normalized_contacts:
+  - type: website
+    source_text: www.ebs.tn
+    normalized_value: www.ebs.tn
+    source_pages:
+      - 1
+    review_required: false
+  - type: phone
+    source_text: +216 71 18 26 25
+    normalized_value: "+21671182625"
+    source_pages:
+      - 1
+    review_required: false
+  - type: phone
+    source_text: (+216) 71 18 26 25
+    normalized_value: "+21671182625"
+    source_pages:
+      - 4
+    review_required: false
+  - type: email
+    source_text: info@ebs.tn
+    normalized_value: info@ebs.tn
+    source_pages:
+      - 4
+    review_required: false
+  - type: website
+    source_text: www.ebs.tn
+    normalized_value: www.ebs.tn
+    source_pages:
+      - 4
+    review_required: false
+  - type: address
+    source_text: Lac 3 - Tunis, Tunisie
+    normalized_value: Lac 3 - Tunis, Tunisie
+    source_pages:
+      - 4
+    review_required: false
+page_coverage:
+  - page: 1
+    visual_review_completed: true
+    section_ids:
+      - brand
+      - accreditation
+      - positioning
+      - cover_themes
+      - cover_description
+      - contacts_cover
+    evidence_image: evidence/master-management-projets/page-01.jpg
+  - page: 2
+    visual_review_completed: true
+    section_ids:
+      - curriculum_intro
+      - curriculum_semesters
+      - career_outcomes
+      - professional_experience
+      - footer
+    evidence_image: evidence/master-management-projets/page-02.jpg
+  - page: 3
+    visual_review_completed: true
+    section_ids:
+      - footer
+      - reasons_intro
+      - reasons_to_choose
+      - certifications
+      - skills
+      - quote
+    evidence_image: evidence/master-management-projets/page-03.jpg
+  - page: 4
+    visual_review_completed: true
+    section_ids:
+      - closing
+      - closing_visual_labels
+      - academic_partners
+      - enterprise_partners
+      - student_journey
+      - contacts_back
+      - closing_values
+      - footer_4
+    evidence_image: evidence/master-management-projets/page-04.jpg
+shared_block_refs:
+  brand: brand

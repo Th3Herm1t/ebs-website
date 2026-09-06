@@ -1,0 +1,521 @@
+schema_version: "1.0"
+language: fr
+policy: Only exact text-equivalent blocks are grouped. Programme files are
+  self-contained and authoritative for source occurrences. No blanket
+  application to all programmes.
+blocks:
+  brand:
+    content:
+      items:
+        - EBS — ESPIMA BUSINESS SCHOOL
+        - PENSEZ
+        - INNOVER
+        - RÉUSSIR
+    occurrences:
+      - programme_id: licence-finance
+        section_id: brand
+        source_pages:
+          - 1
+      - programme_id: licence-management
+        section_id: brand
+        source_pages:
+          - 1
+      - programme_id: licence-marketing
+        section_id: brand
+        source_pages:
+          - 1
+      - programme_id: master-management-projets
+        section_id: brand
+        source_pages:
+          - 1
+  accreditation:
+    content:
+      text: DIPLÔME ACCRÉDITÉ PAR L’ÉTAT TUNISIEN
+    occurrences:
+      - programme_id: licence-finance
+        section_id: accreditation
+        source_pages:
+          - 1
+      - programme_id: licence-informatique
+        section_id: accreditation
+        source_pages:
+          - 1
+      - programme_id: licence-management
+        section_id: accreditation
+        source_pages:
+          - 1
+      - programme_id: licence-marketing
+        section_id: accreditation
+        source_pages:
+          - 1
+  contacts_cover:
+    content:
+      items:
+        - www.ebs.tn
+        - +216 71 18 26 25
+        - info@ebs.tn
+        - UN PROGRAMME TOURNÉ VERS L’AVENIR
+    occurrences:
+      - programme_id: licence-finance
+        section_id: contacts_cover
+        source_pages:
+          - 1
+      - programme_id: licence-management
+        section_id: contacts_cover
+        source_pages:
+          - 1
+      - programme_id: licence-marketing
+        section_id: contacts_cover
+        source_pages:
+          - 1
+  footer:
+    content:
+      text: EBS.TN | L’EXCELLENCE ACADÉMIQUE AU SERVICE DE VOTRE AVENIR
+    occurrences:
+      - programme_id: licence-finance
+        section_id: footer
+        source_pages:
+          - 2
+          - 3
+      - programme_id: licence-management
+        section_id: footer
+        source_pages:
+          - 2
+          - 3
+      - programme_id: licence-marketing
+        section_id: footer
+        source_pages:
+          - 2
+          - 3
+  transversal_skills:
+    content:
+      heading: COMPÉTENCES TRANSVERSALES DÉVELOPPÉES
+      items:
+        - heading: Esprit critique et capacité de décision
+          text: Évaluer les situations, anticiper les risques et choisir la meilleure
+            option.
+        - heading: Communication efficace
+          text: S’exprimer clairement à l’oral et à l’écrit et convaincre avec impact.
+        - heading: Gestion du temps et des priorités
+          text: Planifier, prioriser et optimiser son organisation pour gagner en
+            efficacité.
+        - heading: "Compétences linguistiques : Anglais & Français"
+          text: Renforcer vos compétences linguistiques avec une préparation aux
+            certifications TOEFL & TCF.
+    occurrences:
+      - programme_id: licence-finance
+        section_id: transversal_skills
+        source_pages:
+          - 3
+      - programme_id: licence-management
+        section_id: transversal_skills
+        source_pages:
+          - 3
+      - programme_id: licence-marketing
+        section_id: transversal_skills
+        source_pages:
+          - 3
+  closing:
+    content:
+      heading: L’EXCELLENCE ACADÉMIQUE AU SERVICE DE VOTRE AVENIR
+      text: Un parcours structuré et progressif qui vous permet d’acquérir les
+        compétences essentielles pour construire votre avenir et réaliser vos
+        ambitions.
+    occurrences:
+      - programme_id: licence-finance
+        section_id: closing
+        source_pages:
+          - 4
+      - programme_id: licence-informatique
+        section_id: closing
+        source_pages:
+          - 4
+      - programme_id: licence-management
+        section_id: closing
+        source_pages:
+          - 4
+      - programme_id: licence-marketing
+        section_id: closing
+        source_pages:
+          - 4
+  closing_benefits:
+    content:
+      items:
+        - heading: DIPLÔME
+          text: Une formation académique reconnue et alignée sur les exigences du monde
+            professionnel.
+        - heading: EXPÉRIENCE
+          text: Des projets concrets, des mises en situation et des activités qui
+            développent vos compétences et votre confiance.
+        - heading: CARRIÈRE
+          text: Un accompagnement personnalisé pour vous aider à atteindre vos objectifs
+            et réussir votre insertion professionnelle.
+    occurrences:
+      - programme_id: licence-finance
+        section_id: closing_benefits
+        source_pages:
+          - 4
+      - programme_id: licence-informatique
+        section_id: closing_benefits
+        source_pages:
+          - 4
+      - programme_id: licence-management
+        section_id: closing_benefits
+        source_pages:
+          - 4
+      - programme_id: licence-marketing
+        section_id: closing_benefits
+        source_pages:
+          - 4
+  academic_partners:
+    content:
+      heading: PARTENAIRES ACADÉMIQUES
+      items:
+        - UQAT — UNIVERSITÉ DU QUÉBEC EN ABITIBI-TÉMISCAMINGUE
+        - UNIVERSITÀ DEGLI STUDI LINK
+        - EPITECH. — L’ÉCOLE DE L’INNOVATION ET DE L’EXPERTISE INFORMATIQUE
+        - Paris School of Business
+        - éklore
+        - excelia BUSINESS SCHOOL
+        - EM NORMANDIE BUSINESS SCHOOL
+        - IDRAC BUSINESS SCHOOL
+        - IGEFI — École des métiers de la finance d’entreprise et de l’expertise
+          comptable
+        - epsi — l’école d’ingénierie informatique
+        - IFAG — École de management
+        - SUP’DE COM — L’école de tous les métiers de la communication
+      extraction_note: Identités lisibles des logos ; les très petits slogans ou
+        signatures illisibles ne sont pas reconstitués.
+    occurrences:
+      - programme_id: licence-finance
+        section_id: academic_partners
+        source_pages:
+          - 4
+      - programme_id: licence-management
+        section_id: academic_partners
+        source_pages:
+          - 4
+      - programme_id: licence-marketing
+        section_id: academic_partners
+        source_pages:
+          - 4
+  duration:
+    content:
+      text: Licence • Bac+3 • 3 ans
+    occurrences:
+      - programme_id: licence-management
+        section_id: duration
+        source_pages:
+          - 1
+      - programme_id: licence-marketing
+        section_id: duration
+        source_pages:
+          - 1
+  professional_experience:
+    content:
+      heading: STAGE PROFESSIONNEL
+      text: Un stage en entreprise d’une durée de 2 à 3 mois au cours du cursus pour
+        développer vos compétences et acquérir une expérience concrète.
+    occurrences:
+      - programme_id: licence-management
+        section_id: professional_experience
+        source_pages:
+          - 2
+      - programme_id: licence-marketing
+        section_id: professional_experience
+        source_pages:
+          - 2
+  pedagogy:
+    content:
+      heading: UNE PÉDAGOGIE TOURNÉE VERS L’ACTION
+      items:
+        - Cours interactifs et participatifs
+        - Travaux de groupe et intelligence collective
+        - Études de cas réelles et analyse de situations
+        - Projets concrets en lien avec les entreprises
+        - Évaluations continues et constructives
+        - Accompagnement personnalisé tout au long du parcours
+    occurrences:
+      - programme_id: licence-management
+        section_id: pedagogy
+        source_pages:
+          - 3
+      - programme_id: licence-marketing
+        section_id: pedagogy
+        source_pages:
+          - 3
+  ai_learning:
+    content:
+      heading: L’IA AU SERVICE DE VOTRE APPRENTISSAGE
+      items:
+        - Outils intelligents pour apprendre et progresser
+        - Analyse de données pour mieux comprendre et décider
+        - Cas pratiques augmentés par l’IA
+        - Développement de compétences numériques indispensables
+      callout: L’IA n’est pas un remplacement, c’est un accélérateur de votre
+        potentiel et de votre réussite.
+    occurrences:
+      - programme_id: licence-management
+        section_id: ai_learning
+        source_pages:
+          - 3
+      - programme_id: licence-marketing
+        section_id: ai_learning
+        source_pages:
+          - 3
+  international_pathways:
+    content:
+      heading: 3 PARCOURS POUR POURSUIVRE VOS ÉTUDES À L’INTERNATIONAL
+      items:
+        - heading: 1 année à EBS → Bachelor 2 en Italie | Link University – Rome
+          text: Après validation de la première année de Licence à EBS, possibilité de
+            poursuivre en 2ᵉ année de Bachelor à Link University, selon le
+            programme choisi et les conditions d’admission.
+        - heading: 2 années à EBS → Bachelor 3 à l’international | Établissements
+            partenaires en Italie ou en France
+          text: Après deux années de Licence validées à EBS, possibilité d’intégrer la 3ᵉ
+            année de Bachelors proposés par des établissements partenaires en
+            Italie ou en France, selon la filière et les conditions d’admission.
+        - heading: Licence à EBS → Master à l’international | France • Canada • Italie
+          text: Après l’obtention de la Licence EBS, possibilité de poursuivre en Master,
+            Master Grande École, MSc ou autre cursus Bac+5 dans l’un de nos pays
+            partenaires (France, Canada, Italie), selon l’établissement, la
+            spécialité et les conditions d’admission.
+    occurrences:
+      - programme_id: licence-management
+        section_id: international_pathways
+        source_pages:
+          - 4
+      - programme_id: licence-marketing
+        section_id: international_pathways
+        source_pages:
+          - 4
+  accreditation_variant_2:
+    content:
+      text: MASTER ACCRÉDITÉ par l’État Tunisien
+    occurrences:
+      - programme_id: master-crm-transformation-digitale
+        section_id: accreditation
+        source_pages:
+          - 1
+      - programme_id: master-ingenierie-financiere
+        section_id: accreditation
+        source_pages:
+          - 1
+      - programme_id: master-marketing-digital-ia
+        section_id: accreditation
+        source_pages:
+          - 1
+  professional_experience_variant_2:
+    content:
+      heading: STAGE & IMMERSION PROFESSIONNELLE
+      text: Un stage obligatoire en entreprise pour valoriser vos compétences,
+        participer activement à des projets concrets et développer durablement
+        votre réseau professionnel.
+      items:
+        - Expérience professionnelle obligatoire en entreprise
+        - Accompagnement personnalisé pour votre recherche d’emploi
+        - Renforcement de votre employabilité professionnelle
+    occurrences:
+      - programme_id: master-crm-transformation-digitale
+        section_id: professional_experience
+        source_pages:
+          - 2
+      - programme_id: master-ingenierie-financiere
+        section_id: professional_experience
+        source_pages:
+          - 2
+      - programme_id: master-marketing-digital-ia
+        section_id: professional_experience
+        source_pages:
+          - 2
+  closing_values:
+    content:
+      items:
+        - heading: EXCELLENCE
+          text: Une formation d’excellence alignée sur les standards internationaux.
+        - heading: OUVERTURE
+          text: Un réseau académique international pour élargir vos horizons.
+        - heading: EMPLOYABILITÉ
+          text: Des partenariats solides avec les entreprises pour construire votre
+            carrière.
+    occurrences:
+      - programme_id: master-crm-transformation-digitale
+        section_id: closing_values
+        source_pages:
+          - 4
+      - programme_id: master-ingenierie-financiere
+        section_id: closing_values
+        source_pages:
+          - 4
+      - programme_id: master-marketing-digital-ia
+        section_id: closing_values
+        source_pages:
+          - 4
+  academic_partners_variant_2:
+    content:
+      heading: NOS PARTENAIRES ACADÉMIQUES INTERNATIONAUX
+      text: Des universités et écoles de renom en France, en Italie et au Canada vous
+        ouvrent les portes d’une poursuite d’études d’excellence.
+      groups:
+        - country: FRANCE
+          partners:
+            - EM NORMANDIE BUSINESS SCHOOL
+            - excelia BUSINESS SCHOOL
+            - SUP’DE COM
+            - Paris School of Business
+            - IDRAC BUSINESS SCHOOL
+        - country: ITALIE
+          partners:
+            - UNIVERSITÀ DEGLI STUDI LINK
+        - country: CANADA
+          partners:
+            - UQAT — UNIVERSITÉ DU QUÉBEC EN ABITIBI-TÉMISCAMINGUE
+      conditions_source: Poursuite d’études possible après le Master 1 ou après
+        l’obtention du diplôme selon les accords conclus avec nos partenaires.
+    occurrences:
+      - programme_id: master-crm-transformation-digitale
+        section_id: academic_partners
+        source_pages:
+          - 4
+      - programme_id: master-marketing-digital-ia
+        section_id: academic_partners
+        source_pages:
+          - 4
+  enterprise_partners:
+    content:
+      heading: NOS PARTENAIRES ENTREPRISES
+      text: Des entreprises leaders qui collaborent avec EBS pour votre employabilité
+        et votre réussite professionnelle.
+      items:
+        - satem
+        - YPERYON — DIGITAL AGENCY
+        - ARFORGHE — Association des Responsables de Formation et de Gestion
+          Humaine dans les Entreprises
+        - ASTEELFLASH — YOUR EMS PARTNER
+        - Cayon Cloud Communications
+        - MEDIANET
+      extraction_note: Identités lisibles des logos ; orthographe de Cayon à confirmer
+        sur l’asset original.
+    occurrences:
+      - programme_id: master-crm-transformation-digitale
+        section_id: enterprise_partners
+        source_pages:
+          - 4
+      - programme_id: master-marketing-digital-ia
+        section_id: enterprise_partners
+        source_pages:
+          - 4
+contact_variants:
+  - programme_id: licence-finance
+    type: phone
+    source_text: +216 71 18 26 25
+    normalized_value: "+21671182625"
+    source_pages:
+      - 1
+    review_required: true
+  - programme_id: licence-finance
+    type: phone
+    source_text: +216 71 182 635
+    normalized_value: "+21671182635"
+    source_pages:
+      - 4
+    review_required: true
+  - programme_id: licence-informatique
+    type: phone
+    source_text: +216 71182625
+    normalized_value: "+21671182625"
+    source_pages:
+      - 1
+    review_required: false
+  - programme_id: licence-informatique
+    type: phone
+    source_text: +216 71 182 625
+    normalized_value: "+21671182625"
+    source_pages:
+      - 4
+    review_required: false
+  - programme_id: licence-management
+    type: phone
+    source_text: +216 71 18 26 25
+    normalized_value: "+21671182625"
+    source_pages:
+      - 1
+    review_required: true
+  - programme_id: licence-management
+    type: phone
+    source_text: +216 71182635
+    normalized_value: "+21671182635"
+    source_pages:
+      - 4
+    review_required: true
+  - programme_id: licence-marketing
+    type: phone
+    source_text: +216 71 18 26 25
+    normalized_value: "+21671182625"
+    source_pages:
+      - 1
+    review_required: false
+  - programme_id: licence-marketing
+    type: phone
+    source_text: +216 71 182 625
+    normalized_value: "+21671182625"
+    source_pages:
+      - 4
+    review_required: false
+  - programme_id: master-crm-transformation-digitale
+    type: phone
+    source_text: +216 71 182 625
+    normalized_value: "+21671182625"
+    source_pages:
+      - 1
+    review_required: false
+  - programme_id: master-crm-transformation-digitale
+    type: phone
+    source_text: (+216) 71 182625
+    normalized_value: "+21671182625"
+    source_pages:
+      - 4
+    review_required: true
+  - programme_id: master-ingenierie-financiere
+    type: phone
+    source_text: +216 71 18 26 25
+    normalized_value: "+21671182625"
+    source_pages:
+      - 1
+    review_required: false
+  - programme_id: master-ingenierie-financiere
+    type: phone
+    source_text: (+216) 71 182 625
+    normalized_value: "+21671182625"
+    source_pages:
+      - 4
+    review_required: false
+  - programme_id: master-management-projets
+    type: phone
+    source_text: +216 71 18 26 25
+    normalized_value: "+21671182625"
+    source_pages:
+      - 1
+    review_required: false
+  - programme_id: master-management-projets
+    type: phone
+    source_text: (+216) 71 18 26 25
+    normalized_value: "+21671182625"
+    source_pages:
+      - 4
+    review_required: true
+  - programme_id: master-marketing-digital-ia
+    type: phone
+    source_text: +216 71182625
+    normalized_value: "+21671182625"
+    source_pages:
+      - 1
+    review_required: false
+  - programme_id: master-marketing-digital-ia
+    type: phone
+    source_text: (+216) 71182625
+    normalized_value: "+21671182625"
+    source_pages:
+      - 4
+    review_required: true

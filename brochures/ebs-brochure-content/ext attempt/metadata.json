@@ -1,0 +1,6 @@
+{
+  "name": "EBS - Licence en Finance",
+  "description": "Reconstitution interactive web de la brochure officielle de la Licence en Finance d'Espima Business School (EBS Tunis).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

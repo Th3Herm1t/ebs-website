@@ -1,0 +1,112 @@
+{
+  "status": "passed_and_resolved",
+  "scope": "Serialization, all 32 page references and previews, source SHA-256, expected item counts, shared references. Visual transcription performed separately on all pages. Not external factual verification.",
+  "source_pdf_count": 8,
+  "page_count": 32,
+  "programmes": [
+    {
+      "programme_id": "licence-finance",
+      "yaml_json_equal": true,
+      "source_hash_matches": true,
+      "pages_covered": 4,
+      "checked_item_counts": {
+        "curriculum_modules": 10,
+        "certifications": 11,
+        "career_outcomes": 8
+      },
+      "status": "passed_and_resolved",
+      "open_review_items": 0
+    },
+    {
+      "programme_id": "licence-informatique",
+      "yaml_json_equal": true,
+      "source_hash_matches": true,
+      "pages_covered": 4,
+      "checked_item_counts": {
+        "curriculum_core": 9,
+        "specialisation_ai": 8,
+        "specialisation_cybersecurity": 8,
+        "certifications": 10
+      },
+      "status": "passed_and_resolved",
+      "open_review_items": 0
+    },
+    {
+      "programme_id": "licence-management",
+      "yaml_json_equal": true,
+      "source_hash_matches": true,
+      "pages_covered": 4,
+      "checked_item_counts": {
+        "curriculum_modules": 10,
+        "certifications": 9,
+        "career_outcomes": 7
+      },
+      "status": "passed_and_resolved",
+      "open_review_items": 0
+    },
+    {
+      "programme_id": "licence-marketing",
+      "yaml_json_equal": true,
+      "source_hash_matches": true,
+      "pages_covered": 4,
+      "checked_item_counts": {
+        "curriculum_modules": 10,
+        "certifications": 9,
+        "career_outcomes": 7
+      },
+      "status": "passed_and_resolved",
+      "open_review_items": 0
+    },
+    {
+      "programme_id": "master-crm-transformation-digitale",
+      "yaml_json_equal": true,
+      "source_hash_matches": true,
+      "pages_covered": 4,
+      "checked_item_counts": {
+        "career_outcomes": 10,
+        "certification_logos": 8
+      },
+      "status": "passed_and_resolved",
+      "open_review_items": 0
+    },
+    {
+      "programme_id": "master-ingenierie-financiere",
+      "yaml_json_equal": true,
+      "source_hash_matches": true,
+      "pages_covered": 4,
+      "checked_item_counts": {
+        "career_outcomes": 10,
+        "certifications": 8
+      },
+      "status": "passed_and_resolved",
+      "open_review_items": 0
+    },
+    {
+      "programme_id": "master-management-projets",
+      "yaml_json_equal": true,
+      "source_hash_matches": true,
+      "pages_covered": 4,
+      "checked_item_counts": {
+        "career_outcomes": 5,
+        "certifications": 9
+      },
+      "status": "passed_and_resolved",
+      "open_review_items": 0
+    },
+    {
+      "programme_id": "master-marketing-digital-ia",
+      "yaml_json_equal": true,
+      "source_hash_matches": true,
+      "pages_covered": 4,
+      "checked_item_counts": {
+        "career_outcomes": 10,
+        "certification_logos": 7
+      },
+      "status": "passed_and_resolved",
+      "open_review_items": 0
+    }
+  ],
+  "open_review_items": 0,
+  "qr_destinations_resolved": 4,
+  "resolved_review_items": 18
+}

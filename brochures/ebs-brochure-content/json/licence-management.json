@@ -1,0 +1,568 @@
+{
+  "schema_version": "1.0",
+  "id": "licence-management",
+  "language": "fr",
+  "source": {
+    "filename": "BROCHURE LICENCE MANAGEMENT - 2026.pdf",
+    "sha256": "f1d4e9f6b2a9c35e06e3ac0409a5471094658b256c5baec4833686c4aa1a26e6",
+    "page_count": 4
+  },
+  "programme": {
+    "name_source": "LICENCE EN MANAGEMENT",
+    "level": "licence",
+    "duration_years": 3,
+    "qualification_source": "Bac+3",
+    "identity_source_pages": [
+      1
+    ],
+    "duration_source_pages": [
+      1
+    ],
+    "semester_count": 6,
+    "semester_count_source_pages": [
+      2
+    ],
+    "name_normalized": "Licence en Management",
+    "name_normalization": "Case only; no change to source programme scope.",
+    "curriculum_structure": "module_list",
+    "admission_requirements": null,
+    "admission_requirements_note": "Non détaillées pour l’entrée à EBS dans ces brochures. Les conditions des passerelles internationales sont conservées dans leurs sections."
+  },
+  "sections": {
+    "brand": {
+      "source_pages": [
+        1
+      ],
+      "items": [
+        "EBS — ESPIMA BUSINESS SCHOOL",
+        "PENSEZ",
+        "INNOVER",
+        "RÉUSSIR"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "accreditation": {
+      "source_pages": [
+        1
+      ],
+      "text": "DIPLÔME ACCRÉDITÉ PAR L’ÉTAT TUNISIEN",
+      "review_issue_ids": [],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "duration": {
+      "source_pages": [
+        1
+      ],
+      "text": "Licence • Bac+3 • 3 ans",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "positioning": {
+      "source_pages": [
+        1
+      ],
+      "heading": "DEVENEZ UN MANAGER AUGMENTÉ PAR L’INTELLIGENCE ARTIFICIELLE, PRÊT À RELEVER LES DÉFIS DES ENTREPRISES DE DEMAIN.",
+      "text": "Cette Licence forme des managers capables de piloter des équipes, des projets et des organisations dans un environnement digital. Grâce à l’Intelligence Artificielle, vous apprendrez à automatiser certaines tâches, à analyser les données et à prendre de meilleures décisions pour créer plus de valeur.",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "cover_benefits": {
+      "source_pages": [
+        1
+      ],
+      "items": [
+        "IA INTÉGRÉE",
+        "CERTIFICATIONS INCLUSES",
+        "COMPÉTENCES PRATIQUES",
+        "OUVERTURE INTERNATIONALE",
+        "ACCOMPAGNEMENT SUR MESURE"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "contacts_cover": {
+      "source_pages": [
+        1
+      ],
+      "items": [
+        "www.ebs.tn",
+        "+216 71 18 26 25",
+        "info@ebs.tn",
+        "UN PROGRAMME TOURNÉ VERS L’AVENIR"
+      ],
+      "review_issue_ids": [],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "curriculum_intro": {
+      "source_pages": [
+        2
+      ],
+      "heading": "UN PROGRAMME COMPLET POUR DEVENIR UN MANAGER DE DEMAIN",
+      "text": "La Licence en Management à l’EBS vous apporte bien plus que des connaissances : elle développe votre personnalité, vos compétences et votre capacité à transformer les défis en opportunités.",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "curriculum_modules": {
+      "source_pages": [
+        2
+      ],
+      "heading": "PROGRAMME SUR 6 SEMESTRES",
+      "text": "Le programme est structuré autour des principaux modules de formation suivants, répartis sur les six semestres de la Licence.",
+      "items": [
+        "FONDEMENTS DU MANAGEMENT",
+        "PILOTAGE DES ORGANISATIONS",
+        "OUTILS ET MÉTHODES DE GESTION",
+        "STRATÉGIE D’ENTREPRISE ET ANALYSE DE MARCHÉ",
+        "BUSINESS ANALYTICS ET TABLEAUX DE BORD",
+        "MANAGEMENT DES RESSOURCES HUMAINES",
+        "ENTREPRENEURIAT, INNOVATION ET CRÉATION D’ENTREPRISE",
+        "DROIT DES AFFAIRES ET ENVIRONNEMENT RÉGLEMENTAIRE",
+        "IA APPLIQUÉE AU MANAGEMENT",
+        "ANGLAIS DES AFFAIRES, COMMUNICATION PROFESSIONNELLE ET SOFT SKILLS"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "certifications": {
+      "source_pages": [
+        2
+      ],
+      "heading": "CERTIFICATIONS INCLUSES",
+      "text": "Obtenez des certifications internationales sans frais supplémentaires pour renforcer votre profil et valoriser votre parcours en fonction de votre projet professionnel.",
+      "items": [
+        {
+          "issuer_source": "Google",
+          "credential_source": "Google Prompting Essentials",
+          "independent_verification": "not_performed",
+          "issuer_evidence": "visible_logo",
+          "credential_status": "source_label_unverified"
+        },
+        {
+          "issuer_source": "SCRUMstudy",
+          "credential_source": "Scrum with AI Certified (SAC™)",
+          "independent_verification": "not_performed",
+          "issuer_evidence": "verified_owner_scrumstudy",
+          "credential_status": "source_label_unverified"
+        },
+        {
+          "issuer_source": "Management and Strategy Institute",
+          "credential_source": "Business Management Essentials Certification",
+          "independent_verification": "not_performed",
+          "issuer_evidence": "visible_logo",
+          "credential_status": "source_label_unverified"
+        },
+        {
+          "issuer_source": "Google",
+          "credential_source": "Google Agile Essentials",
+          "independent_verification": "not_performed",
+          "issuer_evidence": "visible_logo",
+          "credential_status": "source_label_unverified"
+        },
+        {
+          "issuer_source": "IBM",
+          "credential_source": "Creating Compelling Reports",
+          "independent_verification": "not_performed",
+          "issuer_evidence": "visible_logo",
+          "credential_status": "source_label_unverified"
+        },
+        {
+          "issuer_source": "PMI",
+          "credential_source": "PMI Kickoff",
+          "independent_verification": "not_performed",
+          "issuer_evidence": "verified_owner_pmi",
+          "credential_status": "source_label_unverified"
+        },
+        {
+          "issuer_source": "Management and Strategy Institute",
+          "credential_source": "Project Management Essentials Certification",
+          "independent_verification": "not_performed",
+          "issuer_evidence": "visible_logo",
+          "credential_status": "source_label_unverified"
+        },
+        {
+          "issuer_source": "Cisco",
+          "credential_source": "Launching a Business Venture",
+          "independent_verification": "not_performed",
+          "issuer_evidence": "visible_logo",
+          "credential_status": "source_label_unverified"
+        },
+        {
+          "issuer_source": "Bloomberg",
+          "credential_source": "Client Engagement (*Simulation Forage)",
+          "independent_verification": "not_performed",
+          "issuer_evidence": "visible_logo",
+          "credential_status": "source_label_unverified",
+          "delivery_platform": "forage"
+        }
+      ],
+      "review_issue_ids": [],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "professional_experience": {
+      "source_pages": [
+        2
+      ],
+      "heading": "STAGE PROFESSIONNEL",
+      "text": "Un stage en entreprise d’une durée de 2 à 3 mois au cours du cursus pour développer vos compétences et acquérir une expérience concrète.",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "career_outcomes": {
+      "source_pages": [
+        2
+      ],
+      "heading": "DES DÉBOUCHÉS VARIÉS ET PORTEURS",
+      "items": [
+        "Manager augmenté par l’IA (AI-Driven Manager)",
+        "Chef de projet junior",
+        "Manager d’équipe",
+        "Business Analyst",
+        "Responsable administratif",
+        "Entrepreneur",
+        "Chargé de développement commercial"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "footer": {
+      "source_pages": [
+        2,
+        3
+      ],
+      "text": "EBS.TN | L’EXCELLENCE ACADÉMIQUE AU SERVICE DE VOTRE AVENIR",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "skills_intro": {
+      "source_pages": [
+        3
+      ],
+      "heading": "UNE FORMATION QUI VOUS DONNE UNE LONGUEUR D’AVANCE",
+      "text": "La Licence en Management à l’EBS vous ouvre les portes d’un leadership éclairé et d’une vision stratégique. Elle vous prépare à piloter les organisations avec agilité, à innover et à créer de la valeur durable dans un monde en constante évolution.",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "reasons_to_choose": {
+      "source_pages": [
+        3
+      ],
+      "heading": "POURQUOI CHOISIR LA LICENCE EN MANAGEMENT À L’EBS ?",
+      "items": [
+        {
+          "heading": "APPROCHE PROFESSIONNALISANTE",
+          "text": "Des contenus conçus en lien avec les réalités du monde professionnel."
+        },
+        {
+          "heading": "ENCADREMENT DE QUALITÉ",
+          "text": "Des enseignants et intervenants experts et à l’écoute des étudiants."
+        },
+        {
+          "heading": "APPRENTISSAGE PAR LA PRATIQUE",
+          "text": "Des mises en situation réelles pour apprendre en faisant, avec des projets concrets et Challenge Entrepreneuriat."
+        },
+        {
+          "heading": "OUVERTURE ET PERSPECTIVES INTERNATIONALES",
+          "text": "Des partenariats académiques, des échanges et de la mobilité étudiante pour vivre une expérience internationale enrichissante."
+        },
+        {
+          "heading": "CERTIFICATIONS GRATUITES",
+          "text": "Accès à des certifications internationales offertes pour renforcer votre profil et valoriser vos compétences."
+        }
+      ],
+      "review_issue_ids": [],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "transversal_skills": {
+      "source_pages": [
+        3
+      ],
+      "heading": "COMPÉTENCES TRANSVERSALES DÉVELOPPÉES",
+      "items": [
+        {
+          "heading": "Esprit critique et capacité de décision",
+          "text": "Évaluer les situations, anticiper les risques et choisir la meilleure option."
+        },
+        {
+          "heading": "Communication efficace",
+          "text": "S’exprimer clairement à l’oral et à l’écrit et convaincre avec impact."
+        },
+        {
+          "heading": "Gestion du temps et des priorités",
+          "text": "Planifier, prioriser et optimiser son organisation pour gagner en efficacité."
+        },
+        {
+          "heading": "Compétences linguistiques : Anglais & Français",
+          "text": "Renforcer vos compétences linguistiques avec une préparation aux certifications TOEFL & TCF."
+        }
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "pedagogy": {
+      "source_pages": [
+        3
+      ],
+      "heading": "UNE PÉDAGOGIE TOURNÉE VERS L’ACTION",
+      "items": [
+        "Cours interactifs et participatifs",
+        "Travaux de groupe et intelligence collective",
+        "Études de cas réelles et analyse de situations",
+        "Projets concrets en lien avec les entreprises",
+        "Évaluations continues et constructives",
+        "Accompagnement personnalisé tout au long du parcours"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "ai_learning": {
+      "source_pages": [
+        3
+      ],
+      "heading": "L’IA AU SERVICE DE VOTRE APPRENTISSAGE",
+      "items": [
+        "Outils intelligents pour apprendre et progresser",
+        "Analyse de données pour mieux comprendre et décider",
+        "Cas pratiques augmentés par l’IA",
+        "Développement de compétences numériques indispensables"
+      ],
+      "callout": "L’IA n’est pas un remplacement, c’est un accélérateur de votre potentiel et de votre réussite.",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "closing": {
+      "source_pages": [
+        4
+      ],
+      "heading": "L’EXCELLENCE ACADÉMIQUE AU SERVICE DE VOTRE AVENIR",
+      "text": "Un parcours structuré et progressif qui vous permet d’acquérir les compétences essentielles pour construire votre avenir et réaliser vos ambitions.",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "closing_benefits": {
+      "source_pages": [
+        4
+      ],
+      "items": [
+        {
+          "heading": "DIPLÔME",
+          "text": "Une formation académique reconnue et alignée sur les exigences du monde professionnel."
+        },
+        {
+          "heading": "EXPÉRIENCE",
+          "text": "Des projets concrets, des mises en situation et des activités qui développent vos compétences et votre confiance."
+        },
+        {
+          "heading": "CARRIÈRE",
+          "text": "Un accompagnement personnalisé pour vous aider à atteindre vos objectifs et réussir votre insertion professionnelle."
+        }
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "international_pathways": {
+      "source_pages": [
+        4
+      ],
+      "heading": "3 PARCOURS POUR POURSUIVRE VOS ÉTUDES À L’INTERNATIONAL",
+      "items": [
+        {
+          "heading": "1 année à EBS → Bachelor 2 en Italie | Link University – Rome",
+          "text": "Après validation de la première année de Licence à EBS, possibilité de poursuivre en 2ᵉ année de Bachelor à Link University, selon le programme choisi et les conditions d’admission."
+        },
+        {
+          "heading": "2 années à EBS → Bachelor 3 à l’international | Établissements partenaires en Italie ou en France",
+          "text": "Après deux années de Licence validées à EBS, possibilité d’intégrer la 3ᵉ année de Bachelors proposés par des établissements partenaires en Italie ou en France, selon la filière et les conditions d’admission."
+        },
+        {
+          "heading": "Licence à EBS → Master à l’international | France • Canada • Italie",
+          "text": "Après l’obtention de la Licence EBS, possibilité de poursuivre en Master, Master Grande École, MSc ou autre cursus Bac+5 dans l’un de nos pays partenaires (France, Canada, Italie), selon l’établissement, la spécialité et les conditions d’admission."
+        }
+      ],
+      "review_issue_ids": [],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "academic_partners": {
+      "source_pages": [
+        4
+      ],
+      "heading": "PARTENAIRES ACADÉMIQUES",
+      "items": [
+        "UQAT — UNIVERSITÉ DU QUÉBEC EN ABITIBI-TÉMISCAMINGUE",
+        "UNIVERSITÀ DEGLI STUDI LINK",
+        "EPITECH. — L’ÉCOLE DE L’INNOVATION ET DE L’EXPERTISE INFORMATIQUE",
+        "Paris School of Business",
+        "éklore",
+        "excelia BUSINESS SCHOOL",
+        "EM NORMANDIE BUSINESS SCHOOL",
+        "IDRAC BUSINESS SCHOOL",
+        "IGEFI — École des métiers de la finance d’entreprise et de l’expertise comptable",
+        "epsi — l’école d’ingénierie informatique",
+        "IFAG — École de management",
+        "SUP’DE COM — L’école de tous les métiers de la communication"
+      ],
+      "extraction_note": "Identités lisibles des logos ; les très petits slogans ou signatures illisibles ne sont pas reconstitués.",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "contacts_back": {
+      "source_pages": [
+        4
+      ],
+      "items": [
+        "+216 71 18 26 25",
+        "info@ebs.tn",
+        "Les berges du Lac 3 - Tunis",
+        "www.ebs.tn"
+      ],
+      "review_issue_ids": [],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    }
+  },
+  "review_issue_ids": [],
+  "extraction": {
+    "method": "manual_visual_transcription_of_all_pages; sparse_text_layer_as_secondary_evidence",
+    "wording_policy": "Original wording retained; layout line breaks merged; apostrophes, spacing and superscript ordinals standardized. No factual updating.",
+    "verification_scope": "Source transcription only; no external validation of accreditation, partners, credentials, prices or access.",
+    "excluded": "Decorative stock-image UI text/numbers, incidental signage already represented elsewhere, illegible logo microprint; no original visual assets recreated."
+  },
+  "normalized_contacts": [
+    {
+      "type": "website",
+      "source_text": "www.ebs.tn",
+      "normalized_value": "www.ebs.tn",
+      "source_pages": [
+        1
+      ],
+      "review_required": false
+    },
+    {
+      "type": "phone",
+      "source_text": "+216 71 18 26 25",
+      "normalized_value": "+21671182625",
+      "source_pages": [
+        1
+      ],
+      "review_required": false
+    },
+    {
+      "type": "email",
+      "source_text": "info@ebs.tn",
+      "normalized_value": "info@ebs.tn",
+      "source_pages": [
+        1
+      ],
+      "review_required": false
+    },
+    {
+      "type": "phone",
+      "source_text": "+216 71 18 26 25",
+      "normalized_value": "+21671182625",
+      "source_pages": [
+        4
+      ],
+      "review_required": false
+    },
+    {
+      "type": "email",
+      "source_text": "info@ebs.tn",
+      "normalized_value": "info@ebs.tn",
+      "source_pages": [
+        4
+      ],
+      "review_required": false
+    },
+    {
+      "type": "address",
+      "source_text": "Les berges du Lac 3 - Tunis",
+      "normalized_value": "Les berges du Lac 3 - Tunis",
+      "source_pages": [
+        4
+      ],
+      "review_required": false
+    },
+    {
+      "type": "website",
+      "source_text": "www.ebs.tn",
+      "normalized_value": "www.ebs.tn",
+      "source_pages": [
+        4
+      ],
+      "review_required": false
+    }
+  ],
+  "page_coverage": [
+    {
+      "page": 1,
+      "visual_review_completed": true,
+      "section_ids": [
+        "brand",
+        "accreditation",
+        "duration",
+        "positioning",
+        "cover_benefits",
+        "contacts_cover"
+      ],
+      "evidence_image": "evidence/licence-management/page-01.jpg"
+    },
+    {
+      "page": 2,
+      "visual_review_completed": true,
+      "section_ids": [
+        "curriculum_intro",
+        "curriculum_modules",
+        "certifications",
+        "professional_experience",
+        "career_outcomes",
+        "footer"
+      ],
+      "evidence_image": "evidence/licence-management/page-02.jpg"
+    },
+    {
+      "page": 3,
+      "visual_review_completed": true,
+      "section_ids": [
+        "footer",
+        "skills_intro",
+        "reasons_to_choose",
+        "transversal_skills",
+        "pedagogy",
+        "ai_learning"
+      ],
+      "evidence_image": "evidence/licence-management/page-03.jpg"
+    },
+    {
+      "page": 4,
+      "visual_review_completed": true,
+      "section_ids": [
+        "closing",
+        "closing_benefits",
+        "international_pathways",
+        "academic_partners",
+        "contacts_back"
+      ],
+      "evidence_image": "evidence/licence-management/page-04.jpg"
+    }
+  ],
+  "shared_block_refs": {
+    "brand": "brand",
+    "accreditation": "accreditation",
+    "contacts_cover": "contacts_cover",
+    "footer": "footer",
+    "transversal_skills": "transversal_skills",
+    "closing": "closing",
+    "closing_benefits": "closing_benefits",
+    "academic_partners": "academic_partners",
+    "duration": "duration",
+    "professional_experience": "professional_experience",
+    "pedagogy": "pedagogy",
+    "ai_learning": "ai_learning",
+    "international_pathways": "international_pathways"
+  }
+}

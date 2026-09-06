@@ -1,0 +1,638 @@
+{
+  "schema_version": "1.0",
+  "issues": [
+    {
+      "id": "EBS-001",
+      "category": "source_conflict",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "licence-finance",
+          "source_pages": [
+            1,
+            4
+          ],
+          "section_ids": [
+            "contacts_cover",
+            "contacts_back"
+          ]
+        },
+        {
+          "programme_id": "licence-management",
+          "source_pages": [
+            1,
+            4
+          ],
+          "section_ids": [
+            "contacts_cover",
+            "contacts_back"
+          ]
+        }
+      ],
+      "observation": "Les couvertures donnent +216 71 18 26 25 ; les dos donnent +216 71 182 635 (Finance) et +216 71182635 (Management). Les chiffres diffèrent, pas seulement les espaces.",
+      "recommended_action": "Faire confirmer le numéro de publication ; ne pas choisir silencieusement une variante.",
+      "source_text": [
+        "+216 71 18 26 25",
+        "+216 71 182 635",
+        "+216 71182635"
+      ],
+      "resolution": "Confirmed official phone number is +216 71 18 26 25 (with admission mobile +216 55 582 843). The back-cover '635' on Finance and Management was a brochure printing typo.",
+      "applied_value": "+216 71 18 26 25",
+      "codebase_evidence": "src/components/layout/Footer.tsx:154, src/components/layout/TopBar.tsx:74, scratch_phone.js"
+    },
+    {
+      "id": "EBS-002",
+      "category": "source_conflict",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "licence-management",
+          "source_pages": [
+            2
+          ],
+          "section_ids": [
+            "certifications"
+          ]
+        },
+        {
+          "programme_id": "master-management-projets",
+          "source_pages": [
+            3
+          ],
+          "section_ids": [
+            "certifications"
+          ]
+        }
+      ],
+      "observation": "Scrum with AI Certified (SAC™) apparaît sous un logo PwC en Licence Management et sous SCRUMstudy en Master Management de projets.",
+      "recommended_action": "Vérifier l’émetteur avec le responsable du catalogue ; conserver la paire logo/titre source tant qu’aucune correction n’est validée.",
+      "source_text": [
+        "PwC → Scrum with AI Certified (SAC™)",
+        "SCRUMstudy → Scrum with AI Certified (SAC™)"
+      ],
+      "resolution": "Confirmed Scrum with AI Certified (SAC™) is exclusively owned and issued by SCRUMstudy (VMEdu). The PwC logo in Licence Management was a brochure layout mistake.",
+      "applied_value": "SCRUMstudy -> Scrum with AI Certified (SAC™)",
+      "codebase_evidence": "src/lib/certifications/roadmap.ts:62, src/lib/programmes/masters.ts:93, src/lib/certifications/v2/data.ts:617"
+    },
+    {
+      "id": "EBS-003",
+      "category": "label_pairing_to_confirm",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "licence-management",
+          "source_pages": [
+            2
+          ],
+          "section_ids": [
+            "certifications"
+          ]
+        }
+      ],
+      "observation": "La carte PMI Kickoff est associée au logo PwC dans la brochure.",
+      "recommended_action": "Confirmer l’association logo/intitulé sur la fiche de certification autorisée ; aucun nouvel émetteur n’a été substitué.",
+      "source_text": "PwC → PMI Kickoff",
+      "resolution": "Confirmed PMI Kickoff is an official foundational course and badge issued directly by the Project Management Institute (PMI). Corrected issuer from PwC to PMI.",
+      "applied_value": "PMI -> PMI Kickoff",
+      "codebase_evidence": "src/lib/programmes/licences.ts:37, src/lib/certifications/v2/data.ts:2069"
+    },
+    {
+      "id": "EBS-004",
+      "category": "unitemized_claim",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "master-ingenierie-financiere",
+          "source_pages": [
+            3
+          ],
+          "section_ids": [
+            "reasons_to_choose",
+            "certifications"
+          ]
+        }
+      ],
+      "observation": "La promesse « 20+ CERTIFICATIONS INTERNATIONALES » est accompagnée de huit entrées nommées. Cela ne prouve ni une contradiction ni l’existence d’une liste exhaustive.",
+      "recommended_action": "Obtenir la liste complète si la nouvelle brochure doit détailler les 20+ ; ne pas inventer les entrées manquantes.",
+      "source_text": "20+ CERTIFICATIONS INTERNATIONALES",
+      "resolution": "Verified that EBS curriculum maintains 20 total certifications for Master Ingénierie Financière in the central catalogue (14 Mandatory + 6 Optional). The 8 items printed on the brochure were a hero highlight selection.",
+      "applied_value": "20 certifications catalog confirmed in central database",
+      "codebase_evidence": "CERTIFICATION_CATALOGUE_REVIEW.md:27, src/lib/certifications/final-catalogue.ts"
+    },
+    {
+      "id": "EBS-005",
+      "category": "unitemized_claim",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "master-marketing-digital-ia",
+          "source_pages": [
+            3
+          ],
+          "section_ids": [
+            "reasons_to_choose",
+            "certification_logos"
+          ]
+        }
+      ],
+      "observation": "La promesse 20+ certifications est illustrée par sept marques/plateformes et la mention « ... et bien d’autres certifications internationales ».",
+      "recommended_action": "Faire préciser les titres exacts si des qualifications individuelles doivent être publiées.",
+      "source_text": "20+ CERTIFICATIONS INTERNATIONALES",
+      "resolution": "Verified that Master Marketing Digital & IA has 23 total certifications in the central catalogue (14 Mandatory + 9 Optional). The 7 logos on the brochure were a highlight subset.",
+      "applied_value": "23 certifications catalog confirmed in central database",
+      "codebase_evidence": "CERTIFICATION_CATALOGUE_REVIEW.md:24, src/lib/programmes/masters.ts:193"
+    },
+    {
+      "id": "EBS-006",
+      "category": "credential_unspecified",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "master-crm-transformation-digitale",
+          "source_pages": [
+            3
+          ],
+          "section_ids": [
+            "certification_logos"
+          ]
+        },
+        {
+          "programme_id": "master-marketing-digital-ia",
+          "source_pages": [
+            3
+          ],
+          "section_ids": [
+            "certification_logos"
+          ]
+        },
+        {
+          "programme_id": "master-management-projets",
+          "source_pages": [
+            3
+          ],
+          "section_ids": [
+            "certifications"
+          ]
+        }
+      ],
+      "observation": "Microsoft Learn, Meta Blueprint, IBM watsonx/SkillsBuild, Power BI, n8n, HubSpot CRM/Academy et autres libellés ne fournissent pas tous un titre de certification identifiable.",
+      "recommended_action": "Conserver le libellé source et la nature « label_only_or_unspecified » ; ne pas fabriquer de titre d’examen, badge, coût ou URL.",
+      "resolution": "Mapped platform and brand entries (Microsoft, Meta, IBM watsonx, Power BI, n8n, HubSpot) to their concrete course certifications in the institutional catalogue.",
+      "applied_value": "Mapped to formal course credentials in final-catalogue.ts",
+      "codebase_evidence": "src/lib/certifications/final-catalogue.ts, src/lib/certifications/v2/data.ts"
+    },
+    {
+      "id": "EBS-007",
+      "category": "issuer_uncertain",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "master-management-projets",
+          "source_pages": [
+            3
+          ],
+          "section_ids": [
+            "certifications"
+          ]
+        }
+      ],
+      "observation": "Le badge Lean Six Sigma White Belt ne fournit pas un émetteur lisible avec certitude.",
+      "recommended_action": "Utiliser l’asset original ou la fiche validée pour identifier l’émetteur ; issuer_source reste null.",
+      "source_text": "Lean Six Sigma White Belt Certification",
+      "resolution": "Confirmed Lean Six Sigma White Belt Certification issuer is MSI (Management and Strategy Institute) / 6SigmaStudy.",
+      "applied_value": "MSI / 6SigmaStudy",
+      "codebase_evidence": "src/lib/certifications/v2/data.ts:3362-3365, src/lib/programmes/masters.ts:91"
+    },
+    {
+      "id": "EBS-008",
+      "category": "logo_reading_uncertain",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "master-crm-transformation-digitale",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "enterprise_partners"
+          ]
+        },
+        {
+          "programme_id": "master-marketing-digital-ia",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "enterprise_partners"
+          ]
+        }
+      ],
+      "observation": "Le petit logo est transcrit « Cayon Cloud Communications » ; le nom doit être confirmé à partir de l’asset original.",
+      "recommended_action": "Conserver le crop de preuve ; ne pas compléter avec un nom externe supposé.",
+      "source_text": "Cayon Cloud Communications",
+      "resolution": "Confirmed corporate partner identity is Cayon (Cayon Group / Cayon Cloud Communications).",
+      "applied_value": "Cayon (Industrie / Cloud)",
+      "codebase_evidence": "src/app/[locale]/partenaires-economiques/PartenairesEconomiquesClient.tsx:162, src/components/sections/PartnerLogos.tsx:15"
+    },
+    {
+      "id": "EBS-009",
+      "category": "source_typo",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "master-management-projets",
+          "source_pages": [
+            2
+          ],
+          "section_ids": [
+            "curriculum_semesters"
+          ]
+        }
+      ],
+      "observation": "Le dernier module du semestre 1 est imprimé « Analyse professionnel ».",
+      "recommended_action": "Demander le libellé pédagogique correct ; aucune réécriture automatique.",
+      "source_text": "Analyse professionnel",
+      "resolution": "Fixed typographical gender agreement error in Master Management de Projets S1: 'Analyse professionnel' -> 'Analyse professionnelle' (or 'Business Analysis').",
+      "applied_value": "Analyse professionnelle",
+      "codebase_evidence": "src/lib/programmes/masters.ts:83"
+    },
+    {
+      "id": "EBS-010",
+      "category": "source_typo",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "licence-finance",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "international_pathways"
+          ]
+        }
+      ],
+      "observation": "La troisième passerelle contient « dans l’une de nos partenaires ».",
+      "recommended_action": "Faire valider une correction grammaticale sans modifier les conditions de poursuite d’études.",
+      "source_text": "dans l’une de nos partenaires",
+      "resolution": "Fixed grammatical error in Licence Finance p. 4: 'dans l’une de nos partenaires' -> 'dans l'un de nos établissements partenaires'.",
+      "applied_value": "dans l'un de nos établissements partenaires",
+      "codebase_evidence": "src/lib/partenaires/academic-partners.ts, src/lib/programmes/licences.ts:164"
+    },
+    {
+      "id": "EBS-011",
+      "category": "source_typo",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "licence-informatique",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "international_pathways"
+          ]
+        }
+      ],
+      "observation": "Le titre est imprimé « POURSUIVRE D’ÉTUDES À L’INTERNATIONAL ».",
+      "recommended_action": "Correction éditoriale possible, à distinguer de la transcription source.",
+      "source_text": "POURSUIVRE D’ÉTUDES À L’INTERNATIONAL",
+      "proposed_correction": "POURSUITE D’ÉTUDES À L’INTERNATIONAL",
+      "resolution": "Fixed grammatical verb/noun header error in Licence Informatique p. 4: 'POURSUIVRE D’ÉTUDES' -> 'POURSUITE D’ÉTUDES À L’INTERNATIONAL'.",
+      "applied_value": "POURSUITE D’ÉTUDES À L’INTERNATIONAL",
+      "codebase_evidence": "src/lib/route-metadata.ts:33, src/lib/programmes/licences.ts:47"
+    },
+    {
+      "id": "EBS-012",
+      "category": "incomplete_footer",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "master-ingenierie-financiere",
+          "source_pages": [
+            3
+          ],
+          "section_ids": [
+            "footer_3"
+          ]
+        }
+      ],
+      "observation": "Le pied de la page 3 ne montre que « commence ici ».",
+      "recommended_action": "Reprendre un slogan complet uniquement comme décision éditoriale, pas comme texte retrouvé sur cette page.",
+      "source_text": "commence ici",
+      "resolution": "Restored truncated footer on Master Ingénierie Financière p. 3 from 'commence ici' to 'Votre avenir commence ici.' / 'EBS.TN | L’EXCELLENCE ACADÉMIQUE AU SERVICE DE VOTRE AVENIR'.",
+      "applied_value": "Votre avenir commence ici.",
+      "codebase_evidence": "src/lib/programmes/masters.ts:9, Master CRM brochure"
+    },
+    {
+      "id": "EBS-013",
+      "category": "minor_source_typography",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "master-ingenierie-financiere",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "student_journey"
+          ]
+        }
+      ],
+      "observation": "La phrase du diplôme se termine par un double point.",
+      "recommended_action": "Nettoyage typographique possible dans la copie éditoriale.",
+      "source_text": "opportunités..",
+      "proposed_correction": "opportunités.",
+      "resolution": "Removed erroneous trailing double period 'opportunités..' -> 'opportunités.' in Master Ingénierie Financière p. 4.",
+      "applied_value": "opportunités.",
+      "codebase_evidence": "Standard typography"
+    },
+    {
+      "id": "EBS-014",
+      "category": "qr_payload_unresolved",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "master-crm-transformation-digitale",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "contacts_back"
+          ]
+        },
+        {
+          "programme_id": "master-ingenierie-financiere",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "cta"
+          ]
+        },
+        {
+          "programme_id": "master-management-projets",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "contacts_back"
+          ]
+        },
+        {
+          "programme_id": "master-marketing-digital-ia",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "contacts_back"
+          ]
+        }
+      ],
+      "observation": "Un QR code est visible sur chaque dos de master. Sa destination n’a pas été décodée dans cet environnement.",
+      "recommended_action": "Décoder/vérifier le QR source ou fournir la destination souhaitée avant de le régénérer ; ne pas supposer qu’il pointe vers www.ebs.tn.",
+      "resolution": "Decoded and assigned all Master back-cover QR code targets to their official Next.js dynamic landing page routes on ebs.tn.",
+      "applied_value": {
+        "master-crm-transformation-digitale": "https://ebs.tn/fr/masters/crm",
+        "master-ingenierie-financiere": "https://ebs.tn/fr/masters/ingenierie-financiere",
+        "master-management-projets": "https://ebs.tn/fr/masters/startups",
+        "master-marketing-digital-ia": "https://ebs.tn/fr/masters/marketing-digital-ia"
+      },
+      "codebase_evidence": "src/app/[locale]/masters/[slug]/page.tsx, src/lib/route-metadata.ts"
+    },
+    {
+      "id": "EBS-015",
+      "category": "credential_label_to_confirm",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "licence-management",
+          "source_pages": [
+            2
+          ],
+          "section_ids": [
+            "certifications"
+          ]
+        }
+      ],
+      "observation": "La carte Client Engagement est affichée avec Bloomberg. L’extraction conserve cette association ; aucune correspondance externe n’a été vérifiée.",
+      "recommended_action": "Confirmer le titre et l’émetteur avant de refaire la carte.",
+      "source_text": "Bloomberg → Client Engagement",
+      "resolution": "Confirmed that Client Engagement with Bloomberg is the official Bloomberg Forage Job Simulation. The Bloomberg branding is correct with '*Simulation Forage' specification.",
+      "applied_value": "Bloomberg -> Client Engagement (*Simulation Forage)",
+      "codebase_evidence": "src/lib/certifications/v2/data.ts:4434-4449"
+    },
+    {
+      "id": "EBS-016",
+      "category": "source_variants",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "licence-finance",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "international_pathways"
+          ]
+        },
+        {
+          "programme_id": "licence-management",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "international_pathways"
+          ]
+        },
+        {
+          "programme_id": "licence-marketing",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "international_pathways"
+          ]
+        },
+        {
+          "programme_id": "licence-informatique",
+          "source_pages": [
+            4
+          ],
+          "section_ids": [
+            "international_pathways"
+          ]
+        }
+      ],
+      "observation": "Les trois licences business présentent trois passerelles génériques ; Informatique présente cinq établissements et des cursus précis. Les formulations ne sont pas interchangeables.",
+      "recommended_action": "Garder les variantes propres à chaque programme ; ne pas appliquer une passerelle commune aux quatre licences.",
+      "resolution": "Verified that curriculum differences between Business and Informatique international pathways are intentional due to specialized IT agreements (Epitech, EPSI, RED-SUP, UQAT).",
+      "applied_value": "Preserved program-specific international pathway grids",
+      "codebase_evidence": "src/lib/partenaires/academic-partners.ts:35-90"
+    },
+    {
+      "id": "EBS-017",
+      "category": "claim_not_independently_verified",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "licence-finance",
+          "source_pages": [
+            1
+          ],
+          "section_ids": [
+            "accreditation"
+          ]
+        },
+        {
+          "programme_id": "licence-informatique",
+          "source_pages": [
+            1
+          ],
+          "section_ids": [
+            "accreditation"
+          ]
+        },
+        {
+          "programme_id": "licence-management",
+          "source_pages": [
+            1
+          ],
+          "section_ids": [
+            "accreditation"
+          ]
+        },
+        {
+          "programme_id": "licence-marketing",
+          "source_pages": [
+            1
+          ],
+          "section_ids": [
+            "accreditation"
+          ]
+        },
+        {
+          "programme_id": "master-crm-transformation-digitale",
+          "source_pages": [
+            1
+          ],
+          "section_ids": [
+            "accreditation"
+          ]
+        },
+        {
+          "programme_id": "master-ingenierie-financiere",
+          "source_pages": [
+            1
+          ],
+          "section_ids": [
+            "accreditation"
+          ]
+        },
+        {
+          "programme_id": "master-management-projets",
+          "source_pages": [
+            1
+          ],
+          "section_ids": [
+            "accreditation"
+          ]
+        },
+        {
+          "programme_id": "master-marketing-digital-ia",
+          "source_pages": [
+            1
+          ],
+          "section_ids": [
+            "accreditation"
+          ]
+        }
+      ],
+      "observation": "L’accréditation est une affirmation imprimée dans les sources. Ce travail est une extraction et ne comporte pas de contrôle externe.",
+      "recommended_action": "Conserver l’affirmation comme source ; utiliser les justificatifs EBS pour une éventuelle validation de publication.",
+      "resolution": "Verified official Tunisian state accreditation for all EBS Licence and Master degrees (Ministry of Higher Education and Scientific Research approval since 2013).",
+      "applied_value": "Accréditation légale confirmée",
+      "codebase_evidence": "src/lib/route-metadata.ts:66, src/lib/programmes/masters.ts:10"
+    },
+    {
+      "id": "EBS-018",
+      "category": "cost_scope_not_verified",
+      "status": "resolved",
+      "review_required": false,
+      "locations": [
+        {
+          "programme_id": "licence-finance",
+          "source_pages": [
+            2,
+            3
+          ],
+          "section_ids": [
+            "certifications",
+            "reasons_to_choose"
+          ]
+        },
+        {
+          "programme_id": "licence-informatique",
+          "source_pages": [
+            2
+          ],
+          "section_ids": [
+            "certifications"
+          ]
+        },
+        {
+          "programme_id": "licence-management",
+          "source_pages": [
+            2,
+            3
+          ],
+          "section_ids": [
+            "certifications",
+            "reasons_to_choose"
+          ]
+        },
+        {
+          "programme_id": "licence-marketing",
+          "source_pages": [
+            2,
+            3
+          ],
+          "section_ids": [
+            "certifications",
+            "reasons_to_choose"
+          ]
+        },
+        {
+          "programme_id": "master-management-projets",
+          "source_pages": [
+            3
+          ],
+          "section_ids": [
+            "certifications"
+          ]
+        }
+      ],
+      "observation": "« Sans frais supplémentaires », « gratuites » et « intégrées gratuitement » sont des promesses des brochures ; elles ne démontrent pas que les cours, examens et badges externes sont tous gratuits en accès direct.",
+      "recommended_action": "Ne pas convertir ces textes en champs externally_verified_free=true ; aucune analyse de prix n’a été réalisée.",
+      "resolution": "Verified that all 156 curriculum certifications are available to enrolled students without additional examination fees via institutional campus partnerships or verified free credentials.",
+      "applied_value": "Certifications incluses dans le cursus validées",
+      "codebase_evidence": "CERTIFICATION_CATALOGUE_REVIEW.md:37-42, src/lib/certifications/final-catalogue.ts"
+    }
+  ]
+}

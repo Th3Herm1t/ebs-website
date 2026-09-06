@@ -55,3 +55,12 @@ penn-*/
 profit-*/
 "EBS site - claude"/
 "EBS web - v0.1"/
+
+# Build & heavy static exports
+dist/
+**/dist/
+
+# Raw client photo archives and docs
+PHOTOS POUR LE SITE*
+*.docx
+

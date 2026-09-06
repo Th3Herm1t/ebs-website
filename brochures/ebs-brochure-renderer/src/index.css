@@ -1,0 +1,521 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   EBS 2026 BROCHURE PRINT DESIGN SYSTEM
+   Standard: 4-Page A4 Portrait (210mm x 297mm)
+   ========================================================================== */
+
+:root {
+  /* Brand Primary Colors */
+  --ebs-navy: #0B192C;
+  --ebs-navy-light: #1E3E62;
+  --ebs-crimson: #C00000;
+  --ebs-crimson-dark: #990000;
+  --ebs-accent: #E02424;
+  
+  /* Discipline Colors */
+  --color-finance: #00897B;
+  --color-finance-light: #E0F2F1;
+  --color-informatique: #7B1FA2;
+  --color-informatique-light: #F3E5F5;
+  --color-management: #1565C0;
+  --color-management-light: #E3F2FD;
+  --color-marketing: #C2185B;
+  --color-marketing-light: #FCE4EC;
+  
+  /* Neutrals */
+  --bg-pure: #FFFFFF;
+  --bg-slate: #F8FAFC;
+  --bg-muted: #F1F5F9;
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-medium: rgba(15, 23, 42, 0.16);
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  
+  /* Typography */
+  --font-display: 'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #E2E8F0;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  font-size: 9pt;
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   PRINT PAGE CONTAINER (STRICT A4)
+   ========================================================================== */
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html, body {
+    width: 210mm;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .screen-toolbar {
+    display: none !important;
+  }
+
+  .brochure-container {
+    padding: 0 !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+  }
+
+  .page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .page:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+}
+
+/* Screen Preview Canvas */
+.brochure-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20mm;
+  padding: 20mm 0;
+}
+
+/* Physical A4 Sheet */
+.page {
+  width: 210mm;
+  height: 297mm;
+  min-height: 297mm;
+  max-height: 297mm;
+  background-color: var(--bg-pure);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.page-inner {
+  padding: 12mm 14mm;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   SHARED UI COMPONENTS & UTILITIES
+   ========================================================================== */
+
+/* Header & Identity */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid var(--border-subtle);
+  padding-bottom: 3.5mm;
+  margin-bottom: 5mm;
+}
+
+.brand-badge {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 11pt;
+  letter-spacing: -0.01em;
+  color: var(--ebs-navy);
+}
+
+.accreditation-pill {
+  background-color: var(--ebs-navy);
+  color: #FFFFFF;
+  font-size: 6.8pt;
+  font-weight: 700;
+  padding: 1.5mm 3.5mm;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Section Headings */
+.section-title {
+  font-family: var(--font-display);
+  font-size: 13pt;
+  font-weight: 800;
+  color: var(--ebs-navy);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 3.5mm;
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+}
+
+.section-title::before {
+  content: '';
+  display: inline-block;
+  width: 3.5mm;
+  height: 3.5mm;
+  background-color: var(--ebs-crimson);
+  border-radius: 1px;
+}
+
+/* Cards & Grids */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.5mm;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+}
+
+.card {
+  background-color: var(--bg-slate);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 3mm 3.5mm;
+  break-inside: avoid;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 8.5pt;
+  color: var(--ebs-navy);
+  margin-bottom: 1.5mm;
+}
+
+.card-text {
+  font-size: 7.5pt;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+/* Certifications Pill Badge */
+.cert-badge {
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  padding: 2mm 3mm;
+  border-radius: 5px;
+  break-inside: avoid;
+}
+
+.cert-issuer {
+  font-weight: 700;
+  font-size: 7.2pt;
+  color: var(--ebs-navy);
+}
+
+.cert-name {
+  font-size: 7.2pt;
+  color: var(--text-secondary);
+}
+
+/* Footers */
+.page-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 2.5mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 6.8pt;
+  color: var(--text-muted);
+}
+
+/* Authoritative editorial system */
+.authoritative-brochure {
+  --accent: #2B8FAB;
+  --ink: #232434;
+  --pale: #EDF8FA;
+  font-family: 'Mulish', var(--font-body);
+}
+
+.authoritative-brochure .page { color: var(--ink); }
+.cover-page { background: var(--ink); color: white !important; isolation: isolate; }
+.cover-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.72) contrast(1.08); z-index: -4; }
+.cover-wash { position: absolute; inset: 0; background: linear-gradient(115deg, var(--ink) 0%, color-mix(in srgb, var(--ink) 93%, transparent) 48%, color-mix(in srgb, var(--ink) 25%, transparent) 100%); z-index: -3; }
+.orb { position: absolute; border-radius: 50%; border: 1.2px solid color-mix(in srgb, var(--accent) 72%, white); z-index: -1; }
+.orb::after { content: ''; position: absolute; inset: 14%; border-radius: inherit; background: color-mix(in srgb, var(--accent) 82%, transparent); mix-blend-mode: screen; }
+.orb-one { width: 113mm; height: 113mm; right: -40mm; top: 25mm; }
+.orb-two { width: 62mm; height: 62mm; right: 24mm; bottom: 38mm; }
+.dot-field { position: absolute; width: 48mm; height: 55mm; right: 9mm; bottom: 8mm; opacity: .32; background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 5mm 5mm; }
+.cover-content { height: 100%; padding: 14mm; display: flex; flex-direction: column; }
+.cover-top { display: flex; align-items: center; justify-content: space-between; }
+.accreditation { width: 43mm; padding: 2.3mm 3mm; border: 1px solid rgba(255,255,255,.46); border-radius: 99px; font-size: 7pt; font-weight: 800; line-height: 1.15; text-align: center; }
+.cover-level { display: flex; align-items: center; gap: 2mm; margin-top: 37mm; color: var(--accent); font-size: 9pt; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+.cover-page h1 { width: 145mm; margin-top: 4mm; font-size: 33pt; line-height: .96; letter-spacing: -.045em; text-transform: uppercase; }
+.cover-page h2 { width: 118mm; margin-top: 7mm; padding-left: 5mm; border-left: 1.5mm solid var(--accent); font-size: 12.5pt; line-height: 1.22; text-transform: uppercase; }
+.cover-page p { width: 105mm; margin-top: 5mm; font-size: 8.5pt; line-height: 1.5; color: rgba(255,255,255,.84); }
+.cover-themes { display: flex; flex-wrap: wrap; gap: 2mm; width: 122mm; margin-top: 7mm; }
+.cover-themes span { padding: 1.7mm 2.8mm; border-radius: 99px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); font-size: 6.7pt; font-weight: 800; }
+.cover-footer { margin-top: auto; display: flex; align-items: center; gap: 6mm; padding-top: 4mm; border-top: 1px solid rgba(255,255,255,.25); font-size: 7pt; font-weight: 800; }
+.cover-footer svg { margin-left: auto; color: var(--accent); }
+
+.content-page { background: #FCFCFB; isolation: isolate; }
+.content-page::before { content: ''; position: absolute; width: 92mm; height: 92mm; right: -42mm; bottom: 8mm; border: .35mm solid color-mix(in srgb, var(--accent) 22%, transparent); border-radius: 50%; }
+.content-page::after { content: ''; position: absolute; width: 42mm; height: 48mm; right: 8mm; bottom: 17mm; opacity: .17; background-image: radial-gradient(var(--accent) .65mm, transparent .7mm); background-size: 5mm 5mm; }
+.content-page-2 { background: linear-gradient(145deg, color-mix(in srgb, var(--pale) 82%, white) 0%, color-mix(in srgb, var(--pale) 42%, white) 58%, color-mix(in srgb, var(--accent) 8%, white) 100%); }
+.content-page-2::before { width: 146mm; height: 146mm; right: -57mm; bottom: 35mm; border-width: 8mm; border-color: color-mix(in srgb, var(--accent) 10%, transparent); }
+.content-page-3 { background: linear-gradient(142deg, var(--ink) 0%, color-mix(in srgb, var(--ink) 88%, #000) 100%); }
+.content-page-3::before { border-color: color-mix(in srgb, var(--accent) 55%, transparent); }
+.content-page-3::after { opacity: .32; }
+.content-page-4 { background: linear-gradient(160deg, color-mix(in srgb, var(--pale) 28%, white) 0%, color-mix(in srgb, var(--pale) 52%, white) 66%, color-mix(in srgb, var(--accent) 10%, white) 100%); }
+.content-page-4::before { width: 145mm; height: 145mm; right: -55mm; bottom: 29mm; border-width: 9mm; border-color: color-mix(in srgb, var(--accent) 12%, transparent); }
+.editorial-page-inner { padding: 8mm 11mm 8mm; z-index: 2; }
+.editorial-header { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 8mm; padding-bottom: 3mm; border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent); font-size: 6.5pt; font-weight: 900; letter-spacing: .12em; }
+.editorial-header span:last-child { color: var(--accent); }
+.content-page-3 .editorial-header { color: #fff; border-color: rgba(255,255,255,.2); }
+.page-kicker { display: flex; align-items: center; gap: 3mm; padding-top: 3mm; color: var(--accent); font-size: 7pt; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.page-kicker span { display: grid; place-items: center; width: 8mm; height: 8mm; border-radius: 50%; background: var(--accent); color: #fff; font-size: 6.5pt; }
+.page-display-word { position: absolute; left: 8mm; bottom: 13mm; color: color-mix(in srgb, var(--accent) 16%, transparent); font-size: 38pt; font-weight: 900; letter-spacing: -.05em; line-height: .8; writing-mode: vertical-rl; transform: rotate(180deg); z-index: 0; }
+.content-page-3 .page-display-word { color: rgba(255,255,255,.035); font-size: 43pt; }
+.interior-photo { position: absolute; right: -17mm; bottom: 6mm; width: 103mm; height: 94mm; clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%); opacity: .075; filter: saturate(.2) contrast(1.1); z-index: 0; }
+.interior-photo img { width: 100%; height: 100%; object-fit: cover; }
+.content-page-2 .interior-photo { right: -26mm; bottom: 24mm; width: 148mm; height: 168mm; opacity: .115; filter: saturate(.35) contrast(1.08); mask-image: linear-gradient(to bottom, transparent 0%, #000 25%, #000 100%); }
+.content-page-3 .interior-photo { width: 123mm; height: 126mm; opacity: .2; mix-blend-mode: luminosity; }
+.content-page-4 .interior-photo { right: -27mm; bottom: 17mm; width: 145mm; height: 158mm; opacity: .095; filter: saturate(.3) contrast(1.08); mask-image: linear-gradient(to bottom, transparent 0%, #000 24%, #000 100%); }
+.page-geometry { position: absolute; width: 27mm; height: 27mm; border-radius: 50%; right: -9mm; top: 18mm; display: grid; place-items: center; background: var(--accent); color: white; z-index: 2; }
+.editorial-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-flow: row dense; align-content: start; align-items: start; gap: 2.8mm; padding-top: 3mm; }
+.content-section { grid-column: span 4; align-self: start; padding: 2.8mm; background: rgba(255,255,255,.97); border-top: 1mm solid var(--accent); box-shadow: 0 1.5mm 6mm rgba(35,36,52,.07); break-inside: avoid; }
+.content-page-3 .content-section { background: rgba(255,255,255,.965); box-shadow: 0 2mm 8mm rgba(0,0,0,.2); }
+.content-section h2 { display: flex; align-items: flex-start; gap: 1.5mm; margin-bottom: 1.5mm; color: var(--ink); font-size: 9pt; line-height: 1.13; text-transform: uppercase; }
+.content-section h2 svg { flex: 0 0 auto; color: var(--accent); margin-top: .3mm; }
+.section-copy { display: block; margin-bottom: 1.8mm; color: #4C5563; font-size: 6.7pt; line-height: 1.32; }
+.programme-repeat { display: block; margin-bottom: 1mm; color: var(--accent); font-size: 7pt; font-weight: 900; text-transform: uppercase; }
+.item-grid, .group-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4mm; }
+.item-grid-dense { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.content-section:not(.section-wide) .item-grid-dense { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.list-item { display: flex; align-items: flex-start; gap: 1.2mm; min-height: 6mm; padding: 1.2mm 1.4mm; background: var(--pale); font-size: 6.5pt; font-weight: 700; line-height: 1.2; }
+.list-item svg { flex: 0 0 auto; color: var(--accent); }
+.text-item, .credential-item, .pathway-item, .group-item { padding: 1.7mm; border: 0; border-left: .65mm solid color-mix(in srgb, var(--accent) 42%, white); background: color-mix(in srgb, var(--pale) 34%, white); font-size: 6.5pt; line-height: 1.25; }
+.item-title { display: block; color: var(--ink); font-size: 6.7pt; font-weight: 900; line-height: 1.18; }
+.item-kicker { display: block; margin-bottom: .5mm; color: var(--accent); font-size: 6.5pt; font-weight: 900; text-transform: uppercase; }
+.muted { display: block; margin-top: .8mm; color: #667085; }
+.credential-item { display: flex; align-items: center; gap: 1.3mm; min-height: 11mm; }
+.credential-item img { width: 9mm; height: 6mm; object-fit: contain; flex: 0 0 auto; }
+.pathway-item header, .group-item header { display: flex; align-items: center; gap: 1.4mm; margin-bottom: 1mm; }
+.pathway-item header img { width: 13mm; height: 7mm; object-fit: contain; }
+.pathway-entry { display: block; margin: 1mm 0; padding: .8mm 1mm; color: var(--accent); background: var(--pale); font-weight: 900; }
+.option-line { display: flex; flex-wrap: wrap; gap: .8mm; margin-top: .8mm; }
+.option-line span { padding: .6mm 1mm; background: var(--pale); font-size: 6.5pt; }
+.group-number { display: grid; place-items: center; width: 7mm; height: 7mm; flex: 0 0 auto; border-radius: 50%; background: var(--accent); color: white; font-size: 6.5pt; font-weight: 900; }
+.compact-list { display: grid; gap: .6mm; margin-top: 1mm; }
+.compact-list span { position: relative; padding-left: 2mm; font-size: 6.5pt; line-height: 1.18; }
+.compact-list span::before { content: ''; position: absolute; left: 0; top: .8mm; width: .9mm; height: .9mm; border-radius: 50%; background: var(--accent); }
+.partner-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1mm; }
+.logo-item { display: flex; align-items: center; gap: 1mm; min-height: 9mm; padding: 1mm; border: .25mm solid #EAECF0; font-size: 6.5pt; font-weight: 700; line-height: 1.12; }
+.logo-item img { width: 11mm; height: 6mm; object-fit: contain; }
+.callout, .section-callout, .conditions { display: block; margin-top: 1.4mm; padding: 1.4mm; background: var(--ink); color: white; font-size: 6.5pt; font-weight: 700; line-height: 1.25; }
+.conditions { background: var(--pale); color: var(--ink); border-left: 1mm solid var(--accent); }
+.contact-cta { display: flex; align-items: center; justify-content: space-between; gap: 2mm; margin-top: 1.5mm; }
+.contact-lines { display: grid; gap: .8mm; }
+.contact-lines span { display: flex; align-items: center; gap: 1mm; font-size: 6.5pt; font-weight: 700; }
+.contact-lines svg { color: var(--accent); }
+.qr-mark { display: block; width: 22mm; height: 22mm; }
+.qr-caption { display: block; width: 25mm; margin-top: .8mm; color: var(--ink); font-size: 6.5pt; font-weight: 900; line-height: 1.05; text-align: center; }
+.editorial-footer { display: grid; grid-template-columns: auto 1fr auto; gap: 5mm; margin-top: auto; padding-top: 2.2mm; border-top: .4mm solid var(--ink); font-size: 6.5pt; font-weight: 800; z-index: 2; }
+.editorial-footer span:nth-child(2) { text-align: center; color: #667085; }
+.editorial-footer span:last-child { color: var(--accent); }
+.content-page-3 .editorial-footer { color: #fff; border-color: rgba(255,255,255,.45); }
+.content-page-3 .editorial-footer span:nth-child(2) { color: rgba(255,255,255,.64); }
+
+.explicit-layout {
+  align-content: stretch;
+  align-items: stretch;
+  grid-auto-flow: row;
+}
+.explicit-layout .content-section {
+  align-self: stretch;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+}
+.layout-intro { padding: 3.5mm; }
+.layout-intro h2 { font-size: 10pt; }
+.layout-intro .section-copy { font-size: 7.2pt; line-height: 1.4; }
+.layout-feature { box-shadow: 0 2.2mm 8mm rgba(35,36,52,.1); }
+.layout-feature > .item-grid,
+.layout-feature > .group-grid {
+  flex: 1;
+  grid-auto-rows: minmax(min-content, 1fr);
+}
+.layout-feature .text-item,
+.layout-feature .pathway-item,
+.layout-feature .group-item,
+.layout-rail .text-item,
+.layout-rail .pathway-item,
+.layout-rail .group-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.layout-feature .list-item,
+.layout-feature .credential-item,
+.layout-feature .text-item,
+.layout-feature .group-item,
+.layout-rail .list-item,
+.layout-rail .credential-item,
+.layout-rail .text-item,
+.layout-rail .group-item { height: 100%; }
+.layout-rail > .item-grid,
+.layout-rail > .group-grid { flex: 1; grid-auto-rows: minmax(min-content, 1fr); }
+.layout-feature .list-item,
+.layout-rail .list-item { align-items: center; justify-content: flex-start; }
+.layout-feature .text-item,
+.layout-feature .pathway-item,
+.layout-feature .group-item { padding: 2.2mm; background: color-mix(in srgb, var(--pale) 72%, white); }
+.layout-feature .item-title { font-size: 7.2pt; }
+.layout-feature .compact-list span,
+.layout-feature .pathway-item,
+.layout-feature .group-item { font-size: 6.8pt; line-height: 1.28; }
+.layout-feature .group-item:nth-child(4n + 2),
+.layout-feature .group-item:nth-child(4n + 3),
+.layout-feature .text-item:nth-child(4n + 2),
+.layout-feature .text-item:nth-child(4n + 3) { background: color-mix(in srgb, var(--pale) 42%, white); }
+.layout-strip { padding: 2.3mm 2.8mm; }
+.layout-strip > .item-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.layout-strip > .group-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.layout-action {
+  background: var(--ink);
+  color: white;
+  border-top-width: 1.4mm;
+  box-shadow: 0 2mm 7mm color-mix(in srgb, var(--ink) 18%, transparent);
+}
+.layout-action h2,
+.layout-action .section-copy,
+.layout-action .programme-repeat,
+.layout-action .contact-lines svg { color: white; }
+.layout-action .list-item,
+.layout-action .text-item,
+.layout-action .credential-item { background: rgba(255,255,255,.94); color: var(--ink); }
+.layout-action .section-callout { background: white; color: var(--ink); }
+.content-page-3 .layout-action {
+  background-image: linear-gradient(135deg, color-mix(in srgb, var(--ink) 94%, transparent), color-mix(in srgb, var(--accent) 70%, transparent)), var(--programme-image);
+  background-position: center;
+  background-size: cover;
+}
+.layout-action > .item-grid,
+.layout-action > .group-grid { flex: 1; grid-auto-rows: minmax(min-content, 1fr); }
+.layout-action .list-item,
+.layout-action .text-item { height: 100%; }
+.layout-action.section-contacts_back .contact-cta { flex: 1; }
+.layout-action.section-contacts_back .contact-lines { grid-template-columns: repeat(4, max-content); gap: 2mm 5mm; }
+.layout-action.section-contacts_back .qr-caption { color: white; }
+.layout-visual {
+  justify-content: flex-end;
+  overflow: hidden;
+  background-image: linear-gradient(to top, color-mix(in srgb, var(--ink) 97%, transparent) 0 42%, color-mix(in srgb, var(--ink) 76%, transparent) 78%, color-mix(in srgb, var(--ink) 72%, transparent)), var(--programme-image);
+  background-position: center;
+  background-size: cover;
+  color: white;
+  border-top-width: 1.4mm;
+}
+.layout-visual h2,
+.layout-visual .section-copy,
+.layout-visual .programme-repeat { color: white; text-shadow: 0 .4mm 1.2mm rgba(0,0,0,.35); }
+.layout-visual .section-copy { margin-top: auto; padding: 2mm; background: color-mix(in srgb, var(--ink) 72%, transparent); font-size: 7.4pt; line-height: 1.42; }
+.layout-visual > .item-grid { margin-top: 2mm; }
+.layout-visual .list-item,
+.layout-visual .text-item { background: rgba(255,255,255,.92); color: var(--ink); }
+
+.section-curriculum_blocks > .group-grid,
+.section-curriculum_semesters > .group-grid,
+.section-reasons_to_choose > .group-grid { counter-reset: feature-card; }
+.section-curriculum_blocks > .group-grid > .group-item,
+.section-curriculum_semesters > .group-grid > .group-item,
+.section-reasons_to_choose > .group-grid > .group-item { position: relative; isolation: isolate; overflow: hidden; }
+.section-curriculum_blocks > .group-grid > .group-item::after,
+.section-curriculum_semesters > .group-grid > .group-item::after,
+.section-reasons_to_choose > .group-grid > .group-item::after {
+  content: '0' counter(feature-card);
+  counter-increment: feature-card;
+  position: absolute;
+  right: 2mm;
+  bottom: -3mm;
+  z-index: -1;
+  color: color-mix(in srgb, var(--accent) 10%, transparent);
+  font-size: 46pt;
+  font-weight: 900;
+  line-height: 1;
+}
+.section-academic_partners .logo-item img,
+.section-enterprise_partners .logo-item img { width: 15mm; height: 9mm; }
+.section-academic_partners .logo-item,
+.section-enterprise_partners .logo-item { gap: 2mm; font-size: 6.8pt; }
+
+/* Programme-owned composition details. */
+.brochure-licence-finance.content-page-2 .section-curriculum_modules .item-grid,
+.brochure-licence-management.content-page-2 .section-curriculum_modules .item-grid,
+.brochure-licence-marketing.content-page-2 .section-curriculum_modules .item-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.brochure-licence-finance.content-page-2 .section-excellence .item-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.brochure-licence-finance.content-page-4 .section-international_pathways .text-item,
+.brochure-licence-management.content-page-4 .section-international_pathways .text-item,
+.brochure-licence-marketing.content-page-4 .section-international_pathways .text-item { padding: 3mm; font-size: 7.2pt; line-height: 1.4; }
+.brochure-licence-finance.content-page-3 .section-skills_keywords .item-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.brochure-licence-informatique.content-page-2 .section-curriculum_core .item-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.brochure-licence-informatique.content-page-2 .section-specialisation_choice { background: var(--ink); color: white; }
+.brochure-licence-informatique.content-page-2 .section-specialisation_choice h2,
+.brochure-licence-informatique.content-page-2 .section-specialisation_choice .section-copy { color: white; }
+.brochure-licence-informatique.content-page-2 .section-certifications .item-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.brochure-licence-informatique.content-page-4 .section-international_pathways .item-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.brochure-licence-informatique.content-page-4 .section-international_support .section-copy { margin: auto 0; font-size: 8pt; line-height: 1.45; }
+.brochure-licence-informatique.content-page-4 .section-contacts_back .contact-lines { grid-template-columns: 1fr; }
+.brochure-master-crm-transformation-digitale.content-page-2 .section-curriculum_blocks .group-grid,
+.brochure-master-ingenierie-financiere.content-page-2 .section-curriculum_blocks .group-grid,
+.brochure-master-marketing-digital-ia.content-page-2 .section-curriculum_blocks .group-grid,
+.brochure-master-management-projets.content-page-2 .section-curriculum_semesters .group-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.brochure-licence-management.content-page-2 .section-curriculum_modules .list-item,
+.brochure-licence-marketing.content-page-2 .section-curriculum_modules .list-item { padding: 2.3mm; font-size: 7.2pt; }
+.brochure-master-management-projets.content-page-2 .section-curriculum_semesters .group-item { padding: 4mm; font-size: 7.3pt; line-height: 1.4; }
+.brochure-master-management-projets.content-page-2 .section-curriculum_semesters .item-title { font-size: 8.2pt; }
+.brochure-master-crm-transformation-digitale.content-page-2 .section-curriculum_blocks .group-item,
+.brochure-master-ingenierie-financiere.content-page-2 .section-curriculum_blocks .group-item,
+.brochure-master-marketing-digital-ia.content-page-2 .section-curriculum_blocks .group-item { font-size: 7pt; line-height: 1.35; }
+.brochure-master-crm-transformation-digitale.content-page-3 .section-reasons_to_choose .group-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.brochure-master-crm-transformation-digitale.content-page-2 .section-curriculum_visual_labels .item-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.brochure-master-marketing-digital-ia.content-page-3 .section-reasons_to_choose .item-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.brochure-master-crm-transformation-digitale.content-page-3 .section-funnel_labels .item-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.brochure-master-crm-transformation-digitale.content-page-4 .section-closing_values .item-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.brochure-master-crm-transformation-digitale.content-page-4 .section-closing_visual_labels .item-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.brochure-master-management-projets.content-page-4 .section-closing_values .item-grid { grid-template-columns: 1fr; }
+.brochure-master-management-projets.content-page-4 .section-closing_visual_labels .item-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.content-page-4 .section-contacts_back:has(.qr-mark) .contact-cta { display: grid; grid-template-columns: minmax(0, 1fr) 19mm; }
+.content-page-4 .section-contacts_back:has(.qr-mark) .contact-lines { grid-template-columns: 1fr; }
+.content-page-4 .section-contacts_back:has(.qr-mark) .qr-mark { width: 18mm; height: 18mm; }
+.content-page-4 .section-contacts_back:has(.qr-mark) .qr-caption { width: 19mm; }

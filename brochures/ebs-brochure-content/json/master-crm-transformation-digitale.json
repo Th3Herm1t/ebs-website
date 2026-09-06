@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.0",
+  "id": "master-crm-transformation-digitale",
+  "language": "fr",
+  "source": {
+    "filename": "BROCHURE MASTER CRM & TD - 2026.pdf",
+    "sha256": "48caff2e210fa785dc11fe334b2c3f76c4629c939dddf83e4d46f7e37436fcce",
+    "page_count": 4
+  },
+  "programme": {
+    "name_source": "MASTER CRM & TRANSFORMATION DIGITALE",
+    "level": "master",
+    "duration_years": 2,
+    "qualification_source": null,
+    "identity_source_pages": [
+      1
+    ],
+    "duration_source_pages": [
+      2
+    ],
+    "semester_count": null,
+    "semester_count_source_pages": [],
+    "name_normalized": "Master CRM & Transformation Digitale",
+    "name_normalization": "Case only; no change to source programme scope.",
+    "curriculum_structure": "competency_blocks",
+    "admission_requirements": null,
+    "admission_requirements_note": "Non détaillées pour l’entrée à EBS dans ces brochures. Les conditions des passerelles internationales sont conservées dans leurs sections."
+  },
+  "sections": {
+    "brand": {
+      "source_pages": [
+        1
+      ],
+      "items": [
+        "EBS — ESPIMA BUSINESS SCHOOL",
+        "EXCELLENCE",
+        "INNOVATION",
+        "LEADERSHIP"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "accreditation": {
+      "source_pages": [
+        1
+      ],
+      "text": "MASTER ACCRÉDITÉ par l’État Tunisien",
+      "review_issue_ids": [],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "positioning": {
+      "source_pages": [
+        1
+      ],
+      "text": "Devenez un expert de la relation client et de la transformation digitale. Exploitez la data, l’IA et les technologies innovantes pour concevoir des expériences clients uniques et créer de la valeur durable.",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "cover_themes": {
+      "source_pages": [
+        1
+      ],
+      "items": [
+        "CRM & INTELLIGENCE ARTIFICIELLE",
+        "DATA & BUSINESS INTELLIGENCE",
+        "AUTOMATISATION & CRM",
+        "TRANSFORMATION DIGITALE",
+        "PERFORMANCE & REVOPS",
+        "CERTIFICATIONS INTERNATIONALES"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "contacts_cover": {
+      "source_pages": [
+        1
+      ],
+      "items": [
+        "www.ebs.tn",
+        "Votre avenir commence ici.",
+        "+216 71 182 625"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "curriculum_intro": {
+      "source_pages": [
+        2
+      ],
+      "heading": "UN PROGRAMME COMPLET ET VISIONNAIRE SUR 2 ANS",
+      "text": "Pensé pour répondre aux défis actuels des entreprises, ce Master vous forme à piloter la relation client à chaque étape du parcours, à exploiter la data, à automatiser les processus et à conduire la transformation digitale avec l’intelligence artificielle au service de la performance et de la création de valeur.",
+      "subheading": "POUR MAÎTRISER LA RELATION CLIENT ET PILOTER LA TRANSFORMATION DIGITALE",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "curriculum_blocks": {
+      "source_pages": [
+        2
+      ],
+      "heading": "LE PROGRAMME EN 5 GRANDS BLOCS DE COMPÉTENCES SUR 2 ANS",
+      "groups": [
+        {
+          "heading": "CRM STRATÉGIQUE & EXPÉRIENCE CLIENT",
+          "items": [
+            "CRM",
+            "Customer Journey",
+            "Fidélisation",
+            "Satisfaction client",
+            "Customer Success"
+          ],
+          "callout": "VISION 360° CLIENT"
+        },
+        {
+          "heading": "MARKETING AUTOMATION & CRM INTELLIGENT",
+          "items": [
+            "HubSpot",
+            "Email Automation",
+            "Workflows",
+            "n8n",
+            "CRM Automation"
+          ],
+          "callout": "AUTOMATISER & ENGAGER"
+        },
+        {
+          "heading": "DATA ANALYTICS & BUSINESS INTELLIGENCE",
+          "items": [
+            "Data Analytics",
+            "Business Intelligence",
+            "Customer Analytics",
+            "Big Data",
+            "Analyse prédictive"
+          ],
+          "callout": "COMPRENDRE & PRÉDIRE"
+        },
+        {
+          "heading": "TRANSFORMATION DIGITALE & IA",
+          "items": [
+            "IA générative",
+            "Business Analysis",
+            "Systèmes d’information",
+            "Conduite du changement",
+            "Innovation"
+          ],
+          "callout": "INNOVER & TRANSFORMER"
+        },
+        {
+          "heading": "PROFESSIONNALISATION & EXPERTISE",
+          "items": [
+            "Études de cas",
+            "Soft Skills",
+            "Certifications",
+            "Mémoire",
+            "Stage professionnel"
+          ],
+          "callout": "EXPERTISE & IMPACT"
+        }
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "curriculum_visual_labels": {
+      "source_pages": [
+        2
+      ],
+      "items": [
+        "CLIENT",
+        "ANALYTICS",
+        "IA",
+        "AUTOMATISATION"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "career_outcomes": {
+      "source_pages": [
+        2
+      ],
+      "heading": "DÉBOUCHÉS | DES MÉTIERS D’AVENIR",
+      "items": [
+        "Responsable CRM",
+        "Customer Experience Manager",
+        "CRM Analytics Manager",
+        "Chef de projet CRM",
+        "Marketing Automation Manager",
+        "Data Analyst CRM",
+        "Business Intelligence Manager",
+        "RevOps Manager",
+        "Digital Transformation Manager",
+        "Consultant CRM & Data"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "professional_experience": {
+      "source_pages": [
+        2
+      ],
+      "heading": "STAGE & IMMERSION PROFESSIONNELLE",
+      "text": "Un stage obligatoire en entreprise pour valoriser vos compétences, participer activement à des projets concrets et développer durablement votre réseau professionnel.",
+      "items": [
+        "Expérience professionnelle obligatoire en entreprise",
+        "Accompagnement personnalisé pour votre recherche d’emploi",
+        "Renforcement de votre employabilité professionnelle"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "footer": {
+      "source_pages": [
+        2,
+        3,
+        4
+      ],
+      "text": "www.ebs.tn",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "reasons_intro": {
+      "source_pages": [
+        3
+      ],
+      "heading": "6 RAISONS DE CHOISIR L’EXCELLENCE POUR CONSTRUIRE VOTRE AVENIR",
+      "text": "Le Master CRM & Transformation Digitale vous donne les clés pour devenir un leader capable de comprendre vos clients, d’exploiter la donnée et de piloter des stratégies digitales à fort impact.",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "reasons_to_choose": {
+      "source_pages": [
+        3
+      ],
+      "groups": [
+        {
+          "heading": "CRM & IA AU CŒUR DU PROGRAMME",
+          "items": [
+            "Comprenez vos clients à 360°.",
+            "Exploitez la data et l’IA pour prévoir et personnaliser.",
+            "Créez des expériences clients mémorables."
+          ]
+        },
+        {
+          "heading": "CERTIFICATIONS RECONNUES",
+          "items": [
+            "Validez vos compétences avec des certifications internationales clés.",
+            "Renforcez votre employabilité dès l’obtention du diplôme."
+          ]
+        },
+        {
+          "heading": "PROJETS RÉELS ET BUSINESS CASES",
+          "items": [
+            "Travaillez sur des projets concrets issus d’entreprises partenaires.",
+            "Mettez en pratique vos acquis sur des problématiques réelles."
+          ]
+        },
+        {
+          "heading": "OUTILS ET PLATEFORMES PROFESSIONNELS",
+          "items": [
+            "Maîtrisez les outils leaders du marché.",
+            "Développez une expertise recherchée par les entreprises.",
+            "Travaillez comme un professionnel dès votre formation."
+          ]
+        },
+        {
+          "heading": "OUVERTURE INTERNATIONALE",
+          "items": [
+            "Bénéficiez de partenariats académiques internationaux.",
+            "Élargissez vos horizons et accédez à des opportunités à l’étranger."
+          ]
+        },
+        {
+          "heading": "ACCOMPAGNEMENT CARRIÈRE PERSONNALISÉ",
+          "items": [
+            "Coaching, ateliers, simulations d’entretiens.",
+            "Accès au réseau alumni et aux opportunités d’emploi.",
+            "Un suivi individualisé pour réussir."
+          ]
+        }
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "certification_logos": {
+      "source_pages": [
+        3
+      ],
+      "heading": "CERTIFICATIONS RECONNUES",
+      "text": "Intégrées dans votre parcours",
+      "items": [
+        "Microsoft Learn",
+        "Meta Blueprint",
+        "Google Prompting Essentials",
+        "IBM watsonx",
+        "Google Analytics",
+        "Power BI",
+        "n8n",
+        "HubSpot CRM"
+      ],
+      "extraction_note": "Libellés visibles, pas huit titres de diplômes identifiés. La plupart sont des marques/plateformes.",
+      "review_issue_ids": [],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "skills": {
+      "source_pages": [
+        3
+      ],
+      "heading": "LES COMPÉTENCES LES PLUS RECHERCHÉES",
+      "text": "Maîtrisez les expertises clé du marché",
+      "items": [
+        "CRM",
+        "CUSTOMER EXPERIENCE",
+        "BUSINESS INTELLIGENCE",
+        "IA & DATA SCIENCE",
+        "AUTOMATION & WORKFLOWS",
+        "DATA ANALYTICS",
+        "TRANSFORMATION DIGITALE",
+        "REVOPS & PERFORMANCE"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "quote": {
+      "source_pages": [
+        3
+      ],
+      "text": "Un Master pour ceux qui veulent comprendre leurs clients, transformer les données en décisions et créer de la valeur durable.",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "funnel_labels": {
+      "source_pages": [
+        3
+      ],
+      "items": [
+        "ATTIRER",
+        "CONVERTIR",
+        "ENGAGER",
+        "FIDÉLISER"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "closing": {
+      "source_pages": [
+        4
+      ],
+      "heading": "VOTRE AVENIR, NOTRE ENGAGEMENT.",
+      "text": "À EBS, nous formons les futurs experts du CRM, de la transformation digitale et de l’expérience client capables d’accompagner les entreprises dans leur évolution numérique. Grâce à notre réseau académique international et à nos partenaires entreprises, nous vous ouvrons les portes d’une carrière à forte valeur ajoutée.",
+      "programme_title_source": "MASTER EN CRM & TRANSFORMATION DIGITALE",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "closing_values": {
+      "source_pages": [
+        4
+      ],
+      "items": [
+        {
+          "heading": "EXCELLENCE",
+          "text": "Une formation d’excellence alignée sur les standards internationaux."
+        },
+        {
+          "heading": "OUVERTURE",
+          "text": "Un réseau académique international pour élargir vos horizons."
+        },
+        {
+          "heading": "EMPLOYABILITÉ",
+          "text": "Des partenariats solides avec les entreprises pour construire votre carrière."
+        }
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "closing_visual_labels": {
+      "source_pages": [
+        4
+      ],
+      "items": [
+        "CRM",
+        "CUSTOMER JOURNEY",
+        "EXPÉRIENCE CLIENT",
+        "BUSINESS INTELLIGENCE",
+        "IA",
+        "DATA",
+        "AUTOMATION"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "academic_partners": {
+      "source_pages": [
+        4
+      ],
+      "heading": "NOS PARTENAIRES ACADÉMIQUES INTERNATIONAUX",
+      "text": "Des universités et écoles de renom en France, en Italie et au Canada vous ouvrent les portes d’une poursuite d’études d’excellence.",
+      "groups": [
+        {
+          "country": "FRANCE",
+          "partners": [
+            "EM NORMANDIE BUSINESS SCHOOL",
+            "excelia BUSINESS SCHOOL",
+            "SUP’DE COM",
+            "Paris School of Business",
+            "IDRAC BUSINESS SCHOOL"
+          ]
+        },
+        {
+          "country": "ITALIE",
+          "partners": [
+            "UNIVERSITÀ DEGLI STUDI LINK"
+          ]
+        },
+        {
+          "country": "CANADA",
+          "partners": [
+            "UQAT — UNIVERSITÉ DU QUÉBEC EN ABITIBI-TÉMISCAMINGUE"
+          ]
+        }
+      ],
+      "conditions_source": "Poursuite d’études possible après le Master 1 ou après l’obtention du diplôme selon les accords conclus avec nos partenaires.",
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "enterprise_partners": {
+      "source_pages": [
+        4
+      ],
+      "heading": "NOS PARTENAIRES ENTREPRISES",
+      "text": "Des entreprises leaders qui collaborent avec EBS pour votre employabilité et votre réussite professionnelle.",
+      "items": [
+        "satem",
+        "YPERYON — DIGITAL AGENCY",
+        "ARFORGHE — Association des Responsables de Formation et de Gestion Humaine dans les Entreprises",
+        "ASTEELFLASH — YOUR EMS PARTNER",
+        "Cayon Cloud Communications",
+        "MEDIANET"
+      ],
+      "extraction_note": "Identités lisibles des logos ; orthographe de Cayon à confirmer sur l’asset original.",
+      "review_issue_ids": [],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "student_journey": {
+      "source_pages": [
+        4
+      ],
+      "heading": "VOTRE PARCOURS À EBS",
+      "text": "Vous intégrez un parcours structuré et professionnalisant associant CRM, transformation digitale, Intelligence Artificielle, Business Intelligence, certifications internationales, projets réels et stage en entreprise afin de développer des compétences immédiatement opérationnelles.",
+      "items": [
+        "ADMISSION",
+        "FORMATION",
+        "CERTIFICATIONS",
+        "STAGE",
+        "DIPLÔME",
+        "CARRIÈRE"
+      ],
+      "source_text_status": "visually_transcribed",
+      "review_required": false
+    },
+    "contacts_back": {
+      "source_pages": [
+        4
+      ],
+      "heading": "PRÊT À PASSER À L’ACTION ?",
+      "text": "Rejoignez EBS et construisez votre avenir !",
+      "items": [
+        "(+216) 71 182625",
+        "info@ebs.tn",
+        "www.ebs.tn",
+        "Lac 3 - Tunis, Tunisie"
+      ],
+      "qr_present": true,
+      "review_issue_ids": [],
+      "source_text_status": "visually_transcribed",
+      "review_required": false,
+      "qr": {
+        "source_page": 4,
+        "payload": "https://ebs.tn/fr/masters/crm",
+        "status": "resolved",
+        "evidence_image": "evidence/master-crm-transformation-digitale/page-04.jpg"
+      }
+    }
+  },
+  "review_issue_ids": [],
+  "extraction": {
+    "method": "manual_visual_transcription_of_all_pages; sparse_text_layer_as_secondary_evidence",
+    "wording_policy": "Original wording retained; layout line breaks merged; apostrophes, spacing and superscript ordinals standardized. No factual updating.",
+    "verification_scope": "Source transcription only; no external validation of accreditation, partners, credentials, prices or access.",
+    "excluded": "Decorative stock-image UI text/numbers, incidental signage already represented elsewhere, illegible logo microprint; no original visual assets recreated."
+  },
+  "normalized_contacts": [
+    {
+      "type": "website",
+      "source_text": "www.ebs.tn",
+      "normalized_value": "www.ebs.tn",
+      "source_pages": [
+        1
+      ],
+      "review_required": false
+    },
+    {
+      "type": "phone",
+      "source_text": "+216 71 182 625",
+      "normalized_value": "+21671182625",
+      "source_pages": [
+        1
+      ],
+      "review_required": false
+    },
+    {
+      "type": "phone",
+      "source_text": "(+216) 71 182625",
+      "normalized_value": "+21671182625",
+      "source_pages": [
+        4
+      ],
+      "review_required": false
+    },
+    {
+      "type": "email",
+      "source_text": "info@ebs.tn",
+      "normalized_value": "info@ebs.tn",
+      "source_pages": [
+        4
+      ],
+      "review_required": false
+    },
+    {
+      "type": "website",
+      "source_text": "www.ebs.tn",
+      "normalized_value": "www.ebs.tn",
+      "source_pages": [
+        4
+      ],
+      "review_required": false
+    },
+    {
+      "type": "address",
+      "source_text": "Lac 3 - Tunis, Tunisie",
+      "normalized_value": "Lac 3 - Tunis, Tunisie",
+      "source_pages": [
+        4
+      ],
+      "review_required": false
+    }
+  ],
+  "page_coverage": [
+    {
+      "page": 1,
+      "visual_review_completed": true,
+      "section_ids": [
+        "brand",
+        "accreditation",
+        "positioning",
+        "cover_themes",
+        "contacts_cover"
+      ],
+      "evidence_image": "evidence/master-crm-transformation-digitale/page-01.jpg"
+    },
+    {
+      "page": 2,
+      "visual_review_completed": true,
+      "section_ids": [
+        "curriculum_intro",
+        "curriculum_blocks",
+        "curriculum_visual_labels",
+        "career_outcomes",
+        "professional_experience",
+        "footer"
+      ],
+      "evidence_image": "evidence/master-crm-transformation-digitale/page-02.jpg"
+    },
+    {
+      "page": 3,
+      "visual_review_completed": true,
+      "section_ids": [
+        "footer",
+        "reasons_intro",
+        "reasons_to_choose",
+        "certification_logos",
+        "skills",
+        "quote",
+        "funnel_labels"
+      ],
+      "evidence_image": "evidence/master-crm-transformation-digitale/page-03.jpg"
+    },
+    {
+      "page": 4,
+      "visual_review_completed": true,
+      "section_ids": [
+        "footer",
+        "closing",
+        "closing_values",
+        "closing_visual_labels",
+        "academic_partners",
+        "enterprise_partners",
+        "student_journey",
+        "contacts_back"
+      ],
+      "evidence_image": "evidence/master-crm-transformation-digitale/page-04.jpg"
+    }
+  ],
+  "shared_block_refs": {
+    "accreditation": "accreditation_variant_2",
+    "professional_experience": "professional_experience_variant_2",
+    "closing_values": "closing_values",
+    "academic_partners": "academic_partners_variant_2",
+    "enterprise_partners": "enterprise_partners"
+  }
+}

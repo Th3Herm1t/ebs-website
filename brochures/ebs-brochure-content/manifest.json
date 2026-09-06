@@ -1,0 +1,147 @@
+{
+  "bundle_version": "1.0",
+  "extraction_date": "2026-09-03",
+  "programmes": [
+    {
+      "filename": "BROCHURE LICENCE FINANCE - 2026.pdf",
+      "sha256": "1c5771e07c6d9fe1de84f9c7ea8ba01cd602ab3fc79b05ad4789fda686ed8f95",
+      "page_count": 4,
+      "id": "licence-finance",
+      "yaml": "content/licence-finance.yaml",
+      "json": "json/licence-finance.json",
+      "transcript": "transcripts/licence-finance.md",
+      "source_pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "review_issue_ids": [],
+      "resolved": true
+    },
+    {
+      "filename": "BROCHURE LICENCE INFORMATIQUE - 2026.pdf",
+      "sha256": "3d728be57d8c83fd19f38650bc6fa443d535089be50bb5b7b6878db21125be3f",
+      "page_count": 4,
+      "id": "licence-informatique",
+      "yaml": "content/licence-informatique.yaml",
+      "json": "json/licence-informatique.json",
+      "transcript": "transcripts/licence-informatique.md",
+      "source_pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "review_issue_ids": [],
+      "resolved": true
+    },
+    {
+      "filename": "BROCHURE LICENCE MANAGEMENT - 2026.pdf",
+      "sha256": "f1d4e9f6b2a9c35e06e3ac0409a5471094658b256c5baec4833686c4aa1a26e6",
+      "page_count": 4,
+      "id": "licence-management",
+      "yaml": "content/licence-management.yaml",
+      "json": "json/licence-management.json",
+      "transcript": "transcripts/licence-management.md",
+      "source_pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "review_issue_ids": [],
+      "resolved": true
+    },
+    {
+      "filename": "BROCHURE LICENCE MARKETING - 2026.pdf",
+      "sha256": "0a17a4706f61575ee83101f6c313ce10b3cc4a341736cd335f2c32fd99b0b12e",
+      "page_count": 4,
+      "id": "licence-marketing",
+      "yaml": "content/licence-marketing.yaml",
+      "json": "json/licence-marketing.json",
+      "transcript": "transcripts/licence-marketing.md",
+      "source_pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "review_issue_ids": [],
+      "resolved": true
+    },
+    {
+      "filename": "BROCHURE MASTER CRM & TD - 2026.pdf",
+      "sha256": "48caff2e210fa785dc11fe334b2c3f76c4629c939dddf83e4d46f7e37436fcce",
+      "page_count": 4,
+      "id": "master-crm-transformation-digitale",
+      "yaml": "content/master-crm-transformation-digitale.yaml",
+      "json": "json/master-crm-transformation-digitale.json",
+      "transcript": "transcripts/master-crm-transformation-digitale.md",
+      "source_pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "review_issue_ids": [],
+      "resolved": true
+    },
+    {
+      "filename": "BROCHURE MASTER INGENIERIE FINANCIERE - 2026.pdf",
+      "sha256": "7e8fed3fc126be1da93ee0ee553c3fefc76c4f507c4b4f25bcec22228b27e2ad",
+      "page_count": 4,
+      "id": "master-ingenierie-financiere",
+      "yaml": "content/master-ingenierie-financiere.yaml",
+      "json": "json/master-ingenierie-financiere.json",
+      "transcript": "transcripts/master-ingenierie-financiere.md",
+      "source_pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "review_issue_ids": [],
+      "resolved": true
+    },
+    {
+      "filename": "BROCHURE MASTER MANAGEMENT DE PROJETS - 2026.pdf",
+      "sha256": "bfea43310bd0b3038e7bb5f45d67c9771da2f55792cc08066b49048d8d1cd8b5",
+      "page_count": 4,
+      "id": "master-management-projets",
+      "yaml": "content/master-management-projets.yaml",
+      "json": "json/master-management-projets.json",
+      "transcript": "transcripts/master-management-projets.md",
+      "source_pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "review_issue_ids": [],
+      "resolved": true
+    },
+    {
+      "filename": "BROCHURE MASTER MARKETING DIGITAL & IA - 2026.pdf",
+      "sha256": "012c9248721d942bf959a7f48224165b23fc329730e3161fa1735d53de313f3a",
+      "page_count": 4,
+      "id": "master-marketing-digital-ia",
+      "yaml": "content/master-marketing-digital-ia.yaml",
+      "json": "json/master-marketing-digital-ia.json",
+      "transcript": "transcripts/master-marketing-digital-ia.md",
+      "source_pages_reviewed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "review_issue_ids": [],
+      "resolved": true
+    }
+  ],
+  "source_pdf_included": false,
+  "source_page_previews_included": true,
+  "source_wording_not_externally_verified": true,
+  "status": "passed_and_resolved",
+  "review_items_status": "all_18_resolved"
+}
