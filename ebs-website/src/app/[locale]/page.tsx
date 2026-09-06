@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import HeroSection from "@/components/sections/HeroSection";
 import TopPromo from "@/components/sections/TopPromo";
+import HomeCertificationsSection from "@/components/sections/HomeCertificationsSection";
 import { pageMetadata } from "@/lib/seo";
 
 // Lazy-loaded components below the fold
@@ -48,8 +49,9 @@ export default function Home() {
       <PillarsSection />
       <InfoSliderSection />
       <AboutSection />
-      <CounterSection />
-      <CoursePromoSection />
+       <CounterSection />
+       <HomeCertificationsSection />
+       <CoursePromoSection />
       <AcademicPartners />
 
       <CareerSection />
