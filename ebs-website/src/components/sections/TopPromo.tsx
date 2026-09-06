@@ -37,7 +37,7 @@ export default async function TopPromo() {
   ];
 
   return (
-    <section className="pb-[50px]">
+    <section className="pb-8">
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-3">
           {promos.map((promo) => {

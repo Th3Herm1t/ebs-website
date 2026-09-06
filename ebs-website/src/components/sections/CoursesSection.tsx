@@ -35,7 +35,7 @@ function ProgramGrid({ title, subtitle, programs, type }: { title: string, subti
   };
 
   return (
-    <div className="mb-24 last:mb-0 relative z-10">
+    <div className="mb-16 last:mb-0 relative z-10">
       <SectionHeading 
         title={title} 
         subtitle={
@@ -114,7 +114,7 @@ export default function CoursesSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden section-padding bg-[#fdfdfd]">
+    <section className="relative overflow-hidden pt-16 bg-[#fdfdfd]">
       <HeroBackgroundVariant1 />
       <div className="relative z-10 max-w-[1200px] mx-auto px-4">
         <ProgramGrid title={t('title')} subtitle={t('licencesSubtitle')} programs={licences} type="licence" />

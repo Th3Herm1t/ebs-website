@@ -53,7 +53,7 @@ export default function InfoSliderSection() {
   ];
 
   return (
-    <section className="py-16 lg:py-[100px] bg-white overflow-hidden">
+    <section className="py-12 lg:py-16 bg-white overflow-hidden">
       <div className="w-full max-w-[1400px] mx-auto px-5 lg:px-24 xl:px-32 relative">
         <Carousel
           plugins={[autoplayPlugin]}

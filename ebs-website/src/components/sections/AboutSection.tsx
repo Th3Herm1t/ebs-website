@@ -9,7 +9,7 @@ export default function AboutSection() {
   const t = useTranslations('HomePage.about');
 
   return (
-    <section className="relative overflow-hidden py-16 lg:py-[100px] section-padding">
+    <section className="relative overflow-hidden section-padding">
       <HeroBackgroundVariant1 />
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 lg:px-12">
         <div className="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-12">
