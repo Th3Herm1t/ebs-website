@@ -62,7 +62,7 @@ export default function TarifsClient() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="text-[17px] md:text-[18px] text-white/70 leading-relaxed max-w-[640px] mx-auto"
           >
-            Des formations professionnalisantes, avec des diplômes agréés par l&apos;État tunisien et un catalogue de certifications internationales gratuites et vérifiées.
+             Des formations professionnalisantes, avec des diplômes agréés par l&apos;État tunisien et un catalogue de certifications internationales gratuites.
           </motion.p>
         </div>
       </section>

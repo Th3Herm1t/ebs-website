@@ -9,7 +9,7 @@ export const faqSchemaQuestions = [
   },
   {
     q: "Les certifications sont-elles vraiment gratuites ?",
-    a: "Oui. Le catalogue public v3 ne retient que des ressources dont l'apprentissage, l'évaluation, le justificatif et les accès requis sont vérifiés à coût zéro.",
+    a: "Oui. Le catalogue public v3 propose des ressources dont l'apprentissage, l'évaluation, le justificatif et les accès requis sont gratuits.",
   },
   {
     q: "Puis-je étudier à l'étranger pendant mon cursus ?",

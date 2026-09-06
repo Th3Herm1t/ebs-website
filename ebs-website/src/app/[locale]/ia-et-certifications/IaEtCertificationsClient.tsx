@@ -445,7 +445,7 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
               Certifications IA
             </Badge>
               <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">
-              {iaResources.length} formations IA vérifiées
+              {iaResources.length} formations IA
             </h2>
             <p className="text-[16px] text-penn-body mt-3 max-w-[700px] mx-auto">
               Chaque formation est gratuite de bout en bout et conserve son type exact de justificatif : certification, badge, achievement ou certificat d&apos;achèvement.
@@ -669,7 +669,7 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
               {
                 icon: <Award className="w-6 h-6" />,
                 title: "Certifications",
-                desc: `${totalCertifications} certifications gratuites vérifiées.`,
+                 desc: `${totalCertifications} certifications gratuites.`,
                 href: "/certifications",
                 label: "Découvrir",
               },

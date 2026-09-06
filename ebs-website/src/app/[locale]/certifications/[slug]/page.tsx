@@ -84,7 +84,7 @@ const PROVIDER_EDITORIAL_METADATA: Record<string, { tagline: string; presentatio
   freecodecamp: {
     tagline: "Accessible chez EBS — Développement logiciel, algorithmique et projets certifiants.",
     presentation: "freeCodeCamp est une plateforme éducative à but non lucratif qui certifie des compétences pratiques à travers des centaines d'heures de code et de projets validés.",
-    pourquoi: "Chaque certification freeCodeCamp repose sur la livraison de projets concrets examinés et vérifiables publiquement.",
+    pourquoi: "Chaque certification freeCodeCamp repose sur la livraison de projets concrets.",
   },
   "hugging-face": {
     tagline: "Accessible chez EBS — Modèles de langage, open-source et IA générative.",
@@ -125,10 +125,10 @@ function providerPageData(slug: string) {
     slug,
     name: provider.name,
     logo: getCatalogueV3ProviderLogo(provider.id) ?? "",
-    tagline: editorial?.tagline ?? (isSimulation ? "Accessible chez EBS — Simulation professionnelle et mise en situation réelle." : "Accessible chez EBS — Ressources et justificatifs vérifiés gratuits."),
+     tagline: editorial?.tagline ?? (isSimulation ? "Accessible chez EBS — Simulation professionnelle et mise en situation réelle." : "Accessible chez EBS — Ressources et justificatifs gratuits."),
     presentation: editorial?.presentation ?? (isSimulation
-      ? `${provider.name} propose des simulations professionnelles interactives permettant de travailler sur des cas pratiques réels d'entreprise, vérifiées et intégrées dans le catalogue EBS.`
-      : `${resources.length} ressources de ${provider.name} sont publiées dans la release v3.1 du catalogue EBS, chacune vérifiée gratuite de bout en bout.`),
+       ? `${provider.name} propose des simulations professionnelles interactives permettant de travailler sur des cas pratiques réels d'entreprise, intégrées dans le catalogue EBS.`
+       : `${resources.length} ressources de ${provider.name} sont publiées dans la release v3.1 du catalogue EBS, chacune gratuite de bout en bout.`),
     pourquoi: editorial?.pourquoi ?? "Ces parcours développent des compétences pratiques reconnues et enrichissent le profil de nos diplômés sans aucun coût additionnel.",
     categories,
   };
@@ -139,7 +139,7 @@ export async function generateMetadata({ params }: PageParams) {
   const data = providerPageData(slug);
   if (!data) return {};
   return pageMetadata({
-    title: `Ressources vérifiées ${data.name} chez EBS`,
+     title: `Ressources ${data.name} chez EBS`,
     description: `${data.tagline} ${data.presentation.slice(0, 135)}`,
     path: `/${locale}/certifications/${slug}`,
   });
@@ -153,7 +153,7 @@ export default async function CertProviderPage({ params }: PageParams) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "EducationalOccupationalCredential",
-    name: `Ressources vérifiées ${data.name}`,
+     name: `Ressources ${data.name}`,
     description: data.presentation,
     provider: {
       "@type": "CollegeOrUniversity",
@@ -168,7 +168,7 @@ export default async function CertProviderPage({ params }: PageParams) {
       <CertProviderContent data={data} />
       <CtaSection
         title="Construisez vos compétences avec EBS."
-        subtitle="Les ressources présentées sont vérifiées gratuites et peuvent compléter les preuves acceptées de votre parcours."
+         subtitle="Les ressources présentées sont gratuites et peuvent compléter les preuves acceptées de votre parcours."
         primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         secondaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"

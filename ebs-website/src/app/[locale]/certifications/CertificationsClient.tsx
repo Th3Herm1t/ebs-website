@@ -224,7 +224,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
               <h1 className="text-[36px] md:text-[52px] lg:text-[60px] font-extrabold text-white leading-[1.08] tracking-[-1px] mb-4">
                 {uniqueResourceCount} certifications internationales.
                 <br />
-                <span className="text-penn-green">Incluses et vérifiées gratuites</span>
+                 <span className="text-penn-green">Incluses et gratuites</span>
                 <span className="text-white">.</span>
               </h1>
 
@@ -636,7 +636,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
             <h2 className="text-[32px] md:text-[44px] font-extrabold text-white leading-[1.1]">
               Un catalogue rigoureux,
               <br />
-              vérifié et intégré à vos études.
+               intégré à vos études.
             </h2>
           </motion.div>
 
@@ -650,7 +650,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
               {
                 icon: <ShieldCheck className="w-5 h-5" />,
                 title: "100 % Gratuit garanti",
-                text: "Apprentissage, évaluations et émission des certificats sont vérifiés sans frais cachés pour chaque étudiant.",
+                 text: "Apprentissage, évaluations et émission des certificats sont accessibles sans frais cachés pour chaque étudiant.",
               },
               {
                 icon: <BookOpen className="w-5 h-5" />,
@@ -694,7 +694,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
 
       {/* CTA */}
       <CtaSection
-        title="Construisez un profil de compétences vérifié, gratuit et lisible."
+         title="Construisez un profil de compétences gratuit et lisible."
         subtitle="Développez des compétences pratiques reconnues mondialement avec Espima Business School."
         primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         secondaryCta={{ label: "Nous contacter", href: "/contact" }}

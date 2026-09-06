@@ -66,7 +66,7 @@ export function CertificationDetailDrawer({ opportunity, onClose, programmeLabel
   };
   const credentialType = opportunity.credential
     ? credentialTypeLabels[opportunity.credential.type]
-    : "Justificatif vérifié";
+    : "Justificatif inclus";
 
   const isMaster = opportunity.mapping.programmeId.includes("master") || opportunity.mapping.year.startsWith("M");
   const programHref = isMaster
@@ -163,9 +163,9 @@ export function CertificationDetailDrawer({ opportunity, onClose, programmeLabel
             <div className="flex items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4">
               <ShieldCheck className="h-6 w-6 text-emerald-600 shrink-0 mt-0.5" />
               <div>
-                <p className="text-[14px] font-extrabold text-emerald-900">100 % Gratuit & Vérifié</p>
+                <p className="text-[14px] font-extrabold text-emerald-900">100 % Gratuit</p>
                 <p className="text-[12px] text-emerald-700 leading-relaxed mt-0.5">
-                  Formation, évaluation et délivrance du justificatif vérifiées gratuites dans le cadre de la politique EBS.
+                  Formation, évaluation et délivrance du justificatif sont gratuites dans le cadre de la politique EBS.
                 </p>
               </div>
             </div>

@@ -155,7 +155,7 @@ export function CertProviderContent({ data }: { data: EnhancedCertProviderData }
           >
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-48px)/3)]">
               <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">{totalCerts}+</p>
-              <p className="text-[12px] text-white/50 font-medium">ressources vérifiées</p>
+              <p className="text-[12px] text-white/50 font-medium">ressources incluses</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-48px)/3)]">
               <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">
@@ -277,7 +277,7 @@ export function CertProviderContent({ data }: { data: EnhancedCertProviderData }
               {totalCerts} ressources et justificatifs référencés
             </h2>
             <p className="text-[16px] text-penn-body mt-3 max-w-[600px] mx-auto">
-              Chaque formation est vérifiée 100% gratuite et intégrée aux parcours de compétences EBS.
+              Chaque formation est 100% gratuite et intégrée aux parcours de compétences EBS.
             </p>
           </motion.div>
 
@@ -339,7 +339,7 @@ export function CertProviderContent({ data }: { data: EnhancedCertProviderData }
                   <p className="text-[13px] font-extrabold text-penn-navy group-hover:text-penn-green transition-colors">
                     {other.name}
                   </p>
-                  <p className="text-[11px] text-penn-body/60 mt-1">{other.resourceCount} ressources vérifiées</p>
+                  <p className="text-[11px] text-penn-body/60 mt-1">{other.resourceCount} ressources</p>
                 </Link>
               ))}
             </div>

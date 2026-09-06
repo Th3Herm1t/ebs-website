@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageParams) {
   const programme = getCatalogueV3Programme(data.catalogueId, catalogue);
   return pageMetadata({
     title: `${programme?.name.fr ?? data.title} en Tunisie`,
-    description: `${data.tagline} ${certifications.length} certifications gratuites vérifiées, IA intégrée et parcours international chez EBS Tunis.`,
+   description: `${data.tagline} ${certifications.length} certifications gratuites, IA intégrée et parcours international chez EBS Tunis.`,
     path: `/${locale}/licences/${slug}`,
   });
 }

@@ -47,7 +47,7 @@ export function IACompetences({ color, description, title = "L'IA est obligatoir
           </div>
 
           <Link href="/ia-et-certifications" className="inline-flex items-center gap-2 text-[14px] font-bold text-white/80 transition-colors hover:text-white" style={{ color: accentColor }}>
-            Explorer les ressources IA vérifiées
+             Explorer les ressources IA
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

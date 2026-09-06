@@ -67,7 +67,7 @@ const questions = [
   {
     q: "Qu'est-ce qui compte le plus pour toi ?",
     options: [
-      { val: "certs", label: "Les compétences vérifiées", icon: <Sparkles className="w-5 h-5" /> },
+       { val: "certs", label: "Les compétences professionnelles", icon: <Sparkles className="w-5 h-5" /> },
       { val: "intl", label: "L'international", icon: <Globe className="w-5 h-5" /> },
       { val: "job", label: "L'employabilité rapide", icon: <TrendingUp className="w-5 h-5" /> },
       { val: "salary", label: "Le salaire élevé", icon: <LineChart className="w-5 h-5" /> },
@@ -117,7 +117,7 @@ const compareRows = [
   { label: "Niveau", key: "degree" as const },
   { label: "Durée", key: "duration" as const },
   { label: "Prérequis", key: "level" as const },
-  { label: "Ressources vérifiées", key: "certs" as const, highlight: true },
+   { label: "Ressources incluses", key: "certs" as const, highlight: true },
   { label: "International", key: "intl" as const },
   { label: "Taux d'emploi", key: "employment" as const },
   { label: "Débouchés", key: "careers" as const },
@@ -272,7 +272,7 @@ export default function ProgrammeFinder() {
                         {result.name}
                       </h3>
                       <p className="text-sm text-penn-body/70 mb-2">
-                        {result.duration} · {result.certs} opportunités vérifiées · {result.degree}
+                         {result.duration} · {result.certs} opportunités · {result.degree}
                       </p>
                       <p className="text-sm text-penn-body leading-relaxed mb-8 max-w-md mx-auto">
                         {result.data.tagline}
