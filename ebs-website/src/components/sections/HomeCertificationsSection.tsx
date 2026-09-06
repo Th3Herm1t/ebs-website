@@ -31,7 +31,15 @@ export default async function HomeCertificationsSection() {
   const cards = Array.from(byResource.values()).slice(0, 10);
   if (cards.length === 0) return null;
 
-  return <HomeCertificationsCarousel cards={cards} total={opportunities.length} />;
+  return (
+    <HomeCertificationsCarousel
+      cards={cards}
+      total={opportunities.length}
+      resourceCount={catalogue.resources.length}
+      providerCount={catalogue.providers.length}
+      programmeCount={catalogue.programmes.length}
+    />
+  );
 }
 
 function classificationLabel(classification: Resource["classification"]) {

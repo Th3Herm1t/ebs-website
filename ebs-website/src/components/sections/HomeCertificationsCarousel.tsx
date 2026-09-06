@@ -19,7 +19,19 @@ export interface HomeCertificationCard {
   programmes: string[];
 }
 
-export default function HomeCertificationsCarousel({ cards, total }: { cards: HomeCertificationCard[]; total: number }) {
+export default function HomeCertificationsCarousel({
+  cards,
+  total,
+  resourceCount,
+  providerCount,
+  programmeCount,
+}: {
+  cards: HomeCertificationCard[];
+  total: number;
+  resourceCount: number;
+  providerCount: number;
+  programmeCount: number;
+}) {
   return (
     <section className="overflow-hidden bg-penn-navy py-20 text-white lg:py-28">
       <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:px-12">
@@ -41,9 +53,29 @@ export default function HomeCertificationsCarousel({ cards, total }: { cards: Ho
             </Link>
             <span className="text-[12px] font-bold text-white/45">{total} opportunités au catalogue</span>
           </div>
+          <div className="mt-10 grid max-w-[500px] grid-cols-3 gap-3 border-t border-white/10 pt-6">
+            <div>
+              <p className="text-[25px] font-extrabold leading-none text-penn-green">{resourceCount}</p>
+              <p className="mt-2 text-[10px] font-bold uppercase tracking-wide text-white/45">Ressources</p>
+            </div>
+            <div>
+              <p className="text-[25px] font-extrabold leading-none text-penn-green">{providerCount}</p>
+              <p className="mt-2 text-[10px] font-bold uppercase tracking-wide text-white/45">Organismes</p>
+            </div>
+            <div>
+              <p className="text-[25px] font-extrabold leading-none text-penn-green">{programmeCount}</p>
+              <p className="mt-2 text-[10px] font-bold uppercase tracking-wide text-white/45">Programmes</p>
+            </div>
+          </div>
         </div>
 
-        <div className="relative isolate min-w-0 overflow-hidden px-7 py-2 lg:px-10">
+        <div
+          className="relative isolate min-w-0 overflow-hidden px-7 py-2 lg:px-10"
+          style={{
+            maskImage: "linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%)",
+          }}
+        >
           <Swiper
             modules={[EffectCoverflow, Navigation]}
             effect="coverflow"
@@ -54,7 +86,7 @@ export default function HomeCertificationsCarousel({ cards, total }: { cards: Ho
             slidesPerView="auto"
             navigation={{ nextEl: ".home-cert-next", prevEl: ".home-cert-prev" }}
             coverflowEffect={{ rotate: 0, stretch: 70, depth: 260, modifier: 1, slideShadows: false }}
-            className="!overflow-visible !pb-8"
+            className="!overflow-visible !pb-8 [&_.swiper-slide]:transition-[filter,opacity] [&_.swiper-slide]:duration-500 [&_.swiper-slide-prev]:blur-[1.5px] [&_.swiper-slide-next]:blur-[1.5px]"
           >
             {cards.map((card) => (
               <SwiperSlide key={card.id} className="!h-[380px] !w-[250px] md:!h-[440px] md:!w-[290px]">
