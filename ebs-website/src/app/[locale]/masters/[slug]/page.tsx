@@ -114,9 +114,16 @@ export default async function MasterLPPage({ params }: PageParams) {
               <p><strong>Présentation :</strong></p>
               {data.generalPresentation.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </> : (data.presentationBlocks ?? [data.presentation ?? data.pitch]).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </ProgramPresentation>
+           </ProgramPresentation>
 
            <div>
+             <SectionHeading>7. PARCOURS CERTIFIANT EBS</SectionHeading>
+             {data.certificationDescription && <p className="mb-5 text-[15px] leading-relaxed text-penn-body">{data.certificationDescription}</p>}
+             {data.certificationSections && <TextGroups groups={data.certificationSections} />}
+             <CertificationsTable certs={certifications} requirements={requirements} profileLabel={profileLabel} color={data.color} />
+           </div>
+
+            <div>
              <SectionHeading>2. OBJECTIFS DE LA FORMATION</SectionHeading>
              <TextList intro={data.objectivesIntro ?? "Le Master poursuit plusieurs objectifs complémentaires :"} items={data.objectives ?? []} />
            </div>
@@ -143,14 +150,7 @@ export default async function MasterLPPage({ params }: PageParams) {
             <ModulesAccordion modules={data.modules} color={data.color} />
            </div>
 
-           <div>
-             <SectionHeading>7. PARCOURS CERTIFIANT EBS</SectionHeading>
-             {data.certificationDescription && <p className="mb-5 text-[15px] leading-relaxed text-penn-body">{data.certificationDescription}</p>}
-             {data.certificationSections && <TextGroups groups={data.certificationSections} />}
-             <CertificationsTable certs={certifications} requirements={requirements} profileLabel={profileLabel} color={data.color} />
-          </div>
-
-           <div>
+            <div>
              <SectionHeading>8. L'INTELLIGENCE ARTIFICIELLE AU CŒUR DU MASTER</SectionHeading>
               <IACompetences color={data.color} description={data.iaDescription ? <div>{data.iaIntro && <p>{data.iaIntro}</p>}{data.iaDescription.split("\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{data.iaApplicationsIntro && <p>{data.iaApplicationsIntro}</p>}{data.iaContent?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{data.iaConclusion && <p>{data.iaConclusion}</p>}</div> : undefined} />
            </div>
