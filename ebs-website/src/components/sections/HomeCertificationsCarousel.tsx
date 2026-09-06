@@ -43,7 +43,7 @@ export default function HomeCertificationsCarousel({
             </span>
             Le passeport professionnel EBS
           </div>
-          <h2 className="max-w-[510px] text-[38px] font-extrabold leading-[1.04] tracking-tight md:text-[52px]">
+          <h2 className="max-w-[510px] text-[38px] font-extrabold leading-[1.04] tracking-tight text-white md:text-[52px]">
             Votre diplôme ouvre la porte<span className="text-penn-green">.</span>
           </h2>
           <p className="mt-6 max-w-[470px] text-[16px] leading-relaxed text-white/65">
