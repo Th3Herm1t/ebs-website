@@ -6,7 +6,7 @@ import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { masters } from "@/lib/programmes/masters";
-import { aiProfileLabels, getCatalogueV3Programme, getCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
+import { getCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { pageMetadata } from "@/lib/seo";
 
@@ -29,8 +29,8 @@ const overviewBase = [
 const mastersCards = [
   {
     icon: <Award className="w-6 h-6" />,
-    title: "199",
-    subtitle: "Certifications vérifiées",
+     title: "150+",
+     subtitle: "Offertes",
     color: "#2B8FAB",
     offsetY: -80,
     parallaxSpeed: 1,
@@ -46,7 +46,7 @@ const mastersCards = [
   {
     icon: <BookOpen className="w-6 h-6" />,
     title: "4 Masters",
-    subtitle: "Reconnus par l'État",
+     subtitle: "Diplômes habilités par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique",
     color: "#E89745",
     offsetY: -10,
     parallaxSpeed: 0.6,
@@ -61,14 +61,12 @@ export default async function MastersPage({
   const { program } = await searchParams;
   const catalogue = await getCatalogueV3Snapshot();
   const overview = overviewBase.map((entry) => {
-    const programme = getCatalogueV3Programme(entry.catalogueId, catalogue);
     const summary = getCatalogueV3ProgrammeSummary(entry.catalogueId, catalogue);
-    const profile = programme ? aiProfileLabels[programme.profile] : "AI-Enabled";
     return {
       ...entry,
-      title: programme?.name.fr ?? entry.title,
-      subtitle: `${profile} · ${summary.requirements} compétences requises · ${summary.recommended} recommandées · ${summary.discovery} explorer. ${entry.subtitle}`,
-      totalCerts: summary.requirements + summary.total,
+       title: entry.title,
+       subtitle: entry.subtitle,
+       totalCerts: summary.total,
     };
   });
   const filteredOverview = program
@@ -92,7 +90,7 @@ export default async function MastersPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <ShowcaseHero
         title="Nos Masters : 2 ans pour atteindre l'excellence."
-        subtitle="4 Masters professionnels • Intelligence Artificielle intégrée dans chaque parcours • Catalogue de 199 certifications et justificatifs internationaux vérifiés gratuits • Diplôme accrédité par l'État tunisien."
+         subtitle="4 Masters professionnels • Intelligence Artificielle intégrée dans chaque parcours • Plus de 20 certifications professionnelles internationales selon le programme • Diplôme accrédité par l'État tunisien."
         badge="Masters"
         cards={mastersCards}
       />
@@ -182,9 +180,9 @@ export default async function MastersPage({
                   <Award className="w-7 h-7 text-penn-green" />
                 </div>
                 <div>
-                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">199 certifications vérifiées</h3>
+                   <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">Certifications internationales</h3>
                   <p className="text-[15px] text-penn-body leading-relaxed">
-                    Des certifications délivrées par PMI, Scrum, Bloomberg, HubSpot, IBM, Google, Microsoft, Databricks et plus de 30 organismes reconnus sont intégrées à votre parcours.
+                     Des certifications délivrées par PMI, Scrum, Bloomberg, HubSpot, IBM, Google et d'autres organismes reconnus sont intégrées à votre parcours.
                   </p>
                 </div>
               </div>

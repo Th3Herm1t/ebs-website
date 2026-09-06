@@ -6,7 +6,7 @@ import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { licences } from "@/lib/programmes/licences";
-import { aiProfileLabels, getCatalogueV3Programme, getCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
+import { getCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { pageMetadata } from "@/lib/seo";
 
@@ -31,8 +31,8 @@ const allProgramsBase = [
 const licencesCards = [
   {
     icon: <Award className="w-6 h-6" />,
-    title: "199",
-    subtitle: "Certifications vérifiées",
+     title: "150+",
+     subtitle: "Offertes",
     color: "#2B8FAB",
     offsetY: -80,
     parallaxSpeed: 1,
@@ -63,14 +63,12 @@ export default async function LicencesPage({
   const { program } = await searchParams;
   const catalogue = await getCatalogueV3Snapshot();
   const allPrograms = allProgramsBase.map((entry) => {
-    const programme = getCatalogueV3Programme(entry.catalogueId, catalogue);
     const summary = getCatalogueV3ProgrammeSummary(entry.catalogueId, catalogue);
-    const profile = programme ? aiProfileLabels[programme.profile] : "AI-Enabled";
     return {
       ...entry,
-      title: programme?.name.fr ?? entry.title,
-      subtitle: `${profile} · ${summary.requirements} compétences requises · ${summary.recommended} recommandées · ${summary.discovery} explorer. ${entry.subtitle}`,
-      totalCerts: summary.requirements + summary.total,
+       title: entry.title,
+       subtitle: entry.subtitle,
+       totalCerts: summary.total,
     };
   });
   const filteredPrograms = program
@@ -94,7 +92,7 @@ export default async function LicencesPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <ShowcaseHero
         title="Nos Licences : 3 ans pour construire votre avenir."
-        subtitle="4 Licences déclinées en 5 parcours • Intelligence Artificielle intégrée dans chaque filière • Catalogue de 199 certifications et justificatifs internationaux vérifiés gratuits • Diplôme agréé par l'État tunisien."
+         subtitle="4 Licences déclinées en 5 parcours • Intelligence Artificielle intégrée dans chaque filière • Plus de 25 certifications internationales offertes selon le programme • Diplôme agréé par l'État tunisien."
         badge="Licences"
         cards={licencesCards}
       />
@@ -174,9 +172,9 @@ export default async function LicencesPage({
                   <Award className="w-7 h-7 text-penn-green" />
                 </div>
                 <div>
-                  <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">199 certifications vérifiées</h3>
+                   <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">150+ certifications</h3>
                   <p className="text-[15px] text-penn-body leading-relaxed">
-                    Des certifications délivrées par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot, Databricks et plus de 30 partenaires internationaux, offertes et vérifiées gratuites sans frais supplémentaires.
+                     Des certifications délivrées par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot et plus de 30 partenaires internationaux, offertes sans frais supplémentaires.
                   </p>
                 </div>
               </div>

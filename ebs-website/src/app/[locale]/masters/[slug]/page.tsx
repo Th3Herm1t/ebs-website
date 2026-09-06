@@ -41,7 +41,7 @@ export default async function MasterLPPage({ params }: PageParams) {
   const catalogueProgramme = getCatalogueV3Programme(data.catalogueId, catalogue);
   const certifications = getCatalogueV3Opportunities({ programmeId: data.catalogueId }, catalogue);
   const requirements = getCatalogueV3AcademicRequirements(data.catalogueId, catalogue);
-  const programmeTitle = catalogueProgramme?.name.fr ?? data.title;
+  const programmeTitle = data.title;
   const profileLabel = catalogueProgramme ? aiProfileLabels[catalogueProgramme.profile] : undefined;
 
   const courseJsonLd = {
@@ -87,7 +87,9 @@ export default async function MasterLPPage({ params }: PageParams) {
           color={data.color}
           niveau={data.niveau}
           duree={data.duree}
-          totalCerts={certifications.length + requirements.length}
+           totalCerts={certifications.length}
+           accreditationLabel={data.accreditationLabel}
+           statAccreditationLabel={data.statAccreditationLabel ?? "Diplôme habilité par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique"}
           slug={data.slug}
         />
 
@@ -99,34 +101,85 @@ export default async function MasterLPPage({ params }: PageParams) {
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16">
             <div className="space-y-16">
+          <SectionHeading>1. PRÉSENTATION GÉNÉRALE DU MASTER</SectionHeading>
           <ProgramPresentation
             surtitre={`Master · Espima Business School`}
             title={`${programmeTitle} — Présentation`}
           >
-            <p>{data.pitch}</p>
+            {data.generalPresentation ? <>
+              <p><strong>Intitulé du diplôme :</strong> {data.generalPresentation.diplomaTitle}</p>
+              <p><strong>Diplôme :</strong> {data.generalPresentation.diploma}</p>
+              <p><strong>Durée :</strong> {data.generalPresentation.duration}</p>
+              <p><strong>Organisation :</strong> {data.generalPresentation.organisation}</p>
+              <p><strong>Présentation :</strong></p>
+              {data.generalPresentation.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            </> : (data.presentationBlocks ?? [data.presentation ?? data.pitch]).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </ProgramPresentation>
 
+           <div>
+             <SectionHeading>2. OBJECTIFS DE LA FORMATION</SectionHeading>
+             <TextList intro={data.objectivesIntro ?? "Le Master poursuit plusieurs objectifs complémentaires :"} items={data.objectives ?? []} />
+           </div>
+
           <div>
-            <h3 className="text-[22px] font-extrabold text-penn-navy mb-5">Public cible</h3>
-            <PublicCible items={data.publicCible} color={data.color} />
+            <SectionHeading>3. PUBLIC CIBLE</SectionHeading>
+             {data.publicCibleIntro && <TextList intro={data.publicCibleIntro} items={[]} />}
+             <PublicCible items={data.publicCibleWording ?? data.publicCible} color={data.color} />
           </div>
 
           <div>
-            <h3 className="text-[22px] font-extrabold text-penn-navy mb-5">
-              Modules du programme ({data.modules.length})
-            </h3>
+            <SectionHeading>4. COMPÉTENCES DÉVELOPPÉES</SectionHeading>
+             <TextGroups intro={data.competenciesIntro} groups={data.competencies ?? requirements.slice(0, 8).map((requirement) => ({ title: undefined, items: [requirement.title.fr] }))} />
+          </div>
+
+          <div>
+            <SectionHeading>5. LES ATOUTS DISTINCTIFS D'ESPIMA BUSINESS SCHOOL</SectionHeading>
+             <TextList intro={data.distinctiveIntro} items={data.distinctiveAdvantages ?? []} />
+          </div>
+
+          <div>
+            <SectionHeading>6. MODULES DU PROGRAMME</SectionHeading>
+            {data.moduleIntro && <p className="mb-5 text-[15px] leading-relaxed text-penn-body">{data.moduleIntro}</p>}
             <ModulesAccordion modules={data.modules} color={data.color} />
+           </div>
+
+           <div>
+             <SectionHeading>7. PARCOURS CERTIFIANT EBS</SectionHeading>
+             {data.certificationDescription && <p className="mb-5 text-[15px] leading-relaxed text-penn-body">{data.certificationDescription}</p>}
+             {data.certificationSections && <TextGroups groups={data.certificationSections} />}
+             <CertificationsTable certs={certifications} requirements={requirements} profileLabel={profileLabel} color={data.color} />
           </div>
 
-          <div id="certifications">
-            <CertificationsTable certs={certifications} requirements={requirements} profileLabel={profileLabel} color={data.color} />
-          </div>
+           <div>
+             <SectionHeading>8. L'INTELLIGENCE ARTIFICIELLE AU CŒUR DU MASTER</SectionHeading>
+              <IACompetences color={data.color} description={data.iaDescription ? <div>{data.iaIntro && <p>{data.iaIntro}</p>}{data.iaDescription.split("\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{data.iaApplicationsIntro && <p>{data.iaApplicationsIntro}</p>}{data.iaContent?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{data.iaConclusion && <p>{data.iaConclusion}</p>}</div> : undefined} />
+           </div>
 
-          <IACompetences color={data.color} />
+           <div>
+             <SectionHeading>9. PÉDAGOGIE</SectionHeading>
+             <TextList intro={data.pedagogyIntro} items={data.pedagogy ?? []} conclusion={data.pedagogyConclusion} />
+           </div>
 
-          <InternationalPerspectives pathways={data.internationalPathways} color={data.color} />
+           <div>
+             <SectionHeading>10. STAGE, MÉMOIRE ET PROJET PROFESSIONNEL</SectionHeading>
+             <TextList intro={data.stageIntro} items={data.stageMemoire ?? []} />
+           </div>
 
-          <DebouchesGrid items={data.debouches} color={data.color} />
+           <div>
+             <SectionHeading>11. DÉBOUCHÉS PROFESSIONNELS</SectionHeading>
+              <TextList intro={data.professionalOutcomesIntro} items={[]} conclusion={data.professionalOutcomesConclusion} />
+              <DebouchesGrid items={data.debouches} color={data.color} />
+           </div>
+
+           <div>
+             <SectionHeading>12. POURSUITE D'ÉTUDES ET OUVERTURE INTERNATIONALE</SectionHeading>
+              <InternationalPerspectives pathways={data.internationalPathways} intro={data.internationalIntro} content={data.internationalContent} color={data.color} />
+           </div>
+
+           <div>
+             <SectionHeading>13. LES ATOUTS DU MASTER</SectionHeading>
+             <TextList intro={data.finalAdvantagesIntro} items={data.finalAdvantages ?? []} />
+           </div>
             </div>
             <div className="hidden lg:block">{/* Empty column to reserve space for floating sidebar */}</div>
           </div>
@@ -135,12 +188,34 @@ export default async function MasterLPPage({ params }: PageParams) {
       </div>
 
       <CtaSection
-        title={`Prêt(e) à rejoindre le programme ${programmeTitle} ?`}
-        subtitle="Candidatures 2026–2027 ouvertes. Effectuez votre préinscription dès maintenant. Réponse garantie sous 24h."
+         title={`Prêt(e) à rejoindre ${programmeTitle} ?`}
+         subtitle="Les candidatures 2026/2027 sont ouvertes. Bénéficiez de nos avantages en cours. Réponse garantie sous 24 h."
         primaryCta={{ label: "Télécharger la brochure", href: `/brochures/${data.slug}.pdf` }}
         whatsapp="+216 55 582 843"
         background="penn-green"
       />
     </>
   );
+}
+
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return <h3 className="mb-5 text-[22px] font-extrabold text-penn-navy md:text-[26px]">{children}</h3>;
+}
+
+function TextList({ intro, items, conclusion }: { intro?: string; items: string[]; conclusion?: string }) {
+  return <div className="space-y-3 text-[15px] leading-relaxed text-penn-body">
+    {intro && <p>{intro}</p>}
+    {items.map((item) => <p key={item}>{item}</p>)}
+    {conclusion && <p>{conclusion}</p>}
+  </div>;
+}
+
+function TextGroups({ intro, groups }: { intro?: string; groups: { title?: string; items: string[] }[] }) {
+  return <div className="space-y-5 text-[15px] leading-relaxed text-penn-body">
+    {intro && <p>{intro}</p>}
+    {groups.map((group) => <div key={`${group.title ?? "group"}-${group.items[0]}`}>
+      {group.title && <p className="font-bold text-penn-navy">{group.title}</p>}
+      {group.items.map((item) => <p key={item}>{item}</p>)}
+    </div>)}
+  </div>;
 }

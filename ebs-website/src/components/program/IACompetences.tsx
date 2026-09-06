@@ -5,10 +5,11 @@ import { catalogueV3 } from "@/lib/certifications/v3";
 interface IACompetencesProps {
   color?: string;
   description?: React.ReactNode;
+  title?: string;
   className?: string;
 }
 
-export function IACompetences({ color, description, className }: IACompetencesProps) {
+export function IACompetences({ color, description, title = "L'IA est obligatoire dans ce programme", className }: IACompetencesProps) {
   const accentColor = color ?? "#2B8FAB";
   const aiResources = catalogueV3.resources
     .filter((resource) => resource.classification === "ai-literacy" || resource.classification === "applied-ai")
@@ -22,7 +23,7 @@ export function IACompetences({ color, description, className }: IACompetencesPr
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10">
               <Sparkles className="h-5 w-5" style={{ color: accentColor }} />
             </div>
-            <h3 className="text-[20px] font-extrabold text-white md:text-[24px]">AI & compétences professionnelles</h3>
+            <h3 className="text-[20px] font-extrabold text-white md:text-[24px]">{title}</h3>
           </div>
 
           <div className="mb-6 max-w-[650px] space-y-4 text-[15px] text-white/70">

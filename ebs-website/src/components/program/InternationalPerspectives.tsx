@@ -4,12 +4,16 @@ import type { PathwayItem } from "./data";
 
 interface InternationalPerspectivesProps {
   pathways: PathwayItem[];
+  intro?: string;
+  content?: string[];
   color?: string;
   className?: string;
 }
 
 export function InternationalPerspectives({
   pathways,
+  intro = "Ce programme permet de poursuivre vos études auprès de nos universités partenaires en France, au Canada et dans d'autres pays grâce aux accords de coopération conclus par EBS.",
+  content,
   color,
   className,
 }: InternationalPerspectivesProps) {
@@ -26,10 +30,10 @@ export function InternationalPerspectives({
         </h3>
       </div>
 
-      <p className="text-[15px] text-penn-body mb-6">
-        Ce programme vous ouvre les portes de poursuites d&apos;études dans nos universités
-        partenaires en France, au Canada et à l&apos;international.
-      </p>
+       <div className="mb-6 space-y-3 text-[15px] text-penn-body">
+         <p>{intro}</p>
+         {content?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+       </div>
 
       <div className="space-y-3">
         {pathways.map((pw) => (

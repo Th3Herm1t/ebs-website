@@ -41,7 +41,7 @@ export default async function LicenceLPPage({ params }: PageParams) {
   const catalogueProgramme = getCatalogueV3Programme(data.catalogueId, catalogue);
   const certifications = getCatalogueV3Opportunities({ programmeId: data.catalogueId }, catalogue);
   const requirements = getCatalogueV3AcademicRequirements(data.catalogueId, catalogue);
-  const programmeTitle = catalogueProgramme?.name.fr ?? data.title;
+  const programmeTitle = data.title;
   const profileLabel = catalogueProgramme ? aiProfileLabels[catalogueProgramme.profile] : undefined;
 
   const courseJsonLd = {
@@ -87,7 +87,9 @@ export default async function LicenceLPPage({ params }: PageParams) {
           color={data.color}
           niveau={data.niveau}
           duree={data.duree}
-          totalCerts={certifications.length + requirements.length}
+           totalCerts={certifications.length}
+           accreditationLabel={data.accreditationLabel}
+           statAccreditationLabel={data.statAccreditationLabel ?? "Diplôme agréé par l'État tunisien"}
           slug={data.slug}
         />
 
@@ -103,8 +105,10 @@ export default async function LicenceLPPage({ params }: PageParams) {
             surtitre={`Licence · Espima Business School`}
             title={`${programmeTitle} — Présentation`}
           >
-            <p>{data.pitch}</p>
+            <p>{data.presentation ?? data.pitch}</p>
           </ProgramPresentation>
+
+          <CertificationsTable certs={certifications} requirements={requirements} profileLabel={profileLabel} color={data.color} />
 
           <div>
             <h3 className="text-[22px] font-extrabold text-penn-navy mb-5">Public cible</h3>
@@ -118,13 +122,9 @@ export default async function LicenceLPPage({ params }: PageParams) {
             <ModulesAccordion modules={data.modules} color={data.color} />
           </div>
 
-          <div id="certifications">
-            <CertificationsTable certs={certifications} requirements={requirements} profileLabel={profileLabel} color={data.color} />
-          </div>
+           <IACompetences color={data.color} description={data.iaDescription ? <p>{data.iaDescription}</p> : undefined} />
 
-          <IACompetences color={data.color} />
-
-          <InternationalPerspectives pathways={data.internationalPathways} color={data.color} />
+           <InternationalPerspectives pathways={data.internationalPathways} intro={data.internationalIntro} color={data.color} />
 
           <DebouchesGrid items={data.debouches} color={data.color} />
             </div>
@@ -135,8 +135,8 @@ export default async function LicenceLPPage({ params }: PageParams) {
       </div>
 
       <CtaSection
-        title={`Prêt(e) à rejoindre le programme ${programmeTitle} ?`}
-        subtitle="Candidatures 2026–2027 ouvertes. Effectuez votre préinscription dès maintenant. Réponse garantie sous 24h."
+         title={`Prêt(e) à rejoindre ${programmeTitle} ?`}
+         subtitle="Les candidatures 2026/2027 sont ouvertes. Bénéficiez de nos avantages en cours. Réponse garantie sous 24 h."
         primaryCta={{ label: "Télécharger la brochure", href: `/brochures/${data.slug}.pdf` }}
         whatsapp="+216 55 582 843"
         background="penn-green"

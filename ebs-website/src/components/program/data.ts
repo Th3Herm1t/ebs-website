@@ -8,6 +8,20 @@ export interface CertItem {
 export interface ModuleItem {
   title: string;
   description?: string;
+  content?: string;
+}
+
+export interface MasterTextGroup {
+  title?: string;
+  items: string[];
+}
+
+export interface MasterGeneralPresentation {
+  diplomaTitle: string;
+  diploma: string;
+  duration: string;
+  organisation: string;
+  paragraphs: string[];
 }
 
 export interface PathwayItem {
@@ -23,6 +37,38 @@ export interface ProgramLPData {
   title: string;
   tagline: string;
   pitch: string;
+  presentation?: string;
+  presentationBlocks?: string[];
+  generalPresentation?: MasterGeneralPresentation;
+  objectivesIntro?: string;
+  publicCibleIntro?: string;
+  publicCibleWording?: string[];
+  competenciesIntro?: string;
+  objectives?: string[];
+  competencies?: MasterTextGroup[];
+  distinctiveIntro?: string;
+  distinctiveAdvantages?: string[];
+  moduleIntro?: string;
+  certificationSections?: MasterTextGroup[];
+  certificationDescription?: string;
+  iaIntro?: string;
+  iaApplicationsIntro?: string;
+  iaDescription?: string;
+  iaContent?: string[];
+  iaConclusion?: string;
+  pedagogyIntro?: string;
+  pedagogy?: string[];
+  pedagogyConclusion?: string;
+  stageIntro?: string;
+  stageMemoire?: string[];
+  professionalOutcomesIntro?: string;
+  professionalOutcomesConclusion?: string;
+  internationalIntro?: string;
+  internationalContent?: string[];
+  finalAdvantagesIntro?: string;
+  finalAdvantages?: string[];
+  accreditationLabel?: string;
+  statAccreditationLabel?: string;
   color: string;
   niveau: string;
   duree: string;

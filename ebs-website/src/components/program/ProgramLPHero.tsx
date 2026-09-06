@@ -19,6 +19,8 @@ interface ProgramLPHeroProps {
   niveau: string;
   duree: string;
   totalCerts: number;
+  accreditationLabel?: string;
+  statAccreditationLabel?: string;
   slug: string;
   heroImage?: string;
 }
@@ -32,15 +34,17 @@ export function ProgramLPHero({
   niveau,
   duree,
   totalCerts,
+  accreditationLabel = "Diplôme accrédité par l'État tunisien",
+  statAccreditationLabel = accreditationLabel,
   slug,
   heroImage = "/images/programs/program-hero.jpg",
 }: ProgramLPHeroProps) {
   const typeLabel = type === "licence" ? "Licence" : "Master";
 
   const statItems = [
-    { label: "certifications affichées", value: `${totalCerts}` },
+    { label: "Certifications incluses", value: `${totalCerts}+` },
     { label: "", value: duree },
-    { label: "Accrédité État Tunisien", value: "100%" },
+    { label: statAccreditationLabel, value: "100 %" },
   ];
 
   return (
@@ -66,7 +70,7 @@ export function ProgramLPHero({
                 style={{ backgroundColor: color + "15", color, borderColor: color + "30" }}
                 size="lg"
               >
-                {typeLabel} · {niveau} · {duree} · Accrédité État Tunisien
+                {typeLabel} · {niveau} · {duree} · {accreditationLabel}
               </Badge>
             </div>
 
