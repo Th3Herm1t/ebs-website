@@ -9,7 +9,7 @@ export default function PillarsSection() {
   const pillars = [
     {
       id: "international",
-      bgImage: "/images/sections/pillar-mobilite.jpg",
+      bgImage: "/images/sections/photo-2.jpg",
       textColor: "text-white",
       title: t('p1.title'),
       p1: t('p1.desc1'),
@@ -19,7 +19,7 @@ export default function PillarsSection() {
     },
     {
       id: "tech",
-      bgImage: "/images/sections/pillar-tech.jpg",
+      bgImage: "/images/sections/photo-3.jpg",
       textColor: "text-white",
       title: t('p2.title'),
       p1: t('p2.desc1'),

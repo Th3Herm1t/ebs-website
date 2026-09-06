@@ -14,7 +14,7 @@ export default async function TopPromo() {
       ctaText: t('p1.btn'),
       bgColor: "bg-[#264653]",
       link: "/brochures",
-      image: "/images/toppromo/brochure.jpg",
+      image: "/images/toppromo/photo-1.png",
     },
     {
       id: "whatsapp",

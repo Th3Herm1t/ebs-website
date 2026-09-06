@@ -85,7 +85,7 @@ export default function BrochuresPage() {
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-44 pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/heroes/hero-campus.webp" alt="" fill className="object-cover" priority sizes="100vw" />
+          <Image src="/images/toppromo/photo-1.png" alt="Brochures des programmes EBS" fill className="object-cover" priority sizes="100vw" />
         </div>
         <div className="absolute inset-0 z-[1] bg-gradient-to-br from-penn-navy/60 via-[#1a2035]/50 to-penn-navy/60" />
         <div className="absolute inset-0 z-[1] opacity-[0.03] bg-[radial-gradient(circle_at_50%_70%,_#2B8FAB_0%,_transparent_50%)]" />

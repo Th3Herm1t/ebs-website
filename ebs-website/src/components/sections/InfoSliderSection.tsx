@@ -25,7 +25,7 @@ export default function InfoSliderSection() {
     const slides = [
       {
         id: 1,
-        image: "/images/heroes/ia-students.webp",
+        image: "/images/sections/photo-4.jpg",
         subtitle: t('s1.badge'),
       title: t('s1.title'),
       text: t('s1.desc'),
