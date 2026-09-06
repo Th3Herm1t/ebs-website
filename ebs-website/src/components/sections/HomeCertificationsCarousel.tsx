@@ -43,7 +43,7 @@ export default function HomeCertificationsCarousel({ cards, total }: { cards: Ho
           </div>
         </div>
 
-        <div className="relative min-w-0">
+        <div className="relative isolate min-w-0 overflow-hidden px-7 py-2 lg:px-10">
           <Swiper
             modules={[EffectCoverflow, Navigation]}
             effect="coverflow"
