@@ -235,19 +235,19 @@
       "btn": "S'abonner"
     },
     "events": {
-      "title": "EBS EVENTS",
+      "title": "",
       "subtitle": "Actualités et",
       "subtitleHighlight": "Évènements EBS",
       "listImage": [
         {
-          "title": "EBS participe au salon de l'orientation « Wajjahni »",
+          "title": "ESPIMA Business School célèbre sa promotion 2026",
           "link": "#",
-          "img": "/images/master-marketing-digital-data-analytics.webp",
-          "day": "01",
+          "img": "/images/sections/photo-21.jpg",
+          "day": "24",
           "month": "JUI",
-          "time": "01 - 07 Juillet 2026",
-          "location": "Palais des Congrès",
-          "desc": "EBS participe au salon de l'orientation Wajjahni du 01 au 07 Juillet 2026."
+          "time": "24 Juillet 2026",
+          "location": "ESPIMA Business School",
+          "desc": "Le 24 juillet 2026, ESPIMA Business School a célébré la remise des diplômes de sa promotion 2026, réunissant les diplômés de Licence et de Master, leurs familles et leurs enseignants. Cette cérémonie a marqué l'aboutissement de plusieurs années de travail, de persévérance et d'engagement. ESPIMA Business School félicite chaleureusement l'ensemble de ses diplômés et leur souhaite pleine réussite dans leurs futurs projets professionnels."
         },
         {
           "title": "EBS AI Day – L'IA Transforme les parcours académiques",

@@ -233,19 +233,19 @@
       "btn": "Subscribe"
     },
     "events": {
-      "title": "EBS EVENTS",
+      "title": "",
       "subtitle": "News and",
       "subtitleHighlight": "EBS Events",
       "listImage": [
         {
-          "title": "Digital Marketing and Data Analytics Master : Webinar",
-          "link": "https://ebs.tn/blog/master-marketing-digital-et-data-analytics-de-lebs/",
-          "img": "/images/master-marketing-digital-data-analytics.webp",
-          "day": "19",
-          "month": "FEB",
-          "time": "10:00 - 12:00",
-          "location": "EBS Campus",
-          "desc": "Join us for this exceptional Espima Business School event and discover new opportunities."
+          "title": "ESPIMA Business School celebrates its Class of 2026",
+          "link": "#",
+          "img": "/images/sections/photo-21.jpg",
+          "day": "24",
+          "month": "JUL",
+          "time": "24 July 2026",
+          "location": "ESPIMA Business School",
+          "desc": "On 24 July 2026, ESPIMA Business School celebrated the graduation ceremony of its Class of 2026, bringing together Licence and Master graduates, their families and faculty. The ceremony marked the culmination of several years of hard work, perseverance and commitment. ESPIMA Business School warmly congratulates all its graduates and wishes them every success in their future professional projects."
         },
         {
           "title": "Future Careers in Digital Marketing : Conference",
