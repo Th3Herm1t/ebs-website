@@ -12,13 +12,9 @@ import {
   Newspaper,
   Sparkles,
   Timer,
-  TrendingUp,
   X,
   Phone,
   Mail,
-  Users,
-  Handshake,
-  GraduationCap,
 } from "lucide-react";
 import { Badge, CtaSection } from "@/components/shared";
 
@@ -219,6 +215,11 @@ const actualites: Article[] = [
 
 const evenements: Article[] = [
   {
+    id: "e0", title: "ESPIMA Business School célèbre sa promotion 2026", date: "24 Juillet 2026", tag: "Cérémonie",
+    description: "Le 24 juillet 2026, ESPIMA Business School a célébré la remise des diplômes de sa promotion 2026, réunissant les diplômés de Licence et de Master, leurs familles et leurs enseignants. Cette cérémonie a marqué l'aboutissement de plusieurs années de travail, de persévérance et d'engagement.",
+    image: "/images/sections/photo-21.jpg",
+  },
+  {
     id: "e1", title: "EBS Entrepreneurship Challenge — 4ème Édition", date: "12 Février 2025", tag: "Entrepreneuriat",
     description: "Félicitations aux lauréats de la quatrième édition d'EBS ENTREPRENEURSHIP CHALLENGE.",
     image: "/images/ebs-tn/277675248_5285013694866510_3664805883500697118_n.webp",
@@ -326,14 +327,14 @@ const evenements: Article[] = [
 ];
 
 const tabs: { key: Tab; label: string; icon: React.ReactNode; desc: string }[] = [
-  { key: "actualites", label: "Actualités", icon: <Newspaper className="w-4 h-4" />, desc: "26 articles : partenariats, salons, conférences et vie académique." },
-  { key: "evenements", label: "Événements", icon: <Calendar className="w-4 h-4" />, desc: "21 événements : conférences, challenges, cérémonies et intégration." },
+  { key: "actualites", label: "Actualités", icon: <Newspaper className="w-4 h-4" />, desc: "Informations et nouvelles communiquées par EBS : partenariats, résultats et évolutions." },
+  { key: "evenements", label: "Événements", icon: <Calendar className="w-4 h-4" />, desc: "Activités et rendez-vous ouverts à la participation, avec une date et un lieu précis." },
   { key: "alaune", label: "À la Une", icon: <Sparkles className="w-4 h-4" />, desc: "L'article phare de l'actualité EBS" },
 ];
 
 const stats = [
   { icon: <Newspaper className="w-5 h-5" />, label: "Articles", value: "27", accent: "#2B8FAB" },
-  { icon: <Calendar className="w-5 h-5" />, label: "Événements", value: "21", accent: "#FF9800" },
+  { icon: <Calendar className="w-5 h-5" />, label: "Événements", value: "22", accent: "#FF9800" },
   { icon: <Sparkles className="w-5 h-5" />, label: "Thématiques", value: "17", accent: "#9C27B0" },
   { icon: <Timer className="w-5 h-5" />, label: "Années couvertes", value: "4+", accent: "#2196F3" },
 ];

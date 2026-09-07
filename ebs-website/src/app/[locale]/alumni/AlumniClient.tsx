@@ -47,6 +47,11 @@ const alumniProfiles = [
   { name: "Kais Layouni", text: "a obtenu son diplôme de Licence en Finance promotion 2017/2018. Actuellement il occupe un poste de Business Analyst chez MENINX Holding Tunis", img: "/images/ebs-tn/kais-layouni.jpeg", initials: "KL" },
   { name: "Hend Bedoui", text: "a obtenu son diplôme de Master Ingénierie Financière promotion 2015/2016. Actuellement elle occupe un poste de Analyste Financier LEASE TUNIS", img: "/images/ebs-tn/hind-bedoui.jpeg", initials: "HB" },
   { name: "Oussama Ayadi", text: "a obtenu son diplôme de Master en Marketing Bancaire promotion 2016/2017. Actuellement il occupe un poste de Expert Technique chez GIZ Tunisie Tunis", img: "/images/ebs-tn/oussama-ayadi-1024x1024.jpeg", initials: "OA" },
+  { name: "Ikram ARFA", text: "est Gérante de DIGITORIORITY et Consultante en Web Marketing. 1ère Promotion EBS.", initials: "IA" },
+  { name: "Houcem MAAOUIA", text: "est Co-founder & CEO de Parhelion Consulting & Training. Promotion 2020.", initials: "HM" },
+  { name: "Chokri BRIKI", text: "est Project Manager chez Salammbo Group. Promotion 2020.", initials: "CB" },
+  { name: "Dhouha MECHERGUI", text: "est Co-founder & CEO de Pineapple Studio et Consultante en Corporate Finance. Promotion 2017.", initials: "DM" },
+  { name: "Sonia Missaoui", text: "est Co-founder de Oh Em Gee. 2ème année LFG.", initials: "SM" },
 ];
 
 const missions = [
