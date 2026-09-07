@@ -96,15 +96,15 @@ export default function QuiSommesNousPage() {
         <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(43,143,171,0.06) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
         <div className="relative z-10 max-w-[1100px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}>
-            <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+            <div className="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16">
               {/* Photo */}
-              <div className="w-full max-w-[280px] lg:max-w-[300px] mx-auto lg:mx-0 shrink-0">
+              <div className="w-full max-w-[280px] lg:max-w-[300px] mx-auto lg:mx-0 shrink-0 flex flex-col">
                 <div className="relative aspect-[3/4] w-full">
                   <div className="absolute -inset-3 bg-gradient-to-br from-[#2B8FAB]/20 via-[#2B8FAB]/5 to-transparent rounded-3xl blur-2xl" />
                   <div className="absolute -inset-1 bg-gradient-to-br from-[#2B8FAB]/40 to-transparent rounded-2xl opacity-50" />
                   <div className="relative h-full w-full rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-black/30">
                     <Image
-                      src="/images/ebs-tn/PHOTO-PRESIDENT-DE-LEBS.jpg"
+                      src="/images/sections/photo-22.jpg"
                       alt="Abderraouf NAJAR"
                       fill
                       sizes="(max-width: 1024px) 280px, 300px"
@@ -112,10 +112,14 @@ export default function QuiSommesNousPage() {
                     />
                   </div>
                 </div>
+                <div className="mt-4 text-center lg:text-left">
+                  <p className="text-[17px] font-bold text-white">Abderraouf NAJAR</p>
+                  <p className="text-[14px] text-penn-green font-medium">Président Fondateur — EBS</p>
+                </div>
               </div>
 
               {/* Text */}
-              <div className="w-full lg:w-3/5 flex flex-col justify-center">
+              <div className="w-full lg:w-3/5 flex flex-col justify-start">
                 <Quote className="w-10 h-10 text-penn-green/30 mb-6" />
                 <h2 className="text-[28px] md:text-[36px] font-extrabold text-white mb-8 leading-tight">
                   Le mot du Président Fondateur
@@ -130,10 +134,6 @@ export default function QuiSommesNousPage() {
                   <p>
                     À taille humaine, EBS offre un environnement dynamique où se conjuguent excellence académique, vie étudiante, innovation, ouverture internationale et proximité avec les entreprises.
                   </p>
-                </div>
-                <div className="mt-8 pt-6 border-t border-white/10">
-                  <p className="text-[17px] font-bold text-white">Abderraouf NAJAR</p>
-                  <p className="text-[14px] text-penn-green font-medium">Président Fondateur — EBS</p>
                 </div>
               </div>
             </div>
