@@ -80,13 +80,13 @@ export default function PillarsSection() {
                 );
               })()}
             </h3>
-            <p className="mb-5 lg:mb-6 text-[14px] lg:text-[15px] leading-tight lg:leading-tight opacity-90">
+            <p className="mb-4 lg:mb-5 text-[14px] lg:text-[15px] leading-tight lg:leading-tight opacity-90">
               {pillar.p1}
             </p>
-            <p className="mb-8 lg:mb-10 text-[14px] lg:text-[15px] leading-tight lg:leading-tight opacity-90">
+            <p className="mb-4 lg:mb-5 text-[14px] lg:text-[15px] leading-tight lg:leading-tight opacity-90">
               {pillar.p2}
             </p>
-            <div className="mt-auto pt-4">
+            <div className="pt-0">
               <Link 
                 href={pillar.link} 
                 className={`inline-block font-bold text-[13px] uppercase tracking-wider transition-opacity hover:opacity-70 border-white border-b-2 pb-1`}
