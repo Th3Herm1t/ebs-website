@@ -165,7 +165,7 @@ export default function FeaturesSection() {
         >
           {/* Card 0: The Hero Card (Spans 2x2) */}
           <BentoCard 
-            feature={{...rawFeatures[0], image: "/images/sections/features-group.jpg"}} 
+            feature={{...rawFeatures[0], image: "/images/sections/photo-20.jpg"}} 
             isHero={true}
             className="md:col-span-2 md:row-span-2 min-h-[350px] lg:min-h-[500px]" 
           />
