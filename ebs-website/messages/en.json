@@ -24,7 +24,7 @@
       "titleHighlight": "Business School",
       "title2": "Focused on The Future",
       "desc1": "Train for the world of tomorrow",
-      "desc2": "Business · Finance · Technology · Artificial Intelligence · Cybersecurity · Recognized Bachelor's and Master's degrees with verified professional resources available",
+      "desc2": "Business · Finance · Marketing · Management · Computer Science · Artificial Intelligence · Cybersecurity · Recognized Bachelor's and Master's degrees with professional resources available",
       "sliderTitle": "Find the path that suits you",
       "categories": {
         "Licence": "Bachelor's",
@@ -88,8 +88,8 @@
       },
       "s2": {
         "badge": "★ EXCLUSIVE",
-        "title": "Professional resources integrated into our programs",
-        "desc": "EBS integrates recognized professional resources into its various training programs to strengthen academic skills through concrete validation. They cover management, finance, marketing, artificial intelligence, project management, cybersecurity, and digital technologies.",
+         "title": "Professional resources at the heart of our programs",
+         "desc": "Our programs integrate tools, case studies, databases, documentary resources, digital platforms, and professional simulations to enable students to apply their knowledge, develop practical skills, and better prepare for the demands of the professional world.",
         "btn": "Learn more"
       },
       "s3": {
@@ -125,30 +125,30 @@
       "acadHighlight": "Partners"
     },
     "coursepromo": {
-      "title": "EBS INTERNATIONAL",
+      "title": "EBS CAREER",
       "subtitle": "The Pathway",
       "subtitleHighlight": "International",
       "desc": "Thanks to a network of prestigious academic partners in Canada, France, Italy, and beyond, EBS students can begin their studies in Tunisia and complete them at an international partner institution.",
       "path1": [
-        "Two years of Bachelor at EBS",
-        "Validation of acquired skills",
-        "Language certification",
-        "Immigration file preparation",
-        "Bachelor 3 Grande École in France",
-        "Bachelor 3 Link University in Italy"
-      ],
-      "path2": [
         "1 year of Bachelor at EBS",
         "Validation of acquired skills",
-        "Language certification",
-        "Immigration file preparation",
-        "Bachelor 2 Link University in Italy"
+        "Language certifications",
+        "Study visa application preparation",
+        "Bachelor 2 at Link University in Italy"
+      ],
+      "path2": [
+        "2 years of Bachelor at EBS",
+        "Validation of acquired skills",
+        "Language certifications",
+        "Preparation of the study visa application",
+        "Bachelor 3 at a Grande École in France",
+        "Bachelor 3 at Link University in Italy"
       ],
       "path3": [
-        "Three years of Bachelor at EBS",
+        "3 years of Bachelor at EBS",
         "Validation of acquired skills",
-        "Language certification",
-        "Immigration file preparation",
+        "Language certifications",
+        "Study visa application preparation",
         "Master in Management in Canada",
         "Grande École Master in France"
       ],
@@ -165,31 +165,31 @@
           "cat": "Management",
           "title": "National Bachelor in Management Sciences - Marketing Option",
           "detail1": "6 Semesters - On Campus",
-          "detail2": "Integrated AI - verified resources"
+          "detail2": "Integrated AI - professional resources"
         },
         {
           "cat": "Marketing",
           "title": "National Bachelor in Management Sciences - Marketing Option",
           "detail1": "6 Semesters - On Campus",
-          "detail2": "Integrated AI - verified resources"
+          "detail2": "Integrated AI - professional resources"
         },
         {
           "cat": "Finance",
           "title": "National Bachelor in Management Sciences - Finance Option",
           "detail1": "6 Semesters - On Campus",
-          "detail2": "Integrated AI - verified resources"
+          "detail2": "Integrated AI - professional resources"
         },
         {
           "cat": "Computer Science",
           "title": "National Bachelor in Software Engineering - AI Option",
           "detail1": "6 Semesters - On Campus",
-          "detail2": "Verified resources available"
+          "detail2": "Professional resources available"
         },
         {
           "cat": "Computer Science",
           "title": "National Bachelor in Software Engineering - Cybersecurity Option",
           "detail1": "6 Semesters - On Campus",
-          "detail2": "Verified resources available"
+          "detail2": "Professional resources available"
         }
       ],
       "masters": [
@@ -197,25 +197,25 @@
           "cat": "Advanced Finance",
           "title": "Master in Financial Engineering",
           "detail1": "4 Semesters - On Campus",
-          "detail2": "Integrated AI - verified resources"
+          "detail2": "Integrated AI - professional resources"
         },
         {
           "cat": "Marketing 5.0",
           "title": "Master in CRM - Marketing & Digital Transformation",
           "detail1": "4 Semesters - On Campus",
-          "detail2": "Integrated AI - verified resources"
+          "detail2": "Integrated AI - professional resources"
         },
         {
           "cat": "Project Management",
           "title": "Master in Innovative Projects & Startups Management",
           "detail1": "4 Semesters - On Campus",
-          "detail2": "Integrated AI - verified resources"
+          "detail2": "Integrated AI - professional resources"
         },
         {
           "cat": "Digital & Data",
           "title": "Master in Digital Marketing & AI",
           "detail1": "4 Semesters - On Campus",
-          "detail2": "Integrated AI - verified resources"
+          "detail2": "Integrated AI - professional resources"
         }
       ]
     },
@@ -223,7 +223,7 @@
       "title": "EBS CERTIFICATIONS",
       "subtitle": "Main Certifications Available",
       "subtitleHighlight": "For our Students",
-      "count": "199 Verified Certifications"
+      "count": "199 International Certifications"
     },
     "newsletter": {
       "title": "Subscribe to our Newsletter",

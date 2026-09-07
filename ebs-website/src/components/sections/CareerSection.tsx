@@ -1,4 +1,5 @@
 import { Search, Building2, ClipboardCheck, Star } from "lucide-react";
+import Image from "next/image";
 import { useTranslations } from 'next-intl';
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -50,52 +51,44 @@ export default function CareerSection() {
           </p>
         </ScrollReveal>
 
-        {/* ── Top row: left heading / right description ── */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "40px",
-            marginBottom: "60px",
-            alignItems: "flex-start",
-          }}
-        >
-          {/* Left */}
-          <ScrollReveal
-            initialY={18}
-            duration={0.55}
-            className="flex-[0_0_calc(40%-20px)] min-w-[260px]"
-          >
-
-            <h2
-              style={{
-                fontSize: "36px",
-                fontWeight: 700,
-                color: "#1a1a1a",
-                lineHeight: "1.18",
-                margin: 0,
-                textTransform: "none",
-              }}
-            >
-              {t('title1')}<br />
-              {t('title2')}
-            </h2>
+        {/* ── Top row: image / career content ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.6fr] gap-10 mb-[60px] items-center">
+          <ScrollReveal initialX={-30} duration={0.6} className="relative h-[260px] overflow-hidden rounded-[10px]">
+            <Image
+              src="/images/sections/photo-6.jpg"
+              alt="Étudiante EBS diplômée avec un certificat"
+              fill
+              sizes="(max-width: 1024px) 100vw, 30vw"
+              className="object-cover object-[center_35%]"
+            />
           </ScrollReveal>
 
-          {/* Right */}
-          <ScrollReveal
-            initialY={18}
-            duration={0.55}
-            delay={0.1}
-            className="flex-[1_1_300px]"
-          >
-            <p style={{ fontSize: "15px", color: "#666666", lineHeight: "1.85", margin: "0 0 18px" }}>
-              {t('desc1')}
-            </p>
-            <p style={{ fontSize: "15px", color: "#666666", lineHeight: "1.85", margin: 0 }}>
-              {t('desc2')}
-            </p>
-          </ScrollReveal>
+          <div className="min-w-0">
+            <ScrollReveal initialY={18} duration={0.55}>
+              <h2
+                style={{
+                  fontSize: "36px",
+                  fontWeight: 700,
+                  color: "#1a1a1a",
+                  lineHeight: "1.18",
+                  margin: "0 0 24px",
+                  textTransform: "none",
+                }}
+              >
+                {t('title1')}<br />
+                {t('title2')}
+              </h2>
+            </ScrollReveal>
+
+            <ScrollReveal initialY={18} duration={0.55} delay={0.1}>
+              <p style={{ fontSize: "15px", color: "#666666", lineHeight: "1.85", margin: "0 0 18px" }}>
+                {t('desc1')}
+              </p>
+              <p style={{ fontSize: "15px", color: "#666666", lineHeight: "1.85", margin: 0 }}>
+                {t('desc2')}
+              </p>
+            </ScrollReveal>
+          </div>
         </div>
 
         {/* ── Bottom row: 4 service cards ── */}

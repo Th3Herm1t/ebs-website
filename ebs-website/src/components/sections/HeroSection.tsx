@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-export default function HeroSection() {
+export default function HeroSection({ certificationCount }: { certificationCount: number }) {
   const t = useTranslations('HomePage.hero');
 
   const courseCategories = [
@@ -55,8 +55,9 @@ export default function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="mb-8 font-normal text-[16px] md:text-[18px] text-[#42474c] leading-tight max-w-2xl pr-0 md:pr-8"
               >
-                <strong className="text-[#232434] text-[18px] md:text-[20px] block mb-2 md:mb-3">{t('desc1')}</strong>
-                {t('desc2')}
+                 <strong className="text-[#232434] text-[18px] md:text-[20px] block mb-2 md:mb-3">{t('desc1')}</strong>
+                 {t('desc2')}
+                 <span className="block mt-3 font-bold text-penn-green">+{certificationCount} certifications internationales</span>
               </motion.p>
 
               {/* Category Slider Block */}

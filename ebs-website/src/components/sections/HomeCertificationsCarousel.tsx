@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, BadgeCheck, ChevronLeft, ChevronRight, Globe2, Sparkles } from "lucide-react";
+import { ArrowRight, Award, BadgeCheck, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { EffectCoverflow, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -33,7 +33,17 @@ export default function HomeCertificationsCarousel({
   programmeCount: number;
 }) {
   return (
-    <section className="overflow-hidden bg-penn-navy py-20 text-white lg:py-28">
+    <section className="relative overflow-hidden bg-penn-navy py-20 text-white lg:py-28">
+      <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[38%] lg:block">
+        <Image
+          src="/images/sections/photo-5.jpg"
+          alt="Étudiante EBS avec son certificat"
+          fill
+          sizes="38vw"
+          className="object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-penn-navy/10 via-penn-navy/50 to-penn-navy" />
+      </div>
       <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:px-12">
         <div className="relative max-w-[540px] lg:pr-8">
           <div className="absolute -left-5 top-0 h-full w-px bg-gradient-to-b from-penn-green via-white/15 to-transparent lg:-left-8" />
@@ -41,36 +51,28 @@ export default function HomeCertificationsCarousel({
             <span className="flex h-9 w-9 items-center justify-center rounded-full border border-penn-green/30 bg-penn-green/10">
               <Sparkles className="h-4 w-4" />
             </span>
-            Le passeport professionnel EBS
+            DES CERTIFICATIONS RECONNUES
           </div>
           <h2 className="max-w-[510px] text-[38px] font-extrabold leading-[1.04] tracking-tight text-white md:text-[52px]">
-            Votre diplôme ouvre la porte<span className="text-penn-green">.</span>
+            +{total} CERTIFICATIONS INTERNATIONALES
           </h2>
           <p className="mt-6 max-w-[470px] text-[16px] leading-relaxed text-white/65">
-            Ajoutez des preuves concrètes à votre parcours avec des certifications choisies pour les métiers et les compétences recherchés.
+            EBS intègre plus de {total} certifications professionnelles et internationales dans ses différents cursus. Elles permettent aux étudiants de valider des compétences concrètes et de renforcer leur profil auprès des recruteurs.
           </p>
 
           <div className="mt-9 space-y-4">
             <div className="flex items-start gap-4">
               <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-penn-green" />
-              <div><p className="text-sm font-extrabold text-white">Des compétences reconnues</p><p className="mt-1 text-xs leading-relaxed text-white/50">Des credentials complémentaires à votre diplôme, directement valorisables.</p></div>
-            </div>
-            <div className="flex items-start gap-4">
-              <Globe2 className="mt-0.5 h-5 w-5 shrink-0 text-penn-green" />
-              <div><p className="text-sm font-extrabold text-white">Une ouverture internationale</p><p className="mt-1 text-xs leading-relaxed text-white/50">Des organismes et plateformes utilisés par les entreprises partout dans le monde.</p></div>
-            </div>
-            <div className="flex items-start gap-4">
-              <Award className="mt-0.5 h-5 w-5 shrink-0 text-penn-green" />
-              <div><p className="text-sm font-extrabold text-white">Accessible sans coût supplémentaire</p><p className="mt-1 text-xs leading-relaxed text-white/50">Un catalogue de {total} opportunités gratuites, reliées à {programmeCount} programmes EBS.</p></div>
+              <div><p className="text-sm font-extrabold text-white">UN AVANTAGE POUR VOTRE CARRIÈRE</p><p className="mt-1 text-xs leading-relaxed text-white/50">Management, finance, marketing, IA, cybersécurité, gestion de projet… Ces certifications complètent le diplôme et permettent aux étudiants de se démarquer sur un marché du travail de plus en plus international.</p></div>
             </div>
           </div>
 
           <div className="mt-9 flex flex-wrap items-center gap-5 border-t border-white/10 pt-6">
             <Link href="/certifications" className="inline-flex items-center gap-2 rounded-full bg-penn-green px-6 py-3 text-[13px] font-extrabold uppercase tracking-wide text-white transition hover:bg-white hover:text-penn-navy">
-              Explorer le catalogue
+              DÉCOUVRIR NOS CERTIFICATIONS
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <span className="text-[11px] font-bold text-white/45">{resourceCount} ressources · {providerCount} organismes</span>
+            <span className="text-[11px] font-bold text-white/45">{resourceCount} ressources · {providerCount} organismes · {programmeCount} programmes</span>
           </div>
         </div>
 

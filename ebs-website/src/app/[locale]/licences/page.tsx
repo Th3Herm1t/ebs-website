@@ -21,11 +21,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const allProgramsBase = [
   { ...licences.management, subtitle: "Développez vos compétences en management, leadership, gestion de projets et pilotage des organisations dans un environnement en constante évolution.", image: "/images/programs/management.jpg" },
-  { ...licences.marketing, subtitle: "Maîtrisez les fondamentaux du marketing, de la communication, du marketing digital et de la relation client pour répondre aux nouveaux enjeux des entreprises.", image: "/images/sections/pro-student.jpg" },
-  { ...licences.finance, subtitle: "Préparez une carrière en finance, banque et contrôle de gestion grâce à des certifications internationales, dont Bloomberg.", image: "/images/programs/finance.jpg" },
+  { ...licences.marketing, subtitle: "Maîtrisez les fondamentaux du marketing, de la communication, du marketing digital et de la relation client pour répondre aux nouveaux enjeux des entreprises.", image: "/images/programs/marketing.png" },
+  { ...licences.finance, subtitle: "Préparez une carrière en finance, banque et contrôle de gestion grâce à des certifications internationales, dont Bloomberg.", image: "/images/programs/finance.png" },
 
-  { ...licences["informatique-ia"], subtitle: "Développez des compétences en génie logiciel, intelligence artificielle, data science et développement d'applications intelligentes.", image: "/images/programs/informatique.jpg" },
-  { ...licences.cybersecurite, subtitle: "Développez des compétences en génie logiciel, cybersécurité, sécurité des réseaux et protection des systèmes d'information.", image: "/images/sections/pillar-tech.jpg" },
+  { ...licences["informatique-ia"], subtitle: "Développez des compétences en génie logiciel, intelligence artificielle, data science et développement d'applications intelligentes.", image: "/images/programs/informatique-ia.png" },
+  { ...licences.cybersecurite, subtitle: "Développez des compétences en génie logiciel, cybersécurité, sécurité des réseaux et protection des systèmes d'information.", image: "/images/programs/cybersecurite.jpg" },
 ];
 
 const licencesCards = [

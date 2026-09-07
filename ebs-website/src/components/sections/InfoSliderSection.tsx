@@ -32,9 +32,9 @@ export default function InfoSliderSection() {
       button: t('s1.btn'),
        link: "/ia-et-certifications"
     },
-    {
-      id: 2,
-      image: "/images/all-img/infoslider-1.jpg",
+      {
+        id: 2,
+        image: "/images/heroes/ia-students.webp",
       subtitle: t('s2.badge'),
       title: t('s2.title'),
       text: t('s2.desc'),

@@ -10,7 +10,7 @@ export default function CounterSection() {
 
   const counters = [
     { icon: Award, end: catalogueV3.release.counts.publicResources, suffix: "", label: t("c1"), color: "#4154f1" },
-    { icon: GraduationCap, end: 7, suffix: "", label: t("c2"), color: "#ee6c20" },
+    { icon: GraduationCap, end: catalogueV3.programmes.length, suffix: "", label: t("c2"), color: "#ee6c20" },
     { icon: Globe, end: 10, suffix: "+", label: t("c3"), color: "#15be56" },
     { icon: TrendingUp, end: 93, suffix: "%", label: t("c4"), color: "#bb0852" },
   ];

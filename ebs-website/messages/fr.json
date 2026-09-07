@@ -24,7 +24,7 @@
       "titleHighlight": "Business School",
       "title2": "Tournée vers le Futur",
       "desc1": "Formez-vous pour le monde de demain",
-      "desc2": "Business · Finance · Technologie · Intelligence Artificielle · Cybersécurité · Licences et Masters reconnus avec des ressources professionnelles vérifiées disponibles pour nos étudiants.",
+      "desc2": "Business · Finance · Marketing · Management · Informatique · Intelligence Artificielle · Cybersécurité · Licences et Masters reconnus avec des ressources professionnelles disponibles pour nos étudiants.",
       "sliderTitle": "Trouver le parcours qui vous convient",
       "categories": {
         "Licence": "Licence",
@@ -55,7 +55,7 @@
       },
       "p3": {
         "title": "Prêt à entamer votre parcours ?",
-        "desc": "Vous avez pris connaissance des programmes offerts par EBS et sélectionné le cursus qui convient à votre projet d'études ?",
+        "desc": "Vous avez pris connaissance des programmes proposés par EBS et sélectionné le cursus qui convient à votre projet d'études ?",
         "btn": "COMMENCER MA CANDIDATURE"
       }
     },
@@ -88,8 +88,8 @@
       },
       "s2": {
         "badge": "★ EXCLUSIF",
-        "title": "Des ressources professionnelles intégrées à nos cursus",
-        "desc": "EBS intègre des ressources professionnelles reconnues dans ses différents programmes afin de renforcer les compétences académiques par des validations concrètes. Elles couvrent le management, la finance, le marketing, l’intelligence artificielle, la gestion de projets, la cybersécurité et les technologies numériques.",
+         "title": "Des ressources professionnelles au cœur de nos cursus",
+         "desc": "Nos cursus intègrent des outils, études de cas, bases de données, ressources documentaires, plateformes numériques et simulations professionnelles pour permettre aux étudiants de mettre en pratique leurs connaissances, développer des compétences concrètes et mieux se préparer aux exigences du monde professionnel.",
         "btn": "En savoir plus"
       },
       "s3": {
@@ -106,7 +106,7 @@
       "f1Title": "L'IA, un levier différenciateur",
       "f1Desc": "À EBS, chaque étudiant, quelle que soit sa filière, développe la maîtrise des outils d'intelligence artificielle les plus recherchés par les recruteurs. Dans toutes nos licences et tous nos masters en informatique, management, finance et marketing, l'IA s'intègre au cœur des apprentissages. Ce n'est pas une option : c'est un engagement concret pour renforcer votre employabilité.",
       "f2Title": "Des Compétences Certifiées",
-      "f2Desc": "Au-delà de votre diplôme reconnu par l'État tunisien et à l'échelle internationale, vous repartez avec des certifications délivrées par des organisations reconnues. Gratuites, incluses dans votre formation et valorisables partout dans le monde, elles renforcent votre profil professionnel et votre employabilité.",
+      "f2Desc": "Au-delà de votre diplôme reconnu par l'État tunisien et à l'échelle internationale, vous repartez avec des certifications délivrées par des organisations reconnues. Gratuites, incluses dans votre formation et valorisables partout dans le monde, elles consolident votre profil professionnel et facilitent votre évolution de carrière.",
       "btn": "Découvrir l'approche EBS"
     },
     "counters": {
@@ -125,30 +125,30 @@
       "acadHighlight": "Internationaux"
     },
     "coursepromo": {
-      "title": "EBS INTERNATIONAL",
+      "title": "EBS CAREER",
       "subtitle": "Le Parcours",
       "subtitleHighlight": "International",
       "desc": "Grâce à un réseau de partenaires académiques prestigieux au Canada, en France, en Italie et bien d'autres, les étudiants d'EBS peuvent débuter leurs études en Tunisie et les finaliser au sein d'un établissement partenaire à l'international.",
       "path1": [
-        "Deux ans de Licence à EBS",
-        "Validation des acquis",
-        "Certification de langue",
-        "Préparation de dossier d'immigration",
-        "Bachelor 3 Grande École en France",
-        "Bachelor 3 Link University en Italie"
-      ],
-      "path2": [
         "1 an de Licence à EBS",
         "Validation des acquis",
-        "Certification de langue",
-        "Préparation de dossier d'immigration",
-        "Bachelor 2 Link University en Italie"
+        "Certifications de langues",
+        "Préparation du dossier de visa d'études",
+        "Bachelor 2 à Link University en Italie"
+      ],
+      "path2": [
+        "2 ans de Licence à EBS",
+        "Validation des acquis",
+        "Certifications de langues",
+        "Préparation du dossier de visa d'études",
+        "Bachelor 3 dans une Grande École en France",
+        "Bachelor 3 à Link University en Italie"
       ],
       "path3": [
-        "Trois ans de Licence à EBS",
+        "3 ans de Licence à EBS",
         "Validation des acquis",
-        "Certification de langue",
-        "Préparation de dossier d'immigration",
+        "Certifications de langues",
+        "Préparation du dossier de visa d'études",
         "Maitrise en Management au Canada",
         "Master Grande École en France"
       ],
@@ -163,34 +163,34 @@
       "licences": [
         {
           "cat": "Management",
-          "title": "Licence Nationale en Sciences de Gestion - Option Management",
-          "detail1": "6 Semestres - Présentiel",
-          "detail2": "IA intégrée - ressources vérifiées"
+          "title": "Licence Nationale en Sciences de Gestion - Spécialité Management",
+          "detail1": "6 Semestres",
+          "detail2": "Stage obligatoire - 2 mois"
         },
         {
           "cat": "Marketing",
-          "title": "Licence Nationale en Sciences de Gestion - Option Marketing",
-          "detail1": "6 Semestres - Présentiel",
-          "detail2": "IA intégrée - ressources vérifiées"
+          "title": "Licence Nationale en Sciences de Gestion - Spécialité Marketing",
+          "detail1": "6 Semestres",
+          "detail2": "Stage obligatoire - 2 mois"
         },
         {
           "cat": "Finance",
-          "title": "Licence Nationale en Sciences de Gestion - Option Finance",
-          "detail1": "6 Semestres - Présentiel",
-          "detail2": "IA intégrée - ressources vérifiées"
+          "title": "Licence Nationale en Sciences de Gestion - Spécialité Finance",
+          "detail1": "6 Semestres",
+          "detail2": "Stage obligatoire - 2 mois"
         },
 
         {
           "cat": "Intelligence Artificielle",
-          "title": "Licence Nationale en Génie Logiciel - Option IA",
-          "detail1": "6 Semestres - Présentiel",
-          "detail2": "Ressources vérifiées disponibles"
+          "title": "Licence Nationale en Génie Logiciel & Sciences Informatiques - Option IA",
+          "detail1": "5 Semestres - Présentiel",
+          "detail2": "Semestre 6 - Stage Entreprise"
         },
         {
           "cat": "Cybersécurité",
-          "title": "Licence Nationale en Génie Logiciel - Option Cybersécurité",
-          "detail1": "6 Semestres - Présentiel",
-          "detail2": "Ressources vérifiées disponibles"
+          "title": "Licence Nationale en Génie Logiciel & Sciences Informatiques - Option Cybersécurité",
+          "detail1": "5 Semestres - Présentiel",
+          "detail2": "Semestre 6 - Stage Entreprise"
         }
       ],
       "masters": [
@@ -198,25 +198,25 @@
           "cat": "Finance Avancée",
           "title": "Master en Ingénierie Financière",
           "detail1": "4 Semestres - Présentiel",
-          "detail2": "IA intégrée - ressources vérifiées"
+          "detail2": "IA intégrée - ressources professionnelles"
         },
         {
           "cat": "Marketing 5.0",
           "title": "Master en CRM - Marketing & Transformation Digitale",
           "detail1": "4 Semestres - Présentiel",
-          "detail2": "IA intégrée - ressources vérifiées"
+          "detail2": "IA intégrée - ressources professionnelles"
         },
         {
           "cat": "Project Management",
           "title": "Master en Management des Projets Innovants & Startups",
           "detail1": "4 Semestres - Présentiel",
-          "detail2": "IA intégrée - ressources vérifiées"
+          "detail2": "IA intégrée - ressources professionnelles"
         },
         {
           "cat": "Digital & Data",
           "title": "Master Marketing Digital & IA",
           "detail1": "4 Semestres - Présentiel",
-          "detail2": "IA intégrée - ressources vérifiées"
+          "detail2": "IA intégrée - ressources professionnelles"
         }
       ]
     },
@@ -225,7 +225,7 @@
       "subtitle": "Principales Certifications Disponibles",
       "subtitleHighlight": "Pour nos Étudiants",
       "desc": "Découvrez notre catalogue de certifications internationales intégrées aux cursus EBS, préparées en parallèle de votre diplôme.",
-      "count": "199 Certifications vérifiées"
+          "count": "199 Certifications internationales"
     },
     "newsletter": {
       "title": "Abonnez-vous à notre liste Emailing",

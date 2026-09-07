@@ -4,6 +4,7 @@ import TopPromo from "@/components/sections/TopPromo";
 import HomeCertificationsSection from "@/components/sections/HomeCertificationsSection";
 import OrientationSection from "@/components/sections/OrientationSection";
 import { pageMetadata } from "@/lib/seo";
+import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 
 // Lazy-loaded components below the fold
 const PillarsSection = dynamic(() => import("@/components/sections/PillarsSection"));
@@ -29,7 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-export default function Home() {
+export default async function Home() {
+  const catalogue = await getCatalogueV3Snapshot();
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -45,7 +47,7 @@ export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
-      <HeroSection />
+      <HeroSection certificationCount={catalogue.release.counts.publicResources} />
       <TopPromo />
       <PillarsSection />
       <InfoSliderSection />
