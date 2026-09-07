@@ -105,7 +105,7 @@ export default function PartenairesAcademiquesPage() {
       <section className="relative pt-40 pb-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/heroes/hero-parcours-internationaux.webp"
+            src="/images/heroes/hero-partenaires-academiques.webp"
             alt=""
             fill
             className="object-cover"
