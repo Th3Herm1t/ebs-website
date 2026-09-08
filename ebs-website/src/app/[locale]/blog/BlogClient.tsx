@@ -447,7 +447,7 @@ export default function BlogPage() {
               {
                 icon: <BookOpen className="w-6 h-6" />,
                 title: "Masters",
-                desc: "3 Masters professionnels reconnus.",
+                desc: "4 Masters professionnels reconnus.",
                 href: "/masters",
                 label: "Explorer",
               },

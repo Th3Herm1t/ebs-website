@@ -163,32 +163,32 @@
       "licences": [
         {
           "cat": "Management",
-          "title": "Licence Nationale en Sciences de Gestion - Spécialité Management",
+          "title": "Licence en Sciences de Gestion - Spécialité Management",
           "detail1": "6 Semestres",
           "detail2": "Stage obligatoire - 2 mois"
         },
         {
           "cat": "Marketing",
-          "title": "Licence Nationale en Sciences de Gestion - Spécialité Marketing",
+          "title": "Licence en Sciences de Gestion - Spécialité Marketing",
           "detail1": "6 Semestres",
           "detail2": "Stage obligatoire - 2 mois"
         },
         {
           "cat": "Finance",
-          "title": "Licence Nationale en Sciences de Gestion - Spécialité Finance",
+          "title": "Licence en Sciences de Gestion - Spécialité Finance",
           "detail1": "6 Semestres",
           "detail2": "Stage obligatoire - 2 mois"
         },
 
         {
           "cat": "Intelligence Artificielle",
-          "title": "Licence Nationale en Génie Logiciel & Sciences Informatiques - Option IA",
+          "title": "Licence en Génie Logiciel & Sciences Informatiques - Option IA",
           "detail1": "5 Semestres - Présentiel",
           "detail2": "Semestre 6 - Stage Entreprise"
         },
         {
           "cat": "Cybersécurité",
-          "title": "Licence Nationale en Génie Logiciel & Sciences Informatiques - Option Cybersécurité",
+          "title": "Licence en Génie Logiciel & Sciences Informatiques - Option Cybersécurité",
           "detail1": "5 Semestres - Présentiel",
           "detail2": "Semestre 6 - Stage Entreprise"
         }
@@ -238,6 +238,7 @@
       "title": "",
       "subtitle": "Actualités et",
       "subtitleHighlight": "Évènements EBS",
+      "btn": "Voir toutes les actualités",
       "listImage": [
         {
           "title": "ESPIMA Business School célèbre sa promotion 2026",
@@ -248,40 +249,9 @@
           "time": "24 Juillet 2026",
           "location": "ESPIMA Business School",
           "desc": "Le 24 juillet 2026, ESPIMA Business School a célébré la remise des diplômes de sa promotion 2026, réunissant les diplômés de Licence et de Master, leurs familles et leurs enseignants. Cette cérémonie a marqué l'aboutissement de plusieurs années de travail, de persévérance et d'engagement. ESPIMA Business School félicite chaleureusement l'ensemble de ses diplômés et leur souhaite pleine réussite dans leurs futurs projets professionnels."
-        },
-        {
-          "title": "EBS AI Day – L'IA Transforme les parcours académiques",
-          "link": "#",
-          "img": "/images/metiers-avenir-digital-marketing.webp",
-          "day": "20",
-          "month": "MAI",
-          "time": "20 Mai 2026",
-          "location": "Campus EBS",
-          "desc": "EBS organise « EBS AI Day : l'IA transforme les métiers.. et les parcours académiques »."
         }
       ],
-      "listText": [
-        {
-          "title": "EBS JOB FAIR – AI Career Boost: Stand Out In The Age of AI",
-          "link": "#",
-          "img": "/images/cv-renforce-certifications.webp",
-          "day": "30",
-          "month": "AVR",
-          "time": "30 Avril 2026",
-          "location": "Campus EBS",
-          "desc": "EBS organise « EBS Job Fair : AI Career Boost – Stand out in the age of AI »"
-        },
-        {
-          "title": "EBS Entrepreneurship Challenge",
-          "link": "#",
-          "img": "/images/enseignement-superieur-universites-privees.webp",
-          "day": "31",
-          "month": "MAR",
-          "time": "31 Mars - 03 Avril 2026",
-          "location": "Campus EBS",
-          "desc": "Un concours qui rassemble nos étudiants autour de la créativité et l'innovation."
-        }
-      ]
+      "listText": []
     },
     "testimonials": {
       "title": "TESTIMONIAL",

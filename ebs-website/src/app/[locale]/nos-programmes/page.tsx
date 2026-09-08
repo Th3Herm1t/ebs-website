@@ -6,6 +6,9 @@ import { ShowcaseHero } from "@/components/hero";
 import { licences } from "@/lib/programmes/licences";
 import { masters } from "@/lib/programmes/masters";
 import { pageMetadata } from "@/lib/seo";
+import { siteStats } from "@/lib/site-stats";
+import { getPublicCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
+import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -35,7 +38,7 @@ const allMasters = [
 const nosProgrammesCards = [
   {
     icon: <Award className="w-6 h-6" />,
-    title: "Catalogue v3.1",
+    title: "Catalogue v3.2",
     subtitle: "Incluses gratuitement",
     color: "#2B8FAB",
     offsetY: -80,
@@ -52,7 +55,7 @@ const nosProgrammesCards = [
   {
     icon: <Globe className="w-6 h-6" />,
     title: "International",
-    subtitle: "16 partenaires mondiaux",
+    subtitle: `${siteStats.academicPartners} partenaires mondiaux`,
     color: "#E89745",
     offsetY: -10,
     parallaxSpeed: 0.6,
@@ -66,12 +69,17 @@ const mobilityScenarios = [
   { step: "M1 à EBS", dest: "Maîtrise au Canada", pays: "UQAT — Québec", details: "Après une année de Master à EBS. Maîtrise à l'UQAT. Résidence permanente possible.", color: "#2B8FAB" },
 ];
 
-export default function NosProgrammesPage() {
+export default async function NosProgrammesPage() {
+  const catalogue = await getCatalogueV3Snapshot();
+  const allProgrammes = [...allLicences, ...allMasters].map((program) => ({
+    ...program,
+    totalCerts: getPublicCatalogueV3ProgrammeSummary(program.catalogueId, catalogue).total,
+  }));
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Programmes EBS",
-    itemListElement: [...allLicences, ...allMasters].map((program, index) => ({
+    itemListElement: allProgrammes.map((program, index) => ({
       "@type": "ListItem",
       position: index + 1,
       url: `https://ebs.tn/fr/${program.type === "licence" ? "licences" : "masters"}/${program.slug}`,
@@ -101,7 +109,7 @@ export default function NosProgrammesPage() {
                 Licences (Bac+3)
               </h2>
               <p className="text-[17px] text-penn-body mt-4 max-w-[700px]">
-                5 parcours de Licence pour construire des bases solides en management, finance, marketing ou technologie.
+                {siteStats.licencePathways} parcours de Licence pour construire des bases solides en management, finance, marketing ou technologie.
               </p>
             </div>
             <Link href="/licences" className="inline-flex items-center gap-2 text-penn-green hover:underline text-[15px] font-bold">
@@ -109,7 +117,7 @@ export default function NosProgrammesPage() {
             </Link>
           </div>
           <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
-            {allLicences.map((prog) => (
+            {allProgrammes.filter((prog) => prog.type === "licence").map((prog) => (
               <div key={prog.slug} className="w-full md:w-[calc(50%-12px)] lg:w-[calc((100%-64px)/3)] flex flex-col">
                 <MagneticProgramCard
                   title={prog.title}
@@ -135,7 +143,7 @@ export default function NosProgrammesPage() {
                 Masters (Bac+5)
               </h2>
               <p className="text-[17px] text-penn-body mt-4 max-w-[700px]">
-                3 Masters professionnels pour atteindre l'excellence et devenir un expert prisé sur le marché du travail.
+                {siteStats.masterDegrees} Masters professionnels pour atteindre l'excellence et devenir un expert prisé sur le marché du travail.
               </p>
             </div>
             <Link href="/masters" className="inline-flex items-center gap-2 text-penn-green hover:underline text-[15px] font-bold">
@@ -143,7 +151,7 @@ export default function NosProgrammesPage() {
             </Link>
           </div>
           <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
-            {allMasters.map((prog) => (
+            {allProgrammes.filter((prog) => prog.type === "master").map((prog) => (
               <div key={prog.slug} className="w-full md:w-[calc(50%-12px)] lg:w-[calc((100%-64px)/3)] flex flex-col">
                 <MagneticProgramCard
                   title={prog.title}
@@ -170,7 +178,7 @@ export default function NosProgrammesPage() {
                 Étudiez à l'étranger avec EBS
               </h2>
               <p className="text-[17px] text-white/80 leading-relaxed mb-8">
-                Grâce à nos 16 partenaires académiques en France, Canada, Italie et Oman, accédez à des programmes de mobilité, doubles diplômes et poursuites d'études à l'international. L'équipe du Bureau International vous accompagne du choix de la destination jusqu'à l'obtention de votre visa.
+                Grâce à nos {siteStats.academicPartners} partenaires académiques en France, Canada, Italie et Oman, accédez à des programmes de mobilité, doubles diplômes et poursuites d'études à l'international. L'équipe du Bureau International vous accompagne du choix de la destination jusqu'à l'obtention de votre visa.
               </p>
               <Link href="/parcours-international" className="inline-flex items-center justify-center gap-2 h-14 px-8 rounded-full bg-white text-penn-navy font-bold hover:bg-penn-bg transition-colors">
                 Découvrir l'International <Globe className="w-5 h-5" />
@@ -179,7 +187,7 @@ export default function NosProgrammesPage() {
             <div className="relative z-10 lg:w-1/2 w-full grid grid-cols-2 gap-4">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center flex flex-col justify-center items-center">
                 <Globe className="w-8 h-8 text-penn-green mb-3" />
-                <p className="text-[36px] font-extrabold text-white leading-none mb-1">16</p>
+                <p className="text-[36px] font-extrabold text-white leading-none mb-1">{siteStats.academicPartners}</p>
                 <p className="text-[14px] text-white/60 font-medium uppercase tracking-wider">Partenaires</p>
               </div>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center flex flex-col justify-center items-center">
@@ -192,7 +200,7 @@ export default function NosProgrammesPage() {
                   <CheckCircle2 className="w-5 h-5 text-penn-green" /> Nos Destinations
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-white/40"/> <span className="text-white/80 text-[15px]">France (12)</span></div>
+                   <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-white/40"/> <span className="text-white/80 text-[15px]">France ({siteStats.franceAcademicPartners})</span></div>
                   <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-white/40"/> <span className="text-white/80 text-[15px]">Canada (1)</span></div>
                   <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-white/40"/> <span className="text-white/80 text-[15px]">Italie (1)</span></div>
                   <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-white/40"/> <span className="text-white/80 text-[15px]">Oman (1)</span></div>

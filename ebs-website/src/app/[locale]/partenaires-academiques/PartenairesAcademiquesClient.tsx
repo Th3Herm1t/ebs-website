@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
+import { siteStats } from "@/lib/site-stats";
 import {
   Award,
   BookOpen,
@@ -151,7 +152,7 @@ export default function PartenairesAcademiquesPage() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="text-[17px] md:text-[19px] text-white/70 leading-relaxed max-w-[650px] mb-12"
           >
-            14 partenaires académiques en France, au Canada, en Italie, et à Oman. Des institutions d'excellence qui offrent à nos étudiants des opportunités d'études, de mobilité et de doubles diplômes à l'international.
+            {siteStats.academicPartners} partenaires académiques en France, au Canada, en Italie, et à Oman. Des institutions d'excellence qui offrent à nos étudiants des opportunités d'études, de mobilité et de doubles diplômes à l'international.
           </motion.p>
 
           <motion.div
@@ -161,15 +162,15 @@ export default function PartenairesAcademiquesPage() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
           >
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">14</p>
+              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">{siteStats.academicPartners}</p>
               <p className="text-[12px] text-white/50 font-medium">Universités partenaires</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">4</p>
+              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">{siteStats.academicPartnerCountries}</p>
               <p className="text-[12px] text-white/50 font-medium">Pays</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">11</p>
+              <p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">{siteStats.franceAcademicPartners}</p>
               <p className="text-[12px] text-white/50 font-medium">En France</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center flex flex-col justify-center h-full">
@@ -194,8 +195,8 @@ export default function PartenairesAcademiquesPage() {
           <div className="bg-white rounded-2xl border border-penn-border shadow-xl overflow-hidden">
             <div className="grid grid-cols-3 divide-x divide-penn-border/40">
               {[
-                { value: "14", label: "Partenaires académiques", icon: <Building2 className="w-5 h-5" />, color: "#2B8FAB" },
-                { value: "4", label: "Pays représentés", icon: <Globe className="w-5 h-5" />, color: "#2196F3" },
+                { value: String(siteStats.academicPartners), label: "Partenaires académiques", icon: <Building2 className="w-5 h-5" />, color: "#2B8FAB" },
+                { value: String(siteStats.academicPartnerCountries), label: "Pays représentés", icon: <Globe className="w-5 h-5" />, color: "#2196F3" },
                 { value: "80+", label: "Programmes accessibles", icon: <BookOpen className="w-5 h-5" />, color: "#FF9800" },
               ].map((stat, i) => (
                 <motion.div

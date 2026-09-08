@@ -4,15 +4,16 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import AnimatedCounter from "./AnimatedCounter";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { catalogueV3, getPublicCertificationCount } from "@/lib/certifications/v3";
+import { siteStats } from "@/lib/site-stats";
 
 export default function CounterSection() {
   const t = useTranslations("HomePage.counters");
 
   const counters = [
     { icon: Award, end: getPublicCertificationCount(catalogueV3.release.counts.publicResources), suffix: "+", label: t("c1"), color: "#4154f1" },
-    { icon: GraduationCap, end: 8, suffix: "", label: t("c2"), color: "#ee6c20" },
-    { icon: Globe, end: 10, suffix: "+", label: t("c3"), color: "#15be56" },
-    { icon: TrendingUp, end: 93, suffix: "%", label: t("c4"), color: "#bb0852" },
+    { icon: GraduationCap, end: siteStats.degreeProgrammes, suffix: "", label: t("c2"), color: "#ee6c20" },
+    { icon: Globe, end: siteStats.academicPartners, suffix: "", label: t("c3"), color: "#15be56" },
+    { icon: TrendingUp, end: siteStats.successRate, suffix: "%", label: t("c4"), color: "#bb0852" },
   ];
 
   return (

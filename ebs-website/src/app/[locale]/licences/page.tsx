@@ -31,7 +31,7 @@ const allProgramsBase = [
 const licencesCards = [
   {
     icon: <Award className="w-6 h-6" />,
-     title: "150+",
+     title: "190+",
      subtitle: "Offertes",
     color: "#2B8FAB",
     offsetY: -80,
@@ -172,7 +172,7 @@ export default async function LicencesPage({
                   <Award className="w-7 h-7 text-penn-green" />
                 </div>
                 <div>
-                   <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">150+ certifications</h3>
+                    <h3 className="text-[18px] font-extrabold text-penn-navy mb-2">190+ certifications</h3>
                   <p className="text-[15px] text-penn-body leading-relaxed">
                      Des certifications délivrées par Google, IBM, Harvard, Bloomberg, Cisco, HubSpot et plus de 30 partenaires internationaux, offertes sans frais supplémentaires.
                   </p>

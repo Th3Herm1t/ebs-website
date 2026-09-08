@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Clock, LayoutGrid } from "lucide-react";
@@ -30,6 +31,7 @@ export default function EventsSection() {
   
   const imageEvents = t.raw('listImage') as ImageEventItem[];
   const listEvents = t.raw('listText') as EventItem[];
+  const hasSingleEvent = imageEvents.length === 1 && listEvents.length === 0;
 
   return (
     <section className="relative overflow-hidden section-padding" ref={ref}>
@@ -40,7 +42,7 @@ export default function EventsSection() {
           subtitle={<>{t('subtitle')} <span className="text-penn-green underline decoration-penn-green">{t('subtitleHighlight')}</span></>} 
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[30px]">
+        <div className={hasSingleEvent ? "flex justify-center" : "grid grid-cols-1 lg:grid-cols-3 gap-[30px]"}>
           {/* Two image event cards */}
           {imageEvents.map((event, i) => (
             <motion.div
@@ -49,7 +51,7 @@ export default function EventsSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
-              <Card className="border-penn-border rounded-[6px] overflow-hidden h-full">
+              <Card className={`border-penn-border rounded-[6px] overflow-hidden h-full ${hasSingleEvent ? "w-full max-w-[560px]" : ""}`}>
                 <div className="relative h-[270px]">
                   <Image src={event.img} alt={event.title} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
                   <div className="absolute top-[15px] left-[15px] flex shadow-lg">
@@ -74,7 +76,7 @@ export default function EventsSection() {
           ))}
 
           {/* Right column — 2 stacked text-only event cards */}
-          <div className="flex flex-col gap-[30px]">
+          {listEvents.length > 0 && <div className="flex flex-col gap-[30px]">
             {listEvents.map((event, i) => (
               <motion.div
                 key={i}
@@ -103,7 +105,15 @@ export default function EventsSection() {
                 </Card>
               </motion.div>
             ))}
-          </div>
+          </div>}
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            href="/actualites"
+            className="inline-flex items-center rounded-full bg-penn-green px-6 py-3 text-[13px] font-extrabold text-white transition-colors hover:bg-penn-navy"
+          >
+            {t('btn')}
+          </Link>
         </div>
       </div>
     </section>

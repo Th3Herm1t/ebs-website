@@ -1,6 +1,7 @@
 import { getPublicCatalogueV3Opportunities, getCatalogueV3ProviderLogo, type Resource } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import HomeCertificationsCarousel, { type HomeCertificationCard } from "./HomeCertificationsCarousel";
+import { siteStats } from "@/lib/site-stats";
 
 export default async function HomeCertificationsSection() {
   const catalogue = await getCatalogueV3Snapshot();
@@ -36,7 +37,7 @@ export default async function HomeCertificationsSection() {
       cards={cards}
       resourceCount={catalogue.release.counts.publicResources}
       providerCount={catalogue.providers.length}
-      programmeCount={catalogue.programmes.length}
+      programmeCount={siteStats.degreeProgrammes}
     />
   );
 }

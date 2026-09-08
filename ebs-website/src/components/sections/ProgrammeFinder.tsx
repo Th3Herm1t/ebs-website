@@ -26,6 +26,7 @@ import { Badge } from "@/components/shared";
 import { licences } from "@/lib/programmes/licences";
 import { masters } from "@/lib/programmes/masters";
 import { catalogueV3, getPublicCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
+import { siteStats } from "@/lib/site-stats";
 
 /* ── Programme data for both quiz & compare ── */
 const allProgrammes = [
@@ -186,11 +187,10 @@ export default function ProgrammeFinder({ programmes = allProgrammes }: { progra
             Répondez à cinq questions pour identifier le parcours EBS le plus cohérent avec votre profil, vos ambitions et le domaine qui vous attire.
           </p>
           <div className="mt-8 grid max-w-[500px] grid-cols-3 gap-3 border-y border-penn-border py-5">
-            <div><p className="text-[26px] font-extrabold text-penn-green">{programmes.length}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-penn-body/55">Parcours</p></div>
-            <div><p className="text-[26px] font-extrabold text-penn-green">{programmes.filter((p) => p.degree === "Licence").length}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-penn-body/55">Licences</p></div>
-            <div><p className="text-[26px] font-extrabold text-penn-green">{programmes.filter((p) => p.degree === "Master").length}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-penn-body/55">Masters</p></div>
+            <div><p className="text-[26px] font-extrabold text-penn-green">{siteStats.degreeProgrammes}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-penn-body/55">Diplômes</p></div>
+            <div><p className="text-[26px] font-extrabold text-penn-green">{siteStats.licencePathways}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-penn-body/55">Parcours Licence</p></div>
+            <div><p className="text-[26px] font-extrabold text-penn-green">{siteStats.masterDegrees}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-penn-body/55">Masters</p></div>
           </div>
-          <p className="mt-6 text-[13px] font-bold text-penn-body/60">Un conseil personnalisé, en une minute.</p>
         </div>
 
         <div className="min-w-0">

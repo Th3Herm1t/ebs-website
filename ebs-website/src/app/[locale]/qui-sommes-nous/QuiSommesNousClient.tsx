@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { Badge, CtaSection } from "@/components/shared";
 import { catalogueV3, formatPublicCertificationCount } from "@/lib/certifications/v3";
+import { siteStats } from "@/lib/site-stats";
 
 const publicCertificationCountLabel = formatPublicCertificationCount(catalogueV3.release.counts.publicResources);
 
@@ -84,9 +85,9 @@ export default function QuiSommesNousPage() {
           </div>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex flex-wrap justify-center gap-4 md:gap-6">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">2013</p><p className="text-[13px] text-white/50 font-medium">Année de fondation</p></div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">9</p><p className="text-[13px] text-white/50 font-medium">Programmes disponibles</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">{siteStats.degreeProgrammes}</p><p className="text-[13px] text-white/50 font-medium">Diplômes disponibles</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">{publicCertificationCountLabel}</p><p className="text-[13px] text-white/50 font-medium">Certifications incluses</p></div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">95%</p><p className="text-[13px] text-white/50 font-medium">Taux de réussite</p></div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">{siteStats.successRate}%</p><p className="text-[13px] text-white/50 font-medium">Taux de réussite</p></div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center w-[calc(50%-8px)] md:w-[calc((100%-96px)/5)]"><p className="text-[32px] md:text-[44px] font-extrabold text-white leading-none mb-1">14</p><p className="text-[13px] text-white/50 font-medium">Partenaires internationaux</p></div>
           </motion.div>
         </div>
@@ -260,9 +261,9 @@ export default function QuiSommesNousPage() {
             {[
               { end: 2013, label: "Année de fondation", icon: <Building2 className="w-7 h-7" /> },
               { end: 12, suffix: "+", label: "Années d'expérience", icon: <Star className="w-7 h-7" /> },
-              { end: 9, label: "Programmes disponibles", sublabel: "3 Licences en Sciences de Gestion · 1 Licence en Informatique (2 Options) · 4 Masters", icon: <BookOpen className="w-7 h-7" /> },
+              { end: siteStats.degreeProgrammes, label: "Diplômes disponibles", sublabel: "4 Licences · 5 parcours Licence · 4 Masters", icon: <BookOpen className="w-7 h-7" /> },
               { end: Number(publicCertificationCountLabel.replace("+", "")), label: "Certifications incluses", sublabel: "Google · IBM · Harvard · Bloomberg · Cisco...", icon: <Award className="w-7 h-7" />, featured: true },
-              { end: 95, suffix: "%", label: "Taux de réussite", icon: <TrendingUp className="w-7 h-7" />, featured: true },
+              { end: siteStats.successRate, suffix: "%", label: "Taux de réussite", icon: <TrendingUp className="w-7 h-7" />, featured: true },
               { end: 14, label: "Partenaires internationaux", sublabel: "France · Canada · Italie · Oman", icon: <Globe className="w-7 h-7" /> },
             ].map((stat, i) => (
               <motion.div key={stat.label} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.08 }} whileHover={{ y: -4, scale: 1.02 }}

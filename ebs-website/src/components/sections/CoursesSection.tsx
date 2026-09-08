@@ -106,9 +106,9 @@ export default function CoursesSection() {
   ];
 
   const masters = [
-    { img: "/images/programs/startups.jpg", cat: t('masters.0.cat'), title: t('masters.0.title'), detail1: t('masters.0.detail1'), detail2: t('masters.0.detail2'), slug: "ingenierie-financiere", type: "master" as const },
+    { img: "/images/programs/ingenierie-financiere.jpg", cat: t('masters.0.cat'), title: t('masters.0.title'), detail1: t('masters.0.detail1'), detail2: t('masters.0.detail2'), slug: "ingenierie-financiere", type: "master" as const },
     { img: "/images/programs/crm.jpg", cat: t('masters.1.cat'), title: t('masters.1.title'), detail1: t('masters.1.detail1'), detail2: t('masters.1.detail2'), slug: "crm", type: "master" as const },
-    { img: "/images/programs/ingenierie-financiere.jpg", cat: t('masters.2.cat'), title: t('masters.2.title'), detail1: t('masters.2.detail1'), detail2: t('masters.2.detail2'), slug: "startups", type: "master" as const },
+    { img: "/images/programs/startups.jpg", cat: t('masters.2.cat'), title: t('masters.2.title'), detail1: t('masters.2.detail1'), detail2: t('masters.2.detail2'), slug: "startups", type: "master" as const },
     { img: "/images/programs/marketing-digital-ia.jpg", cat: t('masters.3.cat'), title: t('masters.3.title'), detail1: t('masters.3.detail1'), detail2: t('masters.3.detail2'), slug: "marketing-digital-ia", type: "master" as const },
   ];
 

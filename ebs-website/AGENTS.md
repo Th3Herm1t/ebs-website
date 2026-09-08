@@ -43,7 +43,7 @@ When bringing content from v0.1 (Astro) or ebs.tn into this codebase, follow thi
 | `/licences` | Scaffolded | Grid overview only, LP detail pages exist but scaffolded |
 | `/licences/[slug]` | Scaffolded | 6 LP pages exist with mock content |
 | `/masters` | Scaffolded | Grid overview only |
-| `/masters/[slug]` | Scaffolded | 3 LP pages exist with mock content |
+| `/masters/[slug]` | Scaffolded | 4 LP pages exist with programme content |
 | `/admissions` | **NEW (this batch)** | Process overview, requirements, financing, FAQ, CTA |
 | `/preinscription` | **NEW (this batch)** | Multi-step form (4 steps) with real programmes |
 | `/certifications` | Refined | 10-provider grid |
