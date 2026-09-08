@@ -25,7 +25,7 @@ import {
 import { Badge } from "@/components/shared";
 import { licences } from "@/lib/programmes/licences";
 import { masters } from "@/lib/programmes/masters";
-import { catalogueV3, getCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
+import { catalogueV3, getPublicCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
 
 /* ── Programme data for both quiz & compare ── */
 const allProgrammes = [
@@ -41,7 +41,7 @@ const allProgrammes = [
 ].map((programme) => ({
   ...programme,
   name: catalogueV3.programmes.find((entry) => entry.id === programme.data.catalogueId)?.name.fr ?? programme.name,
-  certs: getCatalogueV3ProgrammeSummary(programme.data.catalogueId).total,
+    certs: getPublicCatalogueV3ProgrammeSummary(programme.data.catalogueId).total,
 }));
 
 export type OrientationProgramme = (typeof allProgrammes)[number];

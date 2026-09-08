@@ -3,7 +3,7 @@ import { ProgramLPHero, ProgramPresentation, PublicCible, ModulesAccordion, Cert
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { Breadcrumb, CtaSection } from "@/components/shared";
 import { masters } from "@/lib/programmes/masters";
-import { aiProfileLabels, getCatalogueV3Opportunities, getCatalogueV3Programme, getCatalogueV3AcademicRequirements } from "@/lib/certifications/v3";
+import { aiProfileLabels, getPublicCatalogueV3Opportunities, getCatalogueV3Programme, getCatalogueV3AcademicRequirements } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageParams) {
   const data = masters[slug];
   if (!data) return {};
   const catalogue = await getCatalogueV3Snapshot();
-  const certifications = getCatalogueV3Opportunities({ programmeId: data.catalogueId }, catalogue);
+  const certifications = getPublicCatalogueV3Opportunities({ programmeId: data.catalogueId }, catalogue);
   const programme = getCatalogueV3Programme(data.catalogueId, catalogue);
   return pageMetadata({
     title: `${programme?.name.fr ?? data.title} en Tunisie`,
@@ -39,7 +39,7 @@ export default async function MasterLPPage({ params }: PageParams) {
   if (!data) notFound();
   const catalogue = await getCatalogueV3Snapshot();
   const catalogueProgramme = getCatalogueV3Programme(data.catalogueId, catalogue);
-  const certifications = getCatalogueV3Opportunities({ programmeId: data.catalogueId }, catalogue);
+  const certifications = getPublicCatalogueV3Opportunities({ programmeId: data.catalogueId }, catalogue);
   const requirements = getCatalogueV3AcademicRequirements(data.catalogueId, catalogue);
   const programmeTitle = data.title;
   const profileLabel = catalogueProgramme ? aiProfileLabels[catalogueProgramme.profile] : undefined;

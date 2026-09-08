@@ -6,7 +6,6 @@ import { ArrowRight, Award, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   getCatalogueV3ProviderLogo,
-  tierLabels,
   type JoinedAcademicRequirement,
   type JoinedProgrammeOpportunity,
 } from "@/lib/certifications/v3";
@@ -20,9 +19,7 @@ interface CertificationsTableProps {
 }
 
 function sortOpportunities(a: JoinedProgrammeOpportunity, b: JoinedProgrammeOpportunity) {
-  const tierWeight = { RECOMMENDED: 0, DISCOVERY: 1 } as const;
-  return tierWeight[a.mapping.tier] - tierWeight[b.mapping.tier]
-    || a.mapping.year.localeCompare(b.mapping.year)
+  return a.mapping.year.localeCompare(b.mapping.year)
     || a.resource.title.localeCompare(b.resource.title);
 }
 
@@ -85,7 +82,7 @@ export function CertificationsTable({ certs, requirements = [], profileLabel, co
                 {logo ? <Image src={logo} alt={entry.provider?.name ?? "Organisme"} width={64} height={24} className="h-6 w-16 shrink-0 object-contain object-left" unoptimized /> : <span className="w-16 shrink-0 text-[11px] font-extrabold text-penn-navy">{entry.provider?.name}</span>}
                 <div className="min-w-0">
                   <p className="truncate text-[13px] font-extrabold text-penn-navy">{entry.resource.title}</p>
-                  <p className="mt-0.5 text-[11px] font-bold text-penn-body/60">{entry.mapping.year} · {tierLabels[entry.mapping.tier]}</p>
+                  <p className="mt-0.5 text-[11px] font-bold text-penn-body/60">{entry.mapping.year}</p>
                 </div>
               </div>
             );

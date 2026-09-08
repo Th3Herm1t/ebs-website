@@ -7,25 +7,19 @@ import { motion, AnimatePresence } from "motion/react";
 import {
   X,
   Award,
-  CheckCircle2,
   Clock,
-  ExternalLink,
   GraduationCap,
-  Layers,
   ShieldCheck,
   Sparkles,
   BookOpen,
   Building2,
   FileCheck,
 } from "lucide-react";
-import { Badge } from "@/components/shared";
 import {
   assessmentRigorLabels,
   credentialStrengthLabels,
   credentialTypeLabels,
   getCatalogueV3ProviderLogo,
-  tierHelp,
-  tierLabels,
   type JoinedProgrammeOpportunity,
 } from "@/lib/certifications/v3";
 
@@ -136,15 +130,6 @@ export function CertificationDetailDrawer({ opportunity, onClose, programmeLabel
                   <span className="text-[16px] font-extrabold text-penn-navy">{opportunity.provider?.name}</span>
                 )}
               </div>
-              <span
-                className={`rounded-full px-3.5 py-1 text-[11px] font-extrabold uppercase tracking-wide ${
-                  opportunity.mapping.tier === "RECOMMENDED"
-                    ? "bg-penn-navy text-white"
-                    : "bg-slate-100 text-slate-700"
-                }`}
-              >
-                {tierLabels[opportunity.mapping.tier]}
-              </span>
             </div>
 
             {/* Title */}

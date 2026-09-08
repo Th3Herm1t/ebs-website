@@ -6,7 +6,7 @@ import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { licences } from "@/lib/programmes/licences";
-import { getCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
+import { getPublicCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { pageMetadata } from "@/lib/seo";
 
@@ -63,7 +63,7 @@ export default async function LicencesPage({
   const { program } = await searchParams;
   const catalogue = await getCatalogueV3Snapshot();
   const allPrograms = allProgramsBase.map((entry) => {
-    const summary = getCatalogueV3ProgrammeSummary(entry.catalogueId, catalogue);
+    const summary = getPublicCatalogueV3ProgrammeSummary(entry.catalogueId, catalogue);
     return {
       ...entry,
        title: entry.title,

@@ -2,19 +2,12 @@
 
 import { startTransition, useDeferredValue, useMemo, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import {
   ArrowRight,
   Award,
   BadgeCheck,
   BookOpen,
-  Calendar,
-  Check,
-  CheckCircle2,
-  ChevronDown,
-  Clock,
-  Filter,
   GraduationCap,
   LayoutGrid,
   RotateCcw,
@@ -29,22 +22,17 @@ import {
 import { Badge, CtaSection } from "@/components/shared";
 import { fadeUp, staggerDelay, transitions, viewportOnce } from "@/lib/animation";
 import {
-  assessmentRigorLabels,
-  credentialStrengthLabels,
   credentialTypeLabels,
-  getCatalogueV3Opportunities,
+  formatPublicCertificationCount,
+  getPublicCatalogueV3Opportunities,
   getCatalogueV3ProviderLogo,
-  tierHelp,
-  tierLabels,
   type CatalogueV3PublicSnapshot,
   type JoinedProgrammeOpportunity,
-  type OpportunityTier,
   type Resource,
 } from "@/lib/certifications/v3";
 import { CertificationDetailDrawer } from "@/components/certifications/CertificationDetailDrawer";
 
 type CycleFilter = "all" | "licence" | "master" | "ia" | "finance" | "marketing" | "cyber";
-type TierFilter = "all" | OpportunityTier;
 type ViewMode = "grid" | "table";
 
 const initialVisibleCount = 36;
@@ -87,7 +75,6 @@ const topPartnerSlugs = [
 
 export default function CertificationsPage({ catalogue }: { catalogue: CatalogueV3PublicSnapshot }) {
   const [cycleFilter, setCycleFilter] = useState<CycleFilter>("all");
-  const [tierFilter, setTierFilter] = useState<TierFilter>("all");
   const [providerFilter, setProviderFilter] = useState("all");
   const [programmeFilter, setProgrammeFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
@@ -98,7 +85,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
   const deferredSearchTerm = useDeferredValue(searchTerm.trim().toLowerCase());
   const prefersReducedMotion = false;
 
-  const allOpportunities = useMemo(() => getCatalogueV3Opportunities({}, catalogue), [catalogue]);
+  const allOpportunities = useMemo(() => getPublicCatalogueV3Opportunities({}, catalogue), [catalogue]);
 
   const programmeLabels = useMemo(
     () => Object.fromEntries(catalogue.programmes.map((programme) => [programme.id, programme.name.fr])),
@@ -106,7 +93,6 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
   );
 
   const uniqueResourceCount = catalogue.release.counts.publicResources;
-  const uniqueCredentialCount = catalogue.release.counts.publicCredentials;
 
   const spotlightProviders = useMemo(() => {
     return catalogue.providers
@@ -129,7 +115,6 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
   const clearAllFilters = () => {
     startTransition(() => {
       setCycleFilter("all");
-      setTierFilter("all");
       setProviderFilter("all");
       setProgrammeFilter("all");
       setSearchTerm("");
@@ -139,7 +124,6 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
 
   const hasActiveFilters =
     cycleFilter !== "all" ||
-    tierFilter !== "all" ||
     providerFilter !== "all" ||
     programmeFilter !== "all" ||
     searchTerm.trim().length > 0;
@@ -155,9 +139,6 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
       if (cycleFilter === "marketing" && !["licence-marketing", "master-marketing-digital-ia", "master-crm-revops"].includes(opportunity.mapping.programmeId)) return false;
       if (cycleFilter === "cyber" && !["licence-cybersecurite", "licence-informatique-ia"].includes(opportunity.mapping.programmeId)) return false;
 
-      // Tier Filter
-      if (tierFilter !== "all" && opportunity.mapping.tier !== tierFilter) return false;
-
       // Provider Filter
       if (providerFilter !== "all" && opportunity.resource.providerId !== providerFilter) return false;
 
@@ -172,7 +153,6 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
           opportunity.provider?.name,
           opportunity.platform?.name,
           opportunity.mapping.year,
-          tierLabels[opportunity.mapping.tier],
           classificationLabels[opportunity.resource.classification],
           programmeLabels[opportunity.mapping.programmeId],
           ...(opportunity.resource.topics ?? []),
@@ -189,7 +169,6 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
   }, [
     allOpportunities,
     cycleFilter,
-    tierFilter,
     providerFilter,
     programmeFilter,
     deferredSearchTerm,
@@ -222,7 +201,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
               </div>
 
               <h1 className="text-[36px] md:text-[52px] lg:text-[60px] font-extrabold text-white leading-[1.08] tracking-[-1px] mb-4">
-                {uniqueResourceCount} certifications internationales.
+                {formatPublicCertificationCount(uniqueResourceCount)} certifications internationales.
                 <br />
                  <span className="text-penn-green">Incluses et gratuites</span>
                 <span className="text-white">.</span>
@@ -244,7 +223,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
                   <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/10 text-white">
                     <Award className="h-4 w-4 text-penn-green" />
                   </div>
-                  <span>{uniqueCredentialCount} Justificatifs Officiels</span>
+                  <span>{formatPublicCertificationCount(uniqueResourceCount)} Justificatifs Officiels</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/10 text-white">
@@ -324,28 +303,6 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
                     </option>
                   ))}
                 </select>
-              </div>
-
-              {/* Level Segmented Switch (Tous / Recommandé / Explorer) */}
-              <div className="flex items-center gap-1 rounded-xl border border-penn-border bg-penn-bg-light p-1 shrink-0">
-                {(["all", "RECOMMENDED", "DISCOVERY"] as const).map((tier) => {
-                  const active = tierFilter === tier;
-                  const label = tier === "all" ? "Tous" : tier === "RECOMMENDED" ? "Recommandé" : "Explorer";
-                  return (
-                    <button
-                      key={tier}
-                      type="button"
-                      onClick={() => setFilter(setTierFilter, tier)}
-                      className={`rounded-lg px-3 py-1.5 text-[12px] font-extrabold transition-all ${
-                        active
-                          ? "bg-penn-navy text-white shadow-2xs"
-                          : "text-penn-body hover:text-penn-navy"
-                      }`}
-                    >
-                      {label}
-                    </button>
-                  );
-                })}
               </div>
 
               {/* View Switcher */}
@@ -431,14 +388,6 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
                 <span className="inline-flex items-center gap-1 rounded-full bg-penn-navy/5 border border-penn-navy/10 px-3 py-0.5 font-bold text-penn-navy">
                   {cyclePresets.find((p) => p.id === cycleFilter)?.label}
                   <button type="button" onClick={() => setFilter(setCycleFilter, "all")} className="hover:text-red-500">
-                    <X className="h-3 w-3" />
-                  </button>
-                </span>
-              )}
-              {tierFilter !== "all" && (
-                <span className="inline-flex items-center gap-1 rounded-full bg-penn-navy/5 border border-penn-navy/10 px-3 py-0.5 font-bold text-penn-navy">
-                  {tierLabels[tierFilter]}
-                  <button type="button" onClick={() => setFilter(setTierFilter, "all")} className="hover:text-red-500">
                     <X className="h-3 w-3" />
                   </button>
                 </span>
@@ -660,7 +609,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
               {
                 icon: <Sparkles className="w-5 h-5" />,
                 title: "Profil hautement différenciant",
-                text: "Les parcours Recommandé et Explorer permettent d'obtenir jusqu'à 14 certifications de référence avant la diplomation.",
+                 text: "Les parcours recommandés permettent d'obtenir des certifications de référence avant la diplomation.",
               },
               {
                 icon: <BadgeCheck className="w-5 h-5" />,
@@ -725,7 +674,6 @@ function OpportunityCard({
   onSelect: () => void;
 }) {
   const logo = getCatalogueV3ProviderLogo(opportunity.resource.providerId);
-  const tier = opportunity.mapping.tier;
   const credentialType = opportunity.credential ? credentialTypeLabels[opportunity.credential.type] : "Justificatif";
   const classStyle = classificationStyles[opportunity.resource.classification];
 
@@ -739,13 +687,11 @@ function OpportunityCard({
     >
       {/* Top Accent Line */}
       <div
-        className={`absolute inset-x-0 top-0 h-1.5 ${
-          tier === "RECOMMENDED" ? "bg-penn-navy group-hover:bg-penn-green transition-colors" : "bg-slate-200"
-        }`}
+        className="absolute inset-x-0 top-0 h-1.5 bg-penn-navy transition-colors group-hover:bg-penn-green"
       />
 
       <div>
-        {/* Card Header: Provider Logo + Tier Pill */}
+        {/* Card Header: Provider Logo */}
         <div className="flex items-start justify-between gap-3 mb-3.5 pt-1">
           <div className="h-9 min-w-0 flex items-center">
             {logo ? (
@@ -761,13 +707,6 @@ function OpportunityCard({
               <span className="text-[12px] font-extrabold text-penn-navy">{opportunity.provider?.name}</span>
             )}
           </div>
-          <span
-            className={`rounded-full px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider shrink-0 ${
-              tier === "RECOMMENDED" ? "bg-penn-navy text-white" : "bg-slate-100 text-slate-700"
-            }`}
-          >
-            {tierLabels[tier]}
-          </span>
         </div>
 
         {/* Course Title */}

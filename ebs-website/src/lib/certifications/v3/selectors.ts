@@ -37,6 +37,14 @@ export function getCatalogueV3Counts(catalogue = catalogueV3) {
   return catalogue.release.counts;
 }
 
+export function getPublicCertificationCount(count: number) {
+  return Math.floor(count / 10) * 10;
+}
+
+export function formatPublicCertificationCount(count: number) {
+  return `${getPublicCertificationCount(count)}+`;
+}
+
 export function getCatalogueV3Programme(programmeId: string, catalogue = catalogueV3) {
   return catalogue.programmes.find((programme) => programme.id === programmeId);
 }
@@ -121,6 +129,22 @@ export function getCatalogueV3ProgrammeSummary(programmeId: string, catalogue = 
   };
 }
 
+export function getPublicCatalogueV3ProgrammeSummary(programmeId: string, catalogue = catalogueV3) {
+  const opportunities = getPublicCatalogueV3Opportunities({ programmeId }, catalogue);
+  const requirements = getCatalogueV3AcademicRequirements(programmeId, catalogue);
+  return {
+    total: opportunities.length,
+    recommended: opportunities.length,
+    discovery: 0,
+    requirements: requirements.length,
+    externalEvidencePaths: requirements.reduce(
+      (total, requirement) =>
+        total + requirement.evidence.filter((evidence) => evidence.path.type === "EXTERNAL_CREDENTIAL").length,
+      0,
+    ),
+  };
+}
+
 export function getCatalogueV3Opportunities(
   query: CatalogueV3Query = {},
   catalogue = catalogueV3,
@@ -159,6 +183,13 @@ export function getCatalogueV3Opportunities(
       },
     ];
   });
+}
+
+export function getPublicCatalogueV3Opportunities(
+  query: CatalogueV3Query = {},
+  catalogue = catalogueV3,
+) {
+  return getCatalogueV3Opportunities({ ...query, tier: "RECOMMENDED" }, catalogue);
 }
 
 export const aiProfileLabels: Record<AIProfile, string> = {

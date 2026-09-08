@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
+import { formatPublicCertificationCount } from "@/lib/certifications/v3";
 
 export interface HomeCertificationCard {
   id: string;
@@ -21,13 +22,11 @@ export interface HomeCertificationCard {
 
 export default function HomeCertificationsCarousel({
   cards,
-  total,
   resourceCount,
   providerCount,
   programmeCount,
 }: {
   cards: HomeCertificationCard[];
-  total: number;
   resourceCount: number;
   providerCount: number;
   programmeCount: number;
@@ -54,10 +53,10 @@ export default function HomeCertificationsCarousel({
             DES CERTIFICATIONS RECONNUES
           </div>
           <h2 className="max-w-[510px] text-[38px] font-extrabold leading-[1.04] tracking-tight text-white md:text-[52px]">
-            +{total} CERTIFICATIONS INTERNATIONALES
+            {formatPublicCertificationCount(resourceCount)} CERTIFICATIONS INTERNATIONALES
           </h2>
           <p className="mt-6 max-w-[470px] text-[16px] leading-relaxed text-white/65">
-            EBS intègre plus de {total} certifications professionnelles et internationales dans ses différents cursus. Elles permettent aux étudiants de valider des compétences concrètes et de renforcer leur profil auprès des recruteurs.
+            EBS intègre {formatPublicCertificationCount(resourceCount)} certifications professionnelles et internationales dans ses différents cursus. Elles permettent aux étudiants de valider des compétences concrètes et de renforcer leur profil auprès des recruteurs.
           </p>
 
           <div className="mt-9 space-y-4">
@@ -72,7 +71,7 @@ export default function HomeCertificationsCarousel({
               DÉCOUVRIR NOS CERTIFICATIONS
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <span className="text-[11px] font-bold text-white/45">{resourceCount} ressources · {providerCount} organismes · {programmeCount} programmes</span>
+            <span className="text-[11px] font-bold text-white/45">{formatPublicCertificationCount(resourceCount)} ressources · {providerCount} organismes · {programmeCount} programmes</span>
           </div>
         </div>
 

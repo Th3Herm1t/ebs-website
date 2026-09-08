@@ -22,13 +22,12 @@ import { Badge, CtaSection } from "@/components/shared";
 import {
   aiProfileLabels,
   credentialTypeLabels,
-  getCatalogueV3Opportunities,
-  getCatalogueV3ProgrammeSummary,
+  getPublicCatalogueV3Opportunities,
+  getPublicCatalogueV3ProgrammeSummary,
+  formatPublicCertificationCount,
   getCatalogueV3ProviderLogo,
-  tierLabels,
   type CatalogueV3PublicSnapshot,
   type JoinedProgrammeOpportunity,
-  type OpportunityTier,
   type Resource,
 } from "@/lib/certifications/v3";
 import { CertificationDetailDrawer } from "@/components/certifications/CertificationDetailDrawer";
@@ -195,13 +194,13 @@ const getProviderLogo = (provider: string) => {
 
 export default function IAEtCertificationsPage({ catalogue }: { catalogue: CatalogueV3PublicSnapshot }) {
   const [selectedOpportunity, setSelectedOpportunity] = useState<JoinedProgrammeOpportunity | null>(null);
-  const iaOpportunities = getCatalogueV3Opportunities({}, catalogue).filter(
+  const iaOpportunities = getPublicCatalogueV3Opportunities({}, catalogue).filter(
     (opportunity) =>
       opportunity.resource.classification === "ai-literacy" || opportunity.resource.classification === "applied-ai"
   );
   const aiResourceIds = new Set(iaOpportunities.map((opportunity) => opportunity.resource.id));
   const iaResources = catalogue.resources.filter((resource) => aiResourceIds.has(resource.id));
-  const totalCertifications = catalogue.release.counts.publicCredentials;
+  const totalCertifications = formatPublicCertificationCount(catalogue.release.counts.publicResources);
   const aiStats = {
     literacy: iaResources.filter((resource) => resource.classification === "ai-literacy").length,
     applied: iaResources.filter((resource) => resource.classification === "applied-ai").length,
@@ -218,7 +217,7 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
       ...programme,
       programme: catalogueProgramme?.name.fr ?? programme.programme,
       profile: catalogueProgramme?.profile,
-      ...getCatalogueV3ProgrammeSummary(programme.catalogueId, catalogue),
+      ...getPublicCatalogueV3ProgrammeSummary(programme.catalogueId, catalogue),
     };
   });
   return (
@@ -310,7 +309,7 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
                 {aiStats.marketplace}
               </p>
               <p className="text-[12px] text-white/50 font-medium mt-1">
-                recommandées & explorer
+                 recommandées
               </p>
             </div>
           </motion.div>
@@ -467,20 +466,14 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
                       {aiClassificationText[group.classification]}
                     </p>
                   </div>
-                  <div className="flex gap-2">
-                    <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold text-penn-navy">
-                      {group.opportunities.filter((opportunity) => opportunity.mapping.tier === "RECOMMENDED").length} recommandé
-                    </span>
-                    <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold text-penn-body">
-                      {group.opportunities.filter((opportunity) => opportunity.mapping.tier === "DISCOVERY").length} explorer
-                    </span>
-                  </div>
+                  <span className="rounded-full bg-white px-3 py-1 text-[11px] font-extrabold text-penn-navy">
+                    {group.opportunities.length} recommandées
+                  </span>
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {group.opportunities.slice(0, 18).map((opportunity, i) => {
                     const logo = getCatalogueV3ProviderLogo(opportunity.resource.providerId, catalogue);
-                    const tier = tierLabels[opportunity.mapping.tier as OpportunityTier];
                     return (
                       <motion.div
                         key={`${opportunity.resource.id}-${opportunity.mapping.programmeId}-${opportunity.mapping.year}-${opportunity.mapping.tier}`}
@@ -503,7 +496,7 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
                             {opportunity.resource.title}
                           </p>
                           <p className="mt-1 text-[11px] font-medium text-penn-body/60">
-                            {opportunity.provider?.name} · {opportunity.mapping.year} · {tier} · {opportunity.credential ? credentialTypeLabels[opportunity.credential.type] : "Justificatif"}
+                            {opportunity.provider?.name} · {opportunity.mapping.year} · {opportunity.credential ? credentialTypeLabels[opportunity.credential.type] : "Justificatif"}
                           </p>
                         </div>
                       </motion.div>
@@ -559,7 +552,7 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programmeBreakdown.map((p, i) => {
-              const tags = [`${aiProfileLabels[p.profile ?? "AI_ENABLED"]}`, `Recommandé ${p.recommended}`, `Explorer ${p.discovery}`];
+              const tags = [`${aiProfileLabels[p.profile ?? "AI_ENABLED"]}`, `Recommandé ${p.recommended}`];
 
               return (
                 <motion.div
@@ -664,7 +657,7 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
                 title: "Nos Licences",
                 desc: "5 parcours Licence avec IA intégrée.",
                 href: "/licences",
-                label: "Explorer",
+                 label: "Découvrir",
               },
               {
                 icon: <Award className="w-6 h-6" />,

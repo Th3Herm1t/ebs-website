@@ -5,6 +5,7 @@ import HomeCertificationsSection from "@/components/sections/HomeCertificationsS
 import OrientationSection from "@/components/sections/OrientationSection";
 import { pageMetadata } from "@/lib/seo";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
+import { getPublicCertificationCount } from "@/lib/certifications/v3";
 
 // Lazy-loaded components below the fold
 const PillarsSection = dynamic(() => import("@/components/sections/PillarsSection"));
@@ -47,7 +48,7 @@ export default async function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
-      <HeroSection certificationCount={catalogue.release.counts.publicResources} />
+      <HeroSection certificationCount={getPublicCertificationCount(catalogue.release.counts.publicResources)} />
       <TopPromo />
       <PillarsSection />
       <InfoSliderSection />

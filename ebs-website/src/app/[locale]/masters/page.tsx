@@ -6,7 +6,7 @@ import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { masters } from "@/lib/programmes/masters";
-import { getCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
+import { getPublicCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { pageMetadata } from "@/lib/seo";
 
@@ -61,7 +61,7 @@ export default async function MastersPage({
   const { program } = await searchParams;
   const catalogue = await getCatalogueV3Snapshot();
   const overview = overviewBase.map((entry) => {
-    const summary = getCatalogueV3ProgrammeSummary(entry.catalogueId, catalogue);
+    const summary = getPublicCatalogueV3ProgrammeSummary(entry.catalogueId, catalogue);
     return {
       ...entry,
        title: entry.title,

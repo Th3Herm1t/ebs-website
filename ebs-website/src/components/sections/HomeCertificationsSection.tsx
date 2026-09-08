@@ -1,10 +1,10 @@
-import { getCatalogueV3Opportunities, getCatalogueV3ProviderLogo, type Resource } from "@/lib/certifications/v3";
+import { getPublicCatalogueV3Opportunities, getCatalogueV3ProviderLogo, type Resource } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import HomeCertificationsCarousel, { type HomeCertificationCard } from "./HomeCertificationsCarousel";
 
 export default async function HomeCertificationsSection() {
   const catalogue = await getCatalogueV3Snapshot();
-  const opportunities = getCatalogueV3Opportunities({}, catalogue);
+  const opportunities = getPublicCatalogueV3Opportunities({}, catalogue);
   const programmeNames = new Map(catalogue.programmes.map((programme) => [programme.id, programme.name.fr]));
   const byResource = new Map<string, HomeCertificationCard>();
 
@@ -34,8 +34,7 @@ export default async function HomeCertificationsSection() {
   return (
     <HomeCertificationsCarousel
       cards={cards}
-      total={opportunities.length}
-      resourceCount={catalogue.resources.length}
+      resourceCount={catalogue.release.counts.publicResources}
       providerCount={catalogue.providers.length}
       programmeCount={catalogue.programmes.length}
     />

@@ -4,6 +4,9 @@ import { Award, Eye, Globe, Heart, Lightbulb, Target } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { Badge, CtaSection } from "@/components/shared";
+import { catalogueV3, formatPublicCertificationCount } from "@/lib/certifications/v3";
+
+const publicCertificationCountLabel = formatPublicCertificationCount(catalogueV3.release.counts.publicResources);
 
 const valeurs = [
   {
@@ -19,7 +22,7 @@ const valeurs = [
     icon: <Lightbulb className="w-5 h-5" />,
     nom: "Innovation pédagogique",
     description: "L'Intelligence Artificielle, les certifications internationales et la pédagogie par projets sont au cœur de chaque parcours.",
-    concret: "IA intégrée dans tous les programmes · 199 certifications et badges · Pédagogie innovante",
+    concret: `IA intégrée dans tous les programmes · ${publicCertificationCountLabel} certifications et badges · Pédagogie innovante`,
     color: "#9C27B0",
   },
   {

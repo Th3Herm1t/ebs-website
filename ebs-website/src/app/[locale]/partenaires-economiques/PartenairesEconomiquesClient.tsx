@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
+import { catalogueV3, formatPublicCertificationCount } from "@/lib/certifications/v3";
 import {
   Award,
   Brain,
@@ -317,7 +318,7 @@ export default function PartenairesEconomiquesPage() {
               <p className="text-[12px] text-white/50 font-medium">Taux d&apos;insertion</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">199</p>
+              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">{formatPublicCertificationCount(catalogueV3.release.counts.publicResources)}</p>
               <p className="text-[12px] text-white/50 font-medium">Certifications incluses</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
