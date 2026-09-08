@@ -114,9 +114,9 @@ export function CertificationDetailDrawer({ opportunity, onClose, programmeLabel
           <div className="p-6 md:p-8 space-y-7">
             {/* Provider and Tier */}
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
+              <div className="flex min-w-0 items-center gap-3">
                 {logo ? (
-                  <div className="flex h-12 w-32 items-center justify-start">
+                  <div className="flex min-w-0 flex-col items-start gap-1">
                     <Image
                       src={logo}
                       alt={opportunity.provider?.name ?? "Organisme"}
@@ -125,6 +125,9 @@ export function CertificationDetailDrawer({ opportunity, onClose, programmeLabel
                       className="max-h-9 w-auto object-contain"
                       unoptimized
                     />
+                    <span className="max-w-[180px] truncate text-[13px] font-extrabold text-penn-navy" title={opportunity.provider?.name}>
+                      {opportunity.provider?.name ?? "Organisme"}
+                    </span>
                   </div>
                 ) : (
                   <span className="text-[16px] font-extrabold text-penn-navy">{opportunity.provider?.name}</span>

@@ -79,7 +79,12 @@ export function CertificationsTable({ certs, requirements = [], profileLabel, co
             const logo = getCatalogueV3ProviderLogo(entry.resource.providerId);
             return (
               <div key={`${entry.resource.id}-${entry.mapping.year}`} className="flex min-w-0 items-center gap-3 rounded-xl border border-penn-border bg-penn-bg-light px-3 py-3">
-                {logo ? <Image src={logo} alt={entry.provider?.name ?? "Organisme"} width={64} height={24} className="h-6 w-16 shrink-0 object-contain object-left" unoptimized /> : <span className="w-16 shrink-0 text-[11px] font-extrabold text-penn-navy">{entry.provider?.name}</span>}
+                <div className="w-20 shrink-0">
+                  {logo && <Image src={logo} alt={entry.provider?.name ?? "Organisme"} width={64} height={24} className="h-6 w-16 object-contain object-left" unoptimized />}
+                  <span className="mt-1 block truncate text-[10px] font-extrabold text-penn-navy" title={entry.provider?.name}>
+                    {entry.provider?.name ?? "Organisme"}
+                  </span>
+                </div>
                 <div className="min-w-0">
                   <p className="truncate text-[13px] font-extrabold text-penn-navy">{entry.resource.title}</p>
                   <p className="mt-0.5 text-[11px] font-bold text-penn-body/60">{entry.mapping.year}</p>

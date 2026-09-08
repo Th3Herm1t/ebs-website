@@ -99,8 +99,9 @@ export default function HomeCertificationsCarousel({
                 <article className="flex h-full flex-col justify-between overflow-hidden rounded-[26px] border border-white/15 bg-gradient-to-br from-[#243969] via-[#18294f] to-[#101a35] p-6 shadow-2xl">
                   <div>
                     <div className="flex items-start justify-between gap-3">
-                      <div className="flex h-14 w-24 items-center rounded-xl bg-white px-3 py-2">
-                        {card.providerLogo ? <Image src={card.providerLogo} alt={card.provider} width={96} height={40} className="h-9 w-full object-contain" unoptimized /> : <span className="text-[11px] font-extrabold text-penn-navy">{card.provider}</span>}
+                      <div className="flex min-h-14 w-28 flex-col items-center justify-center gap-1 rounded-xl bg-white px-2 py-2">
+                        {card.providerLogo && <Image src={card.providerLogo} alt={card.provider} width={96} height={40} className="h-8 w-full object-contain" unoptimized />}
+                        <span className="w-full truncate text-center text-[9px] font-extrabold text-penn-navy" title={card.provider}>{card.provider}</span>
                       </div>
                       <Award className="h-6 w-6 text-penn-green" />
                     </div>

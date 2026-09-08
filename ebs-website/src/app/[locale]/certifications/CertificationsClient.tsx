@@ -693,8 +693,8 @@ function OpportunityCard({
       <div>
         {/* Card Header: Provider Logo */}
         <div className="flex items-start justify-between gap-3 mb-3.5 pt-1">
-          <div className="h-9 min-w-0 flex items-center">
-            {logo ? (
+          <div className="min-w-0 flex flex-col items-start gap-1">
+            {logo && (
               <Image
                 src={logo}
                 alt={opportunity.provider?.name ?? "Organisme"}
@@ -703,9 +703,10 @@ function OpportunityCard({
                 className="h-7 w-auto max-w-[110px] object-contain opacity-85 transition-opacity group-hover:opacity-100"
                 unoptimized
               />
-            ) : (
-              <span className="text-[12px] font-extrabold text-penn-navy">{opportunity.provider?.name}</span>
             )}
+            <span className="max-w-[120px] truncate text-[10px] font-extrabold text-penn-navy" title={opportunity.provider?.name}>
+              {opportunity.provider?.name ?? "Organisme"}
+            </span>
           </div>
         </div>
 
