@@ -26,7 +26,7 @@ import {
 import { Badge } from "@/components/shared";
 import { licences } from "@/lib/programmes/licences";
 import { masters } from "@/lib/programmes/masters";
-import { catalogueV3, getPublicCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
+import { getPublicCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
 import { siteStats } from "@/lib/site-stats";
 
 /* ── Programme data for both quiz & compare ── */
@@ -42,7 +42,7 @@ const allProgrammes = [
   { key: "ing-fin", name: "Master Ingénierie Financière", degree: "Master", slug: "masters/ingenierie-financiere", color: "#00897B", certs: 64, duration: "2 ans", level: "Bac+3", intl: "IGEFI (FR) · PSB (FR) · UQAT (CA)", careers: "Analyste M&A, Risk Manager, CFO", data: masters["ingenierie-financiere"] },
 ].map((programme) => ({
   ...programme,
-  name: catalogueV3.programmes.find((entry) => entry.id === programme.data.catalogueId)?.name.fr ?? programme.name,
+  name: programme.data.title,
     certs: getPublicCatalogueV3ProgrammeSummary(programme.data.catalogueId).total,
 }));
 
@@ -192,6 +192,18 @@ const englishProgrammeDetails: Record<string, { degree: string; duration: string
   "ing-fin": { degree: "Master's", duration: "2 years", level: "Bachelor's degree", careers: "M&A Analyst, Risk Manager, CFO", tagline: "Build advanced expertise in corporate finance, markets, data, and financial decision-making." },
 };
 
+const englishProgrammeNames: Record<string, string> = {
+  management: "Bachelor in Management",
+  marketing: "Bachelor in Marketing",
+  finance: "Bachelor in Finance",
+  "info-ia": "Bachelor in Computer Science, Software Engineering & Artificial Intelligence",
+  "info-cyber": "Bachelor in Computer Science, Software Engineering & Cybersecurity",
+  crm: "Master in CRM Marketing & Digital Transformation",
+  "mkt-ia": "Master in Digital Marketing & AI",
+  startups: "Master in Innovative Project Management & Startups",
+  "ing-fin": "Master in Financial Engineering",
+};
+
 /* ── Compare rows ── */
 const compareRows = [
   { label: "Niveau", key: "degree" as const },
@@ -208,9 +220,7 @@ export default function ProgrammeFinder({ programmes = allProgrammes }: { progra
   const localizedProgrammes = programmes.map((programme) => ({
     ...programme,
     ...(locale === "en" ? englishProgrammeDetails[programme.key] : {}),
-    name: locale === "en"
-      ? catalogueV3.programmes.find((entry) => entry.id === programme.data.catalogueId)?.name.en ?? programme.name
-      : programme.name,
+    name: locale === "en" ? englishProgrammeNames[programme.key] ?? programme.name : programme.name,
   }));
   const [tab, setTab] = useState<Tab>("quiz");
 

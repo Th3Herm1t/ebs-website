@@ -1,4 +1,4 @@
-import { getCatalogueV3Programme, getPublicCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
+import { getPublicCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { licences } from "@/lib/programmes/licences";
 import { masters } from "@/lib/programmes/masters";
@@ -12,7 +12,6 @@ export default async function OrientationSection() {
   ];
 
   const programmes: OrientationProgramme[] = entries.map((data) => {
-    const programme = getCatalogueV3Programme(data.catalogueId, catalogue);
     const summary = getPublicCatalogueV3ProgrammeSummary(data.catalogueId, catalogue);
     return {
       key: {
@@ -26,7 +25,7 @@ export default async function OrientationSection() {
         "master-startups-entrepreneuriat": "startups",
         "master-ingenierie-financiere": "ing-fin",
       }[data.catalogueId] ?? data.slug,
-      name: programme?.name.fr ?? data.title,
+      name: data.title,
       degree: data.type === "licence" ? "Licence" : "Master",
       slug: `${data.type === "licence" ? "licences" : "masters"}/${data.slug}`,
       color: data.color,
