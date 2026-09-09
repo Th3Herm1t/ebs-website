@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
     children: [
       { label: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
       { label: "Vision, Mission & Valeurs", href: "/vision-mission-valeurs" },
-      { label: "L'approche EBS", href: "/ia-et-certifications" },
+      { label: "L’IA au cœur d’EBS", href: "/ia-et-certifications" },
       { label: "Corps Enseignant", href: "/corps-enseignant" },
       { label: "Partenaires Académiques", href: "/partenaires-academiques" },
       { label: "Partenaires Économiques", href: "/partenaires-economiques" },

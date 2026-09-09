@@ -327,12 +327,13 @@
         "blog": "Blog",
         "contact": "Contactez-nous",
         "campus": "Campus",
-        "evenements": "Évènements",
+        "evenements": "Actualités & événements",
         "certifications": "Certifications",
-        "ia": "IA & Certifications",
+        "ia": "L’IA au cœur d’EBS",
         "faq": "FAQ",
         "tarifs": "Tarifs",
         "formations": "Formations",
+        "programmes": "Nos Programmes",
         "licences": "Licences",
         "masters": "Masters",
         "parcours": "PARCOURS INTERNATIONAL"
@@ -341,6 +342,11 @@
         "title": "Pour toute information Contactez-nous",
         "address": "Immeuble EBS, 10 rue Socrate - Z.I Kheireddine - Les Berges du Lac III",
         "hours": "Horaires d'ouverture"
+      },
+      "legal": {
+        "rights": "Tous droits réservés.",
+        "terms": "Mentions légales",
+        "privacy": "Politique de confidentialité"
       }
     },
     "career": {

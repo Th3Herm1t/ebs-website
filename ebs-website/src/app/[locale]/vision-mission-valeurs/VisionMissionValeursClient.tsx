@@ -154,12 +154,15 @@ export default function VisionPage() {
       {/* ═══════════ VISION ═══════════ */}
       <section className="section-padding bg-penn-navy relative overflow-hidden">
         <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(43,143,171,0.06) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
+        <div className="absolute -top-32 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-penn-green/10 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-64 w-64 translate-x-1/3 translate-y-1/3 rounded-full bg-[#9C27B0]/10 blur-3xl" />
 
-        <div className="relative z-10 max-w-[900px] mx-auto px-5 lg:px-12 text-center">
+        <div className="relative z-10 max-w-[1080px] mx-auto px-5 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
+            className="text-center"
           >
             <Badge variant="outline" size="lg" className="mb-6 border-white/20 text-white/80">
               Notre Vision
@@ -171,17 +174,12 @@ export default function VisionPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative mx-auto max-w-[980px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] px-6 py-10 text-center shadow-[0_24px_80px_rgba(0,0,0,0.2)] backdrop-blur-sm md:px-14 md:py-14"
           >
-            <span className="absolute -top-8 -left-4 text-[120px] leading-none font-serif text-penn-green/10 select-none pointer-events-none">
-              &ldquo;
-            </span>
-            <p className="text-[24px] md:text-[32px] lg:text-[38px] font-bold leading-snug text-white/90 italic relative z-10">
+            <p className="relative z-10 mx-auto max-w-[820px] text-[20px] font-semibold leading-[1.55] text-white/90 md:text-[25px] lg:text-[29px]">
               Être une université de référence en Tunisie, reconnue pour la qualité de ses formations, son ouverture internationale et sa capacité à former des professionnels compétitifs, maîtrisant l&apos;Intelligence Artificielle et certifiés par les plus grandes organisations internationales.
             </p>
-            <span className="absolute -bottom-12 -right-4 text-[120px] leading-none font-serif text-penn-green/10 select-none pointer-events-none rotate-180">
-              &ldquo;
-            </span>
+            <div className="relative z-10 mx-auto mt-8 h-1 w-16 rounded-full bg-penn-green" />
           </motion.blockquote>
         </div>
       </section>

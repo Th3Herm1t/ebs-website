@@ -12,7 +12,7 @@ const publicCertificationCountLabel = formatPublicCertificationCount(catalogueV3
 const timeline = [
   { year: "2013", title: "Fondation d'EBS", text: "Création d'Espima Business School à Tunis. Agrément n° 2013/02 délivré par Ministère de l'Enseignement Supérieur et de la Recherche Scientifique. Dès sa création, une conviction forte : offrir en Tunisie des formations universitaires répondant aux standards internationaux.", highlight: false, image: "/images/campus/t27.webp" },
   { year: "2016", title: "Premiers partenariats", text: "Signature des premières conventions avec des universités françaises. Lancement des Licences en Management, Marketing, Finance et Informatique.", highlight: false, image: "/images/campus/t35.webp" },
-  { year: "2020", title: "Expansion internationale", text: "Le réseau de partenaires s'élargit avec l'UQAT (Canada), EM Normandie, Excelia et Paris School of Business (PSB). Développement des parcours internationaux et lancement des Masters professionnels.", highlight: false, image: "/images/campus/t53.webp" },
+  { year: "2020", title: "Expansion internationale", text: "Le réseau de partenaires s'élargit avec l'UQAT (Canada), EM Normandie, Excelia et Paris School of Business (PSB). Développement des parcours internationaux et lancement des Masters professionnels.", highlight: false, image: "/images/campus/campus-28.png" },
   { year: "2026", title: "Le virage de l'IA", text: `EBS devient la première université tunisienne à intégrer l'intelligence artificielle comme compétence transversale obligatoire dans tous ses cursus. Un catalogue de ${publicCertificationCountLabel} certifications et justificatifs internationaux gratuits, en partenariat avec Google, IBM, Harvard, Bloomberg, Microsoft, Cisco et plus de 30 partenaires technologiques internationaux.`, highlight: true, image: "/images/campus/t48.webp" },
 ];
 
@@ -22,28 +22,28 @@ const piliers = [
     title: "Qualité de l'Enseignement",
     desc: "EBS propose des formations de Licence et de Master reconnues pour leur qualité académique, enrichies par des certifications internationales, des partenariats universitaires et une ouverture vers l'international afin de répondre aux exigences du marché de l'emploi.",
     color: "#2B8FAB",
-    image: "/images/campus/campus-2.jpg",
+    image: "/images/campus/campus-45.jpg",
   },
   {
     icon: <Lightbulb className="w-7 h-7" />,
     title: "Pédagogie Innovante",
     desc: "Notre pédagogie associe apprentissage par projets (« learning by doing »), intelligence artificielle, outils numériques et plateforme E-Learning afin de développer les compétences techniques, l'esprit d'analyse, la créativité et le travail en équipe.",
     color: "#2196F3",
-    image: "/images/sections/pillar-tech.jpg",
+    image: "/images/campus/campus-40.jpg",
   },
   {
     icon: <Heart className="w-7 h-7" />,
     title: "Développement Personnel et Professionnel",
     desc: "Le développement personnel et professionnel est au cœur de notre projet pédagogique. Nous accompagnons chaque étudiant dans le développement de ses soft skills, de son leadership, de son ouverture d'esprit et de sa capacité à évoluer dans un environnement international.",
     color: "#E91E8C",
-    image: "/images/campus/p44.webp",
+    image: "/images/campus/campus-42.jpg",
   },
   {
     icon: <Globe className="w-7 h-7" />,
     title: "Ouverture sur l'Environnement",
     desc: "EBS entretient des partenariats étroits avec des entreprises et des universités internationales afin d'offrir à ses étudiants des stages, des projets, des opportunités de mobilité et des perspectives de carrière en Tunisie et à l'étranger.",
     color: "#FF9800",
-    image: "/images/campus/p55.webp",
+    image: "/images/campus/p44.webp",
   },
 ];
 
@@ -173,15 +173,15 @@ export default function QuiSommesNousPage() {
                     <Image fill src="/images/campus/px31.webp" alt="Campus EBS" sizes="(max-width: 1024px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                   <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-square">
-                    <Image fill src="/images/campus/px50.webp" alt="Étudiants" sizes="(max-width: 1024px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image fill src="/images/campus/campus-23.jpg" alt="Étudiants" sizes="(max-width: 1024px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                 </div>
                 <div className="space-y-4 pt-12">
                   <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-square">
-                    <Image fill src="/images/campus/px51.webp" alt="Salle de classe" sizes="(max-width: 1024px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image fill src="/images/campus/campus-39.png" alt="Salle de classe" sizes="(max-width: 1024px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                   <div className="relative rounded-2xl overflow-hidden shadow-lg group aspect-[4/5]">
-                    <Image fill src="/images/campus/px30.webp" alt="Cafétéria" sizes="(max-width: 1024px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image fill src="/images/campus/campus-29.png" alt="Cafétéria" sizes="(max-width: 1024px) 50vw, 25vw" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function QuiSommesNousPage() {
         <div className="max-w-[1160px] mx-auto px-5 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} className="text-center mb-16">
             <Badge variant="default" size="lg" className="mb-4">Notre Histoire</Badge>
-            <h2 className="text-[34px] md:text-[44px] font-extrabold text-penn-navy leading-[1.15]">Plus de 12 ans d'excellence</h2>
+            <h2 className="text-[40px] md:text-[56px] lg:text-[64px] font-extrabold text-penn-navy leading-[1.08] tracking-[-1px]">Plus de 12 ans d'excellence</h2>
           </motion.div>
           <div className="relative">
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-penn-border -translate-x-1/2" />

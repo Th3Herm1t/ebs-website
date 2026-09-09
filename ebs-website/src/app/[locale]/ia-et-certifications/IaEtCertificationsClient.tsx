@@ -204,7 +204,6 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
   const aiStats = {
     literacy: iaResources.filter((resource) => resource.classification === "ai-literacy").length,
     applied: iaResources.filter((resource) => resource.classification === "applied-ai").length,
-    requiredCompetencies: catalogue.academicRequirements.filter((requirement) => requirement.requiredCapability !== "ENGINEER").length,
     marketplace: iaOpportunities.length,
   };
   const groupedAiCertifications = (["ai-literacy", "applied-ai"] as const).map((classification) => ({
@@ -294,14 +293,6 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
               </p>
               <p className="text-[12px] text-white/50 font-medium">
                 IA appliquée
-              </p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
-              <p className="text-[32px] md:text-[44px] font-extrabold text-penn-green leading-none mb-1">
-                {aiStats.requiredCompetencies}
-              </p>
-              <p className="text-[12px] text-white/50 font-medium">
-                compétences requises
               </p>
             </div>
             <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">

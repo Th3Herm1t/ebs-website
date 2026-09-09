@@ -105,7 +105,7 @@ export default function Footer() {
               <FooterLink href="/contact">{t('links.contact')}</FooterLink>
               <FooterLink href="/campus">{t('links.campus')}</FooterLink>
               <FooterLink href="/faq">{t('links.faq')}</FooterLink>
-              <FooterLink href="/blog">{t('links.evenements')}</FooterLink>
+              <FooterLink href="/actualites">{t('links.evenements')}</FooterLink>
             </ul>
           </div>
 
@@ -116,7 +116,7 @@ export default function Footer() {
               <span className="absolute -bottom-2 left-0 w-1/2 h-[2px] bg-penn-green" />
             </h4>
             <ul className="space-y-4">
-              <FooterLink href="/nos-programmes" isBold>Nos Programmes</FooterLink>
+              <FooterLink href="/nos-programmes" isBold>{t('links.programmes')}</FooterLink>
               <FooterLink href="/licences">{t('links.licences')}</FooterLink>
               <FooterLink href="/masters">{t('links.masters')}</FooterLink>
               <FooterLink href="/parcours-international">{t('links.parcours')}</FooterLink>
@@ -170,11 +170,11 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/50 text-sm">
-            &copy; {new Date().getFullYear()} ESPIMA Business School. Tous droits réservés.
+             &copy; {new Date().getFullYear()} ESPIMA Business School. {t('legal.rights')}
           </p>
           <div className="flex gap-6">
-             <a href="https://ebs.tn/mentions-legales" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white text-sm transition-colors">Mentions Légales</a>
-             <a href="https://ebs.tn/politique-de-confidentialite" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white text-sm transition-colors">Politique de Confidentialité</a>
+             <a href="https://ebs.tn/mentions-legales" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white text-sm transition-colors">{t('legal.terms')}</a>
+             <a href="https://ebs.tn/politique-de-confidentialite" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white text-sm transition-colors">{t('legal.privacy')}</a>
           </div>
         </div>
       </div>

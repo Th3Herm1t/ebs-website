@@ -13,6 +13,10 @@ const routeMeta = {
     title: "Contact EBS Tunis",
     description: "Contactez Espima Business School à Tunis : admissions, programmes, certifications, partenariats et accompagnement étudiant.",
   },
+  tarifs: {
+    title: "Tarifs EBS : frais de scolarité et financement",
+    description: "Découvrez les tarifs des Licences et Masters EBS, les modalités de paiement et les solutions de financement disponibles.",
+  },
   faq: {
     title: "FAQ EBS : admissions, programmes, certifications",
     description: "Réponses aux questions fréquentes sur les admissions EBS, les Licences, Masters, certifications, stages, tarifs et parcours internationaux.",
