@@ -39,7 +39,7 @@ export default function HomeCertificationsCarousel({
           alt="Étudiante EBS avec son certificat"
           fill
           sizes="38vw"
-          className="object-[70%_center] object-cover opacity-40"
+          className="object-[100%_center] object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-penn-navy/10 via-penn-navy/50 to-penn-navy" />
       </div>
