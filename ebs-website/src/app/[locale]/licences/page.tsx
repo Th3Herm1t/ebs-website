@@ -32,7 +32,7 @@ const licencesCards = [
   {
     icon: <Award className="w-6 h-6" />,
      title: "190+",
-     subtitle: "Offertes",
+     subtitle: "Certifications offertes",
     color: "#2B8FAB",
     offsetY: -80,
     parallaxSpeed: 1,
@@ -151,7 +151,7 @@ export default async function LicencesPage({
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative aspect-video lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
-              <Image src="/images/programs/program-hero.jpg" alt="Étudiants EBS Licence" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <Image src="/images/sections/licence-why.jpg" alt="Étudiants EBS Licence" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               <div className="absolute inset-0 bg-penn-navy/10 mix-blend-multiply" />
             </div>
 

@@ -251,10 +251,10 @@ export default function PartenairesEconomiquesPage() {
       <section className="relative pt-40 pb-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/heroes/hero-campus.webp"
+            src="/images/heroes/hero-partenaires-economiques.jpg"
             alt=""
             fill
-            className="object-cover"
+            className="object-cover object-[center_25%] scale-x-[-1]"
             priority
             sizes="100vw"
           />
@@ -453,13 +453,10 @@ export default function PartenairesEconomiquesPage() {
               className="relative hidden md:block aspect-square lg:aspect-auto lg:h-[650px]"
             >
               <div className="absolute top-0 left-0 w-[60%] h-[55%] rounded-2xl overflow-hidden border-4 border-white shadow-xl z-20">
-                <Image src="/images/partenaires/corporate-1.jpg" alt="Recrutement stagiaires EBS" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
+                <Image src="/images/partenaires/partenaires-62.jpg" alt="Recrutement stagiaires EBS" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
               </div>
               <div className="absolute bottom-5 right-0 w-[65%] h-[50%] rounded-2xl overflow-hidden border-4 border-white shadow-xl z-30">
-                <Image src="/images/partenaires/corporate-2.jpg" alt="Étudiants EBS en entreprise" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
-              </div>
-              <div className="absolute top-[20%] right-[10%] w-[50%] h-[40%] rounded-2xl overflow-hidden border-4 border-white shadow-lg z-10 opacity-70">
-                <Image src="/images/partenaires/corporate-3.jpg" alt="Collaboration d'équipe" fill className="object-cover" sizes="(max-width: 1024px) 33vw, 20vw" />
+                <Image src="/images/partenaires/partenaires-63.jpg" alt="Étudiants EBS en entreprise" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
               </div>
             </motion.div>
 

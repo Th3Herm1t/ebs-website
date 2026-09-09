@@ -3,16 +3,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { ArrowDown, Bus, Building, CalendarDays, Clock, Coffee, Hotel, MapPin, Monitor, ParkingCircle, Wifi, Camera, Gamepad2, Utensils, BookOpen, Send, X } from "lucide-react";
+import { ArrowDown, Bus, Building, CalendarDays, Clock, Coffee, Hotel, MapPin, Monitor, ParkingCircle, Wifi, Camera, Gamepad2, BookOpen, Send, X } from "lucide-react";
 import { Badge } from "@/components/shared";
 import { siteConfig } from "@/lib/config";
 
 const campusSpaces = [
   { title: "Bibliothèque", icon: <BookOpen className="w-6 h-6" />, color: "#00BCD4", image: "/images/campus/library.jpg" },
-  { title: "Laboratoire Informatique", icon: <Monitor className="w-6 h-6" />, color: "#9C27B0", image: "/images/campus/labo.jpg" },
-  { title: "Espaces de Détente", icon: <Coffee className="w-6 h-6" />, color: "#E89745", image: "/images/campus/detente.jpg" },
-  { title: "Salle Polyvalente", icon: <Building className="w-6 h-6" />, color: "#2B8FAB", image: "/images/campus/polyvalente.jpg" },
-  { title: "Cafétéria & Buvette", icon: <Utensils className="w-6 h-6" />, color: "#FF9800", image: "/images/campus/buvette.jpg" },
+  { title: "Laboratoire Informatique", icon: <Monitor className="w-6 h-6" />, color: "#9C27B0", image: "/images/campus/campus-29.png" },
+  { title: "Espaces de Détente", icon: <Coffee className="w-6 h-6" />, color: "#E89745", image: "/images/campus/campus-30.jpg" },
+  { title: "Salle Polyvalente", icon: <Building className="w-6 h-6" />, color: "#2B8FAB", image: "/images/ebs-tn/Conference-sonia-el-kara-min-1568x1176.jpeg" },
 ];
 
 const equipements = [
@@ -49,7 +48,7 @@ export default function CampusPage() {
       <section className="relative pt-40 pb-24 overflow-hidden">
                 {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <Image src="/images/heroes/hero-campus.webp" alt="" fill className="object-cover" priority sizes="100vw" />
+          <Image src="/images/heroes/hero-campus.png" alt="" fill className="object-cover" priority sizes="100vw" />
         </div>
         {/* Overlay */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-br from-penn-navy/50 via-[#1a2035]/50 to-penn-navy/50" />

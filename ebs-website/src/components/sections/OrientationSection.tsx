@@ -34,7 +34,6 @@ export default async function OrientationSection() {
       duration: data.duree,
       level: data.type === "licence" ? "Bac" : "Bac+3",
       intl: data.internationalPathways.map((pathway) => pathway.partenaire).join(" · "),
-      employment: "90%+",
       careers: data.debouches.slice(0, 3).join(", "),
       data,
     };

@@ -12,7 +12,7 @@ export default function CorpsEnseignantPage() {
       <section className="relative pt-40 pb-24 overflow-hidden">
                 {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <Image src="/images/heroes/hero-corps-enseignant.webp" alt="" fill className="object-cover" priority sizes="100vw" />
+          <Image src="/images/heroes/hero-corps-enseignant.png" alt="" fill className="object-cover" priority sizes="100vw" />
         </div>
         {/* Overlay */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-br from-penn-navy/50 via-[#1a2035]/50 to-penn-navy/50" />

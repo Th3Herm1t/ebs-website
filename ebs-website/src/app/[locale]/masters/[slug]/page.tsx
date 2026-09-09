@@ -90,8 +90,9 @@ export default async function MasterLPPage({ params }: PageParams) {
            totalCerts={certifications.length}
            accreditationLabel={data.accreditationLabel}
            statAccreditationLabel={data.statAccreditationLabel ?? "Diplôme habilité par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique"}
-          slug={data.slug}
-        />
+           slug={data.slug}
+           heroImage="/images/sections/master-why.jpg"
+         />
 
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12 py-5 bg-white">
           <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Masters", href: "/masters" }, { label: programmeTitle }]} />

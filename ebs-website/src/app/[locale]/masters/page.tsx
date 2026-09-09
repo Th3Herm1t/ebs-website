@@ -20,17 +20,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const overviewBase = [
-  { ...masters.crm, subtitle: "CRM, marketing automation, Intelligence Artificielle et transformation digitale avec HubSpot, n8n et des outils professionnels reconnus.", featured: true, image: "/images/programs/crm.jpg" },
-  { ...masters["marketing-digital-ia"], subtitle: "Marketing digital, analyse des données, Intelligence Artificielle et automatisation des campagnes marketing.", featured: true, image: "/images/programs/marketing-digital-ia.jpg" },
-  { ...masters.startups, subtitle: "Management de projet, innovation, entrepreneuriat, méthodes Agile, PMI® et Scrum.", featured: false, image: "/images/programs/startups.jpg" },
-  { ...masters["ingenierie-financiere"], subtitle: "Finance d'entreprise, marchés financiers, analyse des données et certifications Bloomberg.", featured: false, image: "/images/programs/ingenierie-financiere.jpg" },
+  { ...masters.crm, subtitle: "CRM, marketing automation, Intelligence Artificielle et transformation digitale avec HubSpot, n8n et des outils professionnels reconnus.", image: "/images/programs/crm.jpg" },
+  { ...masters["marketing-digital-ia"], subtitle: "Marketing digital, analyse des données, Intelligence Artificielle et automatisation des campagnes marketing.", image: "/images/programs/marketing-digital-ia.jpg" },
+  { ...masters.startups, subtitle: "Management de projet, innovation, entrepreneuriat, méthodes Agile, PMI® et Scrum.", image: "/images/programs/startups.jpg" },
+  { ...masters["ingenierie-financiere"], subtitle: "Finance d'entreprise, marchés financiers, analyse des données et certifications Bloomberg.", image: "/images/programs/ingenierie-financiere.jpg" },
 ];
 
 const mastersCards = [
   {
     icon: <Award className="w-6 h-6" />,
      title: "190+",
-     subtitle: "Offertes",
+     subtitle: "Certifications offertes",
     color: "#2B8FAB",
     offsetY: -80,
     parallaxSpeed: 1,
@@ -139,7 +139,6 @@ export default async function MastersPage({
                         color={prog.color}
                         href={`/masters/${prog.slug}`}
                         image={prog.image}
-                        isFeatured={prog.featured}
                       />
                     </div>
                   ))}
@@ -159,7 +158,7 @@ export default async function MastersPage({
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative aspect-video lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
-              <Image src="/images/sections/pillar-mobilite.jpg" alt="Étudiants EBS Master" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <Image src="/images/sections/master-why.jpg" alt="Étudiants EBS Master" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               <div className="absolute inset-0 bg-penn-navy/10 mix-blend-multiply" />
             </div>
 

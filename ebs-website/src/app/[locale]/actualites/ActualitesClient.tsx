@@ -368,7 +368,7 @@ export default function ActualitesPage() {
       <section className="relative pt-44 pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/heroes/hero-campus.webp"
+            src="/images/heroes/hero-actualites.png"
             alt=""
             fill
             className="object-cover"

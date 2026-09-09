@@ -96,7 +96,10 @@ export default function ContactPage() {
     <>
       {/* ═══════════ IMMERSIVE HERO ═══════════ */}
       <section className="relative pt-40 pb-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-penn-navy via-[#1a2035] to-penn-navy" />
+        <div className="absolute inset-0">
+          <Image src="/images/heroes/hero-contact.png" alt="" fill className="object-cover" priority sizes="100vw" />
+          <div className="absolute inset-0 bg-gradient-to-br from-penn-navy/80 via-[#1a2035]/70 to-penn-navy/80" />
+        </div>
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -224,10 +227,10 @@ export default function ContactPage() {
               viewport={{ once: true, margin: "-40px" }}
               className="relative hidden lg:block h-[100%] min-h-[700px] rounded-3xl overflow-hidden shadow-xl"
             >
-              <Image src="/images/campus/reception.jpg" alt="Accueil EBS Tunis" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <Image src="/images/sections/contact-36.png" alt="Accueil EBS Tunis" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-penn-navy/60 to-transparent" />
               <div className="absolute bottom-10 left-10 right-10">
-                <h3 className="text-3xl font-extrabold text-white mb-3">Rencontrons-nous</h3>
+                <h3 className="text-3xl font-extrabold text-white mb-3">Contactez-nous</h3>
                 <p className="text-white/80 text-base leading-relaxed">Notre équipe d'admission est disponible pour répondre à toutes vos questions, vous accompagner dans vos démarches et vous faire visiter notre campus.</p>
               </div>
             </motion.div>

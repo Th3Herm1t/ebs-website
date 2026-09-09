@@ -91,7 +91,7 @@ export function CertificationDetailDrawer({ opportunity, onClose, programmeLabel
           className="relative z-10 flex h-full w-full max-w-[580px] flex-col bg-white shadow-2xl overflow-y-auto"
         >
           {/* Header */}
-          <div className="sticky top-0 z-20 flex items-center justify-between border-b border-penn-border bg-white/95 px-6 py-4 backdrop-blur-md">
+          <div className="sticky top-0 z-20 flex items-center justify-between border-b border-penn-border bg-white/95 px-6 py-4 pr-20 backdrop-blur-md">
             <div className="flex items-center gap-2">
               <span className={`inline-flex items-center rounded-full px-3 py-1 text-[12px] font-extrabold ${classMeta.bg} ${classMeta.text}`}>
                 {classMeta.label}
@@ -103,7 +103,7 @@ export function CertificationDetailDrawer({ opportunity, onClose, programmeLabel
             <button
               type="button"
               onClick={onClose}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-penn-bg-light text-penn-navy transition-colors hover:bg-slate-200"
+              className="absolute right-5 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-penn-border bg-white text-penn-navy shadow-sm transition-colors hover:border-penn-green hover:bg-penn-green hover:text-white"
               aria-label="Fermer"
             >
               <X className="h-5 w-5" />

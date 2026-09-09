@@ -94,9 +94,12 @@ export default function FaqPage() {
     <>
       {/* ═══════════ IMMERSIVE HERO ═══════════ */}
       <section className="relative pt-40 pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-penn-navy via-[#1a2035] to-penn-navy" />
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/heroes/hero-faq.png" alt="" fill priority sizes="100vw" className="object-cover object-[center_35%]" />
+        </div>
+        <div className="absolute inset-0 z-[1] bg-gradient-to-br from-penn-navy/75 via-[#1a2035]/70 to-penn-navy/80" />
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 z-[1] opacity-[0.04]"
           style={{
             backgroundImage:
               "radial-gradient(circle at 30% 50%, #2B8FAB 0%, transparent 60%), radial-gradient(circle at 70% 20%, #2B8FAB 0%, transparent 50%)",
@@ -163,7 +166,7 @@ export default function FaqPage() {
               className="w-full lg:w-5/12 lg:sticky lg:top-32 self-start hidden lg:block"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[600px]">
-                <Image fill src="/images/sections/features-group.jpg" alt="Étudiants EBS" sizes="(max-width: 1024px) 100vw, 42vw" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
+                 <Image fill src="/images/sections/faq-admissions.jpg" alt="Étudiants EBS" sizes="(max-width: 1024px) 100vw, 42vw" className="w-full h-full object-cover object-[center_10%] transition-transform duration-1000 hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2B8FAB]/90 via-[#2B8FAB]/20 to-transparent" />
                 <div className="absolute bottom-10 left-10 right-10 text-white">
                   <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center mb-6">
@@ -230,8 +233,9 @@ export default function FaqPage() {
             <div className="w-16 h-16 rounded-2xl bg-penn-green/10 flex items-center justify-center mx-auto mb-6">
               <HelpCircle className="w-8 h-8 text-penn-green" />
             </div>
-            <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy mb-4">
-              Vous n&apos;avez pas trouvé votre réponse ?
+            <h2 className="text-[28px] md:text-[34px] font-extrabold text-penn-navy leading-[1.35] mb-4">
+              Vous n&apos;avez pas trouvé<br />
+              <span className="whitespace-nowrap">votre réponse ?</span>
             </h2>
             <p className="text-[15px] text-penn-body leading-relaxed mb-10 max-w-[500px] mx-auto">
               Notre équipe est disponible pour répondre à toutes vos questions.

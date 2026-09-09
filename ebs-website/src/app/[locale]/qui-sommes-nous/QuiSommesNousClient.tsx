@@ -212,7 +212,7 @@ export default function QuiSommesNousPage() {
                         <p className="text-[15px] text-penn-body leading-relaxed">{item.text}</p>
                       </div>
                     </div>
-                    <div className={`hidden lg:block relative rounded-2xl overflow-hidden shadow-lg h-[240px] ${isLeft ? "lg:[direction:ltr]" : "lg:[direction:ltr]"}`}>
+                    <div className={`hidden lg:block relative rounded-2xl overflow-hidden shadow-lg h-[400px] ${isLeft ? "lg:[direction:ltr]" : "lg:[direction:ltr]"}`}>
                       <Image fill src={item.image} alt={item.title} sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
                     </div>
                   </motion.div>

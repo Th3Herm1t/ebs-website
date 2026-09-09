@@ -306,13 +306,10 @@ export default function PartenairesAcademiquesPage() {
               className="relative hidden md:block aspect-square lg:aspect-auto lg:h-[600px]"
             >
               <div className="absolute top-0 left-0 w-2/3 h-[60%] rounded-2xl overflow-hidden border-4 border-white shadow-xl z-10">
-                <Image src="/images/partenaires/students-1.jpg" alt="Étudiants internationaux EBS" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
+                <Image src="/images/partenaires/partenaires-55.jpg" alt="Étudiants internationaux EBS" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
               </div>
               <div className="absolute bottom-0 right-0 w-[60%] h-[55%] rounded-2xl overflow-hidden border-4 border-white shadow-xl z-20">
-                <Image src="/images/partenaires/students-2.jpg" alt="Mobilité étudiante" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
-              </div>
-              <div className="absolute top-1/4 right-[10%] w-[45%] h-[40%] rounded-2xl overflow-hidden border-4 border-white shadow-lg z-0 opacity-80">
-                <Image src="/images/partenaires/students-3.jpg" alt="Partenariats universitaires" fill className="object-cover" sizes="(max-width: 1024px) 33vw, 20vw" />
+                <Image src="/images/partenaires/partenaires-54.jpg" alt="Mobilité étudiante" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
               </div>
             </motion.div>
 

@@ -261,7 +261,7 @@ export const masters: Record<string, ProgramLPData> = {
     tagline: "Développez des stratégies marketing innovantes grâce à l'Intelligence Artificielle et aux technologies digitales.",
     pitch: "Le Master Marketing Digital & IA d'EBS prépare des spécialistes capables de concevoir, piloter et optimiser des stratégies marketing performantes en s'appuyant sur l'Intelligence Artificielle, l'analyse des données et les outils digitaux les plus avancés.",
     presentation: "Le Master Marketing Digital & Intelligence Artificielle d'ESPIMA Business School forme des cadres capables de concevoir, piloter et optimiser des stratégies marketing dans un environnement où le digital, les données et l'Intelligence Artificielle occupent une place centrale. Conforme au référentiel académique validé par le Ministère de l'Enseignement Supérieur, le programme associe les fondamentaux du marketing stratégique, du marketing digital, du e-business, de la communication numérique, du CRM et de l'analyse des données avec les technologies les plus récentes, notamment l'Intelligence Artificielle, la Business Intelligence, le Marketing Automation et les outils numériques utilisés par les entreprises. Cette approche permet aux étudiants de développer une double expertise, stratégique et opérationnelle, afin d'accompagner efficacement la transformation digitale des organisations et d'améliorer leur performance marketing.",
-    color: "#E91E8C",
+    color: "#EF4444",
     niveau: "Bac+5",
     duree: "2 ans",
     semestres: 4,

@@ -90,8 +90,9 @@ export default async function LicenceLPPage({ params }: PageParams) {
            totalCerts={certifications.length}
            accreditationLabel={data.accreditationLabel}
            statAccreditationLabel={data.statAccreditationLabel ?? "Diplôme agréé par l'État tunisien"}
-          slug={data.slug}
-        />
+           slug={data.slug}
+           heroImage="/images/sections/licence-why.jpg"
+         />
 
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12 py-5 bg-white">
           <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Licences", href: "/licences" }, { label: programmeTitle }]} />

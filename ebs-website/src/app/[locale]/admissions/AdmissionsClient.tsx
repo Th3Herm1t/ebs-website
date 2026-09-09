@@ -170,7 +170,7 @@ export default function AdmissionsPage() {
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/heroes/hero-admissions.jpg"
+            src="/images/heroes/hero-admissions.png"
             alt=""
             fill
             className="object-cover"
@@ -303,10 +303,10 @@ export default function AdmissionsPage() {
       <section className="bg-penn-bg-light border-y border-penn-border py-0">
         <div className="grid grid-cols-2 md:grid-cols-4 h-48 md:h-56">
           {[
-            "/images/all-img/c1-stock.jpg",
-            "/images/all-img/c2-stock.jpg",
-            "/images/all-img/c3-stock.jpg",
-            "/images/all-img/c4-stock.jpg",
+            "/images/sections/admissions-66.png",
+            "/images/sections/admissions-77.png",
+            "/images/sections/admissions-64.png",
+            "/images/sections/admissions-65.jpg",
           ].map((src) => (
             <div
               key={src}
@@ -524,7 +524,7 @@ export default function AdmissionsPage() {
                 <span className="text-[12px] font-bold uppercase tracking-wider text-penn-body/50 block mb-1">
                   Horaires aménagés
                 </span>
-                <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">Master Professionnels</h3>
+                <h3 className="text-[20px] font-extrabold text-penn-navy mb-2">Master pour les Professionnels</h3>
                 <p className="text-[26px] font-extrabold text-[#FF9800] mb-4">6 900 DT <span className="text-[14px] text-penn-body font-normal">/ an</span></p>
                 <p className="text-[12px] text-penn-body/70 mb-3 leading-snug">
                   Conciliez études et activité professionnelle grâce à un emploi du temps aménagé.

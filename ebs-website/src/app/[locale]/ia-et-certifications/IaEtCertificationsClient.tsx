@@ -89,63 +89,63 @@ const programmeMeta: Array<{
   color: string;
 }> = [
   {
-    programme: "Licence Management",
+    programme: "Licence en Management",
     catalogueId: "licence-management",
     href: "/licences/management",
     highlights: "Google PM · Scrum SFC™ · IBM Business Analyst",
     color: "#2196F3",
   },
   {
-    programme: "Licence Marketing",
+    programme: "Licence en Marketing",
     catalogueId: "licence-marketing",
     href: "/licences/marketing",
     highlights: "Google Digital Mktg · HubSpot Digital · SEMrush SEO AI",
     color: "#E91E8C",
   },
   {
-    programme: "Licence Finance",
+    programme: "Licence en Finance",
     catalogueId: "licence-finance",
     href: "/licences/finance",
     highlights: "Bloomberg BMC · Bloomberg ESG · Goldman Sachs Forage",
     color: "#00BCD4",
   },
   {
-    programme: "Master Marketing & IA",
+    programme: "Master en Marketing Digital & Intelligence Artificielle",
     catalogueId: "master-marketing-digital-ia",
     href: "/masters/marketing-digital-ia",
     highlights: "Google Advanced Data · HubSpot Marketing · Databricks",
     color: "#E91E8C",
   },
   {
-    programme: "Licence Info — IA",
+    programme: "Licence en Informatique & Intelligence Artificielle",
     catalogueId: "licence-informatique-ia",
     href: "/licences/informatique-ia",
     highlights: "Harvard CS50 AI · DeepLearning.AI ML/DL · Databricks GenAI",
     color: "#9C27B0",
   },
   {
-    programme: "Licence Info — Cybersécurité",
+    programme: "Licence en Cybersécurité",
     catalogueId: "licence-cybersecurite",
     href: "/licences/cybersecurite",
     highlights: "Google Cyber · Cisco Ethical Hacker · Fortinet FCF/FCA",
     color: "#FF9800",
   },
   {
-    programme: "Master CRM Digital",
+    programme: "Master en CRM & Revenue Operations",
     catalogueId: "master-crm-revops",
     href: "/masters/crm",
     highlights: "HubSpot CRM · n8n Automation · IBM Watsonx",
     color: "#E91E63",
   },
   {
-    programme: "Master Startups",
+    programme: "Master en Startups & Entrepreneuriat",
     catalogueId: "master-startups-entrepreneuriat",
     href: "/masters/startups",
     highlights: "PMI · Google PM · Scrum SAC™ · IBM DevOps",
     color: "#5E35B1",
   },
   {
-    programme: "Master Ingénierie Fin.",
+    programme: "Master en Ingénierie Financière",
     catalogueId: "master-ingenierie-financiere",
     href: "/masters/ingenierie-financiere",
     highlights: "Bloomberg BMC/ESG · JP Morgan Quant · Goldman Sachs IB",
@@ -292,7 +292,7 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
                 {aiStats.applied}
               </p>
               <p className="text-[12px] text-white/50 font-medium">
-                IA appliquée
+                 IA appliquées
               </p>
             </div>
             <div className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.055] p-5 text-center backdrop-blur-sm">
