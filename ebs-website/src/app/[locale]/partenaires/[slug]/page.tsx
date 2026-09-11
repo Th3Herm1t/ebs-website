@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import PartenaireDetailClient from "./PartenaireDetailClient";
-import { partenaires } from "@/lib/partenaires/partenaires";
+import { getPartenaire, partenaires } from "@/lib/partenaires/partenaires";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 interface PageParams {
@@ -17,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageParams) {
   const { locale, slug } = await params;
-  const partner = partenaires[slug];
+  const partner = getPartenaire(slug, locale === "en" ? "en" : "fr");
   if (!partner) return {};
 
   return pageMetadata({
@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: PageParams) {
 }
 
 export default async function PartenaireDetailPage({ params }: PageParams) {
-  const { slug } = await params;
-  const partner = partenaires[slug];
+  const { slug, locale } = await params;
+  const partner = getPartenaire(slug, locale === "en" ? "en" : "fr");
   if (!partner) notFound();
 
   const jsonLd = {
@@ -55,7 +55,7 @@ export default async function PartenaireDetailPage({ params }: PageParams) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      <PartenaireDetailClient slug={slug} />
+      <PartenaireDetailClient partner={partner} locale={locale === "en" ? "en" : "fr"} />
     </>
   );
 }

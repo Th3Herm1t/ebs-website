@@ -13,8 +13,9 @@ export function siteJsonLd(locale: string) {
         logo: `${baseUrl}/images/logo/logo.png`,
         image: `${baseUrl}/images/all-img/hero.webp`,
         foundingDate: "2013",
-        description:
-          "ESPIMA Business School est une université privée d'informatique et de management en Tunisie, agréée par le Ministère de l'Enseignement Supérieur.",
+        description: locale === "en"
+          ? "ESPIMA Business School is a private university for computer science and management in Tunisia, approved by the Ministry of Higher Education."
+          : "ESPIMA Business School est une université privée d'informatique et de management en Tunisie, agréée par le Ministère de l'Enseignement Supérieur.",
         address: {
           "@type": "PostalAddress",
           streetAddress: "Immeuble EBS, 10 rue Socrate, Z.I Kheireddine - Les Berges du Lac III",
@@ -47,7 +48,7 @@ export function siteJsonLd(locale: string) {
         publisher: { "@id": `${baseUrl}/#organization` },
         potentialAction: {
           "@type": "SearchAction",
-          target: `${baseUrl}/${locale}/nos-programmes?program={search_term_string}`,
+           target: `${baseUrl}${locale === "en" ? "/en" : ""}/nos-programmes?program={search_term_string}`,
           "query-input": "required name=search_term_string",
         },
       },

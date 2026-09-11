@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { ProgramLPHero, ProgramPresentation, PublicCible, ModulesAccordion, CertificationsTable, IACompetences, InternationalPerspectives, DebouchesGrid } from "@/components/program";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { Breadcrumb, CtaSection } from "@/components/shared";
-import { licences } from "@/lib/programmes/licences";
+import { getLicences } from "@/lib/programmes/licences";
 import { aiProfileLabels, getPublicCatalogueV3Opportunities, getCatalogueV3Programme, getCatalogueV3AcademicRequirements } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
@@ -15,27 +15,27 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return ["fr", "en"].flatMap((locale) =>
-    Object.keys(licences).map((slug) => ({ locale, slug }))
+    Object.keys(getLicences()).map((slug) => ({ locale, slug }))
   );
 }
 
 export async function generateMetadata({ params }: PageParams) {
   const { slug, locale } = await params;
-  const data = licences[slug];
+  const data = getLicences(locale === "en" ? "en" : "fr")[slug];
   if (!data) return {};
   const catalogue = await getCatalogueV3Snapshot();
   const certifications = getPublicCatalogueV3Opportunities({ programmeId: data.catalogueId }, catalogue);
   const programme = getCatalogueV3Programme(data.catalogueId, catalogue);
   return pageMetadata({
-    title: `${programme?.name.fr ?? data.title} en Tunisie`,
+     title: `${programme?.name[locale === "en" ? "en" : "fr"] ?? data.title} ${locale === "en" ? "in Tunisia" : "en Tunisie"}`,
    description: `${data.tagline} ${certifications.length} certifications gratuites, IA intégrée et parcours international chez EBS Tunis.`,
     path: `/${locale}/licences/${slug}`,
   });
 }
 
 export default async function LicenceLPPage({ params }: PageParams) {
-  const { slug } = await params;
-  const data = licences[slug];
+  const { slug, locale } = await params;
+  const data = getLicences(locale === "en" ? "en" : "fr")[slug];
   if (!data) notFound();
   const catalogue = await getCatalogueV3Snapshot();
   const catalogueProgramme = getCatalogueV3Programme(data.catalogueId, catalogue);
@@ -58,9 +58,9 @@ export default async function LicenceLPPage({ params }: PageParams) {
     timeRequired: data.duree,
   };
   const breadcrumb = breadcrumbJsonLd([
-    { name: "Accueil", path: "/fr" },
-    { name: "Licences", path: "/fr/licences" },
-    { name: data.title, path: `/fr/licences/${data.slug}` },
+     { name: locale === "en" ? "Home" : "Accueil", path: "/" },
+     { name: locale === "en" ? "Bachelor's" : "Licences", path: locale === "en" ? "/en/licences" : "/licences" },
+     { name: data.title, path: `${locale === "en" ? "/en" : ""}/licences/${data.slug}` },
   ]);
 
   return (

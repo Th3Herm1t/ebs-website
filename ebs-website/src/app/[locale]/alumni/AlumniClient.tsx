@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "next-intl";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import dynamic from "next/dynamic";
 import { Award, Briefcase, Globe, GraduationCap, HeartHandshake, Send, Star, X } from "lucide-react";
-import { Badge } from "@/components/shared";
+import { Badge, LocalizedRoute } from "@/components/shared";
 import { siteConfig } from "@/lib/config";
 
 const AlumniWorldMap = dynamic(() => import("@/components/alumni/AlumniWorldMap"), {
@@ -15,6 +16,7 @@ const AlumniWorldMap = dynamic(() => import("@/components/alumni/AlumniWorldMap"
 });
 
 function DeferredAlumniWorldMap() {
+  const locale = useLocale();
   const ref = useRef<HTMLDivElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
 
@@ -35,7 +37,7 @@ function DeferredAlumniWorldMap() {
     return () => observer.disconnect();
   }, [shouldLoad]);
 
-  return <div ref={ref}>{shouldLoad ? <AlumniWorldMap locale="fr" /> : <div className="section-padding bg-white" />}</div>;
+  return <div ref={ref}>{shouldLoad ? <AlumniWorldMap locale={locale} /> : <div className="section-padding bg-white" />}</div>;
 }
 
 const alumniProfiles = [
@@ -91,7 +93,7 @@ export default function AlumniPage() {
     }
   };
   return (
-    <>
+    <LocalizedRoute>
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -376,6 +378,6 @@ export default function AlumniPage() {
           </div>
         )}
       </AnimatePresence>
-    </>
+    </LocalizedRoute>
   );
 }

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import {
   ArrowRight,
   Briefcase,
@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import { Badge, Breadcrumb, CtaSection } from "@/components/shared";
 import { CountryFlag } from "@/components/shared/CountryFlag";
-import { partenaires, type PartnerData } from "@/lib/partenaires/partenaires";
+import type { PartnerData } from "@/lib/partenaires/partenaires";
 import { siteConfig } from "@/lib/config";
 
 const fallbackHero = "/images/heroes/hero-alumni.webp";
@@ -69,22 +69,8 @@ function RichTextContent({ text, accent, className = "" }: { text: string; accen
   );
 }
 
-export default function PartenaireDetailClient({ slug }: { slug: string }) {
-  const partner: PartnerData | undefined = partenaires[slug];
+export default function PartenaireDetailClient({ partner, locale }: { partner: PartnerData; locale: "fr" | "en" }) {
   const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
-  if (!partner) {
-    return (
-      <main className="min-h-screen flex items-center justify-center bg-penn-bg-light">
-        <div className="text-center">
-          <Building2 className="w-16 h-16 text-penn-border mx-auto mb-4" />
-          <h1 className="text-2xl font-extrabold text-penn-navy mb-2">Partenaire introuvable</h1>
-          <p className="text-penn-body/60 mb-6">Ce partenaire n&apos;existe pas ou a été déplacé.</p>
-          <Link href="/parcours-international" className="text-penn-green font-bold hover:underline">Voir tous les partenaires →</Link>
-        </div>
-      </main>
-    );
-  }
 
   const accent = accentMap[partner.countryCode || ""] || "#2B8FAB";
 

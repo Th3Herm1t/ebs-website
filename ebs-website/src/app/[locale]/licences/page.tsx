@@ -1,11 +1,11 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { ArrowLeft, Award, BookOpen, Globe, ShieldCheck, Sparkles } from "lucide-react";
 import { Badge, CtaSection, InfiniteLogoMarquee } from "@/components/shared";
 import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
-import { licences } from "@/lib/programmes/licences";
+import { getLicences } from "@/lib/programmes/licences";
 import { getPublicCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { pageMetadata } from "@/lib/seo";
@@ -19,13 +19,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-const allProgramsBase = [
-  { ...licences.management, subtitle: "Développez vos compétences en management, leadership, gestion de projets et pilotage des organisations dans un environnement en constante évolution.", image: "/images/programs/management.jpg" },
-  { ...licences.marketing, subtitle: "Maîtrisez les fondamentaux du marketing, de la communication, du marketing digital et de la relation client pour répondre aux nouveaux enjeux des entreprises.", image: "/images/programs/marketing.png" },
-  { ...licences.finance, subtitle: "Préparez une carrière en finance, banque et contrôle de gestion grâce à des certifications internationales, dont Bloomberg.", image: "/images/programs/finance.png" },
+const allProgramsBase = (licences: ReturnType<typeof getLicences>, locale: string) => [
+  { ...licences.management, subtitle: locale === "en" ? "Develop your skills in management, leadership, project management, and organizational leadership in a constantly changing environment." : "Développez vos compétences en management, leadership, gestion de projets et pilotage des organisations dans un environnement en constante évolution.", image: "/images/programs/management.jpg" },
+  { ...licences.marketing, subtitle: locale === "en" ? "Master the fundamentals of marketing, communication, digital marketing, and customer relations to meet new business challenges." : "Maîtrisez les fondamentaux du marketing, de la communication, du marketing digital et de la relation client pour répondre aux nouveaux enjeux des entreprises.", image: "/images/programs/marketing.png" },
+  { ...licences.finance, subtitle: locale === "en" ? "Prepare for a career in finance, banking, and management control with international certifications, including Bloomberg." : "Préparez une carrière en finance, banque et contrôle de gestion grâce à des certifications internationales, dont Bloomberg.", image: "/images/programs/finance.png" },
 
-  { ...licences["informatique-ia"], subtitle: "Développez des compétences en génie logiciel, intelligence artificielle, data science et développement d'applications intelligentes.", image: "/images/programs/informatique-ia.png" },
-  { ...licences.cybersecurite, subtitle: "Développez des compétences en génie logiciel, cybersécurité, sécurité des réseaux et protection des systèmes d'information.", image: "/images/programs/cybersecurite.jpg" },
+  { ...licences["informatique-ia"], subtitle: locale === "en" ? "Develop skills in software engineering, artificial intelligence, data science, and intelligent application development." : "Développez des compétences en génie logiciel, intelligence artificielle, data science et développement d'applications intelligentes.", image: "/images/programs/informatique-ia.png" },
+  { ...licences.cybersecurite, subtitle: locale === "en" ? "Develop skills in software engineering, cybersecurity, network security, and information systems protection." : "Développez des compétences en génie logiciel, cybersécurité, sécurité des réseaux et protection des systèmes d'information.", image: "/images/programs/cybersecurite.jpg" },
 ];
 
 const licencesCards = [
@@ -56,13 +56,17 @@ const licencesCards = [
 ];
 
 export default async function LicencesPage({
+  params,
   searchParams,
 }: {
+  params: Promise<{ locale: string }>;
   searchParams: Promise<{ program?: string }>;
 }) {
   const { program } = await searchParams;
+  const { locale } = await params;
+  const licences = getLicences(locale === "en" ? "en" : "fr");
   const catalogue = await getCatalogueV3Snapshot();
-  const allPrograms = allProgramsBase.map((entry) => {
+  const allPrograms = allProgramsBase(licences, locale).map((entry) => {
     const summary = getPublicCatalogueV3ProgrammeSummary(entry.catalogueId, catalogue);
     return {
       ...entry,

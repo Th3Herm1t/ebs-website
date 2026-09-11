@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { blogPosts } from "@/lib/blog/posts";
+import { getBlogPost, getBlogPosts } from "@/lib/blog/posts";
 import BlogPostClient from "./BlogPostClient";
 import { pageMetadata } from "@/lib/seo";
 
@@ -11,13 +11,13 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return ["fr", "en"].flatMap((locale) =>
-    Object.keys(blogPosts).map((slug) => ({ locale, slug }))
+    Object.keys(getBlogPosts(locale === "en" ? "en" : "fr")).map((slug) => ({ locale, slug }))
   );
 }
 
 export async function generateMetadata({ params }: PageParams) {
   const { slug, locale } = await params;
-  const post = blogPosts[slug];
+  const post = getBlogPost(slug, locale === "en" ? "en" : "fr");
   if (!post) return {};
 
   return pageMetadata({
@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: PageParams) {
 }
 
 export default async function BlogPostPage({ params }: PageParams) {
-  const { slug } = await params;
-  const post = blogPosts[slug];
+  const { slug, locale } = await params;
+  const post = getBlogPost(slug, locale === "en" ? "en" : "fr");
 
   if (!post) {
     notFound();

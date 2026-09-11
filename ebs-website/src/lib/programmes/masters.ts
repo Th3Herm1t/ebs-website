@@ -1,4 +1,5 @@
 import type { ProgramLPData } from "@/components/program";
+import { localizeProgrammes, type DomainLocale } from "./localization";
 
 const masterStaticContent: Record<string, Partial<ProgramLPData>> = {
   crm: {
@@ -318,3 +319,8 @@ export const masters: Record<string, ProgramLPData> = {
     ],
   },
 };
+
+/** Returns programme content in the requested editorial language. French is the canonical default. */
+export function getMasters(locale: DomainLocale = "fr"): Record<string, ProgramLPData> {
+  return localizeProgrammes(masters, locale);
+}

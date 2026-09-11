@@ -15,7 +15,7 @@ const mulish = Mulish({
   display: "swap",
 });
 
-export const metadata: Metadata = {
+const baseMetadata = {
   title: {
     template: '%s | Espima Business School (EBS)',
     default: 'Espima Business School (EBS) | Université Privée en Tunisie', 
@@ -41,7 +41,20 @@ export const metadata: Metadata = {
     images: ['/images/all-img/hero.webp'],
   },
   robots: { index: true, follow: true },
-};
+} satisfies Metadata;
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  if (locale !== "en") return baseMetadata;
+  return {
+    ...baseMetadata,
+    title: { template: "%s | Espima Business School (EBS)", default: "Espima Business School (EBS) | Private University in Tunisia" },
+    description: "Espima Business School is a private university for computer science and management in Tunisia, founded in 2013 and approved by the Ministry of Higher Education.",
+    keywords: ["EBS", "Espima Business School", "Private University", "Tunisia", "Management", "Computer Science", "Bachelor's", "Master's"],
+    openGraph: { ...baseMetadata.openGraph, locale: "en_GB", title: "Espima Business School (EBS)", description: "Build your future at EBS." },
+    twitter: { ...baseMetadata.twitter, description: "Private university for computer science and management in Tunisia." },
+  };
+}
 
 import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";

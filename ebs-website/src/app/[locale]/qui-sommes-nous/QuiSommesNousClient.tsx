@@ -3,7 +3,7 @@
 import { Award, BookOpen, Building2, ChevronDown, Globe, Heart, Lightbulb, Monitor, Quote, ShieldCheck, Star, TrendingUp, Users } from "lucide-react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Badge, CtaSection } from "@/components/shared";
+import { Badge, CtaSection, LocalizedRoute } from "@/components/shared";
 import { catalogueV3, formatPublicCertificationCount } from "@/lib/certifications/v3";
 import { siteStats } from "@/lib/site-stats";
 
@@ -59,7 +59,7 @@ const services = [
 
 export default function QuiSommesNousPage() {
   return (
-    <>
+    <LocalizedRoute>
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-40 pb-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -332,6 +332,6 @@ export default function QuiSommesNousPage() {
       </section>
 
       <CtaSection title="Rejoignez la première université tunisienne avec l'IA intégrée." subtitle="Les candidatures pour l'année universitaire 2026/2027 sont ouvertes. Déposez votre dossier dès maintenant." primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }} secondaryCta={{ label: "Pré-inscription", href: "/preinscription" }} background="penn-green" />
-    </>
+    </LocalizedRoute>
   );
 }

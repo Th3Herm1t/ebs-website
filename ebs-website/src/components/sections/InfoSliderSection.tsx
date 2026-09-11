@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { motion } from "motion/react";
 import { Sparkles, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/shared";
@@ -119,7 +119,7 @@ export default function InfoSliderSection() {
                       </p>
                       
                       <Link
-                        href={slide.link}
+                         href={slide.link as React.ComponentProps<typeof Link>["href"]}
                         className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-penn-green text-white font-bold text-[14px] uppercase tracking-wider transition-colors duration-300 hover:bg-penn-navy hover:shadow-lg rounded-sm"
                       >
                         {slide.button || "En savoir plus"}

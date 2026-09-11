@@ -3,11 +3,11 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import { ArrowDown } from "lucide-react";
-import { Badge, CtaSection } from "@/components/shared";
+import { Badge, CtaSection, LocalizedRoute } from "@/components/shared";
 
 export default function CorpsEnseignantPage() {
   return (
-    <>
+    <LocalizedRoute>
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-40 pb-24 overflow-hidden">
                 {/* Background Image */}
@@ -89,6 +89,6 @@ export default function CorpsEnseignantPage() {
         primaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"
       />
-    </>
+    </LocalizedRoute>
   );
 }

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { ArrowDown, Bus, Building, CalendarDays, Clock, Coffee, Hotel, MapPin, Monitor, ParkingCircle, Wifi, Camera, Gamepad2, BookOpen, Send, X } from "lucide-react";
-import { Badge } from "@/components/shared";
+import { Badge, LocalizedRoute } from "@/components/shared";
 import { siteConfig } from "@/lib/config";
 
 const campusSpaces = [
@@ -43,7 +43,7 @@ export default function CampusPage() {
   };
 
   return (
-    <>
+    <LocalizedRoute>
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-40 pb-24 overflow-hidden">
                 {/* Background Image */}
@@ -402,6 +402,6 @@ export default function CampusPage() {
           </div>
         )}
       </AnimatePresence>
-    </>
+    </LocalizedRoute>
   );
 }

@@ -1,9 +1,10 @@
 import PageHeader from "@/components/layout/PageHeader";
 import NotFoundSection from "@/components/sections/NotFoundSection";
+import { LocalizedRoute } from "@/components/shared";
 
 export default function NotFound() {
   return (
-    <>
+    <LocalizedRoute>
       
       <PageHeader 
         title="Page Not Found" 
@@ -15,6 +16,6 @@ export default function NotFound() {
       
       <NotFoundSection />
       
-    </>
+    </LocalizedRoute>
   );
 }

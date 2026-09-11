@@ -9,3 +9,4 @@ export { ProcessSteps } from "./ProcessSteps";
 export { LogoGrid } from "./LogoGrid";
 export { InfiniteLogoMarquee } from "./InfiniteLogoMarquee";
 export { FormattedTitle } from "./FormattedTitle";
+export { LocalizedRoute } from "./LocalizedRoute";

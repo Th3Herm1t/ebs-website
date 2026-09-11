@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ArrowRight, Award } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/shared/Badge";
@@ -24,7 +24,7 @@ export function ProgramCard({
 }: ProgramCardProps) {
   return (
     <Link
-      href={href}
+      href={href as React.ComponentProps<typeof Link>["href"]}
       className={cn(
         "group block bg-white rounded-2xl border-2 border-penn-border p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1",
         className

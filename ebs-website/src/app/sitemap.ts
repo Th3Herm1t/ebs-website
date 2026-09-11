@@ -24,12 +24,12 @@ const staticRoutes = [
   "/masters",
   "/nos-programmes",
   "/parcours-international",
-  "/partenaires",
   "/partenaires-academiques",
   "/partenaires-economiques",
   "/preinscription",
   "/qui-sommes-nous",
   "/recruter-nos-etudiants",
+  "/tarifs",
   "/vision-mission-valeurs",
 ];
 
@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return ["fr", "en"].flatMap((locale) =>
     [...staticRoutes, ...dynamicRoutes].map((route) => ({
-      url: `${siteUrl}/${locale}${route}`,
+       url: `${siteUrl}/${locale === "en" ? "en" : ""}${route}`,
       lastModified: now,
       changeFrequency: route === "" ? "weekly" : "monthly",
       priority: route === "" ? 1 : route.includes("licences") || route.includes("masters") ? 0.9 : 0.7,

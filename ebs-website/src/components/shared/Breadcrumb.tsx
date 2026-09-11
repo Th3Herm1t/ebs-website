@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -24,7 +24,7 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
             )}
             {item.href && !isLast ? (
               <Link
-                href={item.href}
+                href={item.href as React.ComponentProps<typeof Link>["href"]}
                 className="text-penn-green font-semibold hover:text-penn-navy transition-colors"
               >
                 {item.label}

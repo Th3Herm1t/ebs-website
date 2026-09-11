@@ -11,10 +11,19 @@
         "contact": "Contact",
         "certifications": "Certifications",
         "tarifs": "Pricing",
-        "actualites": "News"
+        "actualites": "News",
+        "menu": "Main menu",
+        "dropdown": {
+          "universite": {"about":"About EBS","vision":"Vision, Mission & Values","ai":"AI at the Heart of EBS","faculty":"Faculty","academicPartners":"Academic Partners","economicPartners":"Economic Partners","news":"EBS News","certifications":"Certifications","faq":"FAQ","alumni":"Alumni","campus":"Campus"},
+          "licences": {"overview":"Overview","management":"Bachelor's in Management","marketing":"Bachelor's in Marketing","finance":"Bachelor's in Finance","ai":"Computer Science — AI","cyber":"Computer Science — Cybersecurity"},
+          "masters": {"overview":"Overview","crm":"CRM & Digital Transformation","digitalMarketing":"Digital Marketing & AI","startups":"Innovative Projects & Startups","finance":"Financial Engineering"},
+          "international": {"pathway":"International Pathway","students":"International Students"}
+        }
       },
       "postuler": "Apply",
-      "call": "Call"
+        "call": "Call",
+        "switchToEnglish": "Switch to English",
+        "switchToFrench": "Switch to French"
     },
     "topbar": {
       "follow": "Follow Us:"

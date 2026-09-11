@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "@/i18n/routing";
+import { Link, usePathname } from "@/i18n/routing";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useTranslations } from 'next-intl';
@@ -74,6 +73,16 @@ const navItems: NavItem[] = [
   { key: "contact", href: "/contact" },
 ];
 
+const dropdownLabelKeys: Record<string, string> = {
+  "/qui-sommes-nous": "about", "/vision-mission-valeurs": "vision", "/ia-et-certifications": "ai",
+  "/corps-enseignant": "faculty", "/partenaires-academiques": "academicPartners", "/partenaires-economiques": "economicPartners",
+  "/actualites": "news", "/certifications": "certifications", "/faq": "faq", "/alumni": "alumni", "/campus": "campus",
+  "/licences": "overview", "/licences/management": "management", "/licences/marketing": "marketing", "/licences/finance": "finance",
+  "/licences/informatique-ia": "ai", "/licences/cybersecurite": "cyber", "/masters": "overview", "/masters/crm": "crm",
+  "/masters/marketing-digital-ia": "digitalMarketing", "/masters/startups": "startups", "/masters/ingenierie-financiere": "finance",
+  "/parcours-international": "pathway", "/etudiants-internationaux": "students",
+};
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -114,7 +123,7 @@ export default function Header() {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <Link
-                  href={item.href}
+                  href={item.href as React.ComponentProps<typeof Link>["href"]}
                   className="text-[#232434] font-semibold text-[14px] xl:text-[15px] capitalize py-2 px-2 xl:px-3 block transition-colors hover:text-penn-green whitespace-nowrap"
                 >
                   {tNav(item.key)}
@@ -129,10 +138,10 @@ export default function Header() {
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
-                          href={child.href}
+                          href={child.href as React.ComponentProps<typeof Link>["href"]}
                           className="block px-4 py-2.5 text-[14px] text-penn-navy font-medium hover:bg-penn-bg-light hover:text-penn-green transition-colors"
                         >
-                          {child.label}
+                          {tNav(`dropdown.${item.key}.${dropdownLabelKeys[child.href]}`)}
                         </Link>
                       ))}
                     </div>
@@ -166,7 +175,7 @@ export default function Header() {
           <button
             className="lg:hidden bg-penn-green text-white p-2 rounded ml-4"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Menu principal"
+            aria-label={t('menu')}
             aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -181,7 +190,7 @@ export default function Header() {
             {navItems.map((item) => (
               <li key={item.key}>
                 <Link
-                  href={item.href}
+                href={item.href as React.ComponentProps<typeof Link>["href"]}
                   className="text-penn-navy font-semibold text-[15px] py-3 block border-b border-gray-100"
                   onClick={() => setMobileOpen(false)}
                 >
@@ -192,11 +201,11 @@ export default function Header() {
                     {item.children.map((child) => (
                       <li key={child.href}>
                         <Link
-                          href={child.href}
+                          href={child.href as React.ComponentProps<typeof Link>["href"]}
                           className="text-penn-body text-[14px] py-2 block font-medium"
                           onClick={() => setMobileOpen(false)}
                         >
-                          {child.label}
+                          {tNav(`dropdown.${item.key}.${dropdownLabelKeys[child.href]}`)}
                         </Link>
                       </li>
                     ))}

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { Send } from "lucide-react";
 
 export default function HeroSection2() {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { Calendar, Award } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -56,20 +56,20 @@ function ProgramGrid({ title, subtitle, programs, type }: { title: string, subti
             className="bg-white rounded-[6px] border border-penn-border overflow-hidden transition-all duration-300 hover:shadow-[0px_0_30px_rgba(1,41,112,0.08)] flex flex-col h-full w-full md:w-[calc(50%-15px)] lg:w-[calc((100%-60px)/3)]"
           >
             {/* Image */}
-            <Link href={href} className="relative block overflow-hidden h-[220px]">
+            <Link href={href as React.ComponentProps<typeof Link>["href"]} className="relative block overflow-hidden h-[220px]">
               <Image src={course.img} alt={course.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-500 hover:scale-105" />
             </Link>
 
             {/* Content */}
             <div className="p-[25px] flex flex-col flex-grow">
               <div className="mb-4">
-                <Link href={href} className={`${getCatColor(course.cat)} text-white text-[13px] font-semibold py-[5px] px-[14px] rounded inline-block hover:opacity-90 transition-opacity`}>
+                <Link href={href as React.ComponentProps<typeof Link>["href"]} className={`${getCatColor(course.cat)} text-white text-[13px] font-semibold py-[5px] px-[14px] rounded inline-block hover:opacity-90 transition-opacity`}>
                   {course.cat}
                 </Link>
               </div>
               
               <h3 className="mb-[20px] flex-grow">
-                <Link href={href} className="text-penn-navy text-[20px] font-bold leading-[28px] transition-colors hover:text-penn-green">
+                <Link href={href as React.ComponentProps<typeof Link>["href"]} className="text-penn-navy text-[20px] font-bold leading-[28px] transition-colors hover:text-penn-green">
                   {course.title}
                 </Link>
               </h3>

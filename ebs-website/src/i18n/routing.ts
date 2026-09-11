@@ -39,6 +39,11 @@ export const routing = defineRouting({
     '/brochures': '/brochures',
     '/tarifs': '/tarifs',
     '/recruter-nos-etudiants': '/recruter-nos-etudiants',
+    '/blog/[slug]': '/blog/[slug]',
+    '/partenaires/[slug]': '/partenaires/[slug]',
+    '/licences/[slug]': '/licences/[slug]',
+    '/masters/[slug]': '/masters/[slug]',
+    '/certifications/[slug]': '/certifications/[slug]',
   }
 });
 

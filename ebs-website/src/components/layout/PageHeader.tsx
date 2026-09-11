@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { motion } from "motion/react";
 
 interface Breadcrumb {
@@ -35,7 +35,7 @@ export default function PageHeader({ title, breadcrumbs }: PageHeaderProps) {
                 <li key={index} className="inline-block text-penn-navy font-semibold text-[15px]">
                   {index > 0 && <span className="mx-2"> / </span>}
                   {crumb.href ? (
-                    <Link href={crumb.href} className="text-penn-green font-semibold transition-colors duration-300 hover:text-penn-navy">
+                    <Link href={crumb.href as React.ComponentProps<typeof Link>["href"]} className="text-penn-green font-semibold transition-colors duration-300 hover:text-penn-navy">
                       {crumb.label}
                     </Link>
                   ) : (

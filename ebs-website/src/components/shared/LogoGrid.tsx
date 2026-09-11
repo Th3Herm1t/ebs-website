@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 interface LogoItem {
@@ -33,7 +33,7 @@ export function LogoGrid({
   const Wrapper = ({ href, children }: { href?: string; children: React.ReactNode }) => {
     if (href) {
       return (
-        <Link href={href} className="block">
+        <Link href={href as React.ComponentProps<typeof Link>["href"]} className="block">
           {children}
         </Link>
       );

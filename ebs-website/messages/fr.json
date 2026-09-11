@@ -11,10 +11,19 @@
         "blog": "Blog",
         "admissions": "Admissions",
         "contact": "Contact",
-        "actualites": "Actualités EBS"
+        "actualites": "Actualités EBS",
+        "menu": "Menu principal",
+        "dropdown": {
+          "universite": {"about":"Qui sommes-nous ?","vision":"Vision, Mission & Valeurs","ai":"L’IA au cœur d’EBS","faculty":"Corps Enseignant","academicPartners":"Partenaires Académiques","economicPartners":"Partenaires Économiques","news":"Actualités EBS","certifications":"Certifications","faq":"FAQ","alumni":"Alumni","campus":"Campus"},
+          "licences": {"overview":"Vue d'ensemble","management":"Licence en Management","marketing":"Licence en Marketing","finance":"Licence en Finance","ai":"Informatique — IA","cyber":"Informatique — Cybersécurité"},
+          "masters": {"overview":"Vue d'ensemble","crm":"CRM & Transformation Digitale","digitalMarketing":"Marketing Digital & IA","startups":"Projets Innovants & Startups","finance":"Ingénierie Financière"},
+          "international": {"pathway":"Parcours International","students":"Étudiants Internationaux"}
+        }
       },
       "postuler": "Postuler",
-      "call": "Appeler"
+        "call": "Appeler",
+        "switchToEnglish": "Passer en anglais",
+        "switchToFrench": "Passer en français"
     },
     "topbar": {
       "follow": "Suivez-nous:"
