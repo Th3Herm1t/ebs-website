@@ -182,6 +182,9 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
       {/* ══════════════════ COMPACT & ELEGANT HERO ══════════════════ */}
       <section className="relative overflow-hidden pt-36 pb-16 md:pt-40 md:pb-20">
         <div className="absolute inset-0 bg-gradient-to-br from-penn-navy via-[#11172a] to-[#070b14]" />
+        <div className="absolute inset-0 opacity-20">
+          <Image src="/images/heroes/certifications-hero.jpg" alt="" fill className="object-cover" priority sizes="100vw" />
+        </div>
         
         {/* Glow & Mesh */}
         <div
@@ -236,6 +239,11 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
           </div>
         </div>
       </section>
+
+      <div className="relative h-32 overflow-hidden bg-penn-navy md:h-40">
+        <Image src="/images/sections/certifications-body.jpg" alt="Certifications professionnelles EBS" fill className="object-cover opacity-70" sizes="100vw" />
+        <div className="absolute inset-0 bg-penn-navy/35" />
+      </div>
 
       {/* ══════════════════ ERGONOMIC EXPLORATION HUB ══════════════════ */}
       <section id="catalogue" className="bg-[#F8FAFC] py-10 lg:py-14 border-t border-penn-border">

@@ -223,6 +223,9 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
     <>
       {/* ═══════════ IMMERSIVE HERO ═══════════ */}
       <section className="relative pt-40 pb-28 overflow-hidden bg-[#070B18]">
+        <div className="absolute inset-0 opacity-25">
+          <Image src="/images/heroes/ia-hero.png" alt="" fill className="object-cover" priority sizes="100vw" />
+        </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(43,143,171,0.28),transparent_34%),radial-gradient(circle_at_82%_12%,rgba(156,39,176,0.18),transparent_30%),linear-gradient(135deg,#070B18_0%,#111A31_52%,#071521_100%)]" />
         <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(rgba(255,255,255,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.14)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_72%,transparent)]" />
         <div className="absolute -right-32 top-20 hidden h-[420px] w-[420px] rounded-full border border-penn-green/15 lg:block" />
@@ -316,7 +319,10 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
       </section>
 
       {/* ═══════════ POURQUOI L'IA ═══════════ */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white relative overflow-hidden">
+        <div className="pointer-events-none absolute right-0 top-0 hidden h-full w-[28%] opacity-15 lg:block">
+          <Image src="/images/sections/ia-why.png" alt="" fill className="object-cover" sizes="28vw" />
+        </div>
         <div className="max-w-[900px] mx-auto px-5 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -71,7 +71,7 @@ export default function EtudiantsInternationauxPage() {
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-40 pb-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/heroes/hero-intl.webp" alt="" fill className="object-cover" priority sizes="100vw" />
+          <Image src="/images/heroes/etudiants-internationaux.png" alt="" fill className="object-cover" priority sizes="100vw" />
         </div>
         <div className="absolute inset-0 z-[1] bg-gradient-to-br from-penn-navy/50 via-[#1a2035]/50 to-penn-navy/50" />
         <div className="absolute inset-0 z-[1] opacity-[0.03] bg-[radial-gradient(circle_at_50%_40%,_#2B8FAB_0%,_transparent_50%)]" />
@@ -121,7 +121,7 @@ export default function EtudiantsInternationauxPage() {
               viewport={{ once: true, margin: "-60px" }}
               className="relative aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl hidden md:block"
             >
-              <Image src="/images/campus/sidi-bou-said.jpg" alt="Vivre et étudier en Tunisie, Sidi Bou Said" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <Image src="/images/sections/avenue-bourguiba.png" alt="Vivre et étudier en Tunisie, avenue Habib Bourguiba" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-penn-navy/60 to-transparent" />
               <div className="absolute bottom-8 left-8 right-8">
                 <Badge variant="default" className="mb-3 bg-white/20 backdrop-blur-md text-white border-white/30">Destination Tunisie</Badge>
