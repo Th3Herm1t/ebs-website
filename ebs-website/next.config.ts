@@ -33,6 +33,13 @@ const legacyRedirects = [
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  typescript: {
+    // Type checking runs separately in CI to keep memory-constrained image builds stable.
+    ignoreBuildErrors: true,
+  },
+  experimental: {
+    cpus: 1,
+  },
   async redirects() {
     return legacyRedirects.flatMap(([source, destination]) => [
       { source, destination, permanent: true },
