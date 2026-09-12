@@ -4,13 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { Clock, LayoutGrid } from "lucide-react";
-import { useTranslations } from 'next-intl';
-import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, Camera, Clock, MapPin } from "lucide-react";
+import { useTranslations } from "next-intl";
 import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
 
-interface EventItem {
+interface LatestEntry {
   title: string;
   link: string;
   day: string;
@@ -18,102 +17,57 @@ interface EventItem {
   time: string;
   location: string;
   desc: string;
-}
-
-interface ImageEventItem extends EventItem {
   img: string;
 }
 
 export default function EventsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const t = useTranslations('HomePage.events');
-  
-  const imageEvents = t.raw('listImage') as ImageEventItem[];
-  const listEvents = t.raw('listText') as EventItem[];
-  const hasSingleEvent = imageEvents.length === 1 && listEvents.length === 0;
+  const t = useTranslations("HomePage.events");
+  const latest = (t.raw("listImage") as LatestEntry[])[0];
 
   return (
     <section className="relative overflow-hidden section-padding" ref={ref}>
       <HeroBackgroundVariant2 />
-      <div className="relative z-10 max-w-[1140px] mx-auto px-4">
-        <SectionHeading 
-          title={t('title')} 
-          subtitle={<>{t('subtitle')} <span className="text-penn-green underline decoration-penn-green">{t('subtitleHighlight')}</span></>} 
+      <div className="relative z-10 mx-auto max-w-[1140px] px-4">
+        <SectionHeading
+          title={t("title")}
+          subtitle={<>{t("subtitle")} <span className="text-penn-green underline decoration-penn-green">{t("subtitleHighlight")}</span></>}
         />
 
-        <div className={hasSingleEvent ? "flex justify-center" : "grid grid-cols-1 lg:grid-cols-3 gap-[30px]"}>
-          {/* Two image event cards */}
-          {imageEvents.map((event, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-            >
-              <Card className={`border-penn-border rounded-[6px] overflow-hidden h-full ${hasSingleEvent ? "w-full max-w-[560px]" : ""}`}>
-                <div className="relative h-[270px]">
-                  <Image src={event.img} alt={event.title} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
-                  <div className="absolute top-[15px] left-[15px] flex shadow-lg">
-                    <span className="bg-penn-navy text-white text-lg font-bold px-3 py-1 rounded-l">{event.day}</span>
-                    <span className="bg-penn-green text-white text-lg font-bold px-3 py-1 rounded-r">{event.month}</span>
-                  </div>
-                </div>
-                <CardContent className="p-[25px]">
-                  <h3>
-                    <a href={event.link} target="_blank" rel="noopener noreferrer" className="text-penn-navy font-extrabold text-lg leading-[28px] transition-colors hover:text-penn-green block min-h-[56px]">
-                      {event.title}
-                    </a>
-                  </h3>
-                  <div className="flex flex-wrap gap-4 mt-2.5 text-penn-green text-sm">
-                    <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{event.time}</span>
-                    <span className="flex items-center gap-1"><LayoutGrid className="w-3.5 h-3.5" /><strong>{event.location}</strong></span>
-                  </div>
-                  <p className="mt-2.5 text-penn-body text-sm line-clamp-2">{event.desc}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2 lg:gap-8">
+          <motion.article initial={{ opacity: 0, x: -24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }} className="overflow-hidden rounded-3xl border border-penn-border bg-white shadow-sm">
+            <div className="relative aspect-[16/10] overflow-hidden">
+              <Image src={latest.img} alt={latest.title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover transition-transform duration-700 hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-penn-navy/70 via-transparent to-transparent" />
+              <div className="absolute left-5 top-5 flex overflow-hidden rounded-xl shadow-lg">
+                <span className="bg-penn-navy px-3 py-2 text-lg font-extrabold text-white">{latest.day}</span>
+                <span className="bg-penn-green px-3 py-2 text-lg font-extrabold text-white">{latest.month}</span>
+              </div>
+              <span className="absolute bottom-5 left-5 rounded-full border border-white/20 bg-penn-navy/70 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-wide text-white backdrop-blur-sm">Dernière publication</span>
+            </div>
+            <div className="p-6 lg:p-8">
+              <div className="mb-3 flex flex-wrap gap-4 text-[12px] font-bold text-penn-green"><span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{latest.time}</span><span className="flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" />{latest.location}</span></div>
+              <h3 className="text-[23px] font-extrabold leading-tight text-penn-navy">{latest.title}</h3>
+              <p className="mt-3 line-clamp-3 text-[14px] leading-relaxed text-penn-body">{latest.desc}</p>
+              <Link href="/actualites" className="mt-6 inline-flex items-center gap-2 text-[13px] font-extrabold text-penn-green transition-colors hover:text-penn-navy">Voir toute l&apos;actualité <ArrowRight className="h-4 w-4" /></Link>
+            </div>
+          </motion.article>
 
-          {/* Right column — 2 stacked text-only event cards */}
-          {listEvents.length > 0 && <div className="flex flex-col gap-[30px]">
-            {listEvents.map((event, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.3 + i * 0.15 }}
-                className="h-full"
-              >
-                <Card className="border-penn-border rounded-[6px] h-full flex flex-col justify-center">
-                  <CardContent className="p-[25px]">
-                    <div className="flex mb-3 shadow-sm max-w-max">
-                      <span className="bg-penn-navy text-white text-lg font-bold px-3 py-1 rounded-l">{event.day}</span>
-                      <span className="bg-penn-green text-white text-lg font-bold px-3 py-1 rounded-r">{event.month}</span>
-                    </div>
-                    <h3>
-                      <a href={event.link} target="_blank" rel="noopener noreferrer" className="text-penn-navy font-extrabold text-lg transition-colors hover:text-penn-green">
-                        {event.title}
-                      </a>
-                    </h3>
-                    <div className="flex flex-wrap gap-4 mt-2.5 text-penn-green text-sm">
-                      <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{event.time}</span>
-                      <span className="flex items-center gap-1"><LayoutGrid className="w-3.5 h-3.5" /><strong>{event.location}</strong></span>
-                    </div>
-                    <p className="mt-2.5 text-penn-body text-sm line-clamp-2">{event.desc}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>}
-        </div>
-        <div className="mt-10 text-center">
-          <Link
-            href="/actualites"
-            className="inline-flex items-center rounded-full bg-penn-green px-6 py-3 text-[13px] font-extrabold text-white transition-colors hover:bg-penn-navy"
-          >
-            {t('btn')}
-          </Link>
+          <motion.figure initial={{ opacity: 0, x: 24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }} className="flex flex-col overflow-hidden rounded-3xl bg-penn-navy shadow-xl shadow-penn-navy/10">
+            <div className="flex items-center gap-3 px-6 pt-6 text-[11px] font-extrabold uppercase tracking-[0.16em] text-penn-green"><span className="flex h-9 w-9 items-center justify-center rounded-full border border-penn-green/30 bg-penn-green/10"><Camera className="h-4 w-4" /></span>{t("videoLabel")}</div>
+            <div className="mt-5 overflow-hidden bg-black">
+              <video className="aspect-video w-full object-cover" controls preload="none" poster="/images/campus/visite-360.jpg" playsInline aria-label={t("videoTitle")}>
+                <source src="/videos/ebs-campus-tour.mp4" type="video/mp4" />
+                Votre navigateur ne prend pas en charge la lecture vidéo.
+              </video>
+            </div>
+            <div className="flex flex-1 flex-col p-6 lg:p-8">
+              <h3 className="text-[23px] font-extrabold leading-tight text-white">{t("videoTitle")}</h3>
+              <p className="mt-3 max-w-[480px] text-[14px] leading-relaxed text-white/60">{t("videoDescription")}</p>
+              <figcaption className="mt-auto pt-6 text-[11px] font-bold uppercase tracking-wide text-white/35">ESPIMA Business School · Tunis</figcaption>
+            </div>
+          </motion.figure>
         </div>
       </div>
     </section>

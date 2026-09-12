@@ -176,35 +176,30 @@ export default function CampusPage() {
         </div>
       </section>
 
-      {/* ═══════════ VISITE VIRTUELLE ═══════════ */}
-      <section className="relative pt-24 pb-32 overflow-hidden bg-penn-navy">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image src="/images/campus/visite-360.jpg" alt="Visite Virtuelle EBS" fill className="object-cover" sizes="100vw" />
-        </div>
-        {/* Overlays */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-penn-navy/95 via-penn-navy/80 to-penn-navy/40" />
-        <div className="absolute inset-0 z-[1] opacity-[0.02] bg-[radial-gradient(circle_at_50%_50%,_#2B8FAB_0%,_transparent_60%)]" />
-
-        <div className="relative z-10 max-w-[900px] mx-auto px-5 lg:px-12 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-          >
-            <div className="w-20 h-20 rounded-full bg-penn-green/10 flex items-center justify-center mx-auto mb-6 border border-penn-green/20">
-              <Camera className="w-9 h-9 text-penn-green" />
+      {/* ═══════════ VISITE DU CAMPUS ═══════════ */}
+      <section className="relative overflow-hidden bg-penn-navy py-20 lg:py-28">
+        <div className="pointer-events-none absolute inset-0 opacity-[0.04] bg-[radial-gradient(circle_at_70%_30%,_#2B8FAB_0%,_transparent_50%)]" />
+        <div className="relative z-10 mx-auto grid max-w-[1280px] items-center gap-10 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-12">
+          <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-60px" }}>
+            <div className="mb-5 flex items-center gap-3 text-[11px] font-extrabold uppercase tracking-[0.16em] text-penn-green">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-penn-green/30 bg-penn-green/10"><Camera className="h-4 w-4" /></span>
+              Découvrez le campus
             </div>
-            <h2 className="text-[34px] md:text-[44px] font-extrabold text-white leading-[1.15] mb-4">
-              Visite Virtuelle 360°
-            </h2>
-            <p className="text-[17px] text-white/60 mb-8 max-w-[600px] mx-auto">
-              Explorez notre campus à distance grâce à une visite virtuelle immersive à 360° et découvrez nos espaces avant votre arrivée.
-            </p>
-            <div className="inline-flex px-6 py-3 rounded-full border border-white/[0.12] text-[14px] font-bold text-white/40">
-              Bientôt disponible
+            <h2 className="max-w-[620px] text-[34px] font-extrabold leading-[1.08] text-white md:text-[48px]">Entrez dans l&apos;univers <span className="text-penn-green">EBS</span>.</h2>
+            <p className="mt-5 max-w-[560px] text-[16px] leading-relaxed text-white/65">Découvrez nos espaces de formation, de collaboration et de vie étudiante à travers cette présentation vidéo du campus.</p>
+            <div className="mt-8 flex flex-wrap gap-3 text-[12px] font-bold text-white/55">
+              <span className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2">Salles & laboratoires</span>
+              <span className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2">Vie étudiante</span>
+              <span className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2">Visite à distance</span>
             </div>
           </motion.div>
+          <motion.figure initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.6 }} className="overflow-hidden rounded-3xl border border-white/10 bg-black shadow-2xl shadow-black/30">
+            <video className="aspect-video w-full object-cover" controls preload="none" poster="/images/campus/visite-360.jpg" playsInline aria-label="Présentation vidéo du campus EBS">
+              <source src="/videos/ebs-campus-tour.mp4" type="video/mp4" />
+              Votre navigateur ne prend pas en charge la lecture vidéo.
+            </video>
+            <figcaption className="border-t border-white/10 px-5 py-4 text-[12px] font-bold text-white/50">Présentation du campus EBS</figcaption>
+          </motion.figure>
         </div>
       </section>
 
