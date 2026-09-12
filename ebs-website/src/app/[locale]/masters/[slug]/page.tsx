@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Award, BadgeCheck, BookOpen, Building2, Check, Clock, FileText, GraduationCap, Layers, ShieldCheck, Target, Trophy, Users } from "lucide-react";
 import { ProgramLPHero, ProgramPresentation, PublicCible, ModulesAccordion, CertificationsTable, IACompetences, InternationalPerspectives, DebouchesGrid } from "@/components/program";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { Breadcrumb, CtaSection } from "@/components/shared";
@@ -102,84 +103,112 @@ export default async function MasterLPPage({ params }: PageParams) {
         <div className="max-w-[1280px] mx-auto px-5 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16">
             <div className="space-y-16">
-          <SectionHeading>1. PRÉSENTATION GÉNÉRALE DU MASTER</SectionHeading>
           <ProgramPresentation
             surtitre={`Master · Espima Business School`}
             title={`${programmeTitle} — Présentation`}
           >
             {data.generalPresentation ? <>
-              <p><strong>Intitulé du diplôme :</strong> {data.generalPresentation.diplomaTitle}</p>
-              <p><strong>Diplôme :</strong> {data.generalPresentation.diploma}</p>
-              <p><strong>Durée :</strong> {data.generalPresentation.duration}</p>
-              <p><strong>Organisation :</strong> {data.generalPresentation.organisation}</p>
-              <p><strong>Présentation :</strong></p>
-              {data.generalPresentation.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-            </> : (data.presentationBlocks ?? [data.presentation ?? data.pitch]).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              <dl className="mb-2 grid gap-3 sm:grid-cols-3">
+                {[
+                  { icon: GraduationCap, label: "Intitulé du diplôme", value: data.generalPresentation.diplomaTitle },
+                  { icon: ShieldCheck, label: "Diplôme", value: data.generalPresentation.diploma },
+                  { icon: Clock, label: "Durée", value: data.generalPresentation.duration },
+                ].map((meta) => (
+                  <div key={meta.label} className="rounded-xl border border-penn-border bg-white p-4">
+                    <dt className="mb-1.5 flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-[0.1em] text-penn-body/60">
+                      <meta.icon className="h-3.5 w-3.5" style={{ color: data.color }} />
+                      {meta.label}
+                    </dt>
+                    <dd className="text-[13.5px] font-semibold leading-snug text-penn-navy">{meta.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <div className="flex items-start gap-3 rounded-xl bg-penn-bg-light px-5 py-4 text-[14px] leading-relaxed text-penn-navy/85">
+                <Building2 className="mt-0.5 h-5 w-5 shrink-0" style={{ color: data.color }} />
+                <p><strong className="font-extrabold">Organisation : </strong>{data.generalPresentation.organisation}</p>
+              </div>
+              {data.generalPresentation.paragraphs.map((paragraph, i) => (
+                <p key={paragraph} className={i === 0 ? "text-[17px] font-medium leading-relaxed text-penn-navy" : undefined}>{paragraph}</p>
+              ))}
+            </> : (data.presentationBlocks ?? [data.presentation ?? data.pitch]).map((paragraph, i) => (
+              <p key={paragraph} className={i === 0 ? "text-[17px] font-medium leading-relaxed text-penn-navy" : undefined}>{paragraph}</p>
+            ))}
            </ProgramPresentation>
 
+            <div>
+              <SectionHeading icon={Target} title="Objectifs de la formation" color={data.color} />
+              <TextList intro={data.objectivesIntro ?? "Le Master poursuit plusieurs objectifs complémentaires :"} items={data.objectives ?? []} color={data.color} />
+            </div>
+
            <div>
-             <SectionHeading>7. PARCOURS CERTIFIANT EBS</SectionHeading>
-             {data.certificationDescription && <p className="mb-5 text-[15px] leading-relaxed text-penn-body">{data.certificationDescription}</p>}
-             {data.certificationSections && <TextGroups groups={data.certificationSections} />}
-             <CertificationsTable certs={certifications} requirements={requirements} profileLabel={profileLabel} color={data.color} />
+             <SectionHeading icon={Users} title="Public cible" color={data.color} />
+              {data.publicCibleIntro && <Lead>{data.publicCibleIntro}</Lead>}
+              <PublicCible items={data.publicCibleWording ?? data.publicCible} color={data.color} />
            </div>
+
+           <div>
+             <SectionHeading icon={BadgeCheck} title="Compétences développées" color={data.color} />
+              <TextGroups intro={data.competenciesIntro} groups={data.competencies ?? requirements.slice(0, 8).map((requirement) => ({ title: undefined, items: [requirement.title.fr] }))} color={data.color} />
+           </div>
+
+           <div>
+             <SectionHeading icon={Award} title="Les atouts distinctifs d'EBS" color={data.color} />
+              <TextList intro={data.distinctiveIntro} items={data.distinctiveAdvantages ?? []} color={data.color} />
+           </div>
+
+           <div>
+             <SectionHeading icon={Layers} title="Modules du programme" color={data.color} />
+             {data.moduleIntro && <Lead>{data.moduleIntro}</Lead>}
+             <ModulesAccordion modules={data.modules} color={data.color} />
+            </div>
 
             <div>
-             <SectionHeading>2. OBJECTIFS DE LA FORMATION</SectionHeading>
-             <TextList intro={data.objectivesIntro ?? "Le Master poursuit plusieurs objectifs complémentaires :"} items={data.objectives ?? []} />
-           </div>
-
-          <div>
-            <SectionHeading>3. PUBLIC CIBLE</SectionHeading>
-             {data.publicCibleIntro && <TextList intro={data.publicCibleIntro} items={[]} />}
-             <PublicCible items={data.publicCibleWording ?? data.publicCible} color={data.color} />
-          </div>
-
-          <div>
-            <SectionHeading>4. COMPÉTENCES DÉVELOPPÉES</SectionHeading>
-             <TextGroups intro={data.competenciesIntro} groups={data.competencies ?? requirements.slice(0, 8).map((requirement) => ({ title: undefined, items: [requirement.title.fr] }))} />
-          </div>
-
-          <div>
-            <SectionHeading>5. LES ATOUTS DISTINCTIFS D'ESPIMA BUSINESS SCHOOL</SectionHeading>
-             <TextList intro={data.distinctiveIntro} items={data.distinctiveAdvantages ?? []} />
-          </div>
-
-          <div>
-            <SectionHeading>6. MODULES DU PROGRAMME</SectionHeading>
-            {data.moduleIntro && <p className="mb-5 text-[15px] leading-relaxed text-penn-body">{data.moduleIntro}</p>}
-            <ModulesAccordion modules={data.modules} color={data.color} />
-           </div>
+              {data.certificationDescription && <Lead>{data.certificationDescription}</Lead>}
+              {data.certificationSections && <div className="mb-6"><TextGroups groups={data.certificationSections} color={data.color} /></div>}
+              <CertificationsTable certs={certifications} requirements={requirements} profileLabel={profileLabel} color={data.color} />
+            </div>
 
             <div>
-             <SectionHeading>8. L'INTELLIGENCE ARTIFICIELLE AU CŒUR DU MASTER</SectionHeading>
-              <IACompetences color={data.color} description={data.iaDescription ? <div>{data.iaIntro && <p>{data.iaIntro}</p>}{data.iaDescription.split("\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{data.iaApplicationsIntro && <p>{data.iaApplicationsIntro}</p>}{data.iaContent?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{data.iaConclusion && <p>{data.iaConclusion}</p>}</div> : undefined} />
+              <IACompetences color={data.color} description={data.iaDescription ? <div className="space-y-4">
+                {data.iaIntro && <p className="text-white/80">{data.iaIntro}</p>}
+                {data.iaDescription.split("\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                {data.iaApplicationsIntro && <p className="font-bold text-white">{data.iaApplicationsIntro}</p>}
+                {data.iaContent && data.iaContent.length > 0 && (
+                  <ul className="grid gap-2.5 sm:grid-cols-2">
+                    {data.iaContent.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 rounded-lg border border-white/10 bg-white/5 px-3.5 py-3 text-[13.5px] leading-relaxed text-white/75">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={3} style={{ color: data.color }} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {data.iaConclusion && <p>{data.iaConclusion}</p>}
+              </div> : undefined} />
            </div>
 
            <div>
-             <SectionHeading>9. PÉDAGOGIE</SectionHeading>
-             <TextList intro={data.pedagogyIntro} items={data.pedagogy ?? []} conclusion={data.pedagogyConclusion} />
+             <SectionHeading icon={BookOpen} title="Pédagogie" color={data.color} />
+             <TextList intro={data.pedagogyIntro} items={data.pedagogy ?? []} conclusion={data.pedagogyConclusion} color={data.color} />
            </div>
 
            <div>
-             <SectionHeading>10. STAGE, MÉMOIRE ET PROJET PROFESSIONNEL</SectionHeading>
-             <TextList intro={data.stageIntro} items={data.stageMemoire ?? []} />
+             <SectionHeading icon={FileText} title="Stage, mémoire et projet professionnel" color={data.color} />
+             <TextList intro={data.stageIntro} items={data.stageMemoire ?? []} color={data.color} />
            </div>
 
            <div>
-             <SectionHeading>11. DÉBOUCHÉS PROFESSIONNELS</SectionHeading>
-              <TextList intro={data.professionalOutcomesIntro} items={[]} conclusion={data.professionalOutcomesConclusion} />
-              <DebouchesGrid items={data.debouches} color={data.color} />
+              <TextList intro={data.professionalOutcomesIntro} items={[]} conclusion={data.professionalOutcomesConclusion} color={data.color} />
+              <div className="mt-6"><DebouchesGrid items={data.debouches} color={data.color} /></div>
            </div>
 
            <div>
-             <SectionHeading>12. POURSUITE D'ÉTUDES ET OUVERTURE INTERNATIONALE</SectionHeading>
               <InternationalPerspectives pathways={data.internationalPathways} intro={data.internationalIntro} content={data.internationalContent} color={data.color} />
            </div>
 
            <div>
-             <SectionHeading>13. LES ATOUTS DU MASTER</SectionHeading>
-             <TextList intro={data.finalAdvantagesIntro} items={data.finalAdvantages ?? []} />
+             <SectionHeading icon={Trophy} title="Les atouts du master" color={data.color} />
+             <TextList intro={data.finalAdvantagesIntro} items={data.finalAdvantages ?? []} color={data.color} />
            </div>
             </div>
             <div className="hidden lg:block">{/* Empty column to reserve space for floating sidebar */}</div>
@@ -199,24 +228,73 @@ export default async function MasterLPPage({ params }: PageParams) {
   );
 }
 
-function SectionHeading({ children }: { children: React.ReactNode }) {
-  return <h3 className="mb-5 text-[22px] font-extrabold text-penn-navy md:text-[26px]">{children}</h3>;
+function SectionHeading({ icon: Icon, title, color }: { icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>; title: string; color?: string }) {
+  const accent = color ?? "#2B8FAB";
+  return (
+    <div className="mb-6 flex items-center gap-3">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg" style={{ backgroundColor: `${accent}12` }}>
+        <Icon className="h-5 w-5" style={{ color: accent }} />
+      </div>
+      <h2 className="text-[22px] font-extrabold text-penn-navy md:text-[26px]">{title}</h2>
+    </div>
+  );
 }
 
-function TextList({ intro, items, conclusion }: { intro?: string; items: string[]; conclusion?: string }) {
-  return <div className="space-y-3 text-[15px] leading-relaxed text-penn-body">
-    {intro && <p>{intro}</p>}
-    {items.map((item) => <p key={item}>{item}</p>)}
-    {conclusion && <p>{conclusion}</p>}
-  </div>;
+function Lead({ children }: { children: React.ReactNode }) {
+  return <p className="mb-5 max-w-[760px] text-[16px] leading-relaxed text-penn-navy/80">{children}</p>;
 }
 
-function TextGroups({ intro, groups }: { intro?: string; groups: { title?: string; items: string[] }[] }) {
-  return <div className="space-y-5 text-[15px] leading-relaxed text-penn-body">
-    {intro && <p>{intro}</p>}
-    {groups.map((group) => <div key={`${group.title ?? "group"}-${group.items[0]}`}>
-      {group.title && <p className="font-bold text-penn-navy">{group.title}</p>}
-      {group.items.map((item) => <p key={item}>{item}</p>)}
-    </div>)}
-  </div>;
+function TextList({ intro, items, conclusion, color }: { intro?: string; items: string[]; conclusion?: string; color?: string }) {
+  const accent = color ?? "#2B8FAB";
+  return (
+    <div>
+      {intro && <Lead>{intro}</Lead>}
+      {items.length > 0 && (
+        <ul className="space-y-2.5">
+          {items.map((item) => (
+            <li key={item} className="flex items-start gap-3 rounded-xl border border-penn-border bg-white px-4 py-3.5 text-[14.5px] leading-relaxed text-penn-body">
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: `${accent}14`, color: accent }}>
+                <Check className="h-3.5 w-3.5" strokeWidth={3} />
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+      {conclusion && (
+        <p className="mt-5 rounded-xl border-l-[3px] bg-penn-bg-light px-5 py-4 text-[14.5px] leading-relaxed text-penn-navy/85" style={{ borderLeftColor: accent }}>
+          {conclusion}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function TextGroups({ intro, groups, color }: { intro?: string; groups: { title?: string; items: string[] }[]; color?: string }) {
+  const accent = color ?? "#2B8FAB";
+  return (
+    <div>
+      {intro && <Lead>{intro}</Lead>}
+      <div className="grid gap-4 md:grid-cols-2">
+        {groups.map((group) => (
+          <div key={`${group.title ?? "group"}-${group.items[0]}`} className="rounded-2xl border border-penn-border bg-white p-5">
+            {group.title && (
+              <p className="mb-3 flex items-center gap-2 text-[15px] font-extrabold text-penn-navy">
+                <span className="h-4 w-1 shrink-0 rounded-full" style={{ backgroundColor: accent }} />
+                {group.title}
+              </p>
+            )}
+            <ul className="space-y-2.5">
+              {group.items.map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-penn-body">
+                  <Check className="mt-1 h-4 w-4 shrink-0" strokeWidth={3} style={{ color: accent }} />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
