@@ -14,7 +14,7 @@ export default async function TopPromo() {
       ctaText: t('p1.btn'),
       bgColor: "bg-[#264653]",
       link: "/brochures",
-      image: "/images/toppromo/photo-1.png",
+      image: "/images/toppromo/photo-1.webp",
     },
     {
       id: "whatsapp",
@@ -49,7 +49,7 @@ export default async function TopPromo() {
             return (
               <div key={promo.id} className="relative p-[60px] border-r border-penn-border shadow-[0px_0px_150px_0px_rgba(78,67,250,0.1)] last:border-r-0 max-md:border-r-0 overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                  <Image src={promo.image} alt="" fill className="object-cover opacity-30" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <Image src={promo.image} alt="" fill className="object-cover opacity-30" sizes="(max-width: 768px) 100vw, 400px" quality={60} loading="lazy" />
                 </div>
                 <div className="relative z-10">
                   <h3 className="text-[20px] font-extrabold mb-[15px] text-penn-navy">{promo.title}</h3>

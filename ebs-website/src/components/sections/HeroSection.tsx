@@ -42,14 +42,9 @@ export default function HeroSection({ certificationCount }: { certificationCount
           {/* Left content — col-lg-6 */}
           <div className="w-full lg:w-6/12">
             <div className="py-10 max-md:py-0 relative">
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-[38px] md:text-[50px] xl:text-[60px] font-extrabold leading-tight tracking-tight mb-6 md:mb-8 text-[#232434]"
-              >
+              <h1 className="text-[38px] md:text-[50px] xl:text-[60px] font-extrabold leading-tight tracking-tight mb-6 md:mb-8 text-[#232434]">
                 {t('title1')} <span className="text-penn-green">{t('titleHighlight')}</span> {t('title2')}
-              </motion.h1>
+              </h1>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -147,6 +142,7 @@ export default function HeroSection({ certificationCount }: { certificationCount
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
                 className="relative z-10 object-contain w-full h-auto"
                 priority
+                fetchPriority="high"
               />
 
             </motion.div>

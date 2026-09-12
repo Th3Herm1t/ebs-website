@@ -57,7 +57,7 @@ export default function EventsSection() {
           <motion.figure initial={{ opacity: 0, x: 24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }} className="flex flex-col overflow-hidden rounded-3xl bg-penn-navy shadow-xl shadow-penn-navy/10">
             <div className="flex items-center gap-3 px-6 pt-6 text-[11px] font-extrabold uppercase tracking-[0.16em] text-penn-green"><span className="flex h-9 w-9 items-center justify-center rounded-full border border-penn-green/30 bg-penn-green/10"><Camera className="h-4 w-4" /></span>{t("videoLabel")}</div>
             <div className="mt-5 overflow-hidden bg-black">
-              <video className="aspect-video w-full object-cover" controls preload="none" poster="/images/campus/t27.webp" playsInline aria-label={t("videoTitle")}>
+              <video className="aspect-video w-full object-cover" controls preload="none" poster="/images/campus/t27-poster-400.webp" playsInline aria-label={t("videoTitle")}>
                 <source src="/videos/ebs-campus-tour.mp4" type="video/mp4" />
                 Votre navigateur ne prend pas en charge la lecture vidéo.
               </video>
