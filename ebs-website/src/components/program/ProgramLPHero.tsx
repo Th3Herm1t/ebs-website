@@ -43,8 +43,8 @@ export function ProgramLPHero({
 
   const statItems = [
     { label: "Certifications incluses", value: `${totalCerts}+` },
-    { label: "", value: duree },
-    { label: statAccreditationLabel, value: "100 %" },
+    { label: "Durée", value: duree },
+    { label: "Diplôme", value: niveau },
   ];
 
   return (

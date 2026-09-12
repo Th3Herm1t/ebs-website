@@ -178,7 +178,7 @@ export default async function MasterLPPage({ params }: PageParams) {
                     {data.iaContent.map((item) => (
                       <li key={item} className="flex items-start gap-2.5 rounded-lg border border-white/10 bg-white/5 px-3.5 py-3 text-[13.5px] leading-relaxed text-white/75">
                         <Check className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={3} style={{ color: data.color }} />
-                        <span>{item}</span>
+                        <span>{prettyItem(item)}</span>
                       </li>
                     ))}
                   </ul>
@@ -244,6 +244,14 @@ function Lead({ children }: { children: React.ReactNode }) {
   return <p className="mb-5 max-w-[760px] text-[16px] leading-relaxed text-penn-navy/80">{children}</p>;
 }
 
+// Content data uses running-sentence casing (lowercase start, trailing ";").
+// Cards read as standalone statements, so normalize at display level.
+function prettyItem(item: string) {
+  const trimmed = item.trim();
+  const withoutSeparator = trimmed.endsWith(";") ? trimmed.slice(0, -1).trimEnd() : trimmed;
+  return withoutSeparator.charAt(0).toUpperCase() + withoutSeparator.slice(1);
+}
+
 function TextList({ intro, items, conclusion, color }: { intro?: string; items: string[]; conclusion?: string; color?: string }) {
   const accent = color ?? "#2B8FAB";
   return (
@@ -256,7 +264,7 @@ function TextList({ intro, items, conclusion, color }: { intro?: string; items: 
               <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: `${accent}14`, color: accent }}>
                 <Check className="h-3.5 w-3.5" strokeWidth={3} />
               </span>
-              <span>{item}</span>
+              <span>{prettyItem(item)}</span>
             </li>
           ))}
         </ul>
@@ -288,7 +296,7 @@ function TextGroups({ intro, groups, color }: { intro?: string; groups: { title?
               {group.items.map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-penn-body">
                   <Check className="mt-1 h-4 w-4 shrink-0" strokeWidth={3} style={{ color: accent }} />
-                  <span>{item}</span>
+                  <span>{prettyItem(item)}</span>
                 </li>
               ))}
             </ul>
