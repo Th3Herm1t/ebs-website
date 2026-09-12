@@ -194,7 +194,7 @@ export default function CampusPage() {
             </div>
           </motion.div>
           <motion.figure initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.6 }} className="overflow-hidden rounded-3xl border border-white/10 bg-black shadow-2xl shadow-black/30">
-            <video className="aspect-video w-full object-cover" controls preload="none" poster="/images/campus/visite-360.jpg" playsInline aria-label="Présentation vidéo du campus EBS">
+            <video className="aspect-video w-full object-cover" controls preload="none" poster="/images/campus/t27.webp" playsInline aria-label="Présentation vidéo du campus EBS">
               <source src="/videos/ebs-campus-tour.mp4" type="video/mp4" />
               Votre navigateur ne prend pas en charge la lecture vidéo.
             </video>
