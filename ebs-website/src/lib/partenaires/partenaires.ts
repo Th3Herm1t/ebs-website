@@ -1,5 +1,4 @@
 import type { AcademicPartnerSlug } from "./academic-partners";
-import { translateProgrammeText, type DomainLocale } from "../programmes/localization";
 
 export interface PartnerData {
   slug: string;
@@ -1426,43 +1425,3 @@ const canonicalPartenaires = {
 } satisfies Record<AcademicPartnerSlug, PartnerData>;
 
 export const partenaires: Readonly<Record<string, PartnerData>> = canonicalPartenaires;
-
-function localizePartnerValue(value: unknown): unknown {
-  if (typeof value === "string") {
-    return translateProgrammeText(value)
-      .replace(/\bUniversité publique canadienne\b/g, "Canadian public university")
-      .replace(/\bGrande École\b/g, "Grande École")
-      .replace(/\bÉcole française\b/g, "French school")
-      .replace(/\bLangue d'enseignement\b/g, "Teaching language")
-      .replace(/\bLangues d’enseignement\b/g, "Teaching languages")
-      .replace(/\bConditions d'admission\b/g, "Admission requirements")
-      .replace(/\bCoût estimatif\b/g, "Estimated cost")
-      .replace(/\bDiplôme\b/g, "Degree")
-      .replace(/\bÉtudiants EBS concernés\b/g, "Relevant EBS students")
-      .replace(/\bCampus\b/g, "Campus")
-      .replace(/\bReconnaissance\b/g, "Recognition")
-      .replace(/\bPartenariat avec ESPIMA\b/g, "Partnership with ESPIMA")
-      .replace(/\bAvantages financiers du partenariat\b/g, "Financial benefits of the partnership")
-      .replace(/\bRéduction\b/g, "Discount")
-      .replace(/\bFrais de candidature\b/g, "Application fee")
-      .replace(/\bFrais d'admission\b/g, "Admission fee")
-      .replace(/\bRefus de visa\b/g, "Visa refusal");
-  }
-  if (Array.isArray(value)) return value.map(localizePartnerValue);
-  if (value && typeof value === "object") {
-    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, localizePartnerValue(item)]));
-  }
-  return value;
-}
-
-/** Returns partner editorial data in the requested language without changing the French source export. */
-export function getPartenaires(locale: DomainLocale = "fr"): Readonly<Record<string, PartnerData>> {
-  if (locale === "fr") return partenaires;
-  return Object.fromEntries(
-    Object.entries(partenaires).map(([slug, partner]) => [slug, localizePartnerValue(partner) as PartnerData]),
-  );
-}
-
-export function getPartenaire(slug: AcademicPartnerSlug | string, locale: DomainLocale = "fr") {
-  return getPartenaires(locale)[slug];
-}

@@ -1,86 +1,71 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useInView } from "motion/react";
+import { ExternalLink } from "lucide-react";
 import { useRef } from "react";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
 
-interface TestimonialItem {
-  img: string;
-  name: string;
-  role: string;
-  bgClass: string;
-  text: string;
+interface VideoTestimonial {
+  videoUrl: string;
+  eyebrow: string;
+  title: string;
+  description: string;
 }
 
 export default function TestimonialsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const t = useTranslations('HomePage.testimonials');
-  const testimonials = t.raw('list') as TestimonialItem[];
+  const t = useTranslations("HomePage.testimonials");
+  const videos = t.raw("videos") as VideoTestimonial[];
 
   return (
     <section className="relative overflow-hidden section-padding" ref={ref}>
       <HeroBackgroundVariant2 />
-      <div className="relative z-10 max-w-[1140px] mx-auto px-4">
-        <div className="flex items-start justify-between mb-[50px]">
-          <SectionHeading 
-            title={t('title')} 
-            subtitle={
-              <>{t('subtitle')} <span className="text-penn-green underline decoration-penn-green">{t('subtitleHighlight')}</span></>
-            }
-            className="!mb-0"
-            subtitleClassName="!w-full"
-          />
-          <div className="flex gap-2 mt-8 max-md:hidden">
-            <button className="w-10 h-10 rounded-full border border-penn-border flex items-center justify-center text-penn-navy hover:bg-penn-green hover:text-white hover:border-penn-green transition-all">
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button className="w-10 h-10 rounded-full border border-penn-border flex items-center justify-center text-penn-navy hover:bg-penn-green hover:text-white hover:border-penn-green transition-all">
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
+      <div className="relative z-10 mx-auto max-w-[1140px] px-4">
+        <SectionHeading
+          title={t("title")}
+          subtitle={
+            <>
+              {t("subtitle")} <span className="text-penn-green underline decoration-penn-green">{t("subtitleHighlight")}</span>
+            </>
+          }
+        />
 
-        <div className="flex flex-wrap justify-center gap-[30px]">
-          {testimonials.map((testimonial, i) => (
-            <motion.div
-              key={i}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {videos.map((video, index) => (
+            <motion.article
+              key={video.videoUrl}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="rounded-[10px] overflow-hidden flex flex-col w-full md:w-[calc((100%-60px)/3)] h-full"
+              transition={{ duration: 0.6, delay: index * 0.12 }}
+              className="group overflow-hidden rounded-2xl border border-penn-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              {/* Stars + Quote */}
-              <div className="bg-white border border-penn-border p-[30px] rounded-t-[10px] flex flex-col justify-center flex-1">
-                <div className="flex gap-1 mb-5">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="w-5 h-5 text-[#f9b401] fill-[#f9b401]" />
-                  ))}
-                </div>
-                <p className="text-penn-body leading-[26px] italic">
-                  "{testimonial.text}"
-                </p>
-              </div>
-
-              {/* Author */}
-              <div className={`flex items-center gap-4 p-[20px] ${testimonial.bgClass} rounded-b-[10px]`}>
-                <Image
-                  src={testimonial.img}
-                  alt={testimonial.name}
-                  width={60}
-                  height={60}
-                  className="rounded-full w-[60px] h-[60px] object-cover"
+              <div className="relative aspect-video overflow-hidden bg-penn-navy">
+                <iframe
+                  src={video.videoUrl}
+                  title={video.title}
+                  className="absolute inset-0 h-full w-full"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
                 />
-                <div>
-                  <h4 className="text-penn-navy font-extrabold text-[17px]">{testimonial.name}</h4>
-                  <small className="text-penn-body">{testimonial.role}</small>
-                </div>
               </div>
-            </motion.div>
+              <div className="p-6">
+                <p className="mb-3 text-[11px] font-extrabold uppercase tracking-[0.16em] text-penn-green">{video.eyebrow}</p>
+                <h3 className="text-[18px] font-extrabold leading-tight text-penn-navy">{video.title}</h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-penn-body">{video.description}</p>
+                <a
+                  href={video.videoUrl.replace("/embed/", "/watch?v=")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center gap-2 text-[13px] font-extrabold text-penn-green transition-colors hover:text-penn-navy"
+                >
+                  {t("watch")} <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>

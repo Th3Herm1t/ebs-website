@@ -14,8 +14,6 @@ import type {
   Resource,
 } from "./types";
 
-export type CatalogueLocale = "fr" | "en";
-
 export const catalogueV3 = snapshot as CatalogueV3PublicSnapshot;
 
 function createCatalogueIndexes(catalogue: CatalogueV3PublicSnapshot) {
@@ -208,46 +206,15 @@ export const capabilityLabels: Record<Capability, string> = {
   ENGINEER: "Concevoir",
 };
 
-export const capabilityLabelsEn: Record<Capability, string> = {
-  UNDERSTAND: "Understand",
-  APPLY: "Apply",
-  EVALUATE: "Evaluate",
-  ORCHESTRATE: "Orchestrate",
-  GOVERN: "Govern",
-  ENGINEER: "Engineer",
-};
-
 export const tierLabels: Record<OpportunityTier, string> = {
   RECOMMENDED: "Recommandé",
   DISCOVERY: "Explorer",
-};
-
-export const tierLabelsEn: Record<OpportunityTier, string> = {
-  RECOMMENDED: "Recommended",
-  DISCOVERY: "Explore",
 };
 
 export const tierHelp: Record<OpportunityTier, string> = {
   RECOMMENDED: "Les opportunités prioritaires, alignées avec les compétences du programme.",
   DISCOVERY: "Un espace libre pour explorer et se différencier.",
 };
-
-export const tierHelpEn: Record<OpportunityTier, string> = {
-  RECOMMENDED: "Priority opportunities aligned with the programme competencies.",
-  DISCOVERY: "A space to explore and differentiate yourself.",
-};
-
-export function getCapabilityLabel(capability: Capability, locale: CatalogueLocale = "fr") {
-  return (locale === "en" ? capabilityLabelsEn : capabilityLabels)[capability];
-}
-
-export function getTierLabel(tier: OpportunityTier, locale: CatalogueLocale = "fr") {
-  return (locale === "en" ? tierLabelsEn : tierLabels)[tier];
-}
-
-export function getTierHelp(tier: OpportunityTier, locale: CatalogueLocale = "fr") {
-  return (locale === "en" ? tierHelpEn : tierHelp)[tier];
-}
 
 export const credentialTypeLabels: Record<CredentialType, string> = {
   certification: "Certification",

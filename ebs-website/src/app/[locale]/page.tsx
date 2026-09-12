@@ -31,9 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const domainLocale = locale === "en" ? "en" : "fr";
+export default async function Home() {
   const catalogue = await getCatalogueV3Snapshot();
   const websiteJsonLd = {
     "@context": "https://schema.org",
@@ -58,12 +56,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
        <CounterSection />
        <HomeCertificationsSection />
        <CoursePromoSection />
-       <AcademicPartners locale={domainLocale} />
+      <AcademicPartners />
 
       <CareerSection />
       <PartnerLogos />
        <CoursesSection />
-        <OrientationSection locale={domainLocale} />
+       <OrientationSection />
        <FeaturesSection />
       <EventsSection />
       <TestimonialsSection />

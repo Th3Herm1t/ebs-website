@@ -28,7 +28,7 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-import { Badge, CtaSection, LocalizedRoute } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 import { siteConfig } from "@/lib/config";
 
 // ── Data ──────────────────────────────────────────
@@ -246,7 +246,7 @@ export default function PartenairesEconomiquesPage() {
   };
 
   return (
-    <LocalizedRoute>
+    <>
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-40 pb-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -844,6 +844,6 @@ export default function PartenairesEconomiquesPage() {
         secondaryCta={{ label: "Voir nos formations", href: "/nos-programmes" }}
         background="penn-green"
       />
-    </LocalizedRoute>
+    </>
   );
 }

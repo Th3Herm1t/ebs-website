@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useLocale } from "next-intl";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Award, Briefcase, Globe, GraduationCap, HeartHandshake, Send, Star, X } from "lucide-react";
-import { Badge, LocalizedRoute } from "@/components/shared";
+import { Badge } from "@/components/shared";
 import { siteConfig } from "@/lib/config";
 
 const AlumniWorldMap = dynamic(() => import("@/components/alumni/AlumniWorldMap"), {
@@ -16,7 +15,6 @@ const AlumniWorldMap = dynamic(() => import("@/components/alumni/AlumniWorldMap"
 });
 
 function DeferredAlumniWorldMap() {
-  const locale = useLocale();
   const ref = useRef<HTMLDivElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
 
@@ -37,10 +35,10 @@ function DeferredAlumniWorldMap() {
     return () => observer.disconnect();
   }, [shouldLoad]);
 
-  return <div ref={ref}>{shouldLoad ? <AlumniWorldMap locale={locale} /> : <div className="section-padding bg-white" />}</div>;
+  return <div ref={ref}>{shouldLoad ? <AlumniWorldMap locale="fr" /> : <div className="section-padding bg-white" />}</div>;
 }
 
-const alumniProfiles = [
+const alumniProfiles: { name: string; text: string; img?: string; initials: string; objectPosition?: string }[] = [
   { name: "Mohamed Amine Hamdi", text: "a obtenu son diplôme de Master en Marketing Digital promotion 2019/2020. Actuellement il occupe un poste de Community Manager chez Tinith services Tunis", img: "/images/ebs-tn/amin-hamdi.jpeg", initials: "MH" },
   { name: "Dorra Ben Turkia", text: "a obtenu son diplôme de Master Ingénierie et Analyse Quantitative pour la Finance et l'Assurance promotion 2018/2019. Actuellement elle occupe un poste de Contrôleuse de Gestion chez Habitat France Paris", img: "/images/ebs-tn/dorra-ben-turkia-1022x1024.jpeg", initials: "DB" },
   { name: "Maroua Jeribi", text: "a obtenu son diplôme de Master Professionnel en Gestion des Ressources Humaines promotion 2018/2019. Actuellement elle occupe un poste de Consultante SIRH Oracle Paris", img: "/images/ebs-tn/maroua-jeribi-1022x1024.jpeg", initials: "MJ" },
@@ -49,11 +47,11 @@ const alumniProfiles = [
   { name: "Kais Layouni", text: "a obtenu son diplôme de Licence en Finance promotion 2017/2018. Actuellement il occupe un poste de Business Analyst chez MENINX Holding Tunis", img: "/images/ebs-tn/kais-layouni.jpeg", initials: "KL" },
   { name: "Hend Bedoui", text: "a obtenu son diplôme de Master Ingénierie Financière promotion 2015/2016. Actuellement elle occupe un poste de Analyste Financier LEASE TUNIS", img: "/images/ebs-tn/hind-bedoui.jpeg", initials: "HB" },
   { name: "Oussama Ayadi", text: "a obtenu son diplôme de Master en Marketing Bancaire promotion 2016/2017. Actuellement il occupe un poste de Expert Technique chez GIZ Tunisie Tunis", img: "/images/ebs-tn/oussama-ayadi-1024x1024.jpeg", initials: "OA" },
-  { name: "Ikram ARFA", text: "est Gérante de DIGITORIORITY et Consultante en Web Marketing. 1ère Promotion EBS.", initials: "IA" },
-  { name: "Houcem MAAOUIA", text: "est Co-founder & CEO de Parhelion Consulting & Training. Promotion 2020.", initials: "HM" },
-  { name: "Chokri BRIKI", text: "est Project Manager chez Salammbo Group. Promotion 2020.", initials: "CB" },
-  { name: "Dhouha MECHERGUI", text: "est Co-founder & CEO de Pineapple Studio et Consultante en Corporate Finance. Promotion 2017.", initials: "DM" },
-  { name: "Sonia Missaoui", text: "est Co-founder de Oh Em Gee. 2ème année LFG.", initials: "SM" },
+  { name: "Ikram ARFA", text: "est Gérante de DIGITORIORITY et Consultante en Web Marketing. 1ère Promotion EBS.", img: "/images/alumni/ikram-arfa.jpg", initials: "IA", objectPosition: "center top" },
+  { name: "Houcem MAAOUIA", text: "est Co-founder & CEO de Parhelion Consulting & Training. Promotion 2020.", img: "/images/alumni/houcem-maaouia.jpg", initials: "HM", objectPosition: "center top" },
+  { name: "Chokri BRIKI", text: "est Project Manager chez Salammbo Group. Promotion 2020.", img: "/images/alumni/chokri-briki.jpg", initials: "CB" },
+  { name: "Dhouha MECHERGUI", text: "est Co-founder & CEO de Pineapple Studio et Consultante en Corporate Finance. Promotion 2017.", img: "/images/alumni/dhouha-mechergui.jpg", initials: "DM", objectPosition: "center top" },
+  { name: "Sonia Missaoui", text: "est Co-founder de Oh Em Gee. 2ème année LFG.", img: "/images/alumni/sonia-missaoui.jpg", initials: "SM", objectPosition: "center top" },
 ];
 
 const missions = [
@@ -93,7 +91,7 @@ export default function AlumniPage() {
     }
   };
   return (
-    <LocalizedRoute>
+    <>
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -171,7 +169,7 @@ export default function AlumniPage() {
               <motion.div key={p.name} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.06 }} className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-2xl overflow-hidden hover:border-white/[0.12] hover:bg-white/[0.05] transition-all duration-300 group">
                 <div className="w-full aspect-[1] overflow-hidden group-hover:scale-105 transition-transform duration-500">
                   {p.img ? (
-                    <Image src={p.img} alt={p.name} width={300} height={300} className="w-full h-full object-cover" />
+                    <Image src={p.img} alt={p.name} width={300} height={300} style={{ objectPosition: p.objectPosition }} className="w-full h-full object-cover" />
                   ) : (
                     <div className="w-full h-full bg-penn-green/10 flex items-center justify-center text-white font-extrabold text-[32px]">{p.initials}</div>
                   )}
@@ -378,6 +376,6 @@ export default function AlumniPage() {
           </div>
         )}
       </AnimatePresence>
-    </LocalizedRoute>
+    </>
   );
 }

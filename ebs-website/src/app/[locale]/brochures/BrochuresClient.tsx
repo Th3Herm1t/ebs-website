@@ -2,9 +2,9 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { Download, FileText, ArrowRight } from "lucide-react";
-import { Badge, CtaSection, LocalizedRoute } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 
 const brochures = [
   {
@@ -81,7 +81,7 @@ const brochures = [
 
 export default function BrochuresPage() {
   return (
-    <LocalizedRoute><main className="min-h-screen">
+    <main className="min-h-screen">
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-44 pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -202,6 +202,6 @@ export default function BrochuresPage() {
         primaryCta={{ label: "Préinscription", href: "/preinscription" }}
         secondaryCta={{ label: "Toutes les formations", href: "/nos-programmes" }}
       />
-    </main></LocalizedRoute>
+    </main>
   );
 }

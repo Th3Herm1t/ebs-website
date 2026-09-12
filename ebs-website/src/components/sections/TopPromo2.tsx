@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 
 const promos = [
   { title: "Formation professionnalisante", desc: "Des parcours reconnus, construits autour de compétences directement mobilisables en entreprise." },

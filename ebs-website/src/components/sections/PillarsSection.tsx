@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function PillarsSection() {
@@ -87,8 +87,8 @@ export default function PillarsSection() {
               {pillar.p2}
             </p>
             <div className="pt-0">
-              <Link
-                href={pillar.link as React.ComponentProps<typeof Link>["href"]}
+              <Link 
+                href={pillar.link} 
                 className={`inline-block font-bold text-[13px] uppercase tracking-wider transition-opacity hover:opacity-70 border-white border-b-2 pb-1`}
               >
                 {pillar.cta}

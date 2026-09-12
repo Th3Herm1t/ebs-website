@@ -11,19 +11,10 @@
         "contact": "Contact",
         "certifications": "Certifications",
         "tarifs": "Pricing",
-        "actualites": "News",
-        "menu": "Main menu",
-        "dropdown": {
-          "universite": {"about":"About EBS","vision":"Vision, Mission & Values","ai":"AI at the Heart of EBS","faculty":"Faculty","academicPartners":"Academic Partners","economicPartners":"Economic Partners","news":"EBS News","certifications":"Certifications","faq":"FAQ","alumni":"Alumni","campus":"Campus"},
-          "licences": {"overview":"Overview","management":"Bachelor's in Management","marketing":"Bachelor's in Marketing","finance":"Bachelor's in Finance","ai":"Computer Science — AI","cyber":"Computer Science — Cybersecurity"},
-          "masters": {"overview":"Overview","crm":"CRM & Digital Transformation","digitalMarketing":"Digital Marketing & AI","startups":"Innovative Projects & Startups","finance":"Financial Engineering"},
-          "international": {"pathway":"International Pathway","students":"International Students"}
-        }
+        "actualites": "News"
       },
       "postuler": "Apply",
-        "call": "Call",
-        "switchToEnglish": "Switch to English",
-        "switchToFrench": "Switch to French"
+      "call": "Call"
     },
     "topbar": {
       "follow": "Follow Us:"
@@ -248,43 +239,41 @@
       "btn": "View all news",
       "listImage": [
         {
-          "title": "ESPIMA Business School celebrates its Class of 2026",
+          "title": "EBS AI DAY: the university enhanced by artificial intelligence",
           "link": "#",
-          "img": "/images/sections/photo-21.jpg",
-          "day": "24",
-          "month": "JUL",
-          "time": "24 July 2026",
+          "img": "/images/ebs-tn/ebs-ai-day.png",
+          "day": "19",
+          "month": "MAY",
+          "time": "19 May 2026",
           "location": "ESPIMA Business School",
-          "desc": "On 24 July 2026, ESPIMA Business School celebrated the graduation ceremony of its Class of 2026, bringing together Licence and Master graduates, their families and faculty. The ceremony marked the culmination of several years of hard work, perseverance and commitment. ESPIMA Business School warmly congratulates all its graduates and wishes them every success in their future professional projects."
+          "desc": "ESPIMA Business School brought together experts, professionals, faculty and students to explore practical applications of artificial intelligence in marketing, communication and management, and its integration into EBS programmes."
         }
       ],
       "listText": []
     },
     "testimonials": {
-      "title": "TESTIMONIAL",
-      "subtitle": "What our",
-      "subtitleHighlight": "Students Say",
-      "list": [
+      "title": "VIDEO TESTIMONIALS",
+      "subtitle": "Discover stories from the",
+      "subtitleHighlight": "EBS community",
+      "watch": "Watch on YouTube",
+      "videos": [
         {
-          "img": "/images/all-img/t1-stock.jpg",
-          "name": "Yassine B.",
-          "role": "Master in Finance Student",
-          "bgClass": "bg-[#e1f7e8]",
-          "text": "Thanks to EBS, I landed my first job even before finishing my Master's degree."
+          "videoUrl": "https://www.youtube.com/embed/oC-UqBGkUS4",
+          "eyebrow": "Student journeys",
+          "title": "Student journeys that open the world",
+          "description": "Students share how they discovered EBS, the quality of teaching, the support of the administration, and their international ambitions."
         },
         {
-          "img": "/images/all-img/t2-stock.jpg",
-          "name": "Sarah M.",
-          "role": "Marketing Student",
-          "bgClass": "bg-[#f7e8d8]",
-          "text": "An unforgettable experience with passionate professors and highly personalized support."
+          "videoUrl": "https://www.youtube.com/embed/tz-VZ6jFHYY",
+          "eyebrow": "Ambition",
+          "title": "Growing with EBS",
+          "description": "Students share what they value at EBS and their vision of a school that continues to grow and reach a wider audience."
         },
         {
-          "img": "/images/all-img/t3-stock.jpg",
-          "name": "Ahmed T.",
-          "role": "EBS Alumni",
-          "bgClass": "bg-[#e8e8e8]",
-          "text": "The partnership with UQAT opened the doors to a beautiful international career."
+          "videoUrl": "https://www.youtube.com/embed/MMH6mInJlVE",
+          "eyebrow": "The future",
+          "title": "Building the future",
+          "description": "A student reflects on their experience, hopes, and professional ambitions throughout their EBS journey."
         }
       ]
     },

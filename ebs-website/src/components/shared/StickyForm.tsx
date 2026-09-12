@@ -5,7 +5,7 @@ import { Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 
 interface StickyFormProps {
   title?: string;
@@ -98,7 +98,7 @@ export function StickyForm({
         </Button>
 
         <div className="flex items-center justify-center gap-2 pt-1">
-          <a
+          <Link
             href={`https://wa.me/${whatsappNumber.replace(/\D/g, "")}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -106,7 +106,7 @@ export function StickyForm({
           >
             <Phone className="w-3.5 h-3.5" />
             Discuter sur WhatsApp
-          </a>
+          </Link>
         </div>
 
         <p className="text-[11px] text-penn-body/60 text-center leading-tight">

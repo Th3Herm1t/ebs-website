@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import { cn } from "@/lib/utils";
@@ -31,7 +31,7 @@ const socials = [
 const FooterLink = ({ href, children, isBold }: { href: string, children: React.ReactNode, isBold?: boolean }) => (
   <li>
     <Link 
-      href={href as React.ComponentProps<typeof Link>["href"]}
+      href={href} 
       className={cn(
         "group flex items-center gap-2 text-white/80 hover:text-penn-green transition-all duration-300 overflow-hidden",
         isBold ? "uppercase font-bold text-[14px]" : "capitalize text-[15px]"

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { useReducedMotion } from "motion/react";
 import { ArrowRight, Award, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -53,7 +53,7 @@ export function MagneticProgramCard({
     <div className={cn("h-full", className)}>
       <Link
         ref={ref}
-        href={href as React.ComponentProps<typeof Link>["href"]}
+        href={href}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         className={cn(

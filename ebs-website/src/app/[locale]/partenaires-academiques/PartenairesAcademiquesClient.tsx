@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import Image from "next/image";
 import { siteStats } from "@/lib/site-stats";
 import {
@@ -22,7 +22,7 @@ import {
 import { Badge, CtaSection } from "@/components/shared";
 import { CountryFlag } from "@/components/shared/CountryFlag";
 import { siteConfig } from "@/lib/config";
-import { getAcademicPartners, type PartnerLocale } from "@/lib/partenaires/academic-partners";
+import { academicPartners } from "@/lib/partenaires/academic-partners";
 
 const avantagesAcademiques = [
   {
@@ -82,10 +82,8 @@ function Field({ label, name, type = "text", placeholder, icon, required }: {
   );
 }
 
-export default function PartenairesAcademiquesPage({ locale }: { locale: PartnerLocale }) {
+export default function PartenairesAcademiquesPage() {
   const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
-  const academicPartners = getAcademicPartners(locale);
-  const localePrefix = locale === "en" ? "/en" : "";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -250,7 +248,7 @@ export default function PartenairesAcademiquesPage({ locale }: { locale: Partner
                 className="w-full sm:w-[calc(50%-10px)] lg:w-[calc((100%-48px)/3)]"
               >
                 <Link
-                  href={{ pathname: "/partenaires/[slug]", params: { slug: partner.slug } }}
+                  href={`/partenaires/${partner.slug}`}
                   className="group block h-full"
                 >
                   <div className="bg-white rounded-2xl border border-penn-border p-6 lg:p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">

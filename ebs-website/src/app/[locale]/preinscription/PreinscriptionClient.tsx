@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import {
   ChevronDown,
@@ -14,13 +14,12 @@ import {
   Loader2,
 } from "lucide-react";
 import { Badge } from "@/components/shared";
-import { getLicences } from "@/lib/programmes/licences";
-import { getMasters } from "@/lib/programmes/masters";
+import { licences } from "@/lib/programmes/licences";
+import { masters } from "@/lib/programmes/masters";
 import { siteConfig } from "@/lib/config";
 
-function getAllProgrammes(locale: "fr" | "en") {
-  return Object.values(getLicences(locale))
-  .concat(Object.values(getMasters(locale)))
+const allProgrammes = Object.values(licences)
+  .concat(Object.values(masters))
   .map((p) => ({
     slug: p.slug,
     title: p.title,
@@ -30,7 +29,6 @@ function getAllProgrammes(locale: "fr" | "en") {
     color: p.color,
     type: p.type,
   }));
-}
 
 const stepLabels = [
   { full: "Informations", short: "Infos" },
@@ -59,9 +57,7 @@ const initialFormData: FormData = {
 
 const STORAGE_KEY = "ebs-preinscription";
 
-export default function PreinscriptionPage({ locale }: { locale: "fr" | "en" }) {
-  const allProgrammes = getAllProgrammes(locale);
-  const localePrefix = locale === "en" ? "/en" : "";
+export default function PreinscriptionPage() {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState<FormData>(() => {
     try {
@@ -293,7 +289,7 @@ export default function PreinscriptionPage({ locale }: { locale: "fr" | "en" }) 
                     <span>→</span>
                   </a>
                   <Link
-                     href="/nos-programmes"
+                    href="/nos-programmes"
                     className="inline-flex items-center gap-2 text-[14px] font-bold text-penn-navy hover:text-penn-green transition-colors"
                   >
                     Retour aux programmes

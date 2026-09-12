@@ -18,20 +18,15 @@ export function pageMetadata({
   path: string;
   image?: string;
 }): Metadata {
-  const normalizedPath = path.replace(/^\/(?:fr|en)(?=\/|$)/, "") || "/";
-  const locale = path.startsWith("/en") ? "en" : "fr";
-  const localizedPath = locale === "en" ? `/en${normalizedPath === "/" ? "" : normalizedPath}` : normalizedPath;
-  const url = absoluteUrl(localizedPath);
-  const frenchPath = normalizedPath;
-  const englishPath = `/en${normalizedPath === "/" ? "" : normalizedPath}`;
+  const url = absoluteUrl(path);
   return {
     title,
     description,
     alternates: {
       canonical: url,
       languages: {
-        fr: absoluteUrl(frenchPath),
-        en: absoluteUrl(englishPath),
+        fr: absoluteUrl(path.replace(/^\/en(?=\/|$)/, "/fr")),
+        en: absoluteUrl(path.replace(/^\/fr(?=\/|$)/, "/en")),
       },
     },
     openGraph: {

@@ -2,8 +2,7 @@
 
 import { motion } from "motion/react";
 import { ArrowRight, FileText } from "lucide-react";
-import NextLink from "next/link";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/shared/Badge";
 import { StatBar } from "@/components/shared/StatBar";
@@ -95,7 +94,7 @@ export function ProgramLPHero({
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
-              <a
+              <Link
                 href="#certifications"
                 className={cn(
                   "inline-flex items-center gap-2 h-12 px-8 font-bold text-[14px] uppercase tracking-wide rounded-full text-white transition-all duration-200 hover:opacity-90"
@@ -104,15 +103,15 @@ export function ProgramLPHero({
               >
                 Certifications incluses
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
 
-              <NextLink
+              <Link
                 href={`/brochures/${slug}.pdf`}
                 className="inline-flex items-center gap-2 h-12 px-6 font-bold text-[14px] text-penn-navy rounded-full border-2 border-penn-border hover:border-penn-green hover:text-penn-green transition-all duration-200"
               >
                 <FileText className="w-4 h-4" />
                 Télécharger la brochure
-              </NextLink>
+              </Link>
             </div>
           </motion.div>
 

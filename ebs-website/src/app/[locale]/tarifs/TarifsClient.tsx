@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
 import {
@@ -11,11 +11,11 @@ import {
   Globe,
   ArrowRight,
 } from "lucide-react";
-import { Badge, LocalizedRoute } from "@/components/shared";
+import { Badge } from "@/components/shared";
 
 export default function TarifsClient() {
   return (
-    <LocalizedRoute>
+    <>
       {/* ═══════════ IMMERSIVE HERO ═══════════ */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -368,6 +368,6 @@ export default function TarifsClient() {
           </motion.div>
         </div>
       </section>
-    </LocalizedRoute>
+    </>
   );
 }

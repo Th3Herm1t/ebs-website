@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import {
   X,
@@ -243,7 +243,7 @@ export function CertificationDetailDrawer({ opportunity, onClose, programmeLabel
               </p>
               <div className="flex flex-wrap gap-2">
                 <Link
-                  href={programHref as React.ComponentProps<typeof Link>["href"]}
+                  href={programHref}
                   className="inline-flex items-center gap-1.5 rounded-full bg-penn-navy px-4 py-2 text-[12px] font-extrabold text-white transition-colors hover:bg-penn-green"
                 >
                   <BookOpen className="h-3.5 w-3.5" />
@@ -251,7 +251,7 @@ export function CertificationDetailDrawer({ opportunity, onClose, programmeLabel
                 </Link>
                 {providerSlug && (
                   <Link
-                    href={{ pathname: "/certifications/[slug]", params: { slug: providerSlug } }}
+                    href={`/certifications/${providerSlug}`}
                     className="inline-flex items-center gap-1.5 rounded-full border border-penn-border bg-white px-4 py-2 text-[12px] font-extrabold text-penn-navy transition-colors hover:border-penn-green hover:text-penn-green"
                   >
                     Voir toutes les certs {opportunity.provider?.name}

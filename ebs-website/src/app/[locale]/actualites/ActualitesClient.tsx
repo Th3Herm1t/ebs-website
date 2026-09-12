@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import {
   ArrowDown,
   Calendar,
@@ -11,14 +11,13 @@ import {
   Megaphone,
   Newspaper,
   Sparkles,
-  Timer,
   X,
   Phone,
   Mail,
 } from "lucide-react";
 import { Badge, CtaSection } from "@/components/shared";
 
-type Tab = "alaune" | "actualites" | "evenements";
+type Tab = "alaune" | "all";
 
 type ArticleTag =
   | "Partenariat"
@@ -79,6 +78,59 @@ const articleAlaUne: Article = {
   tag: "Partenariat",
   fullContent: `ESPIMA BUSINESS SCHOOL (EBS), université privée tunisienne basée aux Berges du Lac 3, forte d'une expérience pédagogique riche et innovante de plus de dix ans, a signé le jeudi 8 Septembre 2022 un accord de partenariat avec l'Association des Responsables de Formation et de Gestion Humaine dans les Entreprises (ARFORGHE).\n\nLa signature du partenariat a eu lieu dans les locaux de EBS en présence des responsables des deux institutions : Mme Mounira BOUZOUITA (Présidente de l'ARFORGHE), M. Mohamed BOUKADHABA (Vice-Président de l'ARFORGHE, et DRH de ONE TECH HOLDING), M. Mohamed LATRACH (Secrétaire Général de l'ARFORGHE, et DRH d'ORANGE), M. Yahia BOUCHADDAK (Trésorier de l'ARFORGHE), Mme ATIA Zeïneb (Ex Présidente de l'ARFORGHE) et Mme Samia ANOUN (Responsable Administrative et Financière de l'ARFORGHE), d'une part, M. Abderraouf NAJAR (Président de l'Université EBS), M. Melik HICHRI (Directeur de EBS), Mme Yamina Gharbi (Responsable administrative chargée des relations externes) et M. Karim HANTOUS (Docteur en Management enseignant visiteur à ESPIMA Business School), d'autre part.\n\nCe partenariat a pour objectifs de permettre aux étudiants de EBS l'obtention de stages en entreprises affiliées de l'ARFORGHE, et surtout, de faciliter leur insertion sur le marché de l'emploi. Par ailleurs, ce partenariat permettra à l'EBS de faire bénéficier ses étudiants d'un enseignement plus pratique par l'intervention de professionnels et experts de l'ARFORGHE dans les différentes spécialités.`,
 };
+
+const newArticles: Article[] = [
+  {
+    id: "a27", title: "EBS AI DAY : l'université augmentée par l'intelligence artificielle", date: "19 Mai 2026", tag: "IA",
+    description: "ESPIMA Business School a réuni experts, professionnels, enseignants et étudiants autour des applications concrètes de l'IA en marketing, communication et management, ainsi que de son intégration dans les programmes EBS.",
+    image: "/images/ebs-tn/ebs-ai-day.png",
+  },
+  {
+    id: "a28", title: "EBS & FIGS Education : des perspectives d'études en France pour les étudiants", date: "12 Mai 2026", tag: "International",
+    description: "Une séance d'information consacrée au réseau FIGS Education, aux poursuites d'études en France, aux démarches de visa et à l'accompagnement des étudiants dans leur projet de mobilité internationale.",
+    image: "/images/ebs-tn/ebs-figs-education.png",
+  },
+  {
+    id: "a29", title: "EBS Job Fair – AI Career Boost : rencontres et perspectives professionnelles à l'ère de l'IA", date: "30 Avril 2026", tag: "Carrière",
+    description: "Une journée réunissant entreprises partenaires, experts et étudiants autour de l'insertion professionnelle, des opportunités de carrière et de l'évolution des métiers à l'ère de l'intelligence artificielle.",
+    image: "/images/ebs-tn/ebs-job-fair.png",
+  },
+  {
+    id: "a30", title: "EBS signe deux conventions de collaboration avec MEDIANET et SATEM", date: "30 Avril 2026", tag: "Partenariat",
+    description: "À l'occasion du EBS Job Fair, EBS a signé deux conventions avec MEDIANET et SATEM afin de renforcer les liens entre formation académique et monde professionnel.",
+    image: "/images/ebs-tn/ebs-conventions.png",
+  },
+  {
+    id: "a31", title: "Global Money Week : EBS et AIESEC Carthage réunissent les étudiants autour des FinTech", date: "6 Avril 2026", tag: "FinTech",
+    description: "Une table ronde consacrée aux FinTech et à l'innovation financière, avec Samir Ksibi de Kickoff.tn et Amine Ben Abderrahman de Konnect Networks.",
+    image: "/images/ebs-tn/ebs-global-money-week.png",
+  },
+  {
+    id: "a32", title: "EBS au Forum des Mobilités « Étudier en France »", date: "Du 9 au 12 Avril 2026", tag: "International",
+    description: "EBS a participé à la 4e édition du Forum des Mobilités organisé par Campus France Tunisie à Tunis, Sousse et Sfax pour présenter ses parcours internationaux.",
+    image: "/images/ebs-tn/ebs-forum-mobilites.png",
+  },
+  {
+    id: "a33", title: "EBS Entrepreneurship Challenge : une 5e édition dédiée à l'innovation et à l'esprit entrepreneurial", date: "Du 31 Mars au 3 Avril 2026", tag: "Entrepreneuriat",
+    description: "La 5e édition de l'EBS Entrepreneurship Challenge a mobilisé les étudiants autour de projets concrets, de l'innovation, du travail en équipe et de l'accompagnement par des mentors.",
+    image: "/images/ebs-tn/ebs-entrepreneurship-challenge.png",
+  },
+  {
+    id: "a34", title: "« قفة رمضان » : les clubs étudiants d'EBS mobilisés pour la solidarité", date: "Ramadan 2026", tag: "Solidarité",
+    description: "Les clubs étudiants d'ESPIMA Business School ont organisé une collecte de dons et constitué des paniers alimentaires au profit des familles dans le besoin.",
+    image: "/images/ebs-tn/ebs-qoffet-ramadan.png",
+  },
+  {
+    id: "a35", title: "Micro et nanoplastiques : une rencontre internationale et le lancement du club CREALAB à EBS", date: "11 Décembre 2025", tag: "Conférence",
+    description: "EBS a accueilli une rencontre internationale consacrée à l'impact des micro et nanoplastiques sur l'environnement, marquée également par le lancement du club CREALAB.",
+    image: "/images/ebs-tn/ebs-micro-nanoplastiques.png",
+  },
+  {
+    id: "a36", title: "L'EM Normandie à ESPIMA Business School : présentation du partenariat et des opportunités internationales", date: "27 Novembre 2025", tag: "International",
+    description: "Une rencontre avec Mme Julia Jean de l'EM Normandie pour présenter l'école, les possibilités de mobilité et les conditions préférentielles réservées aux étudiants EBS.",
+    image: "/images/ebs-tn/ebs-em-normandie.png",
+  },
+];
 
 const actualites: Article[] = [
   {
@@ -327,28 +379,24 @@ const evenements: Article[] = [
 ];
 
 const tabs: { key: Tab; label: string; icon: React.ReactNode; desc: string }[] = [
-  { key: "actualites", label: "Actualités", icon: <Newspaper className="w-4 h-4" />, desc: "Informations et nouvelles communiquées par EBS : partenariats, résultats et évolutions." },
-  { key: "evenements", label: "Événements", icon: <Calendar className="w-4 h-4" />, desc: "Activités et rendez-vous ouverts à la participation, avec une date et un lieu précis." },
+  { key: "all", label: "Actualités & événements", icon: <Newspaper className="w-4 h-4" />, desc: "Toutes les nouvelles, rencontres et initiatives de la communauté EBS." },
   { key: "alaune", label: "À la Une", icon: <Sparkles className="w-4 h-4" />, desc: "L'article phare de l'actualité EBS" },
 ];
 
 const stats = [
-  { icon: <Newspaper className="w-5 h-5" />, label: "Articles", value: "27", accent: "#2B8FAB" },
-  { icon: <Calendar className="w-5 h-5" />, label: "Événements", value: "22", accent: "#FF9800" },
+  { icon: <Newspaper className="w-5 h-5" />, label: "Publications", value: String(newArticles.length + actualites.length + evenements.length), accent: "#2B8FAB" },
+  { icon: <Calendar className="w-5 h-5" />, label: "Formats réunis", value: "1", accent: "#FF9800" },
   { icon: <Sparkles className="w-5 h-5" />, label: "Thématiques", value: "17", accent: "#9C27B0" },
-  { icon: <Timer className="w-5 h-5" />, label: "Années couvertes", value: "4+", accent: "#2196F3" },
 ];
 
 export default function ActualitesPage() {
-  const [activeTab, setActiveTab] = useState<Tab>("actualites");
+  const [activeTab, setActiveTab] = useState<Tab>("all");
   const [activeTag, setActiveTag] = useState<ArticleTag | null>(null);
   const [modalArticle, setModalArticle] = useState<Article | null>(null);
   const [visibleCount, setVisibleCount] = useState(9);
 
   const filteredList = useMemo(() => {
-    const currentList = activeTab === "alaune"
-      ? [articleAlaUne]
-      : activeTab === "actualites" ? actualites : evenements;
+    const currentList = activeTab === "alaune" ? [articleAlaUne] : [...newArticles, ...actualites, ...evenements];
     if (!activeTag || activeTab === "alaune") return currentList;
     return currentList.filter((a) => a.tag === activeTag);
   }, [activeTag, activeTab]);
@@ -357,7 +405,7 @@ export default function ActualitesPage() {
 
   const availableTags = useMemo(() => {
     if (activeTab === "alaune") return [];
-    const source = activeTab === "actualites" ? actualites : evenements;
+    const source = [...newArticles, ...actualites, ...evenements];
     const tags = [...new Set(source.map((a) => a.tag))];
     return tags.sort((a, b) => a.localeCompare(b));
   }, [activeTab]);
@@ -412,7 +460,7 @@ export default function ActualitesPage() {
       <section className="relative z-20 -mt-10 pb-0">
         <div className="max-w-[1100px] mx-auto px-5 lg:px-12">
           <div className="bg-white rounded-2xl border border-penn-border shadow-xl shadow-black/5 overflow-hidden">
-            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-penn-border/50">
+            <div className="grid grid-cols-2 md:grid-cols-3 divide-x divide-penn-border/50">
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}

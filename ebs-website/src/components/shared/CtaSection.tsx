@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -83,7 +83,7 @@ export function CtaSection({
           className="flex flex-wrap items-center justify-center gap-4"
         >
           <Link
-            href={primaryCta.href as React.ComponentProps<typeof Link>["href"]}
+            href={primaryCta.href}
             className={cn(
               buttonVariants({ size: "lg" }),
               "h-11 gap-2 px-8 font-bold text-[14px] rounded-full"
@@ -95,7 +95,7 @@ export function CtaSection({
 
           {secondaryCta && (
             <Link
-              href={secondaryCta.href as React.ComponentProps<typeof Link>["href"]}
+              href={secondaryCta.href}
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
                 "h-11 gap-2 px-8 font-bold text-[14px] rounded-full",
@@ -107,7 +107,7 @@ export function CtaSection({
           )}
 
           {whatsapp && (
-            <a
+            <Link
               href={`https://wa.me/${whatsapp.replace(/\D/g, "")}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -118,7 +118,7 @@ export function CtaSection({
             >
               <Phone className="w-4 h-4" />
               {whatsapp}
-            </a>
+            </Link>
           )}
         </motion.div>
       </div>

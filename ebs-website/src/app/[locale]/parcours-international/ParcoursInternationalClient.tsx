@@ -3,11 +3,11 @@
 import { motion } from "motion/react";
 import { ArrowRight, Check, Globe, GraduationCap, Mail, Phone, Plane, Shield } from "lucide-react";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
 import { Badge } from "@/components/shared";
 import { CountryFlag } from "@/components/shared/CountryFlag";
-import { getAcademicPartners, type PartnerLocale } from "@/lib/partenaires/academic-partners";
+import { academicPartners } from "@/lib/partenaires/academic-partners";
 
 const scenarios = [
   {
@@ -57,9 +57,7 @@ const etapes = [
 ];
 
 
-export default function InternationalPage({ locale }: { locale: PartnerLocale }) {
-  const academicPartners = getAcademicPartners(locale);
-  const localePrefix = locale === "en" ? "/en" : "";
+export default function InternationalPage() {
   return (
     <>
       {/* ═══════════ HERO ═══════════ */}
@@ -183,7 +181,7 @@ export default function InternationalPage({ locale }: { locale: PartnerLocale })
                 className="w-full sm:w-[calc(50%-10px)] lg:w-[calc((100%-48px)/3)]"
               >
                 <Link
-                  href={{ pathname: "/partenaires/[slug]", params: { slug: partner.slug } }}
+                  href={`/partenaires/${partner.slug}`}
                   className="group block h-full"
                 >
                   <div className="bg-white rounded-2xl border border-penn-border p-6 lg:p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">

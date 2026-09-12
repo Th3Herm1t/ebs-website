@@ -19,7 +19,7 @@ import {
   X,
   SlidersHorizontal,
 } from "lucide-react";
-import { Badge, CtaSection, LocalizedRoute } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 import { fadeUp, staggerDelay, transitions, viewportOnce } from "@/lib/animation";
 import {
   credentialTypeLabels,
@@ -178,7 +178,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
   const displayedOpportunities = filteredOpportunities.slice(0, visibleCount);
 
   return (
-    <LocalizedRoute>
+    <>
       {/* ══════════════════ COMPACT & ELEGANT HERO ══════════════════ */}
       <section className="relative overflow-hidden pt-36 pb-16 md:pt-40 md:pb-20">
         <div className="absolute inset-0 bg-gradient-to-br from-penn-navy via-[#11172a] to-[#070b14]" />
@@ -656,7 +656,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
         onClose={() => setSelectedOpportunity(null)}
         programmeLabel={selectedOpportunity ? programmeLabels[selectedOpportunity.mapping.programmeId] : undefined}
       />
-    </LocalizedRoute>
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
 import { Sparkles, ArrowRight } from "lucide-react";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { catalogueV3 } from "@/lib/certifications/v3";
 
 interface IACompetencesProps {

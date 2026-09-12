@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import {
   Award,
   Banknote,
@@ -22,7 +22,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Badge, CtaSection, LocalizedRoute } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 
 const categories = [
   {
@@ -91,7 +91,7 @@ const categories = [
 
 export default function FaqPage() {
   return (
-    <LocalizedRoute>
+    <>
       {/* ═══════════ IMMERSIVE HERO ═══════════ */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -280,6 +280,6 @@ export default function FaqPage() {
         secondaryCta={{ label: "Pré-inscription", href: "/preinscription" }}
         background="penn-green"
       />
-    </LocalizedRoute>
+    </>
   );
 }

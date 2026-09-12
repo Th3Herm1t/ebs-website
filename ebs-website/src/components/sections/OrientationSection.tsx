@@ -1,13 +1,11 @@
 import { getPublicCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
-import { getLicences } from "@/lib/programmes/licences";
-import { getMasters } from "@/lib/programmes/masters";
+import { licences } from "@/lib/programmes/licences";
+import { masters } from "@/lib/programmes/masters";
 import ProgrammeFinder, { type OrientationProgramme } from "./ProgrammeFinder";
 
-export default async function OrientationSection({ locale = "fr" }: { locale?: "fr" | "en" }) {
+export default async function OrientationSection() {
   const catalogue = await getCatalogueV3Snapshot();
-  const licences = getLicences(locale);
-  const masters = getMasters(locale);
   const entries = [
     ...Object.values(licences),
     ...Object.values(masters),
@@ -40,5 +38,5 @@ export default async function OrientationSection({ locale = "fr" }: { locale?: "
     };
   });
 
-  return <ProgrammeFinder programmes={programmes} locale={locale} />;
+  return <ProgrammeFinder programmes={programmes} />;
 }

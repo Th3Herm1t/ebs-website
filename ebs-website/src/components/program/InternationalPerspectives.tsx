@@ -1,5 +1,5 @@
 import { Globe, ArrowRight } from "lucide-react";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import type { PathwayItem } from "./data";
 
 interface InternationalPerspectivesProps {

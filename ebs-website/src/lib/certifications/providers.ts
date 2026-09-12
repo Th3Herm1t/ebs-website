@@ -8,8 +8,6 @@ export interface CertProviderData {
   categories: { name: string; certs: { name: string; level?: string; isForage?: boolean }[] }[];
 }
 
-export type CertificationLocale = "fr" | "en";
-
 export const providers: Record<string, CertProviderData> = {
   google: {
     slug: "google",
@@ -495,49 +493,6 @@ export const providers: Record<string, CertProviderData> = {
     ],
   },
 };
-
-const providerEnglishTerms: Array<[string, string]> = [
-  ["Accessible chez EBS", "Available at EBS"],
-  ["Reconnues mondialement par les recruteurs", "Recognised worldwide by recruiters"],
-  ["certifications", "certifications"],
-  ["Intelligence Artificielle", "Artificial Intelligence"],
-  ["intelligence artificielle", "artificial intelligence"],
-  ["Cybersécurité", "Cybersecurity"],
-  ["cybersécurité", "cybersecurity"],
-  ["Apprentissage Automatique", "Machine Learning"],
-  ["Science des Données", "Data Science"],
-  ["Fondements", "Fundamentals"],
-  ["Introduction à", "Introduction to"],
-  [" avec ", " with "],
-  [" et ", " and "],
-  [" pour ", " for "],
-  [" dans ", " in "],
-  [" des ", " of "],
-  [" du ", " of "],
-  [" la ", " the "],
-  [" le ", " the "],
-];
-
-function localizeProviderValue(value: unknown): unknown {
-  if (typeof value === "string") {
-    return providerEnglishTerms
-      .sort(([a], [b]) => b.length - a.length)
-      .reduce((text, [from, to]) => text.replaceAll(from, to), value);
-  }
-  if (Array.isArray(value)) return value.map(localizeProviderValue);
-  if (value && typeof value === "object") {
-    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, localizeProviderValue(item)]));
-  }
-  return value;
-}
-
-/** French remains the canonical export; this selector supplies translated provider copy. */
-export function getCertificationProviders(locale: CertificationLocale = "fr"): Record<string, CertProviderData> {
-  if (locale === "fr") return providers;
-  return Object.fromEntries(
-    Object.entries(providers).map(([slug, provider]) => [slug, localizeProviderValue(provider) as CertProviderData]),
-  );
-}
 
 export const providerLogos: Record<string, string> = {
   ...Object.fromEntries(Object.values(providers).map((p) => [p.name, p.logo])),

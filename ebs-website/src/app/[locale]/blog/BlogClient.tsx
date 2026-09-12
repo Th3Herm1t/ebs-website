@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "motion/react";
@@ -22,7 +22,6 @@ import {
   Users,
 } from "lucide-react";
 import { Badge, CtaSection } from "@/components/shared";
-import type { BlogLocale, BlogPost } from "@/lib/blog/posts";
 
 const categories = [
   {
@@ -96,11 +95,9 @@ const featureTopics = [
   },
 ];
 
-export default function BlogPage({ posts, locale }: { posts: Record<string, BlogPost>; locale: BlogLocale }) {
+export default function BlogPage() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
-  const featuredPost = posts["reconnaissance-diplomes-enseignement-superieur-francais"];
-  const localePrefix = locale === "en" ? "/en" : "";
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -240,7 +237,7 @@ export default function BlogPage({ posts, locale }: { posts: Record<string, Blog
           </div>
 
           <Link
-             href={{ pathname: "/blog/[slug]", params: { slug: "reconnaissance-diplomes-enseignement-superieur-francais" } }}
+            href="/blog/reconnaissance-diplomes-enseignement-superieur-francais"
             className="group block bg-white rounded-3xl border border-penn-border hover:border-penn-green/40 hover:shadow-2xl transition-all duration-300 overflow-hidden"
           >
             <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] items-center">
@@ -255,7 +252,7 @@ export default function BlogPage({ posts, locale }: { posts: Record<string, Blog
                 <div className="absolute top-4 left-4">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-penn-green text-white px-3 py-1 text-[11px] font-bold uppercase tracking-wider shadow-md">
                     <Globe className="w-3.5 h-3.5" />
-                     {featuredPost.category}
+                    International & Mobilité
                   </span>
                 </div>
               </div>
@@ -265,26 +262,26 @@ export default function BlogPage({ posts, locale }: { posts: Record<string, Blog
                   <div className="flex flex-wrap items-center gap-4 text-[13px] text-penn-body/60 font-medium mb-3">
                     <span className="flex items-center gap-1.5">
                       <Calendar className="w-4 h-4 text-penn-green" />
-                       {featuredPost.publishDate}
+                      24 Août 2026
                     </span>
                     <span className="flex items-center gap-1.5">
                       <Clock className="w-4 h-4 text-penn-green" />
-                       {featuredPost.readTime}
+                      7 min de lecture
                     </span>
                   </div>
 
                   <h3 className="text-[22px] md:text-[26px] font-extrabold text-penn-navy group-hover:text-penn-green transition-colors leading-tight mb-3">
-                     {featuredPost.title}
+                    Les principales reconnaissances des diplômes de l&apos;enseignement supérieur français : le guide complet
                   </h3>
 
                   <p className="text-[15px] text-penn-body leading-relaxed mb-6 line-clamp-3">
-                     {featuredPost.excerpt}
+                    Comprendre les visas d&apos;État, Grades de Licence et Master, Titres RNCP (Niveaux 6 & 7), labels CGE et accréditations internationales (AACSB, EQUIS, AMBA) pour sécuriser votre poursuite d&apos;études en France depuis EBS Tunis.
                   </p>
                 </div>
 
                 <div className="flex items-center justify-between pt-4 border-t border-penn-border">
                   <span className="text-[13px] font-bold text-penn-navy">
-                     {featuredPost.author.name}
+                    Par la Direction des Relations Internationales EBS
                   </span>
                   <span className="inline-flex items-center gap-2 text-[14px] font-bold text-penn-green group-hover:translate-x-1 transition-transform">
                     Lire le guide complet →
@@ -477,7 +474,7 @@ export default function BlogPage({ posts, locale }: { posts: Record<string, Blog
                 transition={{ delay: i * 0.1 }}
               >
                 <Link
-                  href={link.href as React.ComponentProps<typeof Link>["href"]}
+                  href={link.href}
                   className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-penn-green/30"
                 >
                   <div className="w-12 h-12 rounded-xl bg-penn-green/10 flex items-center justify-center mb-4 text-penn-green group-hover:scale-110 transition-transform">

@@ -2,17 +2,16 @@
 
 import { useRef, useEffect } from "react";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import SectionHeading from "@/components/ui/SectionHeading";
-import { getAcademicPartners, type PartnerLocale } from "@/lib/partenaires/academic-partners";
+import { academicPartners } from "@/lib/partenaires/academic-partners";
 
-export default function AcademicPartners({ locale = "fr" }: { locale?: PartnerLocale }) {
+export default function AcademicPartners() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const t = useTranslations('HomePage.partners');
-  const partners = getAcademicPartners(locale);
 
   useEffect(() => {
     const el = scrollRef.current;
@@ -74,8 +73,8 @@ export default function AcademicPartners({ locale = "fr" }: { locale?: PartnerLo
             onMouseLeave={resumeScroll}
           >
             <div className="inline-flex items-center gap-16 w-max">
-               {[...partners, ...partners, ...partners, ...partners].map((partner, i) => (
-                 <Link key={`${partner.slug}-${i}`} href={{ pathname: "/partenaires/[slug]", params: { slug: partner.slug } }} className="inline-block flex-shrink-0">
+              {[...academicPartners, ...academicPartners, ...academicPartners, ...academicPartners].map((partner, i) => (
+                <Link key={`${partner.slug}-${i}`} href={`/partenaires/${partner.slug}`} className="inline-block flex-shrink-0">
                   <Image src={partner.logo} alt={partner.name} width={180} height={90} className="h-[90px] w-auto object-contain" style={{ width: "auto" }} />
                 </Link>
               ))}

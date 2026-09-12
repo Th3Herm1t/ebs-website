@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight,
@@ -17,7 +17,7 @@ import {
   Send,
   Smartphone,
 } from "lucide-react";
-import { Badge, CtaSection, LocalizedRoute } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 
 const contactCards = [
   {
@@ -93,7 +93,7 @@ export default function ContactPage() {
     "w-full px-5 py-3.5 bg-penn-bg-light border border-penn-border rounded-xl text-[15px] text-penn-navy placeholder:text-penn-body/40 focus:outline-none focus:border-penn-green focus:bg-white focus:shadow-md transition-all duration-300";
 
   return (
-    <LocalizedRoute>
+    <>
       {/* ═══════════ IMMERSIVE HERO ═══════════ */}
       <section className="relative pt-40 pb-28 overflow-hidden">
         <div className="absolute inset-0">
@@ -408,7 +408,7 @@ export default function ContactPage() {
                 transition={{ delay: i * 0.1 }}
               >
                 <Link
-                   href={action.href as React.ComponentProps<typeof Link>["href"]}
+                  href={action.href}
                   className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-penn-green/30"
                 >
                   <div className="w-12 h-12 rounded-xl bg-penn-green/10 flex items-center justify-center mb-4 text-penn-green group-hover:scale-110 transition-transform">
@@ -465,6 +465,6 @@ export default function ContactPage() {
         secondaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         background="penn-green"
       />
-    </LocalizedRoute>
+    </>
   );
 }

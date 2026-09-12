@@ -7,11 +7,7 @@ export const routing = defineRouting({
   
   // Used when no locale matches
   defaultLocale: 'fr',
-
-  // Serve the default French site at the canonical root URL.
-  localePrefix: 'as-needed',
-  localeDetection: false,
-
+  
   // Provide a localized pathname for specific routes if needed
   pathnames: {
     '/': '/',
@@ -39,11 +35,6 @@ export const routing = defineRouting({
     '/brochures': '/brochures',
     '/tarifs': '/tarifs',
     '/recruter-nos-etudiants': '/recruter-nos-etudiants',
-    '/blog/[slug]': '/blog/[slug]',
-    '/partenaires/[slug]': '/partenaires/[slug]',
-    '/licences/[slug]': '/licences/[slug]',
-    '/masters/[slug]': '/masters/[slug]',
-    '/certifications/[slug]': '/certifications/[slug]',
   }
 });
 

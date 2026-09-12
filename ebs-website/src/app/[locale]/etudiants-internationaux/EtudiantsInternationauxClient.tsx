@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, BadgeCheck, Banknote, BriefcaseMedical, Building, Bus, Check, ChevronDown, FileText, Globe, GraduationCap, HeartHandshake, Hotel, MapPin, Phone, Plane, Quote, Receipt, ShieldUser, Users } from "lucide-react";
 import { Badge, CtaSection } from "@/components/shared";
 import { CountryFlag } from "@/components/shared/CountryFlag";
 import AcademicPartners from "@/components/sections/AcademicPartners";
-import type { PartnerLocale } from "@/lib/partenaires/academic-partners";
 
 const destinations = [
   { pays: "Canada", code: "CA", partenaire: "UQAT", color: "#E53935", avantages: ["Poursuite d’études possible après un cursus à EBS", "Maîtrises (Bac+5) accessibles selon le parcours académique", "Expérience universitaire au Québec", "Accompagnement dans le projet de mobilité"] },
@@ -64,7 +63,7 @@ const phases = [
   },
 ];
 
-export default function EtudiantsInternationauxPage({ locale }: { locale: PartnerLocale }) {
+export default function EtudiantsInternationauxPage() {
   const [activePhase, setActivePhase] = useState("avant");
 
   return (
@@ -278,7 +277,7 @@ export default function EtudiantsInternationauxPage({ locale }: { locale: Partne
           Ces collaborations permettent, selon les accords, de développer des poursuites d'études, mobilités, projets académiques, Summer Schools et autres expériences internationales.
         </p>
       </div>
-      <AcademicPartners locale={locale} />
+      <AcademicPartners />
 
       {/* ═══════════ TESTIMONIAL ═══════════ */}
       <section className="section-padding bg-penn-navy relative overflow-hidden">

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { ArrowRight, Award, BadgeCheck, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { EffectCoverflow, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";

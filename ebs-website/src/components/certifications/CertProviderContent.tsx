@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { motion } from "motion/react";
 import {
   Award,
@@ -234,7 +234,7 @@ export function CertProviderContent({ data }: { data: EnhancedCertProviderData }
               {data.associatedProgrammes.map((programme) => (
                 <Link
                   key={programme.id}
-                  href={{ pathname: programme.level === "licence" ? "/licences/[slug]" : "/masters/[slug]", params: { slug: programme.id } }}
+                  href={`/${programme.level === "licence" ? "licences" : "masters"}/${programme.id}`}
                   className="group rounded-2xl border border-penn-border bg-white p-5 shadow-xs transition-all hover:-translate-y-1 hover:border-penn-green hover:shadow-md flex flex-col justify-between"
                 >
                   <div>
@@ -319,7 +319,7 @@ export function CertProviderContent({ data }: { data: EnhancedCertProviderData }
               {data.relatedProviders.map((other) => (
                 <Link
                   key={other.slug}
-                  href={{ pathname: "/certifications/[slug]", params: { slug: other.slug } }}
+                  href={`/certifications/${other.slug}`}
                   className="group flex flex-col items-center justify-center rounded-2xl border border-penn-border bg-white p-5 text-center transition-all hover:-translate-y-1 hover:border-penn-green hover:shadow-md"
                 >
                   <div className="h-10 flex items-center justify-center mb-3">

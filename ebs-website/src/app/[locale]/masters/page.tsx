@@ -1,11 +1,11 @@
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Award, BookOpen, Globe, ShieldCheck, Sparkles } from "lucide-react";
 import { Badge, CtaSection, InfiniteLogoMarquee } from "@/components/shared";
 import { MagneticProgramCard } from "@/components/program";
 import { ShowcaseHero } from "@/components/hero";
 import { AdmissionForm } from "@/components/forms/AdmissionForm";
-import { getMasters } from "@/lib/programmes/masters";
+import { masters } from "@/lib/programmes/masters";
 import { getPublicCatalogueV3ProgrammeSummary } from "@/lib/certifications/v3";
 import { getCatalogueV3Snapshot } from "@/lib/certifications/v3/server";
 import { pageMetadata } from "@/lib/seo";
@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-const overviewBase = (masters: ReturnType<typeof getMasters>, locale: string) => [
-  { ...masters.crm, subtitle: locale === "en" ? "CRM, marketing automation, artificial intelligence, and digital transformation with HubSpot, n8n, and recognized professional tools." : "CRM, marketing automation, Intelligence Artificielle et transformation digitale avec HubSpot, n8n et des outils professionnels reconnus.", image: "/images/programs/crm.jpg" },
-  { ...masters["marketing-digital-ia"], subtitle: locale === "en" ? "Digital marketing, data analysis, artificial intelligence, and marketing campaign automation." : "Marketing digital, analyse des données, Intelligence Artificielle et automatisation des campagnes marketing.", image: "/images/programs/marketing-digital-ia.jpg" },
-  { ...masters.startups, subtitle: locale === "en" ? "Project management, innovation, entrepreneurship, Agile methods, PMI®, and Scrum." : "Management de projet, innovation, entrepreneuriat, méthodes Agile, PMI® et Scrum.", image: "/images/programs/startups.jpg" },
-  { ...masters["ingenierie-financiere"], subtitle: locale === "en" ? "Corporate finance, financial markets, data analysis, and Bloomberg certifications." : "Finance d'entreprise, marchés financiers, analyse des données et certifications Bloomberg.", image: "/images/programs/ingenierie-financiere.jpg" },
+const overviewBase = [
+  { ...masters.crm, subtitle: "CRM, marketing automation, Intelligence Artificielle et transformation digitale avec HubSpot, n8n et des outils professionnels reconnus.", image: "/images/programs/crm.jpg" },
+  { ...masters["marketing-digital-ia"], subtitle: "Marketing digital, analyse des données, Intelligence Artificielle et automatisation des campagnes marketing.", image: "/images/programs/marketing-digital-ia.jpg" },
+  { ...masters.startups, subtitle: "Management de projet, innovation, entrepreneuriat, méthodes Agile, PMI® et Scrum.", image: "/images/programs/startups.jpg" },
+  { ...masters["ingenierie-financiere"], subtitle: "Finance d'entreprise, marchés financiers, analyse des données et certifications Bloomberg.", image: "/images/programs/ingenierie-financiere.jpg" },
 ];
 
 const mastersCards = [
@@ -54,17 +54,13 @@ const mastersCards = [
 ];
 
 export default async function MastersPage({
-  params,
   searchParams,
 }: {
-  params: Promise<{ locale: string }>;
   searchParams: Promise<{ program?: string }>;
 }) {
   const { program } = await searchParams;
-  const { locale } = await params;
-  const masters = getMasters(locale === "en" ? "en" : "fr");
   const catalogue = await getCatalogueV3Snapshot();
-  const overview = overviewBase(masters, locale).map((entry) => {
+  const overview = overviewBase.map((entry) => {
     const summary = getPublicCatalogueV3ProgrammeSummary(entry.catalogueId, catalogue);
     return {
       ...entry,

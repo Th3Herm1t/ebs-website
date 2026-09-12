@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
 import {
@@ -18,7 +18,7 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
-import { Badge, CtaSection, LocalizedRoute } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 import {
   aiProfileLabels,
   credentialTypeLabels,
@@ -220,7 +220,7 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
     };
   });
   return (
-    <LocalizedRoute>
+    <>
       {/* ═══════════ IMMERSIVE HERO ═══════════ */}
       <section className="relative pt-40 pb-28 overflow-hidden bg-[#070B18]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(43,143,171,0.28),transparent_34%),radial-gradient(circle_at_82%_12%,rgba(156,39,176,0.18),transparent_30%),linear-gradient(135deg,#070B18_0%,#111A31_52%,#071521_100%)]" />
@@ -555,7 +555,7 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
                   className="h-full"
                 >
                   <Link
-                    href={p.href as React.ComponentProps<typeof Link>["href"]}
+                    href={p.href}
                     className="group relative flex flex-col h-full p-6 lg:p-8 bg-white rounded-[24px] border border-penn-border hover:shadow-xl transition-all duration-500 overflow-hidden"
                   >
                     {/* Hover Glow Effect */}
@@ -680,7 +680,7 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
                 transition={{ delay: i * 0.1 }}
               >
                 <Link
-                  href={card.href as React.ComponentProps<typeof Link>["href"]}
+                  href={card.href}
                   className="group bg-white rounded-2xl border border-penn-border p-6 h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#9C27B0]/30"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#9C27B0]/10 flex items-center justify-center mb-4 text-[#9C27B0] group-hover:scale-110 transition-transform">
@@ -717,6 +717,6 @@ export default function IAEtCertificationsPage({ catalogue }: { catalogue: Catal
         opportunity={selectedOpportunity}
         onClose={() => setSelectedOpportunity(null)}
       />
-    </LocalizedRoute>
+    </>
   );
 }

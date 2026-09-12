@@ -83,32 +83,9 @@ const routeMeta = {
   },
 } as const;
 
-const routeMetaEn: Record<keyof typeof routeMeta, { title: string; description: string }> = {
-  admissions: { title: "EBS Admissions: Bachelor's and Master's applications", description: "Discover EBS admission requirements, application steps, required documents, and funding options in Tunis." },
-  preinscription: { title: "EBS Online Application", description: "Submit your EBS application online for a Bachelor's, Master's, or international pathway programme." },
-  contact: { title: "Contact EBS Tunis", description: "Contact Espima Business School in Tunis about admissions, programmes, certifications, partnerships, and student support." },
-  tarifs: { title: "EBS Tuition Fees and Funding", description: "Discover EBS tuition fees for Bachelor's and Master's programmes, payment options, and available funding solutions." },
-  faq: { title: "EBS FAQ: Admissions, Programmes, and Certifications", description: "Answers to frequently asked questions about EBS admissions, programmes, certifications, internships, fees, and international pathways." },
-  campus: { title: "EBS Campus at Les Berges du Lac, Tunis", description: "Discover the EBS campus in Tunis, including equipped classrooms, student spaces, computer labs, and access information." },
-  alumni: { title: "EBS Alumni Network", description: "Discover the EBS alumni network, graduate profiles, sectors, mentoring, and career opportunities in Tunisia and abroad." },
-  "ia-et-certifications": { title: "AI and International Certifications at EBS", description: "EBS integrates artificial intelligence and a catalogue of free professional credentials into its Bachelor's and Master's programmes." },
-  "parcours-international": { title: "EBS International Pathway: France, Canada, Italy, Oman", description: "Study at EBS and continue your education with partner universities in France, Canada, Italy, or Oman." },
-  "etudiants-internationaux": { title: "International Students at EBS Tunisia", description: "Visa, housing, arrival, settling in, and complete support for international students who wish to study at EBS Tunis." },
-  "partenaires-academiques": { title: "EBS International Academic Partners", description: "Discover EBS university partners in France, Canada, Italy, and Oman for continuing your studies internationally." },
-  "partenaires-economiques": { title: "EBS Corporate Partners", description: "EBS works with partner companies on internships, applied projects, recruitment, job fairs, and career placement." },
-  actualites: { title: "EBS News and Events", description: "Follow news, events, conferences, fairs, partnerships, and highlights from student life at Espima Business School." },
-  blog: { title: "EBS Blog: Studies, AI, International, and Careers", description: "EBS advice and articles about higher education in Tunisia, AI, certifications, marketing, finance, and international study." },
-  brochures: { title: "EBS Brochures to Download", description: "Download brochures for the Bachelor's, Master's, certification, and international pathway programmes offered by EBS." },
-  certifications: { title: "International Certifications Included at EBS", description: "Google, IBM, Harvard, Cisco, HubSpot, SEMrush, and more: discover the professional credentials included in EBS programmes." },
-  "qui-sommes-nous": { title: "About Espima Business School", description: "Discover EBS, a Tunisian private university for computer science and management founded in 2013 and approved by the Tunisian State." },
-  "vision-mission-valeurs": { title: "EBS Vision, Mission, and Values", description: "Discover the vision, mission, and values guiding Espima Business School in educating tomorrow's leaders." },
-  "corps-enseignant": { title: "EBS Faculty", description: "Meet the teachers, lecturers, and professional experts who support EBS students." },
-  "recruter-nos-etudiants": { title: "Recruit EBS Students", description: "Companies can recruit EBS students for internships, work-study opportunities, projects, job fairs, and employment." },
-};
-
 export function metadataForRoute(route: keyof typeof routeMeta, locale: string) {
   return pageMetadata({
-    ...(locale === "en" ? routeMetaEn[route] : routeMeta[route]),
+    ...routeMeta[route],
     path: `/${locale}/${route}`,
   });
 }

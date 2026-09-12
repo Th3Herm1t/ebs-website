@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
+import { useLocale } from "next-intl";
 import {
   ArrowLeft,
   BarChart3,
@@ -213,8 +214,8 @@ const compareRows = [
   { label: "Débouchés", key: "careers" as const },
 ];
 
-export default function ProgrammeFinder({ programmes = allProgrammes, locale = "fr" }: { programmes?: OrientationProgramme[]; locale?: "fr" | "en" }) {
-  const localePrefix = locale === "en" ? "/en" : "";
+export default function ProgrammeFinder({ programmes = allProgrammes }: { programmes?: OrientationProgramme[] }) {
+  const locale = useLocale() === "en" ? "en" : "fr";
   const labels = quizLabels[locale];
   const localizedProgrammes = programmes.map((programme) => ({
     ...programme,
@@ -383,7 +384,7 @@ export default function ProgrammeFinder({ programmes = allProgrammes, locale = "
                        </div>
                        <div className="flex flex-col sm:flex-row gap-3 justify-center">
                          <Link
-                            href={`/${result[0].programme.slug}` as React.ComponentProps<typeof Link>["href"]}
+                           href={`/${result[0].programme.slug}`}
                           className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-penn-green text-white font-bold text-sm rounded-full hover:bg-penn-green/90 transition-all duration-300 shadow-lg shadow-penn-green/20"
                         >
                            {locale === "en" ? "View programme" : "Voir le programme"}
@@ -402,7 +403,7 @@ export default function ProgrammeFinder({ programmes = allProgrammes, locale = "
                            <p className="mb-3 text-xs font-extrabold uppercase tracking-wide text-penn-body/60">{labels.alternative}</p>
                            <div className="space-y-2">
                              {result.slice(1).map(({ programme }) => (
-                                <Link key={programme.key} href={`/${programme.slug}` as React.ComponentProps<typeof Link>["href"]} className="flex items-center justify-between rounded-lg border border-penn-border px-4 py-3 text-sm font-bold text-penn-navy hover:border-penn-green hover:text-penn-green">
+                               <Link key={programme.key} href={`/${programme.slug}`} className="flex items-center justify-between rounded-lg border border-penn-border px-4 py-3 text-sm font-bold text-penn-navy hover:border-penn-green hover:text-penn-green">
                                  <span>{programme.name}</span><span>→</span>
                                </Link>
                              ))}
@@ -494,7 +495,7 @@ export default function ProgrammeFinder({ programmes = allProgrammes, locale = "
                             className="py-4 px-4 text-center"
                           >
                             <Link
-                              href={`/${p.slug}` as React.ComponentProps<typeof Link>["href"]}
+                              href={`/${p.slug}`}
                               className="font-extrabold text-sm hover:underline"
                               style={{ color: p.color }}
                             >

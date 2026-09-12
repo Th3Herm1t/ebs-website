@@ -16,8 +16,6 @@ export interface BlogPost {
   tags: string[];
 }
 
-export type BlogLocale = "fr" | "en";
-
 export const blogPosts: Record<string, BlogPost> = {
   "reconnaissance-diplomes-enseignement-superieur-francais": {
     slug: "reconnaissance-diplomes-enseignement-superieur-francais",
@@ -37,28 +35,3 @@ export const blogPosts: Record<string, BlogPost> = {
     tags: ["Études en France", "Reconnaissance des diplômes", "Grade de Master", "RNCP", "Grandes Écoles", "AACSB", "Campus France"],
   },
 };
-
-const englishPosts: Record<string, BlogPost> = {
-  "reconnaissance-diplomes-enseignement-superieur-francais": {
-    ...blogPosts["reconnaissance-diplomes-enseignement-superieur-francais"],
-    title: "The main recognitions of French higher-education degrees: a complete guide",
-    excerpt: "Understand state visas, Bachelor's and Master's degrees, RNCP qualifications (Levels 6 and 7), CGE labels and international accreditations (AACSB, EQUIS and AMBA) to plan your further studies in France with confidence.",
-    category: "International",
-    readTime: "7 min read",
-    publishDate: "24 August 2026",
-    updatedDate: "2 September 2026",
-    author: {
-      ...blogPosts["reconnaissance-diplomes-enseignement-superieur-francais"].author,
-      role: "EBS International Relations Office",
-    },
-    tags: ["Study in France", "Degree recognition", "Master's degree", "RNCP", "Grandes Écoles", "AACSB", "Campus France"],
-  },
-};
-
-export function getBlogPosts(locale: BlogLocale = "fr"): Record<string, BlogPost> {
-  return locale === "en" ? englishPosts : blogPosts;
-}
-
-export function getBlogPost(slug: string, locale: BlogLocale = "fr"): BlogPost | undefined {
-  return getBlogPosts(locale)[slug];
-}

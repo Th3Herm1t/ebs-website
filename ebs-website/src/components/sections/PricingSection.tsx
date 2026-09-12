@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { Check } from "lucide-react";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";

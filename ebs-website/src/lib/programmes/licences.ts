@@ -1,5 +1,4 @@
 import type { ProgramLPData } from "@/components/program";
-import { localizeProgrammes, type DomainLocale } from "./localization";
 
 export const licences: Record<string, ProgramLPData> = {
   management: {
@@ -300,8 +299,3 @@ export const licences: Record<string, ProgramLPData> = {
     ],
   },
 };
-
-/** Returns programme content in the requested editorial language. French is the canonical default. */
-export function getLicences(locale: DomainLocale = "fr"): Record<string, ProgramLPData> {
-  return localizeProgrammes(licences, locale);
-}

@@ -3,7 +3,7 @@
 import { Award, Eye, Globe, Heart, Lightbulb, Target } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { Badge, CtaSection, LocalizedRoute } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 import { catalogueV3, formatPublicCertificationCount } from "@/lib/certifications/v3";
 
 const publicCertificationCountLabel = formatPublicCertificationCount(catalogueV3.release.counts.publicResources);
@@ -82,7 +82,7 @@ const pillars = [
 
 export default function VisionPage() {
   return (
-    <LocalizedRoute>
+    <>
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative pt-40 pb-24 overflow-hidden">
                 {/* Background Image */}
@@ -272,7 +272,7 @@ export default function VisionPage() {
         primaryCta={{ label: "Voir nos programmes", href: "/nos-programmes" }}
         background="penn-green"
       />
-    </LocalizedRoute>
+    </>
   );
 }
 

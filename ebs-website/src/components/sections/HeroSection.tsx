@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import { motion } from "motion/react";
 import HeroBackground from "./HeroBackground";
 import { GraduationCap, Award, Globe, Briefcase, TrendingUp, LineChart, Monitor, Brain, Shield } from "lucide-react";
@@ -98,7 +98,7 @@ export default function HeroSection({ certificationCount }: { certificationCount
                     <CarouselContent className="-ml-4">
                       {courseCategories.map((cat, idx) => (
                         <CarouselItem key={idx} className="pl-4 basis-[140px] md:basis-[160px]">
-                          <Link href={cat.href as React.ComponentProps<typeof Link>["href"]} className="w-full h-[150px] md:h-[160px] relative bg-transparent border border-dashed border-[#a3a3a3] flex flex-col items-center justify-center p-3 md:p-4 transition-all duration-300 hover:border-penn-green cursor-pointer group">
+                          <Link href={cat.href} className="w-full h-[150px] md:h-[160px] relative bg-transparent border border-dashed border-[#a3a3a3] flex flex-col items-center justify-center p-3 md:p-4 transition-all duration-300 hover:border-penn-green cursor-pointer group">
                             {/* Badge */}
                             <div className={`absolute top-2 right-2 text-white text-[10px] font-bold px-1.5 py-0.5 rounded ${cat.badgeColor}`}>
                               {cat.count}

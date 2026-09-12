@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/i18n/routing";
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
 import {
@@ -22,7 +22,7 @@ import {
   Award,
   Users,
 } from "lucide-react";
-import { Badge, CtaSection, LocalizedRoute } from "@/components/shared";
+import { Badge, CtaSection } from "@/components/shared";
 import {
   Accordion,
   AccordionContent,
@@ -165,7 +165,7 @@ const faqAdmissions = [
 
 export default function AdmissionsPage() {
   return (
-    <LocalizedRoute>
+    <>
       {/* ═══════════ IMMERSIVE HERO ═══════════ */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -668,6 +668,6 @@ export default function AdmissionsPage() {
         secondaryCta={{ label: "Nous contacter", href: "/contact" }}
         background="penn-green"
       />
-    </LocalizedRoute>
+    </>
   );
 }

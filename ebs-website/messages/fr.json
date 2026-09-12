@@ -11,19 +11,10 @@
         "blog": "Blog",
         "admissions": "Admissions",
         "contact": "Contact",
-        "actualites": "Actualités EBS",
-        "menu": "Menu principal",
-        "dropdown": {
-          "universite": {"about":"Qui sommes-nous ?","vision":"Vision, Mission & Valeurs","ai":"L’IA au cœur d’EBS","faculty":"Corps Enseignant","academicPartners":"Partenaires Académiques","economicPartners":"Partenaires Économiques","news":"Actualités EBS","certifications":"Certifications","faq":"FAQ","alumni":"Alumni","campus":"Campus"},
-          "licences": {"overview":"Vue d'ensemble","management":"Licence en Management","marketing":"Licence en Marketing","finance":"Licence en Finance","ai":"Informatique — IA","cyber":"Informatique — Cybersécurité"},
-          "masters": {"overview":"Vue d'ensemble","crm":"CRM & Transformation Digitale","digitalMarketing":"Marketing Digital & IA","startups":"Projets Innovants & Startups","finance":"Ingénierie Financière"},
-          "international": {"pathway":"Parcours International","students":"Étudiants Internationaux"}
-        }
+        "actualites": "Actualités EBS"
       },
       "postuler": "Postuler",
-        "call": "Appeler",
-        "switchToEnglish": "Passer en anglais",
-        "switchToFrench": "Passer en français"
+      "call": "Appeler"
     },
     "topbar": {
       "follow": "Suivez-nous:"
@@ -250,43 +241,41 @@
       "btn": "Voir toutes les actualités",
       "listImage": [
         {
-          "title": "ESPIMA Business School célèbre sa promotion 2026",
+          "title": "EBS AI DAY : l'université augmentée par l'intelligence artificielle",
           "link": "#",
-          "img": "/images/sections/photo-21.jpg",
-          "day": "24",
-          "month": "JUI",
-          "time": "24 Juillet 2026",
+          "img": "/images/ebs-tn/ebs-ai-day.png",
+          "day": "19",
+          "month": "MAI",
+          "time": "19 Mai 2026",
           "location": "ESPIMA Business School",
-          "desc": "Le 24 juillet 2026, ESPIMA Business School a célébré la remise des diplômes de sa promotion 2026, réunissant les diplômés de Licence et de Master, leurs familles et leurs enseignants. Cette cérémonie a marqué l'aboutissement de plusieurs années de travail, de persévérance et d'engagement. ESPIMA Business School félicite chaleureusement l'ensemble de ses diplômés et leur souhaite pleine réussite dans leurs futurs projets professionnels."
+          "desc": "ESPIMA Business School a réuni experts, professionnels, enseignants et étudiants autour des applications concrètes de l'intelligence artificielle en marketing, communication et management, ainsi que de son intégration dans les programmes EBS."
         }
       ],
       "listText": []
     },
     "testimonials": {
-      "title": "TESTIMONIAL",
-      "subtitle": "Ce que nos",
-      "subtitleHighlight": "Étudiants Disent",
-      "list": [
+      "title": "TÉMOIGNAGES VIDÉO",
+      "subtitle": "Découvrez les témoignages de la",
+      "subtitleHighlight": "communauté EBS",
+      "watch": "Voir sur YouTube",
+      "videos": [
         {
-          "img": "/images/all-img/t1-stock.jpg",
-          "name": "Yassine B.",
-          "role": "Étudiant en Master Finance",
-          "bgClass": "bg-[#e1f7e8]",
-          "text": "Grâce à l'EBS, j'ai décroché mon premier emploi avant même la fin de mon Master."
+          "videoUrl": "https://www.youtube.com/embed/oC-UqBGkUS4",
+          "eyebrow": "Parcours étudiants",
+          "title": "Des parcours étudiants qui ouvrent le monde",
+          "description": "Des étudiants racontent leur découverte d'EBS, la qualité de l'enseignement, l'écoute de l'administration et leurs ambitions internationales."
         },
         {
-          "img": "/images/all-img/t2-stock.jpg",
-          "name": "Sarah M.",
-          "role": "Étudiante en Marketing",
-          "bgClass": "bg-[#f7e8d8]",
-          "text": "Une expérience inoubliable avec des professeurs passionnés et un accompagnement très personnalisé."
+          "videoUrl": "https://www.youtube.com/embed/tz-VZ6jFHYY",
+          "eyebrow": "Ambition",
+          "title": "Grandir avec EBS",
+          "description": "Les étudiants partagent ce qu'ils ont apprécié à EBS et leur vision d'une école appelée à grandir et à rayonner davantage."
         },
         {
-          "img": "/images/all-img/t3-stock.jpg",
-          "name": "Ahmed T.",
-          "role": "Alumni EBS",
-          "bgClass": "bg-[#e8e8e8]",
-          "text": "Le partenariat avec l'UQAT m'a ouvert les portes d'une belle carrière à l'international."
+          "videoUrl": "https://www.youtube.com/embed/MMH6mInJlVE",
+          "eyebrow": "Avenir",
+          "title": "Construire son avenir",
+          "description": "Un témoignage sur l'expérience étudiante, l'espoir et les ambitions professionnelles qui donnent du sens au parcours EBS."
         }
       ]
     },

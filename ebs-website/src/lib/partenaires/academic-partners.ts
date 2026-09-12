@@ -113,29 +113,4 @@ export const academicPartners = [
   },
 ] as const;
 
-export type PartnerLocale = "fr" | "en";
-
-const englishDescriptions: Record<string, string> = {
-  "em-normandie": "Founded in 1871, EM Normandie is a French Grande École of management, a member of the Conférence des Grandes Écoles and holder of the international triple accreditation EQUIS, AACSB and AMBA.",
-  excelia: "Excelia Business School is a French Grande École known for its international outlook and management programmes from Bachelor's level to Bac+5.",
-  psb: "Paris School of Business is a French Grande École, a member of the Conférence des Grandes Écoles and holder of the international triple accreditation AACSB, EQUIS and AMBA.",
-  eklore: "EKLORE-ed, formerly ESC Pau Business School, is a business Grande École offering programmes from Bachelor's level to Bac+5 in several fields.",
-  epitech: "EPITECH is a French school specialising in computer science, known for its intensive project- and practice-based teaching.",
-  epsi: "Founded in 1961, EPSI trains digital professionals. Its Learning by Doing approach prioritises projects and practical experience.",
-  idrac: "Founded in 1965, IDRAC Business School offers programmes in business, management, marketing, strategy, international business, innovation and supply chain.",
-  ifag: "Founded in 1968, IFAG is a French management school specialising in business, human resources and entrepreneurship.",
-  supdecom: "SUP'DE COM trains students for communication careers including communication strategy, digital marketing, social media, creative work, events and advertising.",
-  igefi: "IGEFI is a French higher-education school specialising in corporate finance, accounting, management control and accountancy.",
-  redsup: "RED-SUP is a French higher-education institution specialising in computer science, networks, IT security and cybersecurity.",
-  uqat: "A member of the Université du Québec network, UQAT is a Canadian public university offering teaching and research in several fields.",
-  "link-university": "Based in Rome, Link University offers international programmes in management, finance, economics, innovation, digital technologies and communication.",
-  gutech: "Founded in 2007, GUtech is an English-speaking technological university in the Sultanate of Oman collaborating with RWTH Aachen University.",
-};
-
-export function getAcademicPartners(locale: PartnerLocale = "fr") {
-  return academicPartners.map((partner) => locale === "en"
-    ? { ...partner, desc: englishDescriptions[partner.slug] ?? partner.desc }
-    : partner);
-}
-
 export type AcademicPartnerSlug = (typeof academicPartners)[number]["slug"];
