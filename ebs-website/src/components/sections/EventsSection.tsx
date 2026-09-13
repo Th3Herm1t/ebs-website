@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { ArrowRight, Camera, Clock, MapPin } from "lucide-react";
+import { ArrowUpRight, Camera, Clock, MapPin, Play } from "lucide-react";
 import { useTranslations } from "next-intl";
 import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
@@ -30,43 +30,61 @@ export default function EventsSection() {
     <section className="relative overflow-hidden section-padding" ref={ref}>
       <HeroBackgroundVariant2 />
       <div className="relative z-10 mx-auto max-w-[1140px] px-4">
-        <SectionHeading
-          title={t("title")}
-          subtitle={<>{t("subtitle")} <span className="text-penn-green underline decoration-penn-green">{t("subtitleHighlight")}</span></>}
-        />
+        <div className="mb-10 border-b border-penn-navy/10 pb-8 md:mb-12">
+          <SectionHeading
+            title={t("title")}
+            subtitle={<>{t("subtitle")} <span className="text-penn-green">{t("subtitleHighlight")}</span>.</>}
+            className="mb-0 max-w-[760px]"
+            subtitleClassName="md:w-full"
+          />
+        </div>
 
-        <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
-          <motion.article initial={{ opacity: 0, x: -24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }} className="overflow-hidden rounded-3xl border border-penn-border bg-white shadow-sm">
-            <div className="relative aspect-[16/10] overflow-hidden">
-              <Image src={latest.img} alt={latest.title} fill sizes="(max-width: 1024px) 100vw, 55vw" className="object-cover transition-transform duration-700 hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-penn-navy/70 via-transparent to-transparent" />
-              <div className="absolute left-5 top-5 flex overflow-hidden rounded-xl shadow-lg">
-                <span className="bg-penn-navy px-3 py-2 text-lg font-extrabold text-white">{latest.day}</span>
-                <span className="bg-penn-green px-3 py-2 text-lg font-extrabold text-white">{latest.month}</span>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_1px_minmax(0,1fr)] lg:items-stretch lg:gap-9">
+          <motion.article initial={{ opacity: 0, x: -24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }} className="group overflow-hidden rounded-[28px] border border-penn-border bg-white shadow-[0_24px_70px_-42px_rgba(11,25,44,0.45)]">
+            <div className="relative aspect-[16/9] overflow-hidden">
+              <Image src={latest.img} alt={latest.title} fill sizes="(max-width: 1024px) 100vw, 62vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.025]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-penn-navy/75 via-penn-navy/5 to-transparent" />
+              <div className="absolute left-5 top-5 flex overflow-hidden rounded-xl shadow-lg sm:left-7 sm:top-7">
+                <span className="bg-penn-navy px-3.5 py-2.5 text-lg font-extrabold text-white">{latest.day}</span>
+                <span className="bg-penn-green px-3.5 py-2.5 text-lg font-extrabold text-white">{latest.month}</span>
               </div>
-              <span className="absolute bottom-5 left-5 rounded-full border border-white/20 bg-penn-navy/70 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-wide text-white backdrop-blur-sm">Dernière publication</span>
+              <span className="absolute bottom-5 left-5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-white sm:bottom-7 sm:left-7">{t("latestLabel")}</span>
             </div>
-            <div className="p-6 lg:p-8">
-              <div className="mb-3 flex flex-wrap gap-4 text-[12px] font-bold text-penn-green"><span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{latest.time}</span><span className="flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" />{latest.location}</span></div>
-              <h3 className="text-[23px] font-extrabold leading-tight text-penn-navy">{latest.title}</h3>
-              <p className="mt-3 line-clamp-3 text-[14px] leading-relaxed text-penn-body">{latest.desc}</p>
-              <Link href="/actualites" className="mt-6 inline-flex items-center gap-2 text-[13px] font-extrabold text-penn-green transition-colors hover:text-penn-navy">Voir toute l&apos;actualité <ArrowRight className="h-4 w-4" /></Link>
+            <div className="p-6 sm:p-8 lg:p-9">
+              <div className="mb-4 flex flex-wrap gap-x-5 gap-y-2 text-[11px] font-extrabold uppercase tracking-[0.08em] text-penn-green">
+                <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{latest.time}</span>
+                <span className="flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" />{latest.location}</span>
+              </div>
+              <h3 className="max-w-[640px] text-[24px] font-extrabold leading-[1.18] text-penn-navy sm:text-[29px]">{latest.title}</h3>
+              <p className="mt-4 max-w-[650px] text-[14px] leading-7 text-penn-body sm:text-[15px]">{latest.desc}</p>
+              <Link href="/actualites" className="group/link mt-6 inline-flex items-center gap-3 text-[13px] font-extrabold text-penn-navy">
+                <span className="border-b border-penn-navy/20 pb-1 transition-colors group-hover/link:border-penn-green group-hover/link:text-penn-green">{t("btn")}</span>
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-penn-navy text-white transition-colors group-hover/link:bg-penn-green"><ArrowUpRight className="h-4 w-4" /></span>
+              </Link>
             </div>
           </motion.article>
 
-          <motion.figure initial={{ opacity: 0, x: 24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }} className="flex w-full flex-col overflow-hidden rounded-3xl bg-penn-navy shadow-xl shadow-penn-navy/10 lg:max-w-[400px] lg:justify-self-center">
-            <div className="flex flex-col p-6">
-              <p className="flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.16em] text-penn-green"><span className="flex h-7 w-7 items-center justify-center rounded-full border border-penn-green/30 bg-penn-green/10"><Camera className="h-3.5 w-3.5" /></span>{t("videoLabel")}</p>
-              <p className="mt-2.5 text-[18px] font-extrabold leading-snug text-white">{t("videoTitle")}</p>
-              <p className="mt-2 line-clamp-3 text-[13px] leading-relaxed text-white/60">{t("videoDescription")}</p>
+          <div className="hidden bg-penn-navy/10 lg:block" aria-hidden="true" />
+
+          <motion.figure initial={{ opacity: 0, x: 24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }} className="grid h-[500px] w-full grid-rows-[3fr_2fr] overflow-hidden rounded-[28px] bg-penn-navy shadow-[0_30px_70px_-35px_rgba(11,25,44,0.65)] lg:h-full">
+            <div className="relative flex min-h-0 flex-col justify-center overflow-hidden p-7 sm:p-9 lg:p-7 xl:p-9">
+              <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full border border-white/10" aria-hidden="true" />
+              <div className="absolute -right-5 -top-5 h-24 w-24 rounded-full border border-penn-green/20" aria-hidden="true" />
+              <p className="relative flex items-center gap-2.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-penn-green">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-penn-green/30 bg-penn-green/10"><Camera className="h-3.5 w-3.5" /></span>
+                {t("videoLabel")}
+              </p>
+              <h3 className="relative mt-4 text-[22px] font-extrabold leading-[1.15] text-white sm:text-[26px] lg:text-[22px] xl:text-[26px]">{t("videoTitle")}</h3>
+              <p className="relative mt-3 text-[13px] leading-6 text-white/60">{t("videoDescription")}</p>
+              <figcaption className="relative mt-5 text-[9px] font-extrabold uppercase tracking-[0.15em] text-white/35">{t("videoCaption")}</figcaption>
             </div>
-            <div className="h-40 overflow-hidden bg-black">
-              <video className="h-full w-full object-cover" controls preload="none" poster="/images/campus/t27-poster-400.webp" playsInline aria-label={t("videoTitle")}>
+            <div className="relative min-h-0 overflow-hidden bg-black">
+              <video className="h-full w-full object-contain" controls preload="none" poster="/images/campus/t27-poster-400.webp" playsInline aria-label={t("videoTitle")}>
                 <source src="/videos/ebs-campus-tour.mp4" type="video/mp4" />
-                Votre navigateur ne prend pas en charge la lecture vidéo.
+                {t("videoFallback")}
               </video>
+              <span className="pointer-events-none absolute left-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-penn-navy/75 text-white backdrop-blur-sm" aria-hidden="true"><Play className="h-3.5 w-3.5 fill-current" /></span>
             </div>
-            <figcaption className="px-5 py-3 text-[10px] font-bold uppercase tracking-wide text-white/35">ESPIMA Business School · Tunis</figcaption>
           </motion.figure>
         </div>
       </div>

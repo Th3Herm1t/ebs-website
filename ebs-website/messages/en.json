@@ -237,9 +237,12 @@
       "subtitle": "News and",
       "subtitleHighlight": "Events",
       "btn": "View all news",
+      "latestLabel": "Latest publication",
       "videoLabel": "Campus tour",
       "videoTitle": "Discover EBS from the inside",
       "videoDescription": "A video presentation of our learning, collaboration, and student-life spaces.",
+      "videoCaption": "ESPIMA Business School · Tunis",
+      "videoFallback": "Your browser does not support video playback.",
       "listImage": [
         {
           "title": "EBS AI DAY: the university enhanced by artificial intelligence",
