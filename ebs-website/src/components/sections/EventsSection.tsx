@@ -5,11 +5,13 @@ import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { ArrowRight, ArrowUpRight, Camera, Clock, MapPin } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
+import { getLatestArticle } from "@/lib/actualites";
 
 interface LatestEntry {
+  id?: string;
   title: string;
   link: string;
   day: string;
@@ -24,7 +26,31 @@ export default function EventsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const t = useTranslations("HomePage.events");
-  const latest = (t.raw("listImage") as LatestEntry[])[0];
+  const locale = useLocale();
+
+  const latestArticle = getLatestArticle();
+  const listImage = t.raw("listImage") as LatestEntry[];
+  const entry = listImage.find((e) => e.id === latestArticle.id) ?? listImage[0];
+
+  const sortDate = new Date(`${latestArticle.sortKey}T00:00:00Z`);
+  const latest: LatestEntry = {
+    title: entry?.title ?? latestArticle.title,
+    link: entry?.link ?? "#",
+    day: String(sortDate.getUTCDate()),
+    month: sortDate
+      .toLocaleString(locale, { month: "short", timeZone: "UTC" })
+      .replace(".", "")
+      .toUpperCase(),
+    time: sortDate.toLocaleDateString(locale, {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    }),
+    location: entry?.location ?? "ESPIMA Business School",
+    desc: entry?.desc ?? latestArticle.description,
+    img: entry?.img ?? latestArticle.image ?? "/images/ebs-tn/IMG_2-1024x683.jpg",
+  };
 
   return (
     <section className="relative overflow-hidden section-padding" ref={ref}>

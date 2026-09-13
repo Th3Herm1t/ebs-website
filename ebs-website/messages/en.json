@@ -243,14 +243,15 @@
       "videoCta": "Explore the campus",
       "listImage": [
         {
-          "title": "EBS AI DAY: the university enhanced by artificial intelligence",
+          "id": "e0",
+          "title": "ESPIMA Business School celebrates its 2026 graduating class",
           "link": "#",
-          "img": "/images/ebs-tn/ebs-ai-day.png",
-          "day": "19",
-          "month": "MAY",
-          "time": "19 May 2026",
+          "img": "/images/sections/photo-21.jpg",
+          "day": "24",
+          "month": "JULY",
+          "time": "24 July 2026",
           "location": "ESPIMA Business School",
-          "desc": "ESPIMA Business School brought together experts, professionals, faculty and students to explore practical applications of artificial intelligence in marketing, communication and management, and its integration into EBS programmes."
+          "desc": "On 24 July 2026, ESPIMA Business School celebrated the graduation ceremony of its 2026 class, bringing together Licence and Master graduates, their families and their teachers. This ceremony marked the culmination of years of work, perseverance and commitment."
         }
       ],
       "listText": []

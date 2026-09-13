@@ -245,14 +245,15 @@
       "videoCta": "Découvrir le campus",
       "listImage": [
         {
-          "title": "EBS AI DAY : l'université augmentée par l'intelligence artificielle",
+          "id": "e0",
+          "title": "ESPIMA Business School célèbre sa promotion 2026",
           "link": "#",
-          "img": "/images/ebs-tn/ebs-ai-day.png",
-          "day": "19",
-          "month": "MAI",
-          "time": "19 Mai 2026",
+          "img": "/images/sections/photo-21.jpg",
+          "day": "24",
+          "month": "JUILLET",
+          "time": "24 Juillet 2026",
           "location": "ESPIMA Business School",
-          "desc": "ESPIMA Business School a réuni experts, professionnels, enseignants et étudiants autour des applications concrètes de l'intelligence artificielle en marketing, communication et management, ainsi que de son intégration dans les programmes EBS."
+          "desc": "Le 24 juillet 2026, ESPIMA Business School a célébré la remise des diplômes de sa promotion 2026, réunissant les diplômés de Licence et de Master, leurs familles et leurs enseignants. Cette cérémonie a marqué l'aboutissement de plusieurs années de travail, de persévérance et d'engagement."
         }
       ],
       "listText": []
