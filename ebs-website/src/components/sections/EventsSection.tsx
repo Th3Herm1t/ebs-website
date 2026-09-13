@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { ArrowRight, Camera, Clock, MapPin } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Camera, Clock, MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
 import SectionHeading from "@/components/ui/SectionHeading";
 import HeroBackgroundVariant2 from "./HeroBackgroundVariant2";
@@ -54,18 +54,24 @@ export default function EventsSection() {
             </div>
           </motion.article>
 
-          <motion.figure initial={{ opacity: 0, x: 24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }} className="flex w-full flex-col overflow-hidden rounded-3xl bg-penn-navy shadow-xl shadow-penn-navy/10 lg:h-[80%] lg:max-w-[400px] lg:grid lg:grid-rows-[3fr_2fr] lg:justify-self-center lg:self-center">
-            <div className="flex min-h-0 flex-col p-6 lg:min-h-0 lg:p-7">
+          <motion.figure initial={{ opacity: 0, x: 24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }} className="flex w-full flex-col overflow-hidden rounded-3xl bg-penn-navy shadow-xl shadow-penn-navy/10 lg:h-[80%] lg:max-w-[400px] lg:justify-self-center lg:self-center">
+            <div className="flex shrink-0 flex-col p-6 lg:p-7">
               <p className="flex items-center gap-3 text-[20px] font-extrabold uppercase tracking-[0.04em] text-penn-green"><span className="flex h-11 w-11 items-center justify-center rounded-full border border-penn-green/30 bg-penn-green/10"><Camera className="h-5 w-5" /></span>{t("videoLabel")}</p>
               <p className="mt-5 text-[18px] font-extrabold leading-snug text-white">{t("videoTitle")}</p>
               <p className="mt-4 text-[13px] leading-relaxed text-white/60">{t("videoDescription")}</p>
-              <figcaption className="mt-5 text-[10px] font-bold uppercase tracking-wide text-white/35 lg:mt-auto lg:pt-5">ESPIMA Business School · Tunis</figcaption>
             </div>
-            <div className="relative h-40 overflow-hidden bg-black lg:h-full lg:min-h-0">
+            <div className="relative h-44 overflow-hidden bg-black lg:h-auto lg:min-h-[120px] lg:flex-1">
               <video className="h-full w-full object-cover" controls preload="none" poster="/images/campus/t27-poster-400.webp" playsInline aria-label={t("videoTitle")}>
                 <source src="/videos/ebs-campus-tour.mp4" type="video/mp4" />
                 Votre navigateur ne prend pas en charge la lecture vidéo.
               </video>
+            </div>
+            <div className="flex shrink-0 flex-col gap-4 p-6 pt-5 lg:p-7">
+              <Link href="/campus" className="group/cta inline-flex items-center justify-center gap-2 rounded-full bg-penn-green px-5 py-3 text-[13px] font-extrabold uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-penn-navy">
+                {t("videoCta")}
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" />
+              </Link>
+              <figcaption className="text-[10px] font-bold uppercase tracking-wide text-white/35">ESPIMA Business School · Tunis</figcaption>
             </div>
           </motion.figure>
         </div>
