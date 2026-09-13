@@ -239,12 +239,9 @@
       "subtitle": "Actualités et",
       "subtitleHighlight": "Évènements",
       "btn": "Voir toutes les actualités",
-      "latestLabel": "Dernière publication",
       "videoLabel": "Visite du campus",
       "videoTitle": "Découvrez EBS de l'intérieur",
       "videoDescription": "Une présentation vidéo de nos espaces de formation, de collaboration et de vie étudiante.",
-      "videoCaption": "ESPIMA Business School · Tunis",
-      "videoFallback": "Votre navigateur ne prend pas en charge la lecture vidéo.",
       "listImage": [
         {
           "title": "EBS AI DAY : l'université augmentée par l'intelligence artificielle",
