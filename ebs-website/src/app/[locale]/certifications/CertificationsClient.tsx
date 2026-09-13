@@ -238,12 +238,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
             </motion.div>
           </div>
         </div>
-      </section>
-
-      <div className="relative h-32 overflow-hidden bg-penn-navy md:h-40">
-        <Image src="/images/sections/certifications-body.jpg" alt="Certifications professionnelles EBS" fill className="object-cover opacity-70" sizes="100vw" />
-        <div className="absolute inset-0 bg-penn-navy/35" />
-      </div>
+</section>
 
       {/* ══════════════════ ERGONOMIC EXPLORATION HUB ══════════════════ */}
       <section id="catalogue" className="bg-[#F8FAFC] py-10 lg:py-14 border-t border-penn-border">
