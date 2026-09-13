@@ -18,22 +18,22 @@ type FacultyMember = {
 };
 
 const faculty: FacultyMember[] = [
-  { name: "Mehdi Ben Ghedifa", credential: "Enseignant et formateur", areas: ["Digital & Tech"], expertise: ["Marketing digital", "Communication digitale", "Veille stratégique"], image: "/images/faculty/mehdi-ben-ghedifa.png" },
-  { name: "Ahmed Benhamouda", credential: "Enseignant en systèmes d'information", areas: ["Digital & Tech"], expertise: ["Systèmes d'information", "Bases de données", "Architecture des ordinateurs"] },
-  { name: "Fayçal Chehab", credential: "Docteur en sciences de gestion", areas: ["Management"], expertise: ["Management stratégique", "Ressources humaines", "Leadership"], image: "/images/faculty/faycal-chehab.jpg" },
-  { name: "Hatem Daoud", credential: "Professionnel de la finance et de la banque", areas: ["Finance"], expertise: ["Finance d'entreprise", "Ingénierie financière", "Banque"] },
-  { name: "Dorra Denguezli", credential: "Enseignante permanente", areas: ["Langues & Sciences"], expertise: ["Études anglaises", "Études culturelles", "Enseignement de l'anglais"] },
-  { name: "Mohamed Draoui", credential: "Consultant senior et expert en gestion des connaissances", areas: ["Management", "Digital & Tech"], expertise: ["Gestion des connaissances", "Transformation digitale", "Modélisation métier"] },
-  { name: "Riadh Bez", credential: "Doctorant en physique", areas: ["Langues & Sciences"], expertise: ["Physique", "Physique quantique", "Matériaux magnétiques"], image: "/images/faculty/riadh-bez.jpg" },
-  { name: "Hager Machouche Zaier", credential: "Docteure en sciences de gestion, marketing", areas: ["Management"], expertise: ["Marketing", "Comportement du consommateur", "Marketing digital"] },
-  { name: "Karim Hantous", credential: "Docteur en sciences de gestion", areas: ["Management"], expertise: ["Ressources humaines", "Développement organisationnel", "Ingénierie de formation"] },
-  { name: "Mounira Laabidi", credential: "Docteure en technologies de l'information et de la communication", areas: ["Digital & Tech"], expertise: ["Télécommunications", "Réseaux informatiques", "Cybersécurité"] },
-  { name: "Slim Laribi", credential: "Expert e-commerce et omnicanal", areas: ["Management", "Digital & Tech"], expertise: ["E-commerce", "Web analytics", "Marketing automation"], image: "/images/faculty/slim-laribi.jpg" },
-  { name: "Leila Chams Ben Othman", credential: "Docteure en sciences de gestion, marketing", areas: ["Management"], expertise: ["Marketing", "Comportement du consommateur", "Marketing de la mode"] },
-  { name: "Manel Kembi", credential: "Enseignante universitaire d'anglais", areas: ["Langues & Sciences"], expertise: ["Linguistique anglaise", "Business English", "Anglais de spécialité"], image: "/images/faculty/manel-kembi.jpg" },
-  { name: "Mouna Gueriri", credential: "Docteure en sciences de gestion, marketing", areas: ["Management"], expertise: ["Marketing", "Comportement du consommateur", "Relation client"] },
-  { name: "Seyma Ben Gamra Bouhageb", credential: "Docteure en sciences économiques", areas: ["Management"], expertise: ["Management", "Innovation", "Entrepreneuriat"] },
-  { name: "Sirine Chekili", credential: "Docteure en sciences de gestion, finance", areas: ["Finance"], expertise: ["Finance", "Analyse financière", "Gouvernance d'entreprise"] },
+  { name: "Manel Kembi", credential: "Enseignante universitaire d'anglais", areas: ["Langues & Sciences"], expertise: ["Linguistique anglaise", "Didactique des langues", "Business English", "Anglais de spécialité", "Communication interculturelle"], image: "/images/faculty/manel-kembi.jpg" },
+  { name: "Mouna Gueriri", credential: "Docteure en sciences de gestion, marketing", areas: ["Management"], expertise: ["Marketing", "Comportement du consommateur", "Relation client", "Études de marché", "Marketing des services"] },
+  { name: "Seyma Ben Gamra Bouhageb", credential: "Docteure en sciences économiques", areas: ["Management"], expertise: ["Économie", "Commerce international", "Entrepreneuriat", "Innovation", "Transfert de technologies"] },
+  { name: "Sirine Chekili", credential: "Docteure en sciences de gestion, finance", areas: ["Finance"], expertise: ["Finance", "Analyse financière", "Gouvernance d'entreprise", "Marchés financiers", "Économétrie financière"] },
+  { name: "Karim Hantous", credential: "Docteur en sciences de gestion", areas: ["Management"], expertise: ["Ressources humaines", "Ingénierie de formation", "Diagnostic des besoins", "Gestion des compétences", "Développement organisationnel"] },
+  { name: "Mounira Laabidi", credential: "Docteure en technologies de l'information et de la communication", areas: ["Digital & Tech"], expertise: ["Télécommunications", "Réseaux informatiques", "Cybersécurité", "Traitement du signal", "Cryptographie"] },
+  { name: "Slim Laribi", credential: "Expert e-commerce et omnicanal", areas: ["Management", "Digital & Tech"], expertise: ["E-commerce", "Growth hacking", "Marketing automation", "Web analytics", "SEO et SEM"], image: "/images/faculty/slim-laribi.jpg" },
+  { name: "Leila Chams Ben Othman", credential: "Docteure en sciences de gestion, marketing", areas: ["Management"], expertise: ["Marketing", "Comportement du consommateur", "Marketing de la mode", "Études de marché", "Analyse quantitative"] },
+  { name: "Dorra Denguezli", credential: "Enseignante permanente", areas: ["Langues & Sciences"], expertise: ["Études anglaises", "Études culturelles", "Enseignement de l'anglais", "Technologies éducatives", "Pensée critique"] },
+  { name: "Mohamed Draoui", credential: "Consultant senior et expert en gestion des connaissances", areas: ["Management", "Digital & Tech"], expertise: ["Gestion des connaissances", "Transformation digitale", "Modélisation métier", "Solutions IA métier", "Management de la qualité"] },
+  { name: "Riadh Bez", credential: "Doctorant en physique", areas: ["Langues & Sciences"], expertise: ["Physique", "Physique quantique", "Matériaux magnétiques", "Nanomatériaux", "Effet magnétocalorique"], image: "/images/faculty/riadh-bez.jpg" },
+  { name: "Hager Machouche Zaier", credential: "Docteure en sciences de gestion, marketing", areas: ["Management"], expertise: ["Marketing", "Comportement du consommateur", "Psychologie du consommateur", "Marketing digital", "Publicité en ligne"] },
+  { name: "Mehdi Ben Ghedifa", credential: "Enseignant et formateur", areas: ["Digital & Tech"], expertise: ["Marketing digital", "Communication digitale", "Veille stratégique", "CRM et marketing relationnel", "Gestion de projet web"], image: "/images/faculty/mehdi-ben-ghedifa.png" },
+  { name: "Ahmed Benhamouda", credential: "Enseignant en systèmes d'information", areas: ["Digital & Tech"], expertise: ["Systèmes d'information", "Ingénierie des connaissances", "Bases de données", "Architecture des ordinateurs", "Développement informatique"] },
+  { name: "Fayçal Chehab", credential: "Docteur en sciences de gestion", areas: ["Management"], expertise: ["Management stratégique", "Ressources humaines", "Leadership", "Management de l'innovation", "Théorie des organisations"], image: "/images/faculty/faycal-chehab.jpg" },
+  { name: "Hatem Daoud", credential: "Professionnel de la finance et de la banque", areas: ["Finance"], expertise: ["Finance d'entreprise", "Ingénierie financière", "Gestion et finance bancaire", "Notation et risque de crédit", "Stratégies des organisations"] },
 ];
 
 const areas: (FacultyArea | "Tous")[] = ["Tous", "Management", "Finance", "Digital & Tech", "Langues & Sciences"];

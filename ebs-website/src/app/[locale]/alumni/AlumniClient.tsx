@@ -39,19 +39,19 @@ function DeferredAlumniWorldMap() {
 }
 
 const alumniProfiles: { name: string; text: string; img?: string; initials: string; objectPosition?: string }[] = [
-  { name: "Mohamed Amine Hamdi", text: "a obtenu son diplôme de Master en Marketing Digital promotion 2019/2020. Actuellement il occupe un poste de Community Manager chez Tinith services Tunis", img: "/images/ebs-tn/amin-hamdi.jpeg", initials: "MH" },
-  { name: "Dorra Ben Turkia", text: "a obtenu son diplôme de Master Ingénierie et Analyse Quantitative pour la Finance et l'Assurance promotion 2018/2019. Actuellement elle occupe un poste de Contrôleuse de Gestion chez Habitat France Paris", img: "/images/ebs-tn/dorra-ben-turkia-1022x1024.jpeg", initials: "DB" },
-  { name: "Maroua Jeribi", text: "a obtenu son diplôme de Master Professionnel en Gestion des Ressources Humaines promotion 2018/2019. Actuellement elle occupe un poste de Consultante SIRH Oracle Paris", img: "/images/ebs-tn/maroua-jeribi-1022x1024.jpeg", initials: "MJ" },
-  { name: "Hend Jaber", text: "a obtenu son diplôme de Master Ingénierie Financière promotion 2015/2016. Actuellement elle occupe un poste de Conceptualizer chez BOUMRANG Tunis", img: "/images/ebs-tn/hend-jaber.jpeg", initials: "HJ" },
-  { name: "Hend Nasri", text: "a obtenu son diplôme de Master en Marketing Digital promotion 2019/2020. Actuellement elle occupe un poste de Digital Marketing Manager chez Lezarts.Digital Tunis", img: "/images/ebs-tn/hend-nasri-1024x1024.jpeg", initials: "HN" },
-  { name: "Kais Layouni", text: "a obtenu son diplôme de Licence en Finance promotion 2017/2018. Actuellement il occupe un poste de Business Analyst chez MENINX Holding Tunis", img: "/images/ebs-tn/kais-layouni.jpeg", initials: "KL" },
-  { name: "Hend Bedoui", text: "a obtenu son diplôme de Master Ingénierie Financière promotion 2015/2016. Actuellement elle occupe un poste de Analyste Financier LEASE TUNIS", img: "/images/ebs-tn/hind-bedoui.jpeg", initials: "HB" },
-  { name: "Oussama Ayadi", text: "a obtenu son diplôme de Master en Marketing Bancaire promotion 2016/2017. Actuellement il occupe un poste de Expert Technique chez GIZ Tunisie Tunis", img: "/images/ebs-tn/oussama-ayadi-1024x1024.jpeg", initials: "OA" },
-  { name: "Ikram ARFA", text: "est Gérante de DIGITORIORITY et Consultante en Web Marketing. 1ère Promotion EBS.", img: "/images/alumni/ikram-arfa.jpg", initials: "IA", objectPosition: "center top" },
-  { name: "Houcem MAAOUIA", text: "est Co-founder & CEO de Parhelion Consulting & Training. Promotion 2020.", img: "/images/alumni/houcem-maaouia.jpg", initials: "HM", objectPosition: "center top" },
-  { name: "Chokri BRIKI", text: "est Project Manager chez Salammbo Group. Promotion 2020.", img: "/images/alumni/chokri-briki.jpg", initials: "CB" },
-  { name: "Dhouha MECHERGUI", text: "est Co-founder & CEO de Pineapple Studio et Consultante en Corporate Finance. Promotion 2017.", img: "/images/alumni/dhouha-mechergui.jpg", initials: "DM", objectPosition: "center top" },
-  { name: "Sonia Missaoui", text: "est Co-founder de Oh Em Gee. 2ème année LFG.", img: "/images/alumni/sonia-missaoui.jpg", initials: "SM", objectPosition: "center top" },
+  { name: "Mohamed Amine Hamdi", text: "a obtenu son Master en Marketing Digital (Promotion 2019/2020). Il est aujourd'hui Community Manager chez Tinith Services, à Tunis.", img: "/images/ebs-tn/amin-hamdi.jpeg", initials: "MH" },
+  { name: "Dorra Ben Turkia", text: "a obtenu son Master en Ingénierie et Analyse Quantitative (Promotion 2018/2019). Elle est aujourd'hui Contrôleuse de Gestion chez Habitat France, à Paris.", img: "/images/ebs-tn/dorra-ben-turkia-1022x1024.jpeg", initials: "DB" },
+  { name: "Maroua Jeribi", text: "a obtenu son Master en Gestion des Ressources Humaines (Promotion 2018/2019). Elle est aujourd'hui Consultante SIRH chez Oracle, à Paris.", img: "/images/ebs-tn/maroua-jeribi-1022x1024.jpeg", initials: "MJ" },
+  { name: "Hend Jaber", text: "a obtenu son Master en Ingénierie Financière (Promotion 2015/2016). Elle est aujourd'hui Conceptualizer chez BOUMRANG, à Tunis.", img: "/images/ebs-tn/hend-jaber.jpeg", initials: "HJ" },
+  { name: "Hend Nasri", text: "a obtenu son Master en Marketing Digital (Promotion 2019/2020). Elle est aujourd'hui Digital Marketing Manager chez Lezarts.Digital, à Tunis.", img: "/images/ebs-tn/hend-nasri-1024x1024.jpeg", initials: "HN" },
+  { name: "Kais Layouni", text: "a obtenu sa Licence en Finance (Promotion 2017/2018). Il est aujourd'hui Business Analyst chez MENINX Holding, à Tunis.", img: "/images/ebs-tn/kais-layouni.jpeg", initials: "KL" },
+  { name: "Hend Bedoui", text: "a obtenu son Master en Ingénierie Financière (Promotion 2015/2016). Elle est aujourd'hui Analyste Financière chez LEASE TUNIS.", img: "/images/ebs-tn/hind-bedoui.jpeg", initials: "HB" },
+  { name: "Oussama Ayadi", text: "a obtenu son Master en Marketing Bancaire (Promotion 2016/2017). Il est aujourd'hui Expert Technique chez GIZ Tunisie, à Tunis.", img: "/images/ebs-tn/oussama-ayadi-1024x1024.jpeg", initials: "OA" },
+  { name: "Ikram ARFA", text: "est diplômée d'EBS, 1ère Promotion. Elle est aujourd'hui Gérante de DIGITORIORITY et Consultante en Web Marketing.", img: "/images/alumni/ikram-arfa.jpg", initials: "IA", objectPosition: "center top" },
+  { name: "Houcem MAAOUIA", text: "est diplômé d'EBS (Promotion 2020). Il est aujourd'hui Co-founder & CEO de Parhelion Consulting & Training.", img: "/images/alumni/houcem-maaouia.jpg", initials: "HM", objectPosition: "center top" },
+  { name: "Chokri BRIKI", text: "est diplômé d'EBS (Promotion 2020). Il est aujourd'hui Project Manager chez Salammbo Group.", img: "/images/alumni/chokri-briki.jpg", initials: "CB" },
+  { name: "Dhouha MECHERGUI", text: "est diplômée d'EBS (Promotion 2017). Elle est aujourd'hui Co-founder & CEO de Pineapple Studio et Consultante en Corporate Finance.", img: "/images/alumni/dhouha-mechergui.jpg", initials: "DM", objectPosition: "center top" },
+  { name: "Sonia Missaoui", text: "a étudié à EBS (2ème année LFG). Elle est aujourd'hui cofondatrice de la marque Oh Em Gee.", img: "/images/alumni/sonia-missaoui.jpg", initials: "SM", objectPosition: "center top" },
 ];
 
 const missions = [
@@ -174,7 +174,7 @@ export default function AlumniPage() {
                     <div className="w-full h-full bg-penn-green/10 flex items-center justify-center text-white font-extrabold text-[32px]">{p.initials}</div>
                   )}
                 </div>
-                <p className="text-[14px] text-white/70 leading-relaxed p-5">
+                <p className="text-[14px] text-white/70 leading-relaxed p-5 min-h-[136px]">
                   <strong className="text-white font-extrabold">{p.name}</strong> {p.text}
                 </p>
               </motion.div>
