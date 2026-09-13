@@ -31,7 +31,7 @@ const navItems: NavItem[] = [
       { label: "Corps Enseignant", href: "/corps-enseignant" },
       { label: "Partenaires Académiques", href: "/partenaires-academiques" },
       { label: "Partenaires Économiques", href: "/partenaires-economiques" },
-      { label: "Actualités", href: "/actualites" },
+      { label: "Actualités et Évènements", href: "/actualites" },
       { label: "Certifications", href: "/certifications" },
       { label: "FAQ", href: "/faq" },
       { label: "Alumni", href: "/alumni" },

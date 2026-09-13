@@ -379,7 +379,7 @@ const evenements: Article[] = [
 ];
 
 const tabs: { key: Tab; label: string; icon: React.ReactNode; desc: string }[] = [
-  { key: "all", label: "Actualités & événements", icon: <Newspaper className="w-4 h-4" />, desc: "Toutes les nouvelles, rencontres et initiatives de la communauté EBS." },
+  { key: "all", label: "Actualités et Évènements", icon: <Newspaper className="w-4 h-4" />, desc: "Toutes les nouvelles, rencontres et initiatives de la communauté EBS." },
   { key: "alaune", label: "À la Une", icon: <Sparkles className="w-4 h-4" />, desc: "L'article phare de l'actualité EBS" },
 ];
 
@@ -441,8 +441,8 @@ export default function ActualitesPage() {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="text-[44px] md:text-[56px] lg:text-[68px] font-extrabold text-white leading-[1.05] tracking-[-1px] mb-6"
             >
-              Actualités<br />
-              <span className="text-penn-green">EBS</span>.
+              Actualités et<br />
+              <span className="text-penn-green">Évènements</span>.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

@@ -11,7 +11,7 @@
         "blog": "Blog",
         "admissions": "Admissions",
         "contact": "Contact",
-        "actualites": "Actualités"
+        "actualites": "Actualités et Évènements"
       },
       "postuler": "Postuler",
       "call": "Appeler"
@@ -236,8 +236,8 @@
     },
     "events": {
       "title": "",
-      "subtitle": "Actualités",
-      "subtitleHighlight": "",
+      "subtitle": "Actualités et",
+      "subtitleHighlight": "Évènements",
       "btn": "Voir toutes les actualités",
       "videoLabel": "Visite du campus",
       "videoTitle": "Découvrez EBS de l'intérieur",
@@ -328,7 +328,7 @@
         "blog": "Blog",
         "contact": "Contactez-nous",
         "campus": "Campus",
-        "evenements": "Actualités",
+        "evenements": "Actualités et Évènements",
         "certifications": "Certifications",
         "ia": "L’IA au cœur d’EBS",
         "faq": "FAQ",

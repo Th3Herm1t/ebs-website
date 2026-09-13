@@ -50,7 +50,7 @@ const routeMeta = {
     description: "EBS collabore avec des entreprises partenaires pour stages, projets appliqués, recrutement, job fairs et insertion professionnelle.",
   },
   actualites: {
-    title: "Actualités et événements EBS",
+    title: "Actualités et Évènements",
     description: "Suivez les actualités, événements, conférences, salons, partenariats et temps forts de la vie étudiante à Espima Business School.",
   },
   blog: {

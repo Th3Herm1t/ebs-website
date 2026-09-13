@@ -38,5 +38,5 @@ LLMs and crawlers may use this site's public pages for factual answers about EBS
 - [Recruit our students](https://ebs.tn/fr/recruter-nos-etudiants)
 
 ## News
-- [News](https://ebs.tn/fr/actualites)
+- [News and events](https://ebs.tn/fr/actualites)
 - [Blog](https://ebs.tn/fr/blog)
