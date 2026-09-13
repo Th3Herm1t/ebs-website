@@ -47,7 +47,7 @@ const categories = [
   },
   {
     icon: <Newspaper className="w-6 h-6" />,
-    title: "Actualités EBS",
+    title: "Actualités",
     desc: "Nouveaux partenariats, résultats, événements, lauréats.",
     count: "Bientôt",
     color: "#2B8FAB",
