@@ -30,7 +30,7 @@ export default function EventsSection() {
     <section className="relative overflow-hidden section-padding" ref={ref}>
       <HeroBackgroundVariant2 />
       <div className="relative z-10 mx-auto max-w-[1140px] px-4">
-        <div className="mb-10 border-b border-penn-navy/10 pb-8 md:mb-12">
+        <div className="mb-8 border-b border-penn-navy/10 pb-6 md:mb-10">
           <SectionHeading
             title={t("title")}
             subtitle={<>{t("subtitle")} <span className="text-penn-green">{t("subtitleHighlight")}</span>.</>}
@@ -39,7 +39,7 @@ export default function EventsSection() {
           />
         </div>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_1px_minmax(0,1fr)] lg:items-stretch lg:gap-9">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_1px_minmax(0,1fr)] lg:items-stretch lg:gap-8">
           <motion.article initial={{ opacity: 0, x: -24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }} className="group overflow-hidden rounded-[28px] border border-penn-border bg-white shadow-[0_24px_70px_-42px_rgba(11,25,44,0.45)]">
             <div className="relative aspect-[16/9] overflow-hidden">
               <Image src={latest.img} alt={latest.title} fill sizes="(max-width: 1024px) 100vw, 62vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.025]" />
@@ -50,14 +50,14 @@ export default function EventsSection() {
               </div>
               <span className="absolute bottom-5 left-5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-white sm:bottom-7 sm:left-7">{t("latestLabel")}</span>
             </div>
-            <div className="p-6 sm:p-8 lg:p-9">
-              <div className="mb-4 flex flex-wrap gap-x-5 gap-y-2 text-[11px] font-extrabold uppercase tracking-[0.08em] text-penn-green">
+            <div className="p-6 sm:p-7">
+              <div className="mb-3 flex flex-wrap gap-x-5 gap-y-2 text-[11px] font-extrabold uppercase tracking-[0.08em] text-penn-green">
                 <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{latest.time}</span>
                 <span className="flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" />{latest.location}</span>
               </div>
-              <h3 className="max-w-[640px] text-[24px] font-extrabold leading-[1.18] text-penn-navy sm:text-[29px]">{latest.title}</h3>
-              <p className="mt-4 max-w-[650px] text-[14px] leading-7 text-penn-body sm:text-[15px]">{latest.desc}</p>
-              <Link href="/actualites" className="group/link mt-6 inline-flex items-center gap-3 text-[13px] font-extrabold text-penn-navy">
+              <h3 className="max-w-[640px] text-[23px] font-extrabold leading-[1.18] text-penn-navy sm:text-[26px]">{latest.title}</h3>
+              <p className="mt-3 max-w-[650px] text-[14px] leading-6 text-penn-body">{latest.desc}</p>
+              <Link href="/actualites" className="group/link mt-5 inline-flex items-center gap-3 text-[13px] font-extrabold text-penn-navy">
                 <span className="border-b border-penn-navy/20 pb-1 transition-colors group-hover/link:border-penn-green group-hover/link:text-penn-green">{t("btn")}</span>
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-penn-navy text-white transition-colors group-hover/link:bg-penn-green"><ArrowUpRight className="h-4 w-4" /></span>
               </Link>
@@ -66,17 +66,17 @@ export default function EventsSection() {
 
           <div className="hidden bg-penn-navy/10 lg:block" aria-hidden="true" />
 
-          <motion.figure initial={{ opacity: 0, x: 24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }} className="grid h-[500px] w-full grid-rows-[3fr_2fr] overflow-hidden rounded-[28px] bg-penn-navy shadow-[0_30px_70px_-35px_rgba(11,25,44,0.65)] lg:h-full">
-            <div className="relative flex min-h-0 flex-col justify-center overflow-hidden p-7 sm:p-9 lg:p-7 xl:p-9">
+          <motion.figure initial={{ opacity: 0, x: 24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }} className="grid h-[460px] w-full grid-rows-[3fr_2fr] overflow-hidden rounded-[28px] bg-penn-navy shadow-[0_30px_70px_-35px_rgba(11,25,44,0.65)] lg:h-full">
+            <div className="relative flex min-h-0 flex-col justify-start gap-2.5 overflow-hidden p-6 sm:p-8 lg:p-6 xl:p-8">
               <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full border border-white/10" aria-hidden="true" />
               <div className="absolute -right-5 -top-5 h-24 w-24 rounded-full border border-penn-green/20" aria-hidden="true" />
               <p className="relative flex items-center gap-2.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-penn-green">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full border border-penn-green/30 bg-penn-green/10"><Camera className="h-3.5 w-3.5" /></span>
                 {t("videoLabel")}
               </p>
-              <h3 className="relative mt-4 text-[22px] font-extrabold leading-[1.15] text-white sm:text-[26px] lg:text-[22px] xl:text-[26px]">{t("videoTitle")}</h3>
-              <p className="relative mt-3 text-[13px] leading-6 text-white/60">{t("videoDescription")}</p>
-              <figcaption className="relative mt-5 text-[9px] font-extrabold uppercase tracking-[0.15em] text-white/35">{t("videoCaption")}</figcaption>
+              <h3 className="relative text-[20px] font-extrabold leading-[1.15] text-white sm:text-[24px] lg:text-[20px] xl:text-[24px]">{t("videoTitle")}</h3>
+              <p className="relative line-clamp-3 text-[12.5px] leading-6 text-white/60">{t("videoDescription")}</p>
+              <figcaption className="relative text-[9px] font-extrabold uppercase tracking-[0.15em] text-white/35">{t("videoCaption")}</figcaption>
             </div>
             <div className="relative min-h-0 overflow-hidden bg-black">
               <video className="h-full w-full object-contain" controls preload="none" poster="/images/campus/t27-poster-400.webp" playsInline aria-label={t("videoTitle")}>
