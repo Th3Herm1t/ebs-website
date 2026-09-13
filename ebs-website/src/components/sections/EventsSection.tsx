@@ -55,13 +55,13 @@ export default function EventsSection() {
           </motion.article>
 
           <motion.figure initial={{ opacity: 0, x: 24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }} className="flex w-full flex-col overflow-hidden rounded-3xl bg-penn-navy shadow-xl shadow-penn-navy/10 lg:max-w-[400px] lg:justify-self-center">
-            <div className="flex flex-col p-5 pb-4">
+            <div className="flex flex-col p-6">
               <p className="flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.16em] text-penn-green"><span className="flex h-7 w-7 items-center justify-center rounded-full border border-penn-green/30 bg-penn-green/10"><Camera className="h-3.5 w-3.5" /></span>{t("videoLabel")}</p>
-              <p className="mt-2 text-[17px] font-extrabold leading-snug text-white">{t("videoTitle")}</p>
-              <p className="mt-1.5 line-clamp-2 text-[12.5px] leading-relaxed text-white/60">{t("videoDescription")}</p>
+              <p className="mt-2.5 text-[18px] font-extrabold leading-snug text-white">{t("videoTitle")}</p>
+              <p className="mt-2 line-clamp-3 text-[13px] leading-relaxed text-white/60">{t("videoDescription")}</p>
             </div>
-            <div className="overflow-hidden bg-black">
-              <video className="aspect-video w-full object-cover" controls preload="none" poster="/images/campus/t27-poster-400.webp" playsInline aria-label={t("videoTitle")}>
+            <div className="h-40 overflow-hidden bg-black">
+              <video className="h-full w-full object-cover" controls preload="none" poster="/images/campus/t27-poster-400.webp" playsInline aria-label={t("videoTitle")}>
                 <source src="/videos/ebs-campus-tour.mp4" type="video/mp4" />
                 Votre navigateur ne prend pas en charge la lecture vidéo.
               </video>
