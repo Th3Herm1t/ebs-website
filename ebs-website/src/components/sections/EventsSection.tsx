@@ -35,7 +35,7 @@ export default function EventsSection() {
           subtitle={<>{t("subtitle")} <span className="text-penn-green underline decoration-penn-green">{t("subtitleHighlight")}</span></>}
         />
 
-        <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+        <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch lg:gap-10">
           <motion.article initial={{ opacity: 0, x: -24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }} className="overflow-hidden rounded-3xl border border-penn-border bg-white shadow-sm">
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image src={latest.img} alt={latest.title} fill sizes="(max-width: 1024px) 100vw, 55vw" className="object-cover transition-transform duration-700 hover:scale-105" />
@@ -54,19 +54,19 @@ export default function EventsSection() {
             </div>
           </motion.article>
 
-          <motion.figure initial={{ opacity: 0, x: 24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }} className="flex w-full flex-col overflow-hidden rounded-3xl bg-penn-navy shadow-xl shadow-penn-navy/10 lg:max-w-[400px] lg:justify-self-center">
-            <div className="flex flex-col p-6">
+          <motion.figure initial={{ opacity: 0, x: 24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }} className="flex w-full flex-col overflow-hidden rounded-3xl bg-penn-navy shadow-xl shadow-penn-navy/10 lg:h-[80%] lg:max-w-[400px] lg:grid lg:grid-rows-[3fr_2fr] lg:justify-self-center lg:self-center">
+            <div className="flex min-h-0 flex-col p-6 lg:min-h-0 lg:p-7">
               <p className="flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[0.16em] text-penn-green"><span className="flex h-7 w-7 items-center justify-center rounded-full border border-penn-green/30 bg-penn-green/10"><Camera className="h-3.5 w-3.5" /></span>{t("videoLabel")}</p>
               <p className="mt-2.5 text-[18px] font-extrabold leading-snug text-white">{t("videoTitle")}</p>
-              <p className="mt-2 line-clamp-3 text-[13px] leading-relaxed text-white/60">{t("videoDescription")}</p>
+              <p className="mt-2 text-[13px] leading-relaxed text-white/60">{t("videoDescription")}</p>
+              <figcaption className="mt-5 text-[10px] font-bold uppercase tracking-wide text-white/35 lg:mt-auto lg:pt-5">ESPIMA Business School · Tunis</figcaption>
             </div>
-            <div className="h-40 overflow-hidden bg-black">
+            <div className="relative h-40 overflow-hidden bg-black lg:h-full lg:min-h-0">
               <video className="h-full w-full object-cover" controls preload="none" poster="/images/campus/t27-poster-400.webp" playsInline aria-label={t("videoTitle")}>
                 <source src="/videos/ebs-campus-tour.mp4" type="video/mp4" />
                 Votre navigateur ne prend pas en charge la lecture vidéo.
               </video>
             </div>
-            <figcaption className="px-5 py-3 text-[10px] font-bold uppercase tracking-wide text-white/35">ESPIMA Business School · Tunis</figcaption>
           </motion.figure>
         </div>
       </div>
