@@ -56,9 +56,9 @@ export default function EventsSection() {
 
           <motion.figure initial={{ opacity: 0, x: 24 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }} className="flex w-full flex-col overflow-hidden rounded-3xl bg-penn-navy shadow-xl shadow-penn-navy/10 lg:h-[80%] lg:max-w-[400px] lg:grid lg:grid-rows-[3fr_2fr] lg:justify-self-center lg:self-center">
             <div className="flex min-h-0 flex-col p-6 lg:min-h-0 lg:p-7">
-              <p className="flex items-center gap-3 text-[18px] font-extrabold uppercase tracking-[0.06em] text-penn-green"><span className="flex h-10 w-10 items-center justify-center rounded-full border border-penn-green/30 bg-penn-green/10"><Camera className="h-5 w-5" /></span>{t("videoLabel")}</p>
-              <p className="mt-2.5 text-[18px] font-extrabold leading-snug text-white">{t("videoTitle")}</p>
-              <p className="mt-2 text-[13px] leading-relaxed text-white/60">{t("videoDescription")}</p>
+              <p className="flex items-center gap-3 text-[20px] font-extrabold uppercase tracking-[0.04em] text-penn-green"><span className="flex h-11 w-11 items-center justify-center rounded-full border border-penn-green/30 bg-penn-green/10"><Camera className="h-5 w-5" /></span>{t("videoLabel")}</p>
+              <p className="mt-5 text-[18px] font-extrabold leading-snug text-white">{t("videoTitle")}</p>
+              <p className="mt-4 text-[13px] leading-relaxed text-white/60">{t("videoDescription")}</p>
               <figcaption className="mt-5 text-[10px] font-bold uppercase tracking-wide text-white/35 lg:mt-auto lg:pt-5">ESPIMA Business School · Tunis</figcaption>
             </div>
             <div className="relative h-40 overflow-hidden bg-black lg:h-full lg:min-h-0">
