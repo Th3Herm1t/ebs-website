@@ -433,7 +433,7 @@ export default function CertificationsPage({ catalogue }: { catalogue: Catalogue
           {/* 4. RESULTS COUNTER & SUMMARY */}
           <div className="flex items-center justify-between text-[13px] font-bold text-penn-body/60 px-1">
             <p>
-              <span className="text-penn-navy font-extrabold">{filteredOpportunities.length}</span> formations trouvées
+              <span className="text-penn-navy font-extrabold">{formatPublicCertificationCount(uniqueResourceCount)}</span> certifications
               {filteredOpportunities.length > displayedOpportunities.length && (
                 <span> (affichage des {displayedOpportunities.length} premières)</span>
               )}
